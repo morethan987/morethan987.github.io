@@ -9,6 +9,7 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
+      background-color: black; /* 设置背景颜色为黑色 */
     }
   </style>
 </head>
@@ -22,6 +23,7 @@
   resize();
   window.onresize = resize;
 
+  //重定义窗口大小
   function resize() {
     canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -86,6 +88,7 @@
       dot.ya *= (dot.y > canvas.height || dot.y < 0) ? -1 : 1;
 
       // 绘制点
+      ctx.fillStyle = 'white'; // 设置填充颜色为白色
       ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
 
       // 循环比对粒子间的距离
@@ -121,6 +124,7 @@
           ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
           ctx.moveTo(dot.x, dot.y);
           ctx.lineTo(d2.x, d2.y);
+	  ctx.strokeStyle = 'white';
           ctx.stroke();
         }
       }
