@@ -78,6 +78,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+#profile_photo {
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  position: absolute;
+  left: 0;
+  top: 25%;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
+}
+
 #intro_gif {
   position: absolute;
   left: 0;
@@ -96,7 +108,7 @@ body {
 #intro {
   position: absolute;
   left: 0;
-  top: 40%;
+  top: 70%;
   padding: 0 20px;
   width: 100%;
   text-align: center;
