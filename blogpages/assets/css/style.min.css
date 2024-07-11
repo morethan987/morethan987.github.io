@@ -1616,6 +1616,10 @@ html.dark input:-webkit-autofill,
   height: auto;
 }
 
+.h-half {
+  height: 50%;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1830,6 +1834,10 @@ html.dark input:-webkit-autofill,
 
 .w-auto {
   width: auto;
+}
+
+.w-half {
+  width: 50%;
 }
 
 .w-full {
