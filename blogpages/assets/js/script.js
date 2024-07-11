@@ -3,7 +3,6 @@
 
     /* ============================================================ */
     /* PRELOADER START
-    ¸ü¶àÏÂÔØ£ºHttp://www.bootstrapmb.com
     /* ============================================================ */
     setTimeout(function() {
         var e = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
