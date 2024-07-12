@@ -75,13 +75,15 @@
             <div
                 class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-2 px-3 bg-white/10 mobile-menu-bar sm:px-6 backdrop-blur-md xl:hidden">
                 <div class="text-lg font-medium name">
-                    <a class='flex items-center gap-2 text-black dark:text-white' href='/'>
-<!--                        <img src="assets/img/logo.svg" alt="Logo">-->
+                    <a class='flex items-center gap-2 text-black dark:text-white overflow-hidden' href='/'>
+<!--                        class='w-36 h-36 mb-2.5 block mx-auto border-6 border-platinum dark:border-[#2f2f2f] overflow-hidden rounded-full' -->
                         <img
                             src="assets/img/logo.svg"
+                            class="hidden dark:block"
                             alt="Logo"> <!--Image for Dark Version -->
                         <img
                             src="assets/img/logo_light.svg"
+                            class="dark:hidden"
                             alt="Logo"> <!--Image for Light Version -->
                         <span>Logo</span>
                     </a>
@@ -1470,8 +1472,8 @@
                                 <div class="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
                                     <a class='block w-full overflow-hidden rounded-xl' href='../blogdetail/2024/07/local_overleaf'>
                                         <img src="assets/img/blog/local_overleaf_logo.png"
-                                            class="object-cover object-center w-auto h-auto min-h-[288px] transition-all duration-300 ease-in-out max-h-60 md:min-h-60 group-hover:scale-105"
-                                            alt="Post Title">
+                                            class="object-cover object-center w-full h-auto min-h-[288px] transition-all duration-300 ease-in-out max-h-60 md:min-h-60 group-hover:scale-105"
+                                            alt="Post Title"> <!-- 修改图片尺寸 -->
                                     </a>
                                 </div>
                                 <div
@@ -1479,10 +1481,10 @@
                                     <div class="flex items-center gap-5">
                                         <div class="text-sm font-medium tags">
                                             <a href="#" class="transition-colors hover:text-theme">
-                                                UI Design
+                                                Implementation
                                             </a>,
                                             <span class="post_date">
-                                                03 May 2023
+                                                2024/7/20
                                             </span>
                                         </div>
                                     </div>
@@ -1958,7 +1960,7 @@
     <!-- Ends Here -->
 
     <!-- Style Switcher Started -->
-    <div class="style-switcher fixed right-0 top-27 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
+    <div class="style-switcher fixed right-0 top-30 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
 
         <div class="toggle-btn absolute -left-15 w-15 h-15 bg-white dark:bg-nightBlack text-black dark:text-white flex-center cursor-pointer rounded-[.5rem_0_0_.5rem] select-none shadow-sm shadow-slate-400">
             <span class="fal fa-cog fa-spin"></span>
