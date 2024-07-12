@@ -76,12 +76,14 @@
             <div
                 class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-2 px-3 bg-white/10 mobile-menu-bar sm:px-6 backdrop-blur-md xl:hidden">
                 <div class="text-lg font-medium name">
-                    <a class='flex items-center gap-2 text-black dark:text-white' href='/'>
+                    <a class='flex items-center gap-2 text-black dark:text-white overflow-hidden' href='/'>
                         <img
                             src="../../../assets/img/logo.svg"
+                            class="hidden dark:block"
                             alt="Logo"> <!--Image for Dark Version -->
                         <img
                             src="../../../assets/img/logo_light.svg"
+                            class="dark:hidden"
                             alt="Logo"> <!--Image for Light Version -->
                         <span>Logo</span>
                     </a>
@@ -771,7 +773,7 @@
     <!-- Ends Here -->
 
     <!-- Style Switcher Started -->
-    <div class="style-switcher fixed right-0 top-30 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
+    <div class="style-switcher fixed right-0 top-32 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
 
         <div class="toggle-btn absolute -left-15 w-15 h-15 bg-white dark:bg-nightBlack text-black dark:text-white flex-center cursor-pointer rounded-[.5rem_0_0_.5rem] select-none shadow-sm shadow-slate-400">
             <span class="fal fa-cog fa-spin"></span>
