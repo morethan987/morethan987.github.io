@@ -77,8 +77,13 @@
                 class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-2 px-3 bg-white/10 mobile-menu-bar sm:px-6 backdrop-blur-md xl:hidden">
                 <div class="text-lg font-medium name">
                     <a class='flex items-center gap-2 text-black dark:text-white' href='/'>
-                        <img src="../../../assets/img/site-logo.svg" alt="Minfo">
-                        <span>Minfo</span>
+                        <img
+                            src="../../../assets/img/logo.svg"
+                            alt="Logo"> <!--Image for Dark Version -->
+                        <img
+                            src="../../../assets/img/logo_light.svg"
+                            alt="Logo"> <!--Image for Light Version -->
+                        <span>Logo</span>
                     </a>
                 </div>
                 <!-- Mobile Hamburger Menu Start -->
@@ -108,8 +113,8 @@
                     Menu
                 </div>
                 <ul class="space-y-5 font-normal main-menu">
-                    <li class="relative group active">
-                        <a class='flex items-center space-x-2 group' href='/#home'>
+                    <!-- 这里我把<li>标签删除了，否则无法正确跳转链接，删除前见下面的注释 -->
+                        <a class='flex items-center space-x-2 group' href='https://morethan987.github.io/blogpages/#home'>
                             <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
                                 <i class="fal fa-home"></i>
                             </span>
@@ -117,9 +122,7 @@
                                 Home
                             </span>
                         </a>
-                    </li>
-                    <li class="relative group">
-                        <a class='flex items-center space-x-2 group' href='/#about'>
+                        <a class='flex items-center space-x-2 group' href='https://morethan987.github.io/blogpages/#about'>
                             <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
                                 <i class="fal fa-user"></i>
                             </span>
@@ -127,7 +130,6 @@
                                 About
                             </span>
                         </a>
-                    </li>
 <!--                    <li class="relative group">-->
 <!--                        <a class='flex items-center space-x-2 group' href='/#service'>-->
 <!--                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">-->
@@ -168,8 +170,7 @@
 <!--                            </span>-->
 <!--                        </a>-->
 <!--                    </li>-->
-                    <li class="relative group">
-                        <a class='flex items-center space-x-2 group' href='/#blog'>
+                        <a class='flex items-center space-x-2 group' href='https://morethan987.github.io/blogpages/#blog'>
                             <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
                                 <i class="fal fa-blog"></i>
                             </span>
@@ -177,7 +178,6 @@
                                 Blog
                             </span>
                         </a>
-                    </li>
 <!--                    <li class="relative group">-->
 <!--                        <a class='flex items-center space-x-2 group' href='/#testimonial'>-->
 <!--                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">-->
@@ -205,17 +205,17 @@
 <!--                </div>-->
                 <!-- Social Share Icon Start  -->
                 <div class="flex items-center space-x-4 social-icons">
-                    <a href="#" class="flex transition duration-200 hover:text-white" title="Share with Facebook">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="https://github.com" class="flex transition duration-200 hover:text-theme" title="Share with GitHub">
+                        <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="flex transition duration-200 hover:text-white" title="Share with Linkedin">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://im.qq.com" class="flex transition duration-200 hover:text-theme" title="Share with QQ">
+                        <i class="fab fa-qq"></i>
                     </a>
-                    <a href="#" class="flex transition duration-200 hover:text-white" title="Share with X">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://www.bilibili.com/" class="flex transition duration-200 hover:text-theme" title="Share with BiliBili">
+                        <i class="fab fa-bilibili"></i>
                     </a>
-                    <a href="#" class="flex transition duration-200 hover:text-white" title="Share with X">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://weixin.qq.com/" class="flex transition duration-200 hover:text-theme" title="Share with WeChat">
+                        <i class="fab fa-weixin"></i>
                     </a>
                 </div>
                 <!-- Social Share Icon End  -->
@@ -771,7 +771,7 @@
     <!-- Ends Here -->
 
     <!-- Style Switcher Started -->
-    <div class="style-switcher fixed right-0 top-19 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
+    <div class="style-switcher fixed right-0 top-27 -translate-y-1/2 translate-x-[15rem] w-[15rem] [&.active]:translate-x-0 transition z-[9999]">
 
         <div class="toggle-btn absolute -left-15 w-15 h-15 bg-white dark:bg-nightBlack text-black dark:text-white flex-center cursor-pointer rounded-[.5rem_0_0_.5rem] select-none shadow-sm shadow-slate-400">
             <span class="fal fa-cog fa-spin"></span>
