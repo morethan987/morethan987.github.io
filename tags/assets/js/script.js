@@ -60,7 +60,7 @@
     /* Scrollit Scrollspy start
     /* ============================================================ */
     $.scrollIt({
-        scrollTime: 1000,
+        scrollTime: 500,
         topOffset: 0,
     });
     /* Scrollit Scrollspy End */
