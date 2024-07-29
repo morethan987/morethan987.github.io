@@ -36,7 +36,7 @@ function setLightTheme() {
 function onThemeSwitcherItemClick(e) {
     var theme = this.dataset.theme;
     if (theme == "dark") {
-        setDarkTheme();        
+        setDarkTheme();
     } else {
         setLightTheme();
     }

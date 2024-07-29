@@ -1,0 +1,61 @@
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/
+:is(.dark .hljs) {color:#c9d1d9;background:#0d1117}
+
+:is(.dark .hljs-doctag){color:#ff7b72}
+:is(.dark .hljs-keyword){color:#ff7b72}
+:is(.dark .hljs-meta){color:#ff7b72}
+:is(.dark .hljs-keyword){color:#ff7b72}
+:is(.dark .hljs-template-tag){color:#ff7b72}
+:is(.dark .hljs-template-variable){color:#ff7b72}
+:is(.dark .hljs-type){color:#ff7b72}
+:is(.dark .hljs-variable.language_){color:#ff7b72}
+
+:is(.dark .hljs-title){color:#d2a8ff}
+:is(.dark .hljs-title.class_){color:#d2a8ff}
+:is(.dark .hljs-title.class_.inherited__){color:#d2a8ff}
+:is(.dark .hljs-title.function_){color:#d2a8ff}
+
+:is(.dark .hljs-attr){color:#79c0ff}
+:is(.dark .hljs-attribute){color:#79c0ff}
+:is(.dark .hljs-literal){color:#79c0ff}
+:is(.dark .hljs-meta){color:#79c0ff}
+:is(.dark .hljs-number){color:#79c0ff}
+:is(.dark .hljs-operator){color:#79c0ff}
+:is(.dark .hljs-selector-attr){color:#79c0ff}
+:is(.dark .hljs-selector-class){color:#79c0ff}
+:is(.dark .hljs-selector-id){color:#79c0ff}
+:is(.dark .hljs-variable){color:#79c0ff}
+
+:is(.dark .hljs-meta){color:#a5d6ff}
+:is(.dark .hljs-string){color:#a5d6ff}
+:is(.dark .hljs-regexp){color:#a5d6ff}
+:is(.dark .hljs-string){color:#a5d6ff}
+
+:is(.dark .hljs-built_in){color:#ffa657}
+:is(.dark .hljs-symbol){color:#ffa657}
+
+:is(.dark .hljs-code){color:#8b949e}
+:is(.dark .hljs-comment){color:#8b949e}
+:is(.dark .hljs-formula){color:#8b949e}
+
+:is(.dark .hljs-name){color:#7ee787}
+:is(.dark .hljs-quote){color:#7ee787}
+:is(.dark .hljs-selector-pseudo){color:#7ee787}
+:is(.dark .hljs-selector-tag){color:#7ee787}
+
+:is(.dark .hljs-subst){color:#c9d1d9}
+:is(.dark .hljs-section){color:#1f6feb;font-weight:700}
+:is(.dark .hljs-bullet){color:#f2cc60}
+:is(.dark .hljs-emphasis){color:#c9d1d9;font-style:italic}
+:is(.dark .hljs-strong){color:#c9d1d9;font-weight:700}
+:is(.dark .hljs-addition){color:#aff5b4;background-color:#033a16}
+:is(.dark .hljs-deletion){color:#ffdcd7;background-color:#67060c}
