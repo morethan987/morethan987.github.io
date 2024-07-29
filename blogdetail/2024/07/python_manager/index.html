@@ -29,6 +29,8 @@
 <link href="../../../assets/css/cdheadline.css" rel="stylesheet"/>
 <link href="../../../assets/css/swiper-bundle.min.css" rel="stylesheet"/>
 <link href="../../../assets/css/style.min.css" rel="stylesheet"/>
+<link href="../../../assets/css/github.min.css" rel="stylesheet"/>
+<link href="../../../assets/css/github-dark.min.css" rel="stylesheet"/>
 </head>
 <body class="relative custom_cursor">
 <!-- Custom Cursor Start -->
@@ -273,7 +275,7 @@
 </div>
 <div>
 <h6 class="text-black dark:text-white">CATEGORY:</h6>
-<p class="text-regular">Tips &amp; Tricks</p>
+<p class="text-regular">Code &amp; Frame</p>
 </div>
 <div>
 <h6 class="text-black dark:text-white">POSTED ON:</h6>
@@ -283,83 +285,188 @@
 <div>
 <h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl">01 Precondition</h3>
 <p class="text-regular text-black/70 dark:text-white/70 leading-[2]">
-                                --你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束......
-                                <br/>--懂一点点翻墙的技术，OverLeaf是个国外的软件,与之硬相关的latex项目也是国外的，因此下载相关依赖的时候能够直接接受国外流量会省掉很多麻烦。如果你没有VPN的话就需要为每一个包管理工具指定一个国内源，但有时候国内源更新并不及时。
-                                <br/>--懂一些Vim的基本操作，比如：如何开启插入模式，如何保存退出，不保存退出等
+                                --You are supposed to know how to download and correctly use a python interpreter, choose a suitable IDE and install package with <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">pip</code> .
+                                <br/>--The main topics of this blog are python file operation and HTML element operation based on Beautifulsoup, so you'd better know something about them if you don't want to read "nonsense".
+                                <br/>--This blog won't teach you to write a blog with AI, and the project are obviously imperfect: only suit my own website, can't be 100% automake, and strong dependence on direction of local file system......So don't take it seriously, just treat it as a project for a man new to programing.
                             </p>
 <br/>
 <h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl">02 Implementation</h3>
 <ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
-<li>在Windows App Store 里面直接搜索一个Linux发行版本并下载，笔者选择的是Kali。打开后会跳出命令行窗口，初次打开需要填写需要用户名与密码注册。
-                                    此时你的命令行应该有一个Warning提示。这是因为你还没有安装WSL(Windows Subsystem for Linux)
-                                    <br/>PS：填写密码的时候你的输入不会显示在命令行，但已经被记录了
-                                    <br/>为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。
-                                </li>
-<br/>
-<li>安装WSL2，直接在Windows命令行中运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">wsl --install</code> 即可
-                                    <br/>这个程序安装后也可以直接打开，打开后也有一个Warning提示。这时候需要在 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">C:\Users\ASUS</code> 目录下面写入一个text文件，然后重命名为 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">.wslconfig</code> 然后重启就可以发现Warning已经消失了
-                                    <br/>写入内容为：<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">[experimental] autoMemoryReclaim=gradual    # gradual  | dropcache | disabled networkingMode=mirrored dnsTunneling=true firewall=true autoProxy=true</code>
+<li>Let's contemplate the essence of our goal. Crafting a new blog on my website presents a challenge: I must author HTML documents manually and navigate the intricate interconnections among various pages. And what's more, it's a completely repetitive and exhausting work, which is quite suitable for computer to deal with! What I need to do is to describe how I deal with that problems with CODE.<br>
+    To keep the style coherent, the attribute 'class' shouldn't be changed since the bundling relationship between 'class' and text style.<br>
+    Fortunately, I wrote a 'template' html document before: <a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://morethan987.github.io/blogdetail/2024/07/local_overleaf">Local OverLeaf</a> My program can simply copy some code from it.<br>
+    Theoretically feasible, let's begin the practice.
 </li>
 <br/>
-<li>
-                                    进入Docker官网下载Docker，这是sharelatex模型运行的容器。Docker是一个开源的应用容器引擎，其中包括，镜像、容器、仓库，目的就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的产品及其环境能够做到“一次封装，到处运行”。就像一个集装箱，由程序员开发并封装，用户使用时就直接把整个集装箱搬过去。
-                                    <br/>Docker安装完成后就可以双击启动放后台了
-                                </li>
-<br/>
-<li>打开Kali，直接运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">git clone https://github.com/overleaf/toolkit.git ./overleaf-toolkit</code>
-<br/>然后连续运行<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">cd ./overleaf-toolkit</code> <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/init</code> <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">vim ./config/variables.env</code>
-<br/>此时你应该已经进入了一个文档界面，这就是Vim文本编辑器的界面。Vim有很多快捷键，其中按下I键即可开启插入模式，进行文本编辑，按下esc即可返回常规模式。在插入模式下输入：<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">OVERLEAF_SITE_LANGUAGE=zh-CN</code>
-<br/>输入完成后按下esc返回常规模式，直接键入 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">:wq</code> 这是“保存并退出”，如果你不小心输错了可以 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">:e!</code> 放弃所有更改重头再来。这一步是让你的overleaf界面显示为中文。
-                                    <br/>当你成功保存并退出，回到熟悉的Kali命令行界面后运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/up</code> 此时正在拉取sharelatex镜像以及相关的网络工具。这时会有大量的数据传输，要保证网络通畅（梯子要稳！）
-                                    <br/>此时运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/start</code> 此时你打开Docker点进sharelatex，你应该可以看到代码“爆闪”，如果没有红色的消息，那应该是正常运行了
-                                    <br/>这时打开浏览器访问网址 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">http://localhost/launchpad</code> 按照提示注册Administrator Account之后，就会跳转到 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">http://localhost/project</code> 这时基本的overleaf网页已经可以显示了。
-                                    <br/>但现在你去编译多半是会报错的 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">ᕕ( ᐛ )ᕗ</code> 因为此时sharelatex里面的宏包严重不足，不是红包[doge]
-                                </li>
-<br/>
-<li>打开Kali进入对应目录运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/shell</code> 然后执行：<br/>
-<div class="px-4 py-5 lg:py-6 lg:px-6 rounded-2xl md:px-8 bg-flashWhite dark:bg-metalBlack">
-                                        cd /usr/local/texlive
-                                        <br/># 下载并运行升级脚本
-                                        <br/>wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-                                        <br/>sh update-tlmgr-latest.sh -- --upgrade
-                                        <br/># 更换texlive的下载源
-                                        <br/>tlmgr option repository https://mirrors.sustech.edu.cn/CTAN/systems/texlive/tlnet/
-                                        <br/># 升级tlmgr
-                                        <br/>tlmgr update --self --all
-                                        <br/># 安装完整版texlive（时间比较长，不要让shell断开）
-                                        <br/>tlmgr install scheme-full
-                                        <br/># 退出sharelatex的命令行界面
-                                        <br/>exit
-                                        <br/># 重启sharelatex容器
-                                        <br/>docker restart sharelatex
-                                    </div>
-                                    重启后再次进入shell，运行：
-                                    <div class="px-4 py-5 lg:py-6 lg:px-6 rounded-2xl md:px-8 bg-flashWhite dark:bg-metalBlack">
-                                        apt update
-                                        <br/># 安装字体
-                                        <br/>apt install --no-install-recommends ttf-mscorefonts-installe fonts-noto texlive-fonts-recommended tex-gyre fonts-wqy-microhei fonts-wqy-zenhei fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-texgyre
-                                        <br/># 安装pygments
-                                        <br/>apt install python3-pygments
-                                        <br/># 安装beamer之类的
-                                        <br/>apt install texlive-latex-recommended
-                                        <br/>apt install texlive-latex-extra
-                                        <br/># 安装英文字体
-                                        <br/>echo "yes" | apt install -y --reinstall ttf-mscorefonts-installer
-                                        <br/># 安装中文字体
-                                        <br/>apt install -y latex-cjk-all texlive-lang-chinese texlive-lang-english
-                                        <br/>cp fonts/* /usr/share/fonts/zh-cn/
-                                        <br/>cd /usr/share/fonts
-                                        <br/>fc-cache -fv # 更新字体缓存
-                                        <br/>fc-list :lang=zh-cn
-                                        <br/>fc-match Arial
-                                    </div>
-                                    最后在shell目录里面运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">vim /usr/local/texlive/2023/texmf.cnf</code> 进入shell里面，在最底下加入一句 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">shell_escape = t</code>
+<li>In the early stage, we can simply consolidate all the code into a single file, which is easier to figure out the logic of our code with the program running step by step.<br>
+    During this period, you will gain a general understanding of the overall code manipulation: read a template file, locate the specific html element and modify its attribute, write your modified file.<br>
+    That's the core logic of my code: read -> locate -> modify -> write. Here are some typic example below.
+    <pre><code class="language-python rounded-2xl">
+        # 解析模板文件
+        print("开始编辑blogdetails，读取details模板中......")
+
+        # 读取原始文件内容
+        templet_path = 'D:/xxx/xxx'
+        with open(templet_path, 'r', encoding='utf-8') as file:
+            original_content = file.read()
+        # 使用BeautifulSoup解析HTML内容
+        soup = BeautifulSoup(original_content, 'lxml')
+        if soup:
+            print("已成功获取blogdetails模板！开始编辑blogdetails")
+        else:
+            print("获取模板失败，请重新指定路径！")
+
+        # 多种方法定位元素
+        target_div = soup.find('div', attrs={'class': 'flex flex-wrap items-center gap-2.5'})  # class属性定位
+        mata_tag = soup.find('meta', attrs={'name': 'keyword'})  # name属性定位
+        soup.find('h6', string='POSTED ON:')  # 标签内容定位
+
+        # 定位成功后进行属性修改
+        target_div['id'] = new_id  # 更改标签id
+        target_div.string = new_string  # 更改标签id
+
+        # 将修改后的HTML内容写入到新文件中
+        obj_path = 'D:/xxx/xxx'
+        with open(obj_path, 'w', encoding='utf-8') as file:
+            file.write(str(soup))
+        print(f"File has been modified and saved to {obj_path}")
+    </code></pre>
+    Honestly, all of these codes are so direct and basic that you can simply ask AI anything you don't understand.Let's just continue.
 </li>
 <br/>
-<li>
-                                    现在你就可以愉快地使用本地版overleaf了，没有编译超时的困扰~
-                                    <br/>如果非常巧合，你也是个CQUer，这里附赠一份重庆大学的毕业论文模板，炒鸡的亲民哦：<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">https://github.com/nanmu42/CQUThesis</code>
+<li>Following initial coding endeavors, you may come across a moderately-sized issue: there is a need for information interchange among various pages, including the timestamp of your posts, the tags you append, and the name of your new file directories......<br>
+    Definitely you can announce a global variable to store the information and the following step and directly use it. However, you are overdrawing the ceiling of your program. A month later, while you staring at your code, struggling to guess what the strange variable name means, you will know what I am saying now.<br>
+    The easiest method to solve this problem is to divide a single code into several pieces with only one mission each piece need to do. But how can we get a graceful enough scheme to divide code into pieces ?<br>
+    Well, "Read extensively, and your write will flow as if guided by Muse", here is my solution.<br>
+    [PS: the solution I "steal" from others]ᕕ( ᐛ )ᕗ
+    <pre><code class="language-python rounded-2xl">
+from detailsWriter import DetailsWriter
+from pagesWriter import PagesWriter
+from listWriter import ListWriter
+from tagsWriter import TagsWriter
+import os
+
+
+def end():
+    print("Now you need to write your bolg content in new_blog")
+    print("And add your new picture in the reference position")
+
+
+def create_folder():
+    # 新建img文件路径
+    img_path = 'D:/blog_writer/image'
+    # 检查文件夹是否存在
+    if not os.path.exists(img_path):
+        # 如果不存在，则创建文件夹
+        os.makedirs(img_path)
+        print(f"文件夹 {img_path} 已创建。")
+    else:
+        print(f"文件夹 {img_path} 已存在。")
+
+    # 新建new_blog文件路径
+    new_blog_path = 'D:/blog_writer/new_blog'
+    # 检查文件夹是否存在
+    if not os.path.exists(new_blog_path):
+        # 如果不存在，则创建文件夹
+        os.makedirs(new_blog_path)
+        print(f"文件夹 {new_blog_path} 已创建。")
+    else:
+        print(f"文件夹 {new_blog_path} 已存在。")
+
+    # 新建new_list文件路径
+    new_list_path = 'D:/blog_writer/new_list'
+    # 检查文件夹是否存在
+    if not os.path.exists(new_list_path):
+        # 如果不存在，则创建文件夹
+        os.makedirs(new_list_path)
+        print(f"文件夹 {new_list_path} 已创建。")
+    else:
+        print(f"文件夹 {new_list_path} 已存在。")
+
+    # 新建new_page文件路径
+    new_page_path = 'D:/blog_writer/new_page'
+    # 检查文件夹是否存在
+    if not os.path.exists(new_page_path):
+        # 如果不存在，则创建文件夹
+        os.makedirs(new_page_path)
+        print(f"文件夹 {new_page_path} 已创建。")
+    else:
+        print(f"文件夹 {new_page_path} 已存在。")
+
+    # 新建new_tags文件路径
+    new_tags_path = 'D:/blog_writer/new_tags'
+    # 检查文件夹是否存在
+    if not os.path.exists(new_tags_path):
+        # 如果不存在，则创建文件夹
+        os.makedirs(new_tags_path)
+        print(f"文件夹 {new_tags_path} 已创建。")
+    else:
+        print(f"文件夹 {new_tags_path} 已存在。")
+
+
+class Manager:
+    def __init__(self):
+        self.file_index = {
+            'detail_in': 'D:/GitHub/morethan987.github.io/blogdetail/2024/07/local_overleaf/index.html',
+            'detail_out': 'D:/blog_writer/new_blog/index_mod.html',
+
+            'pages_in': 'D:/GitHub/morethan987.github.io/blogpages/index.html',
+            'pages_out': 'D:/blog_writer/new_page/index_mod.html',
+
+            'list_in': 'D:/GitHub/morethan987.github.io/list/index.html',
+            'list_out': 'D:/blog_writer/new_list/index_mod.html',
+
+            'tags_in': 'D:/GitHub/morethan987.github.io/tags/index.html',
+            'tags_out': 'D:/blog_writer/new_tags/index_mod.html',
+        }
+        self.detail_information = {
+            'meta_keyword': '',
+            'web_title': '',
+            'detail_title': '',
+            'category': '',
+            'post_date': '',
+            'tag_names': []
+        }  # 博客详情中的信息
+        self.cover_information = {
+            'post_month': '',
+            'cover_image_name': ''
+        }  # 封面中的信息
+        self.list_information = {}  # 列表中的信息
+        self.tags_information = {}  # 标签中的信息
+
+    def run(self):
+        # 初始化检验文件夹创建
+        create_folder()
+        print("Program has create relative folders in 'D:/blog_writer'")
+
+        # 撰写博客详情页
+        details_writer = DetailsWriter(self)
+        details_writer.start()
+
+        # 撰写博客封面页
+        pages_writer = PagesWriter(self)
+        pages_writer.start()
+
+        # 撰写博客列表页
+        list_writer = ListWriter(self)
+        list_writer.start()
+
+        # 撰写博客标签页
+        tags_writer = TagsWriter(self)
+        tags_writer.start()
+
+        # 结束
+        end()
+
+    </code> </pre>
+    I abstract a "Manager" from the work flow, who holds the key information and store the information each "Writer" submits. Various writers do their work "day and night" without concerning the complex progress of information exchanging.
 </li>
+<br/>
+<li>Ok, that's all. The work left is boring with nothing to say. The operation of dividing is the spirit of this blog. The whole project is in my GitHub, fork it as you like.
+</li>
+<br/>
+<h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl">03 Summary</h3>
+<p class="text-regular text-black/70 dark:text-white/70 leading-[2]">Recommend a book: 《凤凰架构》, I'd like to consider it as a method argument of how to construct a huge project.</p>
 </ol>
 <!--                            此处可以并排放两张图片-->
 <!--                            <div class="grid gap-5 my-8 sm:grid-cols-2 md:gap-8">-->
@@ -605,6 +712,8 @@
 <script src="../../../assets/js/circle-progress.min.js"></script>
 <script src="../../../assets/js/script.js"></script>
 <script src="../../../assets/js/theme-mode.js"></script>
+<script src="../../../assets/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <!-- Js Library End -->
 </body>
 </html>
