@@ -411,7 +411,7 @@
                                 </li>
                                 <br>
                                 <li>打开Kali进入对应目录运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/shell</code> 然后执行：
-                                    <pre><code class="language-python rounded-2xl">
+                                    <pre><code class="language-shell rounded-2xl">
         cd /usr/local/texlive
         # 下载并运行升级脚本
         wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
@@ -428,7 +428,7 @@
         docker restart sharelatex
                                     </code></pre>
                                     重启后再次进入shell，运行：
-                                    <pre><code class="language-python rounded-2xl">
+                                    <pre><code class="language-shell rounded-2xl">
         apt update
         # 安装字体
         apt install --no-install-recommends ttf-mscorefonts-installe fonts-noto texlive-fonts-recommended tex-gyre fonts-wqy-microhei fonts-wqy-zenhei fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-texgyre
@@ -502,22 +502,6 @@
                                     <a href="https://morethan987.github.io/tags/#overleaf"
                                         class="inline-block border border-dashed border-greyBlack rounded-md text-sm py-1.5 px-2 transition-all hover:text-theme dark:hover:text-white">
                                         OverLeaf
-                                    </a>
-                                    <a href="https://morethan987.github.io/tags/#wsl"
-                                        class="inline-block border border-dashed border-greyBlack rounded-md text-sm py-1.5 px-2 transition-all hover:text-theme dark:hover:text-white">
-                                        WSL
-                                    </a>
-                                    <a href="https://morethan987.github.io/tags/#docker"
-                                        class="inline-block border border-dashed border-greyBlack rounded-md text-sm py-1.5 px-2 transition-all hover:text-theme dark:hover:text-white">
-                                        Docker
-                                    </a>
-                                    <a href="https://morethan987.github.io/tags/#vim"
-                                        class="inline-block border border-dashed border-greyBlack rounded-md text-sm py-1.5 px-2 transition-all hover:text-theme dark:hover:text-white">
-                                        Vim
-                                    </a>
-                                    <a href="https://morethan987.github.io/tags/#latex"
-                                        class="inline-block border border-dashed border-greyBlack rounded-md text-sm py-1.5 px-2 transition-all hover:text-theme dark:hover:text-white">
-                                        LaTeX
                                     </a>
                                 </div>
                             </div>
@@ -745,6 +729,7 @@
     <script src="../../../assets/js/script.js"></script>
     <script src="../../../assets/js/theme-mode.js"></script>
     <script src="../../../assets/js/highlight.min.js"></script>
+    <script src="../../../assets/js/shell.min.js"></script>
     <script>hljs.highlightAll();</script>
     <!-- Js Library End -->
 </body>
