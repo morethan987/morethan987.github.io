@@ -2424,6 +2424,26 @@ html.dark input:-webkit-autofill,
   margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
 }
 
+.catalog-active{
+    color: var(--themeColor);
+}
+
+.catalog-h2 {
+	margin-left: 1em;
+}
+.catalog-h3 {
+	margin-left: 2em;
+}
+.catalog-h4 {
+	margin-left: 3em;
+}
+.catalog-h5 {
+	margin-left: 4em;
+}
+.catalog-h6 {
+	margin-left: 5em;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -6952,16 +6972,16 @@ html.dark .portfolio_wrapper .info span {
     left: 1rem;
   }
 
-  .xl\:top-490px {
-    top: 490px;
+  .xl\:top-0px {
+    top: 0px;
   }
 
   .xl\:top-1\/2 {
     top: 50%;
   }
 
-  .xl\:top-\[-29\.5\%\] {
-    top: -29.5%;
+  .xl\:top-\[-689px\] {
+    top: -689px;
   }
 
   .xl\:my-8 {

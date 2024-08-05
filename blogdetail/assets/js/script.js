@@ -341,16 +341,58 @@
 
 
     /* ============================================================ */
-    /* Content Fixed
+    /* Catalog Fixed
     /* ============================================================ */
     var $sidebar_profile = $('#sidebar_profile');
     $(window).on('scroll', function () {
         if ($(this).scrollTop() > $(this).height()) {
-            $sidebar_profile.addClass('xl:fixed').removeClass('xl:top-490px').addClass('xl:top-[-29.5%]');
+            $sidebar_profile.addClass('xl:fixed').removeClass('xl:top-0px').addClass('xl:top-[-689px]');
         } else {
-            $sidebar_profile.removeClass('xl:fixed').addClass('xl:top-490px').removeClass('xl:top-[-29.5%]');
+            $sidebar_profile.removeClass('xl:fixed').addClass('xl:top-0px').removeClass('xl:top-[-689px]');
         }
     });
+
+
+    /* ============================================================ */
+    /* Catalog Generate
+    /* ============================================================ */
+    $(window).on('scroll', function () {
+        let $currentHeading = $('h2');
+        for (let heading of $('h3,h4,h5')) {
+            const $heading = $(heading);
+            if ($heading.offset().top - $(document).scrollTop() > 20) {
+                break;
+            }
+            $currentHeading = $heading;
+        }
+
+        const anchorName = $currentHeading.attr('id');
+        const $catalog = $(`.catalog[name="${anchorName}"]`);
+        if (!$catalog.hasClass('catalog-active')) {
+            $('.catalog-active').removeClass('catalog-active');
+            $catalog.addClass('catalog-active');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // 存储所有标题的数组
+    let headingsInfo = [];
+
+    // 遍历所有h1到h5标签
+    $('h3, h4, h5').each(function() {
+        const headingLevel = this.tagName.toLowerCase();
+        const headingName = $(this).text().trim();
+        headingsInfo.push({
+            level: headingLevel,
+            name: headingName
+        });
+    });
+
+    // 处理收集到的标题信息
+    headingsInfo.forEach(function(heading) {
+        $('#catalogs').append(`<div name="${heading.name}" class="catalog catalog-${heading.level} hover:text-theme dark:hover:text-theme"><a href="#${heading.name}">${heading.name}</a></div>`);
+    });
+});
 
 })(jQuery);
 // jQuery Ended
