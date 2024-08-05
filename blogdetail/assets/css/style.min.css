@@ -6952,8 +6952,16 @@ html.dark .portfolio_wrapper .info span {
     left: 1rem;
   }
 
+  .xl\:top-490px {
+    top: 490px;
+  }
+
   .xl\:top-1\/2 {
     top: 50%;
+  }
+
+  .xl\:top-\[-29\.5\%\] {
+    top: -29.5%;
   }
 
   .xl\:my-8 {
