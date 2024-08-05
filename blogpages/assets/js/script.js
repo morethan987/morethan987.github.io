@@ -60,7 +60,7 @@
     /* Scrollit Scrollspy start
     /* ============================================================ */
     $.scrollIt({
-        scrollTime: 1000,
+        scrollTime: 618,
         topOffset: 0,
     });
     /* Scrollit Scrollspy End */
@@ -334,7 +334,7 @@
     $("a[href='#top']").on('click', function () {
         $('html, body').animate( {
                 scrollTop: 0,
-        }, 1000);
+        }, 618);
         return false;
     });
 
