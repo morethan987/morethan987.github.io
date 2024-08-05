@@ -335,8 +335,21 @@
     $("a[href='#top']").on('click', function () {
         $('html, body').animate( {
                 scrollTop: 0,
-        }, 1000);
+        }, 700);
         return false;
+    });
+
+
+    /* ============================================================ */
+    /* Content Fixed
+    /* ============================================================ */
+    var $sidebar_profile = $('#sidebar_profile');
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > $(this).height()) {
+            $sidebar_profile.addClass('xl:fixed').removeClass('xl:top-490px').addClass('xl:top-[-29.5%]');
+        } else {
+            $sidebar_profile.removeClass('xl:fixed').addClass('xl:top-490px').removeClass('xl:top-[-29.5%]');
+        }
     });
 
 })(jQuery);
