@@ -2429,19 +2429,19 @@ html.dark input:-webkit-autofill,
 }
 
 .catalog-h2 {
-	margin-left: 1em;
+	margin-left: 0em;
 }
 .catalog-h3 {
-	margin-left: 2em;
+	margin-left: 1em;
 }
 .catalog-h4 {
-	margin-left: 3em;
+	margin-left: 2em;
 }
 .catalog-h5 {
-	margin-left: 4em;
+	margin-left: 3em;
 }
 .catalog-h6 {
-	margin-left: 5em;
+	margin-left: 4em;
 }
 
 .overflow-auto {

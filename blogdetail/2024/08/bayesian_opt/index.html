@@ -292,87 +292,57 @@
 </div>
 </div>
 <div>
-<h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="01 Precondition">01 Precondition</h3>
-<p class="text-regular text-black/70 dark:text-white/70 leading-[2]">
-                                --你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束......
-                                <br/>--懂一点点翻墙的技术，OverLeaf是个国外的软件,与之硬相关的latex项目也是国外的，因此下载相关依赖的时候能够直接接受国外流量会省掉很多麻烦。如果你没有VPN的话就需要为每一个包管理工具指定一个国内源，但有时候国内源更新并不及时。
-                                <br/>--懂一些Vim的基本操作，比如：如何开启插入模式，如何保存退出，不保存退出等
-                            </p>
-<br/>
-<h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="02 Implementation">02 Implementation</h3>
-<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
-<li>在Windows App Store 里面直接搜索一个Linux发行版本并下载，笔者选择的是Kali。打开后会跳出命令行窗口，初次打开需要填写需要用户名与密码注册。
-                                    此时你的命令行应该有一个Warning提示。这是因为你还没有安装WSL(Windows Subsystem for Linux)
-                                    <br/>PS：填写密码的时候你的输入不会显示在命令行，但已经被记录了
-                                    <br/>为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。
-                                </li>
-<br/>
-<li>安装WSL2，直接在Windows命令行中运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">wsl --install</code> 即可
-                                    <br/>这个程序安装后也可以直接打开，打开后也有一个Warning提示。这时候需要在 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">C:\Users\ASUS</code> 目录下面写入一个text文件，然后重命名为 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">.wslconfig</code> 然后重启就可以发现Warning已经消失了
-                                    <br/>写入内容为：<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">[experimental] autoMemoryReclaim=gradual    # gradual  | dropcache | disabled networkingMode=mirrored dnsTunneling=true firewall=true autoProxy=true</code>
-</li>
-<br/>
-<li>
-                                    进入Docker官网下载Docker，这是sharelatex模型运行的容器。Docker是一个开源的应用容器引擎，其中包括，镜像、容器、仓库，目的就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的产品及其环境能够做到“一次封装，到处运行”。就像一个集装箱，由程序员开发并封装，用户使用时就直接把整个集装箱搬过去。
-                                    <br/>Docker安装完成后就可以双击启动放后台了
-                                </li>
-<br/>
-<li>打开Kali，直接运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">git clone https://github.com/overleaf/toolkit.git ./overleaf-toolkit</code>
-<br/>然后连续运行<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">cd ./overleaf-toolkit</code> <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/init</code> <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">vim ./config/variables.env</code>
-<br/>此时你应该已经进入了一个文档界面，这就是Vim文本编辑器的界面。Vim有很多快捷键，其中按下I键即可开启插入模式，进行文本编辑，按下esc即可返回常规模式。在插入模式下输入：<code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">OVERLEAF_SITE_LANGUAGE=zh-CN</code>
-<br/>输入完成后按下esc返回常规模式，直接键入 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">:wq</code> 这是“保存并退出”，如果你不小心输错了可以 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">:e!</code> 放弃所有更改重头再来。这一步是让你的overleaf界面显示为中文。
-                                    <br/>当你成功保存并退出，回到熟悉的Kali命令行界面后运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/up</code> 此时正在拉取sharelatex镜像以及相关的网络工具。这时会有大量的数据传输，要保证网络通畅（梯子要稳！）
-                                    <br/>此时运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/start</code> 此时你打开Docker点进sharelatex，你应该可以看到代码“爆闪”，如果没有红色的消息，那应该是正常运行了
-                                    <br/>这时打开浏览器访问网址 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">http://localhost/launchpad</code> 按照提示注册Administrator Account之后，就会跳转到 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">http://localhost/project</code> 这时基本的overleaf网页已经可以显示了。
-                                    <br/>但现在你去编译多半是会报错的 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">ᕕ( ᐛ )ᕗ</code> 因为此时sharelatex里面的宏包严重不足，不是红包[doge]
-                                </li>
-<br/>
-<li>打开Kali进入对应目录运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">bin/shell</code> 然后执行：
-                                    <pre><code class="language-shell rounded-2xl">
-        cd /usr/local/texlive
-        # 下载并运行升级脚本
-        wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-        sh update-tlmgr-latest.sh -- --upgrade
-        # 更换texlive的下载源
-        tlmgr option repository https://mirrors.sustech.edu.cn/CTAN/systems/texlive/tlnet/
-        # 升级tlmgr
-        tlmgr update --self --all
-        # 安装完整版texlive（时间比较长，不要让shell断开）
-        tlmgr install scheme-full
-        # 退出sharelatex的命令行界面
-        exit
-        # 重启sharelatex容器
-        docker restart sharelatex
-                                    </code></pre>
-                                    重启后再次进入shell，运行：
-                                    <pre><code class="language-shell rounded-2xl">
-        apt update
-        # 安装字体
-        apt install --no-install-recommends ttf-mscorefonts-installe fonts-noto texlive-fonts-recommended tex-gyre fonts-wqy-microhei fonts-wqy-zenhei fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-texgyre
-        # 安装pygments
-        apt install python3-pygments
-        # 安装beamer之类的
-        apt install texlive-latex-recommended
-        apt install texlive-latex-extra
-        # 安装英文字体
-        echo "yes" | apt install -y --reinstall ttf-mscorefonts-installer
-        # 安装中文字体
-        apt install -y latex-cjk-all texlive-lang-chinese texlive-lang-english
-        cp fonts/* /usr/share/fonts/zh-cn/
-        cd /usr/share/fonts
-        fc-cache -fv # 更新字体缓存
-        fc-list :lang=zh-cn
-        fc-match Arial
-                                    </code></pre>
-                                    最后在shell目录里面运行 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">vim /usr/local/texlive/2023/texmf.cnf</code> 进入shell里面，在最底下加入一句 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">shell_escape = t</code>
-<br/>注意，如果Texlive版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写。在Linux命令行中可以用 <code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">ls -l</code> 来查看当前目录下所有的文件。
-                                </li>
-</ol>
-<h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="03 Completion">03 Completion</h3>
-<p>
-                                现在你就可以愉快地使用本地版overleaf了，没有编译超时的困扰~
-                                <br/>如果非常巧合，你也是个CQUer，这里附赠一份重庆大学的毕业论文模板，炒鸡的亲民哦：<a class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]" href="https://github.com/nanmu42/CQUThesis">CQUThesis</a>
+<h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="01 Introduction">01 Introduction</h3>
+<p class="text-base text-black/70 dark:text-white/70 leading-[2]">
+    Honestly, it's hard for me to understand the essence of Bayesian Optimization since I haven't taken the course 概率论与数理统计. So I can only offer some information resources and here they are:
+    <li><a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://blog.csdn.net/qq_27590277/article/details/115451660">【机器学习】一文看懂贝叶斯优化/Bayesian Optimization</a></li>
+    <li><a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://www.cnblogs.com/milliele/p/17782631.html">一文详解贝叶斯优化（Bayesian Optimization）原理</a></li>
+    <li><a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://blog.csdn.net/Leon_winter/article/details/86604553">贝叶斯优化(BayesianOptimization)</a></li>
+    <li><a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://blog.csdn.net/xys430381_1/article/details/103871212">超参数优---贝叶斯优化及其改进（PBT优化）</a></li>
+    <li><a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://leovan.me/cn/2020/06/bayesian-optimization/">贝叶斯优化 (Bayesian Optimization)</a></li>
+    In my opinion, the philosophical idea behind the theory is more attractive. So I left a hole here to be fill after my study on that course. Hope I can remember this hole.[doge]
 </p>
+<br/>
+<h3 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="02 Implementation by MATLAB">02 Implementation by MATLAB</h3>
+<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] ml-5 my-4">
+<p class="text-base text-black/70 dark:text-white/70 leading-[2]">
+    Well, we can put Bayesian Optimization into practice even though we don't understand it through the predefined function of MATLAB, the 'bayesopt'. Here is the official guidance of the function: <a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://ww2.mathworks.cn/help/stats/bayesopt.html?s_tid=srchtitle_site_search_1_bayesopt">bayesopt</a>
+</p>
+<br/>
+<h4 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="01 Whole code display">01 Whole code display</h4>
+    <pre><code class="rounded-2xl">
+% 定义目标函数
+function y = objectiveFcn(x)
+    y = (1 - x.x1)^2 + 100 * (x.x2 - x.x1^2)^2;
+end
+
+% 定义优化变量
+vars = [optimizableVariable('x1', [-2, 2])
+        optimizableVariable('x2', [-2, 2])];
+
+% 执行贝叶斯优化
+results = bayesopt(@objectiveFcn, vars, ...
+                   'AcquisitionFunctionName', 'expected-improvement-plus', ...
+                   'MaxObjectiveEvaluations', 30, ...
+                   'IsObjectiveDeterministic', true, ...
+                   'Verbose', 1);
+
+% 查看结果
+bestPoint = results.XAtMinObjective;
+bestObjective = results.MinObjective;
+
+fprintf('最优解 x1: %.4f, x2: %.4f\n', bestPoint.x1, bestPoint.x2);
+fprintf('最优目标值: %.4f\n', bestObjective);
+    </code></pre>
+<br/>
+<h4 class="mb-3 text-lg font-medium text-black dark:text-white xl:text-2xl" id="02 Parameter explain">02 Parameter explain</h4>
+<p class="text-base text-black/70 dark:text-white/70 leading-[2]">
+<li class="li-tap[1]">'AcquisitionFunctionName': 采集函数的名称, example: expected-improvement-plus, determine the method how bayesopt choose the next acquisition point.</li>
+<li>'MaxObjectiveEvaluations': 最大的目标函数评估次数</li>
+<li>'IsObjectiveDeterministic': 如果目标函数是确定的，则设置为 true；如果有噪声，则设置为 false。</li>
+<li>'Verbose': determine the detailing extend of console output.</li></p>
+</ol>
+
 <!--                            此处可以并排放两张图片-->
 <!--                            <div class="grid gap-5 my-8 sm:grid-cols-2 md:gap-8">-->
 <!--                                <div class="overflow-hidden rounded-xl xl:rounded-2xl">-->
