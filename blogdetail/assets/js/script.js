@@ -314,6 +314,10 @@
         var style_switcher = $('.style-switcher.active');
         if (style_switcher.is(e.target) !== true && style_switcher.has(e.target).length === 0) {
             $(style_switcher).removeClass("active");
+            $('.toggle-btn').addClass("soft");
+        }
+        else{
+            $('.toggle-btn').removeClass("soft");
         }
     });
 
