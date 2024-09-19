@@ -284,7 +284,7 @@
 </div>
 <div>
 <h6 class="text-black dark:text-white">CATEGORY:</h6>
-<p class="text-regular">Technic &amp; Progress</p>
+<p class="text-regular">Experience share</p>
 </div>
 <div>
 <h6 class="text-black dark:text-white">POSTED ON:</h6>
@@ -295,95 +295,62 @@
 <h3 class="mb-3 font-medium text-black dark:text-white" id="01 Background">01 Background</h3>
 <ol class="text-[1rem] text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
 <p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
-    With the stable progress of LLM(Large Language Model) since the launch of ChatGPT by OpenAI, the imagination of the public has been greatly widened, which based on a simple fact: We can communicate with a machine now!
-    <br/><br/>Nevertheless, merely maintaining the level of "word solitaire" is not quite satisfactory: We wish the Artificial Intelligence presented by LLMs can be as intelligent as human.
-    <br/><br/>Or more practically, AI is supposed to act as an assistant for human scientist to push the boundary of Physical theory forward and not just a smart search engine with the ability to summary.
-    <br/><br/>So the first step is to gain a deeper insight about LLM, one of the most prevailing and successful AI format, with the considerable fame of Diffusion, another technic milestone of image generation.
+    The students in China are bounce to know the CUMCM, Chinese Undergraduate Mathmatical Contest in Modeling, usually known as "数模国赛", is a signifcant platform for everyone interested in Mathmatical Modeling. Despite it's the first time we actually enter the final circle and didn't make everything satistfacting, we do have some insight and strategy for you to  bertter understanding the contest.
+    <br/>
+    If you just want the final paper and code, here is the link: <a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://github.com/morethan987/CUMCM2024-A">CUMCM2024-A</a>
 </p>
 </ol>
 <br/>
-<h3 class="mb-3 font-medium text-black dark:text-white" id="02 Implementation">02 Implementation</h3>
+<h3 class="mb-3 font-medium text-black dark:text-white" id="02 Process">02 Process</h3>
 <ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
 <p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
-    By chance, I find an AMAZING GitHub project: <a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://github.com/Lightning-AI/litgpt">Lightning-AI/litgpt</a> which provides a chain of tools to grow a LLM including pretraining, finetuning, deploying and evaluating.
-    Considering the scale of LLM models are stunning, I recommend install the repository in a python virtual environment.
-</p>
-<br/>
-<h4 class="mb-3 font-medium text-black dark:text-white" id="01 Virtual Environment">01 Virtual Environment</h4>
-<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">1. Choose a disk with enough space and make a file folder to contain the litgpt, right-click and open in PowerShell and run this code:</p>
-<pre><code class="rounded-2xl"># 创建虚拟环境
-python -m venv your_env_name
-
-# 指定python版本创建虚拟环境，如果你的python是默认安装路径
-python -m venv your_env_name --python=python3.11
-
-# python是自定义的安装路径
-D:\Python\Python311\python.exe -m venv your_env_name # 创建了一个3.11版本的虚拟环境
-</code></pre>
-<br/>
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
-    Here are some useful parameter you can choose:
-    <br/>--system-site-packages：当使用这个参数时，创建的虚拟环境将包含全局Python环境中的包。这可以避免重复安装一些常用的包。
-    <br/>--clear：如果指定的虚拟环境目录已经存在，使用 '--clear' 会清除目录中的所有内容，然后重新创建虚拟环境。
-    <br/>--help 或 '-h'：显示帮助信息，列出所有可用的参数和它们的说明。
-    <br/>--version：显示 'venv' 模块的版本。
-    <br/>--symlinks：在某些情况下，创建虚拟环境时会使用符号链接代替复制文件。这个参数可以控制这种行为。
-    <br/>--upgrade：如果虚拟环境已经存在，使用 '--upgrade' 会升级其中的Python解释器到当前安装的Python版本。
-    <br/>--with-pip：确保虚拟环境中包含pip工具。从Python 3.4开始，'pip' 已经是Python标准库的一部分，因此这个参数在较新版本的Python中不再需要。
-    <br/>--debug：提供调试信息。
-    <br/>Here is an example:
-</p>
-<pre><code class="rounded-2xl"># 创建一个包含全局包的虚拟环境
-python -m venv your_env_name --system-site-packages
-</code></pre>
-<br/>
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">2. Activate the virtual environment: </p>
-<pre><code class="rounded-2xl"># 激活虚拟环境
-your_env_name/Scripts/activate
-
-# 如果Power Shell版本需要可以添加'.\'在命令之前
-.\your_env_name/Scripts/activate
-</code></pre>
-<br/>
-</ol>
-<h4 class="mb-3 font-medium text-black dark:text-white" id="02 Download litgpt &amp; pretrained LLM">02 Download litgpt &amp; pretrained LLM</h4>
-<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">Now you can follow the official guidance: <a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://github.com/Lightning-AI/litgpt/blob/main/tutorials/0_to_litgpt.md">Zero to LitGPT</a> to run LLM.</p>
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">1. When virtual environment is activated, run: </p>
-<pre><code class="rounded-2xl">pip install 'litgpt[all]'
-</code></pre>
-<br/>
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">2. When you are downloading the open source LLM, for example, through: <br/><code class="text-white bg-black/40 dark:bg-white/30 rounded-[0.25rem]">litgpt download meta-llama\Meta-Llama-3.1-8B</code>
-<br/>You are bounce to get an annoying error traceback:</p>
-<pre><code class="rounded-2xl">OSError: [WinError 126] 找不到指定的模块。 Error loading "E:\LitGPT\litgpt_env\Lib\site-packages\torch\lib\fbgemm.dll" or one of its dependencies.
-</code></pre>
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">A missing dll file should be blamed for this issue and these haven't been an official solve.
-The easiest method to tackle this is to download that <a class="inline-block px-2 py-2 transition duration-300 text-black dark:text-white md:px-5 md: md:py-2 hover:text-theme dark:hover:text-primary-400" href="https://www.dllme.com/dll/files/libomp140_x86_64/00637fe34a6043031c9ae4c6cf0a891d/download">missing file</a>, then simply place it in 'C:\Windows\System32'
+    The detailed progress may varies between different campus, but generally includes three parts before participating in the actual CUMCM, for the reason that you represents your school's fame.
+    <br/>
+    <p class="text-[1rem] text-black/70 dark:text-white leading-[2]">Campus Contest -> Summer Camp Training -> Practice Contest -> CUMCM</p>
 </p>
 </ol>
-<h4 class="mb-3 font-medium text-black dark:text-white" id="03 Run Pretrained LLM">03 Run Pretrained LLM</h4>
-<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">1. Through PowerShell. <br/>Activate the virtual environment, run: </p>
-<pre><code class="rounded-2xl">litgpt chat microsoft/phi-2
-</code></pre>
-<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">1. Through Python API. <br/>Here is a templet below: </p>
-<pre><code class="rounded-2xl">from litgpt import LLM
 
-llm = LLM.load("microsoft/phi-2") # 如果路径识别失败，改用：'llm = LLM.load("path/to/my/local/checkpoint")'
-text = llm.generate("What do Llamas eat?", top_k=1, max_new_tokens=30)
-print(text)
-</code></pre>
-</ol>
-</ol>
 <br/>
-<h3 class="mb-3 font-medium text-black dark:text-white" id="03 Result">03 Result</h3>
+
+<h3 class="mb-3 font-medium text-black dark:text-white" id="03 Some Tips">03 Some Tips</h3>
 <ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
 <p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
-        Unfortunately, my hardware doesn't allow me to run a LLM more than 1B parameters, which means only tiny but 'low-scored' LLM model can be run on my computer even without Chinese support.
-        <br/>So I can only write a tool or repository introduction now. When I have some break through I will come back to write.
-    </p>
+    The basic principles are useless to mention repetitively, here are some details that only exclusive to the participants.
+</p>
+<br/>
+<h4 class="mb-3 font-medium text-black dark:text-white" id="01 No Distinct Task">01 No Distinct Task</h4>
+<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
+<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
+    Naturally we will distribute different task to evey teamate, scheduling everyone can only do his own job. However, this plan is inpractical since there are ONLY THREE in your team but ABOUNDANCE of detailed tasks, which means everyone should be multi-tasked. For example, you now need to put a figure in your paper to visulize your result. According to the original plan, the figure should be generated by the coder and uploaded to the paper by the writer, while the model-maker doing nothing after the modeling period. It's terriblly inefficent.
+    <br/>
+    More practically, each of your teamate should be familiar with the whole process of the contest, in other word, everyone is capable to finish the contest individually with enough time. Only in this way can your team work without obvious wast of time.
+</p>
+<br/>
 </ol>
+
+<h4 class="mb-3 font-medium text-black dark:text-white" id="02 More Modeling Time">02 More Modeling Time</h4>
+<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
+<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
+    Modeling is a progress of trail and error, attempting to balance the simplicity and reality. So it's reasonable to take more time to construct a correct model. Unfortunately, under the pressure of deadline, we attend to put less effort on modeling and more focusing on coding. Intuitively that matters nothing, but how much time will you pay if your model is not corresponse to the subject ? 
+    <br/>
+    A real example is me, whose model had a tiny mistake. That tiny mistake leads to a catastrophe: we had no time to upload our result to the paper ! 
+    <br/>
+    So its wise to put more time into modeling, avoid ANY misunderstanding of subject.
+</p>
+</ol>
+
+<h4 class="mb-3 font-medium text-black dark:text-white" id="03 Paralled Coding">03 Paralled Coding</h4>
+<ol class="text-regular text-left text-black/70 dark:text-white/70 leading-[2] list-decimal ml-5 my-4">
+<p class="text-[1rem] text-black/70 dark:text-white/70 leading-[2]">
+    Usually we will neglect the power of paralled coding, since it's rare to encounter a situation that turly shows its vale. For example, if your code only takes 1 minue to complete, it does have no reason  to make it paralled. What if 1 hour ? Now you should seriously take that problem into consideration.
+    <br/>
+    After the bitter experience of this year's CUMCM, we strongly recommend the MATLAB code:  'parfor'.
+    Only three letters more than commen 'for', but it may save your code. Don't ask me why I know that. It's a 'bloody' lesson.[〒▽〒]
+</p>
+</ol>
+</ol>
+
+
 <!--                            此处可以并排放两张图片-->
 <!--                            <div class="grid gap-5 my-8 sm:grid-cols-2 md:gap-8">-->
 <!--                                <div class="overflow-hidden rounded-xl xl:rounded-2xl">-->
