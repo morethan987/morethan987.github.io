@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <atom:link href="https://morethan987.github.io/series/%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>欢迎来到 Blowfish</title>
+      <link>https://morethan987.github.io/docs/welcome/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/docs/welcome/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  Blowfish 包含了大量的特性功能。
+&lt;/div&gt;
+
+&lt;p&gt;Blowfish 的目标是开发一个简单且轻量级的主题。 该主题是 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/nunocoracao/congo&#34;&gt;Congo&lt;/a&gt; 的一个分支，并进行了大量扩展。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/docs/welcome/featured.svg" />
+    </item>
     
     <item>
       <title>Local Overleaf</title>
@@ -17,20 +31,6 @@
       <guid>https://morethan987.github.io/blog/advanced-customisation/</guid>
       <description>&lt;p&gt;您可以通过多种方式对 Blowfish 进行高级自定义。请阅读下文，了解更多可自定义的内容以及实现想要效果的最佳方法。&lt;/p&gt;</description>
       
-    </item>
-    
-    <item>
-      <title>欢迎来到 Blowfish</title>
-      <link>https://morethan987.github.io/docs/welcome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/docs/welcome/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Blowfish 包含了大量的特性功能。
-&lt;/div&gt;
-
-&lt;p&gt;Blowfish 的目标是开发一个简单且轻量级的主题。 该主题是 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/nunocoracao/congo&#34;&gt;Congo&lt;/a&gt; 的一个分支，并进行了大量扩展。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/docs/welcome/featured.svg" />
     </item>
     
     <item>
