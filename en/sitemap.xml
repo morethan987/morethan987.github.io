@@ -19,18 +19,19 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/en/blog/advanced-customisation/</loc>
+    <loc>https://morethan987.github.io/en/blog/localoverleaf/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-cn"
-      href="https://morethan987.github.io/blog/advanced-customisation/"
+      href="https://morethan987.github.io/blog/localoverleaf/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://morethan987.github.io/en/blog/advanced-customisation/"
+      href="https://morethan987.github.io/en/blog/localoverleaf/"
     />
   </url>
   <url>
@@ -333,6 +334,54 @@
       rel="alternate"
       hreflang="en"
       href="https://morethan987.github.io/en/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/blog/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/latex/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/latex/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/latex/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/overleaf/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/overleaf/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/overleaf/"
     />
   </url>
   <url>
@@ -838,21 +887,6 @@
     <loc>https://morethan987.github.io/en/tags/analytics/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/blog/</loc>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/blog/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/blog/"
-    />
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/comments/</loc>
