@@ -155,6 +155,22 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/blog/bayesianopt/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/bayesianopt/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/bayesianopt/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/docs/thumbnails/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -245,22 +261,6 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/series/</loc>
-    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/series/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/series/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/tags/</loc>
     <lastmod>2025-01-01T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -321,6 +321,22 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/series/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/series/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/series/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/tags/%E6%96%B0%E6%89%8B/</loc>
     <lastmod>2025-01-01T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -328,7 +344,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/</loc>
-    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -341,6 +357,44 @@
       hreflang="zh-cn"
       href="https://morethan987.github.io/blog/"
     />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/math/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/math/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/math/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/matlab/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/matlab/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/matlab/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/latex/</loc>
@@ -373,6 +427,12 @@
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/overleaf/"
     />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/blowfish/</loc>

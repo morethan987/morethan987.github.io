@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Series on More&#39;s awesome website</title>
+    <title>Seires on More&#39;s awesome website</title>
     <link>https://morethan987.github.io/en/series/</link>
-    <description>Recent content in Series on More&#39;s awesome website</description>
+    <description>Recent content in Seires on More&#39;s awesome website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
@@ -17,6 +17,26 @@
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/series/documentation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MathModel</title>
+      <link>https://morethan987.github.io/en/series/mathmodel/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/series/mathmodel/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Operation</title>
+      <link>https://morethan987.github.io/en/series/operation/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/series/operation/</guid>
       <description></description>
       
     </item>

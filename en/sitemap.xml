@@ -155,6 +155,22 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/blog/bayesianopt/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/bayesianopt/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/bayesianopt/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/docs/thumbnails/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -338,7 +354,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/blog/</loc>
-    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -350,6 +366,44 @@
       rel="alternate"
       hreflang="en"
       href="https://morethan987.github.io/en/blog/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/math/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/math/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/math/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/mathmodel/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/matlab/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/matlab/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/matlab/"
     />
   </url>
   <url>
@@ -367,6 +421,12 @@
       hreflang="en"
       href="https://morethan987.github.io/en/tags/latex/"
     />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/operation/</loc>
+    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/overleaf/</loc>
