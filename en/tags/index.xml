@@ -9,14 +9,44 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CUMCM</title>
+      <link>https://morethan987.github.io/en/tags/cumcm/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/cumcm/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Math</title>
       <link>https://morethan987.github.io/en/tags/math/</link>
-      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/tags/math/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://morethan987.github.io/en/tags/python/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/python/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>VirtualEnv</title>
+      <link>https://morethan987.github.io/en/tags/virtualenv/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/virtualenv/</guid>
       <description></description>
       
     </item>

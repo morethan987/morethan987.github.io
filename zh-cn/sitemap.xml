@@ -35,8 +35,40 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/blog/python-virtual-env/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/python-virtual-env/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/python-virtual-env/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/blog/cumcm2024/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/cumcm2024/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/cumcm2024/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/blog/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -51,8 +83,24 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/tags/cumcm/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/cumcm/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/cumcm/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/tags/math/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -67,24 +115,8 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/tags/matlab/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/matlab/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/matlab/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/authors/morethan/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -100,7 +132,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -116,7 +148,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -132,13 +164,13 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/series/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -154,7 +186,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/authors/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -166,6 +198,60 @@
       rel="alternate"
       hreflang="zh-cn"
       href="https://morethan987.github.io/authors/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/python/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/python/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/python/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/virtualenv/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/virtualenv/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/virtualenv/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/matlab/</loc>
+    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/matlab/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/matlab/"
     />
   </url>
   <url>
@@ -199,12 +285,6 @@
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/overleaf/"
     />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2024-07-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/categories/</loc>
