@@ -35,19 +35,19 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/blog/python-virtual-env/</loc>
+    <loc>https://morethan987.github.io/blog/pythontips/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://morethan987.github.io/en/blog/python-virtual-env/"
+      href="https://morethan987.github.io/en/blog/pythontips/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="zh-cn"
-      href="https://morethan987.github.io/blog/python-virtual-env/"
+      href="https://morethan987.github.io/blog/pythontips/"
     />
   </url>
   <url>
@@ -214,22 +214,6 @@
       rel="alternate"
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/python/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/tags/virtualenv/</loc>
-    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/virtualenv/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/virtualenv/"
     />
   </url>
   <url>

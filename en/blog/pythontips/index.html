@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
   data-auto-appearance="true"><head>
   <meta charset="utf-8" />
   
-  <meta http-equiv="content-language" content="zh-cn" />
+  <meta http-equiv="content-language" content="en" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Python虚拟环境 &middot; Morethan 小站</title>
-  <meta name="title" content="Python虚拟环境 &middot; Morethan 小站" />
+  <title>Python Tpis &middot; More&#39;s awesome website</title>
+  <meta name="title" content="Python Tpis &middot; More&#39;s awesome website" />
   
-  <meta name="description" content="Python虚拟环境配置操作" />
-  <meta name="keywords" content="Python, VirtualEnv, " />
+  <meta name="description" content="A set of Python tips" />
+  <meta name="keywords" content="Python, " />
   
   
-  <link rel="canonical" href="https://morethan987.github.io/blog/python-virtual-env/" />
+  <link rel="canonical" href="https://morethan987.github.io/en/blog/pythontips/" />
   
   
   
@@ -67,25 +67,24 @@
   
   
   
-  <meta property="og:url" content="https://morethan987.github.io/blog/python-virtual-env/">
-  <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="Python虚拟环境">
-  <meta property="og:description" content="Python虚拟环境配置操作">
-  <meta property="og:locale" content="zh_cn">
+  <meta property="og:url" content="https://morethan987.github.io/en/blog/pythontips/">
+  <meta property="og:site_name" content="More&#39;s awesome website">
+  <meta property="og:title" content="Python Tpis">
+  <meta property="og:description" content="A set of Python tips">
+  <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2024-08-10T00:00:00+00:00">
     <meta property="article:modified_time" content="2024-08-10T00:00:00+00:00">
     <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="VirtualEnv">
-    <meta property="og:image" content="https://morethan987.github.io/blog/python-virtual-env/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/localoverleaf/">
+    <meta property="og:image" content="https://morethan987.github.io/blog/pythontips/featured.svg">
+      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/localoverleaf/">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/python-virtual-env/featured.svg">
-  <meta name="twitter:title" content="Python虚拟环境">
-  <meta name="twitter:description" content="Python虚拟环境配置操作">
+  <meta name="twitter:image" content="https://morethan987.github.io/blog/pythontips/featured.svg">
+  <meta name="twitter:title" content="Python Tpis">
+  <meta name="twitter:description" content="A set of Python tips">
 
   
   <script type="application/ld+json">
@@ -93,12 +92,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "Python虚拟环境",
-    "headline": "Python虚拟环境",
-    "description": "Python虚拟环境配置操作",
-    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003e引用文献 \n    \u003cdiv id=\u0022%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇\u003c\/p\u003e",
-    "inLanguage": "zh-cn",
-    "url" : "https:\/\/morethan987.github.io\/blog\/python-virtual-env\/",
+    "name": "Python Tpis",
+    "headline": "Python Tpis",
+    "description": "A set of Python tips",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eVirtual Env \n    \u003cdiv id=\u0022virtual-env\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#virtual-env\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\n\u003ch3 class=\u0022relative group\u0022\u003eCreat \n    \u003cdiv id=\u0022creat\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#creat\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h3\u003e\n\u003cp\u003eSome tipical code 👇\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "https:\/\/morethan987.github.io\/en\/blog\/pythontips\/",
     "author" : {
       "@type": "Person",
       "name": "Morethan"
@@ -109,10 +108,10 @@
     
     "dateModified": "2024-08-10T00:00:00\u002b00:00",
     
-    "keywords": ["Python","VirtualEnv"],
+    "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "528"
+    "wordCount": "149"
   }]
   </script>
 
@@ -200,7 +199,7 @@
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a>
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
   </div>
   
   
@@ -214,12 +213,12 @@
     
     
     <div>
-        <a href="/" class="flex">
-            <span class="sr-only">Morethan 小站</span>
+        <a href="/en/" class="flex">
+            <span class="sr-only">More&rsquo;s awesome website</span>
 
             
             <img src="/img/logo.png" width="253" height="253"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="Morethan 小站" />
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="More&#39;s awesome website" />
             
 
         </a>
@@ -229,7 +228,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Morethan 小站</a>
+            <a href="/en/" class="text-base font-medium text-gray-500 hover:text-gray-900">More&rsquo;s awesome website</a>
             
 
         </nav>
@@ -238,10 +237,10 @@
             
             
             
-  <a href="/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/en/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="文章">
-        文章
+    <p class="text-base font-medium" title="Blog">
+        Blog
     </p>
 </a>
 
@@ -249,10 +248,10 @@
 
             
             
-  <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/en/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="标签">
-        标签
+    <p class="text-base font-medium" title="Tags">
+        Tags
     </p>
 </a>
 
@@ -260,10 +259,10 @@
 
             
             
-  <a href="/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/en/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="系列">
-        系列
+    <p class="text-base font-medium" title="Series">
+        Series
     </p>
 </a>
 
@@ -271,10 +270,10 @@
 
             
             
-  <a href="/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/en/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="作者">
-        作者
+    <p class="text-base font-medium" title="Authors">
+        Authors
     </p>
 </a>
 
@@ -318,20 +317,20 @@
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python虚拟环境">简体中文</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python Tpis">EN</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/python-virtual-env/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python Virtual Env">
+        <a href="/en/blog/pythontips/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python Tpis">
             English
           </p>
         </a>
         
-        <a href="/blog/python-virtual-env/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python虚拟环境">
+        <a href="/blog/pythontips/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python小技巧">
             简体中文
           </p>
         </a>
@@ -405,20 +404,20 @@
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python虚拟环境">简体中文</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python Tpis">EN</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/python-virtual-env/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python Virtual Env">
+        <a href="/en/blog/pythontips/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python Tpis">
             English
           </p>
         </a>
         
-        <a href="/blog/python-virtual-env/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python虚拟环境">
+        <a href="/blog/pythontips/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Python小技巧">
             简体中文
           </p>
         </a>
@@ -507,10 +506,10 @@
 
                     
   <li class="mt-1">
-    <a href="/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/en/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="文章">
-            文章
+        <p class="text-bg font-bg" title="Blog">
+            Blog
         </p>
     </a>
 </li>
@@ -522,10 +521,10 @@
 
                     
   <li class="mt-1">
-    <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/en/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="标签">
-            标签
+        <p class="text-bg font-bg" title="Tags">
+            Tags
         </p>
     </a>
 </li>
@@ -537,10 +536,10 @@
 
                     
   <li class="mt-1">
-    <a href="/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/en/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="系列">
-            系列
+        <p class="text-bg font-bg" title="Series">
+            Series
         </p>
     </a>
 </li>
@@ -552,10 +551,10 @@
 
                     
   <li class="mt-1">
-    <a href="/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/en/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="作者">
-            作者
+        <p class="text-bg font-bg" title="Authors">
+            Authors
         </p>
     </a>
 </li>
@@ -645,7 +644,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/blog/python-virtual-env/background.svg);">
+    style="background-image:url(/blog/pythontips/background.svg);">
     
 
 
@@ -680,8 +679,8 @@
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/"
-      >欢迎来到Morethan的小站</a
+      href="/en/"
+      >Welcome to More&#39;s website</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -689,7 +688,7 @@
   <li class="inline ">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/blog/"
+      href="/en/blog/"
       >Blogs</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
@@ -698,8 +697,8 @@
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/blog/python-virtual-env/"
-      >Python虚拟环境</a
+      href="/en/blog/pythontips/"
+      >Python Tpis</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -708,7 +707,7 @@
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Python虚拟环境
+      Python Tpis
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -761,7 +760,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -777,7 +776,7 @@
       
     
   
-  <span id="views_blog/py-virtual-env/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/pytips/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -802,7 +801,7 @@
       
     
   
-  <span id="likes_blog/py-virtual-env/index.md"
+  <span id="likes_blog/pytips/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -845,11 +844,11 @@
 
 <span class="mb-[2px]">
   <a
-    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/py-virtual-env/index.zh-cn.md"
+    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/pytips/index.en.md"
     class="text-lg hover:text-primary-500"
     rel="noopener noreferrer"
     target="_blank"
-    title="编辑内容"
+    title="Edit content"
     ><span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -866,9 +865,9 @@
 <span class="mb-[2px]">
     <span id="zen-mode-button"
           class="text-lg hover:text-primary-500"
-          title=""
-          data-title-i18n-disable=""
-          data-title-i18n-enable="">
+          title="Enable zen mode"
+          data-title-i18n-disable="Enable zen mode"
+          data-title-i18n-enable="Disable zen mode">
         <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -892,7 +891,7 @@
   
   
   
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
   
   
   
@@ -921,18 +920,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/python/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/python/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Python
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/virtualenv/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    VirtualEnv
   </span>
 </span>
   </span>
@@ -977,14 +968,14 @@
   <div class="place-self-center">
     
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-      作者
+      Author
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       Morethan
     </div>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">计算机、物理与AI理工男</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">Computer, Physic &amp; AI</div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -1036,23 +1027,16 @@
   class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    目录
+    Table of Contents
   </summary>
   <div
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#引用文献">引用文献</a></li>
-    <li><a href="#优点和算法原理">优点和算法原理</a>
+    <li><a href="#virtual-env">Virtual Env</a>
       <ul>
-        <li><a href="#优点">优点</a></li>
-        <li><a href="#算法原理">算法原理</a></li>
-      </ul>
-    </li>
-    <li><a href="#matlab用法">MATLAB用法</a>
-      <ul>
-        <li><a href="#代码一览">代码一览</a></li>
-        <li><a href="#参数说明">参数说明</a></li>
+        <li><a href="#creat">Creat</a></li>
+        <li><a href="#activate">Activate</a></li>
       </ul>
     </li>
   </ul>
@@ -1062,23 +1046,16 @@
 <details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
   <summary
     class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    目录
+    Table of Contents
   </summary>
   <div
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#引用文献">引用文献</a></li>
-    <li><a href="#优点和算法原理">优点和算法原理</a>
+    <li><a href="#virtual-env">Virtual Env</a>
       <ul>
-        <li><a href="#优点">优点</a></li>
-        <li><a href="#算法原理">算法原理</a></li>
-      </ul>
-    </li>
-    <li><a href="#matlab用法">MATLAB用法</a>
-      <ul>
-        <li><a href="#代码一览">代码一览</a></li>
-        <li><a href="#参数说明">参数说明</a></li>
+        <li><a href="#creat">Creat</a></li>
+        <li><a href="#activate">Activate</a></li>
       </ul>
     </li>
   </ul>
@@ -1163,15 +1140,15 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        技术流程 - 这篇文章属于一个选集。
+        Operation - This article is part of a series.
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://morethan987.github.io/blog/localoverleaf/">
-            § 1: 本地 OverLeaf 部署
+        <a href="https://morethan987.github.io/en/blog/localoverleaf/">
+            Part 1: Local OverLeaf Deployment
         </a>
     </div>
     
@@ -1179,7 +1156,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 2: 本文
+        Part 2: This Article
     </div>
     
     
@@ -1192,160 +1169,56 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h2 class="relative group">引用文献 
-    <div id="%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE" class="anchor"></div>
+<h2 class="relative group">Virtual Env 
+    <div id="virtual-env" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇</p>
-<ul>
-<li>
-<p><a href="https://blog.csdn.net/qq_27590277/article/details/115451660" target="_blank">【机器学习】一文看懂贝叶斯优化/Bayesian Optimization</a></p>
-</li>
-<li>
-<p><a href="https://www.cnblogs.com/milliele/p/17782631.html" target="_blank">一文详解贝叶斯优化（Bayesian Optimization）原理</a></p>
-</li>
-<li>
-<p><a href="https://blog.csdn.net/Leon_winter/article/details/86604553" target="_blank">贝叶斯优化(BayesianOptimization)</a></p>
-</li>
-<li>
-<p><a href="https://blog.csdn.net/xys430381_1/article/details/103871212" target="_blank">超参数优&mdash;贝叶斯优化及其改进（PBT优化）</a></p>
-</li>
-<li>
-<p><a href="https://leovan.me/cn/2020/06/bayesian-optimization/" target="_blank">贝叶斯优化 (Bayesian Optimization)</a></p>
-</li>
-<li>
-<p><a href="https://ww2.mathworks.cn/help/stats/bayesopt.html?s_tid=srchtitle_site_search_1_bayesopt" target="_blank">MATLAB官方文档</a></p>
-</li>
-</ul>
-
-
-<h2 class="relative group">优点和算法原理 
-    <div id="%E4%BC%98%E7%82%B9%E5%92%8C%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BC%98%E7%82%B9%E5%92%8C%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>这里重点描述贝叶斯优化的优点以及其算法原理。如果你只关注“怎么用”，可以先了解贝叶斯优化的优点，然后跳转到<a href="#matlab用法">#MATLAB用法</a></p>
-
-
-<h3 class="relative group">优点 
-    <div id="%E4%BC%98%E7%82%B9" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BC%98%E7%82%B9" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-
-<h3 class="relative group">算法原理 
-    <div id="%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-
-<h2 class="relative group">MATLAB用法 
-    <div id="matlab%E7%94%A8%E6%B3%95" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#matlab%E7%94%A8%E6%B3%95" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#virtual-env" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">代码一览 
-    <div id="%E4%BB%A3%E7%A0%81%E4%B8%80%E8%A7%88" class="anchor"></div>
+<h3 class="relative group">Creat 
+    <div id="creat" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BB%A3%E7%A0%81%E4%B8%80%E8%A7%88" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#creat" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 定义目标函数</span>
-</span></span><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>y <span class="p">=</span><span class="w"> </span><span class="nf">objectiveFcn</span><span class="p">(</span>x<span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">y</span> <span class="p">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">.</span><span class="n">x1</span><span class="p">)</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x</span><span class="p">.</span><span class="n">x1</span>^<span class="mi">2</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span>
+<p>Some tipical code 👇</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># creat a virtual env named &#34;your_env_name&#34;</span>
+</span></span><span class="line"><span class="cl">python -m venv your_env_name
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">% 定义优化变量</span>
-</span></span><span class="line"><span class="cl"><span class="n">vars</span> <span class="p">=</span> <span class="p">[</span><span class="n">optimizableVariable</span><span class="p">(</span><span class="s">&#39;x1&#39;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">        <span class="n">optimizableVariable</span><span class="p">(</span><span class="s">&#39;x2&#39;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])];</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># assign the version of python, make sure your python in default direction</span>
+</span></span><span class="line"><span class="cl">python -m venv your_env_name --python<span class="o">=</span>python3.11
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">% 执行贝叶斯优化</span>
-</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="p">=</span> <span class="n">bayesopt</span><span class="p">(@</span><span class="n">objectiveFcn</span><span class="p">,</span> <span class="n">vars</span><span class="p">,</span> <span class="c">...</span>
-</span></span><span class="line"><span class="cl">                   <span class="s">&#39;AcquisitionFunctionName&#39;</span><span class="p">,</span> <span class="s">&#39;expected-improvement-plus&#39;</span><span class="p">,</span> <span class="c">...</span>
-</span></span><span class="line"><span class="cl">                   <span class="s">&#39;MaxObjectiveEvaluations&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="c">...</span>
-</span></span><span class="line"><span class="cl">                   <span class="s">&#39;IsObjectiveDeterministic&#39;</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="c">...</span>
-</span></span><span class="line"><span class="cl">                   <span class="s">&#39;Verbose&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">% 查看结果</span>
-</span></span><span class="line"><span class="cl"><span class="n">bestPoint</span> <span class="p">=</span> <span class="n">results</span><span class="p">.</span><span class="n">XAtMinObjective</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">bestObjective</span> <span class="p">=</span> <span class="n">results</span><span class="p">.</span><span class="n">MinObjective</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;最优解 x1: %.4f, x2: %.4f\n&#39;</span><span class="p">,</span> <span class="n">bestPoint</span><span class="p">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">bestPoint</span><span class="p">.</span><span class="n">x2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;最优目标值: %.4f\n&#39;</span><span class="p">,</span> <span class="n">bestObjective</span><span class="p">);</span>
-</span></span></code></pre></div>
-
-<h3 class="relative group">参数说明 
-    <div id="%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
+</span></span><span class="line"><span class="cl"><span class="c1"># simply list the absolute direction of python, simple and efficient</span>
+</span></span><span class="line"><span class="cl">D:<span class="se">\P</span>ython<span class="se">\P</span>ython311<span class="se">\p</span>ython.exe -m venv your_env_name
+</span></span></code></pre></div><p>More parameters you may need for a customized virtual env. 🤔</p>
 <table>
   <thead>
       <tr>
-          <th>Params</th>
-          <th>Meaning</th>
+          <th><code>--system-site-packages</code></th>
+          <th>Give the virtual environment access to the system site-packages dir.</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><code>AcquisitionFunctionName</code></td>
-          <td>选择采集函数，这决定了算法在每次采样之后如何选取下一个采样点</td>
+          <td><code>--clear</code></td>
+          <td>Delete the contents of the environment directory if it already exists, before environment creation.</td>
       </tr>
       <tr>
-          <td><code>MaxObjectiveEvaluations</code></td>
-          <td>最大迭代轮次</td>
+          <td><code>--version</code></td>
+          <td>print the python version of the env</td>
       </tr>
       <tr>
-          <td><code>IsObjectiveDeterministic</code></td>
-          <td>如果目标函数是确定的，不包含噪声，则设置为 <code>true</code> ；否则设置为 <code>false</code></td>
-      </tr>
-      <tr>
-          <td><code>Verbose</code></td>
-          <td>决定了结果输出的详细程度，所有的输出可能包含多张图表</td>
-      </tr>
-  </tbody>
-</table>
-<p>每个参数具体的可选值见官方文档: <a href="https://ww2.mathworks.cn/help/stats/bayesopt.html?s_tid=srchtitle_site_search_1_bayesopt" target="_blank">bayesopt</a>；官方写的相当细致，还有很多样例。</p>
-
+          <td>
   
 
 
@@ -1373,10 +1246,29 @@
   <span
     
       class="dark:text-neutral-300"
-    >数学建模人必会技能之一就是读文档😝</span>
+    >All the detailed expaination of the parameters can be got by the code <code>python -m venv -h</code>. No need to search everywhere~😆</span>
 </div>
+</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
 
 
+<h3 class="relative group">Activate 
+    <div id="activate" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#activate" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The virtual env is defaulted not active. In the direction <code>your_env_name/Scripts/</code> will be a file named <code>activate</code>. Run it with your cmd.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># activate virtual env</span>
+</span></span><span class="line"><span class="cl">your_env_name/Scripts/activate
+</span></span></code></pre></div>
           
           
           
@@ -1389,15 +1281,15 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        技术流程 - 这篇文章属于一个选集。
+        Operation - This article is part of a series.
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://morethan987.github.io/blog/localoverleaf/">
-            § 1: 本地 OverLeaf 部署
+        <a href="https://morethan987.github.io/en/blog/localoverleaf/">
+            Part 1: Local OverLeaf Deployment
         </a>
     </div>
     
@@ -1405,7 +1297,7 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 2: 本文
+        Part 2: This Article
     </div>
     
     
@@ -1421,9 +1313,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/python-virtual-env/&amp;title=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title="分享到 LinkedIn"
-      aria-label="分享到 LinkedIn"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/en/blog/pythontips/&amp;title=Python%20Tpis"
+      title="Share on LinkedIn"
+      aria-label="Share on LinkedIn"
       >
       
 
@@ -1440,9 +1332,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/python-virtual-env/&amp;text=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title="分享到 Twitter"
-      aria-label="分享到 Twitter"
+      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/en/blog/pythontips/&amp;text=Python%20Tpis"
+      title="Tweet on Twitter"
+      aria-label="Tweet on Twitter"
       >
       
 
@@ -1458,9 +1350,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&#43;https://morethan987.github.io/blog/python-virtual-env/"
-      title=""
-      aria-label=""
+      href="https://bsky.app/intent/compose?text=Python%20Tpis&#43;https://morethan987.github.io/en/blog/pythontips/"
+      title="Post on Bluesky"
+      aria-label="Post on Bluesky"
       >
       
 
@@ -1476,9 +1368,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/python-virtual-env/&amp;resubmit=true&amp;title=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title="提交到 Reddit"
-      aria-label="提交到 Reddit"
+      href="https://reddit.com/submit/?url=https://morethan987.github.io/en/blog/pythontips/&amp;resubmit=true&amp;title=Python%20Tpis"
+      title="Submit to Reddit"
+      aria-label="Submit to Reddit"
       >
       
 
@@ -1495,9 +1387,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/python-virtual-env/&amp;resubmit=true&amp;title=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title=""
-      aria-label=""
+      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/en/blog/pythontips/&amp;resubmit=true&amp;title=Python%20Tpis"
+      title="Share via WhatsApp"
+      aria-label="Share via WhatsApp"
       >
       
 
@@ -1514,9 +1406,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://morethan987.github.io/blog/python-virtual-env/&amp;resubmit=true&amp;title=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title=""
-      aria-label=""
+      href="https://t.me/share/url?url=https://morethan987.github.io/en/blog/pythontips/&amp;resubmit=true&amp;title=Python%20Tpis"
+      title="Share via Telegram"
+      aria-label="Share via Telegram"
       >
       
 
@@ -1533,9 +1425,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/python-virtual-env/&amp;description=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title="钉到 Pinterest"
-      aria-label="钉到 Pinterest"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/en/blog/pythontips/&amp;description=Python%20Tpis"
+      title="Pin on Pinterest"
+      aria-label="Pin on Pinterest"
       >
       
 
@@ -1552,9 +1444,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/python-virtual-env/&amp;quote=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title="分享到 Facebook"
-      aria-label="分享到 Facebook"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/en/blog/pythontips/&amp;quote=Python%20Tpis"
+      title="Share on Facebook"
+      aria-label="Share on Facebook"
       >
       
 
@@ -1571,9 +1463,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://morethan987.github.io/blog/python-virtual-env/&amp;subject=Python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83"
-      title="通过电子邮件发送"
-      aria-label="通过电子邮件发送"
+      href="mailto:?body=https://morethan987.github.io/en/blog/pythontips/&amp;subject=Python%20Tpis"
+      title="Send via email"
+      aria-label="Send via email"
       >
       
 
@@ -1592,208 +1484,12 @@
         
 
 
-<h2 class="mt-8 text-2xl font-extrabold mb-10">相关文章</h2>
+<h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
   
   
 
-  <a href="/blog/bayesianopt/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/bayesianopt/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/bayesianopt/">贝叶斯优化</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2024-08-05T00:00:00&#43;00:00">2024-08-05</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/BayesianOPT/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/BayesianOPT/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/math/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Math
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/matlab/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    MATLAB
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/cumcm/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    CUMCM
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/blog/localoverleaf/" class="min-w-full">
+  <a href="/en/blog/localoverleaf/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
@@ -1805,7 +1501,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/localoverleaf/">本地 OverLeaf 部署</div>
+          href="/en/blog/localoverleaf/">Local OverLeaf Deployment</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1850,7 +1546,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-07-12T00:00:00&#43;00:00">2024-07-12</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-07-12T00:00:00&#43;00:00">12 July 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1915,7 +1611,7 @@
   
   
   
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
   
   
   
@@ -1944,7 +1640,7 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/overleaf/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/overleaf/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Overleaf
@@ -1952,10 +1648,206 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/latex/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/latex/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     LaTeX
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/en/blog/bayesianopt/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/bayesianopt/featured.svg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/en/blog/bayesianopt/">Bayesian Optimization</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-08-05T00:00:00&#43;00:00">5 August 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/BayesianOPT/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/BayesianOPT/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/math/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Math
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/matlab/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MATLAB
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/cumcm/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    CUMCM
   </span>
 </span>
   </span>
@@ -1995,8 +1887,8 @@
           
         
       <script>
-        var oid = "views_blog\/py-virtual-env\/index.md"
-        var oid_likes = "likes_blog\/py-virtual-env\/index.md"
+        var oid = "views_blog\/pytips\/index.md"
+        var oid_likes = "likes_blog\/pytips\/index.md"
       </script>
       
       
@@ -2016,7 +1908,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/blog/cumcm2024/">
+            <a class="flex group mr-3" href="/en/blog/cumcm2024/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -2028,11 +1920,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >CUMCM 2024总结</span
+                  >CUMCM 2024 Summary</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-09-12T00:00:00&#43;00:00">2024-09-12</time>
+                    <time datetime="2024-09-12T00:00:00&#43;00:00">12 September 2024</time>
                   
                 </span>
               </span>
@@ -2041,15 +1933,15 @@
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/blog/bayesianopt/">
+            <a class="flex text-right group ml-3" href="/en/blog/bayesianopt/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >贝叶斯优化</span
+                  >Bayesian Optimization</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-08-05T00:00:00&#43;00:00">2024-08-05</time>
+                    <time datetime="2024-08-05T00:00:00&#43;00:00">5 August 2024</time>
                   
                 </span>
               </span>
@@ -2076,7 +1968,7 @@
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
   <a href="#the-top"
     class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="返回顶部" title="返回顶部">
+    aria-label="Scroll to top" title="Scroll to top">
     &uarr;
   </a>
 </div>
@@ -2088,18 +1980,18 @@
       <ul class="flex flex-col list-none sm:flex-row">
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
-            title="标签">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en/tags/"
+            title="Tags">
             
-            标签
+            Tags
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/authors/"
-            title="作者">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en/authors/"
+            title="Authors">
             
-            作者
+            Authors
           </a>
         </li>
         
@@ -2123,9 +2015,9 @@
     <p class="text-xs text-neutral-500 dark:text-neutral-400">
       
       
-      由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
     </p>
     
 
@@ -2150,7 +2042,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://morethan987.github.io/"
+  data-url="https://morethan987.github.io/en/"
   style="z-index:500"
 >
   <div
@@ -2173,14 +2065,14 @@
           type="search"
           id="search-query"
           class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
-          placeholder="搜索"
+          placeholder="Search"
           tabindex="0"
         />
       </form>
       <button
         id="close-search-button"
         class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-        title="关闭 (Esc)"
+        title="Close (Esc)"
       >
         
 
