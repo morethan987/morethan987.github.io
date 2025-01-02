@@ -28,7 +28,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
     </item>
     
     <item>
@@ -48,7 +48,7 @@
     
 &lt;/h2&gt;
 &lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     
     <item>
@@ -68,7 +68,7 @@
     
 &lt;/h2&gt;
 &lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/python-virtual-env/featured.svg" />
     </item>
     
     <item>
@@ -88,7 +88,7 @@
     
 &lt;/h2&gt;
 &lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
   </channel>
