@@ -111,7 +111,7 @@
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "326"
+    "wordCount": "331"
   }]
   </script>
 
@@ -1204,11 +1204,15 @@
 <table>
   <thead>
       <tr>
-          <th><code>--system-site-packages</code></th>
-          <th>创建的虚拟环境将包含全局Python环境中的包，这可以避免重复安装一些常用的包</th>
+          <th>参数名</th>
+          <th>含义</th>
       </tr>
   </thead>
   <tbody>
+      <tr>
+          <td><code>--system-site-packages</code></td>
+          <td>创建的虚拟环境将包含全局Python环境中的包，这可以避免重复安装一些常用的包</td>
+      </tr>
       <tr>
           <td><code>--clear</code></td>
           <td>如果指定的虚拟环境目录已经存在，这会清除目录中的所有内容，然后重新创建虚拟环境</td>
@@ -1217,8 +1221,9 @@
           <td><code>--version</code></td>
           <td>用于确认虚拟环境中 Python 的版本</td>
       </tr>
-      <tr>
-          <td>
+  </tbody>
+</table>
+
   
 
 
@@ -1248,11 +1253,7 @@
       class="dark:text-neutral-300"
     >所有的参数说明都可以通过运行 <code>python -m venv -h</code> 来获得；不用到处查文档了~😆</span>
 </div>
-</td>
-          <td></td>
-      </tr>
-  </tbody>
-</table>
+
 
 
 <h3 class="relative group">激活 
