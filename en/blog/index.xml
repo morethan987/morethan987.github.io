@@ -9,7 +9,7 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Local OverLeaf Deployment</title>
@@ -106,6 +106,16 @@
 &lt;/h2&gt;
 &lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
+    </item>
+    
+    <item>
+      <title>The reflection of Moravec&#39;s paradox</title>
+      <link>https://morethan987.github.io/en/blog/moravecs-paradox/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/moravecs-paradox/</guid>
+      <description>&lt;p&gt;Morethan&amp;rsquo;s dummy blog page~&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
     </item>
     
   </channel>

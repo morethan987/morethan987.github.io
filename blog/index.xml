@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Thu, 12 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>本地 OverLeaf 部署</title>
@@ -101,6 +101,16 @@
 &lt;/h2&gt;
 &lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
+    </item>
+    
+    <item>
+      <title>关于莫拉维克悖论的思考</title>
+      <link>https://morethan987.github.io/blog/moravecs-paradox/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/moravecs-paradox/</guid>
+      <description>&lt;p&gt;假装这里有一篇文章~&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
     </item>
     
   </channel>

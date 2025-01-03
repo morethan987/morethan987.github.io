@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI遐想 on Morethan 小站</title>
+    <link>https://morethan987.github.io/series/ai%E9%81%90%E6%83%B3/</link>
+    <description>Recent content in AI遐想 on Morethan 小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2025 Morethan</copyright>
+    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/ai%E9%81%90%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>关于莫拉维克悖论的思考</title>
+      <link>https://morethan987.github.io/blog/moravecs-paradox/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/moravecs-paradox/</guid>
+      <description>&lt;p&gt;假装这里有一篇文章~&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
+    </item>
+    
+  </channel>
+</rss>

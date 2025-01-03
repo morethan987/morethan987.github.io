@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imagination on More&#39;s awesome website</title>
+    <link>https://morethan987.github.io/en/tags/imagination/</link>
+    <description>Recent content in Imagination on More&#39;s awesome website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>morthan@qq.com (Morethan)</managingEditor>
+    <webMaster>morthan@qq.com (Morethan)</webMaster>
+    <copyright>© 2025 Morethan</copyright>
+    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/imagination/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The reflection of Moravec&#39;s paradox</title>
+      <link>https://morethan987.github.io/en/blog/moravecs-paradox/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/moravecs-paradox/</guid>
+      <description>&lt;p&gt;Morethan&amp;rsquo;s dummy blog page~&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
+    </item>
+    
+  </channel>
+</rss>
