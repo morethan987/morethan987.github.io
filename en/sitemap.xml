@@ -83,6 +83,38 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/blog/plugin-writing-experience/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/plugin-writing-experience/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/plugin-writing-experience/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/authors/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/authors/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/authors/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/blog/</loc>
     <lastmod>2025-01-06T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -96,6 +128,66 @@
       rel="alternate"
       hreflang="en"
       href="https://morethan987.github.io/en/blog/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/casual-essay/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/experience/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/authors/morethan/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/authors/morethan/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/authors/morethan/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/series/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/series/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/"
     />
   </url>
   <url>
@@ -131,74 +223,10 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/en/authors/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/authors/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/authors/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/en/tags/imagination/</loc>
     <lastmod>2025-01-03T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/authors/morethan/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/authors/morethan/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/authors/morethan/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/series/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/series/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/series/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/tags/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/"
-    />
   </url>
   <url>
     <loc>https://morethan987.github.io/en/series/wild-imagination-of-ai/</loc>
