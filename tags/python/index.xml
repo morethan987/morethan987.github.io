@@ -11,10 +11,10 @@
     
     <item>
       <title>Python小技巧</title>
-      <link>https://morethan987.github.io/blog/pythontips/</link>
+      <link>https://morethan987.github.io/blog/pytips/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/pythontips/</guid>
+      <guid>https://morethan987.github.io/blog/pytips/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;创建虚拟环境 
     &lt;div id=&#34;%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -38,7 +38,7 @@
     
 &lt;/h3&gt;
 &lt;p&gt;一些常规的代码例子如下👇&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/pythontips/featured.svg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/pytips/featured.svg" />
     </item>
     
   </channel>
