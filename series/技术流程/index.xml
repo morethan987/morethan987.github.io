@@ -7,28 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>本地 OverLeaf 部署</title>
-      <link>https://morethan987.github.io/blog/localoverleaf/</link>
-      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <title>Hugo博客搭建</title>
+      <link>https://morethan987.github.io/blog/hugo-blog/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/localoverleaf/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;背景提要 
-    &lt;div id=&#34;%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/blog/hugo-blog/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  博客网站折腾日志，从手搓到 Hugo 的曲折经历。
+&lt;/div&gt;
+
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;为什么 Hugo 
+    &lt;div id=&#34;%E4%B8%BA%E4%BB%80%E4%B9%88-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E4%B8%BA%E4%BB%80%E4%B9%88-hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
+&lt;p&gt;最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是&lt;strong&gt;世界上最快&lt;/strong&gt;的静态页面生成器，官方网站也是这么写的。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/hugo-blog/featured.svg" />
     </item>
     
     <item>
@@ -61,6 +65,28 @@
 &lt;/h3&gt;
 &lt;p&gt;一些常规的代码例子如下👇&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/pytips/featured.svg" />
+    </item>
+    
+    <item>
+      <title>本地 OverLeaf 部署</title>
+      <link>https://morethan987.github.io/blog/localoverleaf/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/localoverleaf/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;背景提要 
+    &lt;div id=&#34;%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
     </item>
     
   </channel>

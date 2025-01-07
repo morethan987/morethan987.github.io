@@ -7,48 +7,89 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>本地 OverLeaf 部署</title>
-      <link>https://morethan987.github.io/blog/localoverleaf/</link>
-      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <title>Hugo博客搭建</title>
+      <link>https://morethan987.github.io/blog/hugo-blog/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/localoverleaf/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;背景提要 
-    &lt;div id=&#34;%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/blog/hugo-blog/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  博客网站折腾日志，从手搓到 Hugo 的曲折经历。
+&lt;/div&gt;
+
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;为什么 Hugo 
+    &lt;div id=&#34;%E4%B8%BA%E4%BB%80%E4%B9%88-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E4%B8%BA%E4%BB%80%E4%B9%88-hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
+&lt;p&gt;最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是&lt;strong&gt;世界上最快&lt;/strong&gt;的静态页面生成器，官方网站也是这么写的。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/hugo-blog/featured.svg" />
     </item>
     
     <item>
-      <title>贝叶斯优化</title>
-      <link>https://morethan987.github.io/blog/bayesianopt/</link>
-      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      <title>一次写插件经历</title>
+      <link>https://morethan987.github.io/blog/plugin-writing-experience/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/bayesianopt/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;引用文献 
-    &lt;div id=&#34;%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/blog/plugin-writing-experience/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  记一次写插件的经历，以及从中收获的一些感想。
+&lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;缘由 
+    &lt;div id=&#34;%E7%BC%98%E7%94%B1&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E7%BC%98%E7%94%B1&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;事情起源于我这个博客网站。我在微信公众号上偶然间浏览到了关于用 &lt;code&gt;Hugo&lt;/code&gt; 建立博客网站的信息，正好我也想翻新一下我那简陋的小网站。我原来的小网站非常非常的原始，整个写作流程都需要在 &lt;code&gt;HTML&lt;/code&gt; &lt;code&gt;JS&lt;/code&gt; 和 &lt;code&gt;CSS&lt;/code&gt; 之间狼狈地切换。并且我非常崇拜的大佬 &lt;code&gt;Lilian Weng&lt;/code&gt; 的 &lt;a href=&#34;https://lilianweng.github.io/&#34; target=&#34;_blank&#34;&gt;博客&lt;/a&gt; 也是用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的，这也更加坚定了我换底层的决心。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
+    </item>
+    
+    <item>
+      <title>关于莫拉维克悖论的思考</title>
+      <link>https://morethan987.github.io/blog/moravecs-paradox/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/moravecs-paradox/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;某些问题机器能够非常容易解决，而对于人类而言非常复杂；反之亦然。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
+    </item>
+    
+    <item>
+      <title>CUMCM 2024总结</title>
+      <link>https://morethan987.github.io/blog/cumcm2024/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/cumcm2024/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;前言 
+    &lt;div id=&#34;%E5%89%8D%E8%A8%80&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E5%89%8D%E8%A8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
+&lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
     <item>
@@ -84,60 +125,45 @@
     </item>
     
     <item>
-      <title>CUMCM 2024总结</title>
-      <link>https://morethan987.github.io/blog/cumcm2024/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <title>贝叶斯优化</title>
+      <link>https://morethan987.github.io/blog/bayesianopt/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/cumcm2024/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;前言 
-    &lt;div id=&#34;%E5%89%8D%E8%A8%80&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/blog/bayesianopt/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;引用文献 
+    &lt;div id=&#34;%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E5%89%8D%E8%A8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E5%BC%95%E7%94%A8%E6%96%87%E7%8C%AE&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
+&lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     
     <item>
-      <title>关于莫拉维克悖论的思考</title>
-      <link>https://morethan987.github.io/blog/moravecs-paradox/</link>
-      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <title>本地 OverLeaf 部署</title>
+      <link>https://morethan987.github.io/blog/localoverleaf/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/moravecs-paradox/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;某些问题机器能够非常容易解决，而对于人类而言非常复杂；反之亦然。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
-    </item>
-    
-    <item>
-      <title>一次写插件经历</title>
-      <link>https://morethan987.github.io/blog/plugin-writing-experience/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/blog/plugin-writing-experience/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  记一次写插件的经历，以及从中收获的一些感想。
-&lt;/div&gt;
-
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;缘由 
-    &lt;div id=&#34;%E7%BC%98%E7%94%B1&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/blog/localoverleaf/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;背景提要 
+    &lt;div id=&#34;%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E7%BC%98%E7%94%B1&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E8%83%8C%E6%99%AF%E6%8F%90%E8%A6%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
-&lt;/h3&gt;
-&lt;p&gt;事情起源于我这个博客网站。我在微信公众号上偶然间浏览到了关于用 &lt;code&gt;Hugo&lt;/code&gt; 建立博客网站的信息，正好我也想翻新一下我那简陋的小网站。我原来的小网站非常非常的原始，整个写作流程都需要在 &lt;code&gt;HTML&lt;/code&gt; &lt;code&gt;JS&lt;/code&gt; 和 &lt;code&gt;CSS&lt;/code&gt; 之间狼狈地切换。并且我非常崇拜的大佬 &lt;code&gt;Lilian Weng&lt;/code&gt; 的 &lt;a href=&#34;https://lilianweng.github.io/&#34; target=&#34;_blank&#34;&gt;博客&lt;/a&gt; 也是用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的，这也更加坚定了我换底层的决心。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
     </item>
     
   </channel>

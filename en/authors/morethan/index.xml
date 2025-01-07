@@ -9,51 +9,88 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/authors/morethan/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/authors/morethan/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Local OverLeaf Deployment</title>
-      <link>https://morethan987.github.io/en/blog/localoverleaf/</link>
-      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
+      <title>Hugo Blog Setup</title>
+      <link>https://morethan987.github.io/en/blog/hugo-blog/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/blog/localoverleaf/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Background Overview 
-    &lt;div id=&#34;background-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/en/blog/hugo-blog/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  A blog website journey, from hand-coding to Hugo, a story of twists and turns.
+&lt;/div&gt;
+
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Why Hugo? 
+    &lt;div id=&#34;why-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#background-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#why-hugo&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;You should know how to interact with the computer via the command line, including but not limited to: how to open the command line/terminal in Windows, when a running command ends, etc.&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
+&lt;p&gt;It all started with hearing that Hugo could generate webpages and that it was incredibly efficient at compiling static pages. I decided to dive into the research—Hugo is said to be the &lt;strong&gt;fastest static site generator&lt;/strong&gt; in the world, as claimed on its official website.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/hugo-blog/featured.svg" />
     </item>
     
     <item>
-      <title>Bayesian Optimization</title>
-      <link>https://morethan987.github.io/en/blog/bayesianopt/</link>
-      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      <title>An experience of writing plugin</title>
+      <link>https://morethan987.github.io/en/blog/plugin-writing-experience/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/blog/bayesianopt/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Reference 
-    &lt;div id=&#34;reference&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/en/blog/plugin-writing-experience/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  A Reflection on Writing a Plugin and What I Learned from the Experience.
+&lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;The Beginning 
+    &lt;div id=&#34;the-beginning&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#reference&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#the-beginning&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;It all started with my blog website. I stumbled upon an article on WeChat about building a blog with &lt;code&gt;Hugo&lt;/code&gt;, and since I wanted to revamp my old, simple site, I decided to give it a try. My original site was extremely rudimentary, and the whole writing process involved jumping between &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;JS&lt;/code&gt;, and &lt;code&gt;CSS&lt;/code&gt; in a rather awkward manner. On top of that, I had always admired the &lt;a href=&#34;https://lilianweng.github.io/&#34; target=&#34;_blank&#34;&gt;blog&lt;/a&gt; of a great tech guru, &lt;code&gt;Lilian Weng&lt;/code&gt;, which was also built with &lt;code&gt;Hugo&lt;/code&gt;. This further strengthened my resolve to change my site&amp;rsquo;s underlying platform.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
+    </item>
+    
+    <item>
+      <title>The reflection of Moravec&#39;s paradox</title>
+      <link>https://morethan987.github.io/en/blog/moravecs-paradox/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/moravecs-paradox/</guid>
+      <description>&lt;p&gt;Morethan&amp;rsquo;s dummy blog page~&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
+    </item>
+    
+    <item>
+      <title>CUMCM 2024 Summary</title>
+      <link>https://morethan987.github.io/en/blog/cumcm2024/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/cumcm2024/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Preface 
+    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;Honestly, I&amp;rsquo;m not familiar with BayesianOPT, the opinions mentioned stem from the below. 👇&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_27590277/article/details/115451660&#34; target=&#34;_blank&#34;&gt;【机器学习】一文看懂贝叶斯优化/Bayesian Optimization&lt;/a&gt;&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
+&lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
     <item>
@@ -89,59 +126,48 @@
     </item>
     
     <item>
-      <title>CUMCM 2024 Summary</title>
-      <link>https://morethan987.github.io/en/blog/cumcm2024/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <title>Bayesian Optimization</title>
+      <link>https://morethan987.github.io/en/blog/bayesianopt/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/blog/cumcm2024/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Preface 
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/en/blog/bayesianopt/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Reference 
+    &lt;div id=&#34;reference&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#reference&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
+&lt;p&gt;Honestly, I&amp;rsquo;m not familiar with BayesianOPT, the opinions mentioned stem from the below. 👇&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_27590277/article/details/115451660&#34; target=&#34;_blank&#34;&gt;【机器学习】一文看懂贝叶斯优化/Bayesian Optimization&lt;/a&gt;&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     
     <item>
-      <title>The reflection of Moravec&#39;s paradox</title>
-      <link>https://morethan987.github.io/en/blog/moravecs-paradox/</link>
-      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <title>Local OverLeaf Deployment</title>
+      <link>https://morethan987.github.io/en/blog/localoverleaf/</link>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/blog/moravecs-paradox/</guid>
-      <description>&lt;p&gt;Morethan&amp;rsquo;s dummy blog page~&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
-    </item>
-    
-    <item>
-      <title>An experience of a plugin writing</title>
-      <link>https://morethan987.github.io/en/blog/plugin-writing-experience/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/blog/plugin-writing-experience/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A Reflection on Writing a Plugin and What I Learned from the Experience.
-&lt;/div&gt;
-
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;The Beginning 
-    &lt;div id=&#34;the-beginning&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+      <guid>https://morethan987.github.io/en/blog/localoverleaf/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Background Overview 
+    &lt;div id=&#34;background-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#the-beginning&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#background-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
-&lt;/h3&gt;
-&lt;p&gt;It all started with my blog website. I stumbled upon an article on WeChat about building a blog with &lt;code&gt;Hugo&lt;/code&gt;, and since I wanted to revamp my old, simple site, I decided to give it a try. My original site was extremely rudimentary, and the whole writing process involved jumping between &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;JS&lt;/code&gt;, and &lt;code&gt;CSS&lt;/code&gt; in a rather awkward manner. On top of that, I had always admired the &lt;a href=&#34;https://lilianweng.github.io/&#34; target=&#34;_blank&#34;&gt;blog&lt;/a&gt; of a great tech guru, &lt;code&gt;Lilian Weng&lt;/code&gt;, which was also built with &lt;code&gt;Hugo&lt;/code&gt;. This further strengthened my resolve to change my site&amp;rsquo;s underlying platform.&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You should know how to interact with the computer via the command line, including but not limited to: how to open the command line/terminal in Windows, when a running command ends, etc.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/blog/localOverleaf/featured.svg" />
     </item>
     
   </channel>
