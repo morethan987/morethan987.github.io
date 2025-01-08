@@ -395,19 +395,4 @@
       href="https://morethan987.github.io/categories/"
     />
   </url>
-  <url>
-    <loc>https://morethan987.github.io/tags/advanced/</loc>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/advanced/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/advanced/"
-    />
-  </url>
 </urlset>
