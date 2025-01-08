@@ -113,7 +113,7 @@
     "keywords": ["Hugo","Blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1454"
+    "wordCount": "1489"
   }]
   </script>
 
@@ -1671,7 +1671,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>The none-displayed link is simply exported as normal hyperlink in the HTML file;</p>
 </li>
 <li>
-<p>The displayed link is more complex: change the source code of Blowfish to support the file injection through the <code>shortcode</code>, <code>mdimporter</code>; every Obsidian file should includes a meta data <code>slug</code> to tag the folder that contains the target markdown file in your website repository.</p>
+<p>The displayed link is more complex: change(override) the source code of Blowfish to support the file injection through the <code>shortcode</code>, <code>mdimporter</code>; every Obsidian file should includes a meta data <code>slug</code> to tag the folder that contains the target markdown file in your website repository.</p>
+</li>
+<li>
+<p>The overriding of the theme&rsquo;s source code can be found in the <a href="https://github.com/morethan987/hugo_main/blob/main/layouts/shortcodes/mdimporter.html" target="_blank">mdimporter</a> and the <a href="https://github.com/morethan987/hugo_main/blob/main/layouts/partials/stripFrontMatter.html" target="_blank">stripFrontMatter</a> used to remove metadata from the injected files&rsquo; headers. For overriding the directory, refer to the configuration on GitHub.</p>
 </li>
 </ol>
 <p>I put a lot of effort into this plugin, even though it only took a few days 🤔. But those few days were quite exhausting 😵‍💫.</p>

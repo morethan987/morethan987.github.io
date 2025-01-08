@@ -113,7 +113,7 @@
     "keywords": ["Hugo","博客"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2325"
+    "wordCount": "2464"
   }]
   </script>
 
@@ -1640,7 +1640,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></code></pre></div><ul>
 <li>为什么我使用 <code>svg</code> 格式的 <code>logo</code> 无法完成(日间/夜间)模式的切换？</li>
 </ul>
-<p>这是我发现的一个 <code>bug</code>，已经给主题作者推送我改进的代码了，详见<a href="https://github.com/nunocoracao/blowfish/pull/1902" target="_blank">代码改进</a></p>
+<p>这是我发现的一个 <code>bug</code>，已经给主题作者推送我改进的代码了，详见<a href="https://github.com/nunocoracao/blowfish/pull/1902" target="_blank">代码改进</a>或 [SVG 支持]((<a href="https://github.com/morethan987/hugo_main/blob/main/assets/js/appearance.js" target="_blank">https://github.com/morethan987/hugo_main/blob/main/assets/js/appearance.js</a>)</p>
 <ul>
 <li>为什么浏览器窗口上的小图标一直都是 <code>blowfish</code>，即使改换了 <code>logo</code> 也不行？</li>
 </ul>
@@ -1671,7 +1671,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>非展示性链接简单处理为网页超链接形式</p>
 </li>
 <li>
-<p>展示性链接较为复杂：需要更新 <code>Blowfish</code> 主题的源代码，通过 <code>mdimporter</code> 这个 <code>shortcode</code> 来进行文件注入；同时为了方便链接，每一个文件都需要设置 <code>slug</code> 属性来标记网站中存放 <code>markdown</code> 文件的文件夹</p>
+<p>展示性链接较为复杂：需要覆写 <code>Blowfish</code> 主题的源代码，通过 <code>mdimporter</code> 这个 <code>shortcode</code> 来进行文件注入；同时为了方便链接，每一个文件都需要设置 <code>slug</code> 属性来标记网站中存放 <code>markdown</code> 文件的文件夹</p>
+</li>
+<li>
+<p>对于主题源代码的覆写详见 <a href="https://github.com/morethan987/hugo_main/blob/main/layouts/shortcodes/mdimporter.html" target="_blank">mdimporter</a> 以及用于去除注入文件开头元数据的 <a href="https://github.com/morethan987/hugo_main/blob/main/layouts/partials/stripFrontMatter.html" target="_blank">stripFrontMatter</a>；覆写目录参考 GitHub 上的配置</p>
 </li>
 </ol>
 <p>这个插件也是投入了我巨大的精力，虽然也只有几天时间🤔但是那几天还是挺累的😵‍💫</p>
