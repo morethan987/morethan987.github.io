@@ -113,7 +113,7 @@
     "keywords": ["Hugo","博客"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2234"
+    "wordCount": "2325"
   }]
   </script>
 
@@ -1665,7 +1665,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>  - <strong>内联数学公式</strong>（Blowfish 支持块级公式）</p>
 <p>  - <strong>mermaid</strong>（支持 mermaid 图表）</p>
 <p>  - <strong>图片插入</strong>（能够自动导出图片）</p>
-<p>  - <strong>Wiki链接导出</strong>，提供了一套模拟 Obsidian 的文件互联方案，自认为很成功😁</p>
+<p>  - <strong>Wiki链接导出</strong>，提供了一套模拟 Obsidian 的<strong>文件互联方案</strong>，自认为很成功😁</p>
+<ol>
+<li>
+<p>非展示性链接简单处理为网页超链接形式</p>
+</li>
+<li>
+<p>展示性链接较为复杂：需要更新 <code>Blowfish</code> 主题的源代码，通过 <code>mdimporter</code> 这个 <code>shortcode</code> 来进行文件注入；同时为了方便链接，每一个文件都需要设置 <code>slug</code> 属性来标记网站中存放 <code>markdown</code> 文件的文件夹</p>
+</li>
+</ol>
 <p>这个插件也是投入了我巨大的精力，虽然也只有几天时间🤔但是那几天还是挺累的😵‍💫</p>
 <p>如果这个插件帮助了你，还请转发分享；如果你对于这个插件的功能不满意，你也可以在 GitHub 上向我提交 Issue🫡或者熟悉代码的朋友可以直接把源码拿去修改，注释很完整，代码比较规范🤗</p>
 <p>如果你能把你亲自修改升级的代码也分享给我（在 GitHub 上提交 Pull Request）那更是万分感谢！☺️</p>

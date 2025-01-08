@@ -113,7 +113,7 @@
     "keywords": ["Hugo","Blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1397"
+    "wordCount": "1454"
   }]
   </script>
 
@@ -1665,7 +1665,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   - <strong>Inline math formulas</strong> (Blowfish supports block-level formulas)</p>
 <p>  - <strong>Mermaid</strong> (supports Mermaid diagrams)</p>
 <p>  - <strong>Image embedding</strong> (automatically exports images)</p>
-<p>  - <strong>Wiki-style links</strong>, with a file interlinking system that simulates Obsidian’s functionality. I think it works pretty well 😁.</p>
+<p>  - <strong>Wiki-style links</strong>, with a <strong>file interlinking system</strong> that simulates Obsidian’s functionality. I think it works pretty well 😁.</p>
+<ol>
+<li>
+<p>The none-displayed link is simply exported as normal hyperlink in the HTML file;</p>
+</li>
+<li>
+<p>The displayed link is more complex: change the source code of Blowfish to support the file injection through the <code>shortcode</code>, <code>mdimporter</code>; every Obsidian file should includes a meta data <code>slug</code> to tag the folder that contains the target markdown file in your website repository.</p>
+</li>
+</ol>
 <p>I put a lot of effort into this plugin, even though it only took a few days 🤔. But those few days were quite exhausting 😵‍💫.</p>
 <p>If this plugin helps you, feel free to share it! If you’re not happy with the functionality, you can submit an issue on GitHub 🫡. If you&rsquo;re familiar with the code, you can modify it directly; the code is well-commented and quite standard 🤗.</p>
 <p>And if you modify and upgrade the code, I’d be very grateful if you share your changes with me (via a pull request on GitHub)! ☺️</p>
