@@ -9,7 +9,21 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Analysis Report on the Note-to-Blog Project</title>
+      <link>https://morethan987.github.io/en/blog/note-to-blog-report/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/note-to-blog-report/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  Familiarizing oneself with the project analysis process, this is a practical analysis report.
+&lt;/div&gt;
+
+&lt;p&gt;After I had completed my &lt;a href=&#34;https://morethan987.github.io/en/blog/plugin-writing-experience/&#34;&gt;small plugin&lt;/a&gt;, I realized that there doesn&amp;rsquo;t seem to be a one-click solution in the &lt;strong&gt;note-to-blog&lt;/strong&gt; field. So, I wrote this article to analyze whether it would make sense to create a new project to fill this gap.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/note-to-blog-report/featured.svg" />
+    </item>
     
     <item>
       <title>Hugo Blog Setup</title>

@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>笔记转博客项目分析报告</title>
+      <link>https://morethan987.github.io/blog/note-to-blog-report/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/note-to-blog-report/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  熟悉项目分析流程，是一个练手性质的分析报告
+&lt;/div&gt;
+
+&lt;p&gt;我在初步完成自己的&lt;a href=&#34;https://morethan987.github.io/blog/plugin-writing-experience/&#34;&gt;小插件&lt;/a&gt;之后才发现：&lt;strong&gt;笔记转博客&lt;/strong&gt;这个领域似乎没有一个一键式解决方案，为此我写了这篇文章来分析是否要创建一个新的项目来填补这个空白。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/note-to-blog-report/featured.svg" />
+    </item>
     
     <item>
       <title>Hugo博客搭建</title>
