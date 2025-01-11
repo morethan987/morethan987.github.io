@@ -114,7 +114,7 @@
     "keywords": ["overleaf","LaTeX"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1871"
+    "wordCount": "1863"
   }]
   </script>
 
@@ -1430,7 +1430,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>在 <code>Windows App Store</code> 里面直接搜索一个Linux发行版本并下载，笔者选择的是<code>Kali</code>。安装完成后可以在开始菜单中直接打开，打开后会跳出命令行窗口，初次打开需要填写需要用户名与密码进行注册。</p>
-
+<p>
   
 
 
@@ -1461,7 +1461,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >此时你的命令行应该有一个 Warning 提示。这是因为你还没有安装 WSL(Windows Subsystem for Linux)；同时，在填写密码的时候你的输入不会显示在命令行，但已经被记录了</span>
 </div>
 
-<p>为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。也正因如此，据说在Linux系统上运行的<code>OverLeaf</code>更加流畅。</p>
+为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。也正因如此，据说在Linux系统上运行的<code>OverLeaf</code>更加流畅。</p>
 
 
 <h3 class="relative group">安装WSL 
@@ -1476,7 +1476,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h3>
 <p>安装WSL2，直接在Windows命令行中运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">wsl --install
-</span></span></code></pre></div><p>这个程序安装后也可以直接打开，打开后也有一个Warning提示。这时候需要在 C:\Users\ASUS 目录下面写入一个text文件，然后重命名为 <code>.wslconfig</code>；</p>
+</span></span></code></pre></div><p>这个程序安装后也可以直接打开，打开后也有一个Warning提示。这时候需要在 <code>C:\Users\ASUS</code> 目录下面写入一个text文件，然后重命名为 <code>.wslconfig</code>；</p>
 <p>写入内容为：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">[experimental] autoMemoryReclaim=gradual # gradual | dropcache | disabled networkingMode=mirrored dnsTunneling=true firewall=true autoProxy=true
 </span></span></code></pre></div>
@@ -1491,7 +1491,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>进入Docker官网下载Docker，这是sharelatex模型运行的容器。Docker是一个开源的应用容器引擎，其中包括，镜像、容器、仓库，目的就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的产品及其环境能够做到“一次封装，到处运行”。就像一个集装箱，由程序员开发并封装，用户使用时就直接把整个集装箱搬过去。</p>
+<p>进入 <a href="https://www.docker.com/" target="_blank">Docker</a> 官网下载Docker，这是sharelatex模型运行的容器。Docker是一个开源的应用容器引擎，其中包括，镜像、容器、仓库，目的就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的产品及其环境能够做到“一次封装，到处运行”。就像一个集装箱，由程序员开发并封装，用户使用时就直接把整个集装箱搬过去。</p>
 <p>Docker安装完成后就可以双击启动放后台了，我们后面通过命令行来操作Docker；</p>
 
 
@@ -1505,7 +1505,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>打开<code>Kali</code>，直接运行</p>
+<p>打开 <code>Kali</code>，直接运行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/overleaf/toolkit.git ./overleaf-toolkit
 </span></span></code></pre></div><p>然后连续运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> ./overleaf-toolkit
@@ -1576,32 +1576,43 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>打开<code>Kali</code>进入对应目录运行 <code>bin/shell</code> 然后逐条执行：</p>
+<p>打开 <code>Kali</code> 进入对应目录运行 <code>bin/shell</code> 然后逐条执行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/texlive
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 下载并运行升级脚本</span>
 </span></span><span class="line"><span class="cl">wget http://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
 </span></span><span class="line"><span class="cl">sh update-tlmgr-latest.sh -- --upgrade
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 更换texlive的下载源</span>
 </span></span><span class="line"><span class="cl">tlmgr option repository https://mirrors.sustech.edu.cn/CTAN/systems/texlive/tlnet/
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 升级tlmgr</span>
 </span></span><span class="line"><span class="cl">tlmgr update --self --all
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装完整版texlive（时间比较长，不要让shell断开）</span>
 </span></span><span class="line"><span class="cl">tlmgr install scheme-full
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 退出sharelatex的命令行界面</span>
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 重启sharelatex容器</span>
 </span></span><span class="line"><span class="cl">docker restart sharelatex
-</span></span></code></pre></div><p>重启后再次进入<code>shell</code>，运行：</p>
+</span></span></code></pre></div><p>重启后再次进入 <code>shell</code>，运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装字体</span>
 </span></span><span class="line"><span class="cl">apt install --no-install-recommends ttf-mscorefonts-installe fonts-noto texlive-fonts-recommended tex-gyre fonts-wqy-microhei fonts-wqy-zenhei fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-extra fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-texgyre
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装pygments</span>
 </span></span><span class="line"><span class="cl">apt install python3-pygments
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装beamer之类的</span>
 </span></span><span class="line"><span class="cl">apt install texlive-latex-recommended
 </span></span><span class="line"><span class="cl">apt install texlive-latex-extra
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装英文字体</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;yes&#34;</span> <span class="p">|</span> apt install -y --reinstall ttf-mscorefonts-installer
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装中文字体</span>
 </span></span><span class="line"><span class="cl">apt install -y latex-cjk-all texlive-lang-chinese texlive-lang-english
 </span></span><span class="line"><span class="cl">cp fonts/* /usr/share/fonts/zh-cn/
@@ -1612,7 +1623,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></code></pre></div><p>最后在<code>shell</code>目录里面运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vim /usr/local/texlive/2023/texmf.cnf
 </span></span></code></pre></div><p>进入配置文件，在最底下加入一句 <code>shell_escape = t</code></p>
-
+<p>
   
   
   
@@ -1647,7 +1658,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >我也不知道这有什么用，属于是前辈传承了🤔</span>
 </div>
 
-<p>注意，如果Texlive(扩展包的官名)版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写，例如将<code>2023</code>改成<code>2024</code>。</p>
+注意，如果Texlive(扩展包的官名)版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写，例如将<code>2023</code>改成<code>2024</code>。</p>
 
   
   
