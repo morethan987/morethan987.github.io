@@ -9,7 +9,49 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MySQL Basics</title>
+      <link>https://morethan987.github.io/en/blog/mysql-basics/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/mysql-basics/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  MySQL Installation and Deployment Process + Quick Syntax CookBook + Study Notes
+&lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Information Source 
+    &lt;div id=&#34;information-source&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#information-source&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34; target=&#34;_blank&#34;&gt;SQL Tutorial - Liao Xuefeng&amp;rsquo;s Official Website&lt;/a&gt;&lt;br&gt;
+This is an extremely user-friendly MySQL tutorial website with an embedded web-based database, making it easy for beginners to get a hands-on understanding of MySQL operations. It also provides concise yet essential explanations of the background of SQL.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;MySQL Installation 
+    &lt;div id=&#34;mysql-installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#mysql-installation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h3&gt;
+&lt;p&gt;The simplest way to install MySQL is through Docker Desktop. It takes only two steps to complete:&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/mysql-basics/featured.svg" />
+    </item>
     
     <item>
       <title>Analysis Report on the Note-to-Blog Project</title>

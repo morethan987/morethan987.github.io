@@ -3,6 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://morethan987.github.io/blog/mysql-basics/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/mysql-basics/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/mysql-basics/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/blog/note-to-blog-report/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -132,7 +148,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -144,6 +160,108 @@
       rel="alternate"
       hreflang="zh-cn"
       href="https://morethan987.github.io/blog/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/authors/morethan/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/authors/morethan/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/authors/morethan/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/mysql/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/mysql/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/mysql/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/series/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/series/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/authors/</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/authors/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/authors/"
     />
   </url>
   <url>
@@ -163,22 +281,6 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/authors/morethan/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/authors/morethan/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/authors/morethan/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/tags/%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -195,22 +297,6 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/tags/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -224,60 +310,6 @@
       rel="alternate"
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/series/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/series/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/series/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/authors/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/authors/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/authors/"
     />
   </url>
   <url>
