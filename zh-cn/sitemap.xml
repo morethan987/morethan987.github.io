@@ -263,6 +263,16 @@
     <lastmod>2025-01-16T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"
+    />
   </url>
   <url>
     <loc>https://morethan987.github.io/series/</loc>
