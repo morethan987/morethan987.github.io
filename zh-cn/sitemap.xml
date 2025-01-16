@@ -3,6 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://morethan987.github.io/blog/code-collaboration-scheme/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/code-collaboration-scheme/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/code-collaboration-scheme/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/blog/mysql-basics/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -84,7 +100,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/cumcm2024/</loc>
-    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -148,7 +164,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -163,8 +179,40 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/tags/cumcm/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/cumcm/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/cumcm/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/matlab/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/matlab/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/matlab/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/authors/morethan/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -176,6 +224,76 @@
       rel="alternate"
       hreflang="zh-cn"
       href="https://morethan987.github.io/authors/morethan/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/tags/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/series/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/series/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/authors/</loc>
+    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/authors/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/authors/"
     />
   </url>
   <url>
@@ -195,74 +313,10 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/tags/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
     <lastmod>2025-01-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/series/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/series/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/series/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/authors/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/authors/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/authors/"
-    />
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/hugo/</loc>
@@ -353,24 +407,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://morethan987.github.io/tags/cumcm/</loc>
-    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/cumcm/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/cumcm/"
-    />
-  </url>
-  <url>
     <loc>https://morethan987.github.io/tags/math/</loc>
-    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -383,12 +421,6 @@
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/math/"
     />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
-    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/python/</loc>
@@ -404,22 +436,6 @@
       rel="alternate"
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/python/"
-    />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/tags/matlab/</loc>
-    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/matlab/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/matlab/"
     />
   </url>
   <url>

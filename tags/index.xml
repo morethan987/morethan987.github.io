@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CUMCM</title>
+      <link>https://morethan987.github.io/tags/cumcm/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/tags/cumcm/</guid>
+      <description>&lt;p&gt;&lt;code&gt;CUMCM&lt;/code&gt; 英文全称为 Chinese Undergraduate Mathmatical Contest in Modeling，中文全称为“全国大学生数学建模竞赛”&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>https://morethan987.github.io/tags/matlab/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/tags/matlab/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>MySQL</title>
@@ -80,16 +100,6 @@
     </item>
     
     <item>
-      <title>CUMCM</title>
-      <link>https://morethan987.github.io/tags/cumcm/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/tags/cumcm/</guid>
-      <description>&lt;p&gt;&lt;code&gt;CUMCM&lt;/code&gt; 英文全称为 Chinese Undergraduate Mathmatical Contest in Modeling，中文全称为“全国大学生数学建模竞赛”&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>Math</title>
       <link>https://morethan987.github.io/tags/math/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
@@ -105,16 +115,6 @@
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/tags/python/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>MATLAB</title>
-      <link>https://morethan987.github.io/tags/matlab/</link>
-      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/tags/matlab/</guid>
       <description></description>
       
     </item>

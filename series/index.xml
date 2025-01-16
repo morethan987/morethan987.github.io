@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>数学建模</title>
+      <link>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</link>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>技术流程</title>
@@ -35,16 +45,6 @@
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/series/ai%E9%81%90%E6%83%B3/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>数学建模</title>
-      <link>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</link>
-      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</guid>
       <description></description>
       
     </item>
