@@ -113,7 +113,7 @@
     "keywords": ["MATLAB","CUMCM"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "652"
+    "wordCount": "757"
   }]
   </script>
 
@@ -1395,6 +1395,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           </ul>
         </li>
         <li><a href="#code-formatting">Code Formatting</a></li>
+        <li><a href="#git-version-control">Git Version Control</a></li>
       </ul>
     </li>
     <li><a href="#code-execution">Code Execution</a></li>
@@ -1432,6 +1433,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           </ul>
         </li>
         <li><a href="#code-formatting">Code Formatting</a></li>
+        <li><a href="#git-version-control">Git Version Control</a></li>
       </ul>
     </li>
     <li><a href="#code-execution">Code Execution</a></li>
@@ -1695,6 +1697,41 @@ id1("Task Allocation")-->id2("VS Code Collaboration")-->id3("MATLAB Code Executi
 </span></span></code></pre></div><p>To use this configuration file in other code files, simply include the following line:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-MATLAB" data-lang="MATLAB"><span class="line"><span class="cl"><span class="n">run</span><span class="p">(</span><span class="s">&#39;config.m&#39;</span><span class="p">);</span>
 </span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Even the parameters are transformed into another file, the VS Code can also recognizes it and provide complement suggestion.</span>
+</div>
+
+
 
 <h4 class="relative group">Function-Internal Parameters 
     <div id="function-internal-parameters" class="anchor"></div>
@@ -1756,6 +1793,24 @@ id1("Task Allocation")-->id2("VS Code Collaboration")-->id3("MATLAB Code Executi
     
 </h3>
 <p>Code formatting is mainly handled using the <code>matlab-formatter</code> plugin. After activating the plugin, you can format your code in VS Code by pressing <code>Ctrl+Shift+P</code> to bring up the command palette, then search for &ldquo;Format&rdquo; and select <code>Use... to format code</code>, choosing <code>matlab-formatter</code> to apply the formatting.</p>
+
+
+<h3 class="relative group">Git Version Control 
+    <div id="git-version-control" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#git-version-control" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>A GitHub repository needs to be created to store the entire project files. Although the Live Server plugin enables faster real-time code collaboration, it is still necessary to commit and save at key development milestones to maintain the ability to roll back code.</p>
+<p>All Git version control operations are performed on the lead developer&rsquo;s computer, while other supporting developers use the Live Server plugin for more immediate code collaboration.</p>
+<ul>
+<li>Local <code>commit</code> to save small improvements</li>
+<li><code>push</code> operations are done in major increments</li>
+</ul>
 
 
 <h2 class="relative group">Code Execution 
