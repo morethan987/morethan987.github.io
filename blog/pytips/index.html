@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2024-08-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-20T00:00:00+00:00">
     <meta property="article:tag" content="Python">
     <meta property="og:image" content="https://morethan987.github.io/blog/pytips/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/blog/mysql-basics/">
@@ -109,12 +109,12 @@
     "dateCreated": "2024-08-10T00:00:00\u002b00:00",
     "datePublished": "2024-08-10T00:00:00\u002b00:00",
     
-    "dateModified": "2024-12-20T00:00:00\u002b00:00",
+    "dateModified": "2025-01-20T00:00:00\u002b00:00",
     
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "332"
+    "wordCount": "1528"
   }]
   </script>
 
@@ -942,7 +942,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2024-12-20T00:00:00&#43;00:00">更新于: 2024-12-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-01-20T00:00:00&#43;00:00">更新于: 2025-01-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1238,6 +1238,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#激活">激活</a></li>
       </ul>
     </li>
+    <li><a href="#程序打包">程序打包</a>
+      <ul>
+        <li><a href="#pyinstaller">pyinstaller</a></li>
+        <li><a href="#nuitka">Nuitka</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1255,6 +1261,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#创建">创建</a></li>
         <li><a href="#激活">激活</a></li>
+      </ul>
+    </li>
+    <li><a href="#程序打包">程序打包</a>
+      <ul>
+        <li><a href="#pyinstaller">pyinstaller</a></li>
+        <li><a href="#nuitka">Nuitka</a></li>
       </ul>
     </li>
   </ul>
@@ -1500,6 +1512,226 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 激活虚拟环境</span>
 </span></span><span class="line"><span class="cl">your_env_name/Scripts/activate
 </span></span></code></pre></div>
+
+<h2 class="relative group">程序打包 
+    <div id="%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>我们经常需要把自己写的 Python 程序分享出去。然而只分享源代码会使得不太懂代码的用户非常苦恼，因为源代码的运行还需要搭建本地运行环境，因此打包程序应运而生。</p>
+
+
+<h3 class="relative group">pyinstaller 
+    <div id="pyinstaller" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#pyinstaller" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>安装非常简单，就像别的 Python 包一样 <code>pip install pyinstaller</code> 即可；使用时在目标文件所在的目录启动终端，然后运行命令即可。</p>
+<p><strong>特点：打包速度较快；打包后的程序较大</strong></p>
+<p>常见的命令代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 将main.py文件打包为一个独立的可执行文件；可执行文件运行后禁用命令行窗口</span>
+</span></span><span class="line"><span class="cl">pyinstaller -F -w main.py
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将main.py文件打包为一个工程文件夹；可执行文件运行后启用命令行窗口</span>
+</span></span><span class="line"><span class="cl">pyinstaller -D main.py
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>参数</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-h, --help</code></td>
+          <td>显示帮助信息并退出</td>
+      </tr>
+      <tr>
+          <td><code>-v, --version</code></td>
+          <td>显示程序版本信息并退出</td>
+      </tr>
+      <tr>
+          <td><code>-F, --onefile</code></td>
+          <td>将所有内容打包为一个独立的可执行文件</td>
+      </tr>
+      <tr>
+          <td><code>-D, --onedir</code></td>
+          <td>将所有内容打包为一个目录（默认选项）</td>
+      </tr>
+      <tr>
+          <td><code>-w, --windowed, --noconsole</code></td>
+          <td>禁用命令行窗口（仅对 Windows 有效）</td>
+      </tr>
+      <tr>
+          <td><code>-c, --console, --nowindowed</code></td>
+          <td>使用命令行窗口运行程序（默认选项，仅对 Windows 有效）</td>
+      </tr>
+      <tr>
+          <td><code>-a, --ascii</code></td>
+          <td>不包含 Unicode 字符集支持（默认包含）</td>
+      </tr>
+      <tr>
+          <td><code>-d, --debug</code></td>
+          <td>产生 debug 版本的可执行文件</td>
+      </tr>
+      <tr>
+          <td><code>-n NAME, --name=NAME</code></td>
+          <td>指定生成的可执行文件或目录的名称（默认为脚本名称）</td>
+      </tr>
+      <tr>
+          <td><code>-o DIR, --out=DIR</code></td>
+          <td>指定 spec 文件的生成目录（默认为当前目录）</td>
+      </tr>
+      <tr>
+          <td><code>-p DIR, --path=DIR</code></td>
+          <td>设置 Python 导入模块的路径（类似设置 PYTHONPATH）</td>
+      </tr>
+      <tr>
+          <td><code>-i &lt;FILE&gt;, --icon &lt;FILE&gt;</code></td>
+          <td>设置可执行文件的图标（支持 <code>.ico</code> 或 <code>.icns</code> 格式）</td>
+      </tr>
+      <tr>
+          <td><code>--distpath DIR</code></td>
+          <td>指定生成的可执行文件的输出目录（默认为 <code>./dist</code>）</td>
+      </tr>
+      <tr>
+          <td><code>--workpath WORKPATH</code></td>
+          <td>指定临时工作文件的目录（默认为 <code>./build</code>）</td>
+      </tr>
+      <tr>
+          <td><code>--add-data &lt;SRC;DEST or SRC:DEST&gt;</code></td>
+          <td>添加额外的数据文件或目录到可执行文件中（Windows 使用分号，Linux/OSX 使用冒号分隔源路径和目标路径）</td>
+      </tr>
+      <tr>
+          <td><code>--add-binary &lt;SRC;DEST or SRC:DEST&gt;</code></td>
+          <td>添加额外的二进制文件到可执行文件中</td>
+      </tr>
+      <tr>
+          <td><code>--hidden-import MODULENAME</code></td>
+          <td>添加未自动检测到的模块</td>
+      </tr>
+      <tr>
+          <td><code>--exclude-module EXCLUDES</code></td>
+          <td>排除指定的模块</td>
+      </tr>
+      <tr>
+          <td><code>--clean</code></td>
+          <td>清理 PyInstaller 缓存和临时文件</td>
+      </tr>
+      <tr>
+          <td><code>--log-level LEVEL</code></td>
+          <td>设置构建时控制台消息的详细程度（可选值：TRACE、DEBUG、INFO、WARN、ERROR、FATAL）</td>
+      </tr>
+  </tbody>
+</table>
+
+
+<h3 class="relative group">Nuitka 
+    <div id="nuitka" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#nuitka" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>将 Python 代码打包为 exe 可执行文件，转换原理是先将 Python 代码转换为 C 代码，然后再编译 C 代码。</p>
+<p><strong>特点：打包速度相当慢；需要额外安装 C 编译器，尽管可以自动完成但是对于内存空间管理非常严格的用户并不适用；打包后的程序体积很小（实测是 pyinstaller 的十分之一）</strong></p>
+<p>安装命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip install -U nuitka
+</span></span></code></pre></div><p>常见使用命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 将main.py文件打包为一个exe文件，使用链式优化，完成打包后清理临时文件</span>
+</span></span><span class="line"><span class="cl">python -m nuitka --lto<span class="o">=</span>yes --remove-output --onefile main.py
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>参数</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--standalone</code></td>
+          <td>创建一个包含所有依赖的独立可执行文件夹。</td>
+      </tr>
+      <tr>
+          <td><code>--onefile</code></td>
+          <td>将所有内容打包为一个单独的 <code>.exe</code> 文件。</td>
+      </tr>
+      <tr>
+          <td><code>--optimize=N</code></td>
+          <td>设置优化级别（<code>0</code>、<code>1</code> 或 <code>2</code>），数字越大，优化越多。</td>
+      </tr>
+      <tr>
+          <td><code>--lto</code></td>
+          <td>启用链接时优化（Link Time Optimization），可选值为 <code>no</code>、<code>yes</code> 或 <code>thin</code>。</td>
+      </tr>
+      <tr>
+          <td><code>--enable-plugin=&lt;plugin_name&gt;</code></td>
+          <td>启用指定插件，如 <code>tk-inter</code>、<code>numpy</code>、<code>anti-bloat</code> 等。</td>
+      </tr>
+      <tr>
+          <td><code>--output-dir=&lt;dir&gt;</code></td>
+          <td>指定编译输出目录。</td>
+      </tr>
+      <tr>
+          <td><code>--remove-output</code></td>
+          <td>编译完成后删除中间生成的 <code>.c</code> 文件和其他临时文件。</td>
+      </tr>
+      <tr>
+          <td><code>--nofollow-imports</code></td>
+          <td>不递归处理任何导入模块。</td>
+      </tr>
+      <tr>
+          <td><code>--include-package=&lt;package_name&gt;</code></td>
+          <td>显式包含整个包及其子模块。</td>
+      </tr>
+      <tr>
+          <td><code>--include-module=&lt;module_name&gt;</code></td>
+          <td>显式包含单个模块。</td>
+      </tr>
+      <tr>
+          <td><code>--follow-import-to=&lt;module/package&gt;</code></td>
+          <td>指定递归处理的模块或包。</td>
+      </tr>
+      <tr>
+          <td><code>--nofollow-import-to=&lt;module/package&gt;</code></td>
+          <td>指定不递归处理的模块或包。</td>
+      </tr>
+      <tr>
+          <td><code>--include-data-files=&lt;source&gt;=&lt;dest&gt;</code></td>
+          <td>包含指定的数据文件。</td>
+      </tr>
+      <tr>
+          <td><code>--include-data-dir=&lt;directory&gt;</code></td>
+          <td>包含整个目录的数据文件。</td>
+      </tr>
+      <tr>
+          <td><code>--noinclude-data-files=&lt;pattern&gt;</code></td>
+          <td>排除匹配模式的数据文件。</td>
+      </tr>
+      <tr>
+          <td><code>--windows-icon-from-ico=&lt;path&gt;</code></td>
+          <td>设置 Windows 可执行文件的图标。</td>
+      </tr>
+      <tr>
+          <td><code>--company-name</code>, <code>--product-name</code>, <code>--file-version</code>, <code>--product-version</code>, <code>--file-description</code></td>
+          <td>设置 Windows 可执行文件的属性。</td>
+      </tr>
+  </tbody>
+</table>
+
           
           
           

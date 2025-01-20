@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2024-08-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-20T00:00:00+00:00">
     <meta property="article:tag" content="Python">
     <meta property="og:image" content="https://morethan987.github.io/blog/pytips/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/en/blog/mysql-basics/">
@@ -109,12 +109,12 @@
     "dateCreated": "2024-08-10T00:00:00\u002b00:00",
     "datePublished": "2024-08-10T00:00:00\u002b00:00",
     
-    "dateModified": "2024-12-20T00:00:00\u002b00:00",
+    "dateModified": "2025-01-20T00:00:00\u002b00:00",
     
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "151"
+    "wordCount": "780"
   }]
   </script>
 
@@ -942,7 +942,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2024-12-20T00:00:00&#43;00:00">Updated: 20 December 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-01-20T00:00:00&#43;00:00">Updated: 20 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1238,6 +1238,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#activate">Activate</a></li>
       </ul>
     </li>
+    <li><a href="#program-packaging">Program Packaging</a>
+      <ul>
+        <li><a href="#pyinstaller">PyInstaller</a></li>
+        <li><a href="#nuitka">Nuitka</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1255,6 +1261,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#creat">Creat</a></li>
         <li><a href="#activate">Activate</a></li>
+      </ul>
+    </li>
+    <li><a href="#program-packaging">Program Packaging</a>
+      <ul>
+        <li><a href="#pyinstaller">PyInstaller</a></li>
+        <li><a href="#nuitka">Nuitka</a></li>
       </ul>
     </li>
   </ul>
@@ -1500,6 +1512,226 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># activate virtual env</span>
 </span></span><span class="line"><span class="cl">your_env_name/Scripts/activate
 </span></span></code></pre></div>
+
+<h2 class="relative group">Program Packaging 
+    <div id="program-packaging" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#program-packaging" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>We often need to share our Python programs. However, sharing the source code alone can be frustrating for users who aren&rsquo;t familiar with coding, as it requires setting up a local environment to run the code. Therefore, program packaging comes in handy.</p>
+
+
+<h3 class="relative group">PyInstaller 
+    <div id="pyinstaller" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#pyinstaller" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Installation is very simple, just like any other Python package: <code>pip install pyinstaller</code>. To use it, open the terminal in the target directory and run the command.</p>
+<p><strong>Features: Fast packaging speed; relatively large packaged files</strong></p>
+<p>Common command codes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Package the main.py file as a standalone executable; the command window is disabled when the executable runs</span>
+</span></span><span class="line"><span class="cl">pyinstaller -F -w main.py
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Package the main.py file into a project folder; the command window is enabled when the executable runs</span>
+</span></span><span class="line"><span class="cl">pyinstaller -D main.py
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-h, --help</code></td>
+          <td>Show help information and exit</td>
+      </tr>
+      <tr>
+          <td><code>-v, --version</code></td>
+          <td>Show program version information and exit</td>
+      </tr>
+      <tr>
+          <td><code>-F, --onefile</code></td>
+          <td>Package everything into a single standalone executable</td>
+      </tr>
+      <tr>
+          <td><code>-D, --onedir</code></td>
+          <td>Package everything into a directory (default option)</td>
+      </tr>
+      <tr>
+          <td><code>-w, --windowed, --noconsole</code></td>
+          <td>Disable the command window (only works on Windows)</td>
+      </tr>
+      <tr>
+          <td><code>-c, --console, --nowindowed</code></td>
+          <td>Use the command window to run the program (default option, only on Windows)</td>
+      </tr>
+      <tr>
+          <td><code>-a, --ascii</code></td>
+          <td>Exclude Unicode character set support (included by default)</td>
+      </tr>
+      <tr>
+          <td><code>-d, --debug</code></td>
+          <td>Generate a debug version of the executable</td>
+      </tr>
+      <tr>
+          <td><code>-n NAME, --name=NAME</code></td>
+          <td>Specify the name of the generated executable or directory (default is script name)</td>
+      </tr>
+      <tr>
+          <td><code>-o DIR, --out=DIR</code></td>
+          <td>Specify the directory where the spec file will be generated (default is the current directory)</td>
+      </tr>
+      <tr>
+          <td><code>-p DIR, --path=DIR</code></td>
+          <td>Set the Python module import path (similar to setting PYTHONPATH)</td>
+      </tr>
+      <tr>
+          <td><code>-i &lt;FILE&gt;, --icon &lt;FILE&gt;</code></td>
+          <td>Set the executable file icon (supports <code>.ico</code> or <code>.icns</code> formats)</td>
+      </tr>
+      <tr>
+          <td><code>--distpath DIR</code></td>
+          <td>Specify the output directory for the executable file (default is <code>./dist</code>)</td>
+      </tr>
+      <tr>
+          <td><code>--workpath WORKPATH</code></td>
+          <td>Specify the temporary working file directory (default is <code>./build</code>)</td>
+      </tr>
+      <tr>
+          <td><code>--add-data &lt;SRC;DEST or SRC:DEST&gt;</code></td>
+          <td>Add additional data files or directories to the executable (use semicolon for Windows, colon for Linux/OSX to separate source and destination paths)</td>
+      </tr>
+      <tr>
+          <td><code>--add-binary &lt;SRC;DEST or SRC:DEST&gt;</code></td>
+          <td>Add additional binary files to the executable</td>
+      </tr>
+      <tr>
+          <td><code>--hidden-import MODULENAME</code></td>
+          <td>Add modules not automatically detected</td>
+      </tr>
+      <tr>
+          <td><code>--exclude-module EXCLUDES</code></td>
+          <td>Exclude specified modules</td>
+      </tr>
+      <tr>
+          <td><code>--clean</code></td>
+          <td>Clean PyInstaller cache and temporary files</td>
+      </tr>
+      <tr>
+          <td><code>--log-level LEVEL</code></td>
+          <td>Set the verbosity of console messages during the build process (possible values: TRACE, DEBUG, INFO, WARN, ERROR, FATAL)</td>
+      </tr>
+  </tbody>
+</table>
+
+
+<h3 class="relative group">Nuitka 
+    <div id="nuitka" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#nuitka" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Nuitka packages Python code into an executable (.exe). The underlying process first converts Python code to C code, then compiles the C code.</p>
+<p><strong>Features: Slow packaging speed; requires an additional C compiler (though automatic setup is possible, it can be strict on memory management, so may not be suitable for users with limited space); smaller packaged files (tested to be about one-tenth the size of PyInstaller&rsquo;s output)</strong></p>
+<p>Installation command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip install -U nuitka
+</span></span></code></pre></div><p>Common usage command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Package the main.py file into an exe file with link-time optimization, and remove temporary files after packaging</span>
+</span></span><span class="line"><span class="cl">python -m nuitka --lto<span class="o">=</span>yes --remove-output --onefile main.py
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--standalone</code></td>
+          <td>Create a standalone executable folder that includes all dependencies.</td>
+      </tr>
+      <tr>
+          <td><code>--onefile</code></td>
+          <td>Package everything into a single <code>.exe</code> file.</td>
+      </tr>
+      <tr>
+          <td><code>--optimize=N</code></td>
+          <td>Set optimization level (<code>0</code>, <code>1</code>, or <code>2</code>), the higher the number, the more optimized the result.</td>
+      </tr>
+      <tr>
+          <td><code>--lto</code></td>
+          <td>Enable Link-Time Optimization (possible values: <code>no</code>, <code>yes</code>, <code>thin</code>).</td>
+      </tr>
+      <tr>
+          <td><code>--enable-plugin=&lt;plugin_name&gt;</code></td>
+          <td>Enable a specific plugin, such as <code>tk-inter</code>, <code>numpy</code>, <code>anti-bloat</code>, etc.</td>
+      </tr>
+      <tr>
+          <td><code>--output-dir=&lt;dir&gt;</code></td>
+          <td>Specify the output directory for the compiled files.</td>
+      </tr>
+      <tr>
+          <td><code>--remove-output</code></td>
+          <td>Delete intermediate <code>.c</code> files and other temporary files after compilation.</td>
+      </tr>
+      <tr>
+          <td><code>--nofollow-imports</code></td>
+          <td>Do not recursively process any imported modules.</td>
+      </tr>
+      <tr>
+          <td><code>--include-package=&lt;package_name&gt;</code></td>
+          <td>Explicitly include an entire package and its submodules.</td>
+      </tr>
+      <tr>
+          <td><code>--include-module=&lt;module_name&gt;</code></td>
+          <td>Explicitly include a specific module.</td>
+      </tr>
+      <tr>
+          <td><code>--follow-import-to=&lt;module/package&gt;</code></td>
+          <td>Specify which modules or packages to recursively process.</td>
+      </tr>
+      <tr>
+          <td><code>--nofollow-import-to=&lt;module/package&gt;</code></td>
+          <td>Specify which modules or packages not to recursively process.</td>
+      </tr>
+      <tr>
+          <td><code>--include-data-files=&lt;source&gt;=&lt;dest&gt;</code></td>
+          <td>Include specified data files.</td>
+      </tr>
+      <tr>
+          <td><code>--include-data-dir=&lt;directory&gt;</code></td>
+          <td>Include all data files in the specified directory.</td>
+      </tr>
+      <tr>
+          <td><code>--noinclude-data-files=&lt;pattern&gt;</code></td>
+          <td>Exclude data files matching a specified pattern.</td>
+      </tr>
+      <tr>
+          <td><code>--windows-icon-from-ico=&lt;path&gt;</code></td>
+          <td>Set the Windows executable icon.</td>
+      </tr>
+      <tr>
+          <td><code>--company-name</code>, <code>--product-name</code>, <code>--file-version</code>, <code>--product-version</code>, <code>--file-description</code></td>
+          <td>Set Windows executable properties.</td>
+      </tr>
+  </tbody>
+</table>
+
           
           
           
