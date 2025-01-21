@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/note-to-blog-report/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/authors/morethan/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -228,7 +228,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -244,7 +244,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -276,7 +276,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/series/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -292,7 +292,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/authors/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -330,7 +330,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/hugo/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -346,7 +346,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/%E6%8A%A5%E5%91%8A/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -362,7 +362,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -375,6 +375,12 @@
       hreflang="zh-cn"
       href="https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/"
     />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/series/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2025-01-21T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/%E7%BB%8F%E5%8E%86/</loc>
