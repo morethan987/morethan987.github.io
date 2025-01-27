@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>报告 on Morethan 小站</title>
-    <link>https://morethan987.github.io/tags/%E6%8A%A5%E5%91%8A/</link>
-    <description>Recent content in 报告 on Morethan 小站</description>
+    <title>日程管理 on Morethan 小站</title>
+    <link>https://morethan987.github.io/tags/%E6%97%A5%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 日程管理 on Morethan 小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E6%97%A5%E7%A8%8B%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>日程管理项目分析</title>
@@ -33,20 +33,6 @@
 &lt;/h2&gt;
 &lt;p&gt;本文涉及的日程管理软件主要指代的是具有如下定位的软件：&lt;/p&gt;</description>
       
-    </item>
-    
-    <item>
-      <title>笔记转博客项目分析报告</title>
-      <link>https://morethan987.github.io/blog/note-to-blog-report/</link>
-      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/blog/note-to-blog-report/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  熟悉项目分析流程，是一个练手性质的分析报告
-&lt;/div&gt;
-
-&lt;p&gt;我在初步完成自己的&lt;a href=&#34;https://morethan987.github.io/blog/plugin-writing-experience/&#34;&gt;小插件&lt;/a&gt;之后才发现：&lt;strong&gt;笔记转博客&lt;/strong&gt;这个领域似乎没有一个一键式解决方案，为此我写了这篇文章来分析是否要创建一个新的项目来填补这个空白。&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/note-to-blog-report/featured.svg" />
     </item>
     
   </channel>
