@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Hugo博客搭建 &middot; Morethan 小站</title>
-  <meta name="title" content="Hugo博客搭建 &middot; Morethan 小站" />
+  <title>Neo4j基础 &middot; Morethan 小站</title>
+  <meta name="title" content="Neo4j基础 &middot; Morethan 小站" />
   
-  <meta name="description" content="Hugo博客搭建" />
-  <meta name="keywords" content="Hugo, 博客, " />
+  <meta name="description" content="Neo4j图数据库的基础信息以及操作方法" />
+  <meta name="keywords" content="Neo4j, " />
   
   
-  <link rel="canonical" href="https://morethan987.github.io/blog/hugo-blog/" />
+  <link rel="canonical" href="https://morethan987.github.io/blog/neo4j-basics/" />
   
   
   
@@ -67,28 +67,27 @@
   
   
   
-  <meta property="og:url" content="https://morethan987.github.io/blog/hugo-blog/">
+  <meta property="og:url" content="https://morethan987.github.io/blog/neo4j-basics/">
   <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="Hugo博客搭建">
-  <meta property="og:description" content="Hugo博客搭建">
+  <meta property="og:title" content="Neo4j基础">
+  <meta property="og:description" content="Neo4j图数据库的基础信息以及操作方法">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-01-07T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-07T00:00:00+00:00">
-    <meta property="article:tag" content="Hugo">
-    <meta property="article:tag" content="博客">
-    <meta property="og:image" content="https://morethan987.github.io/blog/hugo-blog/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/neo4j-basics/">
+    <meta property="article:published_time" content="2025-02-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-05T00:00:00+00:00">
+    <meta property="article:tag" content="Neo4j">
+    <meta property="og:image" content="https://morethan987.github.io/blog/neo4j-basics/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/blog/mysql-basics/">
+      <meta property="og:see_also" content="https://morethan987.github.io/blog/hugo-blog/">
       <meta property="og:see_also" content="https://morethan987.github.io/blog/pytips/">
       <meta property="og:see_also" content="https://morethan987.github.io/blog/localoverleaf/">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/hugo-blog/featured.svg">
-  <meta name="twitter:title" content="Hugo博客搭建">
-  <meta name="twitter:description" content="Hugo博客搭建">
+  <meta name="twitter:image" content="https://morethan987.github.io/blog/neo4j-basics/featured.svg">
+  <meta name="twitter:title" content="Neo4j基础">
+  <meta name="twitter:description" content="Neo4j图数据库的基础信息以及操作方法">
 
   
   <script type="application/ld+json">
@@ -96,26 +95,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "Hugo博客搭建",
-    "headline": "Hugo博客搭建",
-    "description": "Hugo博客搭建",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  博客网站折腾日志，从手搓到 Hugo 的曲折经历。\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e为什么 Hugo \n    \u003cdiv id=\u0022%E4%B8%BA%E4%BB%80%E4%B9%88-hugo\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E4%B8%BA%E4%BB%80%E4%B9%88-hugo\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是\u003cstrong\u003e世界上最快\u003c\/strong\u003e的静态页面生成器，官方网站也是这么写的。\u003c\/p\u003e",
+    "name": "Neo4j基础",
+    "headline": "Neo4j基础",
+    "description": "Neo4j图数据库的基础信息以及操作方法",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  Neo4j图数据库的基础信息以及操作方法\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e简介 \n    \u003cdiv id=\u0022%E7%AE%80%E4%BB%8B\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E7%AE%80%E4%BB%8B\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/github.com\/neo4j\/neo4j\u0022 target=\u0022_blank\u0022\u003eNeo4j\u003c\/a\u003e 是一个高性能的图数据库，将数据以及数据之间的关系通过图的形式来存储。图的具体形式是\u003cstrong\u003e标签属性图\u003c\/strong\u003e，使用的查询语言是 \u003ccode\u003eCypher\u003c\/code\u003e。\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/morethan987.github.io\/blog\/hugo-blog\/",
+    "url" : "https:\/\/morethan987.github.io\/blog\/neo4j-basics\/",
     "author" : {
       "@type": "Person",
       "name": "Morethan"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-01-07T00:00:00\u002b00:00",
-    "datePublished": "2025-01-07T00:00:00\u002b00:00",
+    "dateCreated": "2025-02-05T00:00:00\u002b00:00",
+    "datePublished": "2025-02-05T00:00:00\u002b00:00",
     
-    "dateModified": "2025-01-07T00:00:00\u002b00:00",
+    "dateModified": "2025-02-05T00:00:00\u002b00:00",
     
-    "keywords": ["Hugo","博客"],
+    "keywords": ["Neo4j"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2374"
+    "wordCount": "985"
   }]
   </script>
 
@@ -498,20 +497,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Hugo博客搭建">中文</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Neo4j基础">中文</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/hugo-blog/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Hugo Blog Setup">
+        <a href="/en/blog/neo4j-basics/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Neo4j Basics">
             English
           </p>
         </a>
         
-        <a href="/blog/hugo-blog/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Hugo博客搭建">
+        <a href="/blog/neo4j-basics/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Neo4j基础">
             中文
           </p>
         </a>
@@ -585,20 +584,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Hugo博客搭建">中文</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Neo4j基础">中文</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/hugo-blog/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Hugo Blog Setup">
+        <a href="/en/blog/neo4j-basics/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Neo4j Basics">
             English
           </p>
         </a>
         
-        <a href="/blog/hugo-blog/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Hugo博客搭建">
+        <a href="/blog/neo4j-basics/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Neo4j基础">
             中文
           </p>
         </a>
@@ -825,7 +824,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/blog/hugo-blog/background.svg);">
+    style="background-image:url(/blog/neo4j-basics/background.svg);">
     
 
 
@@ -878,8 +877,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <li class="inline hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/blog/hugo-blog/"
-      >Hugo博客搭建</a
+      href="/blog/neo4j-basics/"
+      >Neo4j基础</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -888,7 +887,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Hugo博客搭建
+      Neo4j基础
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -941,7 +940,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-07T00:00:00&#43;00:00">2025-01-07</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-02-05T00:00:00&#43;00:00">2025-02-05</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -957,7 +956,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/hugo-blog/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/neo4j-basics/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -982,7 +981,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/hugo-blog/index.md"
+  <span id="likes_blog/neo4j-basics/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -1025,7 +1024,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <span class="mb-[2px]">
   <a
-    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/hugo-blog/index.zh-cn.md"
+    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/neo4j-basics/index.zh-cn.md"
     class="text-lg hover:text-primary-500"
     rel="noopener noreferrer"
     target="_blank"
@@ -1064,6 +1063,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
   
   
+  <span class="pl-2"><span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span></span>
+  
 </div>
 
 
@@ -1101,18 +1106,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hugo/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/neo4j/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Hugo
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    博客
+    Neo4j
   </span>
 </span>
   </span>
@@ -1239,18 +1236,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#为什么-hugo">为什么 Hugo</a></li>
-    <li><a href="#参考引用">参考引用</a></li>
-    <li><a href="#部署全流程">部署全流程</a>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#标签属性图">标签属性图</a></li>
+    <li><a href="#cypher">Cypher</a>
       <ul>
-        <li><a href="#搭建-hugo-环境">搭建 Hugo 环境</a></li>
-        <li><a href="#生成模版系统">生成模版系统</a></li>
-        <li><a href="#主题配置基本操作">主题配置基本操作</a></li>
-        <li><a href="#blowfish-主题">Blowfish 主题</a></li>
+        <li><a href="#模式">模式</a></li>
+        <li><a href="#数据读取">数据读取</a></li>
+        <li><a href="#数据写入">数据写入</a></li>
       </ul>
     </li>
-    <li><a href="#配套插件">配套插件</a></li>
-    <li><a href="#写在最后">写在最后</a></li>
   </ul>
 </nav>
   </div>
@@ -1264,18 +1258,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#为什么-hugo">为什么 Hugo</a></li>
-    <li><a href="#参考引用">参考引用</a></li>
-    <li><a href="#部署全流程">部署全流程</a>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#标签属性图">标签属性图</a></li>
+    <li><a href="#cypher">Cypher</a>
       <ul>
-        <li><a href="#搭建-hugo-环境">搭建 Hugo 环境</a></li>
-        <li><a href="#生成模版系统">生成模版系统</a></li>
-        <li><a href="#主题配置基本操作">主题配置基本操作</a></li>
-        <li><a href="#blowfish-主题">Blowfish 主题</a></li>
+        <li><a href="#模式">模式</a></li>
+        <li><a href="#数据读取">数据读取</a></li>
+        <li><a href="#数据写入">数据写入</a></li>
       </ul>
     </li>
-    <li><a href="#配套插件">配套插件</a></li>
-    <li><a href="#写在最后">写在最后</a></li>
   </ul>
 </nav>
   </div>
@@ -1383,7 +1374,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 3: 本文
+        <a href="https://morethan987.github.io/blog/hugo-blog/">
+            § 3: Hugo博客搭建
+        </a>
     </div>
     
     
@@ -1399,9 +1392,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://morethan987.github.io/blog/neo4j-basics/">
-            § 5: Neo4j基础
-        </a>
+        § 5: 本文
     </div>
     
     
@@ -1413,71 +1404,100 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
         <div class="article-content max-w-prose mb-20">
           <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  博客网站折腾日志，从手搓到 Hugo 的曲折经历。
+  Neo4j图数据库的基础信息以及操作方法
 </div>
 
 
 
-<h2 class="relative group">为什么 Hugo 
-    <div id="%E4%B8%BA%E4%BB%80%E4%B9%88-hugo" class="anchor"></div>
+<h2 class="relative group">简介 
+    <div id="%E7%AE%80%E4%BB%8B" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-hugo" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E7%AE%80%E4%BB%8B" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是<strong>世界上最快</strong>的静态页面生成器，官方网站也是这么写的。</p>
-<p>当然，口说无凭，下面就是我初次本地编译运行 Hugo 得到的输出，即在完全没有 <code>public</code> 文件夹的情况下的输出：</p>
-<table>
-  <thead>
-      <tr>
-          <th></th>
-          <th>ZH-CN</th>
-          <th>EN</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Pages</td>
-          <td>53</td>
-          <td>51</td>
-      </tr>
-      <tr>
-          <td>Paginator pages</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Non-page files</td>
-          <td>13</td>
-          <td>13</td>
-      </tr>
-      <tr>
-          <td>Static files</td>
-          <td>7</td>
-          <td>7</td>
-      </tr>
-      <tr>
-          <td>Processed images</td>
-          <td>3</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Aliases</td>
-          <td>18</td>
-          <td>17</td>
-      </tr>
-      <tr>
-          <td>Cleaned</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-  </tbody>
-</table>
-<p>Built in 872 ms</p>
-<p>中英文总共 104 个网页页面花费时间 0.872 秒，并且包含构建本地服务的时间，这个速度确实没什么好挑剔的了。并且本地的服务能够实时监听源代码的改动并进行<strong>增量重构</strong>，这个增量重构的时间取决于改动的多少，一般在 0.03 秒左右。</p>
+<p><a href="https://github.com/neo4j/neo4j" target="_blank">Neo4j</a> 是一个高性能的图数据库，将数据以及数据之间的关系通过图的形式来存储。图的具体形式是<strong>标签属性图</strong>，使用的查询语言是 <code>Cypher</code>。</p>
+
+
+<h2 class="relative group">标签属性图 
+    <div id="%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7%E5%9B%BE" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7%E5%9B%BE" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><strong>标签属性图</strong>是一种特定类型的图：</p>
+<ul>
+<li>一个结点有一个或者多个标签来进行类型的定义</li>
+<li>关系和节点地位相同，被视为同等重要</li>
+<li>每个节点和关系都拥有可供访问的属性</li>
+</ul>
+
+
+<h2 class="relative group">Cypher 
+    <div id="cypher" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#cypher" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<blockquote>
+<p>Cypher 是一种<strong>声明式</strong>查询语言，允许你使用类似<strong>ASCII艺术风格</strong>的语法（包括括号、破折号和箭头）来识别数据中的<strong>模式</strong>。</p>
+</blockquote>
+
+
+<h3 class="relative group">模式 
+    <div id="%E6%A8%A1%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%A8%A1%E5%BC%8F" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p><strong>模式</strong>是图数据库中的特定的结点和关系的组合，例如一个人（Person）在一个电影（Movie）中出演（ACT_IN）就是一个模式，代码形式表示为：</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">(p:Person)-[r:ACT_IN]-&gt;(m:Movie)
+</code></pre><p>其中用小括号选中的部分是结点，用方括号选中的部分是关系。结点部分中 p，m 是指代相应结点的变量，Person 和 Movie 是对应结点的标签，中间用冒号连接。关系部分中 r 是指代关系的变量，ACT_IN 是特定的关系类型。直接翻译成自然语言，意思就是：用 p 指代包含 Person 标签的结点，用 m 指代包含 Movie 标签的结点，他们之间的关系用 r 表示，类型是 ACT_IN</p>
+
+
+<h3 class="relative group">数据读取 
+    <div id="%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>数据读取操作依赖<strong>模式匹配</strong>，使用关键字 <code>MATCH</code>，这相当于给数据库发送指令，让它过滤出只符合特定关系的<strong>结点关系对</strong>，也就是三元组 <code>(p,r,m)</code> 构成的集合</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person)-[r:ACT_IN]-&gt;(m:Movie)
+</code></pre><p>类似于 SQL，你还可以使用关键字 <code>WHERE</code> 进行进一步的筛选：</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person)-[r:ACT_IN]-&gt;(m:Movie)
+WHERE p.name = &#39;Tom Hanks&#39;
+RETURN p,r,m
+</code></pre><p><code>name</code> 就是结点 <code>p</code> 的一个属性，使用 <code>.</code> 操作服来访问节点的额属性；<code>RETURN</code> 关键字标记返回值。</p>
+<p>下面是一个更加复杂的模式匹配命令代码，<code>AS</code> 关键字用来设置别名：</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (p:Person)-[:ACTED_IN]-&gt;(m:Movie)&lt;-[r:ACTED_IN]-(p2:Person)
+WHERE p.name = &#39;Tom Hanks&#39;
+RETURN p2.name AS actor, m.title AS movie, r.role AS role
+</code></pre><p>这个命令筛选出和 Tom Hanks 参演过同一场电影的所有演员，并给出他们的名字、参与的电影、在电影中饰演的角色</p>
+<p>按照某个属性来进行排序以及分页也是支持的：</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MATCH (m:Movie)
+WHERE m.released IS NOT NULL
+RETURN m.title AS title, m.url AS url, m.released AS released
+ORDER BY released DESC LIMIT 5
+</code></pre><p>这会筛选出最新的 5 个电影。</p>
 
   
   
@@ -1510,236 +1530,42 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <span
     
       style="color: #E0E7FF"
-    >我并没有用别的网页生成工具搭建过博客，因此无法给出其他生成器的实际生成速度</span>
+    >Cypher 关键字对大小写不敏感；属性名、变量名等其他的都是大小写敏感的</span>
 </div>
 
 
 
-<h2 class="relative group">参考引用 
-    <div id="%E5%8F%82%E8%80%83%E5%BC%95%E7%94%A8" class="anchor"></div>
+<h3 class="relative group">数据写入 
+    <div id="%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8F%82%E8%80%83%E5%BC%95%E7%94%A8" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5" aria-label="锚点">#</a>
     </span>        
     
-</h2>
-<p>下面是我在搭建博客的过程中所用到的所有资源链接：</p>
+</h3>
+<p>数据写入使用 <code>MERGE</code> 关键字，其含义就是将一个结点或者关系<strong>合并</strong>进数据图中。</p>
 <ul>
-<li><a href="https://letere-gzj.github.io/hugo-stack/" target="_blank">莱特雷-letere</a> 这是一位博主的网页，也是用 Hugo 搭建的，里面同时也有很多其他的网页工具的教程；这是他在 B 站上发布的系列<a href="https://www.bilibili.com/video/BV1bovfeaEtQ/?spm_id_from=333.337.search-card.all.click&amp;vd_source=38d0addc11facdcdfe9d401e43b75680" target="_blank">视频教程</a></li>
-<li><a href="https://blowfish.page/zh-cn/" target="_blank">Blowfish</a> 这是我使用的一款 Hugo 主题，文档写的相当的好，真的没见过如此耐心的作者。</li>
-<li><a href="https://gohugo.io/" target="_blank">Hugo官方网页</a></li>
-<li><a href="https://themes.gohugo.io/" target="_blank">Hugo Themes</a></li>
+<li>合并结点：</li>
 </ul>
-
-
-<h2 class="relative group">部署全流程 
-    <div id="%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%83%A8%E7%BD%B2%E5%85%A8%E6%B5%81%E7%A8%8B" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">搭建 Hugo 环境 
-    <div id="%E6%90%AD%E5%BB%BA-hugo-%E7%8E%AF%E5%A2%83" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%90%AD%E5%BB%BA-hugo-%E7%8E%AF%E5%A2%83" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>这一部分在那位博主的<a href="https://letere-gzj.github.io/hugo-stack/" target="_blank">网页</a>和<a href="https://www.bilibili.com/video/BV1bovfeaEtQ/?spm_id_from=333.337.search-card.all.click&amp;vd_source=38d0addc11facdcdfe9d401e43b75680" target="_blank">视频教程</a>中都有非常详细的讲解，不喜欢看文字的可以去看视频😝</p>
-<p>说实话，Hugo 的环境搭建真的是我见过的最简单的，没有之一。你只需要到 <a href="https://gohugo.io/" target="_blank">Hugo官方网页</a>去把 Hugo 下载下来，然后存放到合适的文件夹里面，然后解压就完成了，解压之后的文件夹内也只有一个 <code>hugo.exe</code> 文件，简直不要太简单。</p>
-<p>
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >Hugo 真的是太方便了，我曾经尝试过 Hexo 但是 Node.js 的配置就把我拒之门外了，到现在我也不知道为什么会编译报错😢</span>
-</div>
-
-稍微需要那么一点点🤏难度的工作其实就是把 <code>hugo.exe</code> 所在的目录添加到环境变量里面去。</p>
-
-
-<h3 class="relative group">生成模版系统 
-    <div id="%E7%94%9F%E6%88%90%E6%A8%A1%E7%89%88%E7%B3%BB%E7%BB%9F" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E7%89%88%E7%B3%BB%E7%BB%9F" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>在 <code>hugo.exe</code> 的目录中打开终端，然后输入命令 <code>hugo new site your-site-name</code>，然后就可以看到一个新的文件夹📂出现在了当前文件夹里面。</p>
-<p><strong>模板系统</strong>听着很高级，其实就是在你的 <code>hugo.exe</code> 的同级目录下面建一个文件夹，但是里面的所有文件夹都有特殊的含义，不能随便改动。</p>
-<table>
-  <thead>
-      <tr>
-          <th>名称</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>asset</code></td>
-          <td>存放网站结构用到的图片，图标等资产</td>
-      </tr>
-      <tr>
-          <td><code>config</code></td>
-          <td>网站配置文件夹（初始时可能没有，有些主题需要）</td>
-      </tr>
-      <tr>
-          <td><code>hugo.toml</code></td>
-          <td>网站配置文件之一</td>
-      </tr>
-      <tr>
-          <td><code>content</code></td>
-          <td>所有内容都在这里面</td>
-      </tr>
-      <tr>
-          <td><code>public</code></td>
-          <td>是编译后生成的完整网页，一开始没有</td>
-      </tr>
-      <tr>
-          <td><code>themes</code></td>
-          <td>存放你的网站主题</td>
-      </tr>
-  </tbody>
-</table>
-
-
-<h3 class="relative group">主题配置基本操作 
-    <div id="%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>Hugo 的网站主题很多，具体参考 <a href="https://themes.gohugo.io/" target="_blank">Hugo Themes</a> 你可以选一款你喜欢的主题，然后下载之后就放在 <code>themes</code> 文件夹里面就行。这一部分文字描述非常抽象，见<a href="https://www.bilibili.com/video/BV1bovfeaEtQ/?spm_id_from=333.337.search-card.all.click&amp;vd_source=38d0addc11facdcdfe9d401e43b75680" target="_blank">视频教程</a></p>
-<p>这里有一个<strong>重点</strong>是：基本上每一个主题都会配置一个<strong>样例网站</strong>，一般在文件夹 <code>exampleSite</code> 里面，如果实在不想跟着网站文档自己配置，直接用这个样例网站的配置也是可以的。</p>
-<p>每一个不同的主题基本配置完成之后都要进行个性化配置。这里我重点推荐重点推荐一下我使用的主题 <a href="https://blowfish.page/zh-cn/" target="_blank">Blowfish</a> 相当好的一款主题，向作者致敬🫡</p>
-
-
-<h3 class="relative group">Blowfish 主题 
-    <div id="blowfish-%E4%B8%BB%E9%A2%98" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#blowfish-%E4%B8%BB%E9%A2%98" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://blowfish.page/zh-cn/" target="_blank">Blowfish</a> 官方文档上面已经有了非常非常详细的指导文档，不再过多赘述。任何一个多余的字都是对于如此详细的指导文档的不尊重🫡</p>
-<p>我这里简要说明一些可能出现的问题，下面的内容你可能需要仔细阅读官方文档之后才能明白其中含义🤔</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MERGE (m:Movie {title: &#34;Arthur the King&#34;})
+SET m.year = 2024
+RETURN m
+</code></pre><p>这个命令代码会创建一个新的 Movie 结点，其 <code>title</code> 属性被设置为 <code>&quot;Arthur the King&quot;</code>，<code>year</code> 属性被设置为 <code>2024</code>；</p>
+<p>你可能会疑惑为什么不这样写：</p>
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MERGE (m:Movie)
+SET m.year = 2024, m.titile = &#34;Arthur the King&#34;
+RETURN m
+</code></pre><p>其实大括号内的内容被用于检查你想创建的<strong>模式</strong>是否已经存在，避免重复创建模式。</p>
 <ul>
-<li>在 <code>params.homepage.showRecent = false</code> 的情况下，为什么还会显示&quot;最近文章&quot;？</li>
+<li>合并关系：</li>
 </ul>
-<p>如果遇到这个问题，说明你跟我一样懒惰🤪直接套用了 <code>exampleSite</code> 的代码。这是因为控制主页面的接口不止这一个，还有一个在 <code>layouts\partials\home\custom.html</code> 文件中。</p>
-<p>如果你不介意那么直接忽略就行，如果你介意（跟我一样🤪），那就把文件中的下面的代码注释掉👇</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  {{ partial &#34;recent-articles-demo.html&#34; . }}
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-</span></span></code></pre></div><ul>
-<li>为什么我使用 <code>svg</code> 格式的 <code>logo</code> 无法完成(日间/夜间)模式的切换？</li>
-</ul>
-<p>这是我发现的一个 <code>bug</code>，已经给主题作者推送我改进的代码了，详见<a href="https://github.com/nunocoracao/blowfish/pull/1902" target="_blank">代码改进</a>或 <a href="https://github.com/morethan987/hugo_main/blob/main/assets/js/appearance.js" target="_blank">SVG 支持</a></p>
-<ul>
-<li>为什么浏览器窗口上的小图标一直都是 <code>blowfish</code>，即使改换了 <code>logo</code> 也不行？</li>
-</ul>
-<p>官方文档其实是有写的，但藏的太深了，见<a href="https://blowfish.page/zh-cn/docs/partials/#%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87favicons" target="_blank">局部模板(Partials) · Blowfish</a></p>
-<p>说实话，官方文档写的真的好👍一套完整流程走下来竟然只有这么点不太容易理解的错误😋</p>
-
-
-<h2 class="relative group">配套插件 
-    <div id="%E9%85%8D%E5%A5%97%E6%8F%92%E4%BB%B6" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E9%85%8D%E5%A5%97%E6%8F%92%E4%BB%B6" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>我日常习惯使用 <a href="https://obsidian.md/" target="_blank">Obsidian</a> 来写文章，由于 Obsidian 的格式与 Blowfish 的格式还是有较为明显的区别，二者的格式转换非常麻烦🤔</p>
-<p>在查询了一圈之后，发现根本就没有适合的插件！于是，我自己开发了一个插件：<a href="https://github.com/morethan987/Hugo-Blowfish-Exporter" target="_blank">Hugo-Blowfish-Exporter</a></p>
-<p>虽然插件功能很简单，但是也已经覆盖了我自己绝大部分的使用功能，包括：</p>
-<p>  - <strong>callout</strong>（支持所有官方的 callout 名称，需要<a href="https://github.com/morethan987/hugo_main/tree/main/assets/icons" target="_blank">新增图标</a>）</p>
-<p>  - <strong>内联数学公式</strong>（Blowfish 支持块级公式）</p>
-<p>  - <strong>mermaid</strong>（支持 mermaid 图表）</p>
-<p>  - <strong>图片插入</strong>（能够自动导出图片）</p>
-<p>  - <strong>Wiki链接导出</strong>（并不支持展示性链接😢）</p>
-<ol>
-<li>
-<p>非展示性链接简单处理为网页超链接形式</p>
-</li>
-<li>
-<p>展示性链接较为复杂：需要覆写 <code>Blowfish</code> 主题的源代码，通过 <code>mdimporter</code> 这个 <code>shortcode</code> 来进行文件注入；同时为了方便链接，每一个文件都需要设置 <code>slug</code> 属性来标记网站中存放 <code>markdown</code> 文件的文件夹</p>
-</li>
-<li>
-<p>对于主题源代码的覆写详见 <a href="https://github.com/morethan987/hugo_main/blob/main/layouts/shortcodes/mdimporter.html" target="_blank">mdimporter</a> 以及用于去除注入文件开头元数据的 <a href="https://github.com/morethan987/hugo_main/blob/main/layouts/partials/stripFrontMatter.html" target="_blank">stripFrontMatter</a>；覆写目录参考 GitHub 上的配置</p>
-</li>
-</ol>
-<p>这个插件也是投入了我巨大的精力，虽然也只有几天时间🤔但是那几天还是挺累的😵‍💫</p>
-<p>如果这个插件帮助了你，还请转发分享；如果你对于这个插件的功能不满意，你也可以在 GitHub 上向我提交 Issue🫡或者熟悉代码的朋友可以直接把源码拿去修改，注释很完整，代码比较规范🤗</p>
-<p>如果你能把你亲自修改升级的代码也分享给我（在 GitHub 上提交 Pull Request）那更是万分感谢！☺️</p>
-
-
-<h2 class="relative group">写在最后 
-    <div id="%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p><strong>一个博客网站的搭建只是万里长征的第一步，真正困难的还是博客内容的填充。</strong></p>
-<p>正如我在<a href="https://morethan987.github.io/blog/plugin-writing-experience/">一次写插件的经历</a>中所写，很多个人博客网站从一开始的火热到最终的沉寂可能只需要短短一年的时间。</p>
-<p>在这个生活节奏越来越快的时代，无意义、无效率的事情大多都会向<strong>高效</strong>让步，曾经的初心与梦想往往会向生活妥协。我自己也早已经没有了当初的热情，行为方式上也更加的像一个<strong>真正的成年人</strong>。</p>
-<p>但是我仍然是有些<strong>不甘心</strong>，这个网站就是一种抗争吧，我会尽力维护下去，这也是我写插件方便我更新博客的目的所在。</p>
-<p>因此希望这篇教程所提供的内容能够帮助到正在准备搭建自己的博客网站的你，你我共勉🫡</p>
-
+<pre tabindex="0"><code class="language-cypher" data-lang="cypher">MERGE (m:Movie {title: &#34;Arthur the King&#34;})
+MERGE (u:User {name: &#34;Adam&#34;})
+MERGE (u)-[r:RATED {rating: 5}]-&gt;(m)
+RETURN u, r, m
+</code></pre>
           
           
           
@@ -1777,7 +1603,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 3: 本文
+        <a href="https://morethan987.github.io/blog/hugo-blog/">
+            § 3: Hugo博客搭建
+        </a>
     </div>
     
     
@@ -1793,9 +1621,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://morethan987.github.io/blog/neo4j-basics/">
-            § 5: Neo4j基础
-        </a>
+        § 5: 本文
     </div>
     
     
@@ -1811,7 +1637,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/hugo-blog/&amp;title=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/neo4j-basics/&amp;title=Neo4j%e5%9f%ba%e7%a1%80"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -1830,7 +1656,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/hugo-blog/&amp;text=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/neo4j-basics/&amp;text=Neo4j%e5%9f%ba%e7%a1%80"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -1848,7 +1674,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba&#43;https://morethan987.github.io/blog/hugo-blog/"
+      href="https://bsky.app/intent/compose?text=Neo4j%e5%9f%ba%e7%a1%80&#43;https://morethan987.github.io/blog/neo4j-basics/"
       title=""
       aria-label=""
       >
@@ -1866,7 +1692,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/hugo-blog/&amp;resubmit=true&amp;title=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/neo4j-basics/&amp;resubmit=true&amp;title=Neo4j%e5%9f%ba%e7%a1%80"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -1885,7 +1711,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/hugo-blog/&amp;resubmit=true&amp;title=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/neo4j-basics/&amp;resubmit=true&amp;title=Neo4j%e5%9f%ba%e7%a1%80"
       title=""
       aria-label=""
       >
@@ -1904,7 +1730,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://morethan987.github.io/blog/hugo-blog/&amp;resubmit=true&amp;title=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://t.me/share/url?url=https://morethan987.github.io/blog/neo4j-basics/&amp;resubmit=true&amp;title=Neo4j%e5%9f%ba%e7%a1%80"
       title=""
       aria-label=""
       >
@@ -1923,7 +1749,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/hugo-blog/&amp;description=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/neo4j-basics/&amp;description=Neo4j%e5%9f%ba%e7%a1%80"
       title="钉到 Pinterest"
       aria-label="钉到 Pinterest"
       >
@@ -1942,7 +1768,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/hugo-blog/&amp;quote=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/neo4j-basics/&amp;quote=Neo4j%e5%9f%ba%e7%a1%80"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1961,7 +1787,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://morethan987.github.io/blog/hugo-blog/&amp;subject=Hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba"
+      href="mailto:?body=https://morethan987.github.io/blog/neo4j-basics/&amp;subject=Neo4j%e5%9f%ba%e7%a1%80"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -1987,11 +1813,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
 
-  <a href="/blog/localoverleaf/" class="min-w-full">
+  <a href="/blog/mysql-basics/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/localoverleaf/blog/localOverleaf/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/mysql-basics/featured.svg);"></div>
         
       
 
@@ -1999,7 +1825,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/localoverleaf/">本地 OverLeaf 部署</div>
+          href="/blog/mysql-basics/">MySQL基础</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2018,8 +1844,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
 
-
-  
 
 
 
@@ -2046,7 +1870,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-07-12T00:00:00&#43;00:00">2024-07-12</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2024-12-20T00:00:00&#43;00:00">更新于: 2024-12-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-01-15T00:00:00&#43;00:00">2025-01-15</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2062,7 +1886,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/LocalOverleaf/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/mysql-basics/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2087,7 +1911,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/LocalOverleaf/index.md"
+  <span id="likes_blog/mysql-basics/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -2140,18 +1964,198 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/overleaf/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mysql/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Overleaf
+    MySQL
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/latex/&#34;,'_self');return false;">
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/blog/hugo-blog/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/hugo-blog/featured.svg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/blog/hugo-blog/">Hugo博客搭建</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-01-07T00:00:00&#43;00:00">2025-01-07</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/hugo-blog/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/hugo-blog/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hugo/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    LaTeX
+    Hugo
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    博客
   </span>
 </span>
   </span>
@@ -2357,186 +2361,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   </a>
 
   
-  
-
-  <a href="/blog/plugin-writing-experience/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/plugin-writing-experience/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/plugin-writing-experience/">一次写插件经历</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-01-06T00:00:00&#43;00:00">2025-01-06</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/plugin-writing-experience/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/plugin-writing-experience/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%BB%8F%E5%8E%86/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    经历
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
 </section>
 
   
@@ -2553,8 +2377,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
         
       <script>
-        var oid = "views_blog\/hugo-blog\/index.md"
-        var oid_likes = "likes_blog\/hugo-blog\/index.md"
+        var oid = "views_blog\/neo4j-basics\/index.md"
+        var oid_likes = "likes_blog\/neo4j-basics\/index.md"
       </script>
       
       
@@ -2574,7 +2398,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/blog/plugin-writing-experience/">
+            <a class="flex group mr-3" href="/blog/schedule-management-report/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -2586,11 +2410,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >一次写插件经历</span
+                  >日程管理项目分析</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-01-06T00:00:00&#43;00:00">2025-01-06</time>
+                    <time datetime="2025-01-27T00:00:00&#43;00:00">2025-01-27</time>
                   
                 </span>
               </span>
@@ -2598,28 +2422,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/blog/note-to-blog-report/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >笔记转博客项目分析报告</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-01-10T00:00:00&#43;00:00">2025-01-10</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
