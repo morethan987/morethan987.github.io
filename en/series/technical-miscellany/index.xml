@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Operation on More&#39;s awesome website</title>
-    <link>https://morethan987.github.io/en/series/operation/</link>
-    <description>Recent content in Operation on More&#39;s awesome website</description>
+    <title>Technical Miscellany on More&#39;s awesome website</title>
+    <link>https://morethan987.github.io/en/series/technical-miscellany/</link>
+    <description>Recent content in Technical Miscellany on More&#39;s awesome website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/operation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/technical-miscellany/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Neo4j Basics</title>
@@ -18,7 +18,7 @@
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/neo4j-basics/</guid>
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  The basic info and operations of Neo4j Graph Database
+  The basic info and operations of Neo4j Graph Database.
 &lt;/div&gt;
 
 

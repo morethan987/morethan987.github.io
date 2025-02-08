@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/blog/moravecs-paradox/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -275,7 +275,7 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%B5%81%E7%A8%8B/</loc>
+    <loc>https://morethan987.github.io/series/%E6%8A%80%E6%9C%AF%E6%9D%82%E9%A1%B9/</loc>
     <lastmod>2025-02-05T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -317,16 +317,6 @@
     <lastmod>2025-01-27T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/%E6%8A%A5%E5%91%8A/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/%E6%8A%A5%E5%91%8A/"
-    />
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/%E6%97%A5%E7%A8%8B%E7%AE%A1%E7%90%86/</loc>
@@ -425,16 +415,6 @@
     <lastmod>2025-01-21T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/%E5%8D%9A%E5%AE%A2/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/%E5%8D%9A%E5%AE%A2/"
-    />
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/%E7%BB%8F%E5%8E%86/</loc>
@@ -450,7 +430,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/ai/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -466,13 +446,13 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/series/ai%E9%81%90%E6%83%B3/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/tags/%E9%81%90%E6%83%B3/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>
