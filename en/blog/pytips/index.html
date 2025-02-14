@@ -114,7 +114,7 @@
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1491"
+    "wordCount": "1527"
   }]
   </script>
 
@@ -942,7 +942,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-02-13T00:00:00&#43;00:00">Updated: 13 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-02-13T00:00:00&#43;00:00">Updated: 13 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1667,11 +1667,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></code></pre></div><ol start="2">
 <li>If you&rsquo;re working with someone else&rsquo;s project:</li>
 </ol>
-<p>There are two very similar commands. As shown in the comments, the official recommendation is to use <code>sync</code>, as it avoids installing any packages that aren&rsquo;t tracked by <code>poetry.lock</code>, which may include unintended packages that the original developer added:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">poetry install <span class="c1"># Automatically creates a virtual environment and installs all dependencies from pyproject.toml</span>
+<p>There are two very similar commands. As shown in the comments, the official recommendation is to use <code>sync</code>, as it avoids installing any packages that aren&rsquo;t tracked by <code>poetry.lock</code>, which may include unintended packages that the original developer added.</p>
+<p><strong>However</strong>, I personally recommend  to use <code>install</code>. The <code>sync</code> command may result into some strange error: it may remove itself and causes the command line break out.🤔</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Automatically creates a virtual environment and installs all dependencies from pyproject.toml</span>
+</span></span><span class="line"><span class="cl">poetry install
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Make sure virtualenvs.create is set to true</span>
-</span></span><span class="line"><span class="cl">poetry sync <span class="c1"># Automatically creates a virtual environment and installs dependencies from poetry.lock</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Automatically creates a virtual environment, installs dependencies from poetry.lock and remove redundant package in pyproject.toml</span>
+</span></span><span class="line"><span class="cl">poetry sync
 </span></span></code></pre></div><p>To activate the virtual environment, use:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">poetry shell
 </span></span></code></pre></div>

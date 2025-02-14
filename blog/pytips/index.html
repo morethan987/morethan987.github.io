@@ -114,7 +114,7 @@
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2744"
+    "wordCount": "2823"
   }]
   </script>
 
@@ -1667,11 +1667,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></code></pre></div><ol start="2">
 <li>你是使用别人的项目</li>
 </ol>
-<p>有两个非常类似的命令，从下面的注释就可以看出二者的区别。官方更推荐 sync 命令，因为这样可以避免安装一些没有被 <code>poetry.lock</code> 追踪的包，这些包可能是原开发者不小心加进去的</p>
+<p>有两个非常类似的命令，从下面的注释就可以看出二者的区别。官方更推荐 sync 命令，因为这样可以避免安装一些没有被 <code>poetry.lock</code> 追踪的包，这些包可能是原开发者不小心加进去的；</p>
+<p><strong>但是</strong>实际测试下来更建议使用 install，因为 sync 有时会出现一些奇怪的错误，比如它把自己给移除了，导致命令行崩溃🤔</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">poetry install <span class="c1"># 自动创建虚拟环境并安装pyprojecy.toml中的所有依赖包</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 确保你的 virtualenvs.create 设置为 true</span>
-</span></span><span class="line"><span class="cl">poetry sync <span class="c1"># 自动创建虚拟环境并安装poetry.lock中的所有依赖包</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 自动创建虚拟环境并安装poetry.lock中的所有依赖包，移除pyproject.toml中多余的包</span>
+</span></span><span class="line"><span class="cl">poetry sync
 </span></span></code></pre></div><p>然后使用如下命令进入虚拟环境</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">poetry shell
 </span></span></code></pre></div>
