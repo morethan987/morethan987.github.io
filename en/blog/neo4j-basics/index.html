@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-02-05T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
     <meta property="article:tag" content="Neo4j">
     <meta property="og:image" content="https://morethan987.github.io/blog/neo4j-basics/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/en/blog/mysql-basics/">
@@ -109,12 +109,12 @@
     "dateCreated": "2025-02-05T00:00:00\u002b00:00",
     "datePublished": "2025-02-05T00:00:00\u002b00:00",
     
-    "dateModified": "2025-02-05T00:00:00\u002b00:00",
+    "dateModified": "2025-02-15T00:00:00\u002b00:00",
     
     "keywords": ["Neo4j"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "590"
+    "wordCount": "966"
   }]
   </script>
 
@@ -909,6 +909,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+  
+
 
 
 
@@ -940,7 +942,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-02-05T00:00:00&#43;00:00">5 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-02-05T00:00:00&#43;00:00">5 February 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-02-15T00:00:00&#43;00:00">Updated: 15 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1239,6 +1241,16 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#data-writing">Data Writing</a></li>
       </ul>
     </li>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#docker-desktop">Docker Desktop</a></li>
+        <li><a href="#pulling-the-image">Pulling the Image</a></li>
+        <li><a href="#building-the-container">Building the Container</a></li>
+        <li><a href="#manual-installation-of-apoc">Manual Installation of APOC</a></li>
+        <li><a href="#browser-ui">Browser UI</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -1261,6 +1273,16 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#data-writing">Data Writing</a></li>
       </ul>
     </li>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#docker-desktop">Docker Desktop</a></li>
+        <li><a href="#pulling-the-image">Pulling the Image</a></li>
+        <li><a href="#building-the-container">Building the Container</a></li>
+        <li><a href="#manual-installation-of-apoc">Manual Installation of APOC</a></li>
+        <li><a href="#browser-ui">Browser UI</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
   </ul>
 </nav>
   </div>
@@ -1561,6 +1583,164 @@ MERGE (u:User {name: &#34;Adam&#34;})
 MERGE (u)-[r:RATED {rating: 5}]-&gt;(m)
 RETURN u, r, m
 </code></pre>
+
+<h2 class="relative group">Installation 
+    <div id="installation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>As of February 15, 2025, after extensive testing by the developer community, it has been found that Neo4j Desktop is blocked for users in mainland China, causing the software interface to fail to display properly. While bypassing the block through methods such as disabling the network is possible, this removes the key advantage of the desktop version—easy deployment.</p>
+<p>Thus, I recommend using the Docker deployment method.</p>
+
+
+<h3 class="relative group">Docker Desktop 
+    <div id="docker-desktop" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#docker-desktop" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Simply install Docker Desktop and run it in the background.</p>
+
+
+<h3 class="relative group">Pulling the Image 
+    <div id="pulling-the-image" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#pulling-the-image" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Normally, you can simply pull the latest image with the command: <code>docker pull neo4j</code>.</p>
+<p>However, if your project requires the <a href="https://neo4j.com/labs/apoc/4.1/installation/" target="_blank">APOC</a> plugin, you should consider the version of APOC, as the image may be ahead of the APOC version. The community version of APOC is released on <a href="https://github.com/neo4j/apoc/releases" target="_blank">Releases · neo4j/apoc</a>.</p>
+<p>For APOC compatibility, use the following command: <code>docker pull neo4j:5.26.2</code>.</p>
+
+
+<h3 class="relative group">Building the Container 
+    <div id="building-the-container" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#building-the-container" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 7474:7474 -p 7687:7687 -v E:/neo4j/data:/data -v E:/neo4j/logs:/logs -v E:/neo4j/conf:/var/lib/neo4j/conf -v E:/neo4j/import:/var/lib/neo4j/import -v E:/neo4j/plugins:/var/lib/neo4j/plugins -e <span class="nv">NEO4J_dbms_security_procedures_unrestricted</span><span class="o">=</span><span class="s2">&#34;apoc.*&#34;</span> -e <span class="nv">NEO4J_dbms_security_procedures_allowlist</span><span class="o">=</span><span class="s2">&#34;apoc.*&#34;</span> -e <span class="nv">NEO4JLABS_PLUGINS</span><span class="o">=</span><span class="s1">&#39;[&#34;apoc&#34;]&#39;</span> -e <span class="nv">NEO4J_AUTH</span><span class="o">=</span>neo4j/mo123456789 --name neo4j neo4j:5.26.2
+</span></span></code></pre></div><p>Explanation of the parameters:</p>
+<ul>
+<li>The <code>-p</code> option exposes ports; here, we open two ports.</li>
+<li>The <code>-v</code> option mounts directories from the host machine (this means specifying where the Docker application will store its data).</li>
+<li>The <code>-e</code> option configures environment variables. The <code>apoc</code>-related configurations are for the APOC plugin; <code>NEO4J_AUTH</code> sets the username to <code>neo4j</code> and the password to <code>mo123456789</code>.</li>
+</ul>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #ffcc00"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #8B6914"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #333333"
+    >If you use Neo4j for language model-enhanced generation (RAG), be sure to include the APOC-related configurations. Otherwise, you can omit these settings.</span>
+</div>
+
+<p>After running the command above, check the host machine&rsquo;s mounted directory to confirm if the APOC plugin is installed:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /blog/neo4j-basics/img/Neo4jBasics-1_hu15624601443039588221.png 330w,
+        /blog/neo4j-basics/img/Neo4jBasics-1_hu293442756275892116.png 660w,
+        /blog/neo4j-basics/img/Neo4jBasics-1_hu9485291723270609694.png 1024w,
+        /blog/neo4j-basics/img/Neo4jBasics-1_hu16540884179824140699.png 2x"
+        src="/blog/neo4j-basics/img/Neo4jBasics-1_hu293442756275892116.png"
+        alt="Neo4jBasics-1.png"
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">Manual Installation of APOC 
+    <div id="manual-installation-of-apoc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#manual-installation-of-apoc" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Visit <a href="https://github.com/neo4j/apoc/releases" target="_blank">Releases · neo4j/apoc</a>, download the latest <code>apoc-5.26.2-core</code> from the &ldquo;Assets&rdquo; section, and paste it into the host machine&rsquo;s specified directory. Then restart the Docker container.</p>
+
+
+<h3 class="relative group">Browser UI 
+    <div id="browser-ui" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#browser-ui" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>By default, the 7474 port is used for the browser UI, and the 7687 port is for other backend applications.</p>
+<p>When the container is running in the background, access the UI at: <code>http://localhost:7474/browser/preview</code>.</p>
+<p>Connect to the database using: <code>neo4j://localhost:7687</code>.</p>
+<p>You should now be able to access the browser UI successfully. 😄</p>
+
+
+<h2 class="relative group">References 
+    <div id="references" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#references" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/nhdlb/p/18703804" target="_blank">Docker: Docker Deployment of Neo4j Graph Database - Angry Radish - Blog</a></li>
+</ul>
+
           
           
           
@@ -1808,186 +1988,6 @@ RETURN u, r, m
   
   
 
-  <a href="/en/blog/mysql-basics/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/mysql-basics/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en/blog/mysql-basics/">MySQL Basics</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-01-15T00:00:00&#43;00:00">15 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/mysql-basics/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/mysql-basics/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/mysql/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    MySQL
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
   <a href="/en/blog/hugo-blog/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -2151,6 +2151,186 @@ RETURN u, r, m
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Blog
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/en/blog/mysql-basics/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/mysql-basics/featured.svg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/en/blog/mysql-basics/">MySQL Basics</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-01-15T00:00:00&#43;00:00">15 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/mysql-basics/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/mysql-basics/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/mysql/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MySQL
   </span>
 </span>
   </span>

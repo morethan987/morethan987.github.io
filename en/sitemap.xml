@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://morethan987.github.io/en/blog/neo4j-basics/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -196,7 +196,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/authors/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/blog/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -228,7 +228,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/authors/morethan/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -244,7 +244,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/neo4j/</loc>
-    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -260,7 +260,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/series/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -276,7 +276,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -292,13 +292,13 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/series/technical-miscellany/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/en/</loc>
-    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
