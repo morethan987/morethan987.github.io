@@ -9,12 +9,22 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AI-Project</title>
+      <link>https://morethan987.github.io/en/series/ai-project/</link>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/series/ai-project/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Technical Miscellany</title>
       <link>https://morethan987.github.io/en/series/technical-miscellany/</link>
-      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/series/technical-miscellany/</guid>
       <description></description>

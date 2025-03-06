@@ -9,7 +9,47 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cloud-Service</title>
+      <link>https://morethan987.github.io/en/tags/cloud-service/</link>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/cloud-service/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Qdrant</title>
+      <link>https://morethan987.github.io/en/tags/qdrant/</link>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/qdrant/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Full-Stack</title>
+      <link>https://morethan987.github.io/en/tags/full-stack/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/full-stack/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>LLM</title>
+      <link>https://morethan987.github.io/en/tags/llm/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/llm/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Neo4j</title>
