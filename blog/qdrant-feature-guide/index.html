@@ -99,7 +99,7 @@
     "name": "Qdrant功能指南",
     "headline": "Qdrant功能指南",
     "description": "详细记录了Qdrant向量数据库的功能便于实际应用",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  详细记录了Qdrant向量数据库的核心功能，让开发者在实际应用过程中设计出更好的数据库😋\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e前言 \n    \u003cdiv id=\u0022%E5%89%8D%E8%A8%80\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%89%8D%E8%A8%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地\u003cstrong\u003e相关性查询\u003c\/strong\u003e，这个功能是一些应用场景地\u003cstrong\u003e基石\u003c\/strong\u003e。\u003c\/p\u003e",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  详细记录了Qdrant向量数据库的核心功能，让开发者在实际应用过程中设计出更好的数据库😋\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e前言 \n    \u003cdiv id=\u0022%E5%89%8D%E8%A8%80\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%89%8D%E8%A8%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地\u003cstrong\u003e相关性搜索\u003c\/strong\u003e，这个功能是一些应用场景地\u003cstrong\u003e基石\u003c\/strong\u003e。\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "https:\/\/morethan987.github.io\/blog\/qdrant-feature-guide\/",
     "author" : {
@@ -115,7 +115,7 @@
     "keywords": ["Qdrant"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1924"
+    "wordCount": "3812"
   }]
   </script>
 
@@ -136,6 +136,139 @@
   
 
 <script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.e9afe31fe3937d5e7a56cf4c9be2a5ed9b1758944cdbe115f890eb5bb1cb1da7f8394dbef5e2e41ca15bce94926df2796fad26fbbfed4007afaf3bbb34fed0da.css" integrity="sha512-6a/jH&#43;OTfV56Vs9Mm&#43;Kl7ZsXWJRM2&#43;EV&#43;JDrW7HLHaf4OU2&#43;9eLkHKFbzpSSbfJ5b60m&#43;7/tQAevrzu7NP7Q2g==" />
+
+
+<script defer src="/lib/katex/katex.min.1649a56c18808fc7e07e867ccc9f9b650094e69754e798ab5e6273145fe65e54af06bdb1fe09b22c7691bb9892a5c0391f0e8230b0821528c1d469a0b4d2f642.js" integrity="sha512-FkmlbBiAj8fgfoZ8zJ&#43;bZQCU5pdU55irXmJzFF/mXlSvBr2x/gmyLHaRu5iSpcA5Hw6CMLCCFSjB1GmgtNL2Qg=="></script>
+
+
+<script defer src="/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac&#43;zBvZzgDJzDQ=="
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -941,7 +1074,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-05T00:00:00&#43;00:00">2025-03-05</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-05T00:00:00&#43;00:00">2025-03-05</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1247,9 +1380,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </li>
     <li><a href="#常见操作">常见操作</a>
       <ul>
-        <li><a href="#查询search">查询·Search</a></li>
-        <li><a href="#探索explore">探索·Explore</a></li>
-        <li><a href="#过滤filtering">过滤·Filtering</a></li>
+        <li><a href="#搜索search">搜索·Search</a></li>
+        <li><a href="#探索explore">探索·Explore</a>
+          <ul>
+            <li><a href="#推荐recommendation">推荐·Recommendation</a></li>
+            <li><a href="#发现discovery">发现·Discovery</a></li>
+            <li><a href="#距离矩阵distance-matrix">距离矩阵·Distance-Matrix</a></li>
+          </ul>
+        </li>
+        <li><a href="#过滤filtering">过滤·Filtering</a>
+          <ul>
+            <li><a href="#过滤条件">过滤条件</a></li>
+            <li><a href="#逻辑关键字">逻辑关键字</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#高级操作">高级操作</a>
@@ -1285,9 +1429,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </li>
     <li><a href="#常见操作">常见操作</a>
       <ul>
-        <li><a href="#查询search">查询·Search</a></li>
-        <li><a href="#探索explore">探索·Explore</a></li>
-        <li><a href="#过滤filtering">过滤·Filtering</a></li>
+        <li><a href="#搜索search">搜索·Search</a></li>
+        <li><a href="#探索explore">探索·Explore</a>
+          <ul>
+            <li><a href="#推荐recommendation">推荐·Recommendation</a></li>
+            <li><a href="#发现discovery">发现·Discovery</a></li>
+            <li><a href="#距离矩阵distance-matrix">距离矩阵·Distance-Matrix</a></li>
+          </ul>
+        </li>
+        <li><a href="#过滤filtering">过滤·Filtering</a>
+          <ul>
+            <li><a href="#过滤条件">过滤条件</a></li>
+            <li><a href="#逻辑关键字">逻辑关键字</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#高级操作">高级操作</a>
@@ -1461,9 +1616,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
-<p>基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地<strong>相关性查询</strong>，这个功能是一些应用场景地<strong>基石</strong>。</p>
+<p>基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地<strong>相关性搜索</strong>，这个功能是一些应用场景地<strong>基石</strong>。</p>
 <p>向量数据库的供应商有很多：Weaviate、Qdrant、Milvus、Chroma……等等。但大体上都差不多，详细的主流向量数据库对比分析报告见：<a href="https://www.syndataworks.cn/blog/blog/2024-10-29-vectoc-db-eval/" target="_blank">向量数据库比较报告:12款主流向量数据库详细对比</a></p>
 <p>这里就只关注 Qdrant 这一个供应商。所有内容均参考 <a href="https://qdrant.tech/documentation/concepts/" target="_blank">Qdrant官方文档</a> (2025-03)</p>
+<p>并且这篇文章较少涉及具体的代码语法，重点关注功能和原理，帮助开发者更加快速地设计产品工作流程，而不是被繁琐的语法限制了想象力和工作效率。</p>
 
 
 <h2 class="relative group">基础数据类型 
@@ -1580,7 +1736,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><strong>数据点之间的相似度算法</strong></li>
 <li><strong>向量的维度</strong></li>
 <li><strong>优化器配置</strong></li>
-<li>HNSW 算法配置</li>
+<li>HNSW 算法配置：需要调整的参数是 <code>ef</code>，用来确定算法访问邻接结点的个数，数值越大查询越准确，速度越慢</li>
 <li>WAL 配置</li>
 <li>量化配置</li>
 </ol>
@@ -1599,13 +1755,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>这是向量数据库使用过程中的最基础也是最重要的一些操作。</p>
 
 
-<h3 class="relative group">查询·Search 
-    <div id="%E6%9F%A5%E8%AF%A2search" class="anchor"></div>
+<h3 class="relative group">搜索·Search 
+    <div id="%E6%90%9C%E7%B4%A2search" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%9F%A5%E8%AF%A2search" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%90%9C%E7%B4%A2search" aria-label="锚点">#</a>
     </span>        
     
 </h3>
@@ -1617,7 +1773,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li>欧氏距离</li>
 <li>曼哈顿距离</li>
 </ul>
-<p>
+
   
   
   
@@ -1652,18 +1808,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >为了提高数据库的性能，所有向量在存入的时候都会被&quot;归一化&quot;，这也意味着点积相似度和余弦相似度在 Qdrant 中是等价的</span>
 </div>
 
-为了更良好的用户体验，Qdrant 提供了一套完整的程序接口，让用户能够方便地调用：<a href="https://qdrant.tech/documentation/concepts/search/#search-api" target="_blank">Search API - Qdrant</a></p>
+<p>为了更良好的用户体验，Qdrant 提供了一套完整的程序接口，让用户能够方便地调用：<a href="https://qdrant.tech/documentation/concepts/search/#search-api" target="_blank">Search API - Qdrant</a></p>
 <p>概括下来，你能够调用功能大概有这些：</p>
 <ol>
 <li><strong>基本操作</strong>：输入一个向量，在数据库中进行相似度匹配；如果你的数据点存储了&quot;命名向量&quot;，那么你需要指定用哪个特定的向量去进行相似度匹配</li>
 <li><strong>调控搜索算法</strong>：可以控制是否使用精确搜索，如果启用，那么相似度匹配会在每一个数据点上执行，耗时更长(还有更多的参数可调，但是一般不用)</li>
 <li><strong>结果过滤</strong>：在实际执行搜索之前，按照<em>负载标签</em>进行过滤，减小搜索范围；实际执行搜索之后，使用<em>相似度评分阈值</em>来过滤</li>
 <li><strong>结果数量</strong>：参数 <code>limit</code> 控制搜索出来的结果的数量，也就是相似度评分最高的 <code>limit</code> 个</li>
-<li><strong>批量搜索</strong>：一次性输入一组向量进行查询</li>
+<li><strong>批量搜索</strong>：一次性输入一组向量进行搜索</li>
 <li><strong>搜索分组</strong>：能够对搜索结果按照某些标签进行分组，参数 <code>group_size</code> 可以设置每组的结果个数</li>
-<li><strong>查询规划</strong>：依据可选索引、过滤条件的复杂性和总共的数据点的数量，以启发式的方法选择一个合适的查询偏好(提高性能🤔)</li>
+<li><strong>搜索规划</strong>：依据可选索引、过滤条件的复杂性和总共的数据点的数量，以启发式的方法选择一个合适的搜索方式(提高性能🤔)</li>
 </ol>
-<p>
+
   
   
   
@@ -1699,7 +1855,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >如果 <code>group_size</code> 和 <code>limit</code> 被同时设置，那么此时 <code>limit</code> 参数表示分组的数量</span>
 </div>
 
-另外，在 Qdrant 中，稀疏向量和密集向量的搜索有一些关键的不同，对比结果如下：</p>
+<p>另外，在 Qdrant 中，稀疏向量和密集向量的搜索有一些关键的不同，对比结果如下：</p>
 <table>
   <thead>
       <tr>
@@ -1738,6 +1894,240 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
+<p>探索操作直观来说就是更加灵活的搜索操作：能够依靠相似度进行搜索的同时，也能够依靠<strong>区分度</strong>来查询</p>
+
+
+<h4 class="relative group">推荐·Recommendation 
+    <div id="%E6%8E%A8%E8%8D%90recommendation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%8E%A8%E8%8D%90recommendation" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>&ldquo;推荐&quot;允许你同时提供一个正面的向量和反面的向量来进行搜索，下面是官方给出的例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">QdrantClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@qdrant/js-client-rest&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QdrantClient</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="nx">port</span>: <span class="kt">6333</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&#34;{collection_name}&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">recommend</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">positive</span><span class="o">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">231</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">negative</span><span class="o">:</span> <span class="p">[</span><span class="mi">718</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&#34;average_vector&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">filter</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">must</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">key</span><span class="o">:</span> <span class="s2">&#34;city&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">match</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">value</span><span class="o">:</span> <span class="s2">&#34;London&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">limit</span>: <span class="kt">3</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >官方给出的例子中 100,231 是向量编号，每一个编号都对应一个四维的向量</span>
+</div>
+
+<p>其中 <code>strategy</code> 参数用于调控搜索算法，下面是具体的算法说明：</p>
+<ol>
+<li>
+<p><strong>平均算法</strong>：对正例、反例分别进行平均，得到的两个向量再进行加权平均，产生最终用于搜索的向量</p>
+</li>
+<li>
+<p><strong>最佳评分算法</strong>：每一个待搜索的数据点都会分别和正例负例中的所有数据点进行匹配得出评分，然后分别选出最高评分，然后按照如下计算方法得出这个待搜索的数据点的最终评分</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">best_positive_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">best_negative_score</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">best_positive_score</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">-</span><span class="p">(</span><span class="n">best_negative_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">best_negative_score</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>只考虑负例算法</strong>：使用最佳评分算法👆同时不提供正例，你就会得到一个反向评分算法，能够找到最不相关的数据点</li>
+</ol>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >多重向量和别的特殊向量也是能够被处理的，处理逻辑相同，只是代码写法不同</span>
+</div>
+
+
+
+<h4 class="relative group">发现·Discovery 
+    <div id="%E5%8F%91%E7%8E%B0discovery" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8F%91%E7%8E%B0discovery" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>&ldquo;发现&quot;操作的核心思路就是样本空间的分割。你需要提供一系列的<strong>正负向量对</strong>，每一个向量对都会将样本空间划分为正区域和负区域，最终将会搜索得出<strong>处于正区域更多或者负区域更少</strong>的数据点。</p>
+<p>和<a href="#推荐·recommendation">推荐·Recommendation</a> 类似，但是这里你需要将正向量和负向量组合成一对来输入。</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >由于进行了样本空间的硬划分，因此可以考虑提高 HNSW 算法中的 ef 参数来弥补硬划分产生的精度损失</span>
+</div>
+
+<p>通过发现操作，Qdrant 能够处理一下两种新的搜索需求：</p>
+<ol>
+<li>
+<p><strong>发现型搜索</strong>：给定一个搜索目标向量，同时提供一系列正负向量对作为<em>上下文约束条件</em>；</p>
+</li>
+<li>
+<p><strong>区域划分搜索</strong>：是发现型搜索👆的特例，在不提供目标向量的情况下，数据库会直接使用正负向量对进行区域划分，并最后返回处在正区域中最多的数据点</p>
+</li>
+</ol>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >在发现型搜索中，通过算法保证了上下文约束条件的<strong>强制性</strong>，优先级更高；换言之，发现型搜索先执行区域划分搜索，然后再进行普通的相似度搜索</span>
+</div>
+
+
+
+<h4 class="relative group">距离矩阵·Distance-Matrix 
+    <div id="%E8%B7%9D%E7%A6%BB%E7%9F%A9%E9%98%B5distance-matrix" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%B7%9D%E7%A6%BB%E7%9F%A9%E9%98%B5distance-matrix" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>这个操作很类似于批量搜索。批量搜索的流程是：用户输入一批向量数据点，然后在数据集合中逐个搜索这些向量数据点的相似向量。而距离矩阵的流程是：系统随机选取一些向量数据点构成一个<strong>样本子集</strong>，然后对每一个向量数据点都在这个样本子集里面去搜索相似向量。</p>
+<p>例如，系统随机选取 <code>sample=100</code> 个数据点，构成一个含有 100 个数据点的样本子集，然后设置每个数据点搜索出最相似的 <code>limit=10</code> 个数据点，那么最后返回的距离矩阵将会是一个 
+\(100\times 10\) 的矩阵，每一行代表着其中一个数据点的最相似的 10 个数据点。</p>
+<p>这个操作一般用于数据可视化或者数据降维。</p>
 
 
 <h3 class="relative group">过滤·Filtering 
@@ -1750,6 +2140,81 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
+<p>官方英文指南：<a href="https://qdrant.tech/articles/vector-search-filtering/" target="_blank">A Complete Guide to Filtering in Vector Search</a>；这份指南中的前面部分直观地解释了 Qdrant 内部是如何执行过滤操作的，了解之后更有助于设计一个高效的体系。</p>
+<p>指南中只是简要列举了一些功能，更完整详细的功能文档见：<a href="https://qdrant.tech/documentation/concepts/filtering/#filtering" target="_blank">Filtering</a></p>
+
+
+<h4 class="relative group">过滤条件 
+    <div id="%E8%BF%87%E6%BB%A4%E6%9D%A1%E4%BB%B6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BF%87%E6%BB%A4%E6%9D%A1%E4%BB%B6" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>这里的过滤条件专指<strong>单个过滤条件</strong>，是过滤操作的基本单元。下面是具体的类型列表：</p>
+<table>
+  <thead>
+      <tr>
+          <th>类型</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Match</td>
+          <td>过滤条件是一个具体值，属性值必须和过滤条件完全相等</td>
+      </tr>
+      <tr>
+          <td>Match Any</td>
+          <td>过滤条件是一组选项，属性值在过滤条件中存在即可</td>
+      </tr>
+      <tr>
+          <td>Match Except</td>
+          <td>过滤条件是一组选项，属性值不在过滤条件中存在即可</td>
+      </tr>
+      <tr>
+          <td>Range</td>
+          <td>过滤条件是一个范围，属性值需要在范围之中</td>
+      </tr>
+      <tr>
+          <td>Values count</td>
+          <td>属性值是一个数组，依据数组中元素数量来过滤</td>
+      </tr>
+      <tr>
+          <td>Is Empty</td>
+          <td>以属性值是否存在为依据来过滤</td>
+      </tr>
+  </tbody>
+</table>
+<p>以上就是最基本的过滤类型，针对不同的负载类型，其语法上会有一定差异：</p>
+<ul>
+<li><strong>JSON负载</strong>：一个数据点的负载可以是一个 JSON 对象，这个 JSON 对象中的任意字段都可以参与过滤；具体语法见官方网站：<a href="https://qdrant.tech/documentation/concepts/filtering/#nested-key" target="_blank">Nested key</a></li>
+<li><strong>日期范围</strong>：类似于普通的数值范围，日期范围也支持过滤</li>
+<li><strong>地理过滤</strong>：地理位置也支持过滤</li>
+<li><strong>命名向量</strong>：命名向量中含有多个不同维度的向量，可以根据特定的向量是否存在来过滤，例如可以过滤出&quot;含有图片嵌入向量&quot;的命名向量</li>
+</ul>
+<p>这些基本的过滤条件可以通过下面的方法进行嵌套，形成复杂的过滤条件👇</p>
+
+
+<h4 class="relative group">逻辑关键字 
+    <div id="%E9%80%BB%E8%BE%91%E5%85%B3%E9%94%AE%E5%AD%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%80%BB%E8%BE%91%E5%85%B3%E9%94%AE%E5%AD%97" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>类似于 SQL 中的关键字 <code>AND</code> <code>OR</code> <code>NOT</code>，在 Qdrant 中使用 <code>must</code> <code>should</code> <code>must_not</code> 来表达类似的逻辑。通过逻辑关键字，能够构建一个复杂的过滤器。</p>
+<ul>
+<li><code>must</code>：当所有列出的过滤条件都被满足的时候才会返回真</li>
+<li><code>should</code>：当所有列出的过滤条件中有一个被满足就会返回真</li>
+<li><code>must_not</code>：当所有列出的条件<strong>都不被满足</strong>的时候返回真</li>
+</ul>
 
 
 <h2 class="relative group">高级操作 
@@ -2309,6 +2774,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+  
+
 
 
 
@@ -2334,7 +2801,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-15T00:00:00&#43;00:00">2025-01-15</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-01-15T00:00:00&#43;00:00">2025-01-15</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-02-15T00:00:00&#43;00:00">更新于: 2025-02-15</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

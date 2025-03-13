@@ -31,7 +31,7 @@
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地&lt;strong&gt;相关性查询&lt;/strong&gt;，这个功能是一些应用场景地&lt;strong&gt;基石&lt;/strong&gt;。&lt;/p&gt;</description>
+&lt;p&gt;基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地&lt;strong&gt;相关性搜索&lt;/strong&gt;，这个功能是一些应用场景地&lt;strong&gt;基石&lt;/strong&gt;。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg" />
     </item>
     

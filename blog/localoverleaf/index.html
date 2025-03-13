@@ -116,7 +116,7 @@
     "keywords": ["overleaf","LaTeX"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1863"
+    "wordCount": "1859"
   }]
   </script>
 
@@ -1472,7 +1472,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>在 <code>Windows App Store</code> 里面直接搜索一个Linux发行版本并下载，笔者选择的是<code>Kali</code>。安装完成后可以在开始菜单中直接打开，打开后会跳出命令行窗口，初次打开需要填写需要用户名与密码进行注册。</p>
-<p>
+
   
 
 
@@ -1503,7 +1503,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >此时你的命令行应该有一个 Warning 提示。这是因为你还没有安装 WSL(Windows Subsystem for Linux)；同时，在填写密码的时候你的输入不会显示在命令行，但已经被记录了</span>
 </div>
 
-为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。也正因如此，据说在Linux系统上运行的<code>OverLeaf</code>更加流畅。</p>
+<p>为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。也正因如此，据说在Linux系统上运行的<code>OverLeaf</code>更加流畅。</p>
 
 
 <h3 class="relative group">安装WSL 
@@ -1662,10 +1662,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">fc-cache -fv <span class="c1"># 更新字体缓存</span>
 </span></span><span class="line"><span class="cl">fc-list :lang<span class="o">=</span>zh-cn
 </span></span><span class="line"><span class="cl">fc-match Arial
-</span></span></code></pre></div><p>最后在<code>shell</code>目录里面运行：</p>
+</span></span></code></pre></div><p>最后在 <code>shell</code> 目录里面运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vim /usr/local/texlive/2023/texmf.cnf
 </span></span></code></pre></div><p>进入配置文件，在最底下加入一句 <code>shell_escape = t</code></p>
-<p>
+
   
   
   
@@ -1700,7 +1700,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >我也不知道这有什么用，属于是前辈传承了🤔</span>
 </div>
 
-注意，如果Texlive(扩展包的官名)版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写，例如将<code>2023</code>改成<code>2024</code>。</p>
+<p>注意，如果Texlive(扩展包的官名)版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写，例如将<code>2023</code>改成<code>2024</code>。</p>
 
   
   

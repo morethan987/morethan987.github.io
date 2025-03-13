@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-08T00:00:00+00:00">
     <meta property="article:tag" content="Cloud-Service">
     <meta property="og:image" content="https://morethan987.github.io/blog/cloud-server-build/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/">
@@ -95,7 +95,7 @@
     "name": "Cloud Service Deployment",
     "headline": "Cloud Service Deployment",
     "description": "A detailed log of the deployment of cloud service from scratch",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  Detailed documentation of deploying an LLM app from scratch, with a primary focus on setting up a cloud server environment. This document will be updated continuously\u0026hellip;\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003eIntroduction \n    \u003cdiv id=\u0022introduction\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#introduction\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eBefore deploying your LLM application, ensure you have completed:\u003c\/p\u003e",
+    "abstract": "\u003cp\u003e等中文版面完工之后再统一翻译\n\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  Detailed documentation of deploying an LLM app from scratch, with a primary focus on setting up a cloud server environment. This document will be updated continuously\u0026hellip;\n\u003c\/div\u003e\n\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https:\/\/morethan987.github.io\/en\/blog\/cloud-server-build\/",
     "author" : {
@@ -106,12 +106,12 @@
     "dateCreated": "2025-03-06T00:00:00\u002b00:00",
     "datePublished": "2025-03-06T00:00:00\u002b00:00",
     
-    "dateModified": "2025-03-06T00:00:00\u002b00:00",
+    "dateModified": "2025-03-08T00:00:00\u002b00:00",
     
     "keywords": ["Cloud-Service"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "799"
+    "wordCount": "1072"
   }]
   </script>
 
@@ -1039,6 +1039,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+  
+
 
 
 
@@ -1070,7 +1072,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-08T00:00:00&#43;00:00">Updated: 8 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1369,7 +1371,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#exploring-deployment-options">Exploring Deployment Options</a>
       <ul>
-        <li><a href="#local-server">Local Server</a></li>
+        <li><a href="#local-server">Local Server</a>
+          <ul>
+            <li><a href="#general-idea">General idea</a></li>
+            <li><a href="#docker-path-params">Docker Path Params</a></li>
+          </ul>
+        </li>
         <li><a href="#port-forwarding">Port Forwarding</a></li>
         <li><a href="#cloud-server">Cloud Server</a></li>
       </ul>
@@ -1406,7 +1413,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#exploring-deployment-options">Exploring Deployment Options</a>
       <ul>
-        <li><a href="#local-server">Local Server</a></li>
+        <li><a href="#local-server">Local Server</a>
+          <ul>
+            <li><a href="#general-idea">General idea</a></li>
+            <li><a href="#docker-path-params">Docker Path Params</a></li>
+          </ul>
+        </li>
         <li><a href="#port-forwarding">Port Forwarding</a></li>
         <li><a href="#cloud-server">Cloud Server</a></li>
       </ul>
@@ -1536,10 +1548,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+          <p>等中文版面完工之后再统一翻译
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   Detailed documentation of deploying an LLM app from scratch, with a primary focus on setting up a cloud server environment. This document will be updated continuously&hellip;
 </div>
-
+</p>
 
 
 <h2 class="relative group">Introduction 
@@ -1584,6 +1597,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
+
+
+<h4 class="relative group">General idea 
+    <div id="general-idea" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#general-idea" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <p>If you&rsquo;re a truly independent developer, requiring no collaboration, you don&rsquo;t necessarily need a cloud server—a Docker environment is sufficient.</p>
 <p>After installing Docker Desktop, you&rsquo;ll need to perform <strong>container orchestration</strong> based on your existing backend code:</p>
 <ol>
@@ -1595,6 +1620,23 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>Run a single command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker-compose up --build
 </span></span></code></pre></div><p>Once Docker initializes, access your services via <code>localhost</code>, replicating the experience of a cloud server.</p>
+
+
+<h4 class="relative group">Docker Path Params 
+    <div id="docker-path-params" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#docker-path-params" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>When orchestrating Docker containers, there are several essential <strong>working path parameters</strong> you need to understand; otherwise, you may frequently encounter &ldquo;file not found&rdquo; errors. 😢</p>
+<ol>
+<li><strong><code>build.context</code></strong>: This parameter appears in the <code>docker-compose.yml</code> file and refers to the &ldquo;build context.&rdquo; It points to a real directory on your local machine.</li>
+<li><strong><code>WORKDIR</code></strong>: This parameter is found in the <code>Dockerfile</code> and specifies the &ldquo;working directory.&rdquo; Any subsequent <code>RUN</code>, <code>COPY</code>, or other instructions using <strong>relative paths</strong> will be executed within this directory. However, it does not affect absolute path parameters.</li>
+</ol>
 
 
 <h3 class="relative group">Port Forwarding 
@@ -1702,8 +1744,9 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
     </span>        
     
 </h4>
-<p>For transferring files from local to server, I recommend using <a href="https://filezilla-project.org/download.php" target="_blank">FileZilla</a>: graphical interface, user-friendly, perfect if you dislike memorizing command lines like me 😝.</p>
-<p>Of course, using terminal commands (<code>rsync</code> or <code>scp</code>) also works fine.</p>
+<p>Inoder to transfer the local file to the server easily, I have opted some modern terminal app, such as <a href="https://tabby.sh/" target="_blank">Tabby</a>, <a href="https://github.com/kingToolbox/WindTerm" target="_blank">WindTerm</a> and <a href="https://www.warp.dev/" target="_blank">Warp</a> etc.</p>
+<p>I randomly chose the Tabby terminal. It makes remote connections more convenient and has an integrated SFTP feature for easy file transfers. Plus, if you’re willing to customize the terminal interface, Tabby can look really sleek. 😄</p>
+<p>Of course, for a more traditional approach, you can opt for <a href="https://filezilla-project.org/download.php" target="_blank">FileZilla</a>. If you don’t mind getting your hands a bit dirty, you can also use terminal commands like <code>rsync</code> or <code>scp</code> to transfer files.</p>
 
   
   
@@ -1780,6 +1823,9 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Start Docker service</span>
 </span></span><span class="line"><span class="cl">sudo systemctl start docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Stop Docker service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop docker
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Enable Docker to start at boot</span>
 </span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker

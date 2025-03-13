@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
     <meta property="article:tag" content="MySQL">
     <meta property="og:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/blog/qdrant-feature-guide/">
@@ -110,12 +110,12 @@
     "dateCreated": "2025-01-15T00:00:00\u002b00:00",
     "datePublished": "2025-01-15T00:00:00\u002b00:00",
     
-    "dateModified": "2025-01-15T00:00:00\u002b00:00",
+    "dateModified": "2025-02-15T00:00:00\u002b00:00",
     
     "keywords": ["MySQL"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1745"
+    "wordCount": "1867"
   }]
   </script>
 
@@ -910,6 +910,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+  
+
 
 
 
@@ -941,7 +943,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-15T00:00:00&#43;00:00">2025-01-15</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-01-15T00:00:00&#43;00:00">2025-01-15</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-02-15T00:00:00&#43;00:00">更新于: 2025-02-15</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1239,6 +1241,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           <ul>
             <li><a href="#查询">查询</a></li>
             <li><a href="#修改">修改</a></li>
+            <li><a href="#建库建表">建库建表</a></li>
           </ul>
         </li>
       </ul>
@@ -1264,6 +1267,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           <ul>
             <li><a href="#查询">查询</a></li>
             <li><a href="#修改">修改</a></li>
+            <li><a href="#建库建表">建库建表</a></li>
           </ul>
         </li>
       </ul>
@@ -1584,7 +1588,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 使用聚合查询并设置WHERE条件:
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">boys</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><p>
+</span></span></span></code></pre></div>
   
 
 
@@ -1615,7 +1619,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >虽然 <code>COUNT(*)</code> 的结果是一个标量，但是返回仍然是一个二维表格，只是表格只有一行一列</span>
 </div>
 
-另外还有一些常用的聚合函数：<code>MAX()</code>，<code>MIN()</code>，<code>AVG()</code>，<code>SUM()</code> 等，与 <code>COUNT()</code> 类似</p>
+<p>另外还有一些常用的聚合函数：<code>MAX()</code>，<code>MIN()</code>，<code>AVG()</code>，<code>SUM()</code> 等，与 <code>COUNT()</code> 类似</p>
 <p><strong>分组聚合查询</strong>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 按class_id分组进行聚合查询, 类似于for循环:
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">class_id</span><span class="p">;</span><span class="w">
@@ -1731,6 +1735,44 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 不带WHERE的删除操作会作用于整张表
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div>
+
+<h4 class="relative group">建库建表 
+    <div id="%E5%BB%BA%E5%BA%93%E5%BB%BA%E8%A1%A8" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%BB%BA%E5%BA%93%E5%BB%BA%E8%A1%A8" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>建库</strong>：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">your_db_name</span><span class="w"> </span><span class="c1">-- 数据库名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="c1">-- 数据库字符集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 指定排序规则
+</span></span></span></code></pre></div><ul>
+<li><strong>建表</strong>：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">列名</span><span class="mi">1</span><span class="w"> </span><span class="err">数据类型</span><span class="w"> </span><span class="err">约束</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">列名</span><span class="mi">2</span><span class="w"> </span><span class="err">数据类型</span><span class="w"> </span><span class="err">约束</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">列名</span><span class="mi">3</span><span class="w"> </span><span class="err">数据类型</span><span class="w"> </span><span class="err">约束</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="err">主键列名</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 具体的一个用户表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></div>
           
           
