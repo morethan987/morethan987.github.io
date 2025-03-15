@@ -11,7 +11,7 @@
   <title>Cloud Service Deployment &middot; More&#39;s awesome website</title>
   <meta name="title" content="Cloud Service Deployment &middot; More&#39;s awesome website" />
   
-  <meta name="description" content="A detailed log of the deployment of cloud service from scratch" />
+  <meta name="description" content="Detailed documentation of the cloud service platform setup process from scratch" />
   <meta name="keywords" content="Cloud-Service, " />
   
   
@@ -70,12 +70,12 @@
   <meta property="og:url" content="https://morethan987.github.io/en/blog/cloud-server-build/">
   <meta property="og:site_name" content="More&#39;s awesome website">
   <meta property="og:title" content="Cloud Service Deployment">
-  <meta property="og:description" content="A detailed log of the deployment of cloud service from scratch">
+  <meta property="og:description" content="Detailed documentation of the cloud service platform setup process from scratch">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-16T00:00:00+00:00">
     <meta property="article:tag" content="Cloud-Service">
     <meta property="og:image" content="https://morethan987.github.io/blog/cloud-server-build/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/">
@@ -84,7 +84,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://morethan987.github.io/blog/cloud-server-build/featured.svg">
   <meta name="twitter:title" content="Cloud Service Deployment">
-  <meta name="twitter:description" content="A detailed log of the deployment of cloud service from scratch">
+  <meta name="twitter:description" content="Detailed documentation of the cloud service platform setup process from scratch">
 
   
   <script type="application/ld+json">
@@ -94,8 +94,8 @@
     "articleSection": "Blogs",
     "name": "Cloud Service Deployment",
     "headline": "Cloud Service Deployment",
-    "description": "A detailed log of the deployment of cloud service from scratch",
-    "abstract": "\u003cp\u003e等中文版面完工之后再统一翻译\n\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  Detailed documentation of deploying an LLM app from scratch, with a primary focus on setting up a cloud server environment. This document will be updated continuously\u0026hellip;\n\u003c\/div\u003e\n\u003c\/p\u003e",
+    "description": "Detailed documentation of the cloud service platform setup process from scratch",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  Detailed documentation of the process of deploying an LLM application from scratch, focusing mainly on the initial setup of cloud servers, continuously updated\u0026hellip;\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003ePreface \n    \u003cdiv id=\u0022preface\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#preface\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eBefore deploying your LLM application, you should have already completed:\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https:\/\/morethan987.github.io\/en\/blog\/cloud-server-build\/",
     "author" : {
@@ -106,12 +106,12 @@
     "dateCreated": "2025-03-06T00:00:00\u002b00:00",
     "datePublished": "2025-03-06T00:00:00\u002b00:00",
     
-    "dateModified": "2025-03-08T00:00:00\u002b00:00",
+    "dateModified": "2025-03-16T00:00:00\u002b00:00",
     
     "keywords": ["Cloud-Service"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1072"
+    "wordCount": "2208"
   }]
   </script>
 
@@ -134,6 +134,17 @@
 <script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
 
 
+
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.e1dc118d1d5c060fb5035f6ed11303122f4ad26ae607992d7c428d00430883ca9f26a9f029180a9dd9c7c3774502a38f34fac2ad91dd4e8eb2a739f068841356.js"
+    integrity="sha512-4dwRjR1cBg&#43;1A19u0RMDEi9K0mrmB5ktfEKNAEMIg8qfJqnwKRgKndnHw3dFAqOPNPrCrZHdTo6ypznwaIQTVg=="
+  ></script>
 
 
 
@@ -1072,7 +1083,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-08T00:00:00&#43;00:00">Updated: 8 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">Updated: 16 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1368,32 +1379,39 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#exploring-deployment-options">Exploring Deployment Options</a>
+    <li><a href="#preface">Preface</a></li>
+    <li><a href="#solution-exploration">Solution Exploration</a>
       <ul>
-        <li><a href="#local-server">Local Server</a>
+        <li><a href="#local-services">Local Services</a>
           <ul>
-            <li><a href="#general-idea">General idea</a></li>
-            <li><a href="#docker-path-params">Docker Path Params</a></li>
+            <li><a href="#general-idea">General Idea</a></li>
+            <li><a href="#docker-path-issues">Docker Path Issues</a></li>
           </ul>
         </li>
         <li><a href="#port-forwarding">Port Forwarding</a></li>
-        <li><a href="#cloud-server">Cloud Server</a></li>
+        <li><a href="#cloud-services">Cloud Services</a></li>
       </ul>
     </li>
-    <li><a href="#cloud-server-setup-steps">Cloud Server Setup Steps</a>
+    <li><a href="#cloud-service-operation-process">Cloud Service Operation Process</a>
       <ul>
-        <li><a href="#domain-registration">Domain Registration</a></li>
-        <li><a href="#dns-configuration">DNS Configuration</a></li>
-        <li><a href="#purchasing-a-cloud-server">Purchasing a Cloud Server</a></li>
-        <li><a href="#server-configuration">Server Configuration</a>
+        <li><a href="#register-a-domain">Register a Domain</a></li>
+        <li><a href="#set-up-dns-resolution">Set Up DNS Resolution</a></li>
+        <li><a href="#purchase-a-cloud-server">Purchase a Cloud Server</a></li>
+        <li><a href="#configure-the-server">Configure the Server</a>
           <ul>
             <li><a href="#file-transfer">File Transfer</a></li>
-            <li><a href="#installing-docker">Installing Docker</a></li>
-            <li><a href="#using-docker">Using Docker</a></li>
+            <li><a href="#install-docker">Install Docker</a></li>
+            <li><a href="#use-docker">Use Docker</a></li>
+            <li><a href="#configure-pippoetry">Configure pip/poetry</a></li>
+            <li><a href="#ssltls">SSL/TLS</a></li>
           </ul>
         </li>
-        <li><a href="#miscellaneous">Miscellaneous</a></li>
+        <li><a href="#filing">Filing</a></li>
+        <li><a href="#miscellaneous">Miscellaneous</a>
+          <ul>
+            <li><a href="#certbot-access-denied">Certbot Access Denied?</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -1410,32 +1428,39 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#exploring-deployment-options">Exploring Deployment Options</a>
+    <li><a href="#preface">Preface</a></li>
+    <li><a href="#solution-exploration">Solution Exploration</a>
       <ul>
-        <li><a href="#local-server">Local Server</a>
+        <li><a href="#local-services">Local Services</a>
           <ul>
-            <li><a href="#general-idea">General idea</a></li>
-            <li><a href="#docker-path-params">Docker Path Params</a></li>
+            <li><a href="#general-idea">General Idea</a></li>
+            <li><a href="#docker-path-issues">Docker Path Issues</a></li>
           </ul>
         </li>
         <li><a href="#port-forwarding">Port Forwarding</a></li>
-        <li><a href="#cloud-server">Cloud Server</a></li>
+        <li><a href="#cloud-services">Cloud Services</a></li>
       </ul>
     </li>
-    <li><a href="#cloud-server-setup-steps">Cloud Server Setup Steps</a>
+    <li><a href="#cloud-service-operation-process">Cloud Service Operation Process</a>
       <ul>
-        <li><a href="#domain-registration">Domain Registration</a></li>
-        <li><a href="#dns-configuration">DNS Configuration</a></li>
-        <li><a href="#purchasing-a-cloud-server">Purchasing a Cloud Server</a></li>
-        <li><a href="#server-configuration">Server Configuration</a>
+        <li><a href="#register-a-domain">Register a Domain</a></li>
+        <li><a href="#set-up-dns-resolution">Set Up DNS Resolution</a></li>
+        <li><a href="#purchase-a-cloud-server">Purchase a Cloud Server</a></li>
+        <li><a href="#configure-the-server">Configure the Server</a>
           <ul>
             <li><a href="#file-transfer">File Transfer</a></li>
-            <li><a href="#installing-docker">Installing Docker</a></li>
-            <li><a href="#using-docker">Using Docker</a></li>
+            <li><a href="#install-docker">Install Docker</a></li>
+            <li><a href="#use-docker">Use Docker</a></li>
+            <li><a href="#configure-pippoetry">Configure pip/poetry</a></li>
+            <li><a href="#ssltls">SSL/TLS</a></li>
           </ul>
         </li>
-        <li><a href="#miscellaneous">Miscellaneous</a></li>
+        <li><a href="#filing">Filing</a></li>
+        <li><a href="#miscellaneous">Miscellaneous</a>
+          <ul>
+            <li><a href="#certbot-access-denied">Certbot Access Denied?</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -1548,58 +1573,57 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>等中文版面完工之后再统一翻译
-<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  Detailed documentation of deploying an LLM app from scratch, with a primary focus on setting up a cloud server environment. This document will be updated continuously&hellip;
+          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+  Detailed documentation of the process of deploying an LLM application from scratch, focusing mainly on the initial setup of cloud servers, continuously updated&hellip;
 </div>
-</p>
 
 
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
+
+<h2 class="relative group">Preface 
+    <div id="preface" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#preface" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Before deploying your LLM application, ensure you have completed:</p>
+<p>Before deploying your LLM application, you should have already completed:</p>
 <ol>
-<li>A frontend framework with core functionality</li>
-<li>A relatively complete backend code repository</li>
+<li>A web front-end framework with core functionalities</li>
+<li>A relatively complete back-end code repository</li>
 </ol>
-<p>This guide primarily records the setup of a cloud server for testing and development. It does not yet cover production environments—refer to other resources if needed, as I only document what I&rsquo;ve actually practiced 🫡.</p>
+<p>This document mainly records the setup process of cloud services for testing and development environments. Cloud servers for production environments are not covered here, so please refer to other articles. No practice, no say🫡</p>
 
 
-<h2 class="relative group">Exploring Deployment Options 
-    <div id="exploring-deployment-options" class="anchor"></div>
+<h2 class="relative group">Solution Exploration 
+    <div id="solution-exploration" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#exploring-deployment-options" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#solution-exploration" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Although the title mentions &ldquo;Cloud Server Setup,&rdquo; I&rsquo;d also like to mention some alternatives. Not every test environment needs an expensive cloud server. If you&rsquo;ve already decided on a cloud server, jump directly to: <a href="#cloud-server-setup-steps">Cloud Server Setup Steps</a></p>
-<p>All content below assumes you&rsquo;re working primarily on Windows since I&rsquo;ve never used Linux or MacOS 😢.</p>
+<p>Although this article is about &ldquo;Cloud Server Setup,&rdquo; I still want to document some &ldquo;non-cloud service&rdquo; solutions, as not all testing and development environments require an expensive cloud server. If you have already decided to use a cloud server, then skip to: <a href="#cloud-service-operation-process">Cloud Service Operation Process</a></p>
+<p>The following content assumes your main production environment is Windows, as I have not used Linux or MacOS😢</p>
 
 
-<h3 class="relative group">Local Server 
-    <div id="local-server" class="anchor"></div>
+<h3 class="relative group">Local Services 
+    <div id="local-services" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#local-server" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#local-services" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 
 
-<h4 class="relative group">General idea 
+<h4 class="relative group">General Idea 
     <div id="general-idea" class="anchor"></div>
     
     <span
@@ -1609,33 +1633,33 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h4>
-<p>If you&rsquo;re a truly independent developer, requiring no collaboration, you don&rsquo;t necessarily need a cloud server—a Docker environment is sufficient.</p>
-<p>After installing Docker Desktop, you&rsquo;ll need to perform <strong>container orchestration</strong> based on your existing backend code:</p>
+<p>If you are a truly &ldquo;independent&rdquo; developer with no need for collaborative development, then you don&rsquo;t need a cloud server at all. You just need Docker.</p>
+<p>After installing Docker Desktop, you need to perform <strong>container orchestration</strong> based on your existing back-end service code.</p>
+<p>This step mainly involves:</p>
 <ol>
-<li>Set up API endpoints: Develop core business logic in your preferred programming language.</li>
-<li>Prepare necessary environment files: Such as <code>.env</code>, <code>pyproject.toml</code>, etc.</li>
-<li>Create a Dockerfile: Essentially a set of instructions to initialize your container.</li>
-<li>Write a <code>docker-compose.yml</code> file: Define images, internal networks, ports, and mounted volumes required by your application.</li>
+<li>Establishing API interfaces: Writing the main operational logic, which can be done in any programming language you prefer</li>
+<li>Creating necessary environment files: Such as <code>.env</code>, <code>pyproject.toml</code>, etc.</li>
+<li>Creating a DockerFile: Essentially a set of command-line instructions to initialize your container</li>
+<li>Creating a <code>docker-compose.yml</code> file: In this file, you need to orchestrate the images used by your app, specifying internal networks, ports, mounted volumes, and other necessary settings</li>
 </ol>
-<p>Run a single command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker-compose up --build
-</span></span></code></pre></div><p>Once Docker initializes, access your services via <code>localhost</code>, replicating the experience of a cloud server.</p>
+<p>Then, run the command: <code>docker-compose up --build</code></p>
+<p>After Docker initialization, you can directly access your service via the <code>localhost</code> domain, just like using a cloud server.</p>
 
 
-<h4 class="relative group">Docker Path Params 
-    <div id="docker-path-params" class="anchor"></div>
+<h4 class="relative group">Docker Path Issues 
+    <div id="docker-path-issues" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#docker-path-params" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#docker-path-issues" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
-<p>When orchestrating Docker containers, there are several essential <strong>working path parameters</strong> you need to understand; otherwise, you may frequently encounter &ldquo;file not found&rdquo; errors. 😢</p>
+<p>When orchestrating Docker containers, there are several necessary <strong>working path parameters</strong> to understand, otherwise, you might encounter &ldquo;file not found&rdquo; errors😢</p>
 <ol>
-<li><strong><code>build.context</code></strong>: This parameter appears in the <code>docker-compose.yml</code> file and refers to the &ldquo;build context.&rdquo; It points to a real directory on your local machine.</li>
-<li><strong><code>WORKDIR</code></strong>: This parameter is found in the <code>Dockerfile</code> and specifies the &ldquo;working directory.&rdquo; Any subsequent <code>RUN</code>, <code>COPY</code>, or other instructions using <strong>relative paths</strong> will be executed within this directory. However, it does not affect absolute path parameters.</li>
+<li><code>build.context</code>: This parameter exists in <code>docker-compose.yml</code> and refers to the &ldquo;build context,&rdquo; pointing to a real directory on your local machine</li>
+<li><code>WORKDIR</code>: This parameter exists in the <code>Dockerfile</code> and is used to specify the &ldquo;working directory&rdquo;; subsequent RUN, COPY, and other commands will execute in this directory if <strong>relative paths</strong> are used, but absolute path parameters are not affected</li>
 </ol>
 
 
@@ -1649,89 +1673,89 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>If you&rsquo;ve built a Docker service locally but need a shared testing environment for teammates, simply forward your local ports.</p>
-<p>There are many tools for port forwarding. Personally, I recommend <a href="https://www.natfrp.com/?page=panel&amp;module=download" target="_blank">Sakura Frp</a>.</p>
-<p>Port forwarding is convenient but unsuitable if you need secure <strong>frontend-backend communication</strong> 😢.</p>
-<p>Initially, my idea was running the frontend locally, backend inside Docker, and forwarding frontend/backend services individually. However, lacking SSL certificates caused browsers to block cross-domain HTTPS requests due to security concerns 😢. Only my own computer could run the service successfully; other devices failed—even self-signed certificates were difficult to configure due to browser security restrictions 😭.</p>
-<p>After unsuccessful attempts, I ultimately chose cloud servers.</p>
+<p>If you have built a Docker service locally but your team members need a unified testing environment, you can simply perform port forwarding on your local service.</p>
+<p>There are many applications that support port forwarding, and I won&rsquo;t list them all here. I personally use <a href="https://www.natfrp.com/?page=panel&amp;module=download" target="_blank">Sakura Frp</a></p>
+<p>Although port forwarding is very convenient, if you need <strong>front-end and back-end interaction</strong>, it&rsquo;s best not to use port forwarding😢</p>
+<p>My initial idea was: run the front-end web page locally, and also run the back-end service in a local Docker container, then use port forwarding to forward the front-end web page to users and the back-end to the front-end.</p>
+<p>It seemed fine, but since your network service is not SSL verified, it cannot send https requests, causing the browser to block cross-origin insecure resource requests from the front-end to the back-end😢 The result is that only your computer can run the complete service process, and other devices will fail; even if you configure a self-signed certificate, it&rsquo;s hard to pass the client browser&rsquo;s security mechanism😭</p>
+<p>After unsuccessful attempts, I chose to use a cloud server.</p>
 
 
-<h3 class="relative group">Cloud Server 
-    <div id="cloud-server" class="anchor"></div>
+<h3 class="relative group">Cloud Services 
+    <div id="cloud-services" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#cloud-server" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#cloud-services" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>Cloud servers are simple to set up nowadays but have one disadvantage: cost 😢.</p>
-<p>For development/testing environments, you don’t need high-end servers. Choose based on your budget and team size.</p>
-<p>I chose Tencent Cloud’s lightweight server:<br>
-2 CPU cores, 2GB RAM, 4Mbps bandwidth, 50GB system disk, 300GB monthly traffic<br>
-Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
+<p>Now, the operation process of cloud servers is very simple, but there is one drawback: expensive😢</p>
+<p>Of course, if it&rsquo;s not for a production environment but a testing and development environment, you don&rsquo;t need to choose a top-tier server. Choose a suitable one based on your financial situation and team size.</p>
+<p>I ultimately chose Tencent Cloud&rsquo;s lightweight server: 2 cores + 2GB RAM + 4M bandwidth + 50GB system disk + 300GB monthly traffic</p>
+<p>No other reason, mainly because it&rsquo;s cheap, only ￥88 for the first year.</p>
 
 
-<h2 class="relative group">Cloud Server Setup Steps 
-    <div id="cloud-server-setup-steps" class="anchor"></div>
+<h2 class="relative group">Cloud Service Operation Process 
+    <div id="cloud-service-operation-process" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#cloud-server-setup-steps" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#cloud-service-operation-process" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">Domain Registration 
-    <div id="domain-registration" class="anchor"></div>
+<h3 class="relative group">Register a Domain 
+    <div id="register-a-domain" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#domain-registration" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#register-a-domain" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 
 
-<h3 class="relative group">DNS Configuration 
-    <div id="dns-configuration" class="anchor"></div>
+<h3 class="relative group">Set Up DNS Resolution 
+    <div id="set-up-dns-resolution" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#dns-configuration" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#set-up-dns-resolution" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 
 
-<h3 class="relative group">Purchasing a Cloud Server 
-    <div id="purchasing-a-cloud-server" class="anchor"></div>
+<h3 class="relative group">Purchase a Cloud Server 
+    <div id="purchase-a-cloud-server" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#purchasing-a-cloud-server" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#purchase-a-cloud-server" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 
 
-<h3 class="relative group">Server Configuration 
-    <div id="server-configuration" class="anchor"></div>
+<h3 class="relative group">Configure the Server 
+    <div id="configure-the-server" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#server-configuration" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#configure-the-server" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>The server OS used here is Ubuntu Server 24.04 LTS 64bit. All commands are based on this system.</p>
+<p>The server operating system I use here is Ubuntu Server 24.04 LTS 64bit, and subsequent commands are based on this system.</p>
 
 
 <h4 class="relative group">File Transfer 
@@ -1744,9 +1768,9 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
     </span>        
     
 </h4>
-<p>Inoder to transfer the local file to the server easily, I have opted some modern terminal app, such as <a href="https://tabby.sh/" target="_blank">Tabby</a>, <a href="https://github.com/kingToolbox/WindTerm" target="_blank">WindTerm</a> and <a href="https://www.warp.dev/" target="_blank">Warp</a> etc.</p>
-<p>I randomly chose the Tabby terminal. It makes remote connections more convenient and has an integrated SFTP feature for easy file transfers. Plus, if you’re willing to customize the terminal interface, Tabby can look really sleek. 😄</p>
-<p>Of course, for a more traditional approach, you can opt for <a href="https://filezilla-project.org/download.php" target="_blank">FileZilla</a>. If you don’t mind getting your hands a bit dirty, you can also use terminal commands like <code>rsync</code> or <code>scp</code> to transfer files.</p>
+<p>To transfer files from the local machine to the server, I chose to use some more modern terminals, such as: <a href="https://tabby.sh/" target="_blank">Tabby</a>, <a href="https://github.com/kingToolbox/WindTerm" target="_blank">WindTerm</a>, and <a href="https://www.warp.dev/" target="_blank">Warp</a>, etc.</p>
+<p>I randomly chose Tabby, which makes remote connections more convenient and has built-in SFTP for easy file transfer. If you have the energy to customize the terminal interface, Tabby can be very aesthetically pleasing😄</p>
+<p>Of course, more traditional solutions include using <a href="https://filezilla-project.org/download.php" target="_blank">FileZilla</a>; and if you don&rsquo;t mind the hassle, you can directly use terminal commands: use <code>rsync</code> or <code>scp</code> commands.</p>
 
   
   
@@ -1779,59 +1803,49 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
   <span
     
       style="color: #E0E7FF"
-    ></span>
+    >If you are using a Tencent Cloud server and are curious about what the <code>lighthouse</code> folder is🤨: this folder is the account for one-click password-free login.</span>
 </div>
 
 
 
-<h4 class="relative group">Installing Docker 
-    <div id="installing-docker" class="anchor"></div>
+<h4 class="relative group">Install Docker 
+    <div id="install-docker" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#installing-docker" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#install-docker" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
-<p>Execute each of the following commands, including detailed comments:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get update <span class="c1"># Upgrade packages</span>
+<p>Execute the following commands one by one, each command has an explanation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get update <span class="c1"># Upgrade</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release <span class="c1"># Install dependencies for HTTPS and verification</span>
+</span></span><span class="line"><span class="cl">sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release <span class="c1"># Install dependency tools, mainly https transmission and verification-related toolkits</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Install Docker’s official GPG key to ensure authenticity of Docker packages</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Install Docker&#39;s GPG key to ensure the Docker image you download has not been tampered with</span>
 </span></span><span class="line"><span class="cl">sudo curl -fsSL https://mirrors.cloud.tencent.com/docker-ce/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Add Docker’s official repository to the APT source list</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Add Docker&#39;s official software repository to the system&#39;s APT source list</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># I don&#39;t think you want to know what this bunch means٩(•̤̀ᵕ•̤́๑)</span>
 </span></span><span class="line"><span class="cl">sudo install -m <span class="m">0755</span> -d /etc/apt/keyrings
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">sudo chmod a+r /etc/apt/keyrings/docker.asc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="s2">&#34;deb [arch=
-\\((dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://mirrors.cloud.tencent.com/docker-ce/linux/ubuntu/ \\\\)(. /etc/os-release &amp;&amp; echo &#34;</span><span class="nv">$VERSION_CODENAME</span><span class="s2">&#34;) stable&#34;</span> <span class="p">|</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span>   <span class="s2">&#34;deb [arch=
+\\((dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://mirrors.cloud.tencent.com/docker-ce/linux/ubuntu/ \\\\)(. /etc/os-release &amp;&amp; echo &#34;</span><span class="nv">$VERSION_CODENAME</span><span class="s2">&#34;) stable&#34;</span> <span class="p">|</span>   sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Update package index to include Docker repository</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Update to let apt recognize the newly added Docker software source</span>
 </span></span><span class="line"><span class="cl">sudo apt-get update
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Install Docker Engine and related tools</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Install Docker engine</span>
 </span></span><span class="line"><span class="cl">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Verify Docker installation information</span>
-</span></span><span class="line"><span class="cl">sudo docker info
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Start Docker service</span>
-</span></span><span class="line"><span class="cl">sudo systemctl start docker
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Stop Docker service</span>
-</span></span><span class="line"><span class="cl">sudo systemctl stop docker
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Enable Docker to start at boot</span>
-</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Verify Docker service status</span>
-</span></span><span class="line"><span class="cl">sudo systemctl status docker
+</span></span><span class="line"><span class="cl"><span class="c1"># Start Docker</span>
+</span></span><span class="line"><span class="cl">sudo docker info                   <span class="c1"># Verify installation information</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start docker        <span class="c1"># Start service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker       <span class="c1"># Enable auto-start on boot</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status docker       <span class="c1"># Verify service status</span>
 </span></span></code></pre></div>
   
   
@@ -1865,43 +1879,261 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
   <span
     
       style="color: #333333"
-    ></span>
+    >After running the last command, you will enter a paged log view mode, similar to a Vim editor. Enter <code>:q</code> to return to the regular command line.</span>
 </div>
 
 
 
-<h4 class="relative group">Using Docker 
-    <div id="using-docker" class="anchor"></div>
+<h4 class="relative group">Use Docker 
+    <div id="use-docker" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#using-docker" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#use-docker" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start docker <span class="c1"># Start Docker service</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start docker <span class="c1"># Start service</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Configure Docker mirror (Tencent Cloud source)</span>
-</span></span><span class="line"><span class="cl">sudo vim /etc/docker/daemon.json <span class="c1"># Create Docker config file</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Configure Tencent Cloud&#39;s Docker source</span>
+</span></span><span class="line"><span class="cl">sudo vim /etc/docker/daemon.json <span class="c1"># Create configuration file</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Press &#39;I&#39;, enter insert mode, then input:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Press the I key to switch to I mode and enter</span>
 </span></span><span class="line"><span class="cl"><span class="o">{</span>
 </span></span><span class="line"><span class="cl">   <span class="s2">&#34;registry-mirrors&#34;</span>: <span class="o">[</span>
 </span></span><span class="line"><span class="cl">   <span class="s2">&#34;https://mirror.ccs.tencentyun.com&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Press &#39;esc&#39;, then type &#39;:wq&#39; to save and exit Vim</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Press esc, then enter &#39;:wq&#39;, this is a Vim operation, meaning save and exit</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo systemctl restart docker <span class="c1"># Restart Docker service to apply config</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart docker <span class="c1"># Restart Docker service</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Verify Docker source settings (should display Registry Mirrors URL)</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop docker <span class="c1"># Stop Docker service</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Verify source information, you should see the Registry Mirrors value is the URL you set</span>
 </span></span><span class="line"><span class="cl">sudo docker info
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Pull a test image</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Pull image</span>
 </span></span><span class="line"><span class="cl">sudo docker pull nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If you want to use docker-compose</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># On Ubuntu, use: docker compose</span>
+</span></span><span class="line"><span class="cl">sudo docker compose up --build
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start service without rebuilding</span>
+</span></span><span class="line"><span class="cl">sudo docker compose up -d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Stop all services</span>
+</span></span><span class="line"><span class="cl">sudo docker compose down
 </span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #ffcc00"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #8B6914"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #333333"
+    >Before using the <code>docker compose</code> command, please create <code>docker-compose.yml</code> and <code>Dockerfile</code> according to the official tutorial.</span>
+</div>
+
+
+
+<h4 class="relative group">Configure pip/poetry 
+    <div id="configure-pippoetry" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#configure-pippoetry" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Strangely, Tencent Cloud installs Python by default at the system level but does not install pip🤔 So you need to manually install it. Before installation, please confirm whether Python is installed.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #ffcc00"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #8B6914"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #333333"
+    >If you are not using pip at the system level but pip inside a Docker container, then changing the pip source at the system level will not have any effect.</span>
+</div>
+
+<p>Change pip source at the system level:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Check Python version</span>
+</span></span><span class="line"><span class="cl">python3 -V
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check the path of python3</span>
+</span></span><span class="line"><span class="cl">which python3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Confirm Python is installed and pip is not installed</span>
+</span></span><span class="line"><span class="cl">sudo apt install python3-pip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If using Tencent&#39;s server, you can use the intranet domain for faster speed</span>
+</span></span><span class="line"><span class="cl">pip config <span class="nb">set</span> global.index-url https://mirrors.tencentyun.com/pypi/simple
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If not, use the external domain</span>
+</span></span><span class="line"><span class="cl">pip config <span class="nb">set</span> global.index-url https://mirrors.cloud.tencent.com/pypi/simple
+</span></span></code></pre></div><p>Change pip source inside Docker container: Directly write the following command in your <code>Dockerfile</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Configure pip source</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Use Tencent Cloud mirror source, note this is the intranet domain</span>
+</span></span><span class="line"><span class="cl">RUN pip config <span class="nb">set</span> global.index-url https://mirrors.tencentyun.com/pypi/simple <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="o">&amp;&amp;</span> pip config <span class="nb">set</span> global.trusted-host mirrors.tencentyun.com
+</span></span></code></pre></div><p>If you use poetry at the system level:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install poetry using online script</span>
+</span></span><span class="line"><span class="cl">curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py <span class="p">|</span> python
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Install poetry using apt</span>
+</span></span><span class="line"><span class="cl">sudo apt install python3-poetry
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Use Tencent Cloud mirror source, note this is the intranet domain</span>
+</span></span><span class="line"><span class="cl">sudo poetry config repositories.tencentyun https://mirrors.tencentyun.com/pypi/simple
+</span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >If your system does not have pip installed by default, it is not recommended to install pip first and then install poetry.</span>
+</div>
+
+
+
+<h4 class="relative group">SSL/TLS 
+    <div id="ssltls" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ssltls" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>SSL/TLS is a set of encrypted transmission protocols, carefully designed by cryptography experts. The widely used <strong>Hypertext Transfer Protocol Secure</strong> (HTTPS) is obtained by encrypting the plaintext transmission protocol HTTP using SSL/TLS.</p>
+<p>A core part of HTTPS is the handshake before data transmission, during which the password for data encryption is determined. During the handshake, the website sends an SSL certificate to the browser. The SSL certificate is similar to our daily ID card, serving as an identity proof for HTTPS websites. The SSL certificate contains the website&rsquo;s domain name, certificate validity period, certificate issuing authority, and the public key used for encrypting the transmission password. Before generating the password, the browser needs to verify whether the currently accessed domain name matches the domain name bound to the certificate, and also verify the <strong>Certificate Authority</strong> (CA). If the verification fails, the browser will give a certificate error prompt.</p>
+<p>Generally, SSL certificates need to be purchased from CA institutions, but some CA institutions provide free SSL certificate services, such as: <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a></p>
+<p>After long-term development, the certificates issued by Let’s Encrypt can now be automatically processed through Certbot, and the certificates can be automatically re-applied when they expire. Of course, such convenience comes at a cost😢: You need to configure certbot, which is quite troublesome.</p>
+<p>Here, I chose to directly deploy a certbot inside a Docker container to apply for SSL certificates, meaning you can directly modify the content in <code>docker-compose.yml</code> to pull the official certbot image.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># First, stop all Docker services</span>
+</span></span><span class="line"><span class="cl">sudo docker compose down
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start all services</span>
+</span></span><span class="line"><span class="cl">sudo docker compose up -d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start part of the services</span>
+</span></span><span class="line"><span class="cl">sudo docker compose up nginx -d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View logs of a specific image</span>
+</span></span><span class="line"><span class="cl">sudo docker logs server-app-1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View logs of a specific service</span>
+</span></span><span class="line"><span class="cl">sudo docker compose logs certbot-init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Use recursive deletion to clear cache</span>
+</span></span><span class="line"><span class="cl">rm -rf ./certbot/conf/*
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -it server-certbot-1 /bin/sh
+</span></span></code></pre></div>
+
+<h3 class="relative group">Filing 
+    <div id="filing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#filing" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Filing using a corporate entity is not difficult, so I won&rsquo;t elaborate too much here. This section mainly discusses <strong>individual entity</strong> filing. Main reference: <a href="https://www.cnblogs.com/yyzwz/p/13393223.html" target="_blank">Tencent Cloud Server Filing Full Process 40 Days of Filing Blood and Tears - Blog Garden</a></p>
+<div class="mermaid" align="center">
+  
+graph LR;
+p1(Server Platform Real-name Authentication)-->p2(Real-name Authentication Purchase Domain)-->p3(Apply for Filing)-->p4(Platform Review)-->p5(Regulatory Authority Review)-->p6(Public Security Filing)
+
+</div>
+
+<p>If you are a Tencent Cloud user, you can use the <strong>Tencent Cloud Website Filing Mini Program</strong>; after submitting the application, the platform will first review it, usually taking about 8 hours; then the platform will submit it to the regulatory authority for review, usually taking about 7 working days; after the regulatory authority review is passed, you need to complete the public security filing within 30 working days.</p>
+
 
 <h3 class="relative group">Miscellaneous 
     <div id="miscellaneous" class="anchor"></div>
@@ -1913,7 +2145,24 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
     </span>        
     
 </h3>
+<p>This section mainly documents issues that may arise during the entire operation process.</p>
 
+
+<h4 class="relative group">Certbot Access Denied? 
+    <div id="certbot-access-denied" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#certbot-access-denied" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>First, of course, check the network reasons. Check whether the security group of the server has opened ports 443 and 80, and check whether the firewall of the server operating system has blocked port access.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Ubuntu installs ufw firewall by default</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Check ufw status, inactive status means not started, which is the ideal state</span>
+</span></span><span class="line"><span class="cl">sudo ufw status
+</span></span></code></pre></div>
 
 <h2 class="relative group">References 
     <div id="references" class="anchor"></div>
@@ -1926,13 +2175,30 @@ Mainly due to cost-effectiveness—only ¥88 for the first year.</p>
     
 </h2>
 <ul>
-<li><a href="https://cloud.tencent.com/document/product/1207/44578" target="_blank">Logging into a Linux instance using a third-party SSH terminal - Tencent Cloud</a></li>
-<li><a href="https://cloud.tencent.com/document/product/1207/44643" target="_blank">Logging into a Linux instance using local SSH terminal - Tencent Cloud</a></li>
-<li><a href="https://blog.csdn.net/weixin_48953586/article/details/145597723" target="_blank">Installing Docker on Linux</a></li>
-<li><a href="https://blog.csdn.net/weixin_44355653/article/details/140267707" target="_blank">Ubuntu 22.04 Docker Installation</a></li>
-<li><a href="https://blog.csdn.net/qq_36777143/article/details/144872919" target="_blank">Purpose of Docker&rsquo;s official GPG Key</a></li>
-<li><a href="https://cloud.tencent.com/document/product/213/46000#1H-kXbk9zoqvzYMVPVsBO" target="_blank">Cloud Server Docker Setup - Tencent Cloud</a></li>
-<li><a href="https://cloud.tencent.com/document/product/1207/45596" target="_blank">Docker Installation and Mirror Acceleration - Tencent Cloud</a></li>
+<li><a href="https://cloud.tencent.com/document/product/1207/44578" target="_blank">Using Third-party SSH Terminal to Log in to Linux Instance - Operation Guide - Tencent Cloud</a></li>
+<li><a href="https://cloud.tencent.com/document/product/1207/44643" target="_blank">Using Local Built-in SSH Terminal to Log in to Linux Instance - Operation Guide - Tencent Cloud</a></li>
+<li><a href="https://blog.csdn.net/weixin_48953586/article/details/145597723" target="_blank">Installing Docker in Linux Environment</a></li>
+<li><a href="https://blog.csdn.net/weixin_44355653/article/details/140267707" target="_blank">Ubuntu 22.04 Install Docker</a></li>
+<li><a href="https://blog.csdn.net/qq_36777143/article/details/144872919" target="_blank">What is Docker&rsquo;s Official GPG Key For?</a></li>
+<li><a href="https://cloud.tencent.com/document/product/213/46000#1H-kXbk9zoqvzYMVPVsBO" target="_blank">Cloud Server Setup Docker - Practice Tutorial - Tencent Cloud</a></li>
+<li><a href="https://cloud.tencent.com/document/product/1207/45596" target="_blank">Installing Docker and Configuring Mirror Acceleration Source - Practice Tutorial - Tencent Cloud</a></li>
+<li><a href="https://u.sb/debian-install-docker/" target="_blank">Debian 12 / Ubuntu 24.04 Install Docker and Docker Compose Tutorial - Shaobing Blog</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1635489" target="_blank">Step-by-Step Guide to Python pip Source Change Operation in Linux System - Tencent Cloud</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1601851" target="_blank">pip Source Configuration - Tencent Cloud Developer Community - Tencent Cloud</a></li>
+<li><a href="https://www.resourch.com/archives/66.html" target="_blank">How to Change Domestic Source for Poetry - Data Science SourceResearch</a></li>
+<li><a href="https://cn.linux-console.net/?p=20047" target="_blank">Linux Stop Docker Container: Single, Multiple, or All</a></li>
+<li><a href="https://blog.csdn.net/qq_35393472/article/details/136719510" target="_blank">Where to View Docker Logs? How to View Logs in Linux Server - CSDN Blog</a></li>
+<li><a href="https://cloud.baidu.com/article/2693474" target="_blank">Troubleshooting and Solving Linux Firewall Closed but Still Unable to Access Web</a></li>
+<li><a href="https://blog.csdn.net/weixin_51125521/article/details/132273384?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-132273384-blog-106063657.235%5Ev43%5Econtrol&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-132273384-blog-106063657.235%5Ev43%5Econtrol&amp;utm_relevant_index=2" target="_blank">About Ubuntu Console Opened All Ports, but External Hosts Still Cannot Access Corresponding Port Services - CSDN Blog</a></li>
+<li><a href="https://blog.csdn.net/qq_16481211/article/details/119860572" target="_blank">Three Minutes to Explain SSL Authentication and Encryption Technology - CSDN Blog</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/133375078" target="_blank">One Article to Thoroughly Understand SSL/TLS Protocol - Zhihu</a></li>
+<li><a href="https://www.runoob.com/w3cnote/https-ssl-intro.html" target="_blank">HTTPS and SSL Certificate Overview | Rookie Tutorial</a></li>
+<li><a href="https://blog.csdn.net/weixin_45444133/article/details/120900424" target="_blank">Four Common Free Certificate Application Methods - CSDN Blog</a></li>
+<li><a href="https://www.cnblogs.com/tandk-blog/p/15449873.html" target="_blank">Using Docker to Deploy Nginx and Configure HTTPS - TandK - Blog Garden</a></li>
+<li><a href="https://blog.csdn.net/hjj19930729/article/details/145384756" target="_blank">Using Docker + Nginx + Certbot to Automate SSL Certificate Management - CSDN Blog</a></li>
+<li><a href="https://community.letsencrypt.org/t/the-certificate-authority-failed-to-download-the-temporary-challenge-files-created-by-certbot-connection-refused/159426/26" target="_blank">The Certificate Authority Failed to Download the Temporary Challenge Files Created by Certbot &ndash; Connection Refused - Help - Let&rsquo;s Encrypt Community Support</a></li>
+<li><a href="https://cloud.tencent.com/document/product/243/97668" target="_blank">ICP Filing First Filing - Tencent Cloud</a></li>
+<li><a href="https://cloud.tencent.com/document/product/243/3474" target="_blank">ICP Filing Requirements by Province - Tencent Cloud</a></li>
 </ul>
 
           
