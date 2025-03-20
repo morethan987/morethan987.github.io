@@ -3,6 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://morethan987.github.io/en/blog/rstar-note/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/rstar-note/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/rstar-note/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/blog/cloud-server-build/</loc>
     <lastmod>2025-03-16T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -243,14 +259,8 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/en/series/ai-project/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://morethan987.github.io/en/authors/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -266,7 +276,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/blog/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -281,14 +291,8 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/en/tags/cloud-service/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://morethan987.github.io/en/authors/morethan/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -303,8 +307,42 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/tags/notes/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/paper/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/paper-notes/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/rstar/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/rstar/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/rstar/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/series/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -320,7 +358,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -336,7 +374,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -349,6 +387,18 @@
       hreflang="en"
       href="https://morethan987.github.io/en/"
     />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/ai-project/</loc>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/cloud-service/</loc>
+    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/qdrant/</loc>
