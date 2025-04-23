@@ -638,7 +638,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <div class="flex flex-col space-y-3">
         
         <a href="/en/blog/qdrant-feature-guide/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Function Guide">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Feature Guide">
             English
           </p>
         </a>
@@ -725,7 +725,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <div class="flex flex-col space-y-3">
         
         <a href="/en/blog/qdrant-feature-guide/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Function Guide">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Feature Guide">
             English
           </p>
         </a>
@@ -1646,7 +1646,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>数据点是向量数据库的核心数据类型，所有的操作都围绕着数据点进行。</p>
-<p>一个非常纯净的数据点只包含其向量，但是一般情况下数据点都会被附加上一些标签用来提供向量数据之外的更多的信息。这些标签被称为<a href="#负载·payload">负载·Payload</a> 👇</p>
+<p>一个非常纯净的数据点只包含其向量，但是一般情况下数据点都会被附加上一些标签用来提供向量数据之外的更多的信息。这些标签被称为<a href="#负载payload">负载·Payload</a> 👇</p>
 <p><strong>因此：数据点=向量+负载标签</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="c1">// 这是一个简单的数据点
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
@@ -1718,7 +1718,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">    <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>既然都存进数据库里面了，那么这些数据肯定是有作用的：向量数据库的搜索机制主要是<strong>语义近似匹配</strong>，通过这些标签你就能够在这个基础上添加更多的<strong>逻辑过滤条件</strong></p>
-<p>关于过滤的更多信息见：<a href="#过滤·filtering">过滤·Filtering</a></p>
+<p>关于过滤的更多信息见：<a href="#过滤filtering">过滤·Filtering</a></p>
 
 
 <h3 class="relative group">集合·Collection 
@@ -2032,7 +2032,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h4>
 <p>&ldquo;发现&quot;操作的核心思路就是样本空间的分割。你需要提供一系列的<strong>正负向量对</strong>，每一个向量对都会将样本空间划分为正区域和负区域，最终将会搜索得出<strong>处于正区域更多或者负区域更少</strong>的数据点。</p>
-<p>和<a href="#推荐·recommendation">推荐·Recommendation</a> 类似，但是这里你需要将正向量和负向量组合成一对来输入。</p>
+<p>和<a href="#推荐recommendation">推荐·Recommendation</a> 类似，但是这里你需要将正向量和负向量组合成一对来输入。</p>
 
   
   

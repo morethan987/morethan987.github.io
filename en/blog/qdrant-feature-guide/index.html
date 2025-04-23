@@ -8,10 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Qdrant Function Guide &middot; More&#39;s awesome website</title>
-  <meta name="title" content="Qdrant Function Guide &middot; More&#39;s awesome website" />
+  <title>Qdrant Feature Guide &middot; More&#39;s awesome website</title>
+  <meta name="title" content="Qdrant Feature Guide &middot; More&#39;s awesome website" />
   
-  <meta name="description" content="The function of Qdrant vector database is recorded in detail for practical application" />
+  <meta name="description" content="Detailed documentation of Qdrant&#39;s vector database features for practical applications" />
   <meta name="keywords" content="Qdrant, " />
   
   
@@ -69,8 +69,8 @@
   
   <meta property="og:url" content="https://morethan987.github.io/en/blog/qdrant-feature-guide/">
   <meta property="og:site_name" content="More&#39;s awesome website">
-  <meta property="og:title" content="Qdrant Function Guide">
-  <meta property="og:description" content="The function of Qdrant vector database is recorded in detail for practical application">
+  <meta property="og:title" content="Qdrant Feature Guide">
+  <meta property="og:description" content="Detailed documentation of Qdrant&#39;s vector database features for practical applications">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
@@ -87,8 +87,8 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg">
-  <meta name="twitter:title" content="Qdrant Function Guide">
-  <meta name="twitter:description" content="The function of Qdrant vector database is recorded in detail for practical application">
+  <meta name="twitter:title" content="Qdrant Feature Guide">
+  <meta name="twitter:description" content="Detailed documentation of Qdrant&#39;s vector database features for practical applications">
 
   
   <script type="application/ld+json">
@@ -96,10 +96,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "Qdrant Function Guide",
-    "headline": "Qdrant Function Guide",
-    "description": "The function of Qdrant vector database is recorded in detail for practical application",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  A detailed overview of Qdrant vector database\u0026rsquo;s core functionalities to help developers design better database solutions in practice. 😋\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003eIntroduction \n    \u003cdiv id=\u0022introduction\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#introduction\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eRetrieval-Augmented Generation (RAG) based on vector databases is widely used in production. A vector database primarily stores vectors, enabling precise \u003cstrong\u003esimilarity-based queries\u003c\/strong\u003e through vector operations, a foundational capability in various applications.\u003c\/p\u003e",
+    "name": "Qdrant Feature Guide",
+    "headline": "Qdrant Feature Guide",
+    "description": "Detailed documentation of Qdrant\u0027s vector database features for practical applications",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  A detailed record of the core features of the Qdrant vector database, helping developers design better databases in practical applications 😋\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003ePreface \n    \u003cdiv id=\u0022preface\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#preface\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eVector database-based RAG is the most fundamental form of RAG and is widely used in production. As the name suggests, vector databases primarily store vectors. Through vector operations, we can achieve more precise \u003cstrong\u003erelevance searches\u003c\/strong\u003e, which serve as the \u003cstrong\u003ecornerstone\u003c\/strong\u003e for many application scenarios.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https:\/\/morethan987.github.io\/en\/blog\/qdrant-feature-guide\/",
     "author" : {
@@ -115,7 +115,7 @@
     "keywords": ["Qdrant"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "480"
+    "wordCount": "1605"
   }]
   </script>
 
@@ -136,6 +136,139 @@
   
 
 <script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.e9afe31fe3937d5e7a56cf4c9be2a5ed9b1758944cdbe115f890eb5bb1cb1da7f8394dbef5e2e41ca15bce94926df2796fad26fbbfed4007afaf3bbb34fed0da.css" integrity="sha512-6a/jH&#43;OTfV56Vs9Mm&#43;Kl7ZsXWJRM2&#43;EV&#43;JDrW7HLHaf4OU2&#43;9eLkHKFbzpSSbfJ5b60m&#43;7/tQAevrzu7NP7Q2g==" />
+
+
+<script defer src="/lib/katex/katex.min.1649a56c18808fc7e07e867ccc9f9b650094e69754e798ab5e6273145fe65e54af06bdb1fe09b22c7691bb9892a5c0391f0e8230b0821528c1d469a0b4d2f642.js" integrity="sha512-FkmlbBiAj8fgfoZ8zJ&#43;bZQCU5pdU55irXmJzFF/mXlSvBr2x/gmyLHaRu5iSpcA5Hw6CMLCCFSjB1GmgtNL2Qg=="></script>
+
+
+<script defer src="/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac&#43;zBvZzgDJzDQ=="
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -498,14 +631,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Function Guide">EN</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Feature Guide">EN</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
         <a href="/en/blog/qdrant-feature-guide/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Function Guide">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Feature Guide">
             English
           </p>
         </a>
@@ -585,14 +718,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Function Guide">EN</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Feature Guide">EN</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
         <a href="/en/blog/qdrant-feature-guide/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Function Guide">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Qdrant Feature Guide">
             English
           </p>
         </a>
@@ -879,7 +1012,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
       href="/en/blog/qdrant-feature-guide/"
-      >Qdrant Function Guide</a
+      >Qdrant Feature Guide</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -888,7 +1021,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Qdrant Function Guide
+      Qdrant Feature Guide
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -941,7 +1074,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-05T00:00:00&#43;00:00">5 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-05T00:00:00&#43;00:00">5 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1237,7 +1370,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#preface">Preface</a></li>
     <li><a href="#basic-data-types">Basic Data Types</a>
       <ul>
         <li><a href="#point">Point</a></li>
@@ -1248,14 +1381,25 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#common-operations">Common Operations</a>
       <ul>
         <li><a href="#search">Search</a></li>
-        <li><a href="#explore">Explore</a></li>
-        <li><a href="#filtering">Filtering</a></li>
+        <li><a href="#explore">Explore</a>
+          <ul>
+            <li><a href="#recommendation">Recommendation</a></li>
+            <li><a href="#discovery">Discovery</a></li>
+            <li><a href="#distance-matrix">Distance Matrix</a></li>
+          </ul>
+        </li>
+        <li><a href="#filtering">Filtering</a>
+          <ul>
+            <li><a href="#filter-conditions">Filter Conditions</a></li>
+            <li><a href="#logical-keywords">Logical Keywords</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#advanced-operations">Advanced Operations</a>
       <ul>
         <li><a href="#hybrid-queries">Hybrid Queries</a></li>
-        <li><a href="#optimizer">Optimizer</a></li>
+        <li><a href="#optimization">Optimization</a></li>
         <li><a href="#storage">Storage</a></li>
         <li><a href="#indexing">Indexing</a></li>
         <li><a href="#snapshots">Snapshots</a></li>
@@ -1275,7 +1419,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#preface">Preface</a></li>
     <li><a href="#basic-data-types">Basic Data Types</a>
       <ul>
         <li><a href="#point">Point</a></li>
@@ -1286,14 +1430,25 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#common-operations">Common Operations</a>
       <ul>
         <li><a href="#search">Search</a></li>
-        <li><a href="#explore">Explore</a></li>
-        <li><a href="#filtering">Filtering</a></li>
+        <li><a href="#explore">Explore</a>
+          <ul>
+            <li><a href="#recommendation">Recommendation</a></li>
+            <li><a href="#discovery">Discovery</a></li>
+            <li><a href="#distance-matrix">Distance Matrix</a></li>
+          </ul>
+        </li>
+        <li><a href="#filtering">Filtering</a>
+          <ul>
+            <li><a href="#filter-conditions">Filter Conditions</a></li>
+            <li><a href="#logical-keywords">Logical Keywords</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#advanced-operations">Advanced Operations</a>
       <ul>
         <li><a href="#hybrid-queries">Hybrid Queries</a></li>
-        <li><a href="#optimizer">Optimizer</a></li>
+        <li><a href="#optimization">Optimization</a></li>
         <li><a href="#storage">Storage</a></li>
         <li><a href="#indexing">Indexing</a></li>
         <li><a href="#snapshots">Snapshots</a></li>
@@ -1446,23 +1601,25 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
         <div class="article-content max-w-prose mb-20">
           <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  A detailed overview of Qdrant vector database&rsquo;s core functionalities to help developers design better database solutions in practice. 😋
+  A detailed record of the core features of the Qdrant vector database, helping developers design better databases in practical applications 😋
 </div>
 
 
 
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
+<h2 class="relative group">Preface 
+    <div id="preface" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#preface" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Retrieval-Augmented Generation (RAG) based on vector databases is widely used in production. A vector database primarily stores vectors, enabling precise <strong>similarity-based queries</strong> through vector operations, a foundational capability in various applications.</p>
-<p>Among many vector database providers such as Weaviate, Qdrant, Milvus, and Chroma, we will focus exclusively on Qdrant, referencing the official <a href="https://qdrant.tech/documentation/concepts/" target="_blank">Qdrant documentation</a> (2025-03).</p>
+<p>Vector database-based RAG is the most fundamental form of RAG and is widely used in production. As the name suggests, vector databases primarily store vectors. Through vector operations, we can achieve more precise <strong>relevance searches</strong>, which serve as the <strong>cornerstone</strong> for many application scenarios.</p>
+<p>There are many vector database providers: Weaviate, Qdrant, Milvus, Chroma, and more. However, they are generally similar. For a detailed comparative analysis of mainstream vector databases, see: <a href="https://www.syndataworks.cn/blog/blog/2024-10-29-vectoc-db-eval/" target="_blank">Vector Database Comparison Report: A Detailed Comparison of 12 Mainstream Vector Databases</a>.</p>
+<p>This article focuses solely on Qdrant. All content is based on the <a href="https://qdrant.tech/documentation/concepts/" target="_blank">Qdrant Official Documentation</a> (as of March 2025).</p>
+<p>This article focuses less on specific syntax and more on features and principles, helping developers quickly design product workflows without being constrained by cumbersome syntax, thereby improving imagination and efficiency.</p>
 
 
 <h2 class="relative group">Basic Data Types 
@@ -1475,7 +1632,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
-<p>Qdrant defines specific data abstractions to handle vector data effectively:</p>
+<p>Qdrant defines some abstract data types to better handle vector data. Understanding these types is fundamental to flexible usage.</p>
 
 
 <h3 class="relative group">Point 
@@ -1488,40 +1645,43 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>The fundamental unit of storage in a vector database. Typically, a point contains a vector and an optional payload with additional metadata:</p>
-<p><strong>Point = Vector + Payload</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">129</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;vector&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;payload&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;color&#34;</span><span class="p">:</span> <span class="s2">&#34;red&#34;</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Qdrant supports several vector types:</p>
+<p>Points are the core data type in a vector database. All operations revolve around points.</p>
+<p>A very basic point contains only its vector, but typically, points are tagged with additional metadata to provide more information beyond the vector data. These tags are called <a href="#payload">Payload</a> 👇.</p>
+<p><strong>Thus: Point = Vector + Payload Tags</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="c1">// A simple point  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">129</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;vector&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;payload&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;color&#34;</span><span class="p">:</span> <span class="s2">&#34;red&#34;</span><span class="p">},</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></div><p>Qdrant points can be configured with various types of vectors: <strong>Dense Vectors, Sparse Vectors, Multi-Vectors, and Named Vectors</strong>.</p>
 <table>
   <thead>
       <tr>
-          <th>Type</th>
+          <th>Vector Type</th>
           <th>Description</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Dense vectors</td>
-          <td>Standard vectors generated by most embedding models.</td>
+          <td>Dense Vectors</td>
+          <td>Standard vectors; most embedding models generate this type.</td>
       </tr>
       <tr>
-          <td>Sparse vectors</td>
-          <td>Variable-length vectors with few non-zero elements; useful for token matching and collaborative filtering.</td>
+          <td>Sparse Vectors</td>
+          <td>Variable-length vectors with few non-zero elements; typically used for exact token matching and collaborative filtering.</td>
       </tr>
       <tr>
-          <td>Multi vectors</td>
-          <td>Matrices composed of multiple dense vectors; each point may have different vector counts but identical dimensions.</td>
+          <td>Multi-Vectors</td>
+          <td>Matrices composed of multiple dense vectors; dimensions must match across points, but the number of vectors can vary. Used to store different vector descriptions of the same target.</td>
       </tr>
       <tr>
-          <td>Named vectors</td>
-          <td>A mix of the above types, allowing various vector types within a single point.</td>
+          <td>Named Vectors</td>
+          <td>A hybrid of the above types, allowing different vector types to coexist in a single point. These vectors are abstracted as named vectors.</td>
       </tr>
   </tbody>
 </table>
+<p>Basic CRUD operations are straightforward and won&rsquo;t be elaborated here.</p>
 
 
 <h3 class="relative group">Payload 
@@ -1534,19 +1694,31 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>Additional metadata stored with vectors using JSON syntax:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;jacket&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;colors&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;count&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mf">11.99</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;locations&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="nt">&#34;lon&#34;</span><span class="p">:</span> <span class="mf">52.5200</span><span class="p">,</span> <span class="nt">&#34;lat&#34;</span><span class="p">:</span> <span class="mf">13.4050</span><span class="p">}],</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;reviews&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="s2">&#34;alice&#34;</span><span class="p">,</span> <span class="nt">&#34;score&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="s2">&#34;bob&#34;</span><span class="p">,</span> <span class="nt">&#34;score&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>Payloads enhance semantic similarity searches by enabling additional <strong>logical filtering conditions</strong>.</p>
+<p>Additional metadata attached to vectors, described and stored using JSON syntax. Here&rsquo;s an example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;jacket&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;colors&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;count&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mf">11.99</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;locations&#34;</span><span class="p">:</span> <span class="p">[</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;lon&#34;</span><span class="p">:</span> <span class="mf">52.5200</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;lat&#34;</span><span class="p">:</span> <span class="mf">13.4050</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;reviews&#34;</span><span class="p">:</span> <span class="p">[</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="s2">&#34;alice&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;score&#34;</span><span class="p">:</span> <span class="mi">4</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;user&#34;</span><span class="p">:</span> <span class="s2">&#34;bob&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;score&#34;</span><span class="p">:</span> <span class="mi">5</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></div><p>Since this data is stored in the database, it serves a purpose: vector databases primarily rely on <strong>semantic similarity matching</strong>, and these tags allow you to add additional <strong>logical filtering conditions</strong> on top of that.</p>
+<p>For more on filtering, see: <a href="#filtering">Filtering</a></p>
 
 
 <h3 class="relative group">Collection 
@@ -1559,14 +1731,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>A group of points. Collections allow you to define:</p>
+<p>A collection is simply a group of points. At this level, you can define:</p>
 <ol>
-<li>Similarity algorithms between points</li>
-<li>Vector dimensions</li>
-<li>Optimizer settings</li>
-<li>HNSW algorithm parameters</li>
-<li>Write-Ahead Log (WAL) configurations</li>
-<li>Quantization settings</li>
+<li><strong>Similarity algorithms between points</strong></li>
+<li><strong>Vector dimensions</strong></li>
+<li><strong>Optimizer configurations</strong></li>
+<li><strong>HNSW algorithm configurations</strong>: The key parameter to adjust is <code>ef</code>, which determines the number of neighboring nodes the algorithm visits. Higher values yield more accurate but slower queries.</li>
+<li><strong>WAL configurations</strong></li>
+<li><strong>Quantization configurations</strong></li>
 </ol>
 
 
@@ -1580,7 +1752,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
-<p>The essential operations for using vector databases:</p>
+<p>These are the most fundamental and important operations when using a vector database.</p>
 
 
 <h3 class="relative group">Search 
@@ -1593,12 +1765,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>Primarily refers to <strong>similarity search</strong>, leveraging the concept that objects with higher similarity are closer in vector space. Qdrant supports various similarity algorithms:</p>
+<p>In the context of vector databases, &ldquo;search&rdquo; primarily refers to <strong>similarity search</strong>. The theoretical premise is that objects with <strong>higher similarity</strong> in the real world are <strong>closer</strong> in vector space.</p>
+<p>The term &ldquo;closer&rdquo; implies a <strong>similarity metric</strong>. Qdrant supports several popular similarity algorithms:</p>
 <ul>
-<li>Dot product</li>
-<li>Cosine similarity</li>
-<li>Euclidean distance</li>
-<li>Manhattan distance</li>
+<li>Dot Product Similarity</li>
+<li>Cosine Similarity</li>
+<li>Euclidean Distance</li>
+<li>Manhattan Distance</li>
 </ul>
 
   
@@ -1632,18 +1805,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <span
     
       style="color: #E0E7FF"
-    >Vectors are normalized when stored, making dot product and cosine similarity equivalent in Qdrant.</span>
+    >To improve performance, all vectors are normalized before storage. This means dot product similarity and cosine similarity are equivalent in Qdrant.</span>
 </div>
 
-<p>Qdrant provides a comprehensive <a href="https://qdrant.tech/documentation/concepts/search/#search-api" target="_blank">Search API</a>, enabling:</p>
+<p>For a better user experience, Qdrant provides a complete API for easy invocation: <a href="https://qdrant.tech/documentation/concepts/search/#search-api" target="_blank">Search API - Qdrant</a>.</p>
+<p>In summary, the functionalities you can invoke include:</p>
 <ol>
-<li>Basic searches with a vector or specifying a named vector.</li>
-<li>Control over search algorithms, including exact matching (slower but precise).</li>
-<li>Result filtering based on payload tags or similarity thresholds.</li>
-<li>Limiting search results (<code>limit</code>).</li>
-<li>Batch searches for multiple vectors.</li>
-<li>Grouping search results (<code>group_size</code>).</li>
-<li>Query planning for optimized performance based on heuristic evaluations.</li>
+<li><strong>Basic Operations</strong>: Input a vector to perform similarity matching in the database. If your points store &ldquo;named vectors,&rdquo; you need to specify which vector to use for matching.</li>
+<li><strong>Search Algorithm Control</strong>: You can enable exact search, which performs similarity matching on every point, taking longer (more parameters are adjustable but rarely used).</li>
+<li><strong>Result Filtering</strong>: Filter results before the actual search using <em>payload tags</em> to narrow the scope, or after the search using <em>similarity score thresholds</em>.</li>
+<li><strong>Result Count</strong>: The <code>limit</code> parameter controls the number of results returned (the top <code>limit</code> most similar results).</li>
+<li><strong>Batch Search</strong>: Input multiple vectors for search in one go.</li>
+<li><strong>Search Grouping</strong>: Group search results by certain tags. The <code>group_size</code> parameter sets the number of results per group.</li>
+<li><strong>Search Planning</strong>: Based on optional indexes, filter complexity, and the total number of points, a heuristic method selects an appropriate search approach (improving performance 🤔).</li>
 </ol>
 
   
@@ -1678,33 +1852,33 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <span
     
       style="color: #333333"
-    >When using both <code>group_size</code> and <code>limit</code>, the <code>limit</code> parameter indicates the number of groups.</span>
+    >If both <code>group_size</code> and <code>limit</code> are set, <code>limit</code> represents the number of groups.</span>
 </div>
 
-<p>Sparse vectors and dense vectors differ notably in search behavior:</p>
+<p>Additionally, sparse and dense vector searches in Qdrant have key differences:</p>
 <table>
   <thead>
       <tr>
-          <th>Aspect</th>
+          <th>Comparison</th>
           <th>Sparse Vectors</th>
           <th>Dense Vectors</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Similarity method</td>
-          <td>Defaults to dot product, no need to specify</td>
+          <td>Similarity Algorithm</td>
+          <td>Defaults to dot product; no need to specify</td>
           <td>You can specify supported algorithms</td>
       </tr>
       <tr>
-          <td>Search approach</td>
+          <td>Search Method</td>
           <td>Only exact search</td>
-          <td>HNSW for approximate searching</td>
+          <td>Can use HNSW for approximate search</td>
       </tr>
       <tr>
-          <td>Search results</td>
-          <td>Only vectors sharing common non-zero elements</td>
-          <td>Top <code>limit</code> vectors as specified</td>
+          <td>Search Results</td>
+          <td>Returns only vectors with shared non-zero elements</td>
+          <td>Returns the top <code>limit</code> vectors</td>
       </tr>
   </tbody>
 </table>
@@ -1720,6 +1894,232 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
+<p>Explore operations are more flexible searches: they can query based on similarity as well as <strong>dissimilarity</strong>.</p>
+
+
+<h4 class="relative group">Recommendation 
+    <div id="recommendation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#recommendation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>&ldquo;Recommendation&rdquo; allows you to provide both positive and negative vectors for search. Here&rsquo;s an official example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">QdrantClient</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@qdrant/js-client-rest&#34;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QdrantClient</span><span class="p">({</span> <span class="nx">host</span><span class="o">:</span> <span class="s2">&#34;localhost&#34;</span><span class="p">,</span> <span class="nx">port</span>: <span class="kt">6333</span> <span class="p">});</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&#34;{collection_name}&#34;</span><span class="p">,</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="nx">recommend</span><span class="o">:</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">            <span class="nx">positive</span><span class="o">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">231</span><span class="p">],</span>  
+</span></span><span class="line"><span class="cl">            <span class="nx">negative</span><span class="o">:</span> <span class="p">[</span><span class="mi">718</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]],</span>  
+</span></span><span class="line"><span class="cl">            <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&#34;average_vector&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">filter</span><span class="o">:</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="nx">must</span><span class="o">:</span> <span class="p">[</span>  
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">                <span class="nx">key</span><span class="o">:</span> <span class="s2">&#34;city&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="nx">match</span><span class="o">:</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">                    <span class="nx">value</span><span class="o">:</span> <span class="s2">&#34;London&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">                <span class="p">},</span>  
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>  
+</span></span><span class="line"><span class="cl">    <span class="nx">limit</span>: <span class="kt">3</span>  
+</span></span><span class="line"><span class="cl"><span class="p">});</span>  
+</span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >In the official example, 100 and 231 are vector IDs, each corresponding to a 4-dimensional vector.</span>
+</div>
+
+<p>The <code>strategy</code> parameter controls the search algorithm. Here are the details:</p>
+<ol>
+<li><strong>Average Algorithm</strong>: Averages positive and negative examples separately, then combines them into a final search vector.</li>
+<li><strong>Best Score Algorithm</strong>: Each candidate point is matched against all positive and negative examples to compute scores. The highest scores are selected, and the final score is calculated as:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">best_positive_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">best_negative_score</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">best_positive_score</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">-</span><span class="p">(</span><span class="n">best_negative_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">best_negative_score</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">  
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>Negative-Only Algorithm</strong>: Uses the best score algorithm 👆 without positive examples, yielding a reverse scoring algorithm to find the least relevant points.</li>
+</ol>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Multi-vectors and other special vectors can also be processed with similar logic, though the syntax differs.</span>
+</div>
+
+
+
+<h4 class="relative group">Discovery 
+    <div id="discovery" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#discovery" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>&ldquo;Discovery&rdquo; operations partition the sample space. You provide pairs of <strong>positive and negative vectors</strong>, each dividing the space into positive and negative regions. The search returns points that <strong>lie more in positive regions or less in negative regions</strong>.</p>
+<p>Similar to <a href="#recommendation">Recommendation</a>, but here you pair positive and negative vectors together as input.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Due to hard partitioning, consider increasing the HNSW <code>ef</code> parameter to compensate for precision loss.</span>
+</div>
+
+<p>Discovery operations enable Qdrant to handle two new search requirements:</p>
+<ol>
+<li><strong>Discovery Search</strong>: Given a target vector and a set of positive-negative vector pairs as <em>contextual constraints</em>.</li>
+<li><strong>Region Partition Search</strong>: A special case of discovery search 👆 where no target vector is provided. The database partitions the space directly and returns points lying most in positive regions.</li>
+</ol>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >In discovery search, contextual constraints are <strong>enforced</strong> with higher priority. In other words, discovery search first performs region partitioning, then standard similarity search.</span>
+</div>
+
+
+
+<h4 class="relative group">Distance Matrix 
+    <div id="distance-matrix" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#distance-matrix" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>This operation resembles batch search. Batch search inputs multiple vectors and searches for similar vectors for each. Distance matrix randomly selects a <strong>subset of vectors</strong>, then searches for similar vectors within this subset for each vector.</p>
+<p>For example, if <code>sample=100</code> vectors are selected to form a subset, and <code>limit=10</code> similar vectors are searched for each, the returned distance matrix will be a 
+\(100 \times 10\) matrix, where each row represents the top 10 similar vectors for one point.</p>
+<p>This operation is typically used for data visualization or dimensionality reduction.</p>
 
 
 <h3 class="relative group">Filtering 
@@ -1732,6 +2132,81 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
+<p>Official English guide: <a href="https://qdrant.tech/articles/vector-search-filtering/" target="_blank">A Complete Guide to Filtering in Vector Search</a>. The guide explains how Qdrant internally performs filtering, which helps design efficient systems.</p>
+<p>The guide briefly lists some functionalities. For complete details, see: <a href="https://qdrant.tech/documentation/concepts/filtering/#filtering" target="_blank">Filtering</a>.</p>
+
+
+<h4 class="relative group">Filter Conditions 
+    <div id="filter-conditions" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#filter-conditions" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>These refer to <strong>individual filter conditions</strong>, the basic units of filtering. Here are the types:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Function</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Match</td>
+          <td>The condition is a specific value; the attribute must exactly match it.</td>
+      </tr>
+      <tr>
+          <td>Match Any</td>
+          <td>The condition is a set of options; the attribute must match any of them.</td>
+      </tr>
+      <tr>
+          <td>Match Except</td>
+          <td>The condition is a set of options; the attribute must not match any of them.</td>
+      </tr>
+      <tr>
+          <td>Range</td>
+          <td>The condition is a range; the attribute must lie within it.</td>
+      </tr>
+      <tr>
+          <td>Values Count</td>
+          <td>The attribute is an array; filtering is based on the number of elements.</td>
+      </tr>
+      <tr>
+          <td>Is Empty</td>
+          <td>Filters based on whether the attribute exists.</td>
+      </tr>
+  </tbody>
+</table>
+<p>These are the basic filter types. Syntax varies for different payload types:</p>
+<ul>
+<li><strong>JSON Payload</strong>: A point&rsquo;s payload can be a JSON object, and any field can participate in filtering. See <a href="https://qdrant.tech/documentation/concepts/filtering/#nested-key" target="_blank">Nested Key</a>.</li>
+<li><strong>Date Range</strong>: Similar to numeric ranges, date ranges can also filter.</li>
+<li><strong>Geofiltering</strong>: Geographic locations can be filtered.</li>
+<li><strong>Named Vectors</strong>: Named vectors contain vectors of different dimensions. Filtering can check for the presence of specific vectors (e.g., filtering points with image embeddings).</li>
+</ul>
+<p>These basic conditions can be nested using logical keywords 👇 to form complex filters.</p>
+
+
+<h4 class="relative group">Logical Keywords 
+    <div id="logical-keywords" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#logical-keywords" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Similar to SQL&rsquo;s <code>AND</code>, <code>OR</code>, <code>NOT</code>, Qdrant uses <code>must</code>, <code>should</code>, <code>must_not</code> to express similar logic. These keywords build complex filters.</p>
+<ul>
+<li><code>must</code>: Returns true only if all listed conditions are met.</li>
+<li><code>should</code>: Returns true if any listed condition is met.</li>
+<li><code>must_not</code>: Returns true if none of the listed conditions are met.</li>
+</ul>
 
 
 <h2 class="relative group">Advanced Operations 
@@ -1758,13 +2233,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h3>
 
 
-<h3 class="relative group">Optimizer 
-    <div id="optimizer" class="anchor"></div>
+<h3 class="relative group">Optimization 
+    <div id="optimization" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#optimizer" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#optimization" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1817,7 +2292,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h2>
 <ul>
-<li><a href="https://www.syndataworks.cn/blog/blog/2024-10-29-vectoc-db-eval/" target="_blank">Vector Database Comparison Report</a></li>
+<li><a href="https://www.syndataworks.cn/blog/blog/2024-10-29-vectoc-db-eval/" target="_blank">Vector Database Comparison Report: A Detailed Comparison of 12 Mainstream Vector Databases | SynDataWorks</a></li>
 <li><a href="https://qdrant.tech/documentation/concepts/" target="_blank">Qdrant Official Documentation</a></li>
 </ul>
 
@@ -1901,7 +2376,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;title=Qdrant%20Function%20Guide"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;title=Qdrant%20Feature%20Guide"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1920,7 +2395,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;text=Qdrant%20Function%20Guide"
+      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;text=Qdrant%20Feature%20Guide"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1938,7 +2413,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=Qdrant%20Function%20Guide&#43;https://morethan987.github.io/en/blog/qdrant-feature-guide/"
+      href="https://bsky.app/intent/compose?text=Qdrant%20Feature%20Guide&#43;https://morethan987.github.io/en/blog/qdrant-feature-guide/"
       title="Post on Bluesky"
       aria-label="Post on Bluesky"
       >
@@ -1956,7 +2431,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;resubmit=true&amp;title=Qdrant%20Function%20Guide"
+      href="https://reddit.com/submit/?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;resubmit=true&amp;title=Qdrant%20Feature%20Guide"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1975,7 +2450,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;resubmit=true&amp;title=Qdrant%20Function%20Guide"
+      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;resubmit=true&amp;title=Qdrant%20Feature%20Guide"
       title="Share via WhatsApp"
       aria-label="Share via WhatsApp"
       >
@@ -1994,7 +2469,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;resubmit=true&amp;title=Qdrant%20Function%20Guide"
+      href="https://t.me/share/url?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;resubmit=true&amp;title=Qdrant%20Feature%20Guide"
       title="Share via Telegram"
       aria-label="Share via Telegram"
       >
@@ -2013,7 +2488,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;description=Qdrant%20Function%20Guide"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;description=Qdrant%20Feature%20Guide"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -2032,7 +2507,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;quote=Qdrant%20Function%20Guide"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;quote=Qdrant%20Feature%20Guide"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -2051,7 +2526,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;subject=Qdrant%20Function%20Guide"
+      href="mailto:?body=https://morethan987.github.io/en/blog/qdrant-feature-guide/&amp;subject=Qdrant%20Feature%20Guide"
       title="Send via email"
       aria-label="Send via email"
       >
