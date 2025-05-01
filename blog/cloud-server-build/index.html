@@ -111,7 +111,7 @@
     "keywords": ["云服务"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4244"
+    "wordCount": "4519"
   }]
   </script>
 
@@ -1083,7 +1083,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-06T00:00:00&#43;00:00">2025-03-06</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">更新于: 2025-03-16</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-06T00:00:00&#43;00:00">2025-03-06</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">更新于: 2025-03-16</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">10 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2111,7 +2111,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># 使用递归删除来清除缓存</span>
 </span></span><span class="line"><span class="cl">rm -rf ./certbot/conf/*
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -it server-certbot-1 /bin/sh
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入一个镜像内部</span>
+</span></span><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -it server-app-1 /bin/sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除某个镜像</span>
+</span></span><span class="line"><span class="cl">sudo docker rmi -f server-frontend
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新启动某项服务</span>
+</span></span><span class="line"><span class="cl">sudo docker compose restart app
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清理npm的缓存</span>
+</span></span><span class="line"><span class="cl">npm cache clean --force
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 激活python虚拟环境</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> your_venv_name/bin/activate
 </span></span></code></pre></div>
 
 <h3 class="relative group">备案 
@@ -2162,7 +2175,8 @@ p1(服务器平台实名认证)-->p2(实名认证购买域名)-->p3(申请备案
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Ubuntu默认安装uwf防火墙</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 查看uwf状态，inactive状态是未启动，也是理想状态</span>
 </span></span><span class="line"><span class="cl">sudo ufw status
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>如果你是国内用户的话，还有一个原因：ICP 备案没有通过，certbot 也是无法访问你的服务器的😢</p>
+
 
 <h2 class="relative group">引用 
     <div id="%E5%BC%95%E7%94%A8" class="anchor"></div>
@@ -2200,7 +2214,13 @@ p1(服务器平台实名认证)-->p2(实名认证购买域名)-->p3(申请备案
 <li><a href="https://cloud.tencent.com/document/product/243/97668" target="_blank">ICP 备案 首次备案_腾讯云</a></li>
 <li><a href="https://cloud.tencent.com/document/product/243/3474" target="_blank">ICP 备案 各省管局要求_腾讯云</a></li>
 <li><a href="https://www.cnblogs.com/yyzwz/p/13393223.html" target="_blank">腾讯云服务器备案全流程 40天备案的血与泪 - 郑为中 - 博客园</a></li>
+<li><a href="https://cloud.tencent.com/document/product/243/19142" target="_blank">ICP 备案 公安备案流程_腾讯云</a></li>
 <li><a href="https://cloud.tencent.com/document/product/243/34945" target="_blank">ICP 备案 视频核验_腾讯云</a></li>
+<li><a href="https://blog.csdn.net/2401_85762266/article/details/140127881" target="_blank">npm缓存深度解析：理解、使用与清除指南_npm 清除缓存-CSDN博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26418829" target="_blank">用Docker部署一个Web应用 - 知乎</a></li>
+<li><a href="https://blog.csdn.net/weixin_43947690/article/details/88295278" target="_blank">HTTPS请求为什么会降级为HTTP-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/zhuye1992/article/details/80496151?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-4-80496151-blog-88295278.235%5Ev43%5Econtrol&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-4-80496151-blog-88295278.235%5Ev43%5Econtrol&amp;utm_relevant_index=9" target="_blank">https 被redirect成了http_风控-CSDN博客</a></li>
+<li><a href="https://help.aliyun.com/zh/icp-filing/basic-icp-service/the-public-security-network-for-the-record-information-fill-in-the-guide#:~:text=%E8%8B%A5%E6%82%A8%E5%8A%9E%E7%90%86%E5%85%AC%E5%AE%89%E8%81%94%E7%BD%91%E5%A4%87%E6%A1%88%E7%9A%84%E5%9F%9F%E5%90%8D%E6%98%AF%E9%80%9A%E8%BF%87%E9%98%BF%E9%87%8C%E4%BA%91%E6%B3%A8%E5%86%8C%EF%BC%8C%E5%8D%95%E5%87%BB%20%E6%9F%A5%E8%AF%A2%E7%BD%91%E7%BB%9C%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1%E5%95%86%E3%80%82%20%E6%A0%B9%E6%8D%AE%E5%A6%82%E4%B8%8B%E9%98%BF%E9%87%8C%E4%BA%91%E4%BF%A1%E6%81%AF%E5%A1%AB%E5%86%99%E3%80%82%20%E8%AF%B7%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%AE%9E%E9%99%85%E5%BC%80%E5%B1%95%E7%9A%84%E4%B8%9A%E5%8A%A1%E9%A1%B9%E7%9C%9F%E5%AE%9E%E9%80%89%E6%8B%A9%EF%BC%8C%E4%BE%8B%E5%A6%82%EF%BC%9A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%B1%BB%20A%E3%80%81%E7%BD%91%E7%BB%9C%E9%94%80%E5%94%AE%E7%B1%BB%20B%E3%80%81%E7%94%9F%E6%B4%BB%E6%9C%8D%E5%8A%A1%E7%B1%BB%20C%20%E5%92%8C%E7%A4%BE%E4%BA%A4%E6%96%87%E5%A8%B1%E7%B1%BB,D%20%E7%AD%89%E3%80%82%20%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%B6%89%E5%8F%8A%EF%BC%8C%E5%B0%86%20%E6%98%AF%E5%90%A6%E6%8F%90%E4%BE%9B%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A4%E4%BA%92%E6%9C%8D%E5%8A%A1%20%E9%80%89%E6%8B%A9%E4%B8%BA%20%E5%90%A6%E3%80%82%20%E5%A6%82%E6%9E%9C%E6%B6%89%E5%8F%8A%EF%BC%8C%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%AE%9E%E9%99%85%E5%BC%80%E5%B1%95%E7%9A%84%E4%B8%9A%E5%8A%A1%E9%A1%B9%E7%9C%9F%E5%AE%9E%E9%80%89%E6%8B%A9%E3%80%82%20%E6%98%AF%E5%90%A6%E6%8F%90%E4%BE%9B%E6%B6%89%E5%8F%8A%E7%AE%A1%E5%88%B6%E7%89%A9%E5%93%81%E4%BF%A1%E6%81%AF%E5%8F%91%E5%B8%83%E6%9C%8D%E5%8A%A1%EF%BC%9A%E8%AF%B7%E6%8C%89%E7%85%A7%E7%BD%91%E7%AB%99%E6%B6%89%E5%8F%8A%E8%8C%83%E5%9B%B4%E5%A6%82%E5%AE%9E%E5%8B%BE%E9%80%89%E3%80%82" target="_blank">如何填写公安联网备案公安联网备案信息指南_备案(Filing Service)-阿里云帮助中心</a></li>
 </ul>
 
           
@@ -2847,6 +2867,8 @@ p1(服务器平台实名认证)-->p2(实名认证购买域名)-->p3(申请备案
 
 
 
+  
+
 
 
 
@@ -2872,7 +2894,7 @@ p1(服务器平台实名认证)-->p2(实名认证购买域名)-->p3(申请备案
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-27T00:00:00&#43;00:00">2025-01-27</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-01-27T00:00:00&#43;00:00">2025-01-27</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-04-08T00:00:00&#43;00:00">更新于: 2025-04-08</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

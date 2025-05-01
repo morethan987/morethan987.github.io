@@ -111,7 +111,7 @@
     "keywords": ["Cloud-Service"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2208"
+    "wordCount": "2373"
   }]
   </script>
 
@@ -1083,7 +1083,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">Updated: 16 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">Updated: 16 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2111,7 +2111,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># Use recursive deletion to clear cache</span>
 </span></span><span class="line"><span class="cl">rm -rf ./certbot/conf/*
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -it server-certbot-1 /bin/sh
+</span></span><span class="line"><span class="cl"><span class="c1"># Enter a container&#39;s shell</span>
+</span></span><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -it server-app-1 /bin/sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove a Docker image forcefully</span>
+</span></span><span class="line"><span class="cl">sudo docker rmi -f server-frontend
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Restart a specific service in Docker Compose</span>
+</span></span><span class="line"><span class="cl">sudo docker compose restart app
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Clear npm cache forcefully</span>
+</span></span><span class="line"><span class="cl">npm cache clean --force
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Activate a Python virtual environment</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> your_venv_name/bin/activate
 </span></span></code></pre></div>
 
 <h3 class="relative group">Filing 
@@ -2162,7 +2175,8 @@ p1(Server Platform Real-name Authentication)-->p2(Real-name Authentication Purch
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Ubuntu installs ufw firewall by default</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Check ufw status, inactive status means not started, which is the ideal state</span>
 </span></span><span class="line"><span class="cl">sudo ufw status
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>If you&rsquo;re based in China, here&rsquo;s another issue: Certbot can&rsquo;t reach your server if you don&rsquo;t have ICP备案 (ICP license). 😢</p>
+
 
 <h2 class="relative group">References 
     <div id="references" class="anchor"></div>

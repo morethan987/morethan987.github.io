@@ -9,7 +9,7 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Thu, 20 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>rStar Reading Notes</title>
@@ -145,23 +145,24 @@
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/schedule-management-report/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A Schedule Management Software Functionality Analysis Report.
+      <description>&lt;p&gt;TODO_UPDATE
+&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  Analysis Report on the Current State of Schedule Management Software Functionality
 &lt;/div&gt;
+&lt;/p&gt;
 
 
-
-&lt;h3 class=&#34;relative group&#34;&gt;Foreword 
-    &lt;div id=&#34;foreword&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h2 class=&#34;relative group&#34;&gt;Preface 
+    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
         &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#foreword&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
-&lt;/h3&gt;
-&lt;p&gt;The schedule management software discussed in this article refers to software with the following features:&lt;/p&gt;</description>
+&lt;/h2&gt;
+&lt;p&gt;The term &amp;ldquo;schedule management&amp;rdquo; frequently appears in our daily lives, yet it remains elusive: What exactly is schedule management? Why do we need it? What purpose does it serve? Who engages in schedule management, and how effective is it?&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/schedule-management-report/featured.svg" />
     </item>
     

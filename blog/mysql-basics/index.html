@@ -115,7 +115,7 @@
     "keywords": ["MySQL"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1885"
+    "wordCount": "1952"
   }]
   </script>
 
@@ -1236,7 +1236,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li>
       <ul>
         <li><a href="#信息源">信息源</a></li>
-        <li><a href="#安装-mysql">安装 MySQL</a></li>
+        <li><a href="#安装-mysql">安装 MySQL</a>
+          <ul>
+            <li><a href="#命令行启动mysql">命令行启动MySQL</a></li>
+            <li><a href="#docker-compose启动mysql">docker-compose启动MySQL</a></li>
+          </ul>
+        </li>
         <li><a href="#mysql-基础语法">MySQL 基础语法</a>
           <ul>
             <li><a href="#查询">查询</a></li>
@@ -1262,7 +1267,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li>
       <ul>
         <li><a href="#信息源">信息源</a></li>
-        <li><a href="#安装-mysql">安装 MySQL</a></li>
+        <li><a href="#安装-mysql">安装 MySQL</a>
+          <ul>
+            <li><a href="#命令行启动mysql">命令行启动MySQL</a></li>
+            <li><a href="#docker-compose启动mysql">docker-compose启动MySQL</a></li>
+          </ul>
+        </li>
         <li><a href="#mysql-基础语法">MySQL 基础语法</a>
           <ul>
             <li><a href="#查询">查询</a></li>
@@ -1452,7 +1462,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>安装 MySQL 最简单的方法就是通过 Docker Desktop 来操作；只需要两步就能够完成</p>
 <p>命令行中运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker pull mysql
-</span></span></code></pre></div><p>初始化 SQL 并运行：</p>
+</span></span></code></pre></div>
+
+<h4 class="relative group">命令行启动MySQL 
+    <div id="%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%8A%A8mysql" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%AF%E5%8A%A8mysql" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>初始化 SQL 并运行：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d --name mysql -p 3306:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>password -v /Users/liaoxuefeng/mysql-data:/var/lib/mysql mysql
 </span></span></code></pre></div><p>参数解释：</p>
 <table>
@@ -1524,6 +1546,30 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >使用 Docker 运行 MySQL 时，任何时候都可以删除 MySQL 容器并重新运行；如果删除了本地映射的目录，重新运行就相当于一个全新的 MySQL ；</span>
 </div>
 
+
+
+<h4 class="relative group">docker-compose启动MySQL 
+    <div id="docker-compose%E5%90%AF%E5%8A%A8mysql" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#docker-compose%E5%90%AF%E5%8A%A8mysql" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>创建 <code>docker-compose.yml</code> 文件如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mysql</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;3306:3306&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">../data:/var/lib/mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span></code></pre></div><p>运行 <code>docker-compose build up -d</code> 来启动服务</p>
 
 
 <h3 class="relative group">MySQL 基础语法 
