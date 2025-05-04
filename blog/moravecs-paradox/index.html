@@ -79,6 +79,7 @@
     <meta property="article:tag" content="AI">
     <meta property="article:tag" content="遐想">
     <meta property="og:image" content="https://morethan987.github.io/blog/moravecs-paradox/featured.svg">
+      <meta property="og:see_also" content="https://morethan987.github.io/blog/llm-memory/">
 
   
   <meta name="twitter:card" content="summary_large_image">
@@ -501,7 +502,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <div class="flex flex-col space-y-3">
         
         <a href="/en/blog/moravecs-paradox/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="The reflection of Moravec&#39;s paradox">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Reflections on Moravec&#39;s Paradox">
             English
           </p>
         </a>
@@ -588,7 +589,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <div class="flex flex-col space-y-3">
         
         <a href="/en/blog/moravecs-paradox/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="The reflection of Moravec&#39;s paradox">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Reflections on Moravec&#39;s Paradox">
             English
           </p>
         </a>
@@ -1373,6 +1374,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </div>
     
     
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://morethan987.github.io/blog/llm-memory/">
+            § 2: 关于大模型记忆
+        </a>
+    </div>
+    
+    
 
 
 </details>
@@ -1426,68 +1436,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h4>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >在现有知识的基础上，能够通过有限的符号逻辑表达式得到的知识；其特点就是精确，高度概括；问题边界明确，能够清晰定义已知条件有什么、通过什么样的方法、得出什么样的结果；在明确的已知条件下能够精准预测问题结果的规律（在问题的考虑范围内没有“概率”这个概念的容身之处）</span>
-</div>
-
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >对于那些难以根据已知条件，通过精确的逻辑推理得到结果的问题，我们采用统计性的尝试，得出的有一定价值的规律；特点是基于大量尝试，难以定义问题的边界，甚至难以获取需要的已知条件，就是这种恶劣的条件下，强行匹配已知条件与结果的联系，进而得出的规律，其结果具有波动性、不确定性、局部正确性。</span>
-</div>
-
+<p>在现有知识的基础上，能够通过有限的符号逻辑表达式得到的知识；其特点就是精确，高度概括；问题边界明确，能够清晰定义已知条件有什么、通过什么样的方法、得出什么样的结果；在明确的已知条件下能够精准预测问题结果的规律（在问题的考虑范围内没有“概率”这个概念的容身之处）</p>
+<p>对于那些难以根据已知条件，通过精确的逻辑推理得到结果的问题，我们采用统计性的尝试，得出的有一定价值的规律；特点是基于大量尝试，难以定义问题的边界，甚至难以获取需要的已知条件，就是这种恶劣的条件下，强行匹配已知条件与结果的联系，进而得出的规律，其结果具有波动性、不确定性、局部正确性。</p>
 
 
 <h4 class="relative group">两类知识的占比 
@@ -1549,6 +1499,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         § 1: 本文
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="https://morethan987.github.io/blog/llm-memory/">
+            § 2: 关于大模型记忆
+        </a>
     </div>
     
     
