@@ -1799,7 +1799,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>概括来讲：整个过程中的残差连接被视作一个&quot;数据总线&quot;，贯穿整个模型的计算过程；将 Attention Layer 和 MLP Layer 视作信息的读写头，在数据总线上进行数据的读写。</p>
 
 
-<h5 class="relative group">Embedding 
+<h5 class="relative group"><strong>Embedding</strong> 
     <div id="embedding" class="anchor"></div>
     
     <span
@@ -1818,7 +1818,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>举个经典的例子：&ldquo;bank&quot;一词既有&quot;河岸&quot;的意思，又有&quot;银行&quot;的意思，但是嵌入矩阵描述的是这两个意思的某种&quot;平均值&rdquo;。</p>
 
 
-<h5 class="relative group">Multi-head Attention 
+<h5 class="relative group"><strong>Multi-head Attention</strong> 
     <div id="multi-head-attention" class="anchor"></div>
     
     <span
@@ -1832,7 +1832,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>一个形象的描述就是：通过 Embedding 之后产生了一簇向量，而这些向量之间会相互影响，而多头注意力层中的参数就建模了这种复杂的相互影响。按照电路的解释框架，也就是说 Attention Layer 计算出了这一簇向量之间的&quot;相互影响增量&quot;，然后将这个增量写回&quot;数据总线&quot;之中。</p>
 
 
-<h5 class="relative group">MLP 
+<h5 class="relative group"><strong>MLP</strong> 
     <div id="mlp" class="anchor"></div>
     
     <span
@@ -1852,7 +1852,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>然后 MLP 层将&quot;事实增量向量&quot;写回残差流之中。</p>
 
 
-<h5 class="relative group">堆叠 
+<h5 class="relative group"><strong>堆叠</strong> 
     <div id="%E5%A0%86%E5%8F%A0" class="anchor"></div>
     
     <span
