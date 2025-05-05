@@ -112,7 +112,7 @@
     "keywords": ["LLM","博客"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5344"
+    "wordCount": "5819"
   }]
   </script>
 
@@ -938,7 +938,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">11 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1847,7 +1847,43 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li>事实匹配</li>
 <li>计算需要注入的事实</li>
 </ol>
-<p>经过多头注意力处理的向量都偏移到了当前语境中的正确位置，这些向量中已经包含了大量叠加在一起的复杂信息（大量明确的语义通过加法融合在了一个向量之中）。而扩展矩阵的作用就类似于一个检查表：每一行都是一个检查项目（这些项目的具体含义同样是高度叠加的），检查项目和词向量通过点积得到&quot;匹配分数&quot;，然后通过非线性截断函数（ReLU）剔除不相关的匹配。这一步就是&quot;事实匹配&quot;过程</p>
+<p>经过多头注意力处理的向量都偏移到了当前语境中的正确位置，这些向量中已经包含了大量叠加在一起的复杂信息（大量明确的语义通过加法融合在了一个向量之中）。而扩展矩阵的作用就类似于一个检查表：每一行都是一个检查项目（这些项目的具体含义同样是高度叠加的），检查项目和词向量通过点积得到&quot;匹配分数&quot;，然后通过非线性截断函数（ReLU）剔除不相关的匹配。这一步就是&quot;事实匹配&quot;过程。</p>
+<p>例如，使用扩展矩阵去检测&quot;相对论&quot;这个词元时，某一行可能会同时检测：&ldquo;是否是一个学术概念+是否是球类运动+是否是星系名称&rdquo;。检测结果可能是相关的，也可能是不相关的，但最后都会线性叠加在一起。</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >为什么可以叠加？因为向量点乘的分配律：&ldquo;先叠加再匹配&quot;和&quot;先匹配再叠加&quot;是等价的</span>
+</div>
+
 <p>然后投影矩阵则充当了&quot;计算事实增量&quot;的作用：根据匹配分数，计算原本的词向量中到底需要添加哪些事实信息，把所有需要添加的事实信息都加在一起，表示为一个事实增量向量。</p>
 <p>然后 MLP 层将&quot;事实增量向量&quot;写回残差流之中。</p>
 
@@ -1863,6 +1899,43 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h5>
 <p>Transformer 通过将上述结构进行反复堆叠，更深入的层提取的信息也就更加复杂而难以理解。</p>
+<p>需要注意的是：事实信息的注入并非发生在单独某一层的 MLP 中，甚至不单独发生在某一个 Transformer Block 之中，而是在整个网络之中不断迭代，逐步产生更加清晰明确的影响。</p>
+<p>这种复杂的事实信息注入机制给可解释工作带来了不小的困难，也让人们难以精确控制大模型内部的信息流动。但是这个过程恰恰体现了将事实信息存储在神经网络之中的优势：对于某个复杂的信息，最开始这个信息能够关联大量而模糊的其他信息，然后在每层网络计算之中逐步精确，最后收敛到真正高度相关的信息。</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >这也是 Attention Layer 和 MLP Layer 交替出现的一个理由：事实信息在 MLP Layer 注入之后马上使用 Attention Layer 来进行裁切，去掉较弱的关联，放大较强的关联，避免大量冗杂信息传递到下一个 MLP Layer 中激发更加混乱的关联</span>
+</div>
+
 
 
 <h4 class="relative group">事实注入 

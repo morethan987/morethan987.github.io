@@ -112,7 +112,7 @@
     "keywords": ["LLM","Blog"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2909"
+    "wordCount": "3199"
   }]
   </script>
 
@@ -938,7 +938,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-04T00:00:00&#43;00:00">4 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-04T00:00:00&#43;00:00">4 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1848,6 +1848,42 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li>Calculating the facts to be injected</li>
 </ol>
 <p>The vectors processed by the multi-head attention have been shifted to the correct positions in the current context, and these vectors already contain a large amount of complex information superimposed together (a large number of explicit semantics are additively fused into a single vector). The role of the embedding matrix here is similar to a checklist: each row is a check item (the specific meaning of these items is also highly superimposed), and the check items and word vectors are matched through dot products to obtain &ldquo;matching scores,&rdquo; which are then filtered out by the nonlinear truncation function (ReLU) to remove unrelated matches. This step is the &ldquo;fact matching&rdquo; process.</p>
+<p>For example, when using an extended matrix to detect the token &ldquo;relativity,&rdquo; a certain row might simultaneously check: &ldquo;whether it is an academic concept + whether it is a ball sport + whether it is the name of a galaxy.&rdquo; The detection results could be relevant or irrelevant, but they will all be linearly combined in the end.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Why can they be combined? Because of the distributive property of vector dot products: &ldquo;combine first then match&rdquo; is equivalent to &ldquo;match first then combine.&rdquo;</span>
+</div>
+
 <p>The projection matrix then acts as the &ldquo;calculation of fact increment&rdquo;: based on the matching scores, it calculates which factual information needs to be added to the original word vectors, adds all the necessary factual information together to form a fact increment vector.</p>
 <p>The MLP layer then writes the &ldquo;fact increment vector&rdquo; back into the residual flow.</p>
 
@@ -1863,6 +1899,43 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h5>
 <p>Transformer stacks the above structure repeatedly, and the information extracted by deeper layers becomes more complex and harder to understand.</p>
+<p>It should be noted that the injection of factual information does not occur in a single isolated MLP layer, nor does it happen solely within one Transformer Block. Instead, it iterates continuously throughout the entire network, gradually producing a clearer and more pronounced impact.</p>
+<p>This complex mechanism of factual information injection poses significant challenges to interpretability efforts and makes it difficult to precisely control the flow of information within large models. However, this process precisely highlights the advantage of storing factual information in neural networks: for a given piece of complex information, it initially associates with a broad and ambiguous set of related information. Then, through computations in each layer of the network, it progressively refines and eventually converges to the most highly relevant information.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >This is also one of the reasons why Attention Layers and MLP Layers alternate: after factual information is injected in the MLP Layer, the Attention Layer is immediately used to trim it—weakening weaker associations and amplifying stronger ones—preventing a flood of redundant information from propagating to the next MLP Layer, which could trigger even more chaotic associations.</span>
+</div>
+
 
 
 <h4 class="relative group">Fact Injection 
