@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-06T00:00:00+00:00">
     <meta property="article:tag" content="LLM">
     <meta property="article:tag" content="博客">
     <meta property="og:image" content="https://morethan987.github.io/blog/llm-memory/featured.svg">
@@ -107,12 +107,12 @@
     "dateCreated": "2025-05-04T00:00:00\u002b00:00",
     "datePublished": "2025-05-04T00:00:00\u002b00:00",
     
-    "dateModified": "2025-05-04T00:00:00\u002b00:00",
+    "dateModified": "2025-05-06T00:00:00\u002b00:00",
     
     "keywords": ["LLM","博客"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5819"
+    "wordCount": "6109"
   }]
   </script>
 
@@ -907,6 +907,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+  
+
 
 
 
@@ -938,7 +940,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-06T00:00:00&#43;00:00">更新于: 2025-05-06</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1277,6 +1279,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#现有方法">现有方法</a>
           <ul>
             <li><a href="#rag">RAG</a></li>
+            <li><a href="#微调">微调</a></li>
             <li><a href="#网络参数">网络参数</a></li>
           </ul>
         </li>
@@ -1332,6 +1335,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#现有方法">现有方法</a>
           <ul>
             <li><a href="#rag">RAG</a></li>
+            <li><a href="#微调">微调</a></li>
             <li><a href="#网络参数">网络参数</a></li>
           </ul>
         </li>
@@ -1756,7 +1760,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p><a href="https://arxiv.org/abs/2410.05258" target="_blank">Differential Transformer</a></p>
+<p><a href="https://arxiv.org/abs/2410.05258" target="_blank">Differential Transformer</a> 改进了传统 Transformer 架构中的注意力机制，提出了&quot;差分注意力机制&quot;的概念。与传统的softmax注意力不同，Diff Transformer 将查询（query）和键（key）向量分为两组，分别计算两个独立的softmax注意力图，然后通过减法操作消除噪音。这一机制类似于电子工程中的<strong>差分放大器</strong>，通过两个信号的差值来消除共模噪音。</p>
 
 
 <h2 class="relative group">思路梳理 
@@ -2008,6 +2012,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </ol>
 
 
+<h4 class="relative group">微调 
+    <div id="%E5%BE%AE%E8%B0%83" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%BE%AE%E8%B0%83" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>需要去看看微调方面的论文，特别是&quot;高效微调&quot;方面的文章，看看能不能增强其在线学习能力🤔如果可能的话还需要去看看增量学习方面的文章。</p>
+<p>暂时先鸽了😢还要复习期末考试</p>
+
+
 <h4 class="relative group">网络参数 
     <div id="%E7%BD%91%E7%BB%9C%E5%8F%82%E6%95%B0" class="anchor"></div>
     
@@ -2061,6 +2079,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><a href="https://www.alignmentforum.org/posts/iGuwZTHWb6DFY3sKB/fact-finding-attempting-to-reverse-engineer-factual-recall" target="_blank">Fact Finding: Attempting to Reverse-Engineer Factual Recall on the Neuron Level (Post 1)</a></li>
 <li><a href="https://www.alignmentforum.org/posts/3tqJ65kuTkBh8wrRH/fact-finding-simplifying-the-circuit-post-2" target="_blank">Fact Finding: Simplifying the Circuit (Post 2)</a></li>
 <li><a href="https://www.bilibili.com/video/BV1aTxMehEjK?spm_id_from=333.788.recommend_more_video.-1&amp;vd_source=38d0addc11facdcdfe9d401e43b75680" target="_blank">直观解释大语言模型如何储存事实</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/15784962358" target="_blank">Diff Transformer：让注意力机制更智能，消除噪音，提升大语言模型性能-知乎</a></li>
+<li></li>
 </ul>
 
           
