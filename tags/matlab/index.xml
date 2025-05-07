@@ -32,10 +32,10 @@
     
 &lt;/h2&gt;
 &lt;div class=&#34;mermaid&#34; align=&#34;center&#34;&gt;
-  
+  &lt;pre&gt;
 graph LR;
 id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATLAB代码执行&#34;);
-
+&lt;/pre&gt;
 &lt;/div&gt;
 
 
