@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2024-08-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-11T00:00:00+00:00">
     <meta property="article:tag" content="Python">
     <meta property="og:image" content="https://morethan987.github.io/blog/pytips/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/blog/ubuntu-note/">
@@ -111,12 +111,12 @@
     "dateCreated": "2024-08-10T00:00:00\u002b00:00",
     "datePublished": "2024-08-10T00:00:00\u002b00:00",
     
-    "dateModified": "2025-03-07T00:00:00\u002b00:00",
+    "dateModified": "2025-05-11T00:00:00\u002b00:00",
     
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2865"
+    "wordCount": "3983"
   }]
   </script>
 
@@ -948,7 +948,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-07T00:00:00&#43;00:00">更新于: 2025-03-07</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-11T00:00:00&#43;00:00">更新于: 2025-05-11</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1260,6 +1260,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         </li>
       </ul>
     </li>
+    <li><a href="#uv">UV</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#conda">Conda</a>
+      <ul>
+        <li><a href="#使用-1">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#vs免密登录">VS免密登录</a></li>
     <li><a href="#程序打包">程序打包</a>
       <ul>
         <li><a href="#pyinstaller">pyinstaller</a></li>
@@ -1302,6 +1314,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         </li>
       </ul>
     </li>
+    <li><a href="#uv">UV</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#conda">Conda</a>
+      <ul>
+        <li><a href="#使用-1">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#vs免密登录">VS免密登录</a></li>
     <li><a href="#程序打包">程序打包</a>
       <ul>
         <li><a href="#pyinstaller">pyinstaller</a></li>
@@ -1655,8 +1679,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h4>
 <p>如果你需要从头创建一个新的项目，那么你需要：创建一个项目文件夹，并把命令行的目录切换到那里，然后简单地：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">poetry init
-</span></span></code></pre></div><p>交互式的命令行会指引你创建一个新的项目，并创建两个 poetry 特色文件：<code>pyproject.toml</code> 管理依赖包；<code>poetry.lock</code> 来锁定包版本，类似于 <code>pip</code> 的 <code>requirements.txt</code>。用过 Node 的同志应该比较熟悉😝</p>
-<p>如果你使用的是别人的项目，那么一般都会自带那两个特色文件。</p>
+</span></span></code></pre></div><p>交互式的命令行会指引你创建一个新的项目，创建 <code>pyproject.toml</code> 文件来记录依赖包，同时创建 poetry 的特色文件 <code>poetry.lock</code> 来锁定包版本。用过 Node 的同志应该比较熟悉😝</p>
+<p>如果你使用的是别人的项目，一般只会有 <code>pyproject.toml</code> 文件，这个文件在不同的包管理工具之间是通用的。当然也会有将 <code>poetry.lock</code> 也一并上传的作者，这种情况你可以选择：1）删掉 lock 文件然后用别的包管理工具；2）保留 lock 文件并使用 poetry 来管理依赖包</p>
 <p>如果你需要一个简单的目录框架，则可以使用：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">poetry new my-package
 </span></span></code></pre></div><p>它会自动创建一个适合大多数项目的目录结构：</p>
@@ -1771,6 +1795,209 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">poetry show your-package --tree <span class="c1"># 展示特定包的依赖树</span>
 </span></span></code></pre></div>
+
+<h2 class="relative group">UV 
+    <div id="uv" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#uv" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>一款用 <code>Rust</code> 编写的包管理工具，命令格式与 <code>poetry</code> 极其类似。</p>
+
+
+<h3 class="relative group">安装 
+    <div id="%E5%AE%89%E8%A3%85-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%85-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>首先需要配置环境变量：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~ <span class="c1"># 确保你在默认目录下</span>
+</span></span><span class="line"><span class="cl">ls -a <span class="c1"># 查看是否存在文件.bashrc</span>
+</span></span><span class="line"><span class="cl">vim .bashrc <span class="c1"># vim编辑文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 文件末尾附加下面这三条</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># installer的国内下载源</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">UV_INSTALLER_GHE_BASE_URL</span><span class="o">=</span>https://ghproxy.cn/https://github.com
+</span></span><span class="line"><span class="cl"><span class="c1"># python install国内下载源</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">UV_PYTHON_INSTALL_MIRROR</span><span class="o">=</span>https://ghproxy.cn/https://github.com/indygreg/python-build-standalone/releases/download
+</span></span><span class="line"><span class="cl"><span class="c1"># python包国内下载源</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">UV_DEFAULT_INDEX</span><span class="o">=</span>https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+</span></span></code></pre></div><ul>
+<li><strong>curl安装（推荐）</strong>：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 注意把&#34;/custom/path&#34;换成你自定义的安装位置</span>
+</span></span><span class="line"><span class="cl">curl -LsSf https://astral.sh/uv/install.sh <span class="p">|</span> env <span class="nv">UV_INSTALL_DIR</span><span class="o">=</span><span class="s2">&#34;/custom/path&#34;</span> sh
+</span></span></code></pre></div><ul>
+<li><strong>pip/pipx安装（推荐）</strong>：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pipx install uv <span class="c1"># 使用pipx安装uv</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">pip install uv <span class="c1"># 使用pip安装uv</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">使用 
+    <div id="%E4%BD%BF%E7%94%A8" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>使用方式与 <code>poetry</code> 非常类似</p>
+
+
+<h2 class="relative group">Conda 
+    <div id="conda" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conda" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>我个人较少使用 conda 来管理环境，但是鉴于很多实验室服务器上都默认使用 conda 因此也做一个记录</p>
+
+
+<h3 class="relative group">使用 
+    <div id="%E4%BD%BF%E7%94%A8-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>下面的命令是基础的查看环境信息的命令，一般在进入一个新的服务器环境的时候就会使用一遍，在排查环境问题的时候也会使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">########## 查看环境信息 ##########</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda --version <span class="c1"># 获取conda版本号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">python --version <span class="c1"># 获取python版本号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda env list <span class="c1"># 查看当前所有环境</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda activate xxx <span class="c1"># 激活名为xxx的虚拟环境</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda deactivate <span class="c1"># 退出当前虚拟环境</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">whereis python <span class="c1"># 查看当前激活环境中的python位置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nvidia-smi <span class="c1"># 查看cuda运行情况，不算conda的命令但很常用</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda config --show channels <span class="c1"># 查看conda下载源</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda remove -n xxx  <span class="c1"># 删除环境名为xxx的虚拟环境</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda create -n 环境名 <span class="c1"># 创建环境名为xxx的虚拟环境，使用默认python版本</span>
+</span></span></code></pre></div><p>添加国内下载源：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda config --show channels <span class="c1"># 查看conda下载源</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加清华源</span>
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+</span></span></code></pre></div><p>管理 python 包：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装指定包</span>
+</span></span><span class="line"><span class="cl">conda install package_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 移除指定包</span>
+</span></span><span class="line"><span class="cl">conda remove package_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新指定包</span>
+</span></span><span class="line"><span class="cl">conda update package_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 搜索指定包</span>
+</span></span><span class="line"><span class="cl">conda search package_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出所有包的名称及版本</span>
+</span></span><span class="line"><span class="cl">conda list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除未使用的包和缓存，节省磁盘空间</span>
+</span></span><span class="line"><span class="cl">conda clean --all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据文件中的列表安装包</span>
+</span></span><span class="line"><span class="cl">conda install -f requirements.txt
+</span></span></code></pre></div>
+
+<h2 class="relative group">VS免密登录 
+    <div id="vs%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#vs%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>对于没有本地 GPU 的学生党来说，直接在服务器上编辑并运行文件是非常方便的，而 VSCode 插件 <code>remote-ssh</code> 也能够在服务器上直接呈现一个 VSCode 的界面。为了省去不断输入密码的痛苦，可以进行如下操作实现免密登录😄</p>
+<p>本地机为 Windows，一般来说在 <code>C:\Users\&lt;User_name&gt;\.ssh</code> 文件夹中会存放 <code>ssh</code> 相关的配置文件，实现免密登录就只需要操作这里面的文件即可。</p>
+<ol>
+<li>配置 <code>config</code> 文件，样例配置如下：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># 把&lt;User_name&gt;替换为你的本地机用户名
+</span></span><span class="line"><span class="cl">Host 3090
+</span></span><span class="line"><span class="cl">    HostName xx.xxx.xx.xx
+</span></span><span class="line"><span class="cl">    User morethan
+</span></span><span class="line"><span class="cl">    IdentityFile &#34;C:\Users\&lt;User_name&gt;\.ssh\id_rsa&#34;
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>生成验证文件 <code>id_rsa.pub</code></p>
+</li>
+<li>
+<p>本地创建 <code>authorized_keys</code> 文件，并将 <code>id_rsa.pub</code> 中的内容写入这个文件</p>
+</li>
+<li>
+<p>在服务器中默认目录下创建 <code>.ssh</code> 文件夹，然后将 <code>authorized_keys</code> 文件从本地拷贝进去即可</p>
+</li>
+</ol>
+<p>然后用 VSCode 登录服务器就发现已经完成了免密登录</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >上述繁琐的步骤只需要初次执行一次就行，当需要给下一台服务器配置免密登录时，只需要改 config 文件然后把 authorized_keys 文件拷贝到服务器就完成了，不需要改写任何文件😄</span>
+</div>
+
+
 
 <h2 class="relative group">程序打包 
     <div id="%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85" class="anchor"></div>
@@ -2003,11 +2230,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h2>
 <ul>
-<li>Poetry 相关：
+<li>
+<p>Poetry 相关：</p>
 <ul>
 <li><a href="https://blog.csdn.net/weixin_42871919/article/details/137125544" target="_blank">poetry 入门完全指南_poetry使用-CSDN博客</a>非常详细的资料</li>
 <li><a href="https://python-poetry.org/" target="_blank">Poetry</a></li>
 <li><a href="https://www.resourch.com/archives/66.html" target="_blank">poetry如何更换国内源-数据科学SourceResearch</a></li>
+</ul>
+</li>
+<li>
+<p>UV 相关：</p>
+<ul>
+<li><a href="https://blog.xtao.de/380" target="_blank">Python 项目和包管理器 uv 安装以及使用 - 深海小涛</a>为数不多的写了 <code>uv python install</code> 国内源地址的博客</li>
+</ul>
+</li>
+<li>
+<p>Conda 相关：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/1902762958083298021" target="_blank">conda常用命令的总结 - 知乎</a></li>
 </ul>
 </li>
 </ul>
@@ -2281,7 +2521,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/localoverleaf/blog/localOverleaf/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/localoverleaf/featured.svg);"></div>
         
       
 
@@ -2352,7 +2592,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/LocalOverleaf/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/localoverleaf/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2377,7 +2617,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/LocalOverleaf/index.md"
+  <span id="likes_blog/localoverleaf/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -2542,7 +2782,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/BayesianOPT/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/bayesianopt/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2567,7 +2807,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/BayesianOPT/index.md"
+  <span id="likes_blog/bayesianopt/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
