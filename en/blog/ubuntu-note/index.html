@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1584"
+    "wordCount": "1895"
   }]
   </script>
 
@@ -1387,16 +1387,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#using-windows-fonts">Using Windows Fonts</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
-    <li><a href="#installing-and-managing-software">Installing and Managing Software</a>
+    <li><a href="#configuring-git">Configuring Git</a>
       <ul>
-        <li><a href="#snap">Snap</a></li>
-        <li><a href="#apt">apt</a></li>
-        <li><a href="#deb">deb</a></li>
-        <li><a href="#curl">curl</a></li>
+        <li><a href="#setting-up-ssh-for-github-password-free-configuration">Setting Up SSH for GitHub (Password-Free Configuration)</a></li>
       </ul>
     </li>
-    <li><a href="#office-suite">Office Suite</a></li>
-    <li><a href="#storage-cleanup">Storage Cleanup</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -1418,16 +1413,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#using-windows-fonts">Using Windows Fonts</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
-    <li><a href="#installing-and-managing-software">Installing and Managing Software</a>
+    <li><a href="#configuring-git">Configuring Git</a>
       <ul>
-        <li><a href="#snap">Snap</a></li>
-        <li><a href="#apt">apt</a></li>
-        <li><a href="#deb">deb</a></li>
-        <li><a href="#curl">curl</a></li>
+        <li><a href="#setting-up-ssh-for-github-password-free-configuration">Setting Up SSH for GitHub (Password-Free Configuration)</a></li>
       </ul>
     </li>
-    <li><a href="#office-suite">Office Suite</a></li>
-    <li><a href="#storage-cleanup">Storage Cleanup</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -1780,198 +1770,55 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/Desktop/dir  
 </span></span></code></pre></div>
 
-<h2 class="relative group">Installing and Managing Software 
-    <div id="installing-and-managing-software" class="anchor"></div>
+<h2 class="relative group">Configuring Git 
+    <div id="configuring-git" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#installing-and-managing-software" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#configuring-git" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Software installation on Ubuntu generally falls into the following categories:</p>
-<ol>
-<li>Via the built-in Snap store</li>
-<li>Via <code>apt</code></li>
-<li>Via <code>.deb</code> packages</li>
-<li>Via <code>curl</code></li>
-</ol>
-<p>Different installation methods require different management approaches. <code>curl</code> installations are the most cumbersome to manage, while others can be handled easily with their respective package managers.</p>
-
-
-<h3 class="relative group">Snap 
-    <div id="snap" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#snap" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Simply open the Snap store to install software effortlessly, though the packages are often outdated.</p>
-
-
-<h3 class="relative group">apt 
-    <div id="apt" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#apt" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install software  </span>
-</span></span><span class="line"><span class="cl">sudo apt install xxx  
+<p>One of the standout features of Linux is its extreme simplicity, which is why using the command line to manage Git is the preferred choice for Linux users 😃. Ubuntu comes with Git pre-installed, so there&rsquo;s no need to install it separately. If you want to upgrade, follow these steps:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git --version <span class="c1"># Check the Git version</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Update packages  </span>
-</span></span><span class="line"><span class="cl">sudo apt update <span class="c1"># Sync package info from remote repositories without upgrading  </span>
-</span></span><span class="line"><span class="cl">apt list --upgradable <span class="c1"># View upgradable packages  </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Upgrade all available packages without handling dependency changes  </span>
-</span></span><span class="line"><span class="cl">sudo apt upgrade  
-</span></span><span class="line"><span class="cl">sudo apt full-upgrade <span class="c1"># Full upgrade  </span>
-</span></span><span class="line"><span class="cl">sudo <span class="k">do</span>-release-upgrade <span class="c1"># Upgrade across major Ubuntu versions  </span>
+</span></span><span class="line"><span class="cl">sudo add-apt-repository ppa:git-core/ppa <span class="c1"># Add the official repository</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># check packages</span>
-</span></span><span class="line"><span class="cl">sudo apt-cache search wps <span class="c1"># check packages with key word wps</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Remove packages  </span>
-</span></span><span class="line"><span class="cl">sudo apt remove xxx  
-</span></span><span class="line"><span class="cl">sudo apt autoremove <span class="c1"># Clean up residuals  </span>
+</span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade <span class="c1"># If possible, proceed with the upgrade</span>
 </span></span></code></pre></div>
 
-<h3 class="relative group">deb 
-    <div id="deb" class="anchor"></div>
+<h3 class="relative group">Setting Up SSH for GitHub (Password-Free Configuration) 
+    <div id="setting-up-ssh-for-github-password-free-configuration" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deb" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#setting-up-ssh-for-github-password-free-configuration" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>After downloading a <code>.deb</code> package from a browser, double-clicking it will install it directly. Internally, this uses <code>apt</code>, so management is the same as with <code>apt</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install via double-click  </span>
+<p>Of course, you can also use HTTPS directly, but the downside is that you’ll need to enter your password every time. Moreover, with GitHub&rsquo;s increasing security measures, the password isn’t necessarily your account password but rather a dedicated token 🥲.</p>
+<p>Such a cumbersome process is unbearable on Linux. I’d rather go through a tedious setup once than have to enter a long token every time.</p>
+<p>This section is mainly referenced from: <a href="https://blog.csdn.net/qq_22841387/article/details/145183746" target="_blank">Configuring Git to Push by Default Without Entering Credentials (Ubuntu, SSH)</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global user.name <span class="s1">&#39;xx&#39;</span> <span class="c1"># Configure the global username</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Uninstall via apt  </span>
-</span></span><span class="line"><span class="cl">sudo apt remove xxx  
-</span></span><span class="line"><span class="cl">sudo apt autoremove <span class="c1"># Clean up residuals  </span>
-</span></span></code></pre></div>
-
-<h3 class="relative group">curl 
-    <div id="curl" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#curl" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Download and execute installation scripts directly from a URL using <code>curl</code>. Software installed this way is harder to manage because the actual installation process is script-driven and difficult to monitor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Example: Installing the Zed editor  </span>
-</span></span><span class="line"><span class="cl">curl -f https://zed.dev/install.sh <span class="p">|</span> sh  
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s1">&#39;xxx@qq.com&#39;</span> <span class="c1"># Configure the global email account</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Uninstalling is usually messy  </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># First, fetch the installation script  </span>
-</span></span><span class="line"><span class="cl">curl -f https://zed.dev/install.sh -o install.sh  
+</span></span><span class="line"><span class="cl"><span class="c1"># Generate an SSH key pair. Here, I choose to press Enter all the way through.</span>
+</span></span><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Have an AI parse the script  </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Then follow the AI’s instructions to manually uninstall  </span>
-</span></span></code></pre></div>
-
-<h2 class="relative group">Office Suite 
-    <div id="office-suite" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#office-suite" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>As we all know, Microsoft Office cannot run directly on Linux 😅. However, viewing and editing <code>doc</code> files is often unavoidable.</p>
-<p>Therefore, here’s a recommended Office alternative for Linux: <strong>LibreOffice</strong>. The installation steps are as follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository ppa:libreoffice/ppa  
-</span></span><span class="line"><span class="cl">sudo apt update  
-</span></span><span class="line"><span class="cl">sudo apt install libreoffice  
-</span></span></code></pre></div><p>Before installing LibreOffice, I also tried using <strong>WPS</strong> to edit Office files, but for some reason, it kept causing system errors, so I eventually abandoned it.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >If switching away from Office makes you feel lost, <a href="https://www.winehq.org/" target="_blank">Wine</a> might be your savior—it’s the sorcery that runs Windows apps on Linux!</span>
-</div>
-
-
-
-<h2 class="relative group">Storage Cleanup 
-    <div id="storage-cleanup" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#storage-cleanup" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Remove orphaned dependencies  </span>
-</span></span><span class="line"><span class="cl">sudo apt autoremove  
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Clear apt cache  </span>
-</span></span><span class="line"><span class="cl">sudo du -sh /var/cache/apt <span class="c1"># Check apt cache size  </span>
-</span></span><span class="line"><span class="cl">sudo apt autoclean <span class="c1"># Auto-clean  </span>
-</span></span><span class="line"><span class="cl">sudo apt clean <span class="c1"># Full clean  </span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Clear system logs  </span>
-</span></span><span class="line"><span class="cl">journalctl --disk-usage <span class="c1"># Check system log size  </span>
-</span></span><span class="line"><span class="cl">sudo journalctl --vacuum-time<span class="o">=</span><span class="m">3</span> d <span class="c1"># Remove logs older than 3 days  </span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Clear .cache</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> .cache <span class="c1"># execute at ~</span>
-</span></span><span class="line"><span class="cl">du -sh * <span class="c1"># Check cache size</span>
-</span></span><span class="line"><span class="cl">rm -r folder_name <span class="c1"># delete the folder recursively</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Clean up old Snap versions  </span>
-</span></span><span class="line"><span class="cl">snap list --all <span class="c1"># List all Snap packages  </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># List all disabled packages (single-line command)  </span>
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[1 mDisabled Snap Packages and Their Sizes:\033[0 m&#34;</span> <span class="o">&amp;&amp;</span> snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print 
-\\(1}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -r pkg<span class="p">;</span> <span class="k">do</span> <span class="nv">size</span><span class="o">=</span><span class="se">\\</span><span class="o">)(</span>snap info <span class="s2">&#34;
-\\(pkg&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;/installed:/ {print\\)4}&#39;</span><span class="o">)</span><span class="p">;</span> <span class="nb">printf</span> <span class="s2">&#34;%-30 s %10 s\n&#34;</span> <span class="s2">&#34;
-\\(pkg&#34;</span> <span class="s2">&#34;\\)size&#34;</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> sort -k <span class="m">2</span> -h <span class="o">&amp;&amp;</span> <span class="nb">echo</span> -e <span class="s2">&#34;\n\033[1 mTotal Size: 
-\\((snap list --all | awk &#39;/disabled|已禁用/{print\\)1}&#39; | xargs -I{} snap info {} | awk &#39;/installed:/ {sum += 
-\\(3} END {print sum/1024 &#34;</span>MB<span class="s2">&#34;}&#39;)\\033[0 m&#34;</span> <span class="c1"># Remove all disabled Snap packages (single-line command) snap list --all | awk &#39;/disabled|已禁用/{print\\)1, 
-\\(3}&#39; | while read snapname revision; do snap remove &#34;\\)snapname&#34; --revision=&#34;$revision&#34;; done  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Start the SSH agent and load the private key into the agent</span>
+</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;
+\\((ssh-agent -s)&#34;</span> ssh-add ~/.ssh/id_rsa <span class="c1"># View and copy the public key content cat ~/.ssh/id_rsa.pub # Add this new SSH key to your GitHub account. # Change an existing HTTPS-linked repository to an SSH link git remote rm origin git remote add origin git@github.com:username/repository.git ``` ## Installing and Managing Software Software installation on Ubuntu generally falls into the following categories: 1. Via the built-in Snap store 2. Via `apt` 3. Via `.deb` packages 4. Via `curl` Different installation methods require different management approaches. `curl` installations are the most cumbersome to manage, while others can be handled easily with their respective package managers. ### Snap Simply open the Snap store to install software effortlessly, though the packages are often outdated. ### apt ```bash # Install software sudo apt install xxx # Update packages sudo apt update # Sync package info from remote repositories without upgrading apt list --upgradable # View upgradable packages # Upgrade all available packages without handling dependency changes sudo apt upgrade sudo apt full-upgrade # Full upgrade sudo do-release-upgrade # Upgrade across major Ubuntu versions # check packages sudo apt-cache search wps # check packages with key word wps # Remove packages sudo apt remove xxx sudo apt autoremove # Clean up residuals ``` ### deb After downloading a `.deb` package from a browser, double-clicking it will install it directly. Internally, this uses `apt`, so management is the same as with `apt`. ```bash # Install via double-click # Uninstall via apt sudo apt remove xxx sudo apt autoremove # Clean up residuals ``` ### curl Download and execute installation scripts directly from a URL using `curl`. Software installed this way is harder to manage because the actual installation process is script-driven and difficult to monitor. ```bash # Example: Installing the Zed editor curl -f https://zed.dev/install.sh | sh # Uninstalling is usually messy # First, fetch the installation script curl -f https://zed.dev/install.sh -o install.sh # Have an AI parse the script # Then follow the AI’s instructions to manually uninstall ``` ## Office Suite As we all know, Microsoft Office cannot run directly on Linux 😅. However, viewing and editing `doc` files is often unavoidable. Therefore, here’s a recommended Office alternative for Linux: **LibreOffice**. The installation steps are as follows: ```bash sudo add-apt-repository ppa:libreoffice/ppa sudo apt update sudo apt install libreoffice ``` Before installing LibreOffice, I also tried using **WPS** to edit Office files, but for some reason, it kept causing system errors, so I eventually abandoned it. &gt; [!NOTE] Title &gt; If switching away from Office makes you feel lost, [Wine](https://www.winehq.org/) might be your savior—it’s the sorcery that runs Windows apps on Linux! ## Storage Cleanup ```bash # Remove orphaned dependencies sudo apt autoremove # Clear apt cache sudo du -sh /var/cache/apt # Check apt cache size sudo apt autoclean # Auto-clean sudo apt clean # Full clean # Clear system logs journalctl --disk-usage # Check system log size sudo journalctl --vacuum-time=3 d # Remove logs older than 3 days # Clear .cache cd .cache # execute at ~ du -sh * # Check cache size rm -r folder_name # delete the folder recursively # Clean up old Snap versions snap list --all # List all Snap packages # List all disabled packages (single-line command) echo -e &#34;\\033[1 mDisabled Snap Packages and Their Sizes:\\033[0 m&#34; &amp;&amp; snap list --all | awk &#39;/disabled|已禁用/{print\\)1}&#39; | while read -r pkg; do size=
+\\((snap info &#34;\\)pkg&#34; | awk &#39;/installed:/ {print 
+\\(4}&#39;); printf &#34;%-30 s %10 s\\n&#34; &#34;\\)pkg&#34; &#34;
+\\(size&#34;; done | sort -k 2 -h &amp;&amp; echo -e &#34;\\n\\033[1 mTotal Size:\\)(snap list --all | awk &#39;/disabled|已禁用/{print 
+\\(1}&#39; | xargs -I{} snap info {} | awk &#39;/installed:/ {sum +=\\)3} END {print sum/1024 &#34;MB&#34;}&#39;)\033[0 m&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove all disabled Snap packages (single-line command)  </span>
+</span></span><span class="line"><span class="cl">snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print 
+\\(1,\\)3}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> snapname revision<span class="p">;</span> <span class="k">do</span> snap remove <span class="s2">&#34;
+\\(snapname&#34;</span> --revision<span class="o">=</span><span class="s2">&#34;\\)revision&#34;</span><span class="p">;</span> <span class="k">done</span>  
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Clean up old kernels  </span>
 </span></span><span class="line"><span class="cl">sudo dpkg --list <span class="p">|</span> grep linux-image <span class="c1"># List all kernels  </span>
@@ -1992,6 +1839,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><a href="https://cloud.tencent.com/developer/article/2456171" target="_blank">How to Partition and Mount Disks in Ubuntu</a></li>
 <li><a href="https://cn.linux-terminal.com/?p=1602" target="_blank">LibreOffice Suite</a></li>
 <li><a href="https://muzing.top/posts/3fc249cf/" target="_blank">在 Ubuntu 安装配置 Fcitx 5 中文输入法</a></li>
+<li><a href="https://blog.csdn.net/qq_22841387/article/details/145183746" target="_blank">Configuring Git to Push by Default Without Entering Credentials (Ubuntu, SSH)</a></li>
 </ul>
 
           
