@@ -97,7 +97,7 @@
     "name": "代码协同方案",
     "headline": "代码协同方案",
     "description": "针对数学建模国赛和MATLAB改进的代码协同方案",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e流程概览 \n    \u003cdiv id=\u0022%E6%B5%81%E7%A8%8B%E6%A6%82%E8%A7%88\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E6%B5%81%E7%A8%8B%E6%A6%82%E8%A7%88\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cdiv class=\u0022mermaid\u0022 align=\u0022center\u0022\u003e\n  \u003cpre\u003e\ngraph LR;\nid1(\u0022工作分配\u0022)--\u003eid2(\u0022VS Code协同\u0022)--\u003eid3(\u0022MATLAB代码执行\u0022);\n\u003c\/pre\u003e\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e工作分配 \n    \u003cdiv id=\u0022%E5%B7%A5%E4%BD%9C%E5%88%86%E9%85%8D\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%B7%A5%E4%BD%9C%E5%88%86%E9%85%8D\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e主要有两个要点：\u003c\/p\u003e",
+    "abstract": "\u003cp\u003e\n\n\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案\n\u003c\/div\u003e\n\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "https:\/\/morethan987.github.io\/blog\/code-collaboration-scheme\/",
     "author" : {
@@ -1570,10 +1570,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+          <p>
+
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案
 </div>
-
+</p>
 
 
 <h2 class="relative group">流程概览 
@@ -1656,8 +1658,7 @@ id1("工作分配")-->id2("VS Code协同")-->id3("MATLAB代码执行");
 </h3>
 <ol>
 <li>主函数统一命名为 <code>main</code>：能够直接计算出最终答案的叫主函数，其他的都叫辅助函数</li>
-<li>数据加工代码：数据加工代码指的是没有任何返回值，仅仅产生数据表格的代码，用 <code>data</code> 开头，例如：将太阳高度角 
-\(\phi\) 转化为余弦值，<code>dataCosPhi</code></li>
+<li>数据加工代码：数据加工代码指的是没有任何返回值，仅仅产生数据表格的代码，用 <code>data</code> 开头，例如：将太阳高度角 \(\phi\) 转化为余弦值，<code>dataCosPhi</code></li>
 <li>内部数据转换代码，用 <code>to</code> 连接，例如将自然坐标系中点的坐标转化为直角坐标系中点的坐标 <code>StoXY</code></li>
 <li>绘图代码：绘制图形的代码，用 <code>fig</code> 开头</li>
 <li>测试代码：<code>test</code> 开头</li>
