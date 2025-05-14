@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1867"
+    "wordCount": "1812"
   }]
   </script>
 
@@ -1887,16 +1887,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">sudo journalctl --vacuum-time<span class="o">=</span><span class="m">3</span> d <span class="c1"># Remove logs older than 3 days  </span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Clear .cache</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> .cache <span class="c1"># execute at ~</span>
-</span></span><span class="line"><span class="cl">du -sh * <span class="c1"># Check cache size</span>
+</span></span><span class="line"><span class="cl">du -sh ~/.cache/* <span class="p">|</span> sort -h -r <span class="c1"># Check cache size</span>
 </span></span><span class="line"><span class="cl">rm -r folder_name <span class="c1"># delete the folder recursively</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Clean up old Snap versions  </span>
-</span></span><span class="line"><span class="cl">snap list --all <span class="c1"># List all Snap packages  </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># List all disabled packages (single-line command)  </span>
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[1 mDisabled Snap Packages and Their Sizes:\033[0 m&#34;</span> <span class="o">&amp;&amp;</span> snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print $1}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -r pkg<span class="p">;</span> <span class="k">do</span> <span class="nv">size</span><span class="o">=</span><span class="k">$(</span>snap info <span class="s2">&#34;</span><span class="nv">$pkg</span><span class="s2">&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;/installed:/ {print $4}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="nb">printf</span> <span class="s2">&#34;%-30 s %10 s\n&#34;</span> <span class="s2">&#34;</span><span class="nv">$pkg</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$size</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> sort -k <span class="m">2</span> -h <span class="o">&amp;&amp;</span> <span class="nb">echo</span> -e <span class="s2">&#34;\n\033[1 mTotal Size: </span><span class="k">$(</span>snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print $1}&#39;</span> <span class="p">|</span> xargs -I<span class="o">{}</span> snap info <span class="o">{}</span> <span class="p">|</span> awk <span class="s1">&#39;/installed:/ {sum += $3} END {print sum/1024 &#34;MB&#34;}&#39;</span><span class="k">)</span><span class="s2">\033[0 m&#34;</span>  
+</span></span><span class="line"><span class="cl"><span class="c1"># Clean up old Snap versions</span>
+</span></span><span class="line"><span class="cl">snap list --all <span class="c1"># List all Snap packages</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># List all disabled packages (single-line command)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[1 mDisabled Snap Packages and Their Sizes:\033[0 m&#34;</span> <span class="o">&amp;&amp;</span> snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print $1}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -r pkg<span class="p">;</span> <span class="k">do</span> <span class="nv">size</span><span class="o">=</span><span class="k">$(</span>snap info <span class="s2">&#34;</span><span class="nv">$pkg</span><span class="s2">&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;/installed:/ {print $4}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="nb">printf</span> <span class="s2">&#34;%-30 s %10 s\n&#34;</span> <span class="s2">&#34;</span><span class="nv">$pkg</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$size</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> sort -k <span class="m">2</span> -h
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Remove all disabled Snap packages (single-line command)  </span>
-</span></span><span class="line"><span class="cl">snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print $1, $3}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> snapname revision<span class="p">;</span> <span class="k">do</span> snap remove <span class="s2">&#34;</span><span class="nv">$snapname</span><span class="s2">&#34;</span> --revision<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$revision</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span>  
+</span></span><span class="line"><span class="cl">snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/{print $1, $3}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> snapname revision<span class="p">;</span> <span class="k">do</span> sudo snap remove <span class="s2">&#34;</span><span class="nv">$snapname</span><span class="s2">&#34;</span> --revision<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$revision</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Clean up old kernels  </span>
 </span></span><span class="line"><span class="cl">sudo dpkg --list <span class="p">|</span> grep linux-image <span class="c1"># List all kernels  </span>
