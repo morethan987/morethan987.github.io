@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3083"
+    "wordCount": "3189"
   }]
   </script>
 
@@ -1265,6 +1265,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </li>
     <li><a href="#office套件">Office套件</a></li>
     <li><a href="#存储清理">存储清理</a></li>
+    <li><a href="#其他">其他</a>
+      <ul>
+        <li><a href="#解压">解压</a></li>
+      </ul>
+    </li>
     <li><a href="#引用文献">引用文献</a></li>
   </ul>
 </nav>
@@ -1297,6 +1302,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </li>
     <li><a href="#office套件">Office套件</a></li>
     <li><a href="#存储清理">存储清理</a></li>
+    <li><a href="#其他">其他</a>
+      <ul>
+        <li><a href="#解压">解压</a></li>
+      </ul>
+    </li>
     <li><a href="#引用文献">引用文献</a></li>
   </ul>
 </nav>
@@ -1744,7 +1754,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">sudo <span class="k">do</span>-release-upgrade <span class="c1"># 跨ubuntu大版本升级</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 查看软件包</span>
-</span></span><span class="line"><span class="cl">sudo apt-cache search wps <span class="c1"># 查看包含关键字wps的软件包</span>
+</span></span><span class="line"><span class="cl">sudo apt-cache search wps <span class="c1"># 搜索所有包含wps的软件包及其描述信息</span>
+</span></span><span class="line"><span class="cl">sudo apt-cache pkgnames <span class="p">|</span> grep -i wps <span class="c1"># 查看包含关键字wps的软件包名字</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 移除软件包</span>
 </span></span><span class="line"><span class="cl">sudo apt remove xxx
@@ -1882,6 +1893,40 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># 清理内核</span>
 </span></span><span class="line"><span class="cl">sudo dpkg --list <span class="p">|</span> grep linux-image <span class="c1"># 列出所有内核</span>
 </span></span><span class="line"><span class="cl">sudo apt autoremove --purge <span class="c1"># 自动清除不需要的内核</span>
+</span></span></code></pre></div>
+
+<h2 class="relative group">其他 
+    <div id="%E5%85%B6%E4%BB%96" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%85%B6%E4%BB%96" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>这里包含了一些简单而常用的命令</p>
+
+
+<h3 class="relative group">解压 
+    <div id="%E8%A7%A3%E5%8E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E5%8E%8B" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>命令根据你需要解压的文件格式而变动</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 解压zip文件</span>
+</span></span><span class="line"><span class="cl">unzip file.zip -d /target/directory
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压.tar文件</span>
+</span></span><span class="line"><span class="cl">tar -xvf file.tar
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压.tar.gz文件</span>
+</span></span><span class="line"><span class="cl">tar -xzvf file.tar.gz
 </span></span></code></pre></div>
 
 <h2 class="relative group">引用文献 

@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1812"
+    "wordCount": "1883"
   }]
   </script>
 
@@ -1269,6 +1269,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </li>
     <li><a href="#office-suite">Office Suite</a></li>
     <li><a href="#storage-cleanup">Storage Cleanup</a></li>
+    <li><a href="#miscellaneous">Miscellaneous</a>
+      <ul>
+        <li><a href="#extracting-files">Extracting Files</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -1305,6 +1310,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </li>
     <li><a href="#office-suite">Office Suite</a></li>
     <li><a href="#storage-cleanup">Storage Cleanup</a></li>
+    <li><a href="#miscellaneous">Miscellaneous</a>
+      <ul>
+        <li><a href="#extracting-files">Extracting Files</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
@@ -1763,8 +1773,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">sudo apt full-upgrade <span class="c1"># Full upgrade  </span>
 </span></span><span class="line"><span class="cl">sudo <span class="k">do</span>-release-upgrade <span class="c1"># Upgrade across major Ubuntu versions  </span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># check packages</span>
-</span></span><span class="line"><span class="cl">sudo apt-cache search wps <span class="c1"># check packages with key word wps</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Check software packages</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Search for all packages containing &#34;wps&#34; and their description information</span>
+</span></span><span class="line"><span class="cl">sudo apt-cache search wps
+</span></span><span class="line"><span class="cl"><span class="c1"># View package names containing the keyword &#34;wps&#34;</span>
+</span></span><span class="line"><span class="cl">sudo apt-cache pkgnames <span class="p">|</span> grep -i wps
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Remove packages  </span>
 </span></span><span class="line"><span class="cl">sudo apt remove xxx  
@@ -1902,6 +1915,40 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># Clean up old kernels  </span>
 </span></span><span class="line"><span class="cl">sudo dpkg --list <span class="p">|</span> grep linux-image <span class="c1"># List all kernels  </span>
 </span></span><span class="line"><span class="cl">sudo apt autoremove --purge <span class="c1"># Automatically remove unnecessary kernels  </span>
+</span></span></code></pre></div>
+
+<h2 class="relative group">Miscellaneous 
+    <div id="miscellaneous" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#miscellaneous" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>This section includes some simple yet commonly used commands.</p>
+
+
+<h3 class="relative group">Extracting Files 
+    <div id="extracting-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#extracting-files" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The command varies depending on the file format you need to extract.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Extract a .zip file  </span>
+</span></span><span class="line"><span class="cl">unzip file.zip -d /target/directory  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract a .tar file  </span>
+</span></span><span class="line"><span class="cl">tar -xvf file.tar  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract a .tar.gz file  </span>
+</span></span><span class="line"><span class="cl">tar -xzvf file.tar.gz  
 </span></span></code></pre></div>
 
 <h2 class="relative group">References 
