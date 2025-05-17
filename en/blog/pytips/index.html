@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2024-08-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-17T00:00:00+00:00">
     <meta property="article:tag" content="Python">
     <meta property="og:image" content="https://morethan987.github.io/blog/pytips/featured.svg">
       <meta property="og:see_also" content="https://morethan987.github.io/en/blog/ubuntu-note/">
@@ -111,12 +111,12 @@
     "dateCreated": "2024-08-10T00:00:00\u002b00:00",
     "datePublished": "2024-08-10T00:00:00\u002b00:00",
     
-    "dateModified": "2025-05-11T00:00:00\u002b00:00",
+    "dateModified": "2025-05-17T00:00:00\u002b00:00",
     
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2033"
+    "wordCount": "2114"
   }]
   </script>
 
@@ -948,7 +948,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-11T00:00:00&#43;00:00">Updated: 11 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-17T00:00:00&#43;00:00">Updated: 17 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1881,35 +1881,37 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>The following commands are fundamental for checking environment information. They’re typically used when accessing a new server environment or troubleshooting environment-related issues.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">########## Checking Environment Information ##########  </span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">########## Checking Environment Information ##########</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda --version <span class="c1"># Get the Conda version  </span>
+</span></span><span class="line"><span class="cl">arch <span class="c1"># View the system architecture</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">python --version <span class="c1"># Get the Python version  </span>
+</span></span><span class="line"><span class="cl">conda --version <span class="c1"># Get the Conda version</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda env list <span class="c1"># List all available environments  </span>
+</span></span><span class="line"><span class="cl">python --version <span class="c1"># Get the Python version</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda activate xxx <span class="c1"># Activate the virtual environment named &#34;xxx&#34;  </span>
+</span></span><span class="line"><span class="cl">conda env list <span class="c1"># List all available environments</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda deactivate <span class="c1"># Exit the current virtual environment  </span>
+</span></span><span class="line"><span class="cl">conda activate xxx <span class="c1"># Activate the virtual environment named &#34;xxx&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">whereis python <span class="c1"># Check the location of Python in the currently activated environment  </span>
+</span></span><span class="line"><span class="cl">conda deactivate <span class="c1"># Exit the current virtual environment</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">nvidia-smi <span class="c1"># Check CUDA status (not a Conda command but frequently used)  </span>
+</span></span><span class="line"><span class="cl">whereis python <span class="c1"># Check the location of Python in the currently activated environment</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda config --show channels <span class="c1"># View Conda&#39;s download sources  </span>
+</span></span><span class="line"><span class="cl">nvidia-smi <span class="c1"># Check CUDA status (not a Conda command but frequently used)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda remove -n xxx <span class="c1"># Delete the virtual environment named &#34;xxx&#34;  </span>
+</span></span><span class="line"><span class="cl">conda config --show channels <span class="c1"># View Conda&#39;s download sources</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda create -n env_name <span class="c1"># Create a virtual environment with the specified name, using the default Python version  </span>
+</span></span><span class="line"><span class="cl">conda remove -n xxx <span class="c1"># Delete the virtual environment named &#34;xxx&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conda create -n env_name <span class="c1"># Create a virtual environment with the specified name, using the default Python version</span>
 </span></span></code></pre></div><p>Adding domestic (Chinese) download sources:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda config --show channels <span class="c1"># View Conda&#39;s download sources  </span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Add Tsinghua&#39;s mirror source  </span>
 </span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2  
 </span></span></code></pre></div><p>Managing Python packages:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install a specific package  </span>
-</span></span><span class="line"><span class="cl">conda install package_name  
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Install a specific package</span>
+</span></span><span class="line"><span class="cl">conda install package_name
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Remove a specific package  </span>
 </span></span><span class="line"><span class="cl">conda remove package_name  
@@ -1928,7 +1930,50 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Install packages from a requirements.txt file  </span>
 </span></span><span class="line"><span class="cl">conda install -f requirements.txt  
+</span></span></code></pre></div><p>Manual installation of dependency packages for handling extreme offline situations:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Directly use pip download command to download all related whl files</span>
+</span></span><span class="line"><span class="cl">pip download scikit-image --dest ./scikit_image_files --only-binary :all: --python-version 3.13 --platform manylinux_2_17_x86_64 --implementation cp --abi cp313
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Manually transfer to the server, switch to the target folder, and run (note the whl files)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># --find-links specifies the folder containing the whl files</span>
+</span></span><span class="line"><span class="cl">pip install scikit_image-0.25.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --no-index --find-links<span class="o">=</span>./
 </span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #ffcc00"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #8B6914"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #333333"
+    >Do not rename the whl files 😢</span>
+</div>
+
+
 
 <h2 class="relative group">Passwordless Login via VSCode 
     <div id="passwordless-login-via-vscode" class="anchor"></div>
