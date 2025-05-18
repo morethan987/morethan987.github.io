@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>关于大模型记忆 &middot; Morethan 小站</title>
-  <meta name="title" content="关于大模型记忆 &middot; Morethan 小站" />
+  <title>CTM读文笔记 &middot; Morethan 小站</title>
+  <meta name="title" content="CTM读文笔记 &middot; Morethan 小站" />
   
-  <meta name="description" content="一些对于大模型记忆的思考和探索" />
-  <meta name="keywords" content="LLM, 博客, " />
+  <meta name="description" content="一个新型的人脑启发式AI架构" />
+  <meta name="keywords" content="论文, 笔记, 架构, " />
   
   
-  <link rel="canonical" href="https://morethan987.github.io/blog/llm-memory/" />
+  <link rel="canonical" href="https://morethan987.github.io/blog/ctm-note/" />
   
   
   
@@ -67,25 +67,26 @@
   
   
   
-  <meta property="og:url" content="https://morethan987.github.io/blog/llm-memory/">
+  <meta property="og:url" content="https://morethan987.github.io/blog/ctm-note/">
   <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="关于大模型记忆">
-  <meta property="og:description" content="一些对于大模型记忆的思考和探索">
+  <meta property="og:title" content="CTM读文笔记">
+  <meta property="og:description" content="一个新型的人脑启发式AI架构">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-05-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-08T00:00:00+00:00">
-    <meta property="article:tag" content="LLM">
-    <meta property="article:tag" content="博客">
-    <meta property="og:image" content="https://morethan987.github.io/blog/llm-memory/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/moravecs-paradox/">
+    <meta property="article:published_time" content="2025-05-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-19T00:00:00+00:00">
+    <meta property="article:tag" content="论文">
+    <meta property="article:tag" content="笔记">
+    <meta property="article:tag" content="架构">
+    <meta property="og:image" content="https://morethan987.github.io/blog/ctm-note/featured.svg">
+      <meta property="og:see_also" content="https://morethan987.github.io/blog/rstar-note/">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/llm-memory/featured.svg">
-  <meta name="twitter:title" content="关于大模型记忆">
-  <meta name="twitter:description" content="一些对于大模型记忆的思考和探索">
+  <meta name="twitter:image" content="https://morethan987.github.io/blog/ctm-note/featured.svg">
+  <meta name="twitter:title" content="CTM读文笔记">
+  <meta name="twitter:description" content="一个新型的人脑启发式AI架构">
 
   
   <script type="application/ld+json">
@@ -93,26 +94,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "关于大模型记忆",
-    "headline": "关于大模型记忆",
-    "description": "一些对于大模型记忆的思考和探索",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  梳理和总结一下关于大模型记忆的想法\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e前言 \n    \u003cdiv id=\u0022%E5%89%8D%E8%A8%80\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%89%8D%E8%A8%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e思考来源于一个在 AI 辅助编程中经常碰到的问题：每次都要从头开始理解我的代码仓库。\u003c\/p\u003e",
+    "name": "CTM读文笔记",
+    "headline": "CTM读文笔记",
+    "description": "一个新型的人脑启发式AI架构",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  一个新型的人脑启发式架构，在现有时序无关的神经元模型的基础上引入了\u0026quot;时序\u0026quot;概念，涌现出一系列类似人脑的现象\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e前言 \n    \u003cdiv id=\u0022%E5%89%8D%E8%A8%80\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%89%8D%E8%A8%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e关注到这篇论文其实就是因为其宣称的那种\u0026quot;奇妙\u0026quot;的涌现现象，将时序信息引入神经元模型之后产生了\u003cstrong\u003e类似人类思维模式\u003c\/strong\u003e的注意力现象。这些现象并非人为设计的，而是在训练过程中自然产生的，这是最令人振奋的。\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/morethan987.github.io\/blog\/llm-memory\/",
+    "url" : "https:\/\/morethan987.github.io\/blog\/ctm-note\/",
     "author" : {
       "@type": "Person",
       "name": "Morethan"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-05-04T00:00:00\u002b00:00",
-    "datePublished": "2025-05-04T00:00:00\u002b00:00",
+    "dateCreated": "2025-05-14T00:00:00\u002b00:00",
+    "datePublished": "2025-05-14T00:00:00\u002b00:00",
     
-    "dateModified": "2025-05-08T00:00:00\u002b00:00",
+    "dateModified": "2025-05-19T00:00:00\u002b00:00",
     
-    "keywords": ["LLM","博客"],
+    "keywords": ["论文","笔记","架构"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6508"
+    "wordCount": "1320"
   }]
   </script>
 
@@ -487,41 +488,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             
 
             
-<div>
-  <div class="cursor-pointer flex items-center nested-menu">
-    <span class="ltr:mr-1 rtl:ml-1">
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-  </span>
-
-
-    </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="关于大模型记忆">中文</div>
-  </div>
-  <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
-      <div class="flex flex-col space-y-3">
-        
-        <a href="/en/blog/llm-memory/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="On the Memory of LLM">
-            English
-          </p>
-        </a>
-        
-        <a href="/blog/llm-memory/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="关于大模型记忆">
-            中文
-          </p>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
             
@@ -574,41 +540,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <span></span>
 
             
-<div>
-  <div class="cursor-pointer flex items-center nested-menu">
-    <span class="ltr:mr-1 rtl:ml-1">
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-  </span>
-
-
-    </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="关于大模型记忆">中文</div>
-  </div>
-  <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
-      <div class="flex flex-col space-y-3">
-        
-        <a href="/en/blog/llm-memory/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="On the Memory of LLM">
-            English
-          </p>
-        </a>
-        
-        <a href="/blog/llm-memory/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="关于大模型记忆">
-            中文
-          </p>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
             
@@ -826,7 +757,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/blog/llm-memory/background.svg);">
+    style="background-image:url(/blog/ctm-note/background.svg);">
     
 
 
@@ -879,8 +810,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/blog/llm-memory/"
-      >关于大模型记忆</a
+      href="/blog/ctm-note/"
+      >CTM读文笔记</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -889,7 +820,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      关于大模型记忆
+      CTM读文笔记
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -944,7 +875,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-08T00:00:00&#43;00:00">更新于: 2025-05-08</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-19T00:00:00&#43;00:00">更新于: 2025-05-19</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -954,13 +885,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         
         
       
-        
-        
-      
       
     
   
-  <span id="views_blog/llm-memory/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/ctm-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -979,13 +907,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         
         
       
-        
-        
-      
       
     
   
-  <span id="likes_blog/llm-memory/index.md"
+  <span id="likes_blog/ctm-note/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -1028,7 +953,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <span class="mb-[2px]">
   <a
-    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/llm-memory/index.zh-cn.md"
+    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/ctm-note/index.zh-cn.md"
     class="text-lg hover:text-primary-500"
     rel="noopener noreferrer"
     target="_blank"
@@ -1110,18 +1035,26 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E8%AE%BA%E6%96%87/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    LLM
+    论文
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    博客
+    笔记
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E6%9E%84/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    架构
   </span>
 </span>
   </span>
@@ -1249,49 +1182,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#现状分析">现状分析</a>
-      <ul>
-        <li><a href="#大模型评测">大模型评测</a>
-          <ul>
-            <li><a href="#arenahard">ArenaHard</a></li>
-            <li><a href="#aime">AIME</a></li>
-          </ul>
-        </li>
-        <li><a href="#典型交互模式">典型交互模式</a></li>
-        <li><a href="#小结">小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#相关工作">相关工作</a>
-      <ul>
-        <li><a href="#titans">Titans</a></li>
-        <li><a href="#kblam">KBLaM</a></li>
-        <li><a href="#ttrl">TTRL</a></li>
-        <li><a href="#rstar">rStar</a></li>
-        <li><a href="#tokenformer">Tokenformer</a></li>
-        <li><a href="#sd-lora">SD-LoRA</a></li>
-        <li><a href="#differential-transformer">Differential Transformer</a></li>
-      </ul>
-    </li>
-    <li><a href="#思路梳理">思路梳理</a>
-      <ul>
-        <li><a href="#大模型记忆">大模型记忆</a>
-          <ul>
-            <li><a href="#解构transformer">解构Transformer</a></li>
-            <li><a href="#时间编码">时间编码</a></li>
-            <li><a href="#事实注入">事实注入</a></li>
-          </ul>
-        </li>
-        <li><a href="#现有方法">现有方法</a>
-          <ul>
-            <li><a href="#rag">RAG</a></li>
-            <li><a href="#微调">微调</a></li>
-            <li><a href="#网络参数">网络参数</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#早期想法">早期想法</a></li>
-    <li><a href="#引用">引用</a></li>
+    <li><a href="#引入">引入</a></li>
+    <li><a href="#方法">方法</a></li>
   </ul>
 </nav>
   </div>
@@ -1306,49 +1198,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#现状分析">现状分析</a>
-      <ul>
-        <li><a href="#大模型评测">大模型评测</a>
-          <ul>
-            <li><a href="#arenahard">ArenaHard</a></li>
-            <li><a href="#aime">AIME</a></li>
-          </ul>
-        </li>
-        <li><a href="#典型交互模式">典型交互模式</a></li>
-        <li><a href="#小结">小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#相关工作">相关工作</a>
-      <ul>
-        <li><a href="#titans">Titans</a></li>
-        <li><a href="#kblam">KBLaM</a></li>
-        <li><a href="#ttrl">TTRL</a></li>
-        <li><a href="#rstar">rStar</a></li>
-        <li><a href="#tokenformer">Tokenformer</a></li>
-        <li><a href="#sd-lora">SD-LoRA</a></li>
-        <li><a href="#differential-transformer">Differential Transformer</a></li>
-      </ul>
-    </li>
-    <li><a href="#思路梳理">思路梳理</a>
-      <ul>
-        <li><a href="#大模型记忆">大模型记忆</a>
-          <ul>
-            <li><a href="#解构transformer">解构Transformer</a></li>
-            <li><a href="#时间编码">时间编码</a></li>
-            <li><a href="#事实注入">事实注入</a></li>
-          </ul>
-        </li>
-        <li><a href="#现有方法">现有方法</a>
-          <ul>
-            <li><a href="#rag">RAG</a></li>
-            <li><a href="#微调">微调</a></li>
-            <li><a href="#网络参数">网络参数</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#早期想法">早期想法</a></li>
-    <li><a href="#引用">引用</a></li>
+    <li><a href="#引入">引入</a></li>
+    <li><a href="#方法">方法</a></li>
   </ul>
 </nav>
   </div>
@@ -1431,15 +1282,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        AI遐想 - 这篇文章属于一个选集。
+        论文笔记 - 这篇文章属于一个选集。
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="/blog/moravecs-paradox/">
-            § 1: 关于莫拉维克悖论的思考
+        <a href="/blog/rstar-note/">
+            § 1: rStar读文笔记
         </a>
     </div>
     
@@ -1459,7 +1310,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
         <div class="article-content max-w-prose mb-20">
           <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  梳理和总结一下关于大模型记忆的想法
+  一个新型的人脑启发式架构，在现有时序无关的神经元模型的基础上引入了&quot;时序&quot;概念，涌现出一系列类似人脑的现象
 </div>
 
 
@@ -1474,645 +1325,137 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
-<p>思考来源于一个在 AI 辅助编程中经常碰到的问题：每次都要从头开始理解我的代码仓库。</p>
-<p>目前 AI 辅助编程工具会提供大量的基础信息供 AI 迅速熟悉代码项目，然后利用各种函数工具读取项目代码、目录层级、编辑文件内容等等。在一轮交互过程中，AI 模型会完成&quot;从零开始的&quot;项目熟悉过程：当你发出指令让它解决某个具体的问题时，AI 会逐步探索你的代码仓库，了解相关细节然后进行相应的更改。这看起来还不错。</p>
-<p>然而当你开启新的一轮对话后，AI 完全忘记了自己上一次进行了什么更改，也完全忘记了你的代码仓库有哪些值得&quot;记住&quot;的细节，又会进行新的一轮代码仓库的探索和熟悉过程。</p>
-<p>非常明显的问题如下：</p>
-<ol>
-<li>浪费算力资源：反复探索仓库，无法在利用在<strong>历史探索过程</strong>中获得的有用的信息</li>
-<li>难以处理复杂的项目：每次都需要从头开始熟悉代码仓库，有限的探索过程导致对于仓库的理解不透彻，写出来的代码没有连贯性</li>
-</ol>
-<p>但是类似的问题并不只存在于 AI 辅助编程这个领域，大模型的&quot;7秒记忆&quot;属性在多个商业领域限制了大模型技术的落地：</p>
-<ol>
-<li>代码开发：如上，不能形成连贯的项目理解</li>
-<li>智慧教育：难以对学生形成一个连贯的指导</li>
-<li>情感陪伴：难以形成连贯的用户画像</li>
-</ol>
-<p>这些问题总结下来其实就只有一条：现有大模型做不到对于复杂事物连贯的、准确的、动态调整的理解。</p>
-<p>反观人类的表现：企业员工刚开始或许不能理解项目的核心逻辑和重要细节，但是在长时间的开发过程中会对项目代码越来越熟悉，甚至能够将自己的独特理解应用在代码开发中；人类教师能够依据自身经验逐步探索学生的特点，因材施教；你的好朋友不会忘记你昨天才分享的旅游体会，也不会忘记你的性格特点。</p>
-<p>这也是当前大模型技术难以落地的重要原因：尽管大模型吞噬了整个互联网上的文本信息，甚至还在向图像、视频等多模态信息扩张，但是对于特定工程项目中难以用文本一次性传递的信息（项目理念、技术栈选型），没有有效的&quot;经验累积&quot;途径，大模型能力再强也难以有效处理。</p>
+<p>关注到这篇论文其实就是因为其宣称的那种&quot;奇妙&quot;的涌现现象，将时序信息引入神经元模型之后产生了<strong>类似人类思维模式</strong>的注意力现象。这些现象并非人为设计的，而是在训练过程中自然产生的，这是最令人振奋的。</p>
+<p>最直观的例子就是官方给出的&quot;迷宫模型&quot;，从可视化的结果可以直观地看到，模型的注意力焦点在迷宫中游走，就像人类求解迷宫问题一样。另外官方还给出了一个可交互的展示网页：<a href="https://pub.sakana.ai/ctm/" target="_blank">Demo</a>，在这个网页中你可以直接指挥模型求解迷宫，并实时查看模型的注意力焦点。</p>
+<p>另外，官方的<a href="https://github.com/SakanaAI/continuous-thought-machines" target="_blank">代码仓库</a>中配置了详尽的说明文档和代码注释，代码文件的切分也非常简洁直观，有一种程序员才懂的&quot;艺术感&quot;。</p>
+
+  
+  
+  
+  
 
 
-<h2 class="relative group">现状分析 
-    <div id="%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90" class="anchor"></div>
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >在阅读了大量的屎山代码之后，可能才会对代码的&quot;优雅&quot;程度有所体会😇并深刻理解这份&quot;优雅&quot;背后的工作量</span>
+</div>
+
+
+
+<h2 class="relative group">引入 
+    <div id="%E5%BC%95%E5%85%A5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%8E%B0%E7%8A%B6%E5%88%86%E6%9E%90" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%BC%95%E5%85%A5" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>首先概括分析当前大模型评测的侧重点，说明当前大模型的评测侧重于孤立任务而忽视了连贯任务；然后分析当前典型的交互模式，说明当前交互模式缺乏有效而连贯的经验积累。</p>
+<p>神经网络最初受生物大脑启发，却与生物大脑差异巨大。生物大脑展现出随时间演变的复杂神经动力学过程，而现代神经网络为了便于大规模深度学习，可以摒弃了&quot;时序&quot;特征。</p>
+<p>关于为什么要开展这项研究，官方论文中已经有了非常明确的表述，无需多言：</p>
+<p>&ldquo;为何开展此项研究？诚然，现代人工智能在诸多实践领域展现出的卓越性能似乎表明，对神经动力学的模拟实无必要，抑或显式考量智能的时间维度实属反实用之举。然而，人类智能具有高度灵活性、数据高效性以及优异的未见情境外推能力，且存在于学习与适应皆与时间之箭紧密关联的开放世界中。因此，人类智能天然具备常识运用、本体论推理能力、透明性/可解释性以及强大的泛化能力——这些特质在现有人工智能中尚未得到令人信服的体现。&rdquo;</p>
+<p>这篇文章的核心技术贡献如下所示：</p>
+<ol>
+<li>解耦的内部时间维度</li>
+<li>神经元层面的模型(NLMs)</li>
+<li>神经活动同步</li>
+</ol>
+<p>当然，在没有详细看代码实现的情况下，光看这些名词是没有意义的。但是作者的思路和观点还是可以了解：</p>
+<ol>
+<li>推理模型和循环：作者锐评了当前推理模型，指出&quot;继续扩展当前模型架构&quot;这条技术路线已经被很多研究质疑。而使用循环技术也的确能够让现有模型架构产生更加良好的表现，但是作者认为，<strong>循环机制很重要，但是被循环机制解锁的神经元活动之间的精确时序与交互同样重要</strong></li>
+<li>有趣的副作用：CTM 内部的循环类似于人类的思考，在没有任何显式的监督函数引导的情况下就能够<strong>为不同难度的任务自动分配合适的计算资源</strong>，简单的任务将会提前终止计算，而复杂的任务将会进行更加深入的计算</li>
+<li><strong>信息可以被编码在时序动态中</strong>，这将赋予网络更加强大的信息压缩能力</li>
+</ol>
+
+  
+  
+  
+  
 
 
-<h3 class="relative group">大模型评测 
-    <div id="%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B" class="anchor"></div>
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >说明一下我对第三点的思考，按照&quot;压缩即智能&quot;的观点，将将信息编码到时序动态中将极大地提高网络的信息&quot;压缩率&quot;，从某种程度上来说也就提升了&quot;智能&quot;</span>
+</div>
+
+<p>最后作者也明确了自己这个研究的目的所在：</p>
+<p>&ldquo;通过CTM显式建模神经时序机制，我们旨在为开发更具生物合理性且高性能的人工智能系统开辟新路径。&rdquo;</p>
+
+
+<h2 class="relative group">方法 
+    <div id="%E6%96%B9%E6%B3%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%96%B9%E6%B3%95" aria-label="锚点">#</a>
     </span>        
     
-</h3>
-<p>大模型的基准测试实在是多而杂。最近 Qwen3 上新发布，因此这里直接偷个懒，使用 Qwen3 发布的跑分表中的基准测试来举例子。</p>
+</h2>
 <p>
     <figure>
       <img
         class="my-0 rounded-md"
         loading="lazy"
         srcset="
-        /blog/llm-memory/img/qwen3-test_hu8339653759527297104.jpg 330w,
-        /blog/llm-memory/img/qwen3-test_hu11189111266173067081.jpg 660w,
-        /blog/llm-memory/img/qwen3-test_hu4045506337221076522.jpg 1024w,
-        /blog/llm-memory/img/qwen3-test_hu6148208350420551570.jpg 2x"
-        data-zoom-src="/blog/llm-memory/img/qwen3-test_hu6148208350420551570.jpg"
-        src="/blog/llm-memory/img/qwen3-test_hu11189111266173067081.jpg"
-        alt="qwen3-test.jpg"
+        /blog/ctm-note/img/CTM_hu3059530013246572790.png 330w,
+        /blog/ctm-note/img/CTM_hu7803737405662536063.png 660w,
+        /blog/ctm-note/img/CTM_hu13995453399694117306.png 1024w,
+        /blog/ctm-note/img/CTM_hu1437703465460745877.png 2x"
+        data-zoom-src="/blog/ctm-note/img/CTM_hu1437703465460745877.png"
+        src="/blog/ctm-note/img/CTM_hu7803737405662536063.png"
+        alt="CTM.png"
       />
       
     </figure>
 </p>
-
-
-<h4 class="relative group">ArenaHard 
-    <div id="arenahard" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#arenahard" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>官方 Github 链接：<a href="https://github.com/lmarena/arena-hard-auto" target="_blank">ArenaHard</a>；在线 demo：<a href="https://huggingface.co/spaces/lmarena-ai/arena-hard-viewer" target="_blank">Arena-Hard-Auto Benchmark Viewer</a></p>
-<p>ArenaHard 是一种基于模型间对战来进行评分的基准测试。测试集基于大模型竞技场（Chatbot Arena）收集的 20 万个真实用户查询，从中筛选出 500 个高质量提示词作为测试集。</p>
-<p>将测试集中的每一个测试都发送给待测模型，获取相应的回复结果，基准模型（GPT‑4‑0314）的生成结果官方已经预先生成。然后使用另外的大模型作为裁判，对这两个模型的回复进行评判。最后收集到模型的对战胜负表做进一步的数据处理，然后就可以计算出一个上限为 100 的分数。这个分数意味着&quot;在 500 条高难指令上，裁判模型预计你能打败 GPT‑4‑0314 的概率&quot;</p>
-<p>该基准测试已经发布了 2.0 版本，难度较之前大幅提升，在难提示词和风格控制测试中最新的跑分结果如下（截至 2025-05-03）：</p>
-<pre tabindex="0"><code>                                      Model  Scores (%)         CI (%)
-0                             o3-2025-04-16        85.9  (-0.8 / +0.9)
-1                   o4-mini-2025-04-16-high        79.1  (-1.4 / +1.2)
-2                                gemini-2.5        79.0  (-2.1 / +1.8)
-3                        o4-mini-2025-04-16        74.6  (-1.8 / +1.6)
-4                          gemini-2.5-flash        68.6  (-1.6 / +1.6)
-5                   o3-mini-2025-01-31-high        66.1  (-1.5 / +2.1)
-6                        o1-2024-12-17-high        61.0  (-2.0 / +2.1)
-7   claude-3-7-sonnet-20250219-thinking-16k        59.8  (-2.0 / +1.8)
-8                           Qwen3-235B-A22B        58.4  (-1.9 / +2.1)
-9                               deepseek-r1        58.0  (-2.2 / +2.0)
-10                            o1-2024-12-17        55.9  (-2.2 / +1.8)
-11                          gpt-4.5-preview        50.0  (-1.9 / +2.0)
-12                       o3-mini-2025-01-31        50.0  (-0.0 / +0.0)
-13                                  gpt-4.1        50.0  (-1.9 / +1.7)
-14                             gpt-4.1-mini        46.9  (-2.4 / +2.1)
-15                                Qwen3-32B        44.5  (-2.2 / +2.1)
-16                                  QwQ-32B        43.5  (-2.5 / +2.1)
-17                            Qwen3-30B-A3B        33.9  (-1.6 / +1.5)
-18               claude-3-5-sonnet-20241022        33.0  (-2.3 / +1.8)
-19                                 s1.1-32B        22.3  (-1.7 / +1.5)
-20           llama4-maverick-instruct-basic        17.2  (-1.5 / +1.2)
-21                           Athene-V2-Chat        16.4  (-1.4 / +1.4)
-22                           gemma-3-27b-it        15.0  (-1.4 / +1.0)
-23                                 Qwen3-4B        15.0  (-1.1 / +1.5)
-24                             gpt-4.1-nano        13.7  (-1.1 / +1.0)
-25       Llama-3.1-Nemotron-70B-Instruct-HF        10.3  (-0.8 / +1.0)
-26                     Qwen2.5-72B-Instruct        10.1  (-0.9 / +1.3)
-27                         OpenThinker2-32B         3.2  (-0.3 / +0.3)
-</code></pre><p>从上面的介绍中就可以看出：ArenaHard 只测试了模型解决孤立问题的能力。</p>
-
-
-<h4 class="relative group">AIME 
-    <div id="aime" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#aime" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>AIME 即美国数学邀请赛，严格意义上来说不算是专门的大模型基准测试，但确实能够反映模型的数学推理能力。</p>
-<p>整个比赛包含 15 道题，答案都是数值，没有步骤分。最终得出的跑分结果也就是正确率，可能会有多次测试取平均值或者最高值，但并没有统一的标准。</p>
-<p>很明显，AIME 也只测试了大模型一次性解决孤立问题的能力。</p>
-
-
-<h3 class="relative group">典型交互模式 
-    <div id="%E5%85%B8%E5%9E%8B%E4%BA%A4%E4%BA%92%E6%A8%A1%E5%BC%8F" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%85%B8%E5%9E%8B%E4%BA%A4%E4%BA%92%E6%A8%A1%E5%BC%8F" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>现在的大模型有记忆能力吗？有，但只是短期记忆。目前人类与大模型的交互方式概括如下：</p>
-<ol>
-<li>人类提供任务的背景信息</li>
-<li>大模型依据背景信息尝试完成这个任务</li>
-<li>大模型在执行任务的过程中不断与人类进行交互（短期记忆）</li>
-<li>模型完成任务</li>
-</ol>
-<p>所谓&quot;短期&quot;记忆就体现在&quot;短&quot;：最长不超过大模型的上下文窗口的长度。而具体的实现方法就是：直接把用户和模型的交互历史全部放入窗口之中。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >尽管现有大模型的上下文窗口越来越长，甚至能够达到 200 万 token 的上下文（1.5 部红楼梦），但是这并不意味着我们能把所有的交互信息都塞进窗口之中还期望模型能够低成本、高准确地生成内容😢</span>
-</div>
-
-
-
-<h3 class="relative group">小结 
-    <div id="%E5%B0%8F%E7%BB%93" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%B0%8F%E7%BB%93" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>目前的评测重点和交互模式对于孤立的任务非常适用，但是事实上我们需要完成的任务都是在一个大目标框架下的&quot;子任务&quot;，这些&quot;子任务&quot;之间彼此关联，相互牵制。</p>
-<p>一个有趣的现象是：当我们尝试去解决其中一个子任务后，解决其他的任务会更加轻松。原因就是：在探索如何解决别的子任务的时候，有部分探索结果对于解决别的子任务有增益，因为这些子任务都归属于同一个目标。</p>
-<p>因此现在改进的方向也很明确了：为大模型引入一个在线学习的长期记忆模块，使大模型能够从历史探索中积累经验。</p>
-
-
-<h2 class="relative group">相关工作 
-    <div id="%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">Titans 
-    <div id="titans" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#titans" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://arxiv.org/abs/2501.00663v1" target="_blank">Titans</a> 架构是谷歌最新推出的对于 Transformer 架构的改进架构，提出了&quot;Test-time Memory&quot;的概念，旨在扩展模型的上下文长度的同时提供更加准确的注意力机制。引入了一个能够在测试时动态更新的参数网络，能够将长期的记忆信息保存其中，提升注意力机制的性能。</p>
-
-
-<h3 class="relative group">KBLaM 
-    <div id="kblam" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#kblam" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://github.com/microsoft/KBLaM" target="_blank">KBLaM</a></p>
-
-
-<h3 class="relative group">TTRL 
-    <div id="ttrl" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ttrl" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://arxiv.org/abs/2504.16084" target="_blank">TTRL</a> 算法能够在测试时利用强化学习来更新模型的权重参数，实现了模型参数的实时动态更新</p>
-
-
-<h3 class="relative group">rStar 
-    <div id="rstar" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#rstar" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://arxiv.org/abs/2408.06195v1" target="_blank">rStar</a> 使用 MCTS 来探索生成高质量推理路径的框架。有别于需要一个强模型作为指导的模型蒸馏方法，该框架借鉴了同伴之间相互验证学习的方法，利用投票机制获得一个模拟的&quot;正确答案&quot;来指导生成高质量路径。</p>
-
-
-<h3 class="relative group">Tokenformer 
-    <div id="tokenformer" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#tokenformer" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://arxiv.org/abs/2410.23168" target="_blank">Tokenformer</a> 框架秉持着&quot;万物皆可tokenize&quot;的理念，</p>
-
-
-<h3 class="relative group">SD-LoRA 
-    <div id="sd-lora" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#sd-lora" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://openreview.net/forum?id=5U1rlpX68A" target="_blank">SD-LoRA</a></p>
-
-
-<h3 class="relative group">Differential Transformer 
-    <div id="differential-transformer" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#differential-transformer" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://arxiv.org/abs/2410.05258" target="_blank">Differential Transformer</a> 改进了传统 Transformer 架构中的注意力机制，提出了&quot;差分注意力机制&quot;的概念。与传统的softmax注意力不同，Diff Transformer 将查询（query）和键（key）向量分为两组，分别计算两个独立的softmax注意力图，然后通过减法操作消除噪音。这一机制类似于电子工程中的<strong>差分放大器</strong>，通过两个信号的差值来消除共模噪音。</p>
-
-
-<h2 class="relative group">思路梳理 
-    <div id="%E6%80%9D%E8%B7%AF%E6%A2%B3%E7%90%86" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%80%9D%E8%B7%AF%E6%A2%B3%E7%90%86" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">大模型记忆 
-    <div id="%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BF%86" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%AE%B0%E5%BF%86" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>当我们断网本地运行一个大模型时，我们向其提问：相对论是谁提出的？它能够告诉我们：相对论是爱因斯坦提出的。这其实就说明了在模型的参数中已经存储了相关的事实信息，也就是所谓的&quot;记忆&quot;。</p>
-<p>那么这部分主要回答：Transformer 的记忆存储在哪里？</p>
-
-
-<h4 class="relative group">解构Transformer 
-    <div id="%E8%A7%A3%E6%9E%84transformer" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E6%9E%84transformer" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>对于 Transformer 的可解释性研究一直都在进行之中，本文根据 DeepMind 的<a href="https://www.alignmentforum.org/s/hpWHhjvjn67LJ4xXX" target="_blank">相关研究</a>和 Anthropic 的<a href="https://transformer-circuits.pub/" target="_blank">相关研究</a>来对 Transformer 的结构进行解读。</p>
-<p>概括来讲：整个过程中的残差连接被视作一个&quot;数据总线&quot;，贯穿整个模型的计算过程；将 Attention Layer 和 MLP Layer 视作信息的读写头，在数据总线上进行数据的读写。</p>
-
-
-<h5 class="relative group"><strong>Embedding</strong> 
-    <div id="embedding" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#embedding" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>Embedding 过程是 Transformer 处理流程的第一步：</p>
-<ol>
-<li>Tokenize：对文本进行词元化处理</li>
-<li>Embedding：将词元转化为向量并写入位置编码</li>
-</ol>
-<p>这一步直观来讲就是：把一句话变成了一簇向量。在这个过程利用了嵌入矩阵将词元转化为了合理的数值向量。也就是说嵌入矩阵中就存储了一些事实信息，包括不同实体之间的关系、不同词元之间的差距等等，但是这些信息是建立在大量文本之上的平均值，无法表示动态的语义。</p>
-<p>举个经典的例子：&ldquo;bank&quot;一词既有&quot;河岸&quot;的意思，又有&quot;银行&quot;的意思，但是嵌入矩阵描述的是这两个意思的某种&quot;平均值&rdquo;。</p>
-
-
-<h5 class="relative group"><strong>Multi-head Attention</strong> 
-    <div id="multi-head-attention" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#multi-head-attention" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>正如上文所说，单纯的嵌入矩阵无法描述基于上下文的、动态的语义，因此多头注意力机制被引入，用于构建更加精确的词向量。</p>
-<p>一个形象的描述就是：通过 Embedding 之后产生了一簇向量，而这些向量之间会相互影响，而多头注意力层中的参数就建模了这种复杂的相互影响。按照电路的解释框架，也就是说 Attention Layer 计算出了这一簇向量之间的&quot;相互影响增量&quot;，然后将这个增量写回&quot;数据总线&quot;之中。</p>
-
-
-<h5 class="relative group"><strong>MLP</strong> 
-    <div id="mlp" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#mlp" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>DeepMind 的研究表明，事实性的信息大部分都存储在 MLP 层中。在这里将 MLP 层中的操作分解为两个步骤：</p>
-<ol>
-<li>事实匹配</li>
-<li>计算需要注入的事实</li>
-</ol>
-<p>经过多头注意力处理的向量都偏移到了当前语境中的正确位置，这些向量中已经包含了大量叠加在一起的复杂信息（大量明确的语义通过加法融合在了一个向量之中）。而扩展矩阵的作用就类似于一个检查表：每一行都是一个检查项目（这些项目的具体含义同样是高度叠加的），检查项目和词向量通过点积得到&quot;匹配分数&quot;，然后通过非线性截断函数（ReLU）剔除不相关的匹配。这一步就是&quot;事实匹配&quot;过程。</p>
-<p>例如，使用扩展矩阵去检测&quot;相对论&quot;这个词元时，某一行可能会同时检测：&ldquo;是否是一个学术概念+是否是球类运动+是否是星系名称&rdquo;。检测结果可能是相关的，也可能是不相关的，但最后都会线性叠加在一起。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >为什么可以叠加？因为向量点乘的分配律：&ldquo;先叠加再匹配&quot;和&quot;先匹配再叠加&quot;是等价的</span>
-</div>
-
-<p>然后投影矩阵则充当了&quot;计算事实增量&quot;的作用：根据匹配分数，计算原本的词向量中到底需要添加哪些事实信息，把所有需要添加的事实信息都加在一起，表示为一个事实增量向量。</p>
-<p>然后 MLP 层将&quot;事实增量向量&quot;写回残差流之中。</p>
-
-
-<h5 class="relative group"><strong>堆叠</strong> 
-    <div id="%E5%A0%86%E5%8F%A0" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%A0%86%E5%8F%A0" aria-label="锚点">#</a>
-    </span>        
-    
-</h5>
-<p>Transformer 通过将上述结构进行反复堆叠，更深入的层提取的信息也就更加复杂而难以理解。</p>
-<p>需要注意的是：事实信息的注入并非发生在单独某一层的 MLP 中，甚至不单独发生在某一个 Transformer Block 之中，而是在整个网络之中不断迭代，逐步产生更加清晰明确的影响。</p>
-<p>这种复杂的事实信息注入机制给可解释工作带来了不小的困难，也让人们难以精确控制大模型内部的信息流动。但是这个过程恰恰体现了将事实信息存储在神经网络之中的优势：对于某个复杂的信息，最开始这个信息能够关联大量而模糊的其他信息，然后在每层网络计算之中逐步精确，最后收敛到真正高度相关的信息。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >这也是 Attention Layer 和 MLP Layer 交替出现的一个理由：事实信息在 MLP Layer 注入之后马上使用 Attention Layer 来进行裁切，去掉较弱的关联，放大较强的关联，避免大量冗杂信息传递到下一个 MLP Layer 中激发更加混乱的关联</span>
-</div>
-
-
-
-<h4 class="relative group">时间编码 
-    <div id="%E6%97%B6%E9%97%B4%E7%BC%96%E7%A0%81" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%97%B6%E9%97%B4%E7%BC%96%E7%A0%81" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>Transformer 本身无法感知词元之间的顺序，真正表征词元之间位置循序的工作其实是&quot;位置嵌入&quot;。目前为了更加高效地将位置信息嵌入词元之中，产生了多种不同的方法：</p>
-<ol>
-<li>正余弦嵌入：在 Transformer 原论文中就已经出现，是一种绝对位置编码，直接将 PE 信息叠加到原始词向量之中</li>
-<li>向量旋转嵌入：直接替换 Q、K 矩阵，把每维 Q、K 拆成偶数维对，在复平面做角度旋转</li>
-<li>可学习的位置嵌入：类似正余弦嵌入，也是一种绝对位置编码，直接利用反向传播训练</li>
-</ol>
-<p>类似地，为了适应流式的信息输入，我们也应该对信息的获取时间进行编码：十年前互联网上的信息和现在互联网上的信息应该有区别才对。并且在这个过程中，大模型还能像学习&quot;词元的顺序&quot;一样，隐式地学习&quot;信息的先后&quot;，让大模型隐式地理解&quot;时间&quot;这个概念。</p>
-<p>合适的时间编码应该有如下的特点：</p>
-<ol>
-<li>时间跨度越大，差距应该越大</li>
-<li>应该保留时间的周期性信息</li>
-</ol>
-
-
-<h4 class="relative group">事实注入 
-    <div id="%E4%BA%8B%E5%AE%9E%E6%B3%A8%E5%85%A5" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BA%8B%E5%AE%9E%E6%B3%A8%E5%85%A5" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>上面的文字已经描述了事实性的信息是如何以模型参数的方式参与 token 的生成。然而这些信息是如何存储到参数之中的？简单来说就是利用反向传播算法调整参数，但如果我们继续追问：</p>
-<ol>
-<li>存储某一个事实信息需要什么样的训练样本？需要多少训练样本？</li>
-<li>已经存储进去的信息如何&quot;接纳&quot;新的信息？</li>
-<li>事实信息的存储过程是否与整个网络的训练过程不可分割？</li>
-</ol>
-<p>如果知道了上述问题的答案，那么就可以构建一个能够持续吸收事实信息的框架：只需要持续不断输入指定格式的训练样本然后实时执行反向传播即可。</p>
-
-
-<h3 class="relative group">现有方法 
-    <div id="%E7%8E%B0%E6%9C%89%E6%96%B9%E6%B3%95" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%8E%B0%E6%9C%89%E6%96%B9%E6%B3%95" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>这部分主要回答：现在实现&quot;长期记忆&quot;有哪些途径？各自有什么优缺点？</p>
-
-
-<h4 class="relative group">RAG 
-    <div id="rag" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#rag" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>RAG 原本是用于缓解大模型幻觉的技术，但其实质就是利用外部的信息处理模块（向量数据库），将有用的自然语言信息直接加入提示词中。</p>
-<p>遵循这个思路，不仅能够缓解大模型幻觉，还能够直接让模型能够完成某些特定的工作（提示词工程），当前大量的 AI 应用也都是这样实现的：</p>
-<ol>
-<li>cursor：自动添加代码仓库的背景信息和种类繁多的工具，然后依靠模型自身的能力来完成复杂的代码编写工作</li>
-<li>Manus：提供了更加复杂的信息处理工具，利用大模型自身的超长上下文来记录所有收集到的信息来完成任务</li>
-<li>MCP：虽然只是一个工具调用协议，但是其底层还是一个提示词工程</li>
-</ol>
-<p>&ldquo;使用 RAG 来实现长期记忆&quot;这个方向已经产生了不少可观的成果：</p>
-<ol>
-<li><a href="https://github.com/mem0ai/mem0" target="_blank">mem0</a>：基于向量数据库的大模型记忆系统，让大模型能够从对话中记住用户的偏好</li>
-<li><a href="https://github.com/getzep/graphiti" target="_blank">graphiti</a>：基于向量化的图数据库的记忆系统，为大模型构建实时的知识图谱，能够存储大量过去的事实性信息并准确提取出相关记忆</li>
-<li><a href="https://github.com/memodb-io/memobase" target="_blank">memobase</a>：基于文件存储同时结合向量数据库的记忆系统，将用户的偏好等信息写入用户画像文件中并不断更新</li>
-</ol>
-<p>这种方式的优点非常明显：</p>
-<ol>
-<li>简单便捷：人类自身非常熟悉自然语言，因此使用自然语言驱动程序运行相对而言也非常容易理解</li>
-<li>信息可控：通过显示编程的方式将信息整合成一个超长但是逻辑严密的提示词，能够方便地控制复杂信息。</li>
-<li>大模型技术的应用：大模型本身就是顶尖的语言处理技术，能够参与到背景信息组织的各个环节，提升复杂信息的处理能力</li>
-</ol>
-<p>使用 RAG 的缺点也是存在的：</p>
-<ol>
-<li>上下文窗口限制：大模型的注意力层只能支持有限的上下文，过长的上下文将会自动截断</li>
-<li>注意力发散：在上下文窗口中填入过多的信息将会导致模型的注意力机制性能下降，难以捕捉真正重要的信息</li>
-<li>表达能力受限：过于复杂的信息难以使用自然语言表达，即便强行表达也会缺失关键信息，导致大模型出现理解偏差，例如，一个复杂的软件项目的开发理念，如果不在实践过程中加以体会，使用自然语言描述出来的理念就是一堆空话</li>
-<li>记忆维护困难：即便拥有大模型技术的加持，记忆的更新维护和提取仍然是一个棘手的问题，响应速度、准确率和成本的平衡难以把控</li>
-</ol>
-
-
-<h4 class="relative group">微调 
-    <div id="%E5%BE%AE%E8%B0%83" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%BE%AE%E8%B0%83" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>需要去看看微调方面的论文，特别是&quot;高效微调&quot;方面的文章，看看能不能增强其在线学习能力🤔如果可能的话还需要去看看增量学习方面的文章。</p>
-<p>暂时先鸽了😢还要复习期末考试</p>
-
-
-<h4 class="relative group">网络参数 
-    <div id="%E7%BD%91%E7%BB%9C%E5%8F%82%E6%95%B0" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%BD%91%E7%BB%9C%E5%8F%82%E6%95%B0" aria-label="锚点">#</a>
-    </span>        
-    
-</h4>
-<p>这方面的工作目前非常稀少，尽管 OpenAI 最新推出了记忆功能，但并没有透露具体的实现方法，网上的讨论度也不高。这里主要概括一下 Titans 架构的实现方法。</p>
-
-
-<h2 class="relative group">早期想法 
-    <div id="%E6%97%A9%E6%9C%9F%E6%83%B3%E6%B3%95" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%97%A9%E6%9C%9F%E6%83%B3%E6%B3%95" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>这里写目前的想法，都是一些非常早期的想法。</p>
-<p>思考一个问题：大模型的能力是从何而来的？来源于海量的互联网文本。</p>
-<p>大模型在海量的文本上训练，利用反向传播算法将文本之间的相互影响和事实信息全部都压缩到了神经网络的参数之中，对语言建模的同时也完成了对于语言所代表的抽象概念的建模。当然这个过程非常的缓慢，需要大量的算力支撑。</p>
-<p>完成如此大量的知识压缩之后，如何处理新的信息？这是一个尚待解决的问题，但并非一个不可解决的问题：人类自身的知识就是由少到多逐步积累而成的，人脑必须处理并存储不断输入的新信息，将新信息与旧有信息进行融合。</p>
-
-
-<h2 class="relative group">引用 
-    <div id="%E5%BC%95%E7%94%A8" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%BC%95%E7%94%A8" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<ul>
-<li><a href="https://blog.csdn.net/weixin_57291105/article/details/138132998" target="_blank">Arena-Hard：开源高质量大模型评估基准</a></li>
-<li><a href="https://arxiv.org/abs/2501.00663v1" target="_blank">Titans</a></li>
-<li><a href="https://github.com/microsoft/KBLaM" target="_blank">KBLaM</a></li>
-<li><a href="https://arxiv.org/abs/2504.16084" target="_blank">TTRL</a></li>
-<li><a href="https://arxiv.org/abs/2408.06195v1" target="_blank">rStar</a></li>
-<li><a href="https://arxiv.org/abs/2410.23168" target="_blank">Tokenformer</a></li>
-<li><a href="https://openreview.net/forum?id=5U1rlpX68A" target="_blank">SD-LoRA</a></li>
-<li><a href="https://arxiv.org/abs/2410.05258" target="_blank">Differential Transformer</a></li>
-<li><a href="https://transformer-circuits.pub/2021/framework/index.html" target="_blank">A Mathematical Framework for Transformer Circuits</a></li>
-<li><a href="https://www.bilibili.com/video/BV1TZ421j7Ke/?spm_id_from=333.1387.collection.video_card.click&amp;vd_source=38d0addc11facdcdfe9d401e43b75680" target="_blank">直观解释注意力机制，Transformer的核心</a></li>
-<li><a href="https://www.alignmentforum.org/posts/iGuwZTHWb6DFY3sKB/fact-finding-attempting-to-reverse-engineer-factual-recall" target="_blank">Fact Finding: Attempting to Reverse-Engineer Factual Recall on the Neuron Level (Post 1)</a></li>
-<li><a href="https://www.alignmentforum.org/posts/3tqJ65kuTkBh8wrRH/fact-finding-simplifying-the-circuit-post-2" target="_blank">Fact Finding: Simplifying the Circuit (Post 2)</a></li>
-<li><a href="https://www.bilibili.com/video/BV1aTxMehEjK?spm_id_from=333.788.recommend_more_video.-1&amp;vd_source=38d0addc11facdcdfe9d401e43b75680" target="_blank">直观解释大语言模型如何储存事实</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/15784962358" target="_blank">Diff Transformer：让注意力机制更智能，消除噪音，提升大语言模型性能-知乎</a></li>
-<li></li>
-</ul>
 
           
           
@@ -2126,15 +1469,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        AI遐想 - 这篇文章属于一个选集。
+        论文笔记 - 这篇文章属于一个选集。
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="/blog/moravecs-paradox/">
-            § 1: 关于莫拉维克悖论的思考
+        <a href="/blog/rstar-note/">
+            § 1: rStar读文笔记
         </a>
     </div>
     
@@ -2158,7 +1501,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/llm-memory/&amp;title=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/ctm-note/&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -2177,7 +1520,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/llm-memory/&amp;text=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/ctm-note/&amp;text=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -2195,7 +1538,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86&#43;https://morethan987.github.io/blog/llm-memory/"
+      href="https://bsky.app/intent/compose?text=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0&#43;https://morethan987.github.io/blog/ctm-note/"
       title=""
       aria-label=""
       >
@@ -2213,7 +1556,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/llm-memory/&amp;resubmit=true&amp;title=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/ctm-note/&amp;resubmit=true&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -2232,7 +1575,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/llm-memory/&amp;resubmit=true&amp;title=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/ctm-note/&amp;resubmit=true&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title=""
       aria-label=""
       >
@@ -2251,7 +1594,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://morethan987.github.io/blog/llm-memory/&amp;resubmit=true&amp;title=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://t.me/share/url?url=https://morethan987.github.io/blog/ctm-note/&amp;resubmit=true&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title=""
       aria-label=""
       >
@@ -2270,7 +1613,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/llm-memory/&amp;description=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/ctm-note/&amp;description=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title="钉到 Pinterest"
       aria-label="钉到 Pinterest"
       >
@@ -2289,7 +1632,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/llm-memory/&amp;quote=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/ctm-note/&amp;quote=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -2308,7 +1651,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://morethan987.github.io/blog/llm-memory/&amp;subject=%e5%85%b3%e4%ba%8e%e5%a4%a7%e6%a8%a1%e5%9e%8b%e8%ae%b0%e5%bf%86"
+      href="mailto:?body=https://morethan987.github.io/blog/ctm-note/&amp;subject=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -2334,27 +1677,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
 
-  <a href="/blog/llm-app-driven-fullstack-dev/" class="min-w-full">
+  <a href="/blog/rstar-note/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/llm-app-driven-fullstack-dev/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/rstar-note/featured.svg);"></div>
         
-      
-      <span class="absolute top-0 right-0 m-2">
-        <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    草稿
-  </span>
-</span>
-      </span>
       
 
       <div class="px-6 py-4">
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/llm-app-driven-fullstack-dev/">LLM应用驱动的独立全栈开发指南</div>
+          href="/blog/rstar-note/">rStar读文笔记</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2399,7 +1734,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-04T00:00:00&#43;00:00">2025-03-04</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-20T00:00:00&#43;00:00">2025-03-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2415,7 +1750,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/llm-app-driven-fullstack-dev/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/rstar-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2440,7 +1775,221 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/llm-app-driven-fullstack-dev/index.md"
+  <span id="likes_blog/rstar-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E8%AE%BA%E6%96%87/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    论文
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mcts/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MCTS
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8E%A8%E7%90%86%E5%A2%9E%E5%BC%BA/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    推理增强
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/blog/llm-memory/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/llm-memory/featured.svg);"></div>
+        
+      
+      <span class="absolute top-0 right-0 m-2">
+        <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+      </span>
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/blog/llm-memory/">关于大模型记忆</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-08T00:00:00&#43;00:00">更新于: 2025-05-08</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/llm-memory/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/llm-memory/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -2501,10 +2050,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    全栈开发
+    博客
   </span>
 </span>
   </span>
@@ -2530,11 +2079,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
 
-  <a href="/blog/note-to-blog-report/" class="min-w-full">
+  <a href="/blog/ubuntu-note/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/note-to-blog-report/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/ubuntu-note/featured.svg);"></div>
         
       
 
@@ -2542,7 +2091,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/note-to-blog-report/">笔记转博客项目分析报告</div>
+          href="/blog/ubuntu-note/">Ubuntu折腾札记</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2589,7 +2138,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-10T00:00:00&#43;00:00">2025-01-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-01-21T00:00:00&#43;00:00">更新于: 2025-01-21</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-13T00:00:00&#43;00:00">更新于: 2025-05-13</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2605,7 +2154,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/note-to-blog-report/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/ubuntu-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2630,7 +2179,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/note-to-blog-report/index.md"
+  <span id="likes_blog/ubuntu-note/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -2683,214 +2232,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hugo/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ubuntu/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Hugo
+    Ubuntu
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/linux/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    博客
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8A%A5%E5%91%8A/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    报告
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/blog/hugo-blog/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/hugo-blog/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/hugo-blog/">Hugo博客搭建</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-01-07T00:00:00&#43;00:00">2025-01-07</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/hugo-blog/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/hugo-blog/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hugo/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Hugo
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    博客
+    Linux
   </span>
 </span>
   </span>
@@ -2926,12 +2279,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
           
         
-          
-          
-        
       <script>
-        var oid = "views_blog\/llm-memory\/index.md"
-        var oid_likes = "likes_blog\/llm-memory\/index.md"
+        var oid = "views_blog\/ctm-note\/index.md"
+        var oid_likes = "likes_blog\/ctm-note\/index.md"
       </script>
       
       
@@ -2951,7 +2301,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/blog/ubuntu-note/">
+            <a class="flex group mr-3" href="/blog/llm-memory/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -2963,11 +2313,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Ubuntu折腾札记</span
+                  >关于大模型记忆</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time>
+                    <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time>
                   
                 </span>
               </span>
@@ -2975,28 +2325,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/blog/ctm-note/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >CTM读文笔记</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
