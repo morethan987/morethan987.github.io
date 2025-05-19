@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1883"
+    "wordCount": "2086"
   }]
   </script>
 
@@ -949,7 +949,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-13T00:00:00&#43;00:00">Updated: 13 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-13T00:00:00&#43;00:00">Updated: 13 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1264,6 +1264,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#snap">Snap</a></li>
         <li><a href="#apt">apt</a></li>
         <li><a href="#deb">deb</a></li>
+        <li><a href="#appimage">AppImage</a></li>
         <li><a href="#curl">curl</a></li>
       </ul>
     </li>
@@ -1305,6 +1306,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#snap">Snap</a></li>
         <li><a href="#apt">apt</a></li>
         <li><a href="#deb">deb</a></li>
+        <li><a href="#appimage">AppImage</a></li>
         <li><a href="#curl">curl</a></li>
       </ul>
     </li>
@@ -1800,6 +1802,66 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># Uninstall via apt  </span>
 </span></span><span class="line"><span class="cl">sudo apt remove xxx  
 </span></span><span class="line"><span class="cl">sudo apt autoremove <span class="c1"># Clean up residuals  </span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">AppImage 
+    <div id="appimage" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#appimage" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>AppImage</strong> is a portable software packaging format for Linux systems, designed to simplify application distribution and execution. Its core philosophy is &ldquo;one app = one file,&rdquo; allowing users to run applications directly without installation or administrator privileges.</p>
+<p>In newer versions of Ubuntu, attempting to run the file directly may result in an error. To resolve this, you need to install <code>libfuse2</code> using the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install libfuse2
+</span></span></code></pre></div><p>After installation, you can simply double-click the package to launch the application 😃.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #e63946"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #ffffff"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor"  d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #ffffff"
+    ><strong>Never install fuse directly</strong>, as this will automatically uninstall fuse3, causing the file system in newer Ubuntu versions to crash! If you accidentally install it, remove fuse and check the apt operation log to manually reinstall any automatically removed packages.</span>
+</div>
+
+<p>If you want to uninstall the software, it’s very straightforward: just delete the package. However, if you’re a perfectionist like me, you can check the following directories to completely clean up any residual files:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls ~/.config -a <span class="c1"># Check configuration files</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls ~/.local/share -a <span class="c1"># Check shared configuration files</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls ~/.cache -a <span class="c1"># Check cache</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Check disk usage of folders under .cache</span>
+</span></span><span class="line"><span class="cl">du -sh ~/.cache/* <span class="p">|</span> sort -h -r
 </span></span></code></pre></div>
 
 <h3 class="relative group">curl 
