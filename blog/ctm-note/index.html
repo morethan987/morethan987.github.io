@@ -113,7 +113,7 @@
     "keywords": ["论文","笔记","架构"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2337"
+    "wordCount": "2658"
   }]
   </script>
 
@@ -1008,7 +1008,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">更新于: 2025-05-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">5 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">更新于: 2025-05-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1660,10 +1660,13 @@ $$</p>
   <span
     
       style="color: #E0E7FF"
-    >Transformer 中其实并没有非常明显的顺序处理：每一个时间步注意力机制都会并行处理原来所有的 token🤔或许这也是其强大所在？</span>
+    >Transformer 本身是&quot;无序&quot;的：每一个时间步注意力机制都会并行处理原来所有的 token 或许这也是其强大所在🤔真正和输入数据顺序相关的步骤在于&quot;位置嵌入&quot;</span>
 </div>
 
-<p>而 CTM 则完全解耦了这种关联，让内部的处理与输入数据无关。不只是顺序无关，还与输入序列的长度无关。这种&quot;解耦&quot;使得模型内部的&quot;思考&quot;可以有任意长度，可以迭代地构建和完善内部表征，并且可以扩展到&quot;非序列化&quot;的任务上，例如求解迷宫问题。</p>
+<p>而 CTM 则完全解耦了这种关联，让内部的处理与输入数据无关。不只是顺序无关，还与输入序列的长度无关，这也可能是作者更想强调的🤔</p>
+<p>这种&quot;解耦&quot;使得模型内部的&quot;思考&quot;可以有任意长度，可以迭代地构建和完善内部表征，并且可以扩展到&quot;非序列化&quot;的任务上，例如求解迷宫问题。</p>
+<p>其实目前 CoT 那一系列的技术可以理解为在做&quot;解耦&quot;的工作：数据输入已经摆在那里了，直接生成答案效果不太行，那就多产生一些<strong>长度不受数据序列影响的</strong>中间 token 也就是所谓的思考过程。但发现在非常简单的问题中模型想太多结果也不太好，怎么办呢？Anthropic 就把&quot;思考多少合适&quot;这个问题丢给了模型使用者，这从工程上也不失为一个明智之举。但 CTM 貌似有望解决这个问题😃其貌似从底层架构上解耦了数据序列与内部时间维度的关系🤔</p>
+<p>如果你想对当前的 CoT 技术有一个更加深入而全面的了解，可以去看看 <a href="https://lilianweng.github.io/posts/2025-05-01-thinking/" target="_blank">Why we think - Lil&rsquo;log</a> 里面有更加学术化的严谨表达，但又非常容易理解。</p>
 
 
 <h3 class="relative group">循环权重：突触模型 
