@@ -3,12 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://morethan987.github.io/blog/test1/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://morethan987.github.io/blog/ctm-note/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -677,18 +671,6 @@
   <url>
     <loc>https://morethan987.github.io/series/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/tags/test/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/series/test/</loc>
-    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>
