@@ -114,7 +114,7 @@
     "keywords": ["论文","笔记","MCTS","推理增强"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1825"
+    "wordCount": "1824"
   }]
   </script>
 
@@ -1794,19 +1794,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>把“小模型解决推理问题”这个抽象的自然语言描述的过程形式化：</p>
-<p>$$
-t=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_d
-$$</p>
-<p>$$
-T=\left \{ t^1, t^2, &hellip;, t^n \right \}
-$$</p>
-<p>$$
+$$
+t=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_d
+$$$$
+T=\left \{ t^1, t^2, ..., t^n \right \}
+$$$$
 T_{validate}=Estimate(T)
-$$</p>
-<p>$$
+$$$$
 ans = max(Score(T_{validate}))
-$$</p>
-
+$$
 
 <h3 class="relative group">拟人推理 
     <div id="%E6%8B%9F%E4%BA%BA%E6%8E%A8%E7%90%86-1" class="anchor"></div>
@@ -1905,10 +1901,9 @@ $$</p>
 </h4>
 <p>大体上使用了经典的 MCTS：选择、扩展、模拟(Rollout)和反向传播；只是为了获取更加精确的奖励值，执行了多次模拟评估</p>
 <p>探索-开发平衡依然使用经典 UCT 公式：</p>
-<p>$$
+$$
 UCT(s,a) = \frac{Q(s,a)}{N(s,a)}+c\sqrt{ \frac{\ln N_{parent}(s)}{N(s,a)} }
-$$</p>
-<p>其中 \(N(s,a)\) 表示某个节点被访问过的次数，\(Q(s,a)\) 就是可以被累计更新的奖励值，\(c\) 表示平衡率</p>
+$$<p>其中 \(N(s,a)\) 表示某个节点被访问过的次数，\(Q(s,a)\) 就是可以被累计更新的奖励值，\(c\) 表示平衡率</p>
 
 
 <h3 class="relative group">路径评估 
@@ -1922,10 +1917,10 @@ $$</p>
     
 </h3>
 <ol>
-<li>对于一条推理路径 \(t=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_d\)，随机抽取一个推理步 \(s_{i}\)</li>
-<li>将 \(s_{i}\) 之前的推理路径 \(t_{1}=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_i\) 作为提示词注入&quot;同伴&quot;小模型 \(\hat{M}\)</li>
-<li>\(\hat{M}\) 补全路径，产生新路径 \(t&rsquo;=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_i \oplus s_{i+1}&rsquo; \oplus \dots \oplus s_{d}&rsquo;\)</li>
-<li>如果&quot;路径一致&quot;也就是得出的问题答案一致，那么 \(t&rsquo;\) 就被视作候选路径</li>
+<li>对于一条推理路径 \(t=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_d\)，随机抽取一个推理步 \(s_{i}\)</li>
+<li>将 \(s_{i}\) 之前的推理路径 \(t_{1}=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_i\) 作为提示词注入&quot;同伴&quot;小模型 \(\hat{M}\)</li>
+<li>\(\hat{M}\) 补全路径，产生新路径 \(t'=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_i \oplus s_{i+1}' \oplus \dots \oplus s_{d}'\)</li>
+<li>如果&quot;路径一致&quot;也就是得出的问题答案一致，那么 \(t'\) 就被视作候选路径</li>
 </ol>
 
   
@@ -1974,15 +1969,13 @@ $$</p>
     </span>        
     
 </h3>
-<p>对于候选路径树中的每一个候选路径 \(t=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_d\)</p>
-<p>$$
+<p>对于候选路径树中的每一个候选路径 \(t=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_d\)</p>
+$$
 Score(t)=\prod_{i=1}^{d} Q(s_{i},a)
-$$</p>
-<p>最后选择分数最大的那一条推理路径：</p>
-<p>$$
+$$<p>最后选择分数最大的那一条推理路径：</p>
+$$
 ans = max(Score(T_{validate}))
-$$</p>
-
+$$
 
 <h2 class="relative group">其他细节 
     <div id="%E5%85%B6%E4%BB%96%E7%BB%86%E8%8A%82" class="anchor"></div>

@@ -113,7 +113,7 @@
     "keywords": ["Paper","Notes","MCTS","ReasoningEnhance"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "956"
+    "wordCount": "951"
   }]
   </script>
 
@@ -1790,19 +1790,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>Formalize the abstract natural language description of &ldquo;small model solving reasoning problems&rdquo;:</p>
-<p>$$
-t=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_d
-$$</p>
-<p>$$
-T=\left \{ t^1, t^2, &hellip;, t^n \right \}
-$$</p>
-<p>$$
+$$
+t=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_d
+$$$$
+T=\left \{ t^1, t^2, ..., t^n \right \}
+$$$$
 T_{validate}=Estimate(T)
-$$</p>
-<p>$$
+$$$$
 ans = max(Score(T_{validate}))
-$$</p>
-
+$$
 
 <h3 class="relative group">Human-like Reasoning 
     <div id="human-like-reasoning-1" class="anchor"></div>
@@ -1901,10 +1897,9 @@ $$</p>
 </h4>
 <p>Generally, the classic MCTS is used: selection, expansion, simulation (Rollout), and backpropagation; however, to obtain more accurate reward values, multiple simulation evaluations are performed.</p>
 <p>The exploration-exploitation balance still uses the classic UCT formula:</p>
-<p>$$
+$$
 UCT(s,a) = \frac{Q(s,a)}{N(s,a)}+c\sqrt{ \frac{\ln N_{parent}(s)}{N(s,a)} }
-$$</p>
-<p>Where \(N(s,a)\) represents the number of times a node has been visited, \(Q(s,a)\) is the cumulative reward value, and \(c\) represents the balance rate.</p>
+$$<p>Where \(N(s,a)\) represents the number of times a node has been visited, \(Q(s,a)\) is the cumulative reward value, and \(c\) represents the balance rate.</p>
 
 
 <h3 class="relative group">Path Evaluation 
@@ -1918,10 +1913,10 @@ $$</p>
     
 </h3>
 <ol>
-<li>For a reasoning path \(t=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_d\), randomly select a reasoning step \(s_{i}\).</li>
-<li>Inject the reasoning path before \(s_{i}\), \(t_{1}=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_i\), as a prompt into the &ldquo;peer&rdquo; small model \(\hat{M}\).</li>
-<li>\(\hat{M}\) completes the path, generating a new path \(t&rsquo;=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_i \oplus s_{i+1}&rsquo; \oplus \dots \oplus s_{d}&rsquo;\).</li>
-<li>If the &ldquo;path consistency&rdquo; is achieved, i.e., the problem answers are consistent, then \(t&rsquo;\) is considered a candidate path.</li>
+<li>For a reasoning path \(t=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_d\), randomly select a reasoning step \(s_{i}\).</li>
+<li>Inject the reasoning path before \(s_{i}\), \(t_{1}=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_i\), as a prompt into the &ldquo;peer&rdquo; small model \(\hat{M}\).</li>
+<li>\(\hat{M}\) completes the path, generating a new path \(t'=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_i \oplus s_{i+1}' \oplus \dots \oplus s_{d}'\).</li>
+<li>If the &ldquo;path consistency&rdquo; is achieved, i.e., the problem answers are consistent, then \(t'\) is considered a candidate path.</li>
 </ol>
 
   
@@ -1970,15 +1965,13 @@ $$</p>
     </span>        
     
 </h3>
-<p>For each candidate path in the candidate path tree \(t=x\oplus s_1 \oplus s_2 \oplus &hellip;\oplus s_d\):</p>
-<p>$$
+<p>For each candidate path in the candidate path tree \(t=x\oplus s_1 \oplus s_2 \oplus ...\oplus s_d\):</p>
+$$
 Score(t)=\prod_{i=1}^{d} Q(s_{i},a)
-$$</p>
-<p>Finally, select the reasoning path with the highest score:</p>
-<p>$$
+$$<p>Finally, select the reasoning path with the highest score:</p>
+$$
 ans = max(Score(T_{validate}))
-$$</p>
-
+$$
 
 <h2 class="relative group">Other Details 
     <div id="other-details" class="anchor"></div>
