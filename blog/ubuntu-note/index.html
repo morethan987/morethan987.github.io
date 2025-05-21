@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4211"
+    "wordCount": "4223"
   }]
   </script>
 
@@ -1811,6 +1811,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p><strong>AppImage</strong> 是一种用于 Linux 系统的便携式软件打包格式，旨在简化应用程序的分发和运行。它的核心思想是“一个应用 = 一个文件”，用户无需安装或管理员权限即可直接运行应用程序。</p>
 <p>在较新的 Ubuntu 版本中，直接运行该文件会出现报错，需要额外安装 <code>libfuse2</code>，使用如下命令即可：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install libfuse2
+</span></span></code></pre></div><p>然后对软件包提权：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x file_name.AppImage
 </span></span></code></pre></div><p>然后双击软件包就能启动了😃</p>
 
   
