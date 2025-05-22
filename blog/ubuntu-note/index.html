@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4223"
+    "wordCount": "4286"
   }]
   </script>
 
@@ -1760,7 +1760,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装软件</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 软件源的相关操作在桌面版中可以在&#34;软件与更新&#34;中进行图形化操作</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加软件源</span>
+</span></span><span class="line"><span class="cl">sudo add-apt-repository ppa:libreoffice/ppa <span class="o">&amp;&amp;</span> sudo apt update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 移除软件源</span>
+</span></span><span class="line"><span class="cl">sudo add-apt-repository --remove ppa:libreoffice/ppa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装软件</span>
 </span></span><span class="line"><span class="cl">sudo apt install xxx
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 升级软件包</span>
