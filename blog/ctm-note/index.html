@@ -113,7 +113,7 @@
     "keywords": ["论文","笔记","架构"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3371"
+    "wordCount": "4350"
   }]
   </script>
 
@@ -1008,7 +1008,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-21T00:00:00&#43;00:00">更新于: 2025-05-21</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-21T00:00:00&#43;00:00">更新于: 2025-05-21</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1325,6 +1325,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#损失函数在不同时间步中优化">损失函数：在不同时间步中优化</a></li>
       </ul>
     </li>
+    <li><a href="#小结">小结</a>
+      <ul>
+        <li><a href="#内部时间维度">内部时间维度</a></li>
+        <li><a href="#突触模型">突触模型</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1347,6 +1353,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#参数私有化的神经元级模型">参数私有化的神经元级模型</a></li>
         <li><a href="#神经元同步输入与输出的调制">神经元同步：输入与输出的调制</a></li>
         <li><a href="#损失函数在不同时间步中优化">损失函数：在不同时间步中优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a>
+      <ul>
+        <li><a href="#内部时间维度">内部时间维度</a></li>
+        <li><a href="#突触模型">突触模型</a></li>
       </ul>
     </li>
   </ul>
@@ -1765,8 +1777,8 @@ S^t=Z^t \cdot (Z^t)^T\in R^{D\times D}
 $$<p>然后对这个神经元同步矩阵进行<strong>下采样</strong>：从中随机选取 \(D_{out}\) 和 \(D_{action}\) 个元素值，分别形成两个神经元同步的<strong>表征向量</strong>，即 \(S^t_{out}\in R^{D_{out}}\) 和 \(S^t_{action}\in R^{D_{action}}\)</p>
 <p>\(S^t_{out}\) 被投影到输出空间：</p>
 $$
-y^t = W_{out}\cdot S^t_{out}
-$$<p>而 \(S^t_{action}\) 则用于在显示世界中产生行为：</p>
+\mathbf{y}^t = W_{out}\cdot S^t_{out}
+$$<p>而 \(S^t_{action}\) 则用于在世界中产生行为(尊重原论文表述，但其实有些迷惑🤔)：</p>
 $$
 q^t = W_{in}\cdot S^t_{action}
 $$<p>\(W_{in}\) 和 \(W_{out}\) 都是可学习的矩阵参数</p>
@@ -1781,6 +1793,41 @@ $$<p>然后用这个衰减系数去放缩原本的神经元同步矩阵的元素
 $$
 \mathbf{S}_{i j}^{t}=\frac{\left(\mathbf{Z}_{i}^{t}\right)^{\top} \cdot \operatorname{diag}\left(\mathbf{R}_{i j}^{t}\right) \cdot\left(\mathbf{Z}_{j}^{t}\right)}{\sqrt{\sum_{\tau=1}^{t}\left[\mathbf{R}_{i j}^{t}\right]_{\tau}}}
 $$
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >作者经过实际研究，发现这些可学习的衰减系数很少用到：在 ImageNet 视觉分类任务中在 8196 个衰减系数中只有 3 个是有效的；而在迷宫求解问题中更多一些，但也只有大约 3%</span>
+</div>
+
+
 
 <h3 class="relative group">损失函数：在不同时间步中优化 
     <div id="%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%97%B6%E9%97%B4%E6%AD%A5%E4%B8%AD%E4%BC%98%E5%8C%96" class="anchor"></div>
@@ -1789,6 +1836,65 @@ $$
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
             style="text-decoration-line: none !important;" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%97%B6%E9%97%B4%E6%AD%A5%E4%B8%AD%E4%BC%98%E5%8C%96" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>这里用分类任务举例子，假设某一个分类任务有 \(C\) 个类别，某一个时间步上的损失就是：</p>
+$$
+\mathcal{L}^{t}=\operatorname{CrossEntropy}\left(\mathbf{y}^{t}, y_{\text {true}}\right)
+$$<p>作者还给出了一个置信度向量 \(C^t\)：</p>
+$$
+C^t=1-\frac{\mathcal{L}^{t}}{\sqrt{ (\mathcal{L}^{t})^T \cdot \mathcal{L}^{t} }}
+$$<p>然后在所有时间步上收集这些损失就形成了两个矩阵：\(\mathcal{L}\in R^T\) 和 \(C\in R^T\)</p>
+<p>一个自然产生的问题是：应如何将L降维为标量损失函数以用于学习？本研究的损失函数旨在优化 CTM 在内部时间维度上的性能表现。相较于让模型在某一个特定的时间步输出结果(典型的就是最后一步)，作者采用了动态聚合的策略，整合两个内部时刻的信息：损失最小点和确定性最高点。该方法优势如下：</p>
+<ol>
+<li>促使CTM在多个内部时刻建立有意义的表征与计算</li>
+<li>自然形成课程学习效应，模型可先利用后期内部时刻处理复杂计算，再逐步过渡至早期步骤处理简单任务</li>
+<li>使CTM能够根据数据集中各样本点的固有难度<strong>自适应调整计算强度</strong></li>
+</ol>
+<p>具体操作如下公式所示：</p>
+$$
+\begin{matrix} t_{1}=argmin(\mathcal{L})\\ t_{2}=argmax(C)\\ L=\frac{\mathcal{L}^{t_{1}} + \mathcal{L}^{t_{2}}}{2} \end{matrix}
+$$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程到这里就结束了。</p>
+<p>然后作者又强调了一下这模型架构的优越性：</p>
+<p>&ldquo;将时序作为 CTM 的基本功能要素引入，具有诸多有益特性。其中尤为关键的是，我们能够在不限制内部时钟周期使用数量的情况下训练 CTM。这种看似微妙的自由度实则意义深远，它使得 CTM 能够为不同数据点分配可变的计算量。这种自适应/动态计算理念与现代测试时计算范式(Test time Scaling)相契合，其区别在于：这一备受推崇的建模特性是 CTM 的自然衍生结果，而非事后施加的约束或学习过程中的限制条件。&rdquo;</p>
+
+
+<h2 class="relative group">小结 
+    <div id="%E5%B0%8F%E7%BB%93" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%B0%8F%E7%BB%93" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>其实论文读到这里，基本已经能够理解作者想要表达的含义了。但是某一些具体的算法细节上还需要更进一步琢磨一下🤔</p>
+
+
+<h3 class="relative group">内部时间维度 
+    <div id="%E5%86%85%E9%83%A8%E6%97%B6%E9%97%B4%E7%BB%B4%E5%BA%A6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%86%85%E9%83%A8%E6%97%B6%E9%97%B4%E7%BB%B4%E5%BA%A6" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>论文中貌似使用了两种不同的称谓来指代&quot;内部时间维度&quot;这个概念：在概念提出的章节，也就是第一节，使用的是&quot;内部时间维度&quot;；以及损失函数的章节，也就是最后一节，使用的是&quot;内部思考维度&quot;🤔</p>
+<p>这似乎表示了本文中的&quot;内部时间维度&quot;与 RNN 中的维度并不相同，尽管非常非常相似。但具体的区别点如何理解？🤔</p>
+<p>先鸽了，还要期末考试😢</p>
+
+
+<h3 class="relative group">突触模型 
+    <div id="%E7%AA%81%E8%A7%A6%E6%A8%A1%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%AA%81%E8%A7%A6%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
     </span>        
     
 </h3>
