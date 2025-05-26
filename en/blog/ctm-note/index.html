@@ -113,7 +113,7 @@
     "keywords": ["Paper","Notes","Architecture"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2502"
+    "wordCount": "2291"
   }]
   </script>
 
@@ -1078,7 +1078,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2036,7 +2036,7 @@ $$<p>Stochastic gradient descent is then used to optimize the model parameters. 
 <p>This suggests that the &ldquo;internal temporal dimension&rdquo; here differs from RNN time steps, despite their similarities. But how exactly? 🤔</p>
 <p>In the section introducing the &ldquo;internal temporal dimension,&rdquo; the paper emphasizes CTM&rsquo;s distinction from traditional models:</p>
 <p>&ldquo;Unlike traditional sequence models (e.g., RNNs or Transformers)—which process inputs sequentially (e.g., words in a sentence or frames in a video)—CTM operates along an autonomously generated internal thought timeline.&rdquo;</p>
-<p>Combining the <a href="https://pub.sakana.ai/ctm" target="_blank">interactive webpage</a>&rsquo;s detailed videos and text, I realized something astonishing, as noted at the end of the <a href="#循环权重突触模型">循环权重：突触模型</a> section:</p>
+<p>Combining the <a href="https://pub.sakana.ai/ctm" target="_blank">interactive webpage</a> &rsquo;s detailed videos and text, I realized something astonishing, as noted at the end of the <a href="#recurrent-weights-synaptic-model">Recurrent Weights Synaptic Model</a> section:</p>
 <p>\(z^t\) is not the input data at time step \(t\)! As shown in the diagram, the entire computation flow hardly involves input data—only when computing \(o^t\) (the orange block) does external input data participate.</p>
 <p>This is indeed a surprising design. I initially misinterpreted \(z^t\) as input data 😢. With the correct interpretation, the separation of input data and internal temporal dimension becomes understandable: The cyclic generation of internal activation vectors is independent of the data sequence.</p>
 <p>A simple example: If the input data is a natural language text, CTM can generate many internal thought steps while the input data remains the same text. Of course, you could also &ldquo;generate&rdquo; new characters, much like a Transformer.</p>
