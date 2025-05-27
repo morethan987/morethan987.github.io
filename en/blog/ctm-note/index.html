@@ -113,7 +113,7 @@
     "keywords": ["Paper","Notes","Architecture"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2291"
+    "wordCount": "2485"
   }]
   </script>
 
@@ -1078,7 +1078,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1407,6 +1407,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#synaptic-model-and-neuron-level-model">Synaptic Model and Neuron-Level Model</a></li>
       </ul>
     </li>
+    <li><a href="#code-analysis">Code Analysis</a></li>
   </ul>
 </nav>
   </div>
@@ -1437,6 +1438,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#synaptic-model-and-neuron-level-model">Synaptic Model and Neuron-Level Model</a></li>
       </ul>
     </li>
+    <li><a href="#code-analysis">Code Analysis</a></li>
   </ul>
 </nav>
   </div>
@@ -1923,7 +1925,42 @@ Z^t = [z^1 \quad z^2 \dots z^t]\in R^{D\times t}
 $$<p><strong>Neuron synchronization</strong> is then described as the inner product of \(Z^t\):</p>
 $$
 S^t=Z^t \cdot (Z^t)^T\in R^{D\times D}
-$$<p>This neuron synchronization matrix undergoes <strong>downsampling</strong>: Randomly select \(D_{out}\) and \(D_{action}\) elements to form two neuron synchronization <strong>representation vectors</strong>, \(S^t_{out}\in R^{D_{out}}\) and \(S^t_{action}\in R^{D_{action}}\).</p>
+$$
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Mathematically, \(S^t\) is an unnormalized covariance matrix where the \((i,j)\) element represents the &ldquo;degree of coordination&rdquo; between the \(i\)-th neuron and the \(j\)-th neuron across all time steps, which is what the paper refers to as &ldquo;neural synchronization.&rdquo;</span>
+</div>
+
+<p>This neuron synchronization matrix undergoes <strong>downsampling</strong>: Randomly select \(D_{out}\) and \(D_{action}\) elements to form two neuron synchronization <strong>representation vectors</strong>, \(S^t_{out}\in R^{D_{out}}\) and \(S^t_{action}\in R^{D_{action}}\).</p>
 <p>\(S^t_{out}\) is projected into the output space:</p>
 $$
 \mathbf{y}^t = W_{out}\cdot S^t_{out}
@@ -2070,8 +2107,56 @@ $$<p>Stochastic gradient descent is then used to optimize the model parameters. 
       
     </figure>
 </p>
-<p>The diagram above vividly illustrates the operations of the synaptic model and neuron-level model: The former enables information exchange between neurons at the same time step, while the latter facilitates historical information exchange across time steps for the same neuron. As shown, a vertical information fusion is followed by a horizontal one 🤔.</p>
-<p>Gotta pause here—finals are coming up 😢.</p>
+<p>The above diagram vividly illustrates the operations performed by the synaptic model part and the neuron-level model part: the former enables information interaction between different neurons at the same moment, while the latter facilitates the interaction of historical information across different moments for the same neuron. As shown in the figure, a vertical information fusion is immediately followed by a horizontal information fusion 🤔</p>
+<p>How does the model interact with external data? It is achieved by downsampling the neuronal synchronization matrix and then applying a linear projection. This sounds very abstract, but from another perspective, the logic becomes clear: if we imagine CTM as a brain, then sampling the neural synchronization matrix is akin to extracting a portion of information from it, which is then mapped through a matrix to drive behavior.</p>
+<p>A very reasonable idea is: would replacing this matrix with an MLP network yield better results? 🤔 Does the downsampling strategy impact the capabilities of the CTM model? Could some form of attention mechanism be used to construct an &ldquo;intelligent&rdquo; downsampling strategy?</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >🤔 I’m actually quite curious: if the number of neurons \(D\) is scaled up to the magnitude of neurons in the human brain, and an attention mechanism is employed, would some form of sparse activation features naturally emerge?</span>
+</div>
+
+
+
+<h2 class="relative group">Code Analysis 
+    <div id="code-analysis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#code-analysis" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
 
           
           
