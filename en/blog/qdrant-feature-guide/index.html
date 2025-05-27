@@ -1985,8 +1985,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <p>The <code>strategy</code> parameter controls the search algorithm. Here are the details:</p>
 <ol>
-<li><strong>Average Algorithm</strong>: Averages positive and negative examples separately, then combines them into a final search vector.</li>
-<li><strong>Best Score Algorithm</strong>: Each candidate point is matched against all positive and negative examples to compute scores. The highest scores are selected, and the final score is calculated as:</li>
+<li>
+<p><strong>Average Algorithm</strong>: Averages positive and negative examples separately, then combines them into a final search vector.</p>
+</li>
+<li>
+<p><strong>Best Score Algorithm</strong>: Each candidate point is matched against all positive and negative examples to compute scores. The highest scores are selected, and the final score is calculated as:</p>
+</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">best_positive_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">best_negative_score</span><span class="w"> </span><span class="p">{</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">best_positive_score</span><span class="w">  
@@ -2082,8 +2086,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <p>Discovery operations enable Qdrant to handle two new search requirements:</p>
 <ol>
-<li><strong>Discovery Search</strong>: Given a target vector and a set of positive-negative vector pairs as <em>contextual constraints</em>.</li>
-<li><strong>Region Partition Search</strong>: A special case of discovery search 👆 where no target vector is provided. The database partitions the space directly and returns points lying most in positive regions.</li>
+<li>
+<p><strong>Discovery Search</strong>: Given a target vector and a set of positive-negative vector pairs as <em>contextual constraints</em>.</p>
+</li>
+<li>
+<p><strong>Region Partition Search</strong>: A special case of discovery search 👆 where no target vector is provided. The database partitions the space directly and returns points lying most in positive regions.</p>
+</li>
 </ol>
 
   
@@ -2815,7 +2823,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-01-07T00:00:00&#43;00:00">7 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-01-07T00:00:00&#43;00:00">7 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
