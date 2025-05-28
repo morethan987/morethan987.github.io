@@ -9,7 +9,27 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/project-reports/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/project-reports/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RAG Technology Research Report</title>
+      <link>https://morethan987.github.io/en/blog/rag-report/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/rag-report/</guid>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Practical Issues 
+    &lt;div id=&#34;practical-issues&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#practical-issues&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;p&gt;The emergence of any technology is driven by real-world problems. RAG (Retrieval-Augmented Generation) technology was developed primarily to address the following limitations of generative pre-trained language models:&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/rag-report/featured.svg" />
+    </item>
     
     <item>
       <title>Schedule Management Report</title>

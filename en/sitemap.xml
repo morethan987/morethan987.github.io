@@ -99,6 +99,22 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/blog/rag-report/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/rag-report/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/rag-report/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/</loc>
     <lastmod>2025-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -515,12 +531,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://morethan987.github.io/en/series/ai-project/</loc>
-    <lastmod>2025-03-16T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://morethan987.github.io/en/tags/cloud-service/</loc>
     <lastmod>2025-03-16T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -543,10 +553,54 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/tags/ai/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/ai/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/ai/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/ai-project/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/tags/full-stack/</loc>
     <lastmod>2025-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/series/project-reports/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/web/</loc>
+    <lastmod>2025-03-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/web/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/web/"
+    />
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/neo4j/</loc>
@@ -566,12 +620,6 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/management/</loc>
-    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/series/project-reports/</loc>
     <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -669,22 +717,6 @@
     <lastmod>2025-01-06T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/tags/ai/</loc>
-    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://morethan987.github.io/tags/ai/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://morethan987.github.io/en/tags/ai/"
-    />
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/imagination/</loc>
