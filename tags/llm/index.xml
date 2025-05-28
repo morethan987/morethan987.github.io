@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于大模型记忆</title>
@@ -36,14 +36,13 @@
     </item>
     
     <item>
-      <title>LLM应用驱动的独立全栈开发指南</title>
-      <link>https://morethan987.github.io/blog/llm-app-driven-fullstack-dev/</link>
-      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <title>LLM工程实践札记</title>
+      <link>https://morethan987.github.io/blog/llm-engineering-note/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://morethan987.github.io/blog/llm-app-driven-fullstack-dev/</guid>
+      <guid>https://morethan987.github.io/blog/llm-engineering-note/</guid>
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  这是一个以构建一个LLM应用为目标驱动的独立全栈开发流程，囊括了各种开发过程中遇到的问题；
-同时这篇博客也是“AI工程”系列的〇号文章，作为整个系列的索引之外，也总结一下心得体会；
+  这篇博客是“AI工程”系列的〇号文章，除了作为整个系列的索引之外，也总结一下大模型实战过程中的相关知识点；
 &lt;/div&gt;
 
 
@@ -58,8 +57,44 @@
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;当我们已经习惯了随手点开一个 AI 聊天助手：豆包、Kimi、DeepSeek……功能如此简单的一个东西，貌似自己写一个也不会很困难吧？&lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-app-driven-fullstack-dev/featured.svg" />
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;模型训练 
+    &lt;div id=&#34;%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;模型部署 
+    &lt;div id=&#34;%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;应用开发 
+    &lt;div id=&#34;%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;p&gt;这部分主要记录在在基础模型之上，以应用开发为导向的大模型实践。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-engineering-note/featured.svg" />
     </item>
     
   </channel>

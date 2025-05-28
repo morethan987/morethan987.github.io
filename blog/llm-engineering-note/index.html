@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+<html lang="zh-cn" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
   data-auto-appearance="true"><head>
   <meta charset="utf-8" />
   
-  <meta http-equiv="content-language" content="en" />
+  <meta http-equiv="content-language" content="zh-cn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>A Guide to Independent Full-Stack Development Driven by LLM Applications &middot; More&#39;s awesome website</title>
-  <meta name="title" content="A Guide to Independent Full-Stack Development Driven by LLM Applications &middot; More&#39;s awesome website" />
+  <title>LLM工程实践札记 &middot; Morethan 小站</title>
+  <meta name="title" content="LLM工程实践札记 &middot; Morethan 小站" />
   
-  <meta name="description" content="A Guide to Independent Full-Stack Development Driven by LLM Applications" />
-  <meta name="keywords" content="LLM, Full-Stack, " />
+  <meta name="description" content="记录LLM工程实践过程中的重要知识点" />
+  <meta name="keywords" content="LLM, 工程实践, 笔记, " />
   
   
-  <link rel="canonical" href="https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/" />
+  <link rel="canonical" href="https://morethan987.github.io/blog/llm-engineering-note/" />
   
   
   
@@ -47,7 +47,7 @@
   
   
   <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.65b5de43825ad54a420102c9ddccece1f1015665fe76e5b399ba259e1de29f6c83ac1b3cf77beed3d29e26604dfebf561a8e1db523cb6add0d6acccc9e8f1307.js"
-    integrity="sha512-ZbXeQ4Ja1UpCAQLJ3czs4fEBVmX&#43;duWzmbolnh3in2yDrBs893vu09KeJmBN/r9WGo4dtSPLat0NaszMno8TBw==" data-copy="Copy" data-copied="Copied"></script>
+    integrity="sha512-ZbXeQ4Ja1UpCAQLJ3czs4fEBVmX&#43;duWzmbolnh3in2yDrBs893vu09KeJmBN/r9WGo4dtSPLat0NaszMno8TBw==" data-copy="复制" data-copied="已复制"></script>
   
   
   
@@ -67,24 +67,25 @@
   
   
   
-  <meta property="og:url" content="https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/">
-  <meta property="og:site_name" content="More&#39;s awesome website">
-  <meta property="og:title" content="A Guide to Independent Full-Stack Development Driven by LLM Applications">
-  <meta property="og:description" content="A Guide to Independent Full-Stack Development Driven by LLM Applications">
-  <meta property="og:locale" content="en">
+  <meta property="og:url" content="https://morethan987.github.io/blog/llm-engineering-note/">
+  <meta property="og:site_name" content="Morethan 小站">
+  <meta property="og:title" content="LLM工程实践札记">
+  <meta property="og:description" content="记录LLM工程实践过程中的重要知识点">
+  <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-03-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-04T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-28T00:00:00+00:00">
     <meta property="article:tag" content="LLM">
-    <meta property="article:tag" content="Full-Stack">
-    <meta property="og:image" content="https://morethan987.github.io/blog/llm-app-driven-fullstack-dev/featured.svg">
+    <meta property="article:tag" content="工程实践">
+    <meta property="article:tag" content="笔记">
+    <meta property="og:image" content="https://morethan987.github.io/blog/llm-engineering-note/featured.svg">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/llm-app-driven-fullstack-dev/featured.svg">
-  <meta name="twitter:title" content="A Guide to Independent Full-Stack Development Driven by LLM Applications">
-  <meta name="twitter:description" content="A Guide to Independent Full-Stack Development Driven by LLM Applications">
+  <meta name="twitter:image" content="https://morethan987.github.io/blog/llm-engineering-note/featured.svg">
+  <meta name="twitter:title" content="LLM工程实践札记">
+  <meta name="twitter:description" content="记录LLM工程实践过程中的重要知识点">
 
   
   <script type="application/ld+json">
@@ -92,26 +93,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "A Guide to Independent Full-Stack Development Driven by LLM Applications",
-    "headline": "A Guide to Independent Full-Stack Development Driven by LLM Applications",
-    "description": "A Guide to Independent Full-Stack Development Driven by LLM Applications",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  This is an independent full-stack development journey, driven by the goal of building an LLM application. It covers various issues encountered during development.\nIt\u0026rsquo;s also the introductory article—article zero—of the \u0026ldquo;AI Engineering\u0026rdquo; series, serving both as an index to the series and a summary of personal insights.\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003eIntroduction \n    \u003cdiv id=\u0022introduction\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#introduction\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eNowadays, we\u0026rsquo;ve become accustomed to effortlessly interacting with AI chat assistants like Doubao, Kimi, and DeepSeek. It seems like creating something similar ourselves shouldn\u0026rsquo;t be too difficult, right?\u003c\/p\u003e",
-    "inLanguage": "en",
-    "url" : "https:\/\/morethan987.github.io\/en\/blog\/llm-app-driven-fullstack-dev\/",
+    "name": "LLM工程实践札记",
+    "headline": "LLM工程实践札记",
+    "description": "记录LLM工程实践过程中的重要知识点",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  这篇博客是“AI工程”系列的〇号文章，除了作为整个系列的索引之外，也总结一下大模型实战过程中的相关知识点；\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e前言 \n    \u003cdiv id=\u0022%E5%89%8D%E8%A8%80\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%89%8D%E8%A8%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e模型训练 \n    \u003cdiv id=\u0022%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e模型部署 \n    \u003cdiv id=\u0022%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e应用开发 \n    \u003cdiv id=\u0022%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e这部分主要记录在在基础模型之上，以应用开发为导向的大模型实践。\u003c\/p\u003e",
+    "inLanguage": "zh-cn",
+    "url" : "https:\/\/morethan987.github.io\/blog\/llm-engineering-note\/",
     "author" : {
       "@type": "Person",
       "name": "Morethan"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-03-04T00:00:00\u002b00:00",
-    "datePublished": "2025-03-04T00:00:00\u002b00:00",
+    "dateCreated": "2025-05-28T00:00:00\u002b00:00",
+    "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2025-03-04T00:00:00\u002b00:00",
+    "dateModified": "2025-05-28T00:00:00\u002b00:00",
     
-    "keywords": ["LLM","Full-Stack"],
+    "keywords": ["LLM","工程实践","笔记"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "342"
+    "wordCount": "810"
   }]
   </script>
 
@@ -206,7 +207,7 @@
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a>
   </div>
   
   
@@ -220,8 +221,8 @@
     
     
     <div>
-        <a href="/en/" class="flex">
-            <span class="sr-only">More&rsquo;s awesome website</span>
+        <a href="/" class="flex">
+            <span class="sr-only">Morethan 小站</span>
 
             
             <span class="logo object-scale-down object-left nozoom">
@@ -409,7 +410,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <nav class="flex space-x-3">
 
             
-            <a href="/en/" class="text-base font-medium text-gray-500 hover:text-gray-900">More&rsquo;s awesome website</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Morethan 小站</a>
             
 
         </nav>
@@ -418,10 +419,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             
             
             
-  <a href="/en/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="Blog">
-        Blog
+    <p class="text-base font-medium" title="文章">
+        文章
     </p>
 </a>
 
@@ -429,10 +430,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
             
             
-  <a href="/en/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="Tags">
-        Tags
+    <p class="text-base font-medium" title="标签">
+        标签
     </p>
 </a>
 
@@ -440,10 +441,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
             
             
-  <a href="/en/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="Series">
-        Series
+    <p class="text-base font-medium" title="系列">
+        系列
     </p>
 </a>
 
@@ -451,10 +452,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
             
             
-  <a href="/en/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
-    <p class="text-base font-medium" title="Authors">
-        Authors
+    <p class="text-base font-medium" title="作者">
+        作者
     </p>
 </a>
 
@@ -498,20 +499,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="A Guide to Independent Full-Stack Development Driven by LLM Applications">EN</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="LLM工程实践札记">中文</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/llm-app-driven-fullstack-dev/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="A Guide to Independent Full-Stack Development Driven by LLM Applications">
+        <a href="/en/blog/llm-engineering-note/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Notes on LLM Engineering Practices">
             English
           </p>
         </a>
         
-        <a href="/blog/llm-app-driven-fullstack-dev/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="LLM应用驱动的独立全栈开发指南">
+        <a href="/blog/llm-engineering-note/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="LLM工程实践札记">
             中文
           </p>
         </a>
@@ -585,20 +586,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="A Guide to Independent Full-Stack Development Driven by LLM Applications">EN</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="LLM工程实践札记">中文</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/llm-app-driven-fullstack-dev/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="A Guide to Independent Full-Stack Development Driven by LLM Applications">
+        <a href="/en/blog/llm-engineering-note/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Notes on LLM Engineering Practices">
             English
           </p>
         </a>
         
-        <a href="/blog/llm-app-driven-fullstack-dev/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="LLM应用驱动的独立全栈开发指南">
+        <a href="/blog/llm-engineering-note/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="LLM工程实践札记">
             中文
           </p>
         </a>
@@ -687,10 +688,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
                     
   <li class="mt-1">
-    <a href="/en/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/blog/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="Blog">
-            Blog
+        <p class="text-bg font-bg" title="文章">
+            文章
         </p>
     </a>
 </li>
@@ -702,10 +703,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
                     
   <li class="mt-1">
-    <a href="/en/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="Tags">
-            Tags
+        <p class="text-bg font-bg" title="标签">
+            标签
         </p>
     </a>
 </li>
@@ -717,10 +718,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
                     
   <li class="mt-1">
-    <a href="/en/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/series/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="Series">
-            Series
+        <p class="text-bg font-bg" title="系列">
+            系列
         </p>
     </a>
 </li>
@@ -732,10 +733,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
                     
   <li class="mt-1">
-    <a href="/en/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/authors/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="Authors">
-            Authors
+        <p class="text-bg font-bg" title="作者">
+            作者
         </p>
     </a>
 </li>
@@ -825,7 +826,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/blog/llm-app-driven-fullstack-dev/background.svg);">
+    style="background-image:url(/blog/llm-engineering-note/background.svg);">
     
 
 
@@ -860,8 +861,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/en/"
-      >Welcome to Morethan&#39;s website</a
+      href="/"
+      >欢迎来到Morethan的小站</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -869,7 +870,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <li class="inline">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/en/blog/"
+      href="/blog/"
       >Blogs</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
@@ -878,8 +879,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/en/blog/llm-app-driven-fullstack-dev/"
-      >A Guide to Independent Full-Stack Development Driven by LLM Applications</a
+      href="/blog/llm-engineering-note/"
+      >LLM工程实践札记</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -888,7 +889,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      A Guide to Independent Full-Stack Development Driven by LLM Applications
+      LLM工程实践札记
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -941,7 +942,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-04T00:00:00&#43;00:00">4 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -957,7 +958,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/llm-app-driven-fullstack-dev/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/llm-engineering-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -982,7 +983,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/llm-app-driven-fullstack-dev/index.md"
+  <span id="likes_blog/llm-engineering-note/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -1025,11 +1026,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <span class="mb-[2px]">
   <a
-    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/llm-app-driven-fullstack-dev/index.en.md"
+    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/llm-engineering-note/index.zh-cn.md"
     class="text-lg hover:text-primary-500"
     rel="noopener noreferrer"
     target="_blank"
-    title="Edit content"
+    title="编辑内容"
     ><span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1046,9 +1047,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <span class="mb-[2px]">
     <span id="zen-mode-button"
           class="text-lg hover:text-primary-500"
-          title="Enable zen mode"
-          data-title-i18n-disable="Enable zen mode"
-          data-title-i18n-enable="Disable zen mode">
+          title=""
+          data-title-i18n-disable=""
+          data-title-i18n-enable="">
         <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1066,7 +1067,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   <span class="pl-2"><span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Draft
+    草稿
   </span>
 </span></span>
   
@@ -1078,7 +1079,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
   
   
   
@@ -1107,7 +1108,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/llm/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     LLM
@@ -1115,10 +1116,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/full-stack/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Full-Stack
+    工程实践
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
   </span>
 </span>
   </span>
@@ -1163,14 +1172,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="place-self-center">
     
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-      Author
+      作者
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       Morethan
     </div>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Computer, Physic &amp; AI</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">计算机、物理与AI理工男</div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -1239,17 +1248,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    目录
   </summary>
   <div
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#identifying-needs">Identifying Needs</a></li>
-    <li><a href="#exploring-implementation-options">Exploring Implementation Options</a></li>
-    <li><a href="#project-construction">Project Construction</a></li>
-    <li><a href="#deploying-the-service">Deploying the Service</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#模型训练">模型训练</a></li>
+    <li><a href="#模型部署">模型部署</a></li>
+    <li><a href="#应用开发">应用开发</a>
+      <ul>
+        <li><a href="#一些感想">一些感想</a></li>
+        <li><a href="#发现需求">发现需求</a></li>
+        <li><a href="#探索实现方案">探索实现方案</a></li>
+        <li><a href="#项目构建">项目构建</a></li>
+        <li><a href="#发布服务">发布服务</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1257,17 +1273,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
   <summary
     class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    目录
   </summary>
   <div
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#identifying-needs">Identifying Needs</a></li>
-    <li><a href="#exploring-implementation-options">Exploring Implementation Options</a></li>
-    <li><a href="#project-construction">Project Construction</a></li>
-    <li><a href="#deploying-the-service">Deploying the Service</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#模型训练">模型训练</a></li>
+    <li><a href="#模型部署">模型部署</a></li>
+    <li><a href="#应用开发">应用开发</a>
+      <ul>
+        <li><a href="#一些感想">一些感想</a></li>
+        <li><a href="#发现需求">发现需求</a></li>
+        <li><a href="#探索实现方案">探索实现方案</a></li>
+        <li><a href="#项目构建">项目构建</a></li>
+        <li><a href="#发布服务">发布服务</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1350,14 +1373,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        AI-Project - This article is part of a series.
+        AI工程 - 这篇文章属于一个选集。
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 0: This Article
+        § 0: 本文
     </div>
     
     
@@ -1369,85 +1392,133 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
         <div class="article-content max-w-prose mb-20">
           <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  This is an independent full-stack development journey, driven by the goal of building an LLM application. It covers various issues encountered during development.
-It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engineering&rdquo; series, serving both as an index to the series and a summary of personal insights.
+  这篇博客是“AI工程”系列的〇号文章，除了作为整个系列的索引之外，也总结一下大模型实战过程中的相关知识点；
 </div>
 
 
 
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
+<h2 class="relative group">前言 
+    <div id="%E5%89%8D%E8%A8%80" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%89%8D%E8%A8%80" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>Nowadays, we&rsquo;ve become accustomed to effortlessly interacting with AI chat assistants like Doubao, Kimi, and DeepSeek. It seems like creating something similar ourselves shouldn&rsquo;t be too difficult, right?</p>
-<p>That innocent thought was exactly where my dream began 😢. Sounds silly, I know, but that&rsquo;s genuinely how I felt. And from there began a long, challenging development journey.</p>
-<p>If you&rsquo;ve ever had a similar idea, the following content might help you 🤗.</p>
-<p>After countless late nights, I have to admit: building an LLM application is a massive endeavor, especially for an independent developer. Choosing independent development or assembling a small team means stepping onto a path filled with challenges. There are no &ldquo;senior mentors&rdquo; guiding your technical choices; you have to explore everything on your own.</p>
-<p><strong>But</strong>, that&rsquo;s exactly the joy of independent development—you have complete control over your product and get to witness every incremental improvement.</p>
-<p>You might wonder: &ldquo;What if my product doesn’t perform well?&rdquo; &ldquo;What if I hit a development roadblock?&rdquo; &ldquo;If nobody uses it, wouldn’t my effort go to waste?&rdquo; 🤔</p>
-<p>Admittedly, independent development demands significant investment, and these worries are inevitable, even universal, among independent developers.</p>
-<p>However, if you&rsquo;ve genuinely committed yourself to independent development, regardless of the outcome, you&rsquo;ll certainly gain something valuable. If you succeed, congratulations 🥳—your hard work has paid off. If you fail or give up, I understand your frustration, disappointment, even anger.</p>
-<p>But no one finds happiness or success by completely dismissing their past experiences. Momentarily set aside the pain, and move forward to your next adventure.</p>
-<p>In life, there are no wasted steps; every step counts 🫡.</p>
 
 
-<h2 class="relative group">Identifying Needs 
-    <div id="identifying-needs" class="anchor"></div>
+<h2 class="relative group">模型训练 
+    <div id="%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#identifying-needs" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>Draft draft draft&hellip;</p>
 
 
-<h2 class="relative group">Exploring Implementation Options 
-    <div id="exploring-implementation-options" class="anchor"></div>
+<h2 class="relative group">模型部署 
+    <div id="%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#exploring-implementation-options" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>Draft draft draft&hellip;</p>
 
 
-<h2 class="relative group">Project Construction 
-    <div id="project-construction" class="anchor"></div>
+<h2 class="relative group">应用开发 
+    <div id="%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#project-construction" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>Draft draft draft&hellip;</p>
+<p>这部分主要记录在在基础模型之上，以应用开发为导向的大模型实践。</p>
 
 
-<h2 class="relative group">Deploying the Service 
-    <div id="deploying-the-service" class="anchor"></div>
+<h3 class="relative group">一些感想 
+    <div id="%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#deploying-the-service" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3" aria-label="锚点">#</a>
     </span>        
     
-</h2>
+</h3>
+<p>当我们已经习惯了随手点开一个 AI 聊天助手：豆包、Kimi、DeepSeek……功能如此简单的一个东西，貌似自己写一个也不会很困难吧？</p>
+<p>这就是属于我的那个&quot;梦开始的地方&quot;😢听着很扯，但我当时真是这么想的。然后就有了后面漫长的开发之旅。</p>
+<p>如果你也有和我类似的想法，那么下面的内容可能对你有所帮助🤗</p>
+<p>在熬过了这么多夜之后，我必须承认&quot;构建一个 LLM 应用&quot;是一个非常庞大的话题，特别是对于一个独立开发者而言。如果你选择了做独立开发或者组建一个微型团队，那么也同时意味着你选择了一个艰辛的道路：没有&quot;前辈&quot;帮你探索技术路线，一切的一切都要靠你自己去摸索。</p>
+<p><strong>但是</strong>，这也是独立开发的乐趣所在：你能够完全掌控你的产品的走向，看着它一点一点迭代优化。</p>
+<p>你可能会问：&ldquo;产品做出来效果不好怎么办？&quot;；&ldquo;开发不下去了怎么办？&quot;；&ldquo;如果没什么人用那我的时间不是打水漂了？&quot;🤔</p>
+<p>不得不说，独立开发的投入真的很高昂，而且上述疑问都是无法避免的，甚至对于大部分独立开发者来说是必然会经历的。</p>
+<p>但是，如果你真的认真对待了&quot;独立开发&quot;这件事情，不管结果如何，我相信你都有所收获：如果你成功了，我在这里对你表达祝贺🥳你的辛勤付出有了回报；如果你失败了、放弃了，我理解你的不甘与沮丧，甚至是愤怒。</p>
+<p>但是没人能够在对自己过往的全盘否定中收获快乐与成功，暂时忘掉那些伤痛，继续下一步的人生吧。</p>
+<p>人生没有白走的路，每一步都算数🫡</p>
+
+
+<h3 class="relative group">发现需求 
+    <div id="%E5%8F%91%E7%8E%B0%E9%9C%80%E6%B1%82" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8F%91%E7%8E%B0%E9%9C%80%E6%B1%82" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>草稿草稿草稿……</p>
+
+
+<h3 class="relative group">探索实现方案 
+    <div id="%E6%8E%A2%E7%B4%A2%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%8E%A2%E7%B4%A2%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>草稿草稿草稿……</p>
+
+
+<h3 class="relative group">项目构建 
+    <div id="%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>草稿草稿草稿……</p>
+
+
+<h3 class="relative group">发布服务 
+    <div id="%E5%8F%91%E5%B8%83%E6%9C%8D%E5%8A%A1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%8F%91%E5%B8%83%E6%9C%8D%E5%8A%A1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
 <ul>
-<li><a href="https://morethan987.github.io/en/blog/cloud-server-build/">Cloud Service Deployment</a></li>
+<li><a href="https://morethan987.github.io/blog/cloud-server-build/">云服务搭建</a></li>
 </ul>
 
           
@@ -1462,14 +1533,14 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        AI-Project - This article is part of a series.
+        AI工程 - 这篇文章属于一个选集。
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        Part 0: This Article
+        § 0: 本文
     </div>
     
     
@@ -1485,9 +1556,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;title=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Share on LinkedIn"
-      aria-label="Share on LinkedIn"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/llm-engineering-note/&amp;title=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title="分享到 LinkedIn"
+      aria-label="分享到 LinkedIn"
       >
       
 
@@ -1504,9 +1575,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;text=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Tweet on Twitter"
-      aria-label="Tweet on Twitter"
+      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/llm-engineering-note/&amp;text=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title="分享到 Twitter"
+      aria-label="分享到 Twitter"
       >
       
 
@@ -1522,9 +1593,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications&#43;https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/"
-      title="Post on Bluesky"
-      aria-label="Post on Bluesky"
+      href="https://bsky.app/intent/compose?text=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0&#43;https://morethan987.github.io/blog/llm-engineering-note/"
+      title=""
+      aria-label=""
       >
       
 
@@ -1540,9 +1611,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;resubmit=true&amp;title=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Submit to Reddit"
-      aria-label="Submit to Reddit"
+      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/llm-engineering-note/&amp;resubmit=true&amp;title=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title="提交到 Reddit"
+      aria-label="提交到 Reddit"
       >
       
 
@@ -1559,9 +1630,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;resubmit=true&amp;title=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Share via WhatsApp"
-      aria-label="Share via WhatsApp"
+      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/llm-engineering-note/&amp;resubmit=true&amp;title=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title=""
+      aria-label=""
       >
       
 
@@ -1578,9 +1649,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;resubmit=true&amp;title=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Share via Telegram"
-      aria-label="Share via Telegram"
+      href="https://t.me/share/url?url=https://morethan987.github.io/blog/llm-engineering-note/&amp;resubmit=true&amp;title=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title=""
+      aria-label=""
       >
       
 
@@ -1597,9 +1668,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;description=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Pin on Pinterest"
-      aria-label="Pin on Pinterest"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/llm-engineering-note/&amp;description=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title="钉到 Pinterest"
+      aria-label="钉到 Pinterest"
       >
       
 
@@ -1616,9 +1687,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;quote=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Share on Facebook"
-      aria-label="Share on Facebook"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/llm-engineering-note/&amp;quote=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title="分享到 Facebook"
+      aria-label="分享到 Facebook"
       >
       
 
@@ -1635,9 +1706,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://morethan987.github.io/en/blog/llm-app-driven-fullstack-dev/&amp;subject=A%20Guide%20to%20Independent%20Full-Stack%20Development%20Driven%20by%20LLM%20Applications"
-      title="Send via email"
-      aria-label="Send via email"
+      href="mailto:?body=https://morethan987.github.io/blog/llm-engineering-note/&amp;subject=LLM%e5%b7%a5%e7%a8%8b%e5%ae%9e%e8%b7%b5%e6%9c%ad%e8%ae%b0"
+      title="通过电子邮件发送"
+      aria-label="通过电子邮件发送"
       >
       
 
@@ -1656,402 +1727,22 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
         
 
 
-<h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+<h2 class="mt-8 text-2xl font-extrabold mb-10">相关文章</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
   
   
 
-  <a href="/en/blog/neo4j-basics/" class="min-w-full">
+  <a href="/blog/ctm-note/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/neo4j-basics/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en/blog/neo4j-basics/">Neo4j Basics</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-02-05T00:00:00&#43;00:00">5 February 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-02-15T00:00:00&#43;00:00">Updated: 15 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/neo4j-basics/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/neo4j-basics/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/neo4j/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Neo4j
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/en/blog/note-to-blog-report/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/note-to-blog-report/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en/blog/note-to-blog-report/">Analysis Report on the Note-to-Blog Project</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-01-10T00:00:00&#43;00:00">10 January 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-01-21T00:00:00&#43;00:00">Updated: 21 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/note-to-blog-report/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/note-to-blog-report/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/hugo/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Hugo
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/blog/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Blog
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/report/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Report
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/en/blog/rag-report/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/rag-report/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/ctm-note/featured.svg);"></div>
         
       
       <span class="absolute top-0 right-0 m-2">
         <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Draft
+    草稿
   </span>
 </span>
       </span>
@@ -2061,7 +1752,403 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en/blog/rag-report/">RAG Technology Research Report</div>
+          href="/blog/ctm-note/">CTM读文笔记</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/ctm-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/ctm-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E8%AE%BA%E6%96%87/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    论文
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E6%9E%84/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    架构
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/blog/llm-memory/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/llm-memory/featured.svg);"></div>
+        
+      
+      <span class="absolute top-0 right-0 m-2">
+        <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+      </span>
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/blog/llm-memory/">关于大模型记忆</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-08T00:00:00&#43;00:00">更新于: 2025-05-08</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/llm-memory/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/llm-memory/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    LLM
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    博客
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/blog/rstar-note/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/rstar-note/featured.svg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/blog/rstar-note/">rStar读文笔记</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2106,7 +2193,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-04T00:00:00&#43;00:00">4 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-20T00:00:00&#43;00:00">2025-03-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2122,7 +2209,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       
     
   
-  <span id="views_blog/rag-report/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/rstar-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2147,7 +2234,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       
     
   
-  <span id="likes_blog/rag-report/index.md"
+  <span id="likes_blog/rstar-note/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -2171,7 +2258,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
   
   
   
-     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
   
   
   
@@ -2200,18 +2287,34 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/ai/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E8%AE%BA%E6%96%87/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    AI
+    论文
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/web/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Web
+    笔记
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mcts/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MCTS
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8E%A8%E7%90%86%E5%A2%9E%E5%BC%BA/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    推理增强
   </span>
 </span>
   </span>
@@ -2251,8 +2354,8 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
           
         
       <script>
-        var oid = "views_blog\/llm-app-driven-fullstack-dev\/index.md"
-        var oid_likes = "likes_blog\/llm-app-driven-fullstack-dev\/index.md"
+        var oid = "views_blog\/llm-engineering-note\/index.md"
+        var oid_likes = "likes_blog\/llm-engineering-note\/index.md"
       </script>
       
       
@@ -2272,7 +2375,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/en/blog/neo4j-basics/">
+            <a class="flex group mr-3" href="/blog/neo4j-basics/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -2284,11 +2387,11 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Neo4j Basics</span
+                  >Neo4j基础</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-02-05T00:00:00&#43;00:00">5 February 2025</time>
+                    <time datetime="2025-02-05T00:00:00&#43;00:00">2025-02-05</time>
                   
                 </span>
               </span>
@@ -2297,15 +2400,15 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/en/blog/rag-report/">
+            <a class="flex text-right group ml-3" href="/blog/rag-report/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >RAG Technology Research Report</span
+                  >RAG技术调研报告</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-03-04T00:00:00&#43;00:00">4 March 2025</time>
+                    <time datetime="2025-03-04T00:00:00&#43;00:00">2025-03-04</time>
                   
                 </span>
               </span>
@@ -2332,7 +2435,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
   <a href="#the-top"
     class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="Scroll to top" title="Scroll to top">
+    aria-label="返回顶部" title="返回顶部">
     &uarr;
   </a>
 </div>
@@ -2344,18 +2447,18 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
       <ul class="flex flex-col list-none sm:flex-row">
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en/tags/"
-            title="Tags">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
+            title="标签">
             
-            Tags
+            标签
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en/authors/"
-            title="Authors">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/authors/"
+            title="作者">
             
-            Authors
+            作者
           </a>
         </li>
         
@@ -2379,9 +2482,9 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
     <p class="text-xs text-neutral-500 dark:text-neutral-400">
       
       
-      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+      由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
     </p>
     
 
@@ -2406,7 +2509,7 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://morethan987.github.io/en/"
+  data-url="https://morethan987.github.io/"
   style="z-index:500"
 >
   <div
@@ -2429,14 +2532,14 @@ It&rsquo;s also the introductory article—article zero—of the &ldquo;AI Engin
           type="search"
           id="search-query"
           class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
-          placeholder="Search"
+          placeholder="搜索"
           tabindex="0"
         />
       </form>
       <button
         id="close-search-button"
         class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-        title="Close (Esc)"
+        title="关闭 (Esc)"
       >
         
 

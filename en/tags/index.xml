@@ -9,14 +9,24 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Architecture</title>
-      <link>https://morethan987.github.io/en/tags/architecture/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <title>EngineeringPractice</title>
+      <link>https://morethan987.github.io/en/tags/engineeringpractice/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/tags/architecture/</guid>
+      <guid>https://morethan987.github.io/en/tags/engineeringpractice/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>LLM</title>
+      <link>https://morethan987.github.io/en/tags/llm/</link>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/llm/</guid>
       <description></description>
       
     </item>
@@ -24,9 +34,19 @@
     <item>
       <title>Notes</title>
       <link>https://morethan987.github.io/en/tags/notes/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/tags/notes/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Architecture</title>
+      <link>https://morethan987.github.io/en/tags/architecture/</link>
+      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/architecture/</guid>
       <description></description>
       
     </item>
@@ -47,16 +67,6 @@
       <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/tags/blog/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>LLM</title>
-      <link>https://morethan987.github.io/en/tags/llm/</link>
-      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
-      <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/tags/llm/</guid>
       <description></description>
       
     </item>
@@ -127,16 +137,6 @@
       <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/tags/ai/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Full-Stack</title>
-      <link>https://morethan987.github.io/en/tags/full-stack/</link>
-      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
-      <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/tags/full-stack/</guid>
       <description></description>
       
     </item>
