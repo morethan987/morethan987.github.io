@@ -113,7 +113,7 @@
     "keywords": ["论文","笔记","架构"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5590"
+    "wordCount": "6013"
   }]
   </script>
 
@@ -1078,7 +1078,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1405,6 +1405,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#内部时间维度">内部时间维度</a></li>
         <li><a href="#突触模型和神经元级模型">突触模型和神经元级模型</a></li>
+        <li><a href="#关于时序信息">关于时序信息</a></li>
       </ul>
     </li>
     <li><a href="#代码分析">代码分析</a></li>
@@ -1436,6 +1437,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#内部时间维度">内部时间维度</a></li>
         <li><a href="#突触模型和神经元级模型">突触模型和神经元级模型</a></li>
+        <li><a href="#关于时序信息">关于时序信息</a></li>
       </ul>
     </li>
     <li><a href="#代码分析">代码分析</a></li>
@@ -2143,6 +2145,56 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
     
       style="color: #E0E7FF"
     >🤔其实我挺好奇：如果把神经元的数量 \(D\) 扩大到人脑中神经元的量级，并且使用注意力机制，会不会自然涌现某种稀疏激活的特征？</span>
+</div>
+
+
+
+<h3 class="relative group">关于时序信息 
+    <div id="%E5%85%B3%E4%BA%8E%E6%97%B6%E5%BA%8F%E4%BF%A1%E6%81%AF" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%85%B3%E4%BA%8E%E6%97%B6%E5%BA%8F%E4%BF%A1%E6%81%AF" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>早在 1997 年 Maass 就提出了脉冲神经网络(SNN)，号称是第三代神经网络，其最大的特点就是：完全模仿生物神经网络，通过脉冲的形式传递信息。这其中当然就包含了丰富的时序信息。因此，在神经网络中利用时序信息并不是一个&quot;新颖&quot;的想法，反而是有非常悠久的历史。</p>
+<p>然而 SNN 对应的方程在数学上不可导，导致 SNN 难以直接使用 BP 算法进行优化。这或许是 SNN 大规模应用的最大阻碍。换言之，SNN 最大的缺陷其实不在于模型的表达能力，而在于训练算法——训练算法对于大型神经网络至关重要。</p>
+<p>CTM 基于传统神经元模型实现了一个能够利用时序信息神经网络。并且从论文描述中就可以看出，作者其实是构建了一个新型的神经元，其 \(t+1\) 时刻的激活值通过神经元级模型与突触级模型与大量的其他神经元的历史激活状态相连接，因此每一个神经元的输出都能够融合大量的历史信息。</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >一个不太严谨的思考，SNN 将时序信息和激活值同步处理，导致了较高的模型复杂性，而 CTM 则解耦了时序信息的计算和激活值的计算🤔</span>
 </div>
 
 
