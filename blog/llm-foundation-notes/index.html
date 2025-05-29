@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>CTM读文笔记 &middot; Morethan 小站</title>
-  <meta name="title" content="CTM读文笔记 &middot; Morethan 小站" />
+  <title>大模型基础读书笔记 &middot; Morethan 小站</title>
+  <meta name="title" content="大模型基础读书笔记 &middot; Morethan 小站" />
   
-  <meta name="description" content="一个新型的人脑启发式AI架构" />
-  <meta name="keywords" content="论文, 笔记, 架构, " />
+  <meta name="description" content="阅读浙大的教材大模型基础后写的读书笔记" />
+  <meta name="keywords" content="LLM, 工程实践, 笔记, " />
   
   
-  <link rel="canonical" href="https://morethan987.github.io/blog/ctm-note/" />
+  <link rel="canonical" href="https://morethan987.github.io/blog/llm-foundation-notes/" />
   
   
   
@@ -67,26 +67,27 @@
   
   
   
-  <meta property="og:url" content="https://morethan987.github.io/blog/ctm-note/">
+  <meta property="og:url" content="https://morethan987.github.io/blog/llm-foundation-notes/">
   <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="CTM读文笔记">
-  <meta property="og:description" content="一个新型的人脑启发式AI架构">
+  <meta property="og:title" content="大模型基础读书笔记">
+  <meta property="og:description" content="阅读浙大的教材大模型基础后写的读书笔记">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-05-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-26T00:00:00+00:00">
-    <meta property="article:tag" content="论文">
+    <meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-28T00:00:00+00:00">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="工程实践">
     <meta property="article:tag" content="笔记">
-    <meta property="article:tag" content="架构">
-    <meta property="og:image" content="https://morethan987.github.io/blog/ctm-note/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/rstar-note/">
+    <meta property="og:image" content="https://morethan987.github.io/blog/llm-foundation-notes/featured.svg">
+      <meta property="og:see_also" content="https://morethan987.github.io/blog/llm-training-playbook/">
+      <meta property="og:see_also" content="https://morethan987.github.io/blog/llm-engineering-note/">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/ctm-note/featured.svg">
-  <meta name="twitter:title" content="CTM读文笔记">
-  <meta name="twitter:description" content="一个新型的人脑启发式AI架构">
+  <meta name="twitter:image" content="https://morethan987.github.io/blog/llm-foundation-notes/featured.svg">
+  <meta name="twitter:title" content="大模型基础读书笔记">
+  <meta name="twitter:description" content="阅读浙大的教材大模型基础后写的读书笔记">
 
   
   <script type="application/ld+json">
@@ -94,26 +95,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "CTM读文笔记",
-    "headline": "CTM读文笔记",
-    "description": "一个新型的人脑启发式AI架构",
-    "abstract": "\u003cp\u003e\n\n\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  一个新型的人脑启发式架构，在现有时序无关的神经元模型的基础上引入了\u0026quot;时序\u0026quot;概念，涌现出一系列类似人脑的现象\n\u003c\/div\u003e\n\u003c\/p\u003e",
+    "name": "大模型基础读书笔记",
+    "headline": "大模型基础读书笔记",
+    "description": "阅读浙大的教材大模型基础后写的读书笔记",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  阅读浙大的教材大模型基础后写的读书笔记\n\u003c\/div\u003e\n\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e前言 \n    \u003cdiv id=\u0022%E5%89%8D%E8%A8%80\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%E5%89%8D%E8%A8%80\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e现在的大模型技术发展可谓是\u0026quot;日新月异\u0026quot;，好像每天都有令人震撼的重要进展🤔\u003c\/p\u003e",
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/morethan987.github.io\/blog\/ctm-note\/",
+    "url" : "https:\/\/morethan987.github.io\/blog\/llm-foundation-notes\/",
     "author" : {
       "@type": "Person",
       "name": "Morethan"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-05-14T00:00:00\u002b00:00",
-    "datePublished": "2025-05-14T00:00:00\u002b00:00",
+    "dateCreated": "2025-05-28T00:00:00\u002b00:00",
+    "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2025-05-26T00:00:00\u002b00:00",
+    "dateModified": "2025-05-28T00:00:00\u002b00:00",
     
-    "keywords": ["论文","笔记","架构"],
+    "keywords": ["LLM","工程实践","笔记"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5590"
+    "wordCount": "310"
   }]
   </script>
 
@@ -138,139 +139,6 @@
   
 
 <script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
-
-
-
-
-
-
-
-
-
-
-
-<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.7e7e35e3ef02b7b437449a44ca3fac62ec1ed39cb8312b680a00fe8ac60badc95b063b694636b8440856f7f5e8c2cc9e6b0efb581179b2656c7e1e97558c7096.css" integrity="sha512-fn414&#43;8Ct7Q3RJpEyj&#43;sYuwe05y4MStoCgD&#43;isYLrclbBjtpRja4RAhW9/Xowsyeaw77WBF5smVsfh6XVYxwlg==" />
-
-
-<script defer src="/lib/katex/katex.min.cadd45c1af1f44bdaf196dc9b104f1daeb29043f0dc59155ffe22847510a04390a0b7a859400d420a626204f7fc5ddb07c19311de1c66b25e19c2559d3e126a8.js" integrity="sha512-yt1Fwa8fRL2vGW3JsQTx2uspBD8NxZFV/&#43;IoR1EKBDkKC3qFlADUIKYmIE9/xd2wfBkxHeHGayXhnCVZ0&#43;EmqA=="></script>
-
-
-<script defer src="/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac&#43;zBvZzgDJzDQ=="
-  onload="renderMathInElement(document.body);"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -633,20 +501,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="CTM读文笔记">中文</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="大模型基础读书笔记">中文</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/ctm-note/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="CTM Reading Notes">
+        <a href="/en/blog/llm-foundation-notes/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Notes on the Foundation of Large Models">
             English
           </p>
         </a>
         
-        <a href="/blog/ctm-note/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="CTM读文笔记">
+        <a href="/blog/llm-foundation-notes/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="大模型基础读书笔记">
             中文
           </p>
         </a>
@@ -720,20 +588,20 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="CTM读文笔记">中文</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="大模型基础读书笔记">中文</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en/blog/ctm-note/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="CTM Reading Notes">
+        <a href="/en/blog/llm-foundation-notes/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Notes on the Foundation of Large Models">
             English
           </p>
         </a>
         
-        <a href="/blog/ctm-note/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="CTM读文笔记">
+        <a href="/blog/llm-foundation-notes/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="大模型基础读书笔记">
             中文
           </p>
         </a>
@@ -960,7 +828,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/blog/ctm-note/background.svg);">
+    style="background-image:url(/blog/llm-foundation-notes/background.svg);">
     
 
 
@@ -1013,8 +881,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/blog/ctm-note/"
-      >CTM读文笔记</a
+      href="/blog/llm-foundation-notes/"
+      >大模型基础读书笔记</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -1023,7 +891,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      CTM读文笔记
+      大模型基础读书笔记
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1044,8 +912,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
 
-
-  
 
 
 
@@ -1078,7 +944,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1094,7 +960,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="views_blog/ctm-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/llm-foundation-notes/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -1119,7 +985,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
     
   
-  <span id="likes_blog/ctm-note/index.md"
+  <span id="likes_blog/llm-foundation-notes/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -1162,7 +1028,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <span class="mb-[2px]">
   <a
-    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/ctm-note/index.zh-cn.md"
+    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/llm-foundation-notes/index.zh-cn.md"
     class="text-lg hover:text-primary-500"
     rel="noopener noreferrer"
     target="_blank"
@@ -1244,10 +1110,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E8%AE%BA%E6%96%87/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    论文
+    LLM
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工程实践
   </span>
 </span>
   </span>
@@ -1256,14 +1130,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     笔记
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E6%9E%84/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    架构
   </span>
 </span>
   </span>
@@ -1391,23 +1257,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#引入">引入</a></li>
-    <li><a href="#方法">方法</a>
-      <ul>
-        <li><a href="#连续思考内部序列维度">连续思考：内部序列维度</a></li>
-        <li><a href="#循环权重突触模型">循环权重：突触模型</a></li>
-        <li><a href="#参数私有化的神经元级模型">参数私有化的神经元级模型</a></li>
-        <li><a href="#神经元同步输入与输出的调制">神经元同步：输入与输出的调制</a></li>
-        <li><a href="#损失函数在不同时间步中优化">损失函数：在不同时间步中优化</a></li>
-      </ul>
-    </li>
-    <li><a href="#小结">小结</a>
-      <ul>
-        <li><a href="#内部时间维度">内部时间维度</a></li>
-        <li><a href="#突触模型和神经元级模型">突触模型和神经元级模型</a></li>
-      </ul>
-    </li>
-    <li><a href="#代码分析">代码分析</a></li>
+    <li><a href="#语言模型基础">语言模型基础</a></li>
+    <li><a href="#大语言模型架构">大语言模型架构</a></li>
+    <li><a href="#参数高效微调">参数高效微调</a></li>
+    <li><a href="#模型编辑">模型编辑</a></li>
   </ul>
 </nav>
   </div>
@@ -1422,23 +1275,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#引入">引入</a></li>
-    <li><a href="#方法">方法</a>
-      <ul>
-        <li><a href="#连续思考内部序列维度">连续思考：内部序列维度</a></li>
-        <li><a href="#循环权重突触模型">循环权重：突触模型</a></li>
-        <li><a href="#参数私有化的神经元级模型">参数私有化的神经元级模型</a></li>
-        <li><a href="#神经元同步输入与输出的调制">神经元同步：输入与输出的调制</a></li>
-        <li><a href="#损失函数在不同时间步中优化">损失函数：在不同时间步中优化</a></li>
-      </ul>
-    </li>
-    <li><a href="#小结">小结</a>
-      <ul>
-        <li><a href="#内部时间维度">内部时间维度</a></li>
-        <li><a href="#突触模型和神经元级模型">突触模型和神经元级模型</a></li>
-      </ul>
-    </li>
-    <li><a href="#代码分析">代码分析</a></li>
+    <li><a href="#语言模型基础">语言模型基础</a></li>
+    <li><a href="#大语言模型架构">大语言模型架构</a></li>
+    <li><a href="#参数高效微调">参数高效微调</a></li>
+    <li><a href="#模型编辑">模型编辑</a></li>
   </ul>
 </nav>
   </div>
@@ -1521,15 +1361,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        论文笔记 - 这篇文章属于一个选集。
+        AI工程 - 这篇文章属于一个选集。
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="/blog/rstar-note/">
-            § 1: rStar读文笔记
+        <a href="/blog/llm-engineering-note/">
+            § 0: LLM工程实践札记
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/blog/llm-training-playbook/">
+            § 1: LLM训练实战
         </a>
     </div>
     
@@ -1548,12 +1397,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>
-
-<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-  一个新型的人脑启发式架构，在现有时序无关的神经元模型的基础上引入了&quot;时序&quot;概念，涌现出一系列类似人脑的现象
+          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+  阅读浙大的教材大模型基础后写的读书笔记
 </div>
-</p>
+
 
 
 <h2 class="relative group">前言 
@@ -1566,598 +1413,59 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
-<p>关注到这篇论文其实就是因为其宣称的那种&quot;奇妙&quot;的涌现现象，将时序信息引入神经元模型之后产生了<strong>类似人类思维模式</strong>的注意力现象。这些现象并非人为设计的，而是在训练过程中自然产生的，这是最令人振奋的。</p>
-<p>最直观的例子就是官方给出的&quot;迷宫模型&quot;，从可视化的结果可以直观地看到，模型的注意力焦点在迷宫中游走，就像人类求解迷宫问题一样。另外官方还给出了一个可交互的展示网页：<a href="https://pub.sakana.ai/ctm/" target="_blank">Demo</a>，在这个网页中你可以直接指挥模型求解迷宫，并实时查看模型的注意力焦点。</p>
-<p>另外，官方的<a href="https://github.com/SakanaAI/continuous-thought-machines" target="_blank">代码仓库</a>中配置了详尽的说明文档和代码注释，代码文件的切分也非常简洁直观，有一种程序员才懂的&quot;艺术感&quot;。</p>
-
-  
-  
-  
-  
+<p>现在的大模型技术发展可谓是&quot;日新月异&quot;，好像每天都有令人震撼的重要进展🤔</p>
+<p>事实上，这些&quot;重要进展&quot;到底有多有效？工程实践上的价值到底有多少？这些问题最终还是要回到那些&quot;平凡&quot;的经典知识上。</p>
+<p>关注大模型技术最新的进展当然是好事：这有助于我们了解研究方向，开拓思维。但是不能只关注那些不断发展的顶层技术，还要关注那些发展背后的、底层的、不变的东西。</p>
+<p>这也是在这个技术突飞猛进的时代，沉下心去阅读教材的意义所在。</p>
+<p>本篇主要关注浙大编写的 <a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs" target="_blank">《大模型基础》</a>一书，目前还在不断更新中。</p>
 
 
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >在阅读了大量的屎山代码之后，可能才会对代码的&quot;优雅&quot;程度有所体会😇并深刻理解这份&quot;优雅&quot;背后的工作量</span>
-</div>
-
-
-
-<h2 class="relative group">引入 
-    <div id="%E5%BC%95%E5%85%A5" class="anchor"></div>
+<h2 class="relative group">语言模型基础 
+    <div id="%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%BC%95%E5%85%A5" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>神经网络最初受生物大脑启发，却与生物大脑差异巨大。生物大脑展现出随时间演变的复杂神经动力学过程，而现代神经网络为了便于大规模深度学习，可以摒弃了&quot;时序&quot;特征。</p>
-<p>关于为什么要开展这项研究，官方论文中已经有了非常明确的表述，无需多言：</p>
-<p>&ldquo;为何开展此项研究？诚然，现代人工智能在诸多实践领域展现出的卓越性能似乎表明，对神经动力学的模拟实无必要，抑或显式考量智能的时间维度实属反实用之举。然而，人类智能具有高度灵活性、数据高效性以及优异的未见情境外推能力，且存在于学习与适应皆与时间之箭紧密关联的开放世界中。因此，人类智能天然具备常识运用、本体论推理能力、透明性/可解释性以及强大的泛化能力——这些特质在现有人工智能中尚未得到令人信服的体现。&rdquo;</p>
-<p>这篇文章的核心技术贡献如下所示：</p>
-<ol>
-<li>解耦的内部时间维度</li>
-<li>神经元层面的模型(NLMs)</li>
-<li>神经活动同步</li>
-</ol>
-<p>当然，在没有详细看代码实现的情况下，光看这些名词是没有意义的。但是作者的思路和观点还是可以了解：</p>
-<ol>
-<li>推理模型和循环：作者锐评了当前推理模型，指出&quot;继续扩展当前模型架构&quot;这条技术路线已经被很多研究质疑。而使用循环技术也的确能够让现有模型架构产生更加良好的表现，但是作者认为，<strong>循环机制很重要，但是被循环机制解锁的神经元活动之间的精确时序与交互同样重要</strong></li>
-<li>有趣的副作用：CTM 内部的循环类似于人类的思考，在没有任何显式的监督函数引导的情况下就能够<strong>为不同难度的任务自动分配合适的计算资源</strong>，简单的任务将会提前终止计算，而复杂的任务将会进行更加深入的计算</li>
-<li><strong>信息可以被编码在时序动态中</strong>，这将赋予网络更加强大的信息压缩能力</li>
-</ol>
-
-  
-  
-  
-  
 
 
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >说明一下我对第三点的思考，按照&quot;压缩即智能&quot;的观点，将将信息编码到时序动态中将极大地提高网络的信息&quot;压缩率&quot;，从某种程度上来说也就提升了&quot;智能&quot;</span>
-</div>
-
-<p>最后作者也明确了自己这个研究的目的所在：</p>
-<p>&ldquo;通过CTM显式建模神经时序机制，我们旨在为开发更具生物合理性且高性能的人工智能系统开辟新路径。&rdquo;</p>
-
-
-<h2 class="relative group">方法 
-    <div id="%E6%96%B9%E6%B3%95" class="anchor"></div>
+<h2 class="relative group">大语言模型架构 
+    <div id="%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%96%B9%E6%B3%95" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /blog/ctm-note/img/CTM_hu3059530013246572790.png 330w,
-        /blog/ctm-note/img/CTM_hu7803737405662536063.png 660w,
-        /blog/ctm-note/img/CTM_hu13995453399694117306.png 1024w,
-        /blog/ctm-note/img/CTM_hu1437703465460745877.png 2x"
-        data-zoom-src="/blog/ctm-note/img/CTM_hu1437703465460745877.png"
-        src="/blog/ctm-note/img/CTM_hu7803737405662536063.png"
-        alt="CTM.png"
-      />
-      
-    </figure>
-</p>
-<p>CTM架构概述：①突触模型（权重以蓝线表示）通过模拟神经元间相互作用生成预激活值。每个神经元会保留 ②预激活历史记录，其中最新数据被 ③神经元级模型（权重以红线表示）用于产生 ④后激活值。系统同时维护 ⑤后激活历史记录，并据此计算⑥同步矩阵。基于该矩阵 ⑦筛选神经元对，由此产生的 ⑧潜表征被CTM用于 ⑨生成输出并通过交叉注意力机制调节数据。经调节的数据（如注意力输出）会 ⑩与后激活值拼接，作为下一内部时钟步的输入</p>
-<p>如果只是单纯的引入时间维度的话，传统的 RNN 架构也能够实现，但 CTM 的创新之处在于：</p>
-<ol>
-<li>使用<strong>神经元级模型</strong>取代了传统的激活函数</li>
-<li>使用<strong>神经同步</strong>作为潜在表征来调制数据并生成输出</li>
-</ol>
 
 
-<h3 class="relative group">连续思考：内部序列维度 
-    <div id="%E8%BF%9E%E7%BB%AD%E6%80%9D%E8%80%83%E5%86%85%E9%83%A8%E5%BA%8F%E5%88%97%E7%BB%B4%E5%BA%A6" class="anchor"></div>
+<h2 class="relative group">参数高效微调 
+    <div id="%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%BF%9E%E7%BB%AD%E6%80%9D%E8%80%83%E5%86%85%E9%83%A8%E5%BA%8F%E5%88%97%E7%BB%B4%E5%BA%A6" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>论文定义了一个内部的<strong>时间维度</strong>：</p>
-$$
-t\in \{1,\dots,T\}
-$$<p>图中参数右上角的角标就指代的是某一个特定的时间步，而每一个时间步中都会进行一次图中完整的计算流程(从①到⑩)</p>
-<p>这种内部维度并非全新的概念，RNN 和 Transformer 中都有使用。但是传统的架构按照数据输入的顺序来逐步处理，这<strong>隐含</strong>地将内部的时间维度与数据的输入顺序挂钩了。</p>
-<p>举个例子，RNN 中也有内部时间维度的概念，只是每一个时间步模型都会接受一个新的 token 输入，然后根据内部隐状态去产生下一个 token 并更新内部隐状态。如果只看 token 的输入就会发现我们其实是默认将数据内在的顺序作为模型的内部时间维度</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >Transformer 本身是&quot;无序&quot;的：每一个时间步注意力机制都会并行处理原来所有的 token 或许这也是其强大所在🤔真正和输入数据顺序相关的步骤在于&quot;位置嵌入&quot;</span>
-</div>
-
-<p>而 CTM 则完全解耦了这种关联，让内部的处理与输入数据无关。不只是顺序无关，还与输入序列的长度无关，这也可能是作者更想强调的🤔</p>
-<p>这种&quot;解耦&quot;使得模型内部的&quot;思考&quot;可以有任意长度，可以迭代地构建和完善内部表征，并且可以扩展到&quot;非序列化&quot;的任务上，例如求解迷宫问题。</p>
-<p>其实目前 CoT 那一系列的技术可以理解为在做&quot;解耦&quot;的工作：数据输入已经摆在那里了，直接生成答案效果不太行，那就多产生一些<strong>长度不受数据序列影响的</strong>中间 token 也就是所谓的思考过程。但发现在非常简单的问题中模型想太多结果也不太好，怎么办呢？Anthropic 就把&quot;思考多少合适&quot;这个问题丢给了模型使用者，这从工程上也不失为一个明智之举。但 CTM 貌似有望解决这个问题😃其貌似从底层架构上解耦了数据序列与内部时间维度的关系🤔</p>
-<p>如果你想对当前的 CoT 技术有一个更加深入而全面的了解，可以去看看 <a href="https://lilianweng.github.io/posts/2025-05-01-thinking/" target="_blank">Why we think - Lil&rsquo;log</a> 里面有更加学术化的严谨表达，但又非常容易理解。</p>
-
-
-<h3 class="relative group">循环权重：突触模型 
-    <div id="%E5%BE%AA%E7%8E%AF%E6%9D%83%E9%87%8D%E7%AA%81%E8%A7%A6%E6%A8%A1%E5%9E%8B" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%BE%AA%E7%8E%AF%E6%9D%83%E9%87%8D%E7%AA%81%E8%A7%A6%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>这一部分主要讲解<strong>突触模型</strong>，对应图中的番号①部分。形式化来讲突触模型进行的工作如下：</p>
-$$
-a^t=f_{\theta_{syn}}(concat(z^t,o^t))\in R^D
-$$<p>其中 \(z^t\in R^D\) 表示 \(t\) 时间步的<strong>后激活向量</strong>，\(o^t\) 是上一个时间步计算得出的<strong>调制数据</strong>，与原来的 \(z^t\) 进行拼接后整体送入<strong>突触模型</strong>进行计算，然后就得出 \(a^t\) 也就是<strong>预激活向量</strong></p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >注意这里用的是小写的 \(z\) 而大图中使用的是大写的 \(Z\)：\(z\) 表示作用在单个神经元上的后激活向量；而 \(Z\) 表示所有神经元的后激活向量构成的一个矩阵</span>
-</div>
-
-<p>突触模型本质上就是一个函数 \(f_{\theta_{syn}}\) 可以用多种方式表达，经过实验，原论文中使用了 MLP 来表示这个函数，更具体的就是 U-NET-esque MLP</p>
-<p>然后将最近的 \(M\) 个预激活向量用一个矩阵 \(A^t\) 存储起来：</p>
-$$
-A^t=[a^{t-M+1}\quad a^{t-M+1}\dots a^{t}]\in R^{D\times M}
-$$<p>历史序列中的前 \(M\) 个元素及初始时刻 \(t=1\) 的 \(z\) 值需要进行初始化，实验表明将其设置为可学习参数能获得最佳效果。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >注意 \(z^t\) 并不是 \(t\) 时间步上的输入数据！实际上从大图中可以看出，整个模型的计算流程几乎不涉及输入数据，只有计算 \(o^t\) (橙色方块)时才有外部输入数据的参与🤔</span>
-</div>
-
-
-
-<h3 class="relative group">参数私有化的神经元级模型 
-    <div id="%E5%8F%82%E6%95%B0%E7%A7%81%E6%9C%89%E5%8C%96%E7%9A%84%E7%A5%9E%E7%BB%8F%E5%85%83%E7%BA%A7%E6%A8%A1%E5%9E%8B" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8F%82%E6%95%B0%E7%A7%81%E6%9C%89%E5%8C%96%E7%9A%84%E7%A5%9E%E7%BB%8F%E5%85%83%E7%BA%A7%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>在突触模型中介绍了单个神经元(突触)是如何处理输入，并产生一个历史记录矩阵。现在假设有 \(D\) 个同样的神经元，每一个神经元都有各自的 \(A^t\) 我们将其中编号为 \(d\) 的神经元的历史记录向量写作 \(A^t_{d}\)</p>
-<p>然后每一个神经元都会进行如下计算：</p>
-$$
-z^{t+1}_{d}=g_{\theta_{d}}(A^t_{d})
-$$<p>\(\theta_{d}\) 表示编号为 \(d\) 的神经元<strong>私有</strong>的计算参数；\(z^{t+1}_{d}\) 如其角标所示，就是下一个时间步 \(d\) 号神经元的<strong>后激活值</strong>，也就是说：</p>
-$$
-z^t=[z^{t+1}_{1} \quad z^{t+1}_{2}\dots z^{t+1}_{D}]
-$$<p>而 \(g_{\theta_{d}}\) 就是一个单隐层的 MLP，接受一个 \(M\) 维的向量 \(A^t_{d}\) 输出 \(z^{t+1}_{d}\in R^D\)</p>
-<p>用大白话描述这一步操作就是：每一个神经元都根据自己前 \(M\) 次的预激活值产生下一个后激活值。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >😢我一开始还以为 \(z_{d}^t\) 是一个向量，但其实是一个标量</span>
-</div>
-
-
-
-<h3 class="relative group">神经元同步：输入与输出的调制 
-    <div id="%E7%A5%9E%E7%BB%8F%E5%85%83%E5%90%8C%E6%AD%A5%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E7%9A%84%E8%B0%83%E5%88%B6" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%E5%90%8C%E6%AD%A5%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E7%9A%84%E8%B0%83%E5%88%B6" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>这一步是让数据与模型的交互不再依赖某一个时刻的模型状态，而是持续的动态的神经活动。具体而言就是将后激活向量收集起来，形成一个矩阵：</p>
-$$
-Z^t = [z^1 \quad z^2 \dots z^t]\in R^{D\times t}
-$$<p>然后将<strong>神经元同步</strong>描述为 \(Z^t\) 的内积：</p>
-$$
-S^t=Z^t \cdot (Z^t)^T\in R^{D\times D}
-$$
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >从数学上来说，\(S^t\) 就是一个未归一化的协方差矩阵，这个矩阵中的 \((i,j)\) 元素的值表达了在所有时间步上第 \(i\) 个神经元与第 \(j\) 个神经元之间的&quot;协同程度&quot;，也就是论文所说的&quot;神经元同步&quot;</span>
-</div>
-
-<p>然后对这个神经元同步矩阵进行<strong>下采样</strong>：从中随机选取 \(D_{out}\) 和 \(D_{action}\) 个元素值，分别形成两个神经元同步的<strong>表征向量</strong>，即 \(S^t_{out}\in R^{D_{out}}\) 和 \(S^t_{action}\in R^{D_{action}}\)</p>
-<p>\(S^t_{out}\) 被投影到输出空间：</p>
-$$
-\mathbf{y}^t = W_{out}\cdot S^t_{out}
-$$<p>而 \(S^t_{action}\) 则用于在世界中产生行为(尊重原论文表述，但其实有些迷惑🤔)：</p>
-$$
-q^t = W_{in}\cdot S^t_{action}
-$$<p>\(W_{in}\) 和 \(W_{out}\) 都是可学习的矩阵参数</p>
-<p>计算得出的 \(q^t\) 会再经过额外的计算产生 \(o^t\in R^{d_{input}}\)，并在第一步中与 \(z^t\) 进行拼接，在作者的实验中这个额外的计算一般就是注意力层：</p>
-$$
-o^t=Attention(Q=q^t, KV=FeatureExtractor(data))
-$$<p>其中 \(FeatureExtractor(\cdot)\) 也是一个神经网络模型，例如 \(ResNet\)</p>
-<p>由于 \(S^t\) 聚合了当前所有时间步的信息，较晚的时间步可能对结果的影响更大。为了让模型的灵活性更强，引入了一个可学习的<strong>衰减系数</strong>：</p>
-$$
-\mathbf{R}_{i j}^{t}=\left[\begin{array}{llll} \exp \left(-r_{i j}(t-1)\right) & \exp \left(-r_{i j}(t-2)\right) & \cdots & \exp (0) \end{array}\right]^{\top} \in \mathbb{R}^{t}
-$$<p>然后用这个衰减系数去放缩原本的神经元同步矩阵的元素值：</p>
-$$
-\mathbf{S}_{i j}^{t}=\frac{\left(\mathbf{Z}_{i}^{t}\right)^{\top} \cdot \operatorname{diag}\left(\mathbf{R}_{i j}^{t}\right) \cdot\left(\mathbf{Z}_{j}^{t}\right)}{\sqrt{\sum_{\tau=1}^{t}\left[\mathbf{R}_{i j}^{t}\right]_{\tau}}}
-$$
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >作者经过实际研究，发现这些可学习的衰减系数很少用到：在 ImageNet 视觉分类任务中在 8196 个衰减系数中只有 3 个是有效的；而在迷宫求解问题中更多一些，但也只有大约 3%</span>
-</div>
-
-
-
-<h3 class="relative group">损失函数：在不同时间步中优化 
-    <div id="%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%97%B6%E9%97%B4%E6%AD%A5%E4%B8%AD%E4%BC%98%E5%8C%96" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%9C%A8%E4%B8%8D%E5%90%8C%E6%97%B6%E9%97%B4%E6%AD%A5%E4%B8%AD%E4%BC%98%E5%8C%96" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>这里用分类任务举例子，假设某一个分类任务有 \(C\) 个类别，某一个时间步上的损失就是：</p>
-$$
-\mathcal{L}^{t}=\operatorname{CrossEntropy}\left(\mathbf{y}^{t}, y_{\text {true}}\right)
-$$<p>作者还给出了一个置信度向量 \(C^t\)：</p>
-$$
-C^t=1-\frac{\mathcal{L}^{t}}{\sqrt{ (\mathcal{L}^{t})^T \cdot \mathcal{L}^{t} }}
-$$<p>然后在所有时间步上收集这些损失就形成了两个矩阵：\(\mathcal{L}\in R^T\) 和 \(C\in R^T\)</p>
-<p>一个自然产生的问题是：应如何将L降维为标量损失函数以用于学习？本研究的损失函数旨在优化 CTM 在内部时间维度上的性能表现。相较于让模型在某一个特定的时间步输出结果(典型的就是最后一步)，作者采用了动态聚合的策略，整合两个内部时刻的信息：损失最小点和确定性最高点。该方法优势如下：</p>
-<ol>
-<li>促使CTM在多个内部时刻建立有意义的表征与计算</li>
-<li>自然形成课程学习效应，模型可先利用后期内部时刻处理复杂计算，再逐步过渡至早期步骤处理简单任务</li>
-<li>使CTM能够根据数据集中各样本点的固有难度<strong>自适应调整计算强度</strong></li>
-</ol>
-<p>具体操作如下公式所示：</p>
-$$
-\begin{matrix} t_{1}=argmin(\mathcal{L})\\ t_{2}=argmax(C)\\ L=\frac{\mathcal{L}^{t_{1}} + \mathcal{L}^{t_{2}}}{2} \end{matrix}
-$$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程到这里就结束了。</p>
-<p>然后作者又强调了一下这模型架构的优越性：</p>
-<p>&ldquo;将时序作为 CTM 的基本功能要素引入，具有诸多有益特性。其中尤为关键的是，我们能够在不限制内部时钟周期使用数量的情况下训练 CTM。这种看似微妙的自由度实则意义深远，它使得 CTM 能够为不同数据点分配可变的计算量。这种自适应/动态计算理念与现代测试时计算范式(Test time Scaling)相契合，其区别在于：这一备受推崇的建模特性是 CTM 的自然衍生结果，而非事后施加的约束或学习过程中的限制条件。&rdquo;</p>
-
-
-<h2 class="relative group">小结 
-    <div id="%E5%B0%8F%E7%BB%93" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%B0%8F%E7%BB%93" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%8F%82%E6%95%B0%E9%AB%98%E6%95%88%E5%BE%AE%E8%B0%83" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>其实论文读到这里，基本已经能够理解作者想要表达的含义了。但是某一些具体的算法细节上还需要更进一步琢磨一下🤔</p>
 
 
-<h3 class="relative group">内部时间维度 
-    <div id="%E5%86%85%E9%83%A8%E6%97%B6%E9%97%B4%E7%BB%B4%E5%BA%A6" class="anchor"></div>
+<h2 class="relative group">模型编辑 
+    <div id="%E6%A8%A1%E5%9E%8B%E7%BC%96%E8%BE%91" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%86%85%E9%83%A8%E6%97%B6%E9%97%B4%E7%BB%B4%E5%BA%A6" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>论文中貌似使用了两种不同的称谓来指代&quot;内部时间维度&quot;这个概念：在概念提出的章节，也就是第一节，使用的是&quot;内部时间维度&quot;；以及损失函数的章节，也就是最后一节，使用的是&quot;内部思考维度&quot;🤔</p>
-<p>这似乎表示了本文中的&quot;内部时间维度&quot;与 RNN 中的时间步并不相同，尽管非常非常相似。但具体的区别点如何理解？🤔</p>
-<p>在&quot;内部时间维度&quot;这个概念提出来的章节，论文着重强调了 CTM 与传统模型的差异：</p>
-<p>&ldquo;与传统序列模型（如 RNN 或 Transformer）不同——这些模型需要按照数据固有的顺序（如句子中的单词或视频中的帧）逐步处理输入——CTM 沿着自主生成的内部思维步骤时间轴进行操作。&rdquo;</p>
-<p>综合<a href="https://pub.sakana.ai/ctm" target="_blank">可交互网页</a>中的详细视频和文字说明，我发现一个非常令人震撼的事实，在<a href="#循环权重突触模型">循环权重：突触模型</a>这个章节中的最后我也有标注：</p>
-<p>\(z^t\) 并不是 \(t\) 时间步上的输入数据！实际上从大图中可以看出，整个模型的计算流程几乎不涉及输入数据，只有计算 \(o^t\) (橙色方块)时才有外部输入数据的参与</p>
-<p>这确实是一个非常令人惊讶的设计，我一开始还将 \(z^t\) 错误解读为了输入数据😢在正确解读的情况下，输入数据和内部时间维度的分离就是一个非常可理解的事情：内部的激活值向量的循环生成过程与数据序列没有关系</p>
-<p>一个简单的例子就是：假设输入数据是一串自然语言文本，CTM 可以生成很多个内部思考时间步，但输入数据却一直都是原来那串文本。当然如果你想的话，也可以不断&quot;生成&quot;新的字符，就像 Transformer 做的一样。</p>
-<p>这意味着对于任何输入，包括序列化和非序列化的输入，都能够在内部自由地展开任意长度的思考。相比于 CoT 技术，这样的设计表达力更强：CoT 中的思考过程用语言来表达，而 CTM 的思考过程则使用内部参数表达。</p>
-
-
-<h3 class="relative group">突触模型和神经元级模型 
-    <div id="%E7%AA%81%E8%A7%A6%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%A5%9E%E7%BB%8F%E5%85%83%E7%BA%A7%E6%A8%A1%E5%9E%8B" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%AA%81%E8%A7%A6%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%A5%9E%E7%BB%8F%E5%85%83%E7%BA%A7%E6%A8%A1%E5%9E%8B" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /blog/ctm-note/img/CTM_Arc_hu5268611263267976851.png 330w,
-        /blog/ctm-note/img/CTM_Arc_hu12495020629241577777.png 660w,
-        /blog/ctm-note/img/CTM_Arc_hu4811942180134209531.png 1024w,
-        /blog/ctm-note/img/CTM_Arc_hu16233364386392847608.png 2x"
-        data-zoom-src="/blog/ctm-note/img/CTM_Arc_hu16233364386392847608.png"
-        src="/blog/ctm-note/img/CTM_Arc_hu12495020629241577777.png"
-        alt="CTM_Arc.png"
-      />
-      
-    </figure>
-</p>
-<p>上面这幅图非常直观地解释了突触模型部分和神经元级模型部分进行的操作：前者让同一时刻在不同神经元之间的信息进行交互；后者让不同时刻同一神经元的历史信息进行交互。如图中所示，一个纵向的信息融合之后紧跟一个横向的信息融合🤔</p>
-<p>模型如何与外界数据进行交互呢？通过对神经元同步矩阵进行下采样然后进行线性投影得到。这么说非常抽象，但换一个视角就能发现其中的逻辑所在：如果我们把 CTM 想象成一个大脑，那么对神经同步矩阵的采样就是从中截取某部分信息，然后通过一个矩阵映射去驱动行为。</p>
-<p>一个非常合理的想法就是：把这个矩阵换成一个 MLP 网络会不会效果更好？🤔下采样的策略对于 CTM 模型的能力是否有影响？能不能使用某种注意力机制来构建某种&quot;智能&quot;的下采样策略？</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >🤔其实我挺好奇：如果把神经元的数量 \(D\) 扩大到人脑中神经元的量级，并且使用注意力机制，会不会自然涌现某种稀疏激活的特征？</span>
-</div>
-
-
-
-<h2 class="relative group">代码分析 
-    <div id="%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%A8%A1%E5%9E%8B%E7%BC%96%E8%BE%91" aria-label="锚点">#</a>
     </span>        
     
 </h2>
-<p>暂时没空去仔细研究代码了😢期末考试要来了，必须要去复习了</p>
 
           
           
@@ -2171,15 +1479,24 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        论文笔记 - 这篇文章属于一个选集。
+        AI工程 - 这篇文章属于一个选集。
     </summary>
     
     
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="/blog/rstar-note/">
-            § 1: rStar读文笔记
+        <a href="/blog/llm-engineering-note/">
+            § 0: LLM工程实践札记
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        <a href="/blog/llm-training-playbook/">
+            § 1: LLM训练实战
         </a>
     </div>
     
@@ -2203,7 +1520,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/ctm-note/&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/llm-foundation-notes/&amp;title=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -2222,7 +1539,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/ctm-note/&amp;text=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/llm-foundation-notes/&amp;text=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title="分享到 Twitter"
       aria-label="分享到 Twitter"
       >
@@ -2240,7 +1557,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://bsky.app/intent/compose?text=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0&#43;https://morethan987.github.io/blog/ctm-note/"
+      href="https://bsky.app/intent/compose?text=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0&#43;https://morethan987.github.io/blog/llm-foundation-notes/"
       title=""
       aria-label=""
       >
@@ -2258,7 +1575,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/ctm-note/&amp;resubmit=true&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/llm-foundation-notes/&amp;resubmit=true&amp;title=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title="提交到 Reddit"
       aria-label="提交到 Reddit"
       >
@@ -2277,7 +1594,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/ctm-note/&amp;resubmit=true&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/llm-foundation-notes/&amp;resubmit=true&amp;title=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title=""
       aria-label=""
       >
@@ -2296,7 +1613,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://morethan987.github.io/blog/ctm-note/&amp;resubmit=true&amp;title=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://t.me/share/url?url=https://morethan987.github.io/blog/llm-foundation-notes/&amp;resubmit=true&amp;title=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title=""
       aria-label=""
       >
@@ -2315,7 +1632,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/ctm-note/&amp;description=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/llm-foundation-notes/&amp;description=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title="钉到 Pinterest"
       aria-label="钉到 Pinterest"
       >
@@ -2334,7 +1651,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/ctm-note/&amp;quote=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/llm-foundation-notes/&amp;quote=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -2353,7 +1670,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://morethan987.github.io/blog/ctm-note/&amp;subject=CTM%e8%af%bb%e6%96%87%e7%ac%94%e8%ae%b0"
+      href="mailto:?body=https://morethan987.github.io/blog/llm-foundation-notes/&amp;subject=%e5%a4%a7%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0"
       title="通过电子邮件发送"
       aria-label="通过电子邮件发送"
       >
@@ -2379,19 +1696,27 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
   
   
 
-  <a href="/blog/rstar-note/" class="min-w-full">
+  <a href="/blog/llm-engineering-note/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/rstar-note/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/llm-engineering-note/featured.svg);"></div>
         
+      
+      <span class="absolute top-0 right-0 m-2">
+        <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+      </span>
       
 
       <div class="px-6 py-4">
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/rstar-note/">rStar读文笔记</div>
+          href="/blog/llm-engineering-note/">LLM工程实践札记</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2436,7 +1761,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-20T00:00:00&#43;00:00">2025-03-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2452,7 +1777,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       
     
   
-  <span id="views_blog/rstar-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/llm-engineering-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -2477,7 +1802,417 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       
     
   
-  <span id="likes_blog/rstar-note/index.md"
+  <span id="likes_blog/llm-engineering-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    LLM
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工程实践
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/blog/llm-training-playbook/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/llm-training-playbook/featured.svg);"></div>
+        
+      
+      <span class="absolute top-0 right-0 m-2">
+        <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+      </span>
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/blog/llm-training-playbook/">LLM训练实战</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/llm-training-playbook/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/llm-training-playbook/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E6%9E%84/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    架构
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    LLM
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工程实践
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/blog/ctm-note/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/ctm-note/featured.svg);"></div>
+        
+      
+      <span class="absolute top-0 right-0 m-2">
+        <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+      </span>
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/blog/ctm-note/">CTM读文笔记</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-05-14T00:00:00&#43;00:00">2025-05-14</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/ctm-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/ctm-note/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -2546,406 +2281,10 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mcts/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E6%9E%84/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    MCTS
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8E%A8%E7%90%86%E5%A2%9E%E5%BC%BA/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    推理增强
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/blog/llm-memory/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/llm-memory/featured.svg);"></div>
-        
-      
-      <span class="absolute top-0 right-0 m-2">
-        <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    草稿
-  </span>
-</span>
-      </span>
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/llm-memory/">关于大模型记忆</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-08T00:00:00&#43;00:00">更新于: 2025-05-08</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/llm-memory/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/llm-memory/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/llm/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    LLM
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%8D%9A%E5%AE%A2/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    博客
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/blog/ubuntu-note/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/ubuntu-note/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/blog/ubuntu-note/">Ubuntu折腾札记</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">更新于: 2025-05-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/ubuntu-note/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/ubuntu-note/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ubuntu/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Ubuntu
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/linux/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Linux
+    架构
   </span>
 </span>
   </span>
@@ -2985,8 +2324,8 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
           
         
       <script>
-        var oid = "views_blog\/ctm-note\/index.md"
-        var oid_likes = "likes_blog\/ctm-note\/index.md"
+        var oid = "views_blog\/llm-foundation-notes\/index.md"
+        var oid_likes = "likes_blog\/llm-foundation-notes\/index.md"
       </script>
       
       
@@ -3006,7 +2345,7 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/blog/llm-memory/">
+            <a class="flex group mr-3" href="/blog/llm-training-playbook/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -3018,23 +2357,6 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >关于大模型记忆</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-05-04T00:00:00&#43;00:00">2025-05-04</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/blog/llm-training-playbook/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
                   >LLM训练实战</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
@@ -3043,15 +2365,10 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
                   
                 </span>
               </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
             </a>
+          
+        </span>
+        <span>
           
         </span>
       </div>

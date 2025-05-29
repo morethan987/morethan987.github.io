@@ -3,6 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://morethan987.github.io/en/blog/llm-foundation-notes/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/llm-foundation-notes/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/llm-foundation-notes/"
+    />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/blog/llm-training-playbook/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/llm-training-playbook/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/llm-training-playbook/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/blog/ctm-note/</loc>
     <lastmod>2025-05-26T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -329,6 +361,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/tags/architecture/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/authors/</loc>
     <lastmod>2025-05-28T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -362,6 +400,12 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/engineeringpractice/</loc>
+    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/engineeringpractices/</loc>
     <lastmod>2025-05-28T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -451,12 +495,6 @@
       hreflang="en"
       href="https://morethan987.github.io/en/"
     />
-  </url>
-  <url>
-    <loc>https://morethan987.github.io/en/tags/architecture/</loc>
-    <lastmod>2025-05-26T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/paper/</loc>
