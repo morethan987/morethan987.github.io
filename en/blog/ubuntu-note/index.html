@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2541"
+    "wordCount": "2869"
   }]
   </script>
 
@@ -1276,7 +1276,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#office-suite">Office Suite</a></li>
-    <li><a href="#storage-cleanup">Storage Cleanup</a></li>
+    <li><a href="#storage-cleanup">Storage Cleanup</a>
+      <ul>
+        <li><a href="#common-cleanup-tasks">Common Cleanup Tasks</a></li>
+        <li><a href="#auto-clean-on-boot">Auto Clean on Boot</a></li>
+      </ul>
+    </li>
     <li><a href="#miscellaneous">Miscellaneous</a>
       <ul>
         <li><a href="#system-control">System Control</a></li>
@@ -1326,7 +1331,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#office-suite">Office Suite</a></li>
-    <li><a href="#storage-cleanup">Storage Cleanup</a></li>
+    <li><a href="#storage-cleanup">Storage Cleanup</a>
+      <ul>
+        <li><a href="#common-cleanup-tasks">Common Cleanup Tasks</a></li>
+        <li><a href="#auto-clean-on-boot">Auto Clean on Boot</a></li>
+      </ul>
+    </li>
     <li><a href="#miscellaneous">Miscellaneous</a>
       <ul>
         <li><a href="#system-control">System Control</a></li>
@@ -2101,6 +2111,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
+
+
+<h3 class="relative group">Common Cleanup Tasks 
+    <div id="common-cleanup-tasks" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#common-cleanup-tasks" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Remove orphaned dependencies  </span>
 </span></span><span class="line"><span class="cl">sudo apt autoremove  
 </span></span><span class="line"><span class="cl">
@@ -2129,6 +2151,78 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># Clean up old kernels  </span>
 </span></span><span class="line"><span class="cl">sudo dpkg --list <span class="p">|</span> grep linux-image <span class="c1"># List all kernels  </span>
 </span></span><span class="line"><span class="cl">sudo apt autoremove --purge <span class="c1"># Automatically remove unnecessary kernels  </span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">Auto Clean on Boot 
+    <div id="auto-clean-on-boot" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#auto-clean-on-boot" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Manually checking and cleaning up your system every time can be a hassle. A smart computer should learn to clean itself 😋</p>
+<p>First, run the following command to create a cleanup script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /usr/local/bin/system-clean-up.sh
+</span></span></code></pre></div><p>Then paste the following contents into the file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -e
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[1] Running apt autoremove...&#34;</span>
+</span></span><span class="line"><span class="cl">apt autoremove -y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[2] Running apt autoclean...&#34;</span>
+</span></span><span class="line"><span class="cl">apt autoclean -y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[3] Cleaning journal logs older than 2 days...&#34;</span>
+</span></span><span class="line"><span class="cl">journalctl --vacuum-time<span class="o">=</span>2d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[4] Removing disabled snap revisions...&#34;</span>
+</span></span><span class="line"><span class="cl">snap list --all <span class="p">|</span> awk <span class="s1">&#39;/disabled|已禁用/ {print $1, $3}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> snapname revision<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Removing snap: </span><span class="nv">$snapname</span><span class="s2"> revision </span><span class="nv">$revision</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  snap remove <span class="s2">&#34;</span><span class="nv">$snapname</span><span class="s2">&#34;</span> --revision<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$revision</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[5] Cleaning ~/.cache/ directories larger than 200MB...&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> userdir in /home/*<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">cache_root</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$userdir</span><span class="s2">/.cache&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span> -d <span class="s2">&#34;</span><span class="nv">$cache_root</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">||</span> <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> dir in <span class="s2">&#34;</span><span class="nv">$cache_root</span><span class="s2">&#34;</span>/*<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -d <span class="s2">&#34;</span><span class="nv">$dir</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">size_kb</span><span class="o">=</span><span class="k">$(</span>du -s <span class="s2">&#34;</span><span class="nv">$dir</span><span class="s2">&#34;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$size_kb</span><span class="s2">&#34;</span> -gt <span class="m">204800</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Removing large cache directory: </span><span class="nv">$dir</span><span class="s2"> (</span><span class="k">$((</span><span class="nv">$size_kb</span> <span class="o">/</span> <span class="m">1024</span><span class="k">))</span><span class="s2"> MB)&#34;</span>
+</span></span><span class="line"><span class="cl">        rm -rf <span class="s2">&#34;</span><span class="nv">$dir</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[Done] Clean-up finished.&#34;</span>
+</span></span></code></pre></div><p>After saving the <code>.sh</code> script, make it executable with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/system-clean-up.sh
+</span></span></code></pre></div><p>Next, set up the script to run automatically at boot. System startup services are defined in files located in <code>/etc/systemd/system</code>, all with a <code>.service</code> extension. To auto-clean on boot, create a <code>clean-up.service</code> file there with the following contents:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>Clean up system caches, logs, and snaps at boot
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>oneshot
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/system-clean-up.sh
+</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>root
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></div><p>Once the service file is created, enable it with the following command so it runs on the next boot (but does not run immediately):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reexec <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> clean-up.service
+</span></span></code></pre></div><p>To test that everything is working correctly, you can run the service manually:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Run the service immediately</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start clean-up.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View service logs</span>
+</span></span><span class="line"><span class="cl">sudo journalctl -u clean-up.service
 </span></span></code></pre></div>
 
 <h2 class="relative group">Miscellaneous 
