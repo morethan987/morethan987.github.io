@@ -264,7 +264,7 @@
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/llm-engineering-note/</guid>
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  This blog post is the zeroth article in the &amp;ldquo;AI Engineering&amp;rdquo; series. Besides serving as an index for the entire series, it also summarizes relevant knowledge points from practical experiences with large models.
+  This blog post is the zeroth article in the &amp;ldquo;AI Engineering&amp;rdquo; series. Besides serving as an index for the entire series, it also summarizes key knowledge points related to practical large model applications.
 &lt;/div&gt;
 
 
@@ -279,19 +279,7 @@
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Foundation of Large Models 
-    &lt;div id=&#34;foundation-of-large-models&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#foundation-of-large-models&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;
-&lt;p&gt;This section is essentially a review of large model technologies, so if you have a solid foundation, you might not need to read it.&lt;/p&gt;</description>
+&lt;p&gt;Currently, large model technology is developing rapidly. Open-source base models like DeepSeek are gradually catching up with closed-source models, and general-purpose large models are achieving increasingly higher accuracy across various tasks, pushing their capability limits higher.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-engineering-note/featured.svg" />
     </item>
     
