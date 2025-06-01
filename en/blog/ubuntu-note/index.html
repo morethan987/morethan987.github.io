@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2869"
+    "wordCount": "3241"
   }]
   </script>
 
@@ -949,7 +949,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">Updated: 20 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">Updated: 20 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1256,7 +1256,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#configuring-git">Configuring Git</a>
       <ul>
-        <li><a href="#setting-up-ssh-for-github-password-free-configuration">Setting Up SSH for GitHub (Password-Free Configuration)</a></li>
+        <li><a href="#github-ssh">GitHub-SSH</a></li>
       </ul>
     </li>
     <li><a href="#installing-and-managing-software">Installing and Managing Software</a>
@@ -1280,6 +1280,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#common-cleanup-tasks">Common Cleanup Tasks</a></li>
         <li><a href="#auto-clean-on-boot">Auto Clean on Boot</a></li>
+        <li><a href="#one-click-auto-setup-script">One-Click Auto Setup Script</a></li>
       </ul>
     </li>
     <li><a href="#miscellaneous">Miscellaneous</a>
@@ -1311,7 +1312,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#configuring-git">Configuring Git</a>
       <ul>
-        <li><a href="#setting-up-ssh-for-github-password-free-configuration">Setting Up SSH for GitHub (Password-Free Configuration)</a></li>
+        <li><a href="#github-ssh">GitHub-SSH</a></li>
       </ul>
     </li>
     <li><a href="#installing-and-managing-software">Installing and Managing Software</a>
@@ -1335,6 +1336,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#common-cleanup-tasks">Common Cleanup Tasks</a></li>
         <li><a href="#auto-clean-on-boot">Auto Clean on Boot</a></li>
+        <li><a href="#one-click-auto-setup-script">One-Click Auto Setup Script</a></li>
       </ul>
     </li>
     <li><a href="#miscellaneous">Miscellaneous</a>
@@ -1524,7 +1526,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h2>
 <p>Ubuntu, as a popular Linux distribution, offers better ecosystem support compared to other Linux distros. The most notable advantage is that when you encounter issues, you&rsquo;re more likely to find tutorials and solutions for Ubuntu.</p>
-<p>This article primarily focuses on the GUI-based personal edition of Ubuntu. For server-specific Ubuntu systems, operations depend on your actual business needs. The article <a href="https://morethan987.github.io/en/blog/cloud-server-build/">Cloud Server Setup</a> can serve as a reference.</p>
+<p>This article primarily focuses on the GUI-based personal edition of Ubuntu. For server-specific Ubuntu systems, operations depend on your actual business needs. The article <a href="https://morethan987.github.io/en/blog/cloud-server-build/">Cloud Service Deployment</a> can serve as a reference.</p>
 
 
 <h2 class="relative group">Ubuntu Installation 
@@ -1722,13 +1724,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade <span class="c1"># If possible, proceed with the upgrade</span>
 </span></span></code></pre></div>
 
-<h3 class="relative group">Setting Up SSH for GitHub (Password-Free Configuration) 
-    <div id="setting-up-ssh-for-github-password-free-configuration" class="anchor"></div>
+<h3 class="relative group">GitHub-SSH 
+    <div id="github-ssh" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#setting-up-ssh-for-github-password-free-configuration" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#github-ssh" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1800,7 +1802,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Software source operations can be performed graphically in the desktop version via &#34;Software &amp; Updates&#34;</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Add a software source</span>
 </span></span><span class="line"><span class="cl">sudo add-apt-repository ppa:libreoffice/ppa <span class="o">&amp;&amp;</span> sudo apt update
 </span></span><span class="line"><span class="cl">
@@ -1819,10 +1820,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">sudo <span class="k">do</span>-release-upgrade <span class="c1"># Upgrade across major Ubuntu versions  </span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Check software packages</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Search for all packages containing &#34;wps&#34; and their description information</span>
-</span></span><span class="line"><span class="cl">sudo apt-cache search wps
-</span></span><span class="line"><span class="cl"><span class="c1"># View package names containing the keyword &#34;wps&#34;</span>
-</span></span><span class="line"><span class="cl">sudo apt-cache pkgnames <span class="p">|</span> grep -i wps
+</span></span><span class="line"><span class="cl">sudo apt-cache search wps <span class="c1"># Search for all packages containing &#34;wps&#34; and their description information</span>
+</span></span><span class="line"><span class="cl">sudo apt-cache pkgnames <span class="p">|</span> grep -i wps <span class="c1"># View package names containing the keyword &#34;wps&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Remove packages  </span>
 </span></span><span class="line"><span class="cl">sudo apt remove xxx  
@@ -1905,8 +1904,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">ls ~/.local/share -a <span class="c1"># Check shared configuration files</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">ls ~/.cache -a <span class="c1"># Check cache</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Check disk usage of folders under .cache</span>
-</span></span><span class="line"><span class="cl">du -sh ~/.cache/* <span class="p">|</span> sort -h -r
+</span></span><span class="line"><span class="cl">du -sh ~/.cache/* <span class="p">|</span> sort -h -r <span class="c1"># Check disk usage of folders under .cache</span>
 </span></span></code></pre></div>
 
 <h3 class="relative group">curl 
@@ -2001,9 +1999,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Prompt=normal  
 </span></span></code></pre></div><p>Next, modify the software source configuration file by running the following command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo sed -i <span class="s1">&#39;s/noble/oracular/g&#39;</span> /etc/apt/sources.list.d/ubuntu.sources  
-</span></span></code></pre></div><p>After modifying the file, execute:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Refresh the package index and perform a full upgrade, including the kernel, drivers, and all packages  </span>
-</span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt full-upgrade -y  
 </span></span></code></pre></div><p>After modifying the files:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Refresh the index and perform a full upgrade, including the kernel, drivers, and all packages  </span>
 </span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt full-upgrade -y  
@@ -2164,9 +2159,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>Manually checking and cleaning up your system every time can be a hassle. A smart computer should learn to clean itself 😋</p>
-<p>First, run the following command to create a cleanup script:</p>
+<p>Run the following command to open a new script file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /usr/local/bin/system-clean-up.sh
-</span></span></code></pre></div><p>Then paste the following contents into the file:</p>
+</span></span></code></pre></div><p>Then paste the following content into the file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -e
 </span></span><span class="line"><span class="cl">
@@ -2201,28 +2196,131 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[Done] Clean-up finished.&#34;</span>
-</span></span></code></pre></div><p>After saving the <code>.sh</code> script, make it executable with:</p>
+</span></span></code></pre></div><p>This script includes five safe automatic cleanup tasks:</p>
+<ol>
+<li><code>apt autoremove</code></li>
+<li><code>apt autoclean</code></li>
+<li>Deletes system logs older than 2 days</li>
+<li>Removes disabled Snap packages</li>
+<li>Deletes <code>.cache</code> subfolders larger than 200MB</li>
+</ol>
+<p>After saving the file, grant execute permission:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/system-clean-up.sh
-</span></span></code></pre></div><p>Next, set up the script to run automatically at boot. System startup services are defined in files located in <code>/etc/systemd/system</code>, all with a <code>.service</code> extension. To auto-clean on boot, create a <code>clean-up.service</code> file there with the following contents:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>Clean up system caches, logs, and snaps at boot
-</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span></code></pre></div><hr>
+<p>Then configure automatic startup on boot: The directory <code>/etc/systemd/system</code> contains service scripts that run automatically at startup, all with the <code>.service</code> extension.</p>
+<p>To enable the script to run automatically at system boot, create a new systemd service file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/clean-up.service
+</span></span></code></pre></div><p>Paste in the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Clean up system caches, logs, and snaps at boot</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>oneshot
-</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/system-clean-up.sh
-</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>root
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/system-clean-up.sh</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">root</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</span></span></code></pre></div><p>Once the service file is created, enable it with the following command so it runs on the next boot (but does not run immediately):</p>
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></div><p>After editing is completed, run the following command to enable this service script, so it will automatically run once upon the next boot but will not run immediately.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reexec <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> clean-up.service
-</span></span></code></pre></div><p>To test that everything is working correctly, you can run the service manually:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Run the service immediately</span>
+</span></span></code></pre></div><p>You can also run it manually to test if it works properly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Run immediately</span>
 </span></span><span class="line"><span class="cl">sudo systemctl start clean-up.service
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># View service logs</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Check the system journal</span>
 </span></span><span class="line"><span class="cl">sudo journalctl -u clean-up.service
+</span></span></code></pre></div>
+
+<h3 class="relative group">One-Click Auto Setup Script 
+    <div id="one-click-auto-setup-script" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#one-click-auto-setup-script" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>If you find the above script configuration process too cumbersome, we also provide a one-click automated setup script. You can delete it after running it once.</p>
+<p>Create a file named <code>setup-cleanup.sh</code> in any directory and paste the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -e
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Creating cleanup script at /usr/local/bin/system-clean-up.sh...&#34;</span>
+</span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt; &#39;EOF&#39; | sudo tee /usr/local/bin/system-clean-up.sh &gt; /dev/null
+</span></span></span><span class="line"><span class="cl"><span class="s">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="s">set -e
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo &#34;[1] Running apt autoremove...&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">apt autoremove -y
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo &#34;[2] Running apt autoclean...&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">apt autoclean -y
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo &#34;[3] Cleaning journal logs older than 2 days...&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">journalctl --vacuum-time=2d
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo &#34;[4] Removing disabled snap revisions...&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">snap list --all | awk &#39;/disabled|已禁用/ {print $1, $3}&#39; | while read snapname revision; do
+</span></span></span><span class="line"><span class="cl"><span class="s">  echo &#34;Removing snap: $snapname revision $revision&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">  snap remove &#34;$snapname&#34; --revision=&#34;$revision&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">done
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo &#34;[5] Cleaning ~/.cache/ directories larger than 200MB...&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">for userdir in /home/*; do
+</span></span></span><span class="line"><span class="cl"><span class="s">  cache_root=&#34;$userdir/.cache&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">  [ -d &#34;$cache_root&#34; ] || continue
+</span></span></span><span class="line"><span class="cl"><span class="s">  for dir in &#34;$cache_root&#34;/*; do
+</span></span></span><span class="line"><span class="cl"><span class="s">    if [ -d &#34;$dir&#34; ]; then
+</span></span></span><span class="line"><span class="cl"><span class="s">      size_kb=$(du -s &#34;$dir&#34; | awk &#39;{print $1}&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s">      if [ &#34;$size_kb&#34; -gt 204800 ]; then
+</span></span></span><span class="line"><span class="cl"><span class="s">        echo &#34;Removing large cache directory: $dir ($(($size_kb / 1024)) MB)&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">        rm -rf &#34;$dir&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">      fi
+</span></span></span><span class="line"><span class="cl"><span class="s">    fi
+</span></span></span><span class="line"><span class="cl"><span class="s">  done
+</span></span></span><span class="line"><span class="cl"><span class="s">done
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo &#34;[Done] Clean-up finished.&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo chmod +x /usr/local/bin/system-clean-up.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;✅ Cleanup script created.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Creating systemd service clean-up.service...&#34;</span>
+</span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt; EOF | sudo tee /etc/systemd/system/clean-up.service &gt; /dev/null
+</span></span></span><span class="line"><span class="cl"><span class="s">[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s">Description=Clean up system caches, logs, and snaps at boot
+</span></span></span><span class="line"><span class="cl"><span class="s">After=network.target
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s">Type=oneshot
+</span></span></span><span class="line"><span class="cl"><span class="s">ExecStart=/usr/local/bin/system-clean-up.sh
+</span></span></span><span class="line"><span class="cl"><span class="s">User=root
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s">WantedBy=multi-user.target
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;✅ Service file created.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🔄 Reloading systemd...&#34;</span>
+</span></span><span class="line"><span class="cl">sudo systemctl daemon-reexec
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;✅ systemd reloaded.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🧩 Enabling clean-up.service at boot...&#34;</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> clean-up.service
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;✅ Enabled.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;⚙️ Running cleanup task now...&#34;</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start clean-up.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;✅ Cleanup complete. You can check logs with: sudo journalctl -u clean-up.service&#34;</span>
+</span></span></code></pre></div><p>Finally, run this setup script once and you&rsquo;re done:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod +x setup-cleanup.sh <span class="o">&amp;&amp;</span> sudo ./setup-cleanup.sh
 </span></span></code></pre></div>
 
 <h2 class="relative group">Miscellaneous 
@@ -2249,14 +2347,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <ul>
-<li>Shut down immediately:</li>
+<li>
+<p>Shut down immediately: <code>shutdown now</code></p>
+</li>
+<li>
+<p>Restart immediately: <code>sudo reboot</code></p>
+</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  shutdown now
-</span></span></code></pre></div><ul>
-<li>Restart immediately:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  sudo reboot
-</span></span></code></pre></div>
+
 
 <h3 class="relative group">Extracting Files 
     <div id="extracting-files" class="anchor"></div>
