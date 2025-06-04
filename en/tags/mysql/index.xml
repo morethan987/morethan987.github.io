@@ -22,7 +22,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Information Source 
     &lt;div id=&#34;information-source&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -37,7 +36,6 @@
 &lt;li&gt;&lt;a href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34; target=&#34;_blank&#34;&gt;SQL Tutorial - Liao Xuefeng&amp;rsquo;s Official Website&lt;/a&gt;&lt;br&gt;
 This is an extremely user-friendly MySQL tutorial website with an embedded web-based database, making it easy for beginners to get a hands-on understanding of MySQL operations. It also provides concise yet essential explanations of the background of SQL.&lt;/li&gt;
 &lt;/ul&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;MySQL Installation 
     &lt;div id=&#34;mysql-installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

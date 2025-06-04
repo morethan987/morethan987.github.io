@@ -22,7 +22,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -46,7 +45,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   After understanding the implementation of a network architecture, a natural question arises: how do I train such a model? This section documents various engineering insights that can answer this question.
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
@@ -74,7 +72,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 
     &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -98,7 +95,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   This blog post is the zeroth article in the &amp;ldquo;AI Engineering&amp;rdquo; series. Besides serving as an index for the entire series, it also summarizes key knowledge points related to practical large model applications.
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 

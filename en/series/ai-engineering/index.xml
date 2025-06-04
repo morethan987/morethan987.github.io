@@ -22,7 +22,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -48,7 +47,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -72,7 +70,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   This blog post is the zeroth article in the &amp;ldquo;AI Engineering&amp;rdquo; series. Besides serving as an index for the entire series, it also summarizes key knowledge points related to practical large model applications.
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 

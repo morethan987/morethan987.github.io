@@ -24,7 +24,6 @@
 &lt;/div&gt;
 &lt;/p&gt;
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Process Overview 
     &lt;div id=&#34;process-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -41,7 +40,6 @@ graph LR;
 id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id3(&#34;MATLAB Code Execution&#34;);
 &lt;/pre&gt;
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Task Allocation 

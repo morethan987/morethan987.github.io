@@ -22,7 +22,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -46,7 +45,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   After understanding the implementation of a network architecture, a natural question arises: how do I train such a model? This section documents various engineering insights that can answer this question.
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
@@ -76,7 +74,6 @@
 &lt;/div&gt;
 &lt;/p&gt;
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -102,7 +99,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 
     &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -126,7 +122,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   Summarizing and documenting the process of tinkering with Ubuntu for future reference.
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 
@@ -156,7 +151,6 @@
 &lt;/div&gt;
 &lt;/p&gt;
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Research Background 
     &lt;div id=&#34;research-background&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -167,7 +161,6 @@
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Existing Work 
     &lt;div id=&#34;existing-work&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -192,7 +185,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   Detailed documentation of the process of deploying an LLM application from scratch, focusing mainly on the initial setup of cloud servers, continuously updated&amp;hellip;
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
@@ -221,7 +213,6 @@
   A detailed record of the core features of the Qdrant vector database, helping developers design better databases in practical applications 😋
 &lt;/div&gt;
 &lt;/p&gt;
-
 
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -268,7 +259,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 
     &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -292,7 +282,6 @@
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   The basic info and operations of Neo4j Graph Database.
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Introduction 
@@ -321,7 +310,6 @@
 &lt;/div&gt;
 &lt;/p&gt;
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -349,7 +337,6 @@
 &lt;/div&gt;
 &lt;/p&gt;
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Process Overview 
     &lt;div id=&#34;process-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -366,7 +353,6 @@ graph LR;
 id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id3(&#34;MATLAB Code Execution&#34;);
 &lt;/pre&gt;
 &lt;/div&gt;
-
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;Task Allocation 
@@ -394,7 +380,6 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
 &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Information Source 
     &lt;div id=&#34;information-source&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -409,7 +394,6 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
 &lt;li&gt;&lt;a href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34; target=&#34;_blank&#34;&gt;SQL Tutorial - Liao Xuefeng&amp;rsquo;s Official Website&lt;/a&gt;&lt;br&gt;
 This is an extremely user-friendly MySQL tutorial website with an embedded web-based database, making it easy for beginners to get a hands-on understanding of MySQL operations. It also provides concise yet essential explanations of the background of SQL.&lt;/li&gt;
 &lt;/ul&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;MySQL Installation 
     &lt;div id=&#34;mysql-installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -450,7 +434,6 @@ This is an extremely user-friendly MySQL tutorial website with an embedded web-b
 &lt;/div&gt;
 
 
-
 &lt;h2 class=&#34;relative group&#34;&gt;Why Hugo? 
     &lt;div id=&#34;why-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -474,7 +457,6 @@ This is an extremely user-friendly MySQL tutorial website with an embedded web-b
       <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   A Reflection on Writing a Plugin and What I Learned from the Experience.
 &lt;/div&gt;
-
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;The Beginning 
@@ -538,7 +520,6 @@ This is an extremely user-friendly MySQL tutorial website with an embedded web-b
     
 &lt;/h2&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Standard Python Operations 
     &lt;div id=&#34;standard-python-operations&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -549,7 +530,6 @@ This is an extremely user-friendly MySQL tutorial website with an embedded web-b
     &lt;/span&gt;        
     
 &lt;/h3&gt;
-
 
 &lt;h4 class=&#34;relative group&#34;&gt;Creation 
     &lt;div id=&#34;creation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
