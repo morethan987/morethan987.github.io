@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3241"
+    "wordCount": "3321"
   }]
   </script>
 
@@ -1291,6 +1291,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#system-control">System Control</a></li>
         <li><a href="#extracting-files">Extracting Files</a></li>
+        <li><a href="#temporary-environment-variables">Temporary Environment Variables</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -1347,6 +1348,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#system-control">System Control</a></li>
         <li><a href="#extracting-files">Extracting Files</a></li>
+        <li><a href="#temporary-environment-variables">Temporary Environment Variables</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -2326,6 +2328,23 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Extract a .tar.gz file  </span>
 </span></span><span class="line"><span class="cl">tar -xzvf file.tar.gz  
+</span></span></code></pre></div>
+<h3 class="relative group">Temporary Environment Variables 
+    <div id="temporary-environment-variables" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#temporary-environment-variables" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Sometimes, even with a VPN proxy enabled, the terminal may still be unable to access the internet properly. This is likely due to the terminal being unable to automatically detect the proxy port. The solution is to modify the environment variables, which can be changed permanently (by writing to a file) or temporarily, as shown below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># For use in the PowerShell terminal on Windows</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env</span>:HTTPS_PROXY<span class="o">=</span><span class="s2">&#34;http://127.0.0.1:7890&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># For use in bash or cmd terminals</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://127.0.0.1:7890
 </span></span></code></pre></div>
 <h2 class="relative group">References 
     <div id="references" class="anchor"></div>

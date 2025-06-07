@@ -114,7 +114,7 @@
     "keywords": ["LLM","工程实践","笔记"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "310"
+    "wordCount": "774"
   }]
   </script>
 
@@ -946,7 +946,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1394,7 +1394,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>事实上，这些&quot;重要进展&quot;到底有多有效？工程实践上的价值到底有多少？这些问题最终还是要回到那些&quot;平凡&quot;的经典知识上。</p>
 <p>关注大模型技术最新的进展当然是好事：这有助于我们了解研究方向，开拓思维。但是不能只关注那些不断发展的顶层技术，还要关注那些发展背后的、底层的、不变的东西。</p>
 <p>这也是在这个技术突飞猛进的时代，沉下心去阅读教材的意义所在。</p>
-<p>本篇主要关注浙大编写的 <a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs" target="_blank">《大模型基础》</a>一书，目前还在不断更新中。</p>
+<p>本篇主要关注浙大编写的 <a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs" target="_blank">《大模型基础》</a>一书，这本书目前还在不断更新中。</p>
 
 <h2 class="relative group">语言模型基础 
     <div id="语言模型基础" class="anchor"></div>
@@ -1406,6 +1406,33 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
+<p>这部分内容就是目前大学中最常教授的知识内容：基于 n-grams 的统计学语言建模，基于 RNN 的语言模型和基于 Transformer 的语言模型。下面贴一张 Transformer 架构的流程图。</p>
+<p>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="Transformer" src="Transformer.png" />
+
+  
+    <figcaption>引用自第 16 页</figcaption>
+</figure>
+</p>
+<p>模型架构没什么好说的，但这里有几个比较有意思的问题，在我看书之前还比较模糊，看书之后就立刻清晰了。</p>
+<hr>
+<p>Q：都说 Transformer 是并行计算的架构，但为什么还是只能一个 token 接着一个 token 串行生成？</p>
+<p>A：Transformer 的并行计算体现在处理已知序列上，所有已知的 token 的向量会被并行地送入模型中进行处理。Token 的生成过程还是串行地自回归地生成。</p>
+<hr>
+<p>Q：将残差连接和层归一化的顺序调换对模型有影响吗？</p>
+<p>A：将层归一化放在残差连接后面的网络叫做 Post-LN，还有一种将层归一化放在残差连接之前的网络叫做 Pre-LN；Post-LN 应对表征坍塌的能力更强，处理梯度消失的能力略弱，Pre-LN 反之。</p>
+<p>Q：表征坍塌是什么意思？</p>
+<p>A：在训练过程中，模型学习到的表示变得缺乏区分性，也就是说不同的输入样本被映射到相似甚至相同的特征向量，导致模型失去了对于不同样本的判别性。</p>
+<hr>
+<p>Q：为什么 Transformer 的 Encoder 部分和 Decode 部分可以单独构建语言模型？</p>
+<p>A：</p>
+<hr>
 
 <h2 class="relative group">大语言模型架构 
     <div id="大语言模型架构" class="anchor"></div>
