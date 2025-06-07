@@ -113,7 +113,7 @@
     "keywords": ["论文","笔记","架构"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6013"
+    "wordCount": "6437"
   }]
   </script>
 
@@ -1412,7 +1412,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#关于时序信息">关于时序信息</a></li>
       </ul>
     </li>
-    <li><a href="#代码分析">代码分析</a></li>
+    <li><a href="#代码分析">代码分析</a>
+      <ul>
+        <li><a href="#迷宫问题">迷宫问题</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1444,7 +1448,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#关于时序信息">关于时序信息</a></li>
       </ul>
     </li>
-    <li><a href="#代码分析">代码分析</a></li>
+    <li><a href="#代码分析">代码分析</a>
+      <ul>
+        <li><a href="#迷宫问题">迷宫问题</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -2180,7 +2188,70 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
     </span>        
     
 </h2>
-<p>暂时没空去仔细研究代码了😢期末考试要来了，必须要去复习了</p>
+<p>官方给出的 <code>README.md</code> 文件对于整个项目的目录说明很清晰，此处不再赘述。大致浏览了一下 <code>models</code> 文件夹中的模型代码后就可以直接去看 <code>tasks</code> 文件夹中的具体的训练代码。</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >只看模型代码其实不太容易理解模型是如何与数据进行交互的🤔</span>
+</div>
+
+
+<h3 class="relative group">迷宫问题 
+    <div id="迷宫问题" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e8%bf%b7%e5%ae%ab%e9%97%ae%e9%a2%98" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>这个任务是 CTM 论文中着重强调的典型任务，在<a href="https://pub.sakana.ai/ctm/" target="_blank">可交互网页</a>中有一个互动版本的演示，非常直观地说明了这个任务的逻辑和最终效果。大部分代码其实都非常好理解，这里给出一些有助于理解的 QA🤔</p>
+<hr>
+<p>Q：<code>prediction_reshaper</code> 参数是什么？</p>
+<p>A：可以理解为输出的参数的形状，每个任务都有不同的配置。</p>
+<p>在迷宫问题中这个参数被设置为 <code>[args.maze_route_length, 5]</code>，其中数字 5 表示每次模型都从&quot;上、下左、右、停止&quot;这五个动作中产生预测，给出这五个动作的归一化后的概率分布；<code>maze_route_length</code> 表示进行预测的步数，网页端设置的是 75 步</p>
+<hr>
+<p>Q：下面这一段代码是在干什么？</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># Determine pseudo input shape based on dataset</span>
+</span></span><span class="line"><span class="cl">	<span class="n">h_w</span> <span class="o">=</span> <span class="mi">39</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dataset</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;mazes-small&#39;</span><span class="p">,</span> <span class="s1">&#39;mazes-medium&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">99</span> <span class="c1"># Example dimensions</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pseudo_inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">h_w</span><span class="p">,</span> <span class="n">h_w</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">model</span><span class="p">(</span><span class="n">pseudo_inputs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Warning: Pseudo forward pass failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total params: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>A：构造一个&quot;伪输入&quot;，验证算法正确性</p>
+<hr>
 
           
           

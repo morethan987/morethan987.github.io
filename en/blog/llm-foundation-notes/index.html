@@ -114,7 +114,7 @@
     "keywords": ["LLM","EngineeringPractice","Notes"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "167"
+    "wordCount": "435"
   }]
   </script>
 
@@ -1406,6 +1406,33 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
+<p>This is the most commonly taught knowledge in universities today: n-gram based statistical language modeling, RNN-based language models, and Transformer-based language models. Below is a flowchart of the Transformer architecture.</p>
+<p>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="Transformer" src="Transformer.png" />
+
+  
+    <figcaption>引用自第 16 页</figcaption>
+</figure>
+</p>
+<p>The model architecture doesn&rsquo;t have much to say, but there are a few interesting questions that were a bit unclear to me before reading the book but became immediately clear afterward.</p>
+<hr>
+<p>Q: It&rsquo;s said that Transformer is a parallel computing architecture, so why can tokens only be generated one after another in a serial manner?</p>
+<p>A: The parallel computing of the Transformer is reflected in the processing of known sequences, where all known token vectors are fed into the model in parallel for processing. However, the token generation process remains serial and autoregressive.</p>
+<hr>
+<p>Q: Does swapping the order of residual connections and layer normalization affect the model?</p>
+<p>A: Networks that place layer normalization after residual connections are called Post-LN, while those that place layer normalization before residual connections are called Pre-LN. Post-LN has a stronger ability to handle representation collapse but is slightly weaker at addressing gradient vanishing, whereas Pre-LN is the opposite.</p>
+<p>Q: What does representation collapse mean?</p>
+<p>A: During training, the learned representations of the model become less discriminative, meaning different input samples are mapped to similar or even identical feature vectors, causing the model to lose its ability to distinguish between different samples.</p>
+<hr>
+<p>Q: Why can the Encoder and Decoder parts of the Transformer be used independently to build a language model?</p>
+<p>A:</p>
+<hr>
 
 <h2 class="relative group">Architecture of Large Language Models 
     <div id="architecture-of-large-language-models" class="anchor"></div>
@@ -2152,7 +2179,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

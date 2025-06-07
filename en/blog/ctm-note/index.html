@@ -113,7 +113,7 @@
     "keywords": ["Paper","Notes","Architecture"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2735"
+    "wordCount": "2972"
   }]
   </script>
 
@@ -1080,7 +1080,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-14T00:00:00&#43;00:00">14 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1412,7 +1412,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#about-temporal-information">About Temporal Information</a></li>
       </ul>
     </li>
-    <li><a href="#code-analysis">Code Analysis</a></li>
+    <li><a href="#code-analysis">Code Analysis</a>
+      <ul>
+        <li><a href="#maze-problem">Maze Problem</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1444,7 +1448,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#about-temporal-information">About Temporal Information</a></li>
       </ul>
     </li>
-    <li><a href="#code-analysis">Code Analysis</a></li>
+    <li><a href="#code-analysis">Code Analysis</a>
+      <ul>
+        <li><a href="#maze-problem">Maze Problem</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -2180,7 +2188,70 @@ $$<p>Stochastic gradient descent is then used to optimize the model parameters. 
     </span>        
     
 </h2>
-<p>I don&rsquo;t have time to study the code carefully now 😢 Finals are coming, I have to go review.</p>
+<p>The official <code>README.md</code> file provides a clear explanation of the project&rsquo;s directory structure, so I won&rsquo;t go into detail here. After briefly reviewing the model code in the <code>models</code> folder, you can directly look at the specific training code in the <code>tasks</code> folder.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Just looking at the model code actually makes it not very easy to understand how the model interacts with the data🤔</span>
+</div>
+
+
+<h3 class="relative group">Maze Problem 
+    <div id="maze-problem" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#maze-problem" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>This task is a typical one emphasized in the CTM paper. There is an interactive version of the demonstration on the <a href="https://pub.sakana.ai/ctm/" target="_blank">interactive webpage</a>, which very intuitively explains the logic and final results of this task. Most of the code is quite easy to understand, so here are some Q&amp;As that may help with comprehension🤔</p>
+<hr>
+<p>Q: What is the <code>prediction_reshaper</code> parameter?</p>
+<p>A: It can be understood as the shape of the output parameters, and each task has different configurations.</p>
+<p>In the maze problem, this parameter is set to <code>[args.maze_route_length, 5]</code>, where the number 5 indicates that the model predicts from five actions—&ldquo;up, down, left, right, stop&rdquo;—and outputs the normalized probability distribution of these five actions; <code>maze_route_length</code> represents the number of steps for prediction, which is set to 75 steps on the web interface.</p>
+<hr>
+<p>Q: What does the following piece of code do?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">```</span><span class="n">python</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Determine pseudo input shape based on dataset</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h_w</span> <span class="o">=</span> <span class="mi">39</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dataset</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;mazes-small&#39;</span><span class="p">,</span> <span class="s1">&#39;mazes-medium&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">99</span> <span class="c1"># Example dimensions</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pseudo_inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">h_w</span><span class="p">,</span> <span class="n">h_w</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="p">(</span><span class="n">pseudo_inputs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Warning: Pseudo forward pass failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>print(f&rsquo;Total params: {sum(p.numel() for p in model.parameters())}')</p>
+<hr>
 
           
           
