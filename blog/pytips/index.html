@@ -116,7 +116,7 @@
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4123"
+    "wordCount": "4209"
   }]
   </script>
 
@@ -1872,7 +1872,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">conda remove -n xxx  <span class="c1"># 删除环境名为xxx的虚拟环境</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">conda create -n 环境名 <span class="c1"># 创建环境名为xxx的虚拟环境，使用默认python版本</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建环境名为xxx的虚拟环境，使用默认python版本</span>
+</span></span><span class="line"><span class="cl">conda create -n xxx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 克隆已有环境</span>
+</span></span><span class="line"><span class="cl">conda create --name xyx --clone xxx
 </span></span></code></pre></div><p>添加国内下载源：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda config --show channels <span class="c1"># 查看conda下载源</span>
 </span></span><span class="line"><span class="cl">
@@ -1894,6 +1898,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># 列出所有包的名称及版本</span>
 </span></span><span class="line"><span class="cl">conda list
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看名为xxx的环境中的包</span>
+</span></span><span class="line"><span class="cl">conda list -n xxx
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 删除未使用的包和缓存，节省磁盘空间</span>
 </span></span><span class="line"><span class="cl">conda clean --all
 </span></span><span class="line"><span class="cl">
@@ -1906,7 +1913,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># 手动传输到服务器上，切到对应文件夹然后运行，注意whl</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># --find-links指定whl所在的文件夹</span>
 </span></span><span class="line"><span class="cl">pip install scikit_image-0.25.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --no-index --find-links<span class="o">=</span>./
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>有些时候下载会出现报错的情况，这个时候就需要上 <a href="https://pypi.org/" target="_blank">pypi</a> 官网去检查一下是否有对应的包，然后再微调一下命令，这样才能下载成功</p>
+
   
   
   
