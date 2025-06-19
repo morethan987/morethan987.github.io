@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5481"
+    "wordCount": "5588"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">更新于: 2025-05-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">11 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">更新于: 2025-05-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1819,6 +1819,16 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># 移除软件包</span>
 </span></span><span class="line"><span class="cl">sudo apt remove xxx
 </span></span><span class="line"><span class="cl">sudo apt autoremove <span class="c1"># 清理残留</span>
+</span></span></code></pre></div><p>如果出现网络访问异常，可能是 apt 的代理设置需要手动指定。apt 默认不使用系统的代理设置，需要在 <code>/etc/apt/apt.conf.d/99proxy</code> 文件中明确写入代理设置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看系统的代理设置</span>
+</span></span><span class="line"><span class="cl">env <span class="p">|</span> grep -i proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入配置文件</span>
+</span></span><span class="line"><span class="cl">sudo nano /etc/apt/apt.conf.d/99proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 写入代理设置，请根据系统代理设置填写</span>
+</span></span><span class="line"><span class="cl">Acquire::http::Proxy <span class="s2">&#34;http://127.0.0.1:7890/&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">Acquire::https::Proxy <span class="s2">&#34;http://127.0.0.1:7890/&#34;</span><span class="p">;</span>
 </span></span></code></pre></div>
 <h3 class="relative group">deb 
     <div id="deb" class="anchor"></div>

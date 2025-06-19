@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3361"
+    "wordCount": "3441"
   }]
   </script>
 
@@ -1819,6 +1819,16 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># Remove packages  </span>
 </span></span><span class="line"><span class="cl">sudo apt remove xxx  
 </span></span><span class="line"><span class="cl">sudo apt autoremove <span class="c1"># Clean up residuals  </span>
+</span></span></code></pre></div><p>If there is an abnormality in network access, it might be necessary to manually specify the proxy settings for apt. By default, apt does not use the system&rsquo;s proxy settings; instead, you need to explicitly write the proxy settings into the <code>/etc/apt/apt.conf.d/99proxy</code> file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Check the system&#39;s proxy settings</span>
+</span></span><span class="line"><span class="cl">env <span class="p">|</span> grep -i proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Open the configuration file</span>
+</span></span><span class="line"><span class="cl">sudo nano /etc/apt/apt.conf.d/99proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Write the proxy settings, filling them out according to your system&#39;s proxy settings</span>
+</span></span><span class="line"><span class="cl">Acquire::http::Proxy <span class="s2">&#34;http://127.0.0.1:7890/&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">Acquire::https::Proxy <span class="s2">&#34;http://127.0.0.1:7890/&#34;</span><span class="p">;</span>
 </span></span></code></pre></div>
 <h3 class="relative group">deb 
     <div id="deb" class="anchor"></div>
