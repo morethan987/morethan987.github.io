@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-20T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-05-20T00:00:00\u002b00:00",
+    "dateModified": "2025-06-20T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5588"
+    "wordCount": "6249"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-20T00:00:00&#43;00:00">更新于: 2025-05-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">12 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-20T00:00:00&#43;00:00">更新于: 2025-06-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1254,6 +1254,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#前言">前言</a></li>
     <li><a href="#ubuntu安装">Ubuntu安装</a></li>
     <li><a href="#界面美化">界面美化</a></li>
+    <li><a href="#文本编辑">文本编辑</a>
+      <ul>
+        <li><a href="#nano">nano</a></li>
+        <li><a href="#vim">vim</a></li>
+      </ul>
+    </li>
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#使用windows上的字体">使用Windows上的字体</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
@@ -1312,6 +1318,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#前言">前言</a></li>
     <li><a href="#ubuntu安装">Ubuntu安装</a></li>
     <li><a href="#界面美化">界面美化</a></li>
+    <li><a href="#文本编辑">文本编辑</a>
+      <ul>
+        <li><a href="#nano">nano</a></li>
+        <li><a href="#vim">vim</a></li>
+      </ul>
+    </li>
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#使用windows上的字体">使用Windows上的字体</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
@@ -1547,6 +1559,103 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">./install.sh <span class="c1"># 重新运行安装脚本即可</span>
 </span></span></code></pre></div>
+<h2 class="relative group">文本编辑 
+    <div id="文本编辑" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%96%87%e6%9c%ac%e7%bc%96%e8%be%91" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>此处的文本编辑特指的是在命令行中的文本编辑，在专门的文本编辑器中的文本编辑实在是太直观简单了，根本不用学。而且绝大多数情况下，我们也不用在命令行中进行文本编辑。</p>
+<p>然而有些时候你不得不在命令行中编辑文本：服务器上连 GUI 都没有😢虽然可以通过 VS Code 的插件在服务器上运行 GUI 编辑界面，但是当你只想改一个配置文件，启动如此&quot;重量级&quot;的编辑器实属牛刀杀鸡了🤔</p>
+<p>如果你只是想创建一个文件，然后用别的编辑器进行编辑，那么简单一行命令即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 碰一下就会出现😉</span>
+</span></span><span class="line"><span class="cl">touch file_name.md
+</span></span></code></pre></div>
+<h3 class="relative group">nano 
+    <div id="nano" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#nano" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>这个命令行编辑器是 Umbundu 系统自带的命令行文本编辑器，不用专门下载。</p>
+<p>想要编辑文件的话也非常简单：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano file_name
+</span></span></code></pre></div><p>进入 nano 之后就有几行提示，标出了相关的快捷键，按照提示进行操作就行了，属于是非常简单的命令行文本编辑器了。</p>
+
+<h3 class="relative group">vim 
+    <div id="vim" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#vim" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>我很早就听说过这个&quot;传奇上古&quot;编辑器的大名，并且听说了它所拥有的各种各样的优点：手指不离开键盘有助于思维输出、习惯之后就戒不掉了、简洁轻量化能够高度自定义、牛逼的程序员都用vim……</p>
+<p>然而我几经尝试后得出结论：vim 很好，但我真的很懒😢我真的不想花几个星期去和各种各样的组合键进行磨合</p>
+<p>这里我只记录一些最最最常用的操作，适合偶尔使用 vim 进行轻量编辑的同志，看完下面这些操作你就可以对外宣称你会用 vim 了😋</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">i <span class="c1"># 进入插入模式</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;ESC&gt; <span class="c1"># 返回正常模式</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">: <span class="c1"># 进入命令模式</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">:q! <span class="c1"># 退出不保存</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">:wq <span class="c1"># 退出保存</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">y6w <span class="c1"># 复制6个词</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">p <span class="c1"># 粘贴</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">dd <span class="c1"># 删除行</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">dw <span class="c1"># 删除一个词</span>
+</span></span></code></pre></div>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >网上有很多非常详细的 vim 教程，如果想仔细学 vim 的话可以去看看👀看得出来，那些教程真的很想让我成为一个 vim 大师😔但我是真的懒😔</span>
+</div>
+
+
 <h2 class="relative group">Fcitx 5 
     <div id="fcitx-5" class="anchor"></div>
     
