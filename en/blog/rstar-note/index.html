@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-03-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-20T00:00:00+00:00">
     <meta property="article:tag" content="Paper">
     <meta property="article:tag" content="Notes">
     <meta property="article:tag" content="MCTS">
@@ -109,12 +109,12 @@
     "dateCreated": "2025-03-20T00:00:00\u002b00:00",
     "datePublished": "2025-03-20T00:00:00\u002b00:00",
     
-    "dateModified": "2025-03-20T00:00:00\u002b00:00",
+    "dateModified": "2025-06-20T00:00:00\u002b00:00",
     
     "keywords": ["Paper","Notes","MCTS","ReasoningEnhance"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "951"
+    "wordCount": "1501"
   }]
   </script>
 
@@ -1048,6 +1048,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+  
+
 
 
 
@@ -1079,7 +1081,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-20T00:00:00&#43;00:00">20 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-20T00:00:00&#43;00:00">20 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-20T00:00:00&#43;00:00">Updated: 20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1428,6 +1430,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#other-details">Other Details</a></li>
+    <li><a href="#in-depth-understanding">In-depth Understanding</a></li>
   </ul>
 </nav>
   </div>
@@ -1468,6 +1471,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#other-details">Other Details</a></li>
+    <li><a href="#in-depth-understanding">In-depth Understanding</a></li>
   </ul>
 </nav>
   </div>
@@ -1962,6 +1966,85 @@ $$
 <li>The reasoning of the &ldquo;peer&rdquo; small model and the target small model can be executed in parallel to improve computational efficiency.</li>
 <li>During path evaluation, the truncation point of the path should be between 20% and 80% of the total path.</li>
 </ol>
+
+<h2 class="relative group">In-depth Understanding 
+    <div id="in-depth-understanding" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#in-depth-understanding" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>rStar generates high-quality paths to solve problems. For example, consider the original figure from the following paper:</p>
+<p>
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="rStar_example.png"
+    srcset="
+      /blog/rstar-note/img/rStar_example_hu6361463365777588018.png 330w,
+      /blog/rstar-note/img/rStar_example_hu18244151185968226734.png 660w,
+      /blog/rstar-note/img/rStar_example_hu3520734906995849399.png 1280w"
+    data-zoom-src="/blog/rstar-note/img/rStar_example.png"
+    src="/blog/rstar-note/img/rStar_example.png"
+  />
+
+  
+</figure>
+</p>
+<p>The entire process is: \(SLM_{1}\) generates a solution path for the problem via MCTS, then this path is masked, and \(SLM_{2}\) attempts to solve the problem under the condition of the original line of thought. If it successfully derives the correct answer, this path is considered a high-quality path.</p>
+<p>Below, let&rsquo;s analyze some key points step by step:</p>
+<ol>
+<li>Problem information: In mathematical problems, the information in the problem should be sufficient to completely solve the mathematical problem, and all necessary information is fully provided within the problem itself.</li>
+<li>The final result can be precisely verified.</li>
+</ol>
+<p>These characteristics are actually the <strong>prior knowledge</strong> specific to the domain of &ldquo;mathematical question-answering.&rdquo; Without these priors, the rStar process cannot proceed. As we all know, mathematical question-answering and coding are recognized as relatively closed domains; therefore, AI achieves relatively excellent results when performing reinforcement learning in these areas.</p>
+<p>Here, it is important to clarify the connection between rStar and classic reinforcement learning. In classical reinforcement learning, the Agent selects an action, the environment provides feedback, and the Agent immediately updates its parameters (or accumulates a small batch before updating). What rStar essentially does is decouple the data generation and training processes: first, let the Agent generate a large amount of data on its own, then further filter out the high-quality data, and finally train uniformly.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >Can the data filtering process of rStar be combined with the real-time update strategy of traditional reinforcement learning? 🤔 Indeed, someone has done this; see <a href="https://arxiv.org/abs/2504.16084" target="_blank">TTRL</a> for details.</span>
+</div>
+
+<p>In summary, if we want to apply the successful experience of rStar to the field of clinical medical diagnosis, we need to transform clinical medical diagnosis into a closed domain. How to make it a closed domain? This requires considering what existing data can achieve.</p>
+<p>What is the existing data? It includes the patient&rsquo;s basic information, admission diagnosis, etc. All of this data is obtained from actual examinations. Here, it can be broken down into individual actions, such as obtaining the result of an &ldquo;admission diagnosis&rdquo; after performing it. Then, this result can be compared with real data to provide reverse supervision for fine-tuning the model to better perform admission diagnoses. Similar operations can be performed for each critical step.</p>
+<p>In other words, an important prior in the field of clinical medical diagnosis is the <strong>complete diagnostic process that human experts have developed through years of practice</strong>. In this diagnostic process, each step generates data that can be used for model training, and the model ultimately learns to <strong>better complete the aforementioned process</strong>. Although the resulting model cannot fully handle emergencies (these situations are not included in the training data), in fact, emergencies should not be handled by models at all. Models should deal with repetitive general problems, while emergencies should be handled by experienced human experts.</p>
+<p>To summarize further, what we can do is to distill and summarize the diagnostic process of human experts into a comprehensive workflow. In each step of the workflow, the model should independently collect relevant information and derive conclusions for that step. During this process, MCTS can be used for search sampling, thereby enabling the model to better autonomously gather information and reason about conclusions.</p>
 
           
           
