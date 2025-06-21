@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3852"
+    "wordCount": "4635"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-20T00:00:00&#43;00:00">Updated: 20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-20T00:00:00&#43;00:00">Updated: 20 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1294,6 +1294,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#one-click-auto-setup-script">One-Click Auto Setup Script</a></li>
       </ul>
     </li>
+    <li><a href="#install-nodejs">Install Nodejs</a>
+      <ul>
+        <li><a href="#introduction-to-nvm">Introduction to nvm</a></li>
+        <li><a href="#introduction-to-npm">Introduction to npm</a></li>
+        <li><a href="#introduction-to-pnpm">Introduction to pnpm</a></li>
+      </ul>
+    </li>
     <li><a href="#miscellaneous">Miscellaneous</a>
       <ul>
         <li><a href="#system-control">System Control</a></li>
@@ -1356,6 +1363,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#common-cleanup-tasks">Common Cleanup Tasks</a></li>
         <li><a href="#auto-clean-on-boot">Auto Clean on Boot</a></li>
         <li><a href="#one-click-auto-setup-script">One-Click Auto Setup Script</a></li>
+      </ul>
+    </li>
+    <li><a href="#install-nodejs">Install Nodejs</a>
+      <ul>
+        <li><a href="#introduction-to-nvm">Introduction to nvm</a></li>
+        <li><a href="#introduction-to-npm">Introduction to npm</a></li>
+        <li><a href="#introduction-to-pnpm">Introduction to pnpm</a></li>
       </ul>
     </li>
     <li><a href="#miscellaneous">Miscellaneous</a>
@@ -2422,6 +2436,236 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span></code></pre></div><p>Finally, run this setup script once and you&rsquo;re done:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chmod +x setup-cleanup.sh <span class="o">&amp;&amp;</span> sudo ./setup-cleanup.sh
 </span></span></code></pre></div>
+<h2 class="relative group">Install Nodejs 
+    <div id="install-nodejs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#install-nodejs" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Node.js is a commonly used environment dependency and often takes up a lot of disk space. If you don&rsquo;t understand its installation logic, it&rsquo;s easy to leave behind a large number of useless files.</p>
+<p>My attitude towards such basic environment dependencies has always been: if you don&rsquo;t understand it, never install it.</p>
+<p>The standard installation command can be found on the official website:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Download and install nvm:</span>
+</span></span><span class="line"><span class="cl">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh <span class="p">|</span> bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Reload nvm in the current terminal</span>
+</span></span><span class="line"><span class="cl">. <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.nvm/nvm.sh&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Download and install Node.js:</span>
+</span></span><span class="line"><span class="cl">nvm install <span class="m">22</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check Node.js version:</span>
+</span></span><span class="line"><span class="cl">node -v <span class="c1"># Should be &#34;v22.16.0&#34;.</span>
+</span></span><span class="line"><span class="cl">nvm current <span class="c1"># Should be &#34;v22.16.0&#34;.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check npm version:</span>
+</span></span><span class="line"><span class="cl">npm -v <span class="c1"># Should be &#34;10.9.2&#34;.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Optional, execute only if pnpm needs to be installed👇</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Download and install pnpm:</span>
+</span></span><span class="line"><span class="cl">corepack <span class="nb">enable</span> pnpm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check pnpm version:</span>
+</span></span><span class="line"><span class="cl">pnpm -v
+</span></span></code></pre></div><p>The first command uses curl to download the nvm manager, which is a tool for managing Node.js versions. This tool will be downloaded to the <code>~/.nvm</code> directory. Specific usage methods will be introduced later.</p>
+<p>The second command is used to load nvm in the current command line so that the nvm command can be effectively recognized. The reload operation can also be done without a command by simply closing and reopening the command-line window.</p>
+<p>The third command uses nvm to install Node.js. The main node packages will be placed in the <code>~/.nvm/versions/node/</code> directory, for example, the <code>22.16.0</code> version will be placed in the <code>~/.nvm/versions/node/v22.16.0/</code> directory.</p>
+<p>When using nvm to install node, the corresponding version of npm will be installed by default, so there is no need to install npm separately 😊</p>
+<p>pnpm requires an additional command to install, as shown above. A brief introduction to pnpm is provided below: <a href="#introduction-to-pnpm">Introduction to pnpm</a></p>
+
+<h3 class="relative group">Introduction to nvm 
+    <div id="introduction-to-nvm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction-to-nvm" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Similar to other package management tools, the use of nvm itself is not complicated, and its purpose is to stably and faithfully complete the most basic management work. Below is the most common command table:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Function</th>
+          <th>Command Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Install Node</td>
+          <td><code>nvm install 22</code></td>
+      </tr>
+      <tr>
+          <td>Use a specific version</td>
+          <td><code>nvm use 18</code></td>
+      </tr>
+      <tr>
+          <td>Set default version</td>
+          <td><code>nvm alias default 18</code></td>
+      </tr>
+      <tr>
+          <td>View installed versions</td>
+          <td><code>nvm ls</code></td>
+      </tr>
+      <tr>
+          <td>View available versions</td>
+          <td><code>nvm ls-remote</code></td>
+      </tr>
+      <tr>
+          <td>Uninstall a specific version</td>
+          <td><code>nvm uninstall 16.20.2</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>If there are any other special requirements, you can check them on nvm&rsquo;s official GitHub: <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm</a></p>
+
+<h3 class="relative group">Introduction to npm 
+    <div id="introduction-to-npm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction-to-npm" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>npm is a package management tool for Node.js, used to manage node dependency packages in projects.</p>
+<p>In actual project development, we use npm to install some dependencies, which can take up a lot of disk space. Below are the main cleanup items:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">##### First item, node_modules #####</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Run in the corresponding root directory to view space usage</span>
+</span></span><span class="line"><span class="cl">du -sh node_modules
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cleanup method is simple (clean as needed)</span>
+</span></span><span class="line"><span class="cl">rm -r node_modules
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">##### Second item, global dependencies #####</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Query the location of global dependencies</span>
+</span></span><span class="line"><span class="cl">npm root -g
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View the size of global usage</span>
+</span></span><span class="line"><span class="cl">du -sh <span class="k">$(</span>npm root -g<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cleanup method is simple (clean as needed)</span>
+</span></span><span class="line"><span class="cl">rm -r module_name
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">##### Third item, download cache #####</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># View cache location</span>
+</span></span><span class="line"><span class="cl">npm config get cache
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View cache size</span>
+</span></span><span class="line"><span class="cl">du -sh <span class="k">$(</span>npm config get cache<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Clear cache</span>
+</span></span><span class="line"><span class="cl">npm cache clean --force
+</span></span></code></pre></div>
+<h3 class="relative group">Introduction to pnpm 
+    <div id="introduction-to-pnpm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction-to-pnpm" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>pnpm</code> is another Node.js package manager, similar to <code>npm</code> and <code>yarn</code>, but it is more efficient in terms of performance, disk space usage, and dependency management.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>✅ Saves disk space</td>
+          <td>Uses <strong>content-addressable</strong> storage, placing dependencies in shared storage to avoid redundant installations</td>
+      </tr>
+      <tr>
+          <td>⚡ Faster installation</td>
+          <td>Dependency soft links, no copying, reducing IO operations</td>
+      </tr>
+      <tr>
+          <td>✅ Ensures dependency isolation</td>
+          <td>Uses strict <code>node_modules</code> structure to prevent implicit dependencies</td>
+      </tr>
+      <tr>
+          <td>✅ Compatible with npm/yarn</td>
+          <td>Supports most npm/yarn scripts and commands</td>
+      </tr>
+  </tbody>
+</table>
+<p>Common command table, including comparison with npm commands:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th><code>npm</code> command</th>
+          <th><code>pnpm</code> alternative</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Initialize project</td>
+          <td><code>npm init</code></td>
+          <td><code>pnpm init</code></td>
+      </tr>
+      <tr>
+          <td>Install dependencies</td>
+          <td><code>npm install</code></td>
+          <td><code>pnpm install</code></td>
+      </tr>
+      <tr>
+          <td>Add dependency</td>
+          <td><code>npm install axios</code></td>
+          <td><code>pnpm add axios</code></td>
+      </tr>
+      <tr>
+          <td>Remove dependency</td>
+          <td><code>npm uninstall foo</code></td>
+          <td><code>pnpm remove foo</code></td>
+      </tr>
+      <tr>
+          <td>Global install</td>
+          <td><code>npm install -g</code></td>
+          <td><code>pnpm add -g</code></td>
+      </tr>
+      <tr>
+          <td>Clear cache</td>
+          <td><code>npm cache clean</code></td>
+          <td><code>pnpm store prune</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>Compared to npm, pnpm manages space more cleanly. Below are some key directories:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Location</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>node_modules/</code></td>
+          <td>Virtual dependency tree constructed using hard links</td>
+      </tr>
+      <tr>
+          <td><code>~/.pnpm-store/</code></td>
+          <td>Actual storage location for all dependency packages</td>
+      </tr>
+  </tbody>
+</table>
+<p>Since pnpm does not store actual files in <code>node_modules</code>, there is no distinction between global and local caches. A single command is all you need to clean up all removable dependencies:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Clean the cache</span>
+</span></span><span class="line"><span class="cl">pnpm store prune
+</span></span></code></pre></div><p>pnpm scans all <code>.pnpm-lock.yaml</code> files in the projects you&rsquo;ve used, identifies unused versions, and cleans up the corresponding cache. If needed, this command can be directly added to <a href="#auto-clean-on-boot">Auto Clean on Boot</a>.</p>
+
 <h2 class="relative group">Miscellaneous 
     <div id="miscellaneous" class="anchor"></div>
     
