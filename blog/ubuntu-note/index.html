@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "7544"
+    "wordCount": "7738"
   }]
   </script>
 
@@ -1306,6 +1306,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#系统控制">系统控制</a></li>
         <li><a href="#解压">解压</a></li>
         <li><a href="#临时环境变量">临时环境变量</a></li>
+        <li><a href="#临时查看文件">临时查看文件</a></li>
       </ul>
     </li>
     <li><a href="#引用文献">引用文献</a></li>
@@ -1377,6 +1378,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#系统控制">系统控制</a></li>
         <li><a href="#解压">解压</a></li>
         <li><a href="#临时环境变量">临时环境变量</a></li>
+        <li><a href="#临时查看文件">临时查看文件</a></li>
       </ul>
     </li>
     <li><a href="#引用文献">引用文献</a></li>
@@ -2734,6 +2736,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># bash或cmd终端中使用</span>
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://127.0.0.1:7890
 </span></span></code></pre></div>
+<h3 class="relative group">临时查看文件 
+    <div id="临时查看文件" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%b8%b4%e6%97%b6%e6%9f%a5%e7%9c%8b%e6%96%87%e4%bb%b6" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>一般的文件直接用对应的编辑器打开就行了。但是有一些特殊文件，例如超大的 csv 文件，只想快速查看一小部分数据。这个时候就可以使用 <code>head</code> 命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 读取your_file文件的前10行并显示(不会读取完整文件)</span>
+</span></span><span class="line"><span class="cl">head -n <span class="m">10</span> your_file.csv
+</span></span></code></pre></div><p>如果出现乱码，一定是编码格式出错了，可以使用 <code>iconv</code> 进行转换：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 从gbk转为utf-8</span>
+</span></span><span class="line"><span class="cl">head -n <span class="m">10</span> <span class="s2">&#34;your_file.csv&#34;</span> <span class="p">|</span> iconv -f gbk -t utf-8
+</span></span></code></pre></div><p>如果你不清楚到底是什么编码转什么编码，可以直接把乱码丢给 AI，简单方便😋</p>
+
 <h2 class="relative group">引用文献 
     <div id="引用文献" class="anchor"></div>
     

@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4635"
+    "wordCount": "4761"
   }]
   </script>
 
@@ -1306,6 +1306,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#system-control">System Control</a></li>
         <li><a href="#extracting-files">Extracting Files</a></li>
         <li><a href="#temporary-environment-variables">Temporary Environment Variables</a></li>
+        <li><a href="#temporary-file-inspection">Temporary File Inspection</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -1377,6 +1378,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#system-control">System Control</a></li>
         <li><a href="#extracting-files">Extracting Files</a></li>
         <li><a href="#temporary-environment-variables">Temporary Environment Variables</a></li>
+        <li><a href="#temporary-file-inspection">Temporary File Inspection</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -2734,6 +2736,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># For use in bash or cmd terminals</span>
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">HTTPS_PROXY</span><span class="o">=</span>http://127.0.0.1:7890
 </span></span></code></pre></div>
+<h3 class="relative group">Temporary File Inspection 
+    <div id="temporary-file-inspection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#temporary-file-inspection" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>For regular files, you can just open them with the corresponding editor. However, for some special files, such as extremely large CSV files, you may only want to quickly check a small portion of the data. In this case, you can use the <code>head</code> command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Read and display the first 10 lines of your_file (without reading the entire file)</span>
+</span></span><span class="line"><span class="cl">head -n <span class="m">10</span> your_file.csv
+</span></span></code></pre></div><p>If garbled text appears, it must be due to an encoding format issue. You can use <code>iconv</code> for conversion:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Convert from GBK to UTF-8</span>
+</span></span><span class="line"><span class="cl">head -n <span class="m">10</span> <span class="s2">&#34;your_file.csv&#34;</span> <span class="p">|</span> iconv -f gbk -t utf-8
+</span></span></code></pre></div><p>If you&rsquo;re unsure about the original and target encodings, just throw the garbled text to an AI — it&rsquo;s simple and convenient 😋</p>
+
 <h2 class="relative group">References 
     <div id="references" class="anchor"></div>
     
