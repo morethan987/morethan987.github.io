@@ -97,7 +97,7 @@
     "name": "代码协同方案",
     "headline": "代码协同方案",
     "description": "针对数学建模国赛和MATLAB改进的代码协同方案",
-    "abstract": "\u003cp\u003e\n\n\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案\n\u003c\/div\u003e\n\u003c\/p\u003e",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案\n\u003c\/div\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e流程概览 \n    \u003cdiv id=\u0022流程概览\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%e6%b5%81%e7%a8%8b%e6%a6%82%e8%a7%88\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cdiv class=\u0022mermaid\u0022 align=\u0022center\u0022\u003e\n  \u003cpre\u003e\ngraph LR;\n\nid1(\u0022工作分配\u0022)--\u003eid2(\u0022VS Code协同\u0022)--\u003eid3(\u0022MATLAB代码执行\u0022);\n\u003c\/pre\u003e\n\u003c\/div\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003e工作分配 \n    \u003cdiv id=\u0022工作分配\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#%e5%b7%a5%e4%bd%9c%e5%88%86%e9%85%8d\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e主要有两个要点：\u003c\/p\u003e",
     "inLanguage": "zh-cn",
     "url" : "https:\/\/morethan987.github.io\/blog\/code-collaboration-scheme\/",
     "author" : {
@@ -1548,12 +1548,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>
+          
 
 <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案
 </div>
-</p>
+
 
 <h2 class="relative group">流程概览 
     <div id="流程概览" class="anchor"></div>
@@ -1568,6 +1568,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="mermaid" align="center">
   <pre>
 graph LR;
+
 id1("工作分配")-->id2("VS Code协同")-->id3("MATLAB代码执行");
 </pre>
 </div>
@@ -1856,9 +1857,9 @@ id1("工作分配")-->id2("VS Code协同")-->id3("MATLAB代码执行");
     
 </h3>
 <ul>
-<li><strong>并行运行</strong>
-MATLAB 能够支持多线程计算，仅需将一般的 <code>for</code> 循环改写为 <code>parfor</code> 即可</li>
+<li><strong>并行运行</strong></li>
 </ul>
+<p>MATLAB 能够支持多线程计算，仅需将一般的 <code>for</code> 循环改写为 <code>parfor</code> 即可</p>
 
   
   
