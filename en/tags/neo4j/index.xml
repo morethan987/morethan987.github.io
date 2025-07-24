@@ -32,7 +32,7 @@
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/neo4j/neo4j&#34; target=&#34;_blank&#34;&gt;Neo4j&lt;/a&gt; is a high-performance graph database that stores data and the relationships between data in the form of graphs.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/neo4j/neo4j&#34; target=&#34;_blank&#34;&gt;Neo4j&lt;/a&gt; is a high-performance graph database that stores data and the relationships between data in the form of graphs.The specific form of the graph is a &lt;strong&gt;labeled property graph&lt;/strong&gt;, and the query language used is &lt;code&gt;Cypher&lt;/code&gt;.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/neo4j-basics/featured.svg" />
     </item>
     

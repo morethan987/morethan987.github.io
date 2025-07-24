@@ -100,7 +100,7 @@
     "name": "Neo4j Basics",
     "headline": "Neo4j Basics",
     "description": "The basic info and operations of Neo4j Graph Database",
-    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  The basic info and operations of Neo4j Graph Database.\n\u003c\/div\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003eIntroduction \n    \u003cdiv id=\u0022introduction\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#introduction\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/github.com\/neo4j\/neo4j\u0022 target=\u0022_blank\u0022\u003eNeo4j\u003c\/a\u003e is a high-performance graph database that stores data and the relationships between data in the form of graphs.\u003c\/p\u003e",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  The basic info and operations of Neo4j Graph Database.\n\u003c\/div\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003eIntroduction \n    \u003cdiv id=\u0022introduction\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#introduction\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003e\u003ca href=\u0022https:\/\/github.com\/neo4j\/neo4j\u0022 target=\u0022_blank\u0022\u003eNeo4j\u003c\/a\u003e is a high-performance graph database that stores data and the relationships between data in the form of graphs.The specific form of the graph is a \u003cstrong\u003elabeled property graph\u003c\/strong\u003e, and the query language used is \u003ccode\u003eCypher\u003c\/code\u003e.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https:\/\/morethan987.github.io\/en\/blog\/neo4j-basics\/",
     "author" : {
@@ -116,7 +116,7 @@
     "keywords": ["Neo4j"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "966"
+    "wordCount": "968"
   }]
   </script>
 
@@ -1445,8 +1445,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
-<p><a href="https://github.com/neo4j/neo4j" target="_blank">Neo4j</a> is a high-performance graph database that stores data and the relationships between data in the form of graphs.</p>
-<p>The specific form of the graph is a <strong>labeled property graph</strong>, and the query language used is <code>Cypher</code>.</p>
+<p><a href="https://github.com/neo4j/neo4j" target="_blank">Neo4j</a> is a high-performance graph database that stores data and the relationships between data in the form of graphs.The specific form of the graph is a <strong>labeled property graph</strong>, and the query language used is <code>Cypher</code>.</p>
 
 <h2 class="relative group">Labeled Property Graph 
     <div id="labeled-property-graph" class="anchor"></div>
@@ -1460,15 +1459,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h2>
 <p>A <strong>labeled property graph</strong> is a specific type of graph:</p>
 <ul>
-<li>
-<p>A node has one or more labels to define its type.</p>
-</li>
-<li>
-<p>Relationships and nodes are treated equally, holding the same level of importance.</p>
-</li>
-<li>
-<p>Each node and relationship possesses accessible properties.</p>
-</li>
+<li>A node has one or more labels to define its type.</li>
+<li>Relationships and nodes are treated equally, holding the same level of importance.</li>
+<li>Each node and relationship possesses accessible properties.</li>
 </ul>
 
 <h2 class="relative group">Cypher 
@@ -1559,12 +1552,9 @@ ORDER BY released DESC LIMIT 5
   <span
     
       style="color: #E0E7FF"
-    ></span>
+    >Cypher keywords are case-insensitive; property names, variable names, and other identifiers are case-sensitive.</span>
 </div>
 
-<blockquote>
-<p>Cypher keywords are case-insensitive; property names, variable names, and other identifiers are case-sensitive.</p>
-</blockquote>
 
 <h3 class="relative group">Data Writing 
     <div id="data-writing" class="anchor"></div>
@@ -1609,6 +1599,7 @@ RETURN u, r, m
 </h2>
 <p>As of February 15, 2025, after extensive testing by the developer community, it has been found that Neo4j Desktop is blocked for users in mainland China, causing the software interface to fail to display properly. While bypassing the block through methods such as disabling the network is possible, this removes the key advantage of the desktop version—easy deployment.</p>
 <p>Thus, I recommend using the Docker deployment method.</p>
+<p>OS: Windows 11</p>
 
 <h3 class="relative group">Docker Desktop 
     <div id="docker-desktop" class="anchor"></div>
@@ -1698,7 +1689,7 @@ RETURN u, r, m
 
 <figure>
       <img
-    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="Neo4jBasics-1.png"
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="img/Neo4jBasics-1.png"
     srcset="
       /blog/neo4j-basics/img/Neo4jBasics-1_hu15624601443039588221.png 330w,
       /blog/neo4j-basics/img/Neo4jBasics-1_hu293442756275892116.png 660w,

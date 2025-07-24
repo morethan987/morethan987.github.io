@@ -97,7 +97,7 @@
     "name": "CTM Reading Notes",
     "headline": "CTM Reading Notes",
     "description": "A novel brain-inspired AI architecture",
-    "abstract": "\u003cp\u003e\n\n\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  A novel brain-inspired architecture that introduces the concept of \u0026ldquo;temporality\u0026rdquo; to existing time-agnostic neuron models, giving rise to a series of brain-like emergent phenomena.\n\u003c\/div\u003e\n\u003c\/p\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003ePreface \n    \u003cdiv id=\u0022preface\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#preface\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eThis paper caught my attention precisely because of the \u0026ldquo;magical\u0026rdquo; emergent phenomena it claims—introducing temporal information into neuron models results in \u003cstrong\u003ehuman-like thought patterns\u003c\/strong\u003e of attention. These phenomena are not manually designed but naturally emerge during training, which is the most exciting part.\u003c\/p\u003e",
+    "abstract": "\u003cdiv class=\u0022lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl\u0022\u003e\n  A novel brain-inspired architecture that introduces the concept of \u0026ldquo;temporality\u0026rdquo; to existing time-agnostic neuron models, giving rise to a series of brain-like emergent phenomena.\n\u003c\/div\u003e\n\n\n\u003ch2 class=\u0022relative group\u0022\u003ePreface \n    \u003cdiv id=\u0022preface\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#preface\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h2\u003e\n\u003cp\u003eThis paper caught my attention precisely because of the \u0026ldquo;magical\u0026rdquo; emergent phenomena it claims—introducing temporal information into neuron models results in \u003cstrong\u003ehuman-like thought patterns\u003c\/strong\u003e of attention. These phenomena are not manually designed but naturally emerge during training, which is the most exciting part.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https:\/\/morethan987.github.io\/en\/blog\/ctm-note\/",
     "author" : {
@@ -113,7 +113,7 @@
     "keywords": ["Paper","Notes","Architecture"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2972"
+    "wordCount": "2981"
   }]
   </script>
 
@@ -1536,12 +1536,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>
+          
 
 <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   A novel brain-inspired architecture that introduces the concept of &ldquo;temporality&rdquo; to existing time-agnostic neuron models, giving rise to a series of brain-like emergent phenomena.
 </div>
-</p>
+
 
 <h2 class="relative group">Preface 
     <div id="preface" class="anchor"></div>
@@ -1673,7 +1673,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <figure>
       <img
-    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="CTM.png"
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="img/CTM.png"
     srcset="
       /blog/ctm-note/img/CTM_hu3059530013246572790.png 330w,
       /blog/ctm-note/img/CTM_hu7803737405662536063.png 660w,
@@ -2078,7 +2078,7 @@ $$<p>Stochastic gradient descent is then used to optimize the model parameters. 
 
 <figure>
       <img
-    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="CTM_Arc.png"
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="img/CTM_Arc.png"
     srcset="
       /blog/ctm-note/img/CTM_Arc_hu5268611263267976851.png 330w,
       /blog/ctm-note/img/CTM_Arc_hu12495020629241577777.png 660w,
@@ -2242,15 +2242,15 @@ $$<p>Stochastic gradient descent is then used to optimize the model parameters. 
 <p>In the maze problem, this parameter is set to <code>[args.maze_route_length, 5]</code>, where the number 5 indicates that the model predicts from five actions—&ldquo;up, down, left, right, stop&rdquo;—and outputs the normalized probability distribution of these five actions; <code>maze_route_length</code> represents the number of steps for prediction, which is set to 75 steps on the web interface.</p>
 <hr>
 <p>Q: What does the following piece of code do?</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">```</span><span class="n">python</span>
-</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># Determine pseudo input shape based on dataset</span>
-</span></span><span class="line"><span class="cl">    <span class="n">h_w</span> <span class="o">=</span> <span class="mi">39</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dataset</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;mazes-small&#39;</span><span class="p">,</span> <span class="s1">&#39;mazes-medium&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">99</span> <span class="c1"># Example dimensions</span>
-</span></span><span class="line"><span class="cl">    <span class="n">pseudo_inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">h_w</span><span class="p">,</span> <span class="n">h_w</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="p">(</span><span class="n">pseudo_inputs</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># Determine pseudo input shape based on dataset</span>
+</span></span><span class="line"><span class="cl">	<span class="n">h_w</span> <span class="o">=</span> <span class="mi">39</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dataset</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;mazes-small&#39;</span><span class="p">,</span> <span class="s1">&#39;mazes-medium&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">99</span> <span class="c1"># Example dimensions</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pseudo_inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">h_w</span><span class="p">,</span> <span class="n">h_w</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">model</span><span class="p">(</span><span class="n">pseudo_inputs</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Warning: Pseudo forward pass failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>print(f&rsquo;Total params: {sum(p.numel() for p in model.parameters())}')</p>
+</span></span><span class="line"><span class="cl">	 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Warning: Pseudo forward pass failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total params: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>A: Create a &ldquo;pseudo input&rdquo; to test the algorithm&rsquo;s correctness.</p>
 <hr>
 
           

@@ -67,12 +67,10 @@
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/qdrant-feature-guide/</guid>
-      <description>&lt;p&gt;
-
-&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   A detailed record of the core features of the Qdrant vector database, helping developers design better databases in practical applications 😋
 &lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;h2 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -109,7 +107,7 @@
     &lt;/span&gt;        
     
 &lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/neo4j/neo4j&#34; target=&#34;_blank&#34;&gt;Neo4j&lt;/a&gt; is a high-performance graph database that stores data and the relationships between data in the form of graphs.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/neo4j/neo4j&#34; target=&#34;_blank&#34;&gt;Neo4j&lt;/a&gt; is a high-performance graph database that stores data and the relationships between data in the form of graphs.The specific form of the graph is a &lt;strong&gt;labeled property graph&lt;/strong&gt;, and the query language used is &lt;code&gt;Cypher&lt;/code&gt;.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/neo4j-basics/featured.svg" />
     </item>
     

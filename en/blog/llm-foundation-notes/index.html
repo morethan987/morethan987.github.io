@@ -114,7 +114,7 @@
     "keywords": ["LLM","EngineeringPractice","Notes"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "435"
+    "wordCount": "842"
   }]
   </script>
 
@@ -139,6 +139,139 @@
   
 
 <script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.7e7e35e3ef02b7b437449a44ca3fac62ec1ed39cb8312b680a00fe8ac60badc95b063b694636b8440856f7f5e8c2cc9e6b0efb581179b2656c7e1e97558c7096.css" integrity="sha512-fn414&#43;8Ct7Q3RJpEyj&#43;sYuwe05y4MStoCgD&#43;isYLrclbBjtpRja4RAhW9/Xowsyeaw77WBF5smVsfh6XVYxwlg==" />
+
+
+<script defer src="/lib/katex/katex.min.cadd45c1af1f44bdaf196dc9b104f1daeb29043f0dc59155ffe22847510a04390a0b7a859400d420a626204f7fc5ddb07c19311de1c66b25e19c2559d3e126a8.js" integrity="sha512-yt1Fwa8fRL2vGW3JsQTx2uspBD8NxZFV/&#43;IoR1EKBDkKC3qFlADUIKYmIE9/xd2wfBkxHeHGayXhnCVZ0&#43;EmqA=="></script>
+
+
+<script defer src="/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac&#43;zBvZzgDJzDQ=="
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -946,7 +1079,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1262,7 +1395,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#preface">Preface</a></li>
     <li><a href="#basics-of-language-models">Basics of Language Models</a></li>
-    <li><a href="#architecture-of-large-language-models">Architecture of Large Language Models</a></li>
+    <li><a href="#large-language-model-architecture">Large Language Model Architecture</a>
+      <ul>
+        <li><a href="#scaling-laws">Scaling Laws</a></li>
+        <li><a href="#mainstream-architectures">Mainstream Architectures</a></li>
+      </ul>
+    </li>
     <li><a href="#parameter-efficient-fine-tuning">Parameter-Efficient Fine-Tuning</a></li>
     <li><a href="#model-editing">Model Editing</a></li>
   </ul>
@@ -1280,7 +1418,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#preface">Preface</a></li>
     <li><a href="#basics-of-language-models">Basics of Language Models</a></li>
-    <li><a href="#architecture-of-large-language-models">Architecture of Large Language Models</a></li>
+    <li><a href="#large-language-model-architecture">Large Language Model Architecture</a>
+      <ul>
+        <li><a href="#scaling-laws">Scaling Laws</a></li>
+        <li><a href="#mainstream-architectures">Mainstream Architectures</a></li>
+      </ul>
+    </li>
     <li><a href="#parameter-efficient-fine-tuning">Parameter-Efficient Fine-Tuning</a></li>
     <li><a href="#model-editing">Model Editing</a></li>
   </ul>
@@ -1375,7 +1518,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+          
+
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   Notes written after reading the textbook &ldquo;Foundation of Large Models&rdquo; from Zhejiang University
 </div>
 
@@ -1414,7 +1559,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="Transformer" src="Transformer.png" />
+      <img
+    class="my-0 rounded-md" loading="lazy" decoding="async" fetchpriority="low" alt="Transformer"
+    srcset="
+      /blog/llm-foundation-notes/img/Transformer_hu7291630394135425437.png 330w,
+      /blog/llm-foundation-notes/img/Transformer_hu3537889310455882537.png 660w,
+      /blog/llm-foundation-notes/img/Transformer_hu12944669481716990072.png 1280w"
+    data-zoom-src="/blog/llm-foundation-notes/img/Transformer.png"
+    src="/blog/llm-foundation-notes/img/Transformer.png"
+  />
 
   
     <figcaption>引用自第 16 页</figcaption>
@@ -1433,17 +1586,57 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>Q: Why can the Encoder and Decoder parts of the Transformer be used independently to build a language model?</p>
 <p>A:</p>
 <hr>
+<p>Q: What loss function is used during the training of Transformer models?</p>
+<p>A: Different types of training tasks employ different loss functions. In autoregressive prediction tasks, the loss function is consistent with traditional RNN models, which is the cross-entropy between the model&rsquo;s predictions and the ground truth.</p>
+<hr>
+<p>Q: What are top-k, top-p, and temperature? What are their purposes?</p>
+<p>A: Top-k, top-p, and temperature are all parameters used during the decoding process when a language model generates text. However, their meanings are not equivalent—top-k and top-p are sampling methods, while temperature controls the randomness of sampling.</p>
+<p>Model decoding can be divided into two approaches: probability maximization, which decodes the text segment with the highest probability, and stochastic sampling, which allows the model to generate more creative text.</p>
+<p>In stochastic sampling, different parameters correspond to different sampling methods, namely top-k sampling and top-p sampling. Top-k sampling limits the number of candidate tokens (selecting the top-k highest-probability candidates), while top-p limits the cumulative probability of candidates (selecting candidates whose probabilities sum to at least p). Overall, top-p tends to perform better because it avoids selecting very low-probability tokens, preventing nonsensical outputs, while also enhancing the diversity of generated text, especially when candidate probabilities are relatively balanced.</p>
+<p>Temperature adjusts the scale of the input to the softmax function, leveraging its nonlinearity to control sampling randomness. During top-k or top-p sampling, a subset of candidate tokens is selected from the vocabulary, and their probabilities are normalized using the softmax function. The temperature mechanism divides the original probabilities of these candidates by the temperature parameter T. When \( T > 1 \), the differences between candidate probabilities shrink, increasing the model&rsquo;s randomness, and vice versa.</p>
 
-<h2 class="relative group">Architecture of Large Language Models 
-    <div id="architecture-of-large-language-models" class="anchor"></div>
+<h2 class="relative group">Large Language Model Architecture 
+    <div id="large-language-model-architecture" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#architecture-of-large-language-models" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#large-language-model-architecture" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
+
+<h3 class="relative group">Scaling Laws 
+    <div id="scaling-laws" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#scaling-laws" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Scaling Laws reveal how model capabilities evolve with the scale of the model and training data, providing valuable guidance for the design and optimization of large language models.</p>
+<p>Widely recognized scaling laws include the Kaplan-McCandlish Scaling Law proposed by OpenAI and the Chinchilla Scaling Law proposed by DeepMind. The latter builds upon the former with further exploration.</p>
+$$
+L(N,D)=E+\frac{A}{N^\alpha}+\frac{B}{D^\beta}
+$$$$
+E=1.69,A=406.4,B=410.7,\alpha=0.34,\beta=0.28
+$$<p>Here, \( L \) represents the cross-entropy loss, \( N \) is the model parameter size, and \( D \) is the training data volume.</p>
+<p>Additionally, given a fixed computational budget \( C \), the optimal model and data scales are:</p>
+$$
+N_{opt}\propto C^{0.46}, D_{opt}\propto C^{0.54}
+$$
+<h3 class="relative group">Mainstream Architectures 
+    <div id="mainstream-architectures" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#mainstream-architectures" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
 
 <h2 class="relative group">Parameter-Efficient Fine-Tuning 
     <div id="parameter-efficient-fine-tuning" class="anchor"></div>

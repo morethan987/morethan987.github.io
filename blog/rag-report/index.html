@@ -1413,6 +1413,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="mermaid" align="center">
   <pre>
 graph LR;
+
 p1(Data)-->p2(Transformer)-->p4(Generation);
 p3(Query)-->p2;
 </pre>
@@ -1424,14 +1425,18 @@ p3(Query)-->p2;
 graph LR;
 datatype1(File);datatype2(Image);datatype3(Audio);datatype4(HTML);data(data);
 datatype1-->data;datatype2-->data;datatype3-->data;datatype4-->data;
+
 architecture1(Transformer);architecture2(Dynamic Transformer);architecture3(Fine-tuned Transformer);
 data-->architecture1;data-->architecture2;
+
 query(Query);retrieval(Retrival);
 query-->retrieval-->architecture3;
 retrieval-->architecture2;
+
 finetuning(Fine tuning);data2(Specific data);
 architecture1-->finetuning-->architecture3;
 data2-->finetuning;
+
 generation1(Generation);generation2(Generation);
 architecture3-->generation1;
 architecture2-->generation2;

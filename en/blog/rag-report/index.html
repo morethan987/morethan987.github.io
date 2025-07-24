@@ -141,6 +141,17 @@
 
 
 
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.9258d4044c1e2c33ffe95c12c42818a81812d9b20f0c8e283e65b8d2745854c8ca14953622c5c489499c47e5762aa352432c64c2d160ffd39056d9be5241571e.js"
+    integrity="sha512-kljUBEweLDP/6VwSxCgYqBgS2bIPDI4oPmW40nRYVMjKFJU2IsXEiUmcR&#43;V2KqNSQyxkwtFg/9OQVtm&#43;UkFXHg=="
+  ></script>
+
 
 
 
@@ -1399,30 +1410,40 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><strong>Query-Level Augmentation</strong>: Retrieving relevant knowledge from external databases based on user queries to enhance responses.</li>
 </ol>
 <p>The original LLM workflow:</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR;  
+<div class="mermaid" align="center">
+  <pre>
+graph LR;  
 
-p1(Data)--&gt;p2(Transformer)--&gt;p4(Generation);  
-p3(Query)--&gt;p2;  
-</code></pre><p>The improved workflow:</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR;  
+p1(Data)-->p2(Transformer)-->p4(Generation);  
+p3(Query)-->p2;  
+</pre>
+</div>
+
+<p>The improved workflow:</p>
+<div class="mermaid" align="center">
+  <pre>
+graph LR;  
 datatype1(File);datatype2(Image);datatype3(Audio);datatype4(HTML);data(data);  
-datatype1--&gt;data;datatype2--&gt;data;datatype3--&gt;data;datatype4--&gt;data;  
+datatype1-->data;datatype2-->data;datatype3-->data;datatype4-->data;  
 
 architecture1(Transformer);architecture2(Dynamic Transformer);architecture3(Fine-tuned Transformer);  
-data--&gt;architecture1;data--&gt;architecture2;  
+data-->architecture1;data-->architecture2;  
 
 query(Query);retrieval(Retrival);  
-query--&gt;retrieval--&gt;architecture3;  
-retrieval--&gt;architecture2;  
+query-->retrieval-->architecture3;  
+retrieval-->architecture2;  
 
 finetuning(Fine tuning);data2(Specific data);  
-architecture1--&gt;finetuning--&gt;architecture3;  
-data2--&gt;finetuning;  
+architecture1-->finetuning-->architecture3;  
+data2-->finetuning;  
 
 generation1(Generation);generation2(Generation);  
-architecture3--&gt;generation1;  
-architecture2--&gt;generation2;  
-</code></pre>
+architecture3-->generation1;  
+architecture2-->generation2;  
+</pre>
+</div>
+
+
 <h2 class="relative group">Academic Definition 
     <div id="academic-definition" class="anchor"></div>
     

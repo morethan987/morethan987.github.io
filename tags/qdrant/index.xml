@@ -15,12 +15,22 @@
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/qdrant-feature-guide/</guid>
-      <description>&lt;p&gt;
-
-&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
   详细记录了Qdrant向量数据库的核心功能，让开发者在实际应用过程中设计出更好的数据库😋
 &lt;/div&gt;
-&lt;/p&gt;</description>
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;前言 
+    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
+            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;        
+    
+&lt;/h2&gt;
+&lt;p&gt;基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地&lt;strong&gt;相关性搜索&lt;/strong&gt;，这个功能是一些应用场景地&lt;strong&gt;基石&lt;/strong&gt;。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg" />
     </item>
     

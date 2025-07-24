@@ -114,7 +114,7 @@
     "keywords": ["LLM","工程实践","笔记"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "774"
+    "wordCount": "1562"
   }]
   </script>
 
@@ -139,6 +139,139 @@
   
 
 <script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/lib/katex/katex.min.7e7e35e3ef02b7b437449a44ca3fac62ec1ed39cb8312b680a00fe8ac60badc95b063b694636b8440856f7f5e8c2cc9e6b0efb581179b2656c7e1e97558c7096.css" integrity="sha512-fn414&#43;8Ct7Q3RJpEyj&#43;sYuwe05y4MStoCgD&#43;isYLrclbBjtpRja4RAhW9/Xowsyeaw77WBF5smVsfh6XVYxwlg==" />
+
+
+<script defer src="/lib/katex/katex.min.cadd45c1af1f44bdaf196dc9b104f1daeb29043f0dc59155ffe22847510a04390a0b7a859400d420a626204f7fc5ddb07c19311de1c66b25e19c2559d3e126a8.js" integrity="sha512-yt1Fwa8fRL2vGW3JsQTx2uspBD8NxZFV/&#43;IoR1EKBDkKC3qFlADUIKYmIE9/xd2wfBkxHeHGayXhnCVZ0&#43;EmqA=="></script>
+
+
+<script defer src="/lib/katex/auto-render.min.e9b2833d28623d18c071d78ef13e9c79d695122d296af3dbcee7bf1bf6518b0565bab59939267fbc8f5faf696193c20f5caef3e7501969cfb306f6738032730d.js" integrity="sha512-6bKDPShiPRjAcdeO8T6cedaVEi0pavPbzue/G/ZRiwVlurWZOSZ/vI9fr2lhk8IPXK7z51AZac&#43;zBvZzgDJzDQ=="
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -946,7 +1079,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1262,7 +1395,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#语言模型基础">语言模型基础</a></li>
-    <li><a href="#大语言模型架构">大语言模型架构</a></li>
+    <li><a href="#大语言模型架构">大语言模型架构</a>
+      <ul>
+        <li><a href="#扩展法则">扩展法则</a></li>
+        <li><a href="#主流架构">主流架构</a></li>
+      </ul>
+    </li>
     <li><a href="#参数高效微调">参数高效微调</a></li>
     <li><a href="#模型编辑">模型编辑</a></li>
   </ul>
@@ -1280,7 +1418,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#语言模型基础">语言模型基础</a></li>
-    <li><a href="#大语言模型架构">大语言模型架构</a></li>
+    <li><a href="#大语言模型架构">大语言模型架构</a>
+      <ul>
+        <li><a href="#扩展法则">扩展法则</a></li>
+        <li><a href="#主流架构">主流架构</a></li>
+      </ul>
+    </li>
     <li><a href="#参数高效微调">参数高效微调</a></li>
     <li><a href="#模型编辑">模型编辑</a></li>
   </ul>
@@ -1375,7 +1518,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+          
+
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   阅读浙大的教材大模型基础后写的读书笔记
 </div>
 
@@ -1438,9 +1583,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>Q：表征坍塌是什么意思？</p>
 <p>A：在训练过程中，模型学习到的表示变得缺乏区分性，也就是说不同的输入样本被映射到相似甚至相同的特征向量，导致模型失去了对于不同样本的判别性。</p>
 <hr>
-<p>Q：为什么 Transformer 的 Encoder 部分和 Decode 部分可以单独构建语言模型？</p>
+<p>Q：为什么 Transformer 的 Encoder 部分和 Decoder 部分可以单独构建语言模型？</p>
 <p>A：</p>
 <hr>
+<p>Q：Transformer 模型训练时使用的损失函数是什么？</p>
+<p>A：不同类型的训练任务有不同的损失函数，在自回归预测任务中，损失函数与传统 RNN 模型一致，就是模型预测结果与真实答案的交叉熵。</p>
+<hr>
+<p>Q：top-k，top-p 和 temperature 是什么东西？作用是什么？</p>
+<p>A：top-k，top-p 和 temperature 都是语言模型解码为文本过程使用的参数。但三者的意义并不等价，top-k 和 top-p 都是采样方法，而 temperature 则是调控采样的随机性。</p>
+<p>模型的解码分为两种，一种是概率最大化方法，即解码出概率最高的文本段；另一种是随机采样的方法，能够让模型生成的文本更有新意。</p>
+<p>在随机采样中，使用参数的不同就对应了不同的采样方法，即 top-k 采样，top-p 采样。top-k 采样限定了解码的候选词的数量（选取概率最高的 k 个候选词），而 top-p 限定了候选词的概率（选取概率高于 p 的候选词）。整体而言，top-p 的效果更好，因为 top-p 可以避免选中某些概率很小的词，避免模型胡言乱语的现象；也可以提升模型输出文本的丰富程度，特别是在候选词概率较为平均的情况下，能够囊括更多的候选词。</p>
+<p>temperature 是对 softmax 函数中自变量的尺度进行变换，并利用 softmax 函数的非线性实现对于采样随机性的调控。在 top-k 和 top-p 采样过程中，会从字典中选出部分候选词，这部分候选词的概率需要使用 softmax 函数来归一化。而 temperature 机制就是在候选词原有的概率基础上除以 temperature 参数T。当 \(T>1\) 时，不同候选词之间的差异变小，模型的随机性更大，反之同理。</p>
 
 <h2 class="relative group">大语言模型架构 
     <div id="大语言模型架构" class="anchor"></div>
@@ -1452,6 +1605,38 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h2>
+
+<h3 class="relative group">扩展法则 
+    <div id="扩展法则" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e6%89%a9%e5%b1%95%e6%b3%95%e5%88%99" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>扩展法则(Scaling Law)揭示了模型的能力随模型和数据规模的变化关系，为大语言模型的设计和优化提供了宝贵的指导和参考。</p>
+<p>使用广泛的有 OpenAI 提出的 Kaplan-McCandlish 扩展法则，DeepMind 提出的 Chinchilla 扩展法则。后者是在前者基础上进行的进一步探索。</p>
+$$
+L(N,D)=E+\frac{A}{N^\alpha}+\frac{B}{D^\beta}
+$$$$
+E=1.69,A=406.4,B=410.7,\alpha=0.34,\beta=0.28
+$$<p>其中 \(L\) 表示交叉熵损失函数，\(N\) 表示模型参数规模，\(D\) 表示训练所用的数据量</p>
+<p>另外，在计算总量 \(C\) 给定的条件下，最优的模型和数据规模分别是：</p>
+$$
+N_{opt}\propto C^{0.46}, D_{opt}\propto C^{0.54}
+$$
+<h3 class="relative group">主流架构 
+    <div id="主流架构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%b8%bb%e6%b5%81%e6%9e%b6%e6%9e%84" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
 
 <h2 class="relative group">参数高效微调 
     <div id="参数高效微调" class="anchor"></div>
