@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "7738"
+    "wordCount": "8674"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-21T00:00:00&#43;00:00">更新于: 2025-06-21</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">16 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-21T00:00:00&#43;00:00">更新于: 2025-06-21</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">18 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1258,10 +1258,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#nano">nano</a></li>
         <li><a href="#vim">vim</a></li>
+        <li><a href="#neovim">neovim</a>
+          <ul>
+            <li><a href="#目录结构">目录结构</a></li>
+            <li><a href="#配置方案">配置方案</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#使用windows上的字体">使用Windows上的字体</a></li>
+    <li><a href="#配置vpn">配置VPN</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
@@ -1330,10 +1337,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#nano">nano</a></li>
         <li><a href="#vim">vim</a></li>
+        <li><a href="#neovim">neovim</a>
+          <ul>
+            <li><a href="#目录结构">目录结构</a></li>
+            <li><a href="#配置方案">配置方案</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#使用windows上的字体">使用Windows上的字体</a></li>
+    <li><a href="#配置vpn">配置VPN</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
@@ -1601,7 +1615,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>        
     
 </h3>
-<p>这个命令行编辑器是 Umbundu 系统自带的命令行文本编辑器，不用专门下载。</p>
+<p>这个命令行编辑器是 Ubuntu 系统自带的命令行文本编辑器，不用专门下载。</p>
 <p>想要编辑文件的话也非常简单：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano file_name
 </span></span></code></pre></div><p>进入 nano 之后就有几行提示，标出了相关的快捷键，按照提示进行操作就行了，属于是非常简单的命令行文本编辑器了。</p>
@@ -1671,6 +1685,95 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >网上有很多非常详细的 vim 教程，如果想仔细学 vim 的话可以去看看👀看得出来，那些教程真的很想让我成为一个 vim 大师😔但我是真的懒😔</span>
 </div>
 
+
+<h3 class="relative group">neovim 
+    <div id="neovim" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#neovim" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>出于各种各样不可抗的原因，偶尔不得不使用终端 IDE 来进行项目开发😢但是传统的 vim 实在是太&quot;硬核&quot;了，偶然听说 neovim 非常好用故尝试一下。</p>
+<p><strong>Neovim</strong> 是 Vim 的现代重构版本，全称 <em>Neo (New) Vim</em>，目标是为老牌编辑器 Vim 带来现代化的特性，包括：</p>
+<ul>
+<li>更好的插件系统（异步、Lua 支持）</li>
+<li>更强的语言服务集成（LSP）</li>
+<li>更友好的可配置性（用 Lua 而不是 VimScript）</li>
+<li>更适合与 IDE 特性集成（调试、补全、跳转等）</li>
+</ul>
+
+<h4 class="relative group">目录结构 
+    <div id="目录结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th>目录</th>
+          <th>位置</th>
+          <th>作用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>~/.config/nvim/</code></td>
+          <td>主配置目录</td>
+          <td>存放 <code>init.lua/init.vim</code> 和自定义插件配置</td>
+      </tr>
+      <tr>
+          <td><code>~/.local/share/nvim/</code></td>
+          <td>数据目录</td>
+          <td>插件仓库、自动下载的插件等内容（由插件管理器创建）</td>
+      </tr>
+      <tr>
+          <td><code>~/.cache/nvim/</code></td>
+          <td>缓存目录</td>
+          <td>保存缓存、LSP 日志、telescope 索引、treesitter 缓存等</td>
+      </tr>
+      <tr>
+          <td><code>~/.local/state/nvim/</code></td>
+          <td>状态目录</td>
+          <td>运行时的临时状态（崩溃记录、运行中数据）</td>
+      </tr>
+      <tr>
+          <td><code>~/.config/nvim/lazy/</code></td>
+          <td>插件配置</td>
+          <td>插件管理器生成的插件加载信息</td>
+      </tr>
+  </tbody>
+</table>
+<p>主配置目录结构：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">~/.config/nvim/
+</span></span><span class="line"><span class="cl">├── init.lua                 # 入口文件，类似 VS Code 的 settings.json
+</span></span><span class="line"><span class="cl">├── lua/                     # 存放你所有 Lua 配置模块
+</span></span><span class="line"><span class="cl">│   ├── core/                # 通用设置、快捷键、自定义函数等
+</span></span><span class="line"><span class="cl">│   ├── plugins/             # 插件配置文件（每个插件一个文件）
+</span></span><span class="line"><span class="cl">│   └── lazy.lua             # lazy.nvim 插件加载器初始化文件
+</span></span><span class="line"><span class="cl">├── after/                   # 在插件加载之后执行的额外设置
+</span></span><span class="line"><span class="cl">│   └── plugin/              # 如文件类型自动命令
+</span></span><span class="line"><span class="cl">└── plugin/                  # 自动加载的 Lua/Vim 脚本
+</span></span></code></pre></div>
+<h4 class="relative group">配置方案 
+    <div id="配置方案" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e9%85%8d%e7%bd%ae%e6%96%b9%e6%a1%88" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>现在许多非常酷炫的终端 IDE 的背后其实就是 neovim，而这些 IDE 本身其实是 neovim 的一套成品配置方案，是 neovim 玩家自己折腾出来的成果。比较出名的有：<a href="https://github.com/LazyVim/LazyVim" target="_blank">LazyVim</a> 和 <a href="https://github.com/NvChad/NvChad" target="_blank">NvChad</a></p>
+<p>这些第三方的配置方案一般都有比较完善的说明文档，按照官方说明直接安装即可。</p>
 
 <h2 class="relative group">Fcitx 5 
     <div id="fcitx-5" class="anchor"></div>
@@ -1747,6 +1850,45 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >字体可能会重复安装，系统不会检查某个字体是否重复安装；如果安装重复了请自行去相关文件夹中查找并手动删除🥲Ubuntu 中字体工具可以查看所有字体信息</span>
 </div>
 
+
+<h2 class="relative group">配置VPN 
+    <div id="配置vpn" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e9%85%8d%e7%bd%aevpn" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>本人一般使用 clash+airport 来获取外部网络资源</p>
+<p>首先当然是按照 airport 的教程说明，下载 clash 并获取配置文件，然后一般会通过一个命令来启动 VPN：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./clash -d .
+</span></span></code></pre></div><p>然而，这条命令会占用一个终端，并且每次开机之后都要手动输入一遍，非常不方便。</p>
+<p>于是可以把这个命令封装为一个系统服务，可以使用 <code>systemctl</code> 来进行控制管理，也可以直接设置为开机自启动。</p>
+<p>样例配置文件，需要写入 <code>/etc/systemd/system/clash.service</code> 中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-service" data-lang="service"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Clash Service</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">morethan</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/home/morethan/Program/clash/clash -d /home/morethan/Program/clash</span>
+</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">on-failure</span>
+</span></span><span class="line"><span class="cl"><span class="na">RestartSec</span><span class="o">=</span><span class="s">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></div><p>设置为开机自启动：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reexec <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> clash.service
+</span></span></code></pre></div><p>使用 <code>systemctl</code> 进行控制：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 立即启动</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start clean-up.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 立即停止</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start clean-up.service
+</span></span></code></pre></div><p>当然，也可以在：<code>系统设置 --&gt; 网络 --&gt; 代理</code> 中手动进行设置</p>
 
 <h2 class="relative group">挂载硬盘 
     <div id="挂载硬盘" class="anchor"></div>
@@ -2692,13 +2834,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h3>
 <ul>
 <li>
-<p>立刻关机：<code>shutdown now</code></p>
+<p>立刻关机：<code>shutdown now</code> 或者 <code>systemctl poweroff</code></p>
 </li>
 <li>
-<p>立即重启：<code>sudo reboot</code></p>
+<p>立即重启：<code>sudo reboot</code> 或者 <code>systemctl reboot</code></p>
 </li>
 </ul>
-
+<p>一般来说，使用 <code>systemctl</code> 的命令都更加&quot;优雅&quot;，能够让正在执行的进程自主结束后再关机，而不是直接强行杀死。</p>
+<p>这里推荐两个使用 alias 命令来关机和重启：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">seeu</span><span class="o">=</span><span class="s1">&#39;systemctl poweroff&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">again</span><span class="o">=</span><span class="s1">&#39;systemctl reboot&#39;</span>
+</span></span></code></pre></div>
 <h3 class="relative group">解压 
     <div id="解压" class="anchor"></div>
     

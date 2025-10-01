@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4761"
+    "wordCount": "5303"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-21T00:00:00&#43;00:00">Updated: 21 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-06-21T00:00:00&#43;00:00">Updated: 21 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1258,10 +1258,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#nano">nano</a></li>
         <li><a href="#vim">vim</a></li>
+        <li><a href="#neovim">neovim</a>
+          <ul>
+            <li><a href="#directory-structure">Directory Structure</a></li>
+            <li><a href="#configuration-solutions">Configuration Solutions</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#using-windows-fonts">Using Windows Fonts</a></li>
+    <li><a href="#setting-up-vpn">Setting Up VPN</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
@@ -1330,10 +1337,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <ul>
         <li><a href="#nano">nano</a></li>
         <li><a href="#vim">vim</a></li>
+        <li><a href="#neovim">neovim</a>
+          <ul>
+            <li><a href="#directory-structure">Directory Structure</a></li>
+            <li><a href="#configuration-solutions">Configuration Solutions</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#using-windows-fonts">Using Windows Fonts</a></li>
+    <li><a href="#setting-up-vpn">Setting Up VPN</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
@@ -1672,6 +1686,95 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </div>
 
 
+<h3 class="relative group">neovim 
+    <div id="neovim" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#neovim" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Due to various unavoidable reasons, I occasionally have to use a terminal IDE for project development 😢. However, the traditional Vim editor is just too &ldquo;hardcore&rdquo;. I recently heard that Neovim is quite user-friendly and decided to give it a try.</p>
+<p><strong>Neovim</strong> is a modern reimplementation of Vim, short for <em>Neo (New) Vim</em>. Its goal is to bring modern features to the classic Vim editor, including:</p>
+<ul>
+<li>A better plugin system (asynchronous processing, Lua support)</li>
+<li>Enhanced language server integration (LSP)</li>
+<li>More user-friendly configuration options (using Lua instead of VimScript)</li>
+<li>Better integration with IDE-like features (debugging, completion, navigation, etc.)</li>
+</ul>
+
+<h4 class="relative group">Directory Structure 
+    <div id="directory-structure" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#directory-structure" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Directory</th>
+          <th>Location</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>~/.config/nvim/</code></td>
+          <td>Main configuration directory</td>
+          <td>Stores <code>init.lua/init.vim</code> and custom plugin configurations</td>
+      </tr>
+      <tr>
+          <td><code>~/.local/share/nvim/</code></td>
+          <td>Data directory</td>
+          <td>Plugin repositories, automatically downloaded plugins (created by plugin managers)</td>
+      </tr>
+      <tr>
+          <td><code>~/.cache/nvim/</code></td>
+          <td>Cache directory</td>
+          <td>Stores caches, LSP logs, Telescope indexes, Tree-sitter caches, etc.</td>
+      </tr>
+      <tr>
+          <td><code>~/.local/state/nvim/</code></td>
+          <td>State directory</td>
+          <td>Runtime temporary states (crash records, in-process data)</td>
+      </tr>
+      <tr>
+          <td><code>~/.config/nvim/lazy/</code></td>
+          <td>Plugin configuration</td>
+          <td>Plugin loading information generated by plugin managers</td>
+      </tr>
+  </tbody>
+</table>
+<p>Main configuration directory structure:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">~/.config/nvim/
+</span></span><span class="line"><span class="cl">├── init.lua                 # Entry file, similar to VS Code&#39;s settings.json
+</span></span><span class="line"><span class="cl">├── lua/                     # Contains all your Lua configuration modules
+</span></span><span class="line"><span class="cl">│   ├── core/                # General settings, keymaps, custom functions, etc.
+</span></span><span class="line"><span class="cl">│   ├── plugins/             # Plugin configuration files (one file per plugin)
+</span></span><span class="line"><span class="cl">│   └── lazy.lua             # Initialization file for lazy.nvim plugin loader
+</span></span><span class="line"><span class="cl">├── after/                   # Additional settings executed after plugins are loaded
+</span></span><span class="line"><span class="cl">│   └── plugin/              # E.g., filetype autocommands
+</span></span><span class="line"><span class="cl">└── plugin/                  # Lua/Vim scripts that are auto-loaded
+</span></span></code></pre></div>
+<h4 class="relative group">Configuration Solutions 
+    <div id="configuration-solutions" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#configuration-solutions" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Nowadays, many incredibly sleek terminal IDEs are actually powered by Neovim under the hood. These IDEs are essentially pre-configured setups crafted by Neovim enthusiasts—essentially the results of their meticulous tinkering. Some well-known examples include: <a href="https://github.com/LazyVim/LazyVim" target="_blank">LazyVim</a> and <a href="https://github.com/NvChad/NvChad" target="_blank">NvChad</a>.</p>
+<p>These third-party configurations usually come with comprehensive documentation, so you can simply follow the official instructions to install them.</p>
+
 <h2 class="relative group">Fcitx 5 
     <div id="fcitx-5" class="anchor"></div>
     
@@ -1747,6 +1850,45 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     >Fonts may be installed redundantly, as the system doesn’t check for duplicates. If this happens, manually locate and delete the duplicate files in the relevant directory 🥲. Ubuntu’s font tools can display all font information.</span>
 </div>
 
+
+<h2 class="relative group">Setting Up VPN 
+    <div id="setting-up-vpn" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#setting-up-vpn" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>I usually use Clash + airport to access external network resources.</p>
+<p>First, of course, follow the airport tutorial to download Clash and obtain the configuration file. Then, a VPN is typically started using a command like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./clash -d .
+</span></span></code></pre></div><p>However, this command occupies a terminal and requires manual input every time after booting, which is quite inconvenient.</p>
+<p>Therefore, this command can be encapsulated into a system service, allowing it to be controlled and managed using <code>systemctl</code>. It can also be set to start automatically on boot.</p>
+<p>Sample configuration file, which needs to be written to <code>/etc/systemd/system/clash.service</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-service" data-lang="service"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">Clash Service</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">morethan</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/home/morethan/Program/clash/clash -d /home/morethan/Program/clash</span>
+</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">on-failure</span>
+</span></span><span class="line"><span class="cl"><span class="na">RestartSec</span><span class="o">=</span><span class="s">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></div><p>Set it to start automatically on boot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reexec <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> clash.service
+</span></span></code></pre></div><p>Control it using <code>systemctl</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Start immediately</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start clash.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Stop immediately</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop clash.service
+</span></span></code></pre></div><p>Of course, you can also manually configure it in: <code>System Settings --&gt; Network --&gt; Proxy</code>.</p>
 
 <h2 class="relative group">Mounting Hard Drives 
     <div id="mounting-hard-drives" class="anchor"></div>
@@ -2692,13 +2834,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h3>
 <ul>
 <li>
-<p>Shut down immediately: <code>shutdown now</code></p>
+<p>Shut down immediately: <code>shutdown now</code> or <code>systemctl poweroff</code></p>
 </li>
 <li>
-<p>Restart immediately: <code>sudo reboot</code></p>
+<p>Restart immediately: <code>sudo reboot</code> or <code>systemctl reboot</code></p>
 </li>
 </ul>
-
+<p>Generally speaking, commands using <code>systemctl</code> are more &ldquo;graceful,&rdquo; allowing running processes to end autonomously before shutdown, rather than being forcibly terminated.</p>
+<p>Here are two recommended aliases for shutdown and reboot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">seeu</span><span class="o">=</span><span class="s1">&#39;systemctl poweroff&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">again</span><span class="o">=</span><span class="s1">&#39;systemctl reboot&#39;</span>
+</span></span></code></pre></div>
 <h3 class="relative group">Extracting Files 
     <div id="extracting-files" class="anchor"></div>
     
