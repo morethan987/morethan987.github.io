@@ -116,7 +116,7 @@
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2170"
+    "wordCount": "1971"
   }]
   </script>
 
@@ -950,7 +950,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-17T00:00:00&#43;00:00">Updated: 17 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-17T00:00:00&#43;00:00">Updated: 17 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1275,7 +1275,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#usage-1">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#passwordless-login-via-vscode">Passwordless Login via VSCode</a></li>
     <li><a href="#packaging-applications">Packaging Applications</a>
       <ul>
         <li><a href="#pyinstaller">pyinstaller</a></li>
@@ -1329,7 +1328,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#usage-1">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#passwordless-login-via-vscode">Passwordless Login via VSCode</a></li>
     <li><a href="#packaging-applications">Packaging Applications</a>
       <ul>
         <li><a href="#pyinstaller">pyinstaller</a></li>
@@ -1948,74 +1946,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
       style="color: #333333"
     >Do not rename the whl files 😢</span>
-</div>
-
-
-<h2 class="relative group">Passwordless Login via VSCode 
-    <div id="passwordless-login-via-vscode" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#passwordless-login-via-vscode" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>For students without a local GPU, editing and running files directly on a server is very convenient. The VSCode extension <code>remote-ssh</code> can also display a VSCode interface directly on the server. To avoid the hassle of repeatedly entering passwords, you can set up passwordless login as follows 😄.</p>
-<p>For a local Windows machine, SSH-related configuration files are usually stored in the <code>C:\Users\&lt;User_name&gt;\.ssh</code> folder. Passwordless login can be achieved by modifying files in this directory.</p>
-<ol>
-<li>Configure the <code>config</code> file. A sample configuration is as follows:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># Replace &lt;User_name&gt; with your local machine&#39;s username  
-</span></span><span class="line"><span class="cl">Host 3090  
-</span></span><span class="line"><span class="cl">    HostName xx.xxx.xx.xx  
-</span></span><span class="line"><span class="cl">    User morethan  
-</span></span><span class="line"><span class="cl">    IdentityFile &#34;C:\Users\&lt;User_name&gt;\.ssh\id_rsa&#34;  
-</span></span></code></pre></div><ol start="2">
-<li>
-<p>Generate the authentication file <code>id_rsa.pub</code>.</p>
-</li>
-<li>
-<p>Locally create an <code>authorized_keys</code> file and copy the contents of <code>id_rsa.pub</code> into it.</p>
-</li>
-<li>
-<p>On the server, create a <code>.ssh</code> folder in the default directory and copy the <code>authorized_keys</code> file from your local machine into it.</p>
-</li>
-</ol>
-<p>Now, when logging into the server via VSCode, you’ll find that passwordless login is enabled.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >The steps above only need to be performed once initially. When configuring passwordless login for another server, you only need to modify the <code>config</code> file and copy the <code>authorized_keys</code> file to the server—no further file modifications are required 😄.</span>
 </div>
 
 

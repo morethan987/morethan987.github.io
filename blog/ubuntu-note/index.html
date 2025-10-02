@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "8674"
+    "wordCount": "10008"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">更新于: 2025-10-01</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">18 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">更新于: 2025-10-01</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">20 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1269,6 +1269,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#使用windows上的字体">使用Windows上的字体</a></li>
     <li><a href="#配置vpn">配置VPN</a></li>
+    <li><a href="#ssh反向代理">ssh反向代理</a></li>
+    <li><a href="#ssh免密登录">ssh免密登录</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
@@ -1348,6 +1350,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#使用windows上的字体">使用Windows上的字体</a></li>
     <li><a href="#配置vpn">配置VPN</a></li>
+    <li><a href="#ssh反向代理">ssh反向代理</a></li>
+    <li><a href="#ssh免密登录">ssh免密登录</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
@@ -1889,6 +1893,136 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># 立即停止</span>
 </span></span><span class="line"><span class="cl">sudo systemctl start clean-up.service
 </span></span></code></pre></div><p>当然，也可以在：<code>系统设置 --&gt; 网络 --&gt; 代理</code> 中手动进行设置</p>
+
+<h2 class="relative group">ssh反向代理 
+    <div id="ssh反向代理" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ssh%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>很多时候我们都需要使用远程服务器来进行代码开发工作，但是国内远程服务器的网络有非常难以处理的特性：连不上外网，甚至根本就无法访问国内网络。</p>
+<p>之所以说这是特性，主要原因是我还真就没见过能够同时满足上述两个网络需求的服务器😭我的一份干了好几个月的代码就因为网络原因丢失了，现在想起来都十分痛心😭</p>
+<p>于是我痛定思痛，决定彻底解决这个棘手的问题：以后只要我能够连接上这个远程服务器，我就一定要让其能够流畅地访问外部网络。俗话说得好，磨刀不误砍柴工，网络问题真的不是一个可以忽视的问题。</p>
+<p>下面这些内容主要来自于这篇博客文章：<a href="https://www.bonanzhu.com/blog/2024/ssh-reverse-proxy-usage-chinese/" target="_blank">SSH反向隧道使远程计算机连接互联网教程</a></p>
+<p>核心命令如下：</p>
+<pre tabindex="0"><code># 开启一个终端并启动反向代理
+ssh -R 7890:localhost:7890 username@remote_host
+</code></pre><p>这个命令的含义是：在远程电脑上打开7890端口，并将所有发往这个端口的数据转发到本地电脑的7890端口（即你的代理服务器）。这个命令执行之后就会开启一个远程服务器的终端，在这个终端中可以立即测试代理是否成功：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.baidu.com
+</span></span></code></pre></div><p>如果你的本地电脑上的 7890 端口恰好运行了一个 VPN，那么你还能够尝试访问外网的资源：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.google.com
+</span></span></code></pre></div><p>如果一切正常的话你现在应该能够获取到外部网络的资源了😄</p>
+<p>但是上面这种方法我觉得不太优雅：每次想要给一个服务器进行反向代理就需要运行这个命令，并且还会占用一个终端窗口</p>
+<p>因此我将这个功能封装为了一个系统服务模板，能够使用类似下面这个命令来进行控制：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动反向代理</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start ssh-reverse-proxy@A6000.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看代理状态</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status ssh-reverse-proxy@A6000.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 停止反向代理</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop ssh-reverse-proxy@A6000.service
+</span></span></code></pre></div><p>其中@后面的是一个可变参数，你只需要填入你想访问的目标服务器的别名即可。当然，你需要在 <code>~/.ssh/config</code> 中写入你的服务器别名。当然为了方便起见，还需要配置免密登陆，详见下一节的内容：<a href="#ssh免密登录">ssh免密登录</a></p>
+<p>当然还可以将上面这个冗长的命令封装为一个 alias，具体 alias 的命名就看个人喜好了，简洁易懂就行。</p>
+<p>下面是配置系统级服务的命令操作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/systemd/system/ssh-reverse-proxy@.service
+</span></span></code></pre></div><p>写入下面这些内容，当然有一些必要内容是要修改的：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-service" data-lang="service"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Description中的&#39;%i&#39;会被您传入的参数（SSH别名）替换</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">SSH Reverse Proxy to %i</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+</span></span><span class="line"><span class="cl"><span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># [务必修改] 替换为您的本地用户名，以便服务能找到您的SSH密钥</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">your_local_user</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># ExecStart中的&#39;%i&#39;也会被替换为SSH别名</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 这就是实现参数化的核心</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/ssh -NT </span>\
+</span></span><span class="line"><span class="cl"><span class="s">    -o ServerAliveInterval=60 </span>\
+</span></span><span class="line"><span class="cl"><span class="s">    -o ExitOnForwardFailure=yes </span>\
+</span></span><span class="line"><span class="cl"><span class="s">    -R 7890:localhost:7890 %i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 自动重启策略</span>
+</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+</span></span><span class="line"><span class="cl"><span class="na">RestartSec</span><span class="o">=</span><span class="s">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></div><p>然后重载一下系统服务，就可以使用上文提及到的 <code>systemctl</code> 来控制这个反向代理服务了😄</p>
+
+<h2 class="relative group">ssh免密登录 
+    <div id="ssh免密登录" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ssh%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>对于没有本地 GPU 的学生党来说，直接在服务器上编辑并运行文件是非常方便的，而 VSCode 插件 <code>remote-ssh</code> 也能够在服务器上直接呈现一个 VSCode 的界面。为了省去不断输入密码的痛苦，可以进行如下操作实现免密登录😄</p>
+<p>本地机为 Windows，一般来说在 <code>C:\Users\&lt;User_name&gt;\.ssh</code> 文件夹中会存放 <code>ssh</code> 相关的配置文件，实现免密登录就只需要操作这里面的文件即可。</p>
+<ol>
+<li>配置 <code>config</code> 文件，样例配置如下：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># 把&lt;User_name&gt;替换为你的本地机用户名
+</span></span><span class="line"><span class="cl">Host 3090
+</span></span><span class="line"><span class="cl">    HostName xx.xxx.xx.xx
+</span></span><span class="line"><span class="cl">    User morethan
+</span></span><span class="line"><span class="cl">    IdentityFile &#34;C:\Users\&lt;User_name&gt;\.ssh\id_rsa&#34;
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>生成验证文件 <code>id_rsa.pub</code></p>
+</li>
+<li>
+<p>本地创建 <code>authorized_keys</code> 文件，并将 <code>id_rsa.pub</code> 中的内容写入这个文件</p>
+</li>
+<li>
+<p>在服务器中默认目录下创建 <code>.ssh</code> 文件夹，然后将 <code>authorized_keys</code> 文件从本地拷贝进去即可</p>
+</li>
+</ol>
+<p>然后用 VSCode 登录服务器就发现已经完成了免密登录</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >上述繁琐的步骤只需要初次执行一次就行，当需要给下一台服务器配置免密登录时，只需要改 config 文件然后把 authorized_keys 文件拷贝到服务器就完成了，不需要改写任何文件😄</span>
+</div>
+
 
 <h2 class="relative group">挂载硬盘 
     <div id="挂载硬盘" class="anchor"></div>

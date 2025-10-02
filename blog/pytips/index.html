@@ -116,7 +116,7 @@
     "keywords": ["Python"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "4209"
+    "wordCount": "3856"
   }]
   </script>
 
@@ -950,7 +950,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-17T00:00:00&#43;00:00">更新于: 2025-05-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">9 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-10T00:00:00&#43;00:00">2024-08-10</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-17T00:00:00&#43;00:00">更新于: 2025-05-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1275,7 +1275,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#使用-1">使用</a></li>
       </ul>
     </li>
-    <li><a href="#vs免密登录">VS免密登录</a></li>
     <li><a href="#程序打包">程序打包</a>
       <ul>
         <li><a href="#pyinstaller">pyinstaller</a></li>
@@ -1329,7 +1328,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#使用-1">使用</a></li>
       </ul>
     </li>
-    <li><a href="#vs免密登录">VS免密登录</a></li>
     <li><a href="#程序打包">程序打包</a>
       <ul>
         <li><a href="#pyinstaller">pyinstaller</a></li>
@@ -1948,74 +1946,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
       style="color: #333333"
     >注意不要改 whl 文件的名字😢</span>
-</div>
-
-
-<h2 class="relative group">VS免密登录 
-    <div id="vs免密登录" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#vs%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>对于没有本地 GPU 的学生党来说，直接在服务器上编辑并运行文件是非常方便的，而 VSCode 插件 <code>remote-ssh</code> 也能够在服务器上直接呈现一个 VSCode 的界面。为了省去不断输入密码的痛苦，可以进行如下操作实现免密登录😄</p>
-<p>本地机为 Windows，一般来说在 <code>C:\Users\&lt;User_name&gt;\.ssh</code> 文件夹中会存放 <code>ssh</code> 相关的配置文件，实现免密登录就只需要操作这里面的文件即可。</p>
-<ol>
-<li>配置 <code>config</code> 文件，样例配置如下：</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># 把&lt;User_name&gt;替换为你的本地机用户名
-</span></span><span class="line"><span class="cl">Host 3090
-</span></span><span class="line"><span class="cl">    HostName xx.xxx.xx.xx
-</span></span><span class="line"><span class="cl">    User morethan
-</span></span><span class="line"><span class="cl">    IdentityFile &#34;C:\Users\&lt;User_name&gt;\.ssh\id_rsa&#34;
-</span></span></code></pre></div><ol start="2">
-<li>
-<p>生成验证文件 <code>id_rsa.pub</code></p>
-</li>
-<li>
-<p>本地创建 <code>authorized_keys</code> 文件，并将 <code>id_rsa.pub</code> 中的内容写入这个文件</p>
-</li>
-<li>
-<p>在服务器中默认目录下创建 <code>.ssh</code> 文件夹，然后将 <code>authorized_keys</code> 文件从本地拷贝进去即可</p>
-</li>
-</ol>
-<p>然后用 VSCode 登录服务器就发现已经完成了免密登录</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md"
-    style="background-color: #1E3A8A"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-
-  </span>
-
-
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    >上述繁琐的步骤只需要初次执行一次就行，当需要给下一台服务器配置免密登录时，只需要改 config 文件然后把 authorized_keys 文件拷贝到服务器就完成了，不需要改写任何文件😄</span>
 </div>
 
 

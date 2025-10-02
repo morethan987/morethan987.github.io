@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "5303"
+    "wordCount": "6108"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">Updated: 1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">11 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">Updated: 1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1269,6 +1269,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#using-windows-fonts">Using Windows Fonts</a></li>
     <li><a href="#setting-up-vpn">Setting Up VPN</a></li>
+    <li><a href="#ssh-reverse-proxy">SSH Reverse Proxy</a></li>
+    <li><a href="#password-less-ssh-login">Password-less SSH Login</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
@@ -1348,6 +1350,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#fcitx-5">Fcitx 5</a></li>
     <li><a href="#using-windows-fonts">Using Windows Fonts</a></li>
     <li><a href="#setting-up-vpn">Setting Up VPN</a></li>
+    <li><a href="#ssh-reverse-proxy">SSH Reverse Proxy</a></li>
+    <li><a href="#password-less-ssh-login">Password-less SSH Login</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
@@ -1889,6 +1893,136 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="c1"># Stop immediately</span>
 </span></span><span class="line"><span class="cl">sudo systemctl stop clash.service
 </span></span></code></pre></div><p>Of course, you can also manually configure it in: <code>System Settings --&gt; Network --&gt; Proxy</code>.</p>
+
+<h2 class="relative group">SSH Reverse Proxy 
+    <div id="ssh-reverse-proxy" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ssh-reverse-proxy" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>We often need to use remote servers for code development work. However, networks of domestic remote servers have particularly tricky characteristics: they cannot connect to the external internet, or sometimes even cannot access the domestic network at all.</p>
+<p>The reason I call it a &lsquo;characteristic&rsquo; is mainly because I honestly have never seen a server that can fulfill both of the aforementioned network requirements 😭. I once lost code I had worked on for several months due to network issues, and it still pains me to think about it 😭.</p>
+<p>So, after much reflection, I decided to thoroughly solve this thorny problem: henceforth, whenever I can connect to a remote server, I must ensure it can smoothly access the external network. As the saying goes, sharpening the axe won&rsquo;t delay the job of cutting wood. Network issues are truly not something that can be overlooked.</p>
+<p>The following content is primarily sourced from this blog post: <a href="https://www.bonanzhu.com/blog/2024/ssh-reverse-proxy-usage-chinese/" target="_blank">Tutorial on Using SSH Reverse Tunnels to Connect Remote Computers to the Internet</a></p>
+<p>The core command is as follows:</p>
+<pre tabindex="0"><code># Open a terminal and start the reverse proxy
+ssh -R 7890:localhost:7890 username@remote_host
+</code></pre><p>The meaning of this command is: open port 7890 on the remote computer and forward all data sent to this port to port 7890 on the local computer (i.e., your proxy server). After executing this command, a terminal session to the remote server will open. You can immediately test if the proxy is successful in this terminal:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.baidu.com
+</span></span></code></pre></div><p>If a VPN happens to be running on port 7890 of your local computer, you can also try accessing resources on the external network:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.google.com
+</span></span></code></pre></div><p>If everything goes well, you should now be able to access external network resources 😄.</p>
+<p>However, I find the method above somewhat inelegant: every time you want to set up a reverse proxy for a server, you need to run this command, and it also occupies a terminal window.</p>
+<p>Therefore, I encapsulated this functionality into a system service template, allowing control using commands similar to the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Start the reverse proxy</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start ssh-reverse-proxy@A6000.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check the proxy status</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status ssh-reverse-proxy@A6000.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Stop the reverse proxy</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop ssh-reverse-proxy@A6000.service
+</span></span></code></pre></div><p>The part after the <code>@</code> is a variable parameter; you just need to fill in the alias of the target server you want to access. Of course, you need to define your server aliases in <code>~/.ssh/config</code>. Also, for convenience, password-less login should be configured. See the next section for details: <a href="#password-less-ssh-login">Password-less SSH Login</a></p>
+<p>You can also wrap the lengthy command above into an alias; the specific name is a matter of personal preference, as long as it&rsquo;s concise and understandable.</p>
+<p>Here are the command operations for configuring the system-level service:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/systemd/system/ssh-reverse-proxy@.service
+</span></span></code></pre></div><p>Write the following content (note, some essential parts need modification):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-service" data-lang="service"><span class="line"><span class="cl"><span class="k">[Unit]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># The &#39;%i&#39; in Description will be replaced by the parameter you pass (the SSH alias)</span>
+</span></span><span class="line"><span class="cl"><span class="na">Description</span><span class="o">=</span><span class="s">SSH Reverse Proxy to %i</span>
+</span></span><span class="line"><span class="cl"><span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
+</span></span><span class="line"><span class="cl"><span class="na">Wants</span><span class="o">=</span><span class="s">network-online.target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Service]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># [MUST MODIFY] Replace with your local username so the service can find your SSH keys</span>
+</span></span><span class="line"><span class="cl"><span class="na">User</span><span class="o">=</span><span class="s">your_local_user</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># The &#39;%i&#39; in ExecStart will also be replaced by the SSH alias</span>
+</span></span><span class="line"><span class="cl"><span class="c"># This is the core enabling parameterization</span>
+</span></span><span class="line"><span class="cl"><span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/ssh -NT </span>\
+</span></span><span class="line"><span class="cl"><span class="s">    -o ServerAliveInterval=60 </span>\
+</span></span><span class="line"><span class="cl"><span class="s">    -o ExitOnForwardFailure=yes </span>\
+</span></span><span class="line"><span class="cl"><span class="s">    -R 7890:localhost:7890 %i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Automatic restart policy</span>
+</span></span><span class="line"><span class="cl"><span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+</span></span><span class="line"><span class="cl"><span class="na">RestartSec</span><span class="o">=</span><span class="s">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
+</span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</span></span></code></pre></div><p>Then reload the systemd configuration, and you can use the <code>systemctl</code> commands mentioned above to control this reverse proxy service 😄.</p>
+
+<h2 class="relative group">Password-less SSH Login 
+    <div id="password-less-ssh-login" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#password-less-ssh-login" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>For students without a local GPU, editing and running files directly on the server is very convenient, and the VSCode <code>remote-ssh</code> extension can also present a VSCode interface directly from the server. To avoid the pain of constantly entering passwords, you can perform the following operations to achieve password-less login 😄.</p>
+<p>Assuming the local machine is Windows, SSH-related configuration files are generally stored in the <code>C:\Users\&lt;User_name&gt;\.ssh</code> folder. Achieving password-less login only requires working with the files in this directory.</p>
+<ol>
+<li>Configure the <code>config</code> file. A sample configuration is as follows:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># Replace &lt;User_name&gt; with your local machine username
+</span></span><span class="line"><span class="cl">Host 3090
+</span></span><span class="line"><span class="cl">    HostName xx.xxx.xx.xx
+</span></span><span class="line"><span class="cl">    User morethan
+</span></span><span class="line"><span class="cl">    IdentityFile &#34;C:\Users\&lt;User_name&gt;\.ssh\id_rsa&#34;
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>Generate the authentication file <code>id_rsa.pub</code> (if not already present).</p>
+</li>
+<li>
+<p>Locally create an <code>authorized_keys</code> file and write the contents of <code>id_rsa.pub</code> into this file.</p>
+</li>
+<li>
+<p>Create a <code>.ssh</code> folder in the default directory on the server, and then copy the local <code>authorized_keys</code> file into it.</p>
+</li>
+</ol>
+<p>After that, when you try to log into the server using VSCode, you&rsquo;ll find that password-less login is already set up.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >The cumbersome steps above only need to be performed once initially. When you need to configure password-less login for the next server, you only need to modify the config file and then copy the <code>authorized_keys</code> file to the new server. There&rsquo;s no need to rewrite any files 😄.</span>
+</div>
+
 
 <h2 class="relative group">Mounting Hard Drives 
     <div id="mounting-hard-drives" class="anchor"></div>
