@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6108"
+    "wordCount": "6225"
   }]
   </script>
 
@@ -1955,6 +1955,20 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
 </span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>Then reload the systemd configuration, and you can use the <code>systemctl</code> commands mentioned above to control this reverse proxy service 😄.</p>
+<p>If you want to use Git, you&rsquo;ll need to route SSH traffic through HTTPS using <code>netcat</code>. It might sound abstract, but the actual steps are quite straightforward. Simply add the following content to your <code>~/.ssh/config</code>:</p>
+<pre tabindex="0"><code>Host github.com gitlab.com
+  # Match multiple hosts separated by spaces
+
+  # [Core Configuration]
+  # Use netcat (nc) to connect via an HTTP proxy
+  # -x connect_address:port specifies the HTTP proxy address
+  # -X 5 specifies the proxy protocol as SOCKS5 (if the proxy supports it)
+  #  - or -
+  # -X connect specifies the use of HTTP CONNECT (more universal)
+  ProxyCommand nc -X connect -x localhost:7890 %h %p
+  
+  User git
+</code></pre><p>Then, follow the instructions in <a href="#github-ssh">GitHub-SSH</a> to configure password-free push for GitHub.</p>
 
 <h2 class="relative group">Password-less SSH Login 
     <div id="password-less-ssh-login" class="anchor"></div>

@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "10008"
+    "wordCount": "10191"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">更新于: 2025-10-01</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">20 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">更新于: 2025-10-01</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">21 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1955,6 +1955,20 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
 </span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>然后重载一下系统服务，就可以使用上文提及到的 <code>systemctl</code> 来控制这个反向代理服务了😄</p>
+<p>另外如果想要使用 git 的话，就需要利用 <code>netcat</code> 将 ssh 的流量转接到 https。说着比较抽象，但是实际上具体需要做的操作并不多，只需要在 <code>~/.ssh/config</code> 中写入下面的内容：</p>
+<pre tabindex="0"><code>Host github.com gitlab.com
+  # 匹配多个主机，用空格隔开
+
+  # [核心配置]
+  # 使用 netcat (nc) 通过 HTTP 代理连接
+  # -x connect_address:port 指定HTTP代理地址
+  # -X 5 指定代理协议为 SOCKS5 (如果代理支持)
+  #  - or -
+  # -X connect 指定使用 HTTP CONNECT (更通用)
+  ProxyCommand nc -X connect -x localhost:7890 %h %p
+  
+  User git
+</code></pre><p>然后按照 <a href="#github-ssh">GitHub-SSH</a> 中的内容配置 GitHub 免密推送即可</p>
 
 <h2 class="relative group">ssh免密登录 
     <div id="ssh免密登录" class="anchor"></div>
