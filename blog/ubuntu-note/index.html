@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "10191"
+    "wordCount": "10196"
   }]
   </script>
 
@@ -1955,7 +1955,7 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
 </span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>然后重载一下系统服务，就可以使用上文提及到的 <code>systemctl</code> 来控制这个反向代理服务了😄</p>
-<p>另外如果想要使用 git 的话，就需要利用 <code>netcat</code> 将 ssh 的流量转接到 https。说着比较抽象，但是实际上具体需要做的操作并不多，只需要在 <code>~/.ssh/config</code> 中写入下面的内容：</p>
+<p>另外如果想要使用 git 的话，就需要利用 <code>netcat</code> 将 ssh 的流量转接到 https。说着比较抽象，但是实际上具体需要做的操作并不多，只需要在服务器上的 <code>~/.ssh/config</code> 中写入下面的内容：</p>
 <pre tabindex="0"><code>Host github.com gitlab.com
   # 匹配多个主机，用空格隔开
 

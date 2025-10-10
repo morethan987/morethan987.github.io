@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6225"
+    "wordCount": "6229"
   }]
   </script>
 
@@ -1955,7 +1955,7 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
 </span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>Then reload the systemd configuration, and you can use the <code>systemctl</code> commands mentioned above to control this reverse proxy service 😄.</p>
-<p>If you want to use Git, you&rsquo;ll need to route SSH traffic through HTTPS using <code>netcat</code>. It might sound abstract, but the actual steps are quite straightforward. Simply add the following content to your <code>~/.ssh/config</code>:</p>
+<p>If you want to use Git, you&rsquo;ll need to route SSH traffic through HTTPS using <code>netcat</code>. It might sound abstract, but the actual steps are quite straightforward. Simply add the following content to the <code>~/.ssh/config</code> file on the server:</p>
 <pre tabindex="0"><code>Host github.com gitlab.com
   # Match multiple hosts separated by spaces
 
