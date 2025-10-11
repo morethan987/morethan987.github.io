@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-11T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-01T00:00:00\u002b00:00",
+    "dateModified": "2025-10-11T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "10196"
+    "wordCount": "11025"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">更新于: 2025-10-01</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">21 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-11T00:00:00&#43;00:00">更新于: 2025-10-11</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">23 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1272,6 +1272,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#ssh反向代理">ssh反向代理</a></li>
     <li><a href="#ssh免密登录">ssh免密登录</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
+    <li><a href="#硬盘监控">硬盘监控</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
     <li><a href="#配置git">配置Git</a>
@@ -1353,6 +1354,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#ssh反向代理">ssh反向代理</a></li>
     <li><a href="#ssh免密登录">ssh免密登录</a></li>
     <li><a href="#挂载硬盘">挂载硬盘</a></li>
+    <li><a href="#硬盘监控">硬盘监控</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
     <li><a href="#配置git">配置Git</a>
@@ -2077,6 +2079,100 @@ ssh -R 7890:localhost:7890 username@remote_host
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 运行后如果没有报错则说明配置正确</span>
 </span></span><span class="line"><span class="cl">sudo mount -a
 </span></span></code></pre></div>
+<h2 class="relative group">硬盘监控 
+    <div id="硬盘监控" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e7%a1%ac%e7%9b%98%e7%9b%91%e6%8e%a7" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>由于我的 Ubuntu 安装在一个移动硬盘上，所以为了系统安全，就需要监控一下硬盘的状态。</p>
+<p>用我的个人经历来说明为什么要监控硬盘。因为是外接的一块硬盘，偶尔会有不慎触碰导致硬盘直接掉电的情况。然后直接软关机在开机，系统貌似没有任何影响，但是很有可能硬盘已经出现了永久性损坏了😭也就是所谓的&quot;坏块&quot;。当我意识到的时候，坏块的数量已经到 262 个了。</p>
+<p>另外，如果坏块数量在短期内快速上升，比如一个星期就多了 10 个坏块，那么就需要赶紧备份数据，准备更换硬盘了。</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #e63946"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #ffffff"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor"  d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #ffffff"
+    >追悔莫及啊，千万不要让硬盘强制掉电😭</span>
+</div>
+
+<p>其实硬盘监控已经是一个非常常见的需求了，因此有一个 <code>smartmontools</code> 的软件可以进行硬盘监控。运行下面这个命令进行安装：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install smartmontools
+</span></span></code></pre></div><p>然后去修改配置文件，去监控特定的硬盘设备：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/smartd.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 注释掉原来的其他内容，然后在末尾添加</span>
+</span></span><span class="line"><span class="cl">/dev/sdb -a -d sat -o on -S on -I <span class="m">194</span>
+</span></span></code></pre></div><p>注意，上面增加的内容需要根据实际情况调整，比如开头的硬盘名字。</p>
+<p>配置完成之后就可以直接启动，监控程序就会在开机之后自动运行了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看状态</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status smartd
+</span></span></code></pre></div><p>想要查看状态的话可以直接访问系统日志：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看所有smartd相关的日志</span>
+</span></span><span class="line"><span class="cl">journalctl -u smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 只看warning及以上级别的信息</span>
+</span></span><span class="line"><span class="cl">journalctl -u smartd -p warning
+</span></span></code></pre></div><p>下面的操作是<strong>可选的</strong>，目的是将 <code>smartd</code> 相关的日志转存到另外一个文件中。因为我设置了系统自动清理，因此系统日志只有两天的内容，然而硬盘监控一般至少都是按照月份来计量的。</p>
+<p>修改系统日志服务的配置文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/rsyslog.d/60-smartd.conf
+</span></span></code></pre></div><p>写入下面这个内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">if $programname == &#39;smartd&#39; then /var/log/smartd.log
+</span></span><span class="line"><span class="cl">&amp; stop
+</span></span></code></pre></div><p>这段内容的具体含义是：将所有 <code>smartd</code> 相关的日志都转入到 <code>/var/log/smartd.log</code> 文件中，并禁止其写入系统日志(避免内容重复)</p>
+<p>然后重启服务：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重启日志服务</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart rsyslog
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启smartd</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证smartd状态</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证日志转存</span>
+</span></span><span class="line"><span class="cl">cat /var/log/smartd.log
+</span></span></code></pre></div><p>可以发现，<code>smartd.log</code> 中的内容非常繁杂，因此可以封装一个 alias 来过滤这些信息，只显示重要的内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">checksmartd</span><span class="o">=</span><span class="s1">&#39;grep -iE &#34;Reallocated_Sector|warning|error|fail|changed&#34; /var/log/smartd.log | grep -v &#34;Offline Testing failed&#34; | grep -v &#34;ignoring -l error&#34;&#39;</span>
+</span></span></code></pre></div><p>然后重启终端，运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">checksmartd
+</span></span></code></pre></div><p>一般刚配置完成没有输出是正常的，但是如果有坏块的增加，那么就会输出相关内容。</p>
+
 <h2 class="relative group">创建快捷方式 
     <div id="创建快捷方式" class="anchor"></div>
     

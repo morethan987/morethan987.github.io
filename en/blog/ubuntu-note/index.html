@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-11T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-01T00:00:00\u002b00:00",
+    "dateModified": "2025-10-11T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6229"
+    "wordCount": "6762"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-01T00:00:00&#43;00:00">Updated: 1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-11T00:00:00&#43;00:00">Updated: 11 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1272,6 +1272,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#ssh-reverse-proxy">SSH Reverse Proxy</a></li>
     <li><a href="#password-less-ssh-login">Password-less SSH Login</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
+    <li><a href="#hard-drive-monitoring">Hard Drive Monitoring</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
     <li><a href="#configuring-git">Configuring Git</a>
@@ -1353,6 +1354,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#ssh-reverse-proxy">SSH Reverse Proxy</a></li>
     <li><a href="#password-less-ssh-login">Password-less SSH Login</a></li>
     <li><a href="#mounting-hard-drives">Mounting Hard Drives</a></li>
+    <li><a href="#hard-drive-monitoring">Hard Drive Monitoring</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
     <li><a href="#configuring-git">Configuring Git</a>
@@ -2077,6 +2079,100 @@ ssh -R 7890:localhost:7890 username@remote_host
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># If no errors occur, the configuration is correct  </span>
 </span></span><span class="line"><span class="cl">sudo mount -a  
 </span></span></code></pre></div>
+<h2 class="relative group">Hard Drive Monitoring 
+    <div id="hard-drive-monitoring" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#hard-drive-monitoring" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Since my Ubuntu is installed on an external hard drive, monitoring the drive&rsquo;s status is necessary for system security.</p>
+<p>Let me explain why hard drive monitoring is needed with my personal experience. Because it&rsquo;s an external drive, it occasionally gets accidentally bumped, causing the drive to lose power abruptly. After a forced shutdown and restart, the system might seem fine on the surface, but there&rsquo;s a high chance the drive has already suffered permanent damage 😭 – specifically, what are known as &ldquo;bad blocks.&rdquo; By the time I realized it, the number of bad blocks had already reached 262.</p>
+<p>Furthermore, if the number of bad blocks increases rapidly in a short period—for example, increasing by 10 within a week—it&rsquo;s crucial to back up your data immediately and prepare to replace the drive.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #e63946"
+  >
+
+  <span
+    
+      class="ltr:pr-3 rtl:pl-3 flex items-center"
+      style="color: #ffffff"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor"  d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #ffffff"
+    >Too late for regrets! Never force an external hard drive to power off abruptly 😭</span>
+</div>
+
+<p>Fortunately, hard drive monitoring is a very common requirement, so there&rsquo;s a software called <code>smartmontools</code> available for this purpose. Run the following command to install it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install smartmontools
+</span></span></code></pre></div><p>Then, modify the configuration file to monitor the specific drive device:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/smartd.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Comment out all existing content, and add the following line at the end:</span>
+</span></span><span class="line"><span class="cl">/dev/sdb -a -d sat -o on -S on -I <span class="m">194</span>
+</span></span></code></pre></div><p>Note: The content added above needs to be adjusted based on your actual situation, such as the drive name at the beginning.</p>
+<p>Once configured, you can start the service directly. The monitoring program will then run automatically after boot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Start the service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check its status</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status smartd
+</span></span></code></pre></div><p>To view the status, you can directly check the system logs:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View all logs related to smartd</span>
+</span></span><span class="line"><span class="cl">journalctl -u smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View only messages of warning level and above</span>
+</span></span><span class="line"><span class="cl">journalctl -u smartd -p warning
+</span></span></code></pre></div><p>The following steps are <strong>optional</strong> and aim to redirect <code>smartd</code> related logs to a separate file. Since I have system auto-cleanup enabled, system logs are only retained for two days. However, hard drive monitoring typically needs to be assessed over longer periods, like months.</p>
+<p>Modify the system logging service configuration file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/rsyslog.d/60-smartd.conf
+</span></span></code></pre></div><p>Add the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">if $programname == &#39;smartd&#39; then /var/log/smartd.log
+</span></span><span class="line"><span class="cl">&amp; stop
+</span></span></code></pre></div><p>The specific meaning of this configuration is: Redirect all logs related to <code>smartd</code> to the <code>/var/log/smartd.log</code> file and prevent them from being written to the system log (to avoid duplication).</p>
+<p>Then restart the services:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Restart the logging service</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart rsyslog
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Restart smartd</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Verify smartd status</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status smartd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Verify log redirection</span>
+</span></span><span class="line"><span class="cl">cat /var/log/smartd.log
+</span></span></code></pre></div><p>You&rsquo;ll notice that the content in <code>smartd.log</code> is quite verbose. Therefore, you can create an alias to filter this information, showing only the important details:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">checksmartd</span><span class="o">=</span><span class="s1">&#39;grep -iE &#34;Reallocated_Sector|warning|error|fail|changed&#34; /var/log/smartd.log | grep -v &#34;Offline Testing failed&#34; | grep -v &#34;ignoring -l error&#34;&#39;</span>
+</span></span></code></pre></div><p>After restarting your terminal, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">checksmartd
+</span></span></code></pre></div><p>It&rsquo;s normal to see no output immediately after configuration. However, if bad blocks increase, relevant content will be displayed.</p>
+
 <h2 class="relative group">Creating Shortcuts 
     <div id="creating-shortcuts" class="anchor"></div>
     
