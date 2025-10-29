@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-29T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-11T00:00:00\u002b00:00",
+    "dateModified": "2025-10-29T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6762"
+    "wordCount": "7940"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-11T00:00:00&#43;00:00">Updated: 11 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-29T00:00:00&#43;00:00">Updated: 29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1275,6 +1275,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#hard-drive-monitoring">Hard Drive Monitoring</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
+    <li><a href="#clipboard-sync">Clipboard Sync</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#command-wrapper">Command Wrapper</a></li>
+      </ul>
+    </li>
     <li><a href="#configuring-git">Configuring Git</a>
       <ul>
         <li><a href="#github-ssh">GitHub-SSH</a></li>
@@ -1357,6 +1364,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#hard-drive-monitoring">Hard Drive Monitoring</a></li>
     <li><a href="#creating-shortcuts">Creating Shortcuts</a></li>
     <li><a href="#system-information">System Information</a></li>
+    <li><a href="#clipboard-sync">Clipboard Sync</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#command-wrapper">Command Wrapper</a></li>
+      </ul>
+    </li>
     <li><a href="#configuring-git">Configuring Git</a>
       <ul>
         <li><a href="#github-ssh">GitHub-SSH</a></li>
@@ -2213,6 +2227,231 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Partition usage</span>
 </span></span><span class="line"><span class="cl">df -h
+</span></span></code></pre></div>
+<h2 class="relative group">Clipboard Sync 
+    <div id="clipboard-sync" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#clipboard-sync" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>This is one of those everyday needs we all run into: you copy a piece of text on your phone, and you’d love to just paste it directly on your computer — as if your phone and your computer shared the same clipboard 😄</p>
+<p>It sounds simple, but in reality, it’s not so easy to achieve 😢. At its core, your phone and computer need to <strong>transfer data over a network</strong>, which means your phone has to know your computer’s <strong>public IP address</strong>, and vice versa. But of course, most home users don’t have a public IP. That leaves us with two options:</p>
+<ol>
+<li>
+<p>Communicate over the local network (LAN), or</p>
+</li>
+<li>
+<p>Rent a cloud server that does have a public IP.</p>
+</li>
+</ol>
+<p>We can immediately cross out option 2 — buying a whole server just to sync the clipboard is massive overkill 😅</p>
+<p>So that leaves <strong>local network communication</strong>, which basically means keeping both devices on the same Wi-Fi or LAN so data doesn’t need to go across the wider Internet. Here’s a beautifully elegant solution that’s both <strong>convenient and secure</strong>: <a href="https://github.com/doraemonkeys/WindSend" target="_blank"><strong>WindSend</strong></a> — an app suite designed for fast, secure sharing of clipboards, text, and even files or folders (including images and file clips) between different devices.</p>
+
+<h3 class="relative group">Installation 
+    <div id="installation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Installing WindSend couldn’t be easier. Just download the appropriate <code>.zip</code> archive from the <a href="https://github.com/doraemonkeys/WindSend/releases" target="_blank"><strong>Release</strong> page</a>, extract it anywhere you like, and then run this command in the terminal:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install libxdo3   <span class="c1"># install keyboard simulation dependency</span>
+</span></span></code></pre></div><p>From this dependency alone, you can probably guess how it works: WindSend uses <strong>keyboard input simulation</strong> to inject the clipboard content 😄</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >If you’re on <strong>Arch Linux</strong>, you’ll need to install <code>xdotool</code> and <code>libayatana-appindicator</code> instead —- the former handles keyboard simulation, and the latter enables the system tray icon.</span>
+</div>
+
+
+<h3 class="relative group">Usage 
+    <div id="usage" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#usage" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Just run the executable (the one without any file extension) in the extracted folder:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./WindSend-S-Rust
+</span></span></code></pre></div><p>Then launch the app on your phone — it will automatically search for and connect to your PC 😄 In the mobile app’s settings, you can set a <strong>“default sync device”</strong>, which allows you to sync instantly by simply pulling down in the app.</p>
+<p>In summary, the workflow is: Switch your phone to the same network → open WindSend on both devices → copy text on your phone → pull down to sync.</p>
+<p>Well, it’s not entirely “automatic” 😅 — the developer actually considered full background sync, but due to modern mobile OS security policies, apps can’t read or write clipboard data in the background unless the device is <strong>rooted</strong>. And rooting, as we know, is a whole other mess: most major phone manufacturers today have <strong>heavily restricted root access</strong>, especially in their customized Android systems. So for now, the manual pull-down gesture is the most practical solution 😅</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >You might ask: <em>&ldquo;Then how come the WeChat keyboard can do it?&rdquo;</em> Well… that’s a question for WeChat 😄 My guess is their input method has its own private data syncing mechanism and doesn’t directly access the system clipboard. Anyway, apart from the occasional hiccup, WeChat keyboard&rsquo;s approach works surprisingly well.</span>
+</div>
+
+<p>So while it’s not 100% seamless, it’s still <strong>safe and reliable</strong> — data is <strong>encrypted and transmitted only within your local network</strong>, and transfers only happen when <strong>you actively trigger them</strong>. Interestingly, the whole sync process is <strong>initiated from the phone side</strong>, meaning that even if you want to send text <strong>from your PC to your phone</strong>, you’ll still perform the pull-down action on your phone.</p>
+<p>Perfect 👍 Here’s a fluent <strong>English version</strong> of that section — written in the same <strong>friendly, explanatory blog tone</strong> as before, while keeping all the technical content accurate and natural:</p>
+
+<h3 class="relative group">Command Wrapper 
+    <div id="command-wrapper" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#command-wrapper" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Running the executable directly will occupy a terminal window, but using a quick and dirty <code>nohup</code> approach makes it hard to control whether the app is actually running. A more structured way would be to wrap it in a <strong>systemd service</strong> and use <code>systemctl</code> to manage it 😅. However, if your desktop environment runs on <strong>Wayland</strong>, then just like on mobile systems, background processes <strong>aren’t allowed to access the clipboard silently</strong> 😢.</p>
+<p>So as a compromise, we can wrap it in a simple <strong>shell function</strong> for convenient start/stop control. Add the following snippet to your <code>.bash_aliases</code> (or <code>.zshrc</code> if you’re using zsh):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># windsend</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. Base working directory (where configs are stored)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WS_BASE_DIR</span><span class="o">=</span><span class="s2">&#34;/home/morethan/WindSend&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. PID file path</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WS_PID_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">/windsend.pid&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. Executable path</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WS_EXEC_PATH</span><span class="o">=</span><span class="s2">&#34;/usr/local/bin/windsend&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define a function to manage the windsend service</span>
+</span></span><span class="line"><span class="cl">ws<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Check if the base directory exists</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Error: base directory </span><span class="nv">$WS_BASE_DIR</span><span class="s2"> does not exist.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Usage: ws &lt;start|stop|status&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="cl">        start<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># Check if already running</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> ps -p <span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend is already running (PID: </span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">).&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Starting windsend...&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">                nohup <span class="s2">&#34;</span><span class="nv">$WS_EXEC_PATH</span><span class="s2">&#34;</span> &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="nv">$!</span> &gt; <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            sleep <span class="m">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> ps -p <span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend started (PID: </span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">).&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;Failed to start windsend. Check configs and permissions in </span><span class="nv">$WS_BASE_DIR</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        stop<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">WS_PID</span><span class="o">=</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> ps -p <span class="nv">$WS_PID</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">kill</span> <span class="nv">$WS_PID</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;Sent termination signal to windsend (PID </span><span class="nv">$WS_PID</span><span class="s2">).&#34;</span>
+</span></span><span class="line"><span class="cl">                    sleep <span class="m">1</span>
+</span></span><span class="line"><span class="cl">                    rm -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;PID file exists but process not found. Cleaning up...&#34;</span>
+</span></span><span class="line"><span class="cl">                    rm -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;No PID file found. windsend might not be running.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        status<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">WS_PID</span><span class="o">=</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> ps -p <span class="nv">$WS_PID</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;windsend is running (PID: </span><span class="nv">$WS_PID</span><span class="s2">). Working directory: </span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;PID file exists (</span><span class="nv">$WS_PID</span><span class="s2">), but process not found. Run &#39;ws stop&#39; to clean up.&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend is not running (no PID file found).&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        *<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Invalid argument. Usage: ws &lt;start|stop|status&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>There are three configurable variables at the top — their purposes are explained in the comments. Modify them according to your setup, then restart your terminal and use the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ws start   <span class="c1"># Start WindSend</span>
+</span></span><span class="line"><span class="cl">ws status  <span class="c1"># Check status</span>
+</span></span><span class="line"><span class="cl">ws stop    <span class="c1"># Stop WindSend</span>
 </span></span></code></pre></div>
 <h2 class="relative group">Configuring Git 
     <div id="configuring-git" class="anchor"></div>
@@ -3435,191 +3674,6 @@ ssh -R 7890:localhost:7890 username@remote_host
   
   
 
-  <a href="/en/blog/cloud-server-build/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-        
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/cloud-server-build/featured.svg);"></div>
-        
-      
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en/blog/cloud-server-build/">Cloud Service Deployment</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">Updated: 16 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="views_blog/cloud-server-build/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
-  </span>
-
-</span>
-</span><span class="px-2 text-primary-500">&middot;</span><span>
-  
-  
-    
-    
-      
-      
-        
-        
-      
-        
-        
-      
-      
-    
-  
-  <span id="likes_blog/cloud-server-build/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
-    title="likes">loading</span>
-  <span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-  </span>
-
-</span>
-</span>
-  
-
-  
-  
-</div>
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/cloud-service/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Cloud-Service
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
   <a href="/en/blog/neo4j-basics/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
@@ -3805,27 +3859,19 @@ ssh -R 7890:localhost:7890 username@remote_host
   
   
 
-  <a href="/en/blog/qdrant-feature-guide/" class="min-w-full">
+  <a href="/en/blog/cloud-server-build/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/qdrant-feature-guide/featured.svg);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/cloud-server-build/featured.svg);"></div>
         
-      
-      <span class="absolute top-0 right-0 m-2">
-        <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Draft
-  </span>
-</span>
-      </span>
       
 
       <div class="px-6 py-4">
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en/blog/qdrant-feature-guide/">Qdrant Feature Guide</div>
+          href="/en/blog/cloud-server-build/">Cloud Service Deployment</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -3844,6 +3890,8 @@ ssh -R 7890:localhost:7890 username@remote_host
   
 
 
+
+  
 
 
 
@@ -3870,7 +3918,7 @@ ssh -R 7890:localhost:7890 username@remote_host
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-05T00:00:00&#43;00:00">5 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-03-06T00:00:00&#43;00:00">6 March 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-03-16T00:00:00&#43;00:00">Updated: 16 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -3886,7 +3934,7 @@ ssh -R 7890:localhost:7890 username@remote_host
       
     
   
-  <span id="views_blog/qdrant-feature-guide/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span id="views_blog/cloud-server-build/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
   <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -3911,7 +3959,7 @@ ssh -R 7890:localhost:7890 username@remote_host
       
     
   
-  <span id="likes_blog/qdrant-feature-guide/index.md"
+  <span id="likes_blog/cloud-server-build/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes">loading</span>
   <span class="inline-block align-text-bottom">
@@ -3964,10 +4012,195 @@ ssh -R 7890:localhost:7890 username@remote_host
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/qdrant/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/cloud-service/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Qdrant
+    Cloud-Service
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/en/blog/pytips/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/blog/pytips/featured.svg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/en/blog/pytips/">Python Tips and Tricks</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-08-10T00:00:00&#43;00:00">10 August 2024</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-05-17T00:00:00&#43;00:00">Updated: 17 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="views_blog/pytips/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+  </span>
+
+</span>
+</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span id="likes_blog/pytips/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes">loading</span>
+  <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+  </span>
+
+</span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+     <div style="cursor: pointer;" onclick="window.open(&#34;/en/authors/morethan/&#34;,'_self');return false;">Morethan</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en/tags/python/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Python
   </span>
 </span>
   </span>

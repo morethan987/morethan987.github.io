@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-29T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-11T00:00:00\u002b00:00",
+    "dateModified": "2025-10-29T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "11025"
+    "wordCount": "12910"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-11T00:00:00&#43;00:00">更新于: 2025-10-11</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">23 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-29T00:00:00&#43;00:00">更新于: 2025-10-29</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">26 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1275,6 +1275,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#硬盘监控">硬盘监控</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
+    <li><a href="#剪贴板同步">剪贴板同步</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#pc端命令封装">PC端命令封装</a></li>
+      </ul>
+    </li>
     <li><a href="#配置git">配置Git</a>
       <ul>
         <li><a href="#github-ssh">GitHub-SSH</a></li>
@@ -1357,6 +1364,13 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#硬盘监控">硬盘监控</a></li>
     <li><a href="#创建快捷方式">创建快捷方式</a></li>
     <li><a href="#系统信息">系统信息</a></li>
+    <li><a href="#剪贴板同步">剪贴板同步</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#pc端命令封装">PC端命令封装</a></li>
+      </ul>
+    </li>
     <li><a href="#配置git">配置Git</a>
       <ul>
         <li><a href="#github-ssh">GitHub-SSH</a></li>
@@ -1968,7 +1982,7 @@ ssh -R 7890:localhost:7890 username@remote_host
   #  - or -
   # -X connect 指定使用 HTTP CONNECT (更通用)
   ProxyCommand nc -X connect -x localhost:7890 %h %p
-  
+
   User git
 </code></pre><p>然后按照 <a href="#github-ssh">GitHub-SSH</a> 中的内容配置 GitHub 免密推送即可</p>
 
@@ -2213,6 +2227,235 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 分区使用情况</span>
 </span></span><span class="line"><span class="cl">df -h
+</span></span></code></pre></div>
+<h2 class="relative group">剪贴板同步 
+    <div id="剪贴板同步" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%89%aa%e8%b4%b4%e6%9d%bf%e5%90%8c%e6%ad%a5" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>一个日常生活中非常频繁的需求：我在手机上复制了一个文本，然后我希望我能够直接从电脑的剪贴板中粘贴，就好像我的电脑和手机共用了一个剪贴板😄</p>
+<p>这个需求听上去很简单，但是实际上要实现起来却并不容易😢首先从原理上来说，你的手机和电脑需要通过网络进行数据传输，因此你的手机需要知道你的电脑的<strong>公网</strong> IP 地址，反之亦然。但众所周知，个人用户哪里来的公网 IP 地址？所以有两种办法：</p>
+<ol>
+<li>
+<p>使用局域网通信</p>
+</li>
+<li>
+<p>购买一个有公网 IP 的云服务器</p>
+</li>
+</ol>
+<p>首先 PASS 掉购买云服务器的方案，毕竟我只是想要一个剪贴板同步功能，买服务器太大材小用了😅</p>
+<p>局域网通信，简而言之就是让手机和电脑处于同一个网络中，避免使用 IP 协议进行跨网络的数据传输。这里推荐一个非常优雅的解决方案，兼顾便捷与安全：<a href="https://github.com/doraemonkeys/WindSend" target="_blank">WindSend</a>，中文名为&quot;风传&quot;，一组应用程序，用于在不同设备之间快速安全的传递剪切板，传输文件或文件夹(支持图片与文件剪切板)。</p>
+
+<h3 class="relative group">安装 
+    <div id="安装" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e5%ae%89%e8%a3%85" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>风传的安装过程简直不能再简洁了：在 <a href="https://github.com/doraemonkeys/WindSend/releases" target="_blank">Release</a> 界面中安装对应版本的 <code>.zip</code> 压缩包，然后解压到某个文件夹中，然后命令行运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> sudo apt install libxdo3 <span class="c1"># 安装键盘模拟依赖</span>
+</span></span></code></pre></div><p>从上面这个依赖包就可以大致猜出来：风传的原理是通过模拟键盘输入来实现剪贴板数据写入的😄</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >如果你是 Arch Linux 用户，那么就不能安装这个包，而需要<code>xdotool</code> 和 <code>libayatana-appindicator</code>；前者用来进行键盘模拟，后者显示托盘图标</span>
+</div>
+
+
+<h3 class="relative group">使用 
+    <div id="使用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%e4%bd%bf%e7%94%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>在安装文件夹中直接运行那个没有后缀的可执行文件即可：<code>./WindSend-S-Rust</code></p>
+<p>然后在手机上启动软件，进行自动搜索连接即可😄在手机上的设置中可以设置&quot;默认同步设备&quot;，这样你打开软件之后直接下拉就可以完成数据的同步。</p>
+<p>总结下来，整体的使用流程就是：手机切换网络，打开风传，电脑打开风传，手机复制文本，然后下拉同步。</p>
+<p>好吧，事实上也没那么简单😅其实作者也考虑过直接自动化数据传输，但是鉴于现手机操作系统的安全策略，不开 root 几乎是不可能让后台应用读取/写入剪贴板数据的😢而开启 root 又是一个麻烦的事情：现在国内各大手机厂商都在开发自己的手机操作系统并且严格限制 root 权限的获取，因此只能采用手动下拉的方式来触发数据传输了😅</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >你问我为什么微信输入法可以？那你得问问微信输入法了😄我猜的话是微信输入法本身有一套数据存储机制，并不会真的直接后台写入剪贴板。另外抛开偶尔失灵不谈，这个同步机制还是挺不错的</span>
+</div>
+
+<p>虽然麻烦，但总归是安全可靠：数据的在局域网加密传输，并且传输只发生在用户主动操作的时候。另外可以发现整个操作流程都是在手机端触发的，也就是说，当你想要从电脑传输文本到手机的时候，也是在手机上进行下拉操作。</p>
+
+<h3 class="relative group">PC端命令封装 
+    <div id="pc端命令封装" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#pc%e7%ab%af%e5%91%bd%e4%bb%a4%e5%b0%81%e8%a3%85" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>直接运行命令会直接占用一个终端，但是简单粗暴地 nohup 掉又没法控制软件是否开启。一个常规的思路是封装一个 systemd 服务，然后使用 <code>systemctl</code> 来进行控制😅但是如果你的桌面协议是 wayland 的话，那么与手机端类似，后台进程&quot;悄悄&quot;访问剪贴板是不被允许的😢</p>
+<p>退而求其次，封装一个简单的函数来进行启动和关闭，在你的 .bash_aliases 文件中写入：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># windsend</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 程序的固定工作目录（配置文件所在目录）</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WS_BASE_DIR</span><span class="o">=</span><span class="s2">&#34;/home/morethan/WindSend&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. PID 文件路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WS_PID_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">/windsend.pid&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 可执行文件的完整路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WS_EXEC_PATH</span><span class="o">=</span><span class="s2">&#34;/usr/local/bin/windsend&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义一个函数来管理 windsend 服务</span>
+</span></span><span class="line"><span class="cl">ws<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 检查基本目录是否存在</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;错误：windsend 基本目录 </span><span class="nv">$WS_BASE_DIR</span><span class="s2"> 不存在。&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;用法: ws &lt;start|stop|status&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="cl">        start<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 检查服务是否已运行</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> ps -p <span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend 已经在运行 (PID: </span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">).&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;正在启动 windsend...&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 切换到固定工作目录，然后执行 nohup</span>
+</span></span><span class="line"><span class="cl">            <span class="o">(</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span> <span class="c1"># 切换目录，如果失败则退出子 Shell</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 注意：这里我们使用 $WS_EXEC_PATH 来执行程序</span>
+</span></span><span class="line"><span class="cl">                nohup <span class="s2">&#34;</span><span class="nv">$WS_EXEC_PATH</span><span class="s2">&#34;</span> &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 将 PID 写入文件</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="nv">$!</span> &gt; <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># 检查启动结果</span>
+</span></span><span class="line"><span class="cl">            sleep <span class="m">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> ps -p <span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend 已启动 (PID: </span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">).&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend 启动失败，请检查 </span><span class="nv">$WS_BASE_DIR</span><span class="s2"> 目录下的配置和权限。&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        stop<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># ... (这部分逻辑与之前保持一致，只检查和终止进程) ...</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">WS_PID</span><span class="o">=</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> ps -p <span class="nv">$WS_PID</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">kill</span> <span class="nv">$WS_PID</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;windsend (PID </span><span class="nv">$WS_PID</span><span class="s2">) 已发送终止信号.&#34;</span>
+</span></span><span class="line"><span class="cl">                    sleep <span class="m">1</span>
+</span></span><span class="line"><span class="cl">                    rm -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;windsend 进程未找到，但 PID 文件存在。已删除文件。&#34;</span>
+</span></span><span class="line"><span class="cl">                    rm -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend PID 文件不存在，服务可能未运行.&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        status<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># ... (这部分逻辑与之前保持一致) ...</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">WS_PID</span><span class="o">=</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> ps -p <span class="nv">$WS_PID</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;windsend 正在运行 (PID: </span><span class="nv">$WS_PID</span><span class="s2">). 工作目录: </span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">echo</span> <span class="s2">&#34;windsend PID 文件存在 (</span><span class="nv">$WS_PID</span><span class="s2">)，但进程未找到。请使用 &#39;ws stop&#39; 清理。&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend 未运行 (PID 文件不存在).&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        *<span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;无效参数。用法: ws &lt;start|stop|status&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">            <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>这其中有三个可以配置的变量，注释中已经写明了用途，按照实际情况修改即可。然后重启终端，运行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ws start <span class="c1"># 启动windsend</span>
+</span></span><span class="line"><span class="cl">ws status <span class="c1"># 查看状态</span>
+</span></span><span class="line"><span class="cl">ws stop <span class="c1"># 关闭windsend</span>
 </span></span></code></pre></div>
 <h2 class="relative group">配置Git 
     <div id="配置git" class="anchor"></div>
