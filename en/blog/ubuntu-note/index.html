@@ -117,7 +117,7 @@
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "7940"
+    "wordCount": "8350"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-29T00:00:00&#43;00:00">Updated: 29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-29T00:00:00&#43;00:00">Updated: 29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1282,6 +1282,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#command-wrapper">Command Wrapper</a></li>
       </ul>
     </li>
+    <li><a href="#media-player">Media Player</a></li>
+    <li><a href="#screenrecorder">ScreenRecorder</a></li>
     <li><a href="#configuring-git">Configuring Git</a>
       <ul>
         <li><a href="#github-ssh">GitHub-SSH</a></li>
@@ -1371,6 +1373,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#command-wrapper">Command Wrapper</a></li>
       </ul>
     </li>
+    <li><a href="#media-player">Media Player</a></li>
+    <li><a href="#screenrecorder">ScreenRecorder</a></li>
     <li><a href="#configuring-git">Configuring Git</a>
       <ul>
         <li><a href="#github-ssh">GitHub-SSH</a></li>
@@ -2452,6 +2456,84 @@ ssh -R 7890:localhost:7890 username@remote_host
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ws start   <span class="c1"># Start WindSend</span>
 </span></span><span class="line"><span class="cl">ws status  <span class="c1"># Check status</span>
 </span></span><span class="line"><span class="cl">ws stop    <span class="c1"># Stop WindSend</span>
+</span></span></code></pre></div>
+<h2 class="relative group">Media Player 
+    <div id="media-player" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#media-player" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>If you have searched for &ldquo;the media player on linux&rdquo;, you will absolutely see a string <code>mpv</code> being hailed as the best. I mistake it for <code>mvp</code> at first and leading to a &ldquo;No such package&rdquo; error 😅.</p>
+<p>Actually, I just need to play <code>.mp4</code> file occasionally. So my demand is simple: a soft ware can open mp4 and be lightweight as much as possible. <code>mpv</code> fits my core need perfectly and no redundant features.</p>
+
+<h2 class="relative group">ScreenRecorder 
+    <div id="screenrecorder" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#screenrecorder" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Not a function frequently used, but it&rsquo;s essential to have on your system 😄. That&rsquo;s why I strongly recommend <code>wl-screenrec</code>, a fantastic screen recorder for Wayland on Linux. Written in Rust, it&rsquo;s fast and lightweight—which won me over immediately.</p>
+<p>Its parameters are a bit tedious to use directly, so I created a shell function to hide that complexity for daily use.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Usage：wsr [bitrate MB]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Example：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. take default 5 MB/s bitrate：wsr</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. take 10 MB/s ：wsr 10</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. take 2 MB/s ：wsr 2</span>
+</span></span><span class="line"><span class="cl">wsr<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">BITRATE_MBS</span><span class="o">=</span><span class="s2">&#34;5&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># set the first param as bitrate</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> -n <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># remove redundant unit</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">=</span>~ ^<span class="o">[</span>0-9<span class="o">]</span>+ <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">BITRATE_MBS</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">BASH_REMATCH</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># construct the param wl-screenrec expected </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># example: &#34;10 MB&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">BITRATE_STR</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">BITRATE_MBS</span><span class="si">}</span><span class="s2"> MB&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># set output path</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/Videos&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">FILENAME</span><span class="o">=</span><span class="s2">&#34;wl-screenrec_</span><span class="k">$(</span>date +%Y%m%d_%H%M%S<span class="k">)</span><span class="s2">.mp4&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">OUTPUT_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/</span><span class="nv">$FILENAME</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># ensure the Videos folder exsits</span>
+</span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$OUTPUT_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;--- Start wl-screenrec ---&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  &gt;&gt; Encoder: HEVC (H.265)&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  &gt;&gt; BitRate: </span><span class="si">${</span><span class="nv">BITRATE_STR</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  &gt;&gt; OutputFike: </span><span class="si">${</span><span class="nv">OUTPUT_PATH</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  &gt;&gt; Select with mouse, press Ctrl+C to stop&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;--------------------------&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Execute</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># --codec hevc: use H.265/HEVC encoder, more efficient</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># --low-power=off: disable low-power mode，to remove a warnning on AMD/Intel </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># -g &#34;$(slurp)&#34;: select the recording region with slurp</span>
+</span></span><span class="line"><span class="cl">    wl-screenrec <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --codec hevc <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --low-power<span class="o">=</span>off <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        --bitrate <span class="s2">&#34;</span><span class="si">${</span><span class="nv">BITRATE_STR</span><span class="si">}</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -g <span class="s2">&#34;</span><span class="k">$(</span>slurp<span class="k">)</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>        -f <span class="s2">&#34;</span><span class="si">${</span><span class="nv">OUTPUT_PATH</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;✅ Successful！Saved to: </span><span class="si">${</span><span class="nv">OUTPUT_PATH</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;❌ Error occured or interrupted!&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div>
 <h2 class="relative group">Configuring Git 
     <div id="configuring-git" class="anchor"></div>
