@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-17T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-29T00:00:00\u002b00:00",
+    "dateModified": "2025-11-17T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "13598"
+    "wordCount": "13700"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-29T00:00:00&#43;00:00">更新于: 2025-10-29</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-17T00:00:00&#43;00:00">更新于: 2025-11-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1928,14 +1928,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>之所以说这是特性，主要原因是我还真就没见过能够同时满足上述两个网络需求的服务器😭我的一份干了好几个月的代码就因为网络原因丢失了，现在想起来都十分痛心😭</p>
 <p>于是我痛定思痛，决定彻底解决这个棘手的问题：以后只要我能够连接上这个远程服务器，我就一定要让其能够流畅地访问外部网络。俗话说得好，磨刀不误砍柴工，网络问题真的不是一个可以忽视的问题。</p>
 <p>下面这些内容主要来自于这篇博客文章：<a href="https://www.bonanzhu.com/blog/2024/ssh-reverse-proxy-usage-chinese/" target="_blank">SSH反向隧道使远程计算机连接互联网教程</a></p>
-<p>核心命令如下：</p>
+<p>在本机执行的核心命令如下：</p>
 <pre tabindex="0"><code># 开启一个终端并启动反向代理
 ssh -R 7890:localhost:7890 username@remote_host
 </code></pre><p>这个命令的含义是：在远程电脑上打开7890端口，并将所有发往这个端口的数据转发到本地电脑的7890端口（即你的代理服务器）。这个命令执行之后就会开启一个远程服务器的终端，在这个终端中可以立即测试代理是否成功：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.baidu.com
 </span></span></code></pre></div><p>如果你的本地电脑上的 7890 端口恰好运行了一个 VPN，那么你还能够尝试访问外网的资源：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.google.com
-</span></span></code></pre></div><p>如果一切正常的话你现在应该能够获取到外部网络的资源了😄</p>
+</span></span></code></pre></div><p>然后在远程服务器上设置网络代理的环境变量，将下面这两行写入 <code>.bashrc</code> 中：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>127.0.0.1:7890
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>127.0.0.1:7890
+</span></span></code></pre></div><p>然后重新启动一个远程 ssh 终端，如果一切正常的话你现在应该能够获取到外部网络的资源了😄</p>
 <p>但是上面这种方法我觉得不太优雅：每次想要给一个服务器进行反向代理就需要运行这个命令，并且还会占用一个终端窗口</p>
 <p>因此我将这个功能封装为了一个系统服务模板，能够使用类似下面这个命令来进行控制：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动反向代理</span>
@@ -1975,6 +1978,41 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
 </span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>然后重载一下系统服务，就可以使用上文提及到的 <code>systemctl</code> 来控制这个反向代理服务了😄</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >上述简化操作只是针对本机启动 ssh 反向代理而言，在远程服务器上还是需要设置网络代理相关的环境变量</span>
+</div>
+
 <p>另外如果想要使用 git 的话，就需要利用 <code>netcat</code> 将 ssh 的流量转接到 https。说着比较抽象，但是实际上具体需要做的操作并不多，只需要在服务器上的 <code>~/.ssh/config</code> 中写入下面的内容：</p>
 <pre tabindex="0"><code>Host github.com gitlab.com
   # 匹配多个主机，用空格隔开

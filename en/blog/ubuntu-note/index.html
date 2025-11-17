@@ -75,7 +75,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-17T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -112,12 +112,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-29T00:00:00\u002b00:00",
+    "dateModified": "2025-11-17T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "8350"
+    "wordCount": "8397"
   }]
   </script>
 
@@ -951,7 +951,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-10-29T00:00:00&#43;00:00">Updated: 29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-17T00:00:00&#43;00:00">Updated: 17 November 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1928,14 +1928,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>The reason I call it a &lsquo;characteristic&rsquo; is mainly because I honestly have never seen a server that can fulfill both of the aforementioned network requirements 😭. I once lost code I had worked on for several months due to network issues, and it still pains me to think about it 😭.</p>
 <p>So, after much reflection, I decided to thoroughly solve this thorny problem: henceforth, whenever I can connect to a remote server, I must ensure it can smoothly access the external network. As the saying goes, sharpening the axe won&rsquo;t delay the job of cutting wood. Network issues are truly not something that can be overlooked.</p>
 <p>The following content is primarily sourced from this blog post: <a href="https://www.bonanzhu.com/blog/2024/ssh-reverse-proxy-usage-chinese/" target="_blank">Tutorial on Using SSH Reverse Tunnels to Connect Remote Computers to the Internet</a></p>
-<p>The core command is as follows:</p>
+<p>The core command on your local mechine is as follows:</p>
 <pre tabindex="0"><code># Open a terminal and start the reverse proxy
 ssh -R 7890:localhost:7890 username@remote_host
 </code></pre><p>The meaning of this command is: open port 7890 on the remote computer and forward all data sent to this port to port 7890 on the local computer (i.e., your proxy server). After executing this command, a terminal session to the remote server will open. You can immediately test if the proxy is successful in this terminal:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.baidu.com
 </span></span></code></pre></div><p>If a VPN happens to be running on port 7890 of your local computer, you can also try accessing resources on the external network:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">https_proxy</span><span class="o">=</span>http://localhost:7890 curl https://www.google.com
-</span></span></code></pre></div><p>If everything goes well, you should now be able to access external network resources 😄.</p>
+</span></span></code></pre></div><p>To permanently enabel the proxy, you should set the environment variables in <code>.bashrc</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>127.0.0.1:7890
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>127.0.0.1:7890
+</span></span></code></pre></div><p>Reload the ssh terminal, if everything goes well, you should now be able to access external network resources 😄.</p>
 <p>However, I find the method above somewhat inelegant: every time you want to set up a reverse proxy for a server, you need to run this command, and it also occupies a terminal window.</p>
 <p>Therefore, I encapsulated this functionality into a system service template, allowing control using commands similar to the following:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Start the reverse proxy</span>
@@ -1975,6 +1978,41 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl"><span class="k">[Install]</span>
 </span></span><span class="line"><span class="cl"><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </span></span></code></pre></div><p>Then reload the systemd configuration, and you can use the <code>systemctl</code> commands mentioned above to control this reverse proxy service 😄.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md"
+    style="background-color: #1E3A8A"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      style="color: #E0E7FF"
+    >The steps above only makes it easier to use locally. You still have to set the environment variables manually on remote server.</span>
+</div>
+
 <p>If you want to use Git, you&rsquo;ll need to route SSH traffic through HTTPS using <code>netcat</code>. It might sound abstract, but the actual steps are quite straightforward. Simply add the following content to the <code>~/.ssh/config</code> file on the server:</p>
 <pre tabindex="0"><code>Host github.com gitlab.com
   # Match multiple hosts separated by spaces
