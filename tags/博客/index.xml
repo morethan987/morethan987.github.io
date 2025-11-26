@@ -20,14 +20,13 @@
 &lt;/div&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;前言 
+&lt;h2 class=&#34;relative group&#34;&gt;前言
     &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
     
 &lt;/h2&gt;
 &lt;p&gt;思考来源于一个在 AI 辅助编程中经常碰到的问题：每次都要从头开始理解我的代码仓库。&lt;/p&gt;</description>
@@ -44,7 +43,8 @@
   熟悉项目分析流程，是一个练手性质的分析报告
 &lt;/div&gt;
 
-&lt;p&gt;我在初步完成自己的&lt;a href=&#34;https://morethan987.github.io/blog/plugin-writing-experience/&#34;&gt;小插件&lt;/a&gt;之后才发现：&lt;strong&gt;笔记转博客&lt;/strong&gt;这个领域似乎没有一个一键式解决方案，为此我写了这篇文章来分析是否要创建一个新的项目来填补这个空白。&lt;/p&gt;</description>
+&lt;p&gt;我在初步完成自己的&lt;a
+  href=&#34;https://morethan987.github.io/blog/plugin-writing-experience/&#34;&gt;小插件&lt;/a&gt;之后才发现：&lt;strong&gt;笔记转博客&lt;/strong&gt;这个领域似乎没有一个一键式解决方案，为此我写了这篇文章来分析是否要创建一个新的项目来填补这个空白。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/note-to-blog-report/featured.svg" />
     </item>
     
@@ -59,14 +59,13 @@
 &lt;/div&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;为什么 Hugo 
+&lt;h2 class=&#34;relative group&#34;&gt;为什么 Hugo
     &lt;div id=&#34;为什么-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88-hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88-hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
     
 &lt;/h2&gt;
 &lt;p&gt;最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是&lt;strong&gt;世界上最快&lt;/strong&gt;的静态页面生成器，官方网站也是这么写的。&lt;/p&gt;</description>
