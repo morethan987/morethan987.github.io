@@ -7,7 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E7%BB%8F%E5%8E%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E7%BB%8F%E5%8E%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>编程的哲学</title>
+      <link>https://morethan987.github.io/blog/philosophy-of-programming/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/philosophy-of-programming/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  编程是对局部世界的序列化
+&lt;/div&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;前言
+    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;和计算机打交道已经两个年头了，也进行了很多编程的实践。一开始很多编程方法只是作为一种工具，就像，我们日常使用手机，平平淡淡。然而编程毕竟不同于用手机，是一种需要耗费脑力的体力活。在这一过程中，思维方式也逐渐受到了一些编程哲学的熏陶，逐渐能够理解一种编程范式背后巧妙的构思了。这也恰恰是编程有意思的地方所在：我竟然可以描述这么复杂的东西，或者，我竟然可以用这么优雅的方式描述这个东西。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg" />
+    </item>
     
     <item>
       <title>一次写插件经历</title>

@@ -9,7 +9,17 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Casual Essay</title>
+      <link>https://morethan987.github.io/en/series/casual-essay/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/series/casual-essay/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>AI Engineering</title>
@@ -67,16 +77,6 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/series/mathmodel/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Casual Essay</title>
-      <link>https://morethan987.github.io/en/series/casual-essay/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/series/casual-essay/</guid>
       <description></description>
       
     </item>

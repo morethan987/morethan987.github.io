@@ -9,7 +9,27 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>EngineeringPractice</title>
+      <link>https://morethan987.github.io/en/tags/engineeringpractice/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/engineeringpractice/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>https://morethan987.github.io/en/tags/experience/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/tags/experience/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Architecture</title>
@@ -17,16 +37,6 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/tags/architecture/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>EngineeringPractice</title>
-      <link>https://morethan987.github.io/en/tags/engineeringpractice/</link>
-      <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
-      <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/tags/engineeringpractice/</guid>
       <description></description>
       
     </item>
@@ -238,16 +248,6 @@
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/tags/hugo/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Experience</title>
-      <link>https://morethan987.github.io/en/tags/experience/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      <author>morthan@qq.com (Morethan)</author>
-      <guid>https://morethan987.github.io/en/tags/experience/</guid>
       <description></description>
       
     </item>

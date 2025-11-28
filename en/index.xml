@@ -9,7 +9,31 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2025 Morethan</copyright>
-    <lastBuildDate>Wed, 28 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Philosophy of Programming</title>
+      <link>https://morethan987.github.io/en/blog/philosophy-of-programming/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/philosophy-of-programming/</guid>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
+  Programming is the serialization of a local world.
+&lt;/div&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Preface
+    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+    &lt;span
+        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+    &lt;/span&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;I have been working with computers for about two years now and have gone through a fair amount of hands-on programming practice. In the beginning, programming felt mostly like a tool—much like using a smartphone in daily life: ordinary, utilitarian, and taken for granted. But programming is fundamentally different from using a phone. It is intellectually demanding labor, and over time, the way you think begins to change. Gradually, I found myself being influenced by certain philosophies embedded in programming languages. I began to understand the subtle elegance behind different paradigms, and this is exactly where programming becomes fascinating: &lt;em&gt;how can I describe something so complex?&lt;/em&gt; Or more precisely, &lt;em&gt;how can I describe it in such an elegant way?&lt;/em&gt;&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg" />
+    </item>
     
     <item>
       <title>Notes on the Foundation of Large Models</title>
