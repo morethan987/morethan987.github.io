@@ -60,7 +60,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-11-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-30T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -238,12 +238,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-11-17T00:00:00\u002b00:00",
+    "dateModified": "2025-11-30T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "8397"
+    "wordCount": "8411"
   }]
   </script>
 
@@ -1144,7 +1144,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-17T00:00:00&#43;00:00">Updated: 17 November 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-01T00:00:00&#43;00:00">1 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-30T00:00:00&#43;00:00">Updated: 30 November 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2574,9 +2574,8 @@ ssh -R 7890:localhost:7890 username@remote_host
     </span>
     
 </h3>
-<p>Just run the executable (the one without any file extension) in the extracted folder:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./WindSend-S-Rust
-</span></span></code></pre></div><p>Then launch the app on your phone — it will automatically search for and connect to your PC 😄 In the mobile app’s settings, you can set a <strong>“default sync device”</strong>, which allows you to sync instantly by simply pulling down in the app.</p>
+<p>Just run the executable (the one without any file extension) in the extracted folder: <code>./WindSend-S-Rust</code></p>
+<p>Then launch the app on your phone — it will automatically search for and connect to your PC 😄 In the mobile app’s settings, you can set a <strong>“default sync device”</strong>, which allows you to sync instantly by simply pulling down in the app.</p>
 <p>In summary, the workflow is: Switch your phone to the same network → open WindSend on both devices → copy text on your phone → pull down to sync.</p>
 <p>Well, it’s not entirely “automatic” 😅 — the developer actually considered full background sync, but due to modern mobile OS security policies, apps can’t read or write clipboard data in the background unless the device is <strong>rooted</strong>. And rooting, as we know, is a whole other mess: most major phone manufacturers today have <strong>heavily restricted root access</strong>, especially in their customized Android systems. So for now, the manual pull-down gesture is the most practical solution 😅</p>
 
@@ -2609,7 +2608,6 @@ ssh -R 7890:localhost:7890 username@remote_host
 </div>
 
 <p>So while it’s not 100% seamless, it’s still <strong>safe and reliable</strong> — data is <strong>encrypted and transmitted only within your local network</strong>, and transfers only happen when <strong>you actively trigger them</strong>. Interestingly, the whole sync process is <strong>initiated from the phone side</strong>, meaning that even if you want to send text <strong>from your PC to your phone</strong>, you’ll still perform the pull-down action on your phone.</p>
-<p>Perfect 👍 Here’s a fluent <strong>English version</strong> of that section — written in the same <strong>friendly, explanatory blog tone</strong> as before, while keeping all the technical content accurate and natural:</p>
 
 <h3 class="relative group">Command Wrapper
     <div id="command-wrapper" class="anchor"></div>
@@ -2620,8 +2618,37 @@ ssh -R 7890:localhost:7890 username@remote_host
     </span>
     
 </h3>
-<p>Running the executable directly will occupy a terminal window, but using a quick and dirty <code>nohup</code> approach makes it hard to control whether the app is actually running. A more structured way would be to wrap it in a <strong>systemd service</strong> and use <code>systemctl</code> to manage it 😅. However, if your desktop environment runs on <strong>Wayland</strong>, then just like on mobile systems, background processes <strong>aren’t allowed to access the clipboard silently</strong> 😢.</p>
-<p>So as a compromise, we can wrap it in a simple <strong>shell function</strong> for convenient start/stop control. Add the following snippet to your <code>.bash_aliases</code> (or <code>.zshrc</code> if you’re using zsh):</p>
+<p>Running the command directly will occupy a terminal session, but bluntly using <code>nohup</code> makes it hard to control whether the program is actually running. A conventional approach is to wrap it as a systemd service and manage it via <code>systemctl</code>. Note that the system-level <code>systemctl</code> will not work here; you must use <code>systemctl --user</code> instead.</p>
+<p>First, create a <code>windsend.service</code> file under the <code>~/.config/systemd/user</code> directory:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Unit</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Description</span><span class="p">=</span><span class="nx">WindSend</span> <span class="nx">Clipboard</span> <span class="nx">Sync</span> <span class="nx">Service</span>
+</span></span><span class="line"><span class="cl"><span class="nx">After</span><span class="p">=</span><span class="nx">network-online</span><span class="p">.</span><span class="nx">target</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Wants</span><span class="p">=</span><span class="nx">network-online</span><span class="p">.</span><span class="nx">target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Service</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Type</span><span class="p">=</span><span class="nx">simple</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Equivalent to cd /home/morethan/WindSend</span>
+</span></span><span class="line"><span class="cl"><span class="nx">WorkingDirectory</span><span class="p">=</span><span class="err">/</span><span class="nx">home</span><span class="err">/</span><span class="nx">morethan</span><span class="err">/</span><span class="nx">WindSend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Full path to the program</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ExecStart</span><span class="p">=</span><span class="err">/</span><span class="nx">usr</span><span class="err">/</span><span class="nx">local</span><span class="err">/</span><span class="nx">bin</span><span class="err">/</span><span class="nx">windsend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Auto-restart policy</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Restart</span><span class="p">=</span><span class="nx">on-failure</span>
+</span></span><span class="line"><span class="cl"><span class="nx">RestartSec</span><span class="p">=</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Standard output handling (avoid nohup)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">StandardOutput</span><span class="p">=</span><span class="nx">null</span>
+</span></span><span class="line"><span class="cl"><span class="nx">StandardError</span><span class="p">=</span><span class="nx">journal</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Environment variables (optional)</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Environment=WS_BASE_DIR=/home/morethan/WindSend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Install</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">WantedBy</span><span class="p">=</span><span class="nx">graphical-session</span><span class="p">.</span><span class="nx">target</span>
+</span></span></code></pre></div><p>Then start it for a test run with <code>systemctl --user start windsend.service</code>. If it starts successfully, enable auto-start on login using <code>systemctl --user enable windsend.service</code>.</p>
+<p>Alternatively, if you prefer manual control, you can also wrap a simple shell function to start and stop it by adding the following to your <code>.bash_aliases</code> or another dedicated script file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># windsend</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 1. Base working directory (where configs are stored)</span>
 </span></span><span class="line"><span class="cl"><span class="nv">WS_BASE_DIR</span><span class="o">=</span><span class="s2">&#34;/home/morethan/WindSend&#34;</span>

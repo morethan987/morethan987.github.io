@@ -60,7 +60,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-05-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-11-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-30T00:00:00+00:00">
     <meta property="article:tag" content="Ubuntu">
     <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://morethan987.github.io/blog/ubuntu-note/featured.svg">
@@ -238,12 +238,12 @@
     "dateCreated": "2025-05-01T00:00:00\u002b00:00",
     "datePublished": "2025-05-01T00:00:00\u002b00:00",
     
-    "dateModified": "2025-11-17T00:00:00\u002b00:00",
+    "dateModified": "2025-11-30T00:00:00\u002b00:00",
     
     "keywords": ["Ubuntu","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "13700"
+    "wordCount": "13717"
   }]
   </script>
 
@@ -1144,7 +1144,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-17T00:00:00&#43;00:00">更新于: 2025-11-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-01T00:00:00&#43;00:00">2025-05-01</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2025-11-30T00:00:00&#43;00:00">更新于: 2025-11-30</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2618,8 +2618,37 @@ ssh -R 7890:localhost:7890 username@remote_host
     </span>
     
 </h3>
-<p>直接运行命令会直接占用一个终端，但是简单粗暴地 nohup 掉又没法控制软件是否开启。一个常规的思路是封装一个 systemd 服务，然后使用 <code>systemctl</code> 来进行控制😅但是如果你的桌面协议是 wayland 的话，那么与手机端类似，后台进程&quot;悄悄&quot;访问剪贴板是不被允许的😢</p>
-<p>退而求其次，封装一个简单的函数来进行启动和关闭，在你的 .bash_aliases 文件中写入：</p>
+<p>直接运行命令会直接占用一个终端，但是简单粗暴地 nohup 掉又没法控制软件是否开启。一个常规的思路是封装一个 systemd 服务，然后使用 <code>systemctl</code> 来进行控制。但是这里需要注意，系统级的 <code>systemctl</code> 是没法工作的，需要使用 <code>systemctl --user</code> 来启动。</p>
+<p>首先在 <code>~/.config/systemd/user</code> 目录中写入 <code>windsend.service</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Unit</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Description</span><span class="p">=</span><span class="nx">WindSend</span> <span class="nx">Clipboard</span> <span class="nx">Sync</span> <span class="nx">Service</span>
+</span></span><span class="line"><span class="cl"><span class="nx">After</span><span class="p">=</span><span class="nx">network-online</span><span class="p">.</span><span class="nx">target</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Wants</span><span class="p">=</span><span class="nx">network-online</span><span class="p">.</span><span class="nx">target</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Service</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Type</span><span class="p">=</span><span class="nx">simple</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 等价于 cd /home/morethan/WindSend</span>
+</span></span><span class="line"><span class="cl"><span class="nx">WorkingDirectory</span><span class="p">=</span><span class="err">/</span><span class="nx">home</span><span class="err">/</span><span class="nx">morethan</span><span class="err">/</span><span class="nx">WindSend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 程序完整路径</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ExecStart</span><span class="p">=</span><span class="err">/</span><span class="nx">usr</span><span class="err">/</span><span class="nx">local</span><span class="err">/</span><span class="nx">bin</span><span class="err">/</span><span class="nx">windsend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 自动重启策略</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Restart</span><span class="p">=</span><span class="nx">on-failure</span>
+</span></span><span class="line"><span class="cl"><span class="nx">RestartSec</span><span class="p">=</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 标准输出处理（避免 nohup）</span>
+</span></span><span class="line"><span class="cl"><span class="nx">StandardOutput</span><span class="p">=</span><span class="nx">null</span>
+</span></span><span class="line"><span class="cl"><span class="nx">StandardError</span><span class="p">=</span><span class="nx">journal</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 环境变量（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Environment=WS_BASE_DIR=/home/morethan/WindSend</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Install</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">WantedBy</span><span class="p">=</span><span class="nx">graphical-session</span><span class="p">.</span><span class="nx">target</span>
+</span></span></code></pre></div><p>然后使用 <code>systemctl --user start windsend.service</code> 进行启动测试，如果能够成功启动那么就使用 <code>systemctl --user enable windsend.service</code> 来开启 windsend 的开机自启动。</p>
+<p>另外如果你更喜欢手动控制，那么也可以封装一个简单的 shell 函数来进行启动和关闭，在你的 .bash_aliases 文件或者别的专门的脚本文件中写入：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># windsend</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 1. 程序的固定工作目录（配置文件所在目录）</span>
 </span></span><span class="line"><span class="cl"><span class="nv">WS_BASE_DIR</span><span class="o">=</span><span class="s2">&#34;/home/morethan/WindSend&#34;</span>
@@ -2653,16 +2682,12 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;正在启动 windsend...&#34;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># 切换到固定工作目录，然后执行 nohup</span>
 </span></span><span class="line"><span class="cl">            <span class="o">(</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span> <span class="c1"># 切换目录，如果失败则退出子 Shell</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># 注意：这里我们使用 $WS_EXEC_PATH 来执行程序</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$WS_BASE_DIR</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl">                nohup <span class="s2">&#34;</span><span class="nv">$WS_EXEC_PATH</span><span class="s2">&#34;</span> &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># 将 PID 写入文件</span>
 </span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="nv">$!</span> &gt; <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">            <span class="o">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># 检查启动结果</span>
 </span></span><span class="line"><span class="cl">            sleep <span class="m">1</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> ps -p <span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">                <span class="nb">echo</span> <span class="s2">&#34;windsend 已启动 (PID: </span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">).&#34;</span>
@@ -2672,7 +2697,6 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl">            <span class="p">;;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        stop<span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># ... (这部分逻辑与之前保持一致，只检查和终止进程) ...</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">                <span class="nv">WS_PID</span><span class="o">=</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> ps -p <span class="nv">$WS_PID</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
@@ -2690,7 +2714,6 @@ ssh -R 7890:localhost:7890 username@remote_host
 </span></span><span class="line"><span class="cl">            <span class="p">;;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        status<span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># ... (这部分逻辑与之前保持一致) ...</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">                <span class="nv">WS_PID</span><span class="o">=</span><span class="k">$(</span>cat <span class="s2">&#34;</span><span class="nv">$WS_PID_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> ps -p <span class="nv">$WS_PID</span> &gt; /dev/null<span class="p">;</span> <span class="k">then</span>
