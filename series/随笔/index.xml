@@ -15,21 +15,7 @@
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/philosophy-of-programming/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  编程是对局部世界的序列化
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;和计算机打交道已经两个年头了，也进行了很多编程的实践。一开始很多编程方法只是作为一种工具，就像，我们日常使用手机，平平淡淡。然而编程毕竟不同于用手机，是一种需要耗费脑力的体力活。在这一过程中，思维方式也逐渐受到了一些编程哲学的熏陶，逐渐能够理解一种编程范式背后巧妙的构思了。这也恰恰是编程有意思的地方所在：我竟然可以描述这么复杂的东西，或者，我竟然可以用这么优雅的方式描述这个东西。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  编程是对局部世界的序列化&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;和计算机打交道已经两个年头了，也进行了很多编程的实践。一开始很多编程方法只是作为一种工具，就像，我们日常使用手机，平平淡淡。然而编程毕竟不同于用手机，是一种需要耗费脑力的体力活。在这一过程中，思维方式也逐渐受到了一些编程哲学的熏陶，逐渐能够理解一种编程范式背后巧妙的构思了。这也恰恰是编程有意思的地方所在：我竟然可以描述这么复杂的东西，或者，我竟然可以用这么优雅的方式描述这个东西。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg" />
     </item>
     
@@ -39,24 +25,7 @@
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/plugin-writing-experience/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  记一次写插件的经历，以及从中收获的一些感想。
-&lt;/div&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;缘由
-    &lt;div id=&#34;缘由&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%bc%98%e7%94%b1&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;事情起源于我这个博客网站。我在微信公众号上偶然间浏览到了关于用 &lt;code&gt;Hugo&lt;/code&gt; 建立博客网站的信息，正好我也想翻新一下我那简陋的小网站。我原来的小网站非常非常的原始，整个写作流程都需要在 &lt;code&gt;HTML&lt;/code&gt; &lt;code&gt;JS&lt;/code&gt; 和 &lt;code&gt;CSS&lt;/code&gt; 之间狼狈地切换。并且我非常崇拜的大佬 &lt;code&gt;Lilian Weng&lt;/code&gt; 的 &lt;a
-  href=&#34;https://lilianweng.github.io/&#34;
-    target=&#34;_blank&#34;
-  &gt;博客&lt;/a&gt; 也是用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的，这也更加坚定了我换底层的决心。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  记一次写插件的经历，以及从中收获的一些感想。&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;缘由&#xA;    &lt;div id=&#34;缘由&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%bc%98%e7%94%b1&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;事情起源于我这个博客网站。我在微信公众号上偶然间浏览到了关于用 &lt;code&gt;Hugo&lt;/code&gt; 建立博客网站的信息，正好我也想翻新一下我那简陋的小网站。我原来的小网站非常非常的原始，整个写作流程都需要在 &lt;code&gt;HTML&lt;/code&gt; &lt;code&gt;JS&lt;/code&gt; 和 &lt;code&gt;CSS&lt;/code&gt; 之间狼狈地切换。并且我非常崇拜的大佬 &lt;code&gt;Lilian Weng&lt;/code&gt; 的 &lt;a href=&#34;https://lilianweng.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;博客&lt;/a&gt; 也是用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的，这也更加坚定了我换底层的决心。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
     </item>
     

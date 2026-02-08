@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E6%97%A5%E7%A8%8B%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E6%97%A5%E7%A8%8B%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>日程管理项目分析</title>
@@ -15,21 +15,7 @@
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/schedule-management-report/</guid>
-      <description>&lt;p&gt;TODO_UPDATE &lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  日程管理软件功能现状分析报告
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;&amp;ldquo;日程管理&amp;quot;这个词在我们的生活中经常出现，但是又非常令人捉摸不透：日程管理到底是个啥？我们为什么需要它？它有什么作用？有哪些人在进行日程管理？效果如何？&lt;/p&gt;</description>
+      <description>&lt;p&gt;TODO_UPDATE &lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  日程管理软件功能现状分析报告&#xA;&lt;/div&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;日程管理&amp;quot;这个词在我们的生活中经常出现，但是又非常令人捉摸不透：日程管理到底是个啥？我们为什么需要它？它有什么作用？有哪些人在进行日程管理？效果如何？&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/schedule-management-report/featured.svg" />
     </item>
     

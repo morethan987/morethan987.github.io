@@ -9,7 +9,7 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Philosophy of Programming</title>
@@ -17,21 +17,7 @@
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/philosophy-of-programming/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Programming is the serialization of a local world.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;I have been working with computers for about two years now and have gone through a fair amount of hands-on programming practice. In the beginning, programming felt mostly like a tool—much like using a smartphone in daily life: ordinary, utilitarian, and taken for granted. But programming is fundamentally different from using a phone. It is intellectually demanding labor, and over time, the way you think begins to change. Gradually, I found myself being influenced by certain philosophies embedded in programming languages. I began to understand the subtle elegance behind different paradigms, and this is exactly where programming becomes fascinating: &lt;em&gt;how can I describe something so complex?&lt;/em&gt; Or more precisely, &lt;em&gt;how can I describe it in such an elegant way?&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Programming is the serialization of a local world.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I have been working with computers for about two years now and have gone through a fair amount of hands-on programming practice. In the beginning, programming felt mostly like a tool—much like using a smartphone in daily life: ordinary, utilitarian, and taken for granted. But programming is fundamentally different from using a phone. It is intellectually demanding labor, and over time, the way you think begins to change. Gradually, I found myself being influenced by certain philosophies embedded in programming languages. I began to understand the subtle elegance behind different paradigms, and this is exactly where programming becomes fascinating: &lt;em&gt;how can I describe something so complex?&lt;/em&gt; Or more precisely, &lt;em&gt;how can I describe it in such an elegant way?&lt;/em&gt;&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg" />
     </item>
     
@@ -41,21 +27,7 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/llm-foundation-notes/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Notes written after reading the textbook &amp;ldquo;Foundation of Large Models&amp;rdquo; from Zhejiang University
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;The development of large model technology can be described as &amp;ldquo;rapidly evolving,&amp;rdquo; with seemingly groundbreaking advancements happening every day. 🤔&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Notes written after reading the textbook &amp;ldquo;Foundation of Large Models&amp;rdquo; from Zhejiang University&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The development of large model technology can be described as &amp;ldquo;rapidly evolving,&amp;rdquo; with seemingly groundbreaking advancements happening every day. 🤔&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-foundation-notes/featured.svg" />
     </item>
     
@@ -65,21 +37,7 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/llm-training-playbook/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  After understanding the implementation of a network architecture, a natural question arises: how do I train such a model? This section documents various engineering insights that can answer this question.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;Large model architectures come in all shapes and sizes, but to truly understand one, you need to put it into practice.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  After understanding the implementation of a network architecture, a natural question arises: how do I train such a model? This section documents various engineering insights that can answer this question.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Large model architectures come in all shapes and sizes, but to truly understand one, you need to put it into practice.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-training-playbook/featured.svg" />
     </item>
     
@@ -89,21 +47,7 @@
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/ctm-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A novel brain-inspired architecture that introduces the concept of &amp;ldquo;temporality&amp;rdquo; to existing time-agnostic neuron models, giving rise to a series of brain-like emergent phenomena.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;This paper caught my attention precisely because of the &amp;ldquo;magical&amp;rdquo; emergent phenomena it claims—introducing temporal information into neuron models results in &lt;strong&gt;human-like thought patterns&lt;/strong&gt; of attention. These phenomena are not manually designed but naturally emerge during training, which is the most exciting part.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  A novel brain-inspired architecture that introduces the concept of &amp;ldquo;temporality&amp;rdquo; to existing time-agnostic neuron models, giving rise to a series of brain-like emergent phenomena.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This paper caught my attention precisely because of the &amp;ldquo;magical&amp;rdquo; emergent phenomena it claims—introducing temporal information into neuron models results in &lt;strong&gt;human-like thought patterns&lt;/strong&gt; of attention. These phenomena are not manually designed but naturally emerge during training, which is the most exciting part.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/ctm-note/featured.svg" />
     </item>
     
@@ -113,21 +57,7 @@
       <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/llm-memory/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A summary of thoughts on the memory of large language models
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Introduction
-    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;This reflection originates from a common issue encountered in AI-assisted programming: the need to repeatedly familiarize itself with the code repository from scratch.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  A summary of thoughts on the memory of large language models&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Introduction&#xA;    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This reflection originates from a common issue encountered in AI-assisted programming: the need to repeatedly familiarize itself with the code repository from scratch.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-memory/featured.svg" />
     </item>
     
@@ -137,21 +67,7 @@
       <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/ubuntu-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Summarizing and documenting the process of tinkering with Ubuntu for future reference.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Introduction
-    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;Ubuntu, as a popular Linux distribution, offers better ecosystem support compared to other Linux distros. The most notable advantage is that when you encounter issues, you&amp;rsquo;re more likely to find tutorials and solutions for Ubuntu.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Summarizing and documenting the process of tinkering with Ubuntu for future reference.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Introduction&#xA;    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Ubuntu, as a popular Linux distribution, offers better ecosystem support compared to other Linux distros. The most notable advantage is that when you encounter issues, you&amp;rsquo;re more likely to find tutorials and solutions for Ubuntu.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/ubuntu-note/featured.svg" />
     </item>
     
@@ -161,31 +77,7 @@
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/rstar-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Keywords: Mutual Reasoning; Small Models; Reasoning Capability Enhancement
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Research Background
-    &lt;div id=&#34;research-background&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#research-background&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;Existing Work
-    &lt;div id=&#34;existing-work&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#existing-work&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;The following content is generated by AI to quickly explain what RAP is.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Keywords: Mutual Reasoning; Small Models; Reasoning Capability Enhancement&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Research Background&#xA;    &lt;div id=&#34;research-background&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#research-background&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Existing Work&#xA;    &lt;div id=&#34;existing-work&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#existing-work&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;The following content is generated by AI to quickly explain what RAP is.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/rstar-note/featured.svg" />
     </item>
     
@@ -195,21 +87,7 @@
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/cloud-server-build/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Detailed documentation of the process of deploying an LLM application from scratch, focusing mainly on the initial setup of cloud servers, continuously updated&amp;hellip;
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;Before deploying your LLM application, you should have already completed:&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Detailed documentation of the process of deploying an LLM application from scratch, focusing mainly on the initial setup of cloud servers, continuously updated&amp;hellip;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Before deploying your LLM application, you should have already completed:&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cloud-server-build/featured.svg" />
     </item>
     
@@ -219,21 +97,7 @@
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/qdrant-feature-guide/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A detailed record of the core features of the Qdrant vector database, helping developers design better databases in practical applications 😋
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;Vector database-based RAG is the most fundamental form of RAG and is widely used in production. As the name suggests, vector databases primarily store vectors. Through vector operations, we can achieve more precise &lt;strong&gt;relevance searches&lt;/strong&gt;, which serve as the &lt;strong&gt;cornerstone&lt;/strong&gt; for many application scenarios.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  A detailed record of the core features of the Qdrant vector database, helping developers design better databases in practical applications 😋&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Vector database-based RAG is the most fundamental form of RAG and is widely used in production. As the name suggests, vector databases primarily store vectors. Through vector operations, we can achieve more precise &lt;strong&gt;relevance searches&lt;/strong&gt;, which serve as the &lt;strong&gt;cornerstone&lt;/strong&gt; for many application scenarios.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg" />
     </item>
     
@@ -243,16 +107,7 @@
       <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/rag-report/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Practical Issues
-    &lt;div id=&#34;practical-issues&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#practical-issues&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;The emergence of any technology is driven by real-world problems. RAG (Retrieval-Augmented Generation) technology was developed primarily to address the following limitations of generative pre-trained language models:&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Practical Issues&#xA;    &lt;div id=&#34;practical-issues&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#practical-issues&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The emergence of any technology is driven by real-world problems. RAG (Retrieval-Augmented Generation) technology was developed primarily to address the following limitations of generative pre-trained language models:&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/rag-report/featured.svg" />
     </item>
     
@@ -262,21 +117,7 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/llm-engineering-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  This blog post is the zeroth article in the &amp;ldquo;AI Engineering&amp;rdquo; series. Besides serving as an index for the entire series, it also summarizes key knowledge points related to practical large model applications.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Introduction
-    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;Currently, large model technology is developing rapidly. Open-source base models like DeepSeek are gradually catching up with closed-source models, and general-purpose large models are achieving increasingly higher accuracy across various tasks, pushing their capability limits higher.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  This blog post is the zeroth article in the &amp;ldquo;AI Engineering&amp;rdquo; series. Besides serving as an index for the entire series, it also summarizes key knowledge points related to practical large model applications.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Introduction&#xA;    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Currently, large model technology is developing rapidly. Open-source base models like DeepSeek are gradually catching up with closed-source models, and general-purpose large models are achieving increasingly higher accuracy across various tasks, pushing their capability limits higher.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-engineering-note/featured.svg" />
     </item>
     
@@ -286,24 +127,7 @@
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/neo4j-basics/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  The basic info and operations of Neo4j Graph Database.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Introduction
-    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;&lt;a
-  href=&#34;https://github.com/neo4j/neo4j&#34;
-    target=&#34;_blank&#34;
-  &gt;Neo4j&lt;/a&gt; is a high-performance graph database that stores data and the relationships between data in the form of graphs.The specific form of the graph is a &lt;strong&gt;labeled property graph&lt;/strong&gt;, and the query language used is &lt;code&gt;Cypher&lt;/code&gt;.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  The basic info and operations of Neo4j Graph Database.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Introduction&#xA;    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/neo4j/neo4j&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Neo4j&lt;/a&gt; is a high-performance graph database that stores data and the relationships between data in the form of graphs.The specific form of the graph is a &lt;strong&gt;labeled property graph&lt;/strong&gt;, and the query language used is &lt;code&gt;Cypher&lt;/code&gt;.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/neo4j-basics/featured.svg" />
     </item>
     
@@ -313,21 +137,7 @@
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/schedule-management-report/</guid>
-      <description>&lt;p&gt;TODO_UPDATE &lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Analysis Report on the Current State of Schedule Management Software Functionality
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;The term &amp;ldquo;schedule management&amp;rdquo; frequently appears in our daily lives, yet it remains elusive: What exactly is schedule management? Why do we need it? What purpose does it serve? Who engages in schedule management, and how effective is it?&lt;/p&gt;</description>
+      <description>&lt;p&gt;TODO_UPDATE &lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Analysis Report on the Current State of Schedule Management Software Functionality&#xA;&lt;/div&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The term &amp;ldquo;schedule management&amp;rdquo; frequently appears in our daily lives, yet it remains elusive: What exactly is schedule management? Why do we need it? What purpose does it serve? Who engages in schedule management, and how effective is it?&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/schedule-management-report/featured.svg" />
     </item>
     
@@ -337,37 +147,7 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/code-collaboration-scheme/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Summary of CUMCM 2024 competition experience, focusing on the A problem and the collaborative approach with MATLAB code improvement
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Process Overview
-    &lt;div id=&#34;process-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#process-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;pre class=&#34;not-prose mermaid&#34;&gt;
-graph LR;
-
-id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id3(&#34;MATLAB Code Execution&#34;);
-&lt;/pre&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Task Allocation
-    &lt;div id=&#34;task-allocation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#task-allocation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;There are two key points:&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Summary of CUMCM 2024 competition experience, focusing on the A problem and the collaborative approach with MATLAB code improvement&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Process Overview&#xA;    &lt;div id=&#34;process-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#process-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;pre class=&#34;not-prose mermaid&#34;&gt;&#xA;graph LR;&#xA;&#xA;id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id3(&#34;MATLAB Code Execution&#34;);&#xA;&lt;/pre&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Task Allocation&#xA;    &lt;div id=&#34;task-allocation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#task-allocation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;There are two key points:&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/code-collaboration-scheme/featured.svg" />
     </item>
     
@@ -377,26 +157,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/mysql-basics/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  MySQL Installation and Deployment Process + Quick Syntax CookBook + Study Notes
-&lt;/div&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;Information Source
-    &lt;div id=&#34;information-source&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#information-source&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a
-  href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34;
-    target=&#34;_blank&#34;
-  &gt;SQL Tutorial - Liao Xuefeng&amp;rsquo;s Official Website&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  MySQL Installation and Deployment Process + Quick Syntax CookBook + Study Notes&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Information Source&#xA;    &lt;div id=&#34;information-source&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#information-source&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;SQL Tutorial - Liao Xuefeng&amp;rsquo;s Official Website&lt;/a&gt;&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/mysql-basics/featured.svg" />
     </item>
     
@@ -406,12 +167,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/note-to-blog-report/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Familiarizing oneself with the project analysis process, this is a practical analysis report.
-&lt;/div&gt;
-
-&lt;p&gt;After I had completed my &lt;a
-  href=&#34;https://morethan987.github.io/en/blog/plugin-writing-experience/&#34;&gt;small plugin&lt;/a&gt;, I realized that there doesn&amp;rsquo;t seem to be a one-click solution in the &lt;strong&gt;note-to-blog&lt;/strong&gt; field. So, I wrote this article to analyze whether it would make sense to create a new project to fill this gap.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Familiarizing oneself with the project analysis process, this is a practical analysis report.&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;After I had completed my &lt;a href=&#34;https://morethan987.github.io/en/blog/plugin-writing-experience/&#34; &gt;small plugin&lt;/a&gt;, I realized that there doesn&amp;rsquo;t seem to be a one-click solution in the &lt;strong&gt;note-to-blog&lt;/strong&gt; field. So, I wrote this article to analyze whether it would make sense to create a new project to fill this gap.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/note-to-blog-report/featured.svg" />
     </item>
     
@@ -421,21 +177,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/hugo-blog/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A blog website journey, from hand-coding to Hugo, a story of twists and turns.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Why Hugo?
-    &lt;div id=&#34;why-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#why-hugo&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;It all started with hearing that Hugo could generate webpages and that it was incredibly efficient at compiling static pages. I decided to dive into the research—Hugo is said to be the &lt;strong&gt;fastest static site generator&lt;/strong&gt; in the world, as claimed on its official website.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  A blog website journey, from hand-coding to Hugo, a story of twists and turns.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Why Hugo?&#xA;    &lt;div id=&#34;why-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#why-hugo&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;It all started with hearing that Hugo could generate webpages and that it was incredibly efficient at compiling static pages. I decided to dive into the research—Hugo is said to be the &lt;strong&gt;fastest static site generator&lt;/strong&gt; in the world, as claimed on its official website.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/hugo-blog/featured.svg" />
     </item>
     
@@ -445,24 +187,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/plugin-writing-experience/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A Reflection on Writing a Plugin and What I Learned from the Experience.
-&lt;/div&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;The Beginning
-    &lt;div id=&#34;the-beginning&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#the-beginning&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;It all started with my blog website. I stumbled upon an article on WeChat about building a blog with &lt;code&gt;Hugo&lt;/code&gt;, and since I wanted to revamp my old, simple site, I decided to give it a try. My original site was extremely rudimentary, and the whole writing process involved jumping between &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;JS&lt;/code&gt;, and &lt;code&gt;CSS&lt;/code&gt; in a rather awkward manner. On top of that, I had always admired the &lt;a
-  href=&#34;https://lilianweng.github.io/&#34;
-    target=&#34;_blank&#34;
-  &gt;blog&lt;/a&gt; of a great tech guru, &lt;code&gt;Lilian Weng&lt;/code&gt;, which was also built with &lt;code&gt;Hugo&lt;/code&gt;. This further strengthened my resolve to change my site&amp;rsquo;s underlying platform.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  A Reflection on Writing a Plugin and What I Learned from the Experience.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;The Beginning&#xA;    &lt;div id=&#34;the-beginning&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#the-beginning&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;It all started with my blog website. I stumbled upon an article on WeChat about building a blog with &lt;code&gt;Hugo&lt;/code&gt;, and since I wanted to revamp my old, simple site, I decided to give it a try. My original site was extremely rudimentary, and the whole writing process involved jumping between &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;JS&lt;/code&gt;, and &lt;code&gt;CSS&lt;/code&gt; in a rather awkward manner. On top of that, I had always admired the &lt;a href=&#34;https://lilianweng.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;blog&lt;/a&gt; of a great tech guru, &lt;code&gt;Lilian Weng&lt;/code&gt;, which was also built with &lt;code&gt;Hugo&lt;/code&gt;. This further strengthened my resolve to change my site&amp;rsquo;s underlying platform.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
     </item>
     
@@ -482,17 +207,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/cumcm2024/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;
-&lt;p&gt;Our team was formed in the winter of 2023, and CUMCM 2024 was our first participation in the &amp;ldquo;Mathematical Modeling&amp;rdquo; competition. After numerous mock contests, we finally made it to the national competition. After submitting the final paper, we won the first prize at the provincial level and were recommended for the first prize at the national level, ultimately receiving the second prize at the national level.&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;&#xA;&lt;p&gt;Our team was formed in the winter of 2023, and CUMCM 2024 was our first participation in the &amp;ldquo;Mathematical Modeling&amp;rdquo; competition. After numerous mock contests, we finally made it to the national competition. After submitting the final paper, we won the first prize at the provincial level and were recommended for the first prize at the national level, ultimately receiving the second prize at the national level.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
@@ -502,36 +217,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/pytips/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Creating Virtual Environments
-    &lt;div id=&#34;creating-virtual-environments&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#creating-virtual-environments&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;Standard Python Operations
-    &lt;div id=&#34;standard-python-operations&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#standard-python-operations&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-
-&lt;h4 class=&#34;relative group&#34;&gt;Creation
-    &lt;div id=&#34;creation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#creation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h4&gt;
-&lt;p&gt;Here are some common code examples 👇&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Creating Virtual Environments&#xA;    &lt;div id=&#34;creating-virtual-environments&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#creating-virtual-environments&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Standard Python Operations&#xA;    &lt;div id=&#34;standard-python-operations&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#standard-python-operations&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&#xA;&lt;h4 class=&#34;relative group&#34;&gt;Creation&#xA;    &lt;div id=&#34;creation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#creation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h4&gt;&#xA;&lt;p&gt;Here are some common code examples 👇&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/pytips/featured.svg" />
     </item>
     
@@ -541,22 +227,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/bayesianopt/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;References
-    &lt;div id=&#34;references&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#references&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;My understanding of Bayesian optimization is also limited, mainly referencing the following content👇&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a
-  href=&#34;https://blog.csdn.net/qq_27590277/article/details/115451660&#34;
-    target=&#34;_blank&#34;
-  &gt;【Machine Learning】Understanding Bayesian Optimization in One Article&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;References&#xA;    &lt;div id=&#34;references&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#references&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;My understanding of Bayesian optimization is also limited, mainly referencing the following content👇&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_27590277/article/details/115451660&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;【Machine Learning】Understanding Bayesian Optimization in One Article&lt;/a&gt;&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     
@@ -566,18 +237,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/localoverleaf/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Background Overview
-    &lt;div id=&#34;background-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#background-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;You should know how to interact with the computer via the command line, including but not limited to: how to open the command line/terminal in Windows, when a running command ends, etc.&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Background Overview&#xA;    &lt;div id=&#34;background-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#background-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;You should know how to interact with the computer via the command line, including but not limited to: how to open the command line/terminal in Windows, when a running command ends, etc.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/featured.svg" />
     </item>
     

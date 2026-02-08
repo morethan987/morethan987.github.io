@@ -17,21 +17,7 @@
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/philosophy-of-programming/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Programming is the serialization of a local world.
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;I have been working with computers for about two years now and have gone through a fair amount of hands-on programming practice. In the beginning, programming felt mostly like a tool—much like using a smartphone in daily life: ordinary, utilitarian, and taken for granted. But programming is fundamentally different from using a phone. It is intellectually demanding labor, and over time, the way you think begins to change. Gradually, I found myself being influenced by certain philosophies embedded in programming languages. I began to understand the subtle elegance behind different paradigms, and this is exactly where programming becomes fascinating: &lt;em&gt;how can I describe something so complex?&lt;/em&gt; Or more precisely, &lt;em&gt;how can I describe it in such an elegant way?&lt;/em&gt;&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Programming is the serialization of a local world.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I have been working with computers for about two years now and have gone through a fair amount of hands-on programming practice. In the beginning, programming felt mostly like a tool—much like using a smartphone in daily life: ordinary, utilitarian, and taken for granted. But programming is fundamentally different from using a phone. It is intellectually demanding labor, and over time, the way you think begins to change. Gradually, I found myself being influenced by certain philosophies embedded in programming languages. I began to understand the subtle elegance behind different paradigms, and this is exactly where programming becomes fascinating: &lt;em&gt;how can I describe something so complex?&lt;/em&gt; Or more precisely, &lt;em&gt;how can I describe it in such an elegant way?&lt;/em&gt;&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg" />
     </item>
     
@@ -41,24 +27,7 @@
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/plugin-writing-experience/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  A Reflection on Writing a Plugin and What I Learned from the Experience.
-&lt;/div&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;The Beginning
-    &lt;div id=&#34;the-beginning&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#the-beginning&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;It all started with my blog website. I stumbled upon an article on WeChat about building a blog with &lt;code&gt;Hugo&lt;/code&gt;, and since I wanted to revamp my old, simple site, I decided to give it a try. My original site was extremely rudimentary, and the whole writing process involved jumping between &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;JS&lt;/code&gt;, and &lt;code&gt;CSS&lt;/code&gt; in a rather awkward manner. On top of that, I had always admired the &lt;a
-  href=&#34;https://lilianweng.github.io/&#34;
-    target=&#34;_blank&#34;
-  &gt;blog&lt;/a&gt; of a great tech guru, &lt;code&gt;Lilian Weng&lt;/code&gt;, which was also built with &lt;code&gt;Hugo&lt;/code&gt;. This further strengthened my resolve to change my site&amp;rsquo;s underlying platform.&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  A Reflection on Writing a Plugin and What I Learned from the Experience.&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;The Beginning&#xA;    &lt;div id=&#34;the-beginning&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#the-beginning&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;It all started with my blog website. I stumbled upon an article on WeChat about building a blog with &lt;code&gt;Hugo&lt;/code&gt;, and since I wanted to revamp my old, simple site, I decided to give it a try. My original site was extremely rudimentary, and the whole writing process involved jumping between &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;JS&lt;/code&gt;, and &lt;code&gt;CSS&lt;/code&gt; in a rather awkward manner. On top of that, I had always admired the &lt;a href=&#34;https://lilianweng.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;blog&lt;/a&gt; of a great tech guru, &lt;code&gt;Lilian Weng&lt;/code&gt;, which was also built with &lt;code&gt;Hugo&lt;/code&gt;. This further strengthened my resolve to change my site&amp;rsquo;s underlying platform.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
     </item>
     

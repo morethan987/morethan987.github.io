@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/authors/morethan/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/authors/morethan/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>编程的哲学</title>
@@ -15,21 +15,7 @@
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/philosophy-of-programming/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  编程是对局部世界的序列化
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;和计算机打交道已经两个年头了，也进行了很多编程的实践。一开始很多编程方法只是作为一种工具，就像，我们日常使用手机，平平淡淡。然而编程毕竟不同于用手机，是一种需要耗费脑力的体力活。在这一过程中，思维方式也逐渐受到了一些编程哲学的熏陶，逐渐能够理解一种编程范式背后巧妙的构思了。这也恰恰是编程有意思的地方所在：我竟然可以描述这么复杂的东西，或者，我竟然可以用这么优雅的方式描述这个东西。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  编程是对局部世界的序列化&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;和计算机打交道已经两个年头了，也进行了很多编程的实践。一开始很多编程方法只是作为一种工具，就像，我们日常使用手机，平平淡淡。然而编程毕竟不同于用手机，是一种需要耗费脑力的体力活。在这一过程中，思维方式也逐渐受到了一些编程哲学的熏陶，逐渐能够理解一种编程范式背后巧妙的构思了。这也恰恰是编程有意思的地方所在：我竟然可以描述这么复杂的东西，或者，我竟然可以用这么优雅的方式描述这个东西。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg" />
     </item>
     
@@ -39,21 +25,7 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/llm-foundation-notes/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  阅读浙大的教材大模型基础后写的读书笔记
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;现在的大模型技术发展可谓是&amp;quot;日新月异&amp;quot;，好像每天都有令人震撼的重要进展🤔&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  阅读浙大的教材大模型基础后写的读书笔记&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;现在的大模型技术发展可谓是&amp;quot;日新月异&amp;quot;，好像每天都有令人震撼的重要进展🤔&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-foundation-notes/featured.svg" />
     </item>
     
@@ -63,21 +35,7 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/llm-training-playbook/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  当你了解一个网络架构的实现之后，一个很自然的问题：我该如何把这样一个模型训练出来？这一节记录了各种各样的工程知识，能够回答这个问题。
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;大模型架构五花八门，但想要真正了解一个架构，还是要落到实践中去。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  当你了解一个网络架构的实现之后，一个很自然的问题：我该如何把这样一个模型训练出来？这一节记录了各种各样的工程知识，能够回答这个问题。&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;大模型架构五花八门，但想要真正了解一个架构，还是要落到实践中去。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-training-playbook/featured.svg" />
     </item>
     
@@ -87,21 +45,7 @@
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/ctm-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  一个新型的人脑启发式架构，在现有时序无关的神经元模型的基础上引入了&amp;quot;时序&amp;quot;概念，涌现出一系列类似人脑的现象
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;关注到这篇论文其实就是因为其宣称的那种&amp;quot;奇妙&amp;quot;的涌现现象，将时序信息引入神经元模型之后产生了&lt;strong&gt;类似人类思维模式&lt;/strong&gt;的注意力现象。这些现象并非人为设计的，而是在训练过程中自然产生的，这是最令人振奋的。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  一个新型的人脑启发式架构，在现有时序无关的神经元模型的基础上引入了&amp;quot;时序&amp;quot;概念，涌现出一系列类似人脑的现象&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;关注到这篇论文其实就是因为其宣称的那种&amp;quot;奇妙&amp;quot;的涌现现象，将时序信息引入神经元模型之后产生了&lt;strong&gt;类似人类思维模式&lt;/strong&gt;的注意力现象。这些现象并非人为设计的，而是在训练过程中自然产生的，这是最令人振奋的。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/ctm-note/featured.svg" />
     </item>
     
@@ -111,21 +55,7 @@
       <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/llm-memory/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  梳理和总结一下关于大模型记忆的想法
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;思考来源于一个在 AI 辅助编程中经常碰到的问题：每次都要从头开始理解我的代码仓库。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  梳理和总结一下关于大模型记忆的想法&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;思考来源于一个在 AI 辅助编程中经常碰到的问题：每次都要从头开始理解我的代码仓库。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-memory/featured.svg" />
     </item>
     
@@ -135,21 +65,7 @@
       <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/ubuntu-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  总结记录一下折腾Ubuntu系统的过程，以备不时之需
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;Ubuntu 作为一个流行的 Linux 发行版本，对比其他 Linux 发行版，有较好的生态支持。最主要的体现就是：当你遇到问题的时候 Ubuntu 能够搜到的教程更多。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  总结记录一下折腾Ubuntu系统的过程，以备不时之需&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Ubuntu 作为一个流行的 Linux 发行版本，对比其他 Linux 发行版，有较好的生态支持。最主要的体现就是：当你遇到问题的时候 Ubuntu 能够搜到的教程更多。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/ubuntu-note/featured.svg" />
     </item>
     
@@ -159,31 +75,7 @@
       <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/rstar-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  关键词：互推理；小模型；推理能力提升
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;研究背景
-    &lt;div id=&#34;研究背景&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%a0%94%e7%a9%b6%e8%83%8c%e6%99%af&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;现有工作
-    &lt;div id=&#34;现有工作&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%8e%b0%e6%9c%89%e5%b7%a5%e4%bd%9c&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;以下内容由 AI 生成，快速解释 RAP 是什么。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  关键词：互推理；小模型；推理能力提升&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;研究背景&#xA;    &lt;div id=&#34;研究背景&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%a0%94%e7%a9%b6%e8%83%8c%e6%99%af&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;现有工作&#xA;    &lt;div id=&#34;现有工作&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%8e%b0%e6%9c%89%e5%b7%a5%e4%bd%9c&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;以下内容由 AI 生成，快速解释 RAP 是什么。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/rstar-note/featured.svg" />
     </item>
     
@@ -193,21 +85,7 @@
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/cloud-server-build/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  详细记录了从零开始发布 LLM 应用的过程，主要内容关注云服务器的初始化搭建过程，持续更新中&amp;hellip;
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;在发布你的 LLM 应用之前，你应该已经基本完成了：&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  详细记录了从零开始发布 LLM 应用的过程，主要内容关注云服务器的初始化搭建过程，持续更新中&amp;hellip;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;在发布你的 LLM 应用之前，你应该已经基本完成了：&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cloud-server-build/featured.svg" />
     </item>
     
@@ -217,21 +95,7 @@
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/qdrant-feature-guide/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  详细记录了Qdrant向量数据库的核心功能，让开发者在实际应用过程中设计出更好的数据库😋
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地&lt;strong&gt;相关性搜索&lt;/strong&gt;，这个功能是一些应用场景地&lt;strong&gt;基石&lt;/strong&gt;。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  详细记录了Qdrant向量数据库的核心功能，让开发者在实际应用过程中设计出更好的数据库😋&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;基于向量数据库的 RAG 是最基础的 RAG 形式，在实际生产中被广泛应用。正如其名，向量数据库主要存储的元素是一个个的向量，通过向量运算，我们能够实现更加精准地&lt;strong&gt;相关性搜索&lt;/strong&gt;，这个功能是一些应用场景地&lt;strong&gt;基石&lt;/strong&gt;。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg" />
     </item>
     
@@ -241,16 +105,7 @@
       <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/rag-report/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;实际问题
-    &lt;div id=&#34;实际问题&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%ae%9e%e9%99%85%e9%97%ae%e9%a2%98&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;一个技术的出现都是基于实际问题的。RAG 技术的出现主要是为了应对生成式预训练语言模型的如下缺陷：&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;实际问题&#xA;    &lt;div id=&#34;实际问题&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%ae%9e%e9%99%85%e9%97%ae%e9%a2%98&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;一个技术的出现都是基于实际问题的。RAG 技术的出现主要是为了应对生成式预训练语言模型的如下缺陷：&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/rag-report/featured.svg" />
     </item>
     
@@ -260,21 +115,7 @@
       <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/llm-engineering-note/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  这篇博客是“AI工程”系列的〇号文章，除了作为整个系列的索引之外，也总结一下大模型实战过程中的相关知识点；
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;目前正式大模型技术蓬勃发展的时候，以 DeepSeek 为代表的开源基座大模型的能力逐渐追上闭源大模型，通用大模型在各项任务中的准确率不断提升，能力上限越来越高。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  这篇博客是“AI工程”系列的〇号文章，除了作为整个系列的索引之外，也总结一下大模型实战过程中的相关知识点；&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;目前正式大模型技术蓬勃发展的时候，以 DeepSeek 为代表的开源基座大模型的能力逐渐追上闭源大模型，通用大模型在各项任务中的准确率不断提升，能力上限越来越高。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/llm-engineering-note/featured.svg" />
     </item>
     
@@ -284,24 +125,7 @@
       <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/neo4j-basics/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Neo4j图数据库的基础信息以及操作方法
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;简介
-    &lt;div id=&#34;简介&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%ae%80%e4%bb%8b&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;&lt;a
-  href=&#34;https://github.com/neo4j/neo4j&#34;
-    target=&#34;_blank&#34;
-  &gt;Neo4j&lt;/a&gt; 是一个高性能的图数据库，将数据以及数据之间的关系通过图的形式来存储。图的具体形式是&lt;strong&gt;标签属性图&lt;/strong&gt;，使用的查询语言是 &lt;code&gt;Cypher&lt;/code&gt;。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Neo4j图数据库的基础信息以及操作方法&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;简介&#xA;    &lt;div id=&#34;简介&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%ae%80%e4%bb%8b&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/neo4j/neo4j&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Neo4j&lt;/a&gt; 是一个高性能的图数据库，将数据以及数据之间的关系通过图的形式来存储。图的具体形式是&lt;strong&gt;标签属性图&lt;/strong&gt;，使用的查询语言是 &lt;code&gt;Cypher&lt;/code&gt;。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/neo4j-basics/featured.svg" />
     </item>
     
@@ -311,21 +135,7 @@
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/schedule-management-report/</guid>
-      <description>&lt;p&gt;TODO_UPDATE &lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  日程管理软件功能现状分析报告
-&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;&amp;ldquo;日程管理&amp;quot;这个词在我们的生活中经常出现，但是又非常令人捉摸不透：日程管理到底是个啥？我们为什么需要它？它有什么作用？有哪些人在进行日程管理？效果如何？&lt;/p&gt;</description>
+      <description>&lt;p&gt;TODO_UPDATE &lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  日程管理软件功能现状分析报告&#xA;&lt;/div&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;日程管理&amp;quot;这个词在我们的生活中经常出现，但是又非常令人捉摸不透：日程管理到底是个啥？我们为什么需要它？它有什么作用？有哪些人在进行日程管理？效果如何？&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/schedule-management-report/featured.svg" />
     </item>
     
@@ -335,37 +145,7 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/code-collaboration-scheme/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;流程概览
-    &lt;div id=&#34;流程概览&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e6%b5%81%e7%a8%8b%e6%a6%82%e8%a7%88&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;pre class=&#34;not-prose mermaid&#34;&gt;
-graph LR;
-
-id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATLAB代码执行&#34;);
-&lt;/pre&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;工作分配
-    &lt;div id=&#34;工作分配&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b7%a5%e4%bd%9c%e5%88%86%e9%85%8d&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;主要有两个要点：&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;流程概览&#xA;    &lt;div id=&#34;流程概览&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e6%b5%81%e7%a8%8b%e6%a6%82%e8%a7%88&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;pre class=&#34;not-prose mermaid&#34;&gt;&#xA;graph LR;&#xA;&#xA;id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATLAB代码执行&#34;);&#xA;&lt;/pre&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;工作分配&#xA;    &lt;div id=&#34;工作分配&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b7%a5%e4%bd%9c%e5%88%86%e9%85%8d&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;主要有两个要点：&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/code-collaboration-scheme/featured.svg" />
     </item>
     
@@ -375,27 +155,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/mysql-basics/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  MySQL 安装部署流程 + 简明语法 CookBook + 学习笔记
-&lt;/div&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;信息源
-    &lt;div id=&#34;信息源&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e4%bf%a1%e6%81%af%e6%ba%90&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a
-  href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34;
-    target=&#34;_blank&#34;
-  &gt;SQL教程 - 廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;非常非常亲民的 MySQL 教程网站，内置了一个网页版的数据库，方便新手同志们直观了解 MySQL数据库的操作，对于 SQL 的整个背景也有简洁但必要的表述。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  MySQL 安装部署流程 + 简明语法 CookBook + 学习笔记&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;信息源&#xA;    &lt;div id=&#34;信息源&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e4%bf%a1%e6%81%af%e6%ba%90&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://liaoxuefeng.com/books/sql/introduction/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;SQL教程 - 廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;非常非常亲民的 MySQL 教程网站，内置了一个网页版的数据库，方便新手同志们直观了解 MySQL数据库的操作，对于 SQL 的整个背景也有简洁但必要的表述。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/mysql-basics/featured.svg" />
     </item>
     
@@ -405,12 +165,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/note-to-blog-report/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  熟悉项目分析流程，是一个练手性质的分析报告
-&lt;/div&gt;
-
-&lt;p&gt;我在初步完成自己的&lt;a
-  href=&#34;https://morethan987.github.io/blog/plugin-writing-experience/&#34;&gt;小插件&lt;/a&gt;之后才发现：&lt;strong&gt;笔记转博客&lt;/strong&gt;这个领域似乎没有一个一键式解决方案，为此我写了这篇文章来分析是否要创建一个新的项目来填补这个空白。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  熟悉项目分析流程，是一个练手性质的分析报告&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;我在初步完成自己的&lt;a href=&#34;https://morethan987.github.io/blog/plugin-writing-experience/&#34; &gt;小插件&lt;/a&gt;之后才发现：&lt;strong&gt;笔记转博客&lt;/strong&gt;这个领域似乎没有一个一键式解决方案，为此我写了这篇文章来分析是否要创建一个新的项目来填补这个空白。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/note-to-blog-report/featured.svg" />
     </item>
     
@@ -420,21 +175,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/hugo-blog/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  博客网站折腾日志，从手搓到 Hugo 的曲折经历。
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;为什么 Hugo
-    &lt;div id=&#34;为什么-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88-hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是&lt;strong&gt;世界上最快&lt;/strong&gt;的静态页面生成器，官方网站也是这么写的。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  博客网站折腾日志，从手搓到 Hugo 的曲折经历。&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;为什么 Hugo&#xA;    &lt;div id=&#34;为什么-hugo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88-hugo&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;最初也只是因为偶然间听说了 Hugo 可以做网页，并且听说编译静态页面非常高效，于是才去搜集的相关资料——据说 Hugo 是&lt;strong&gt;世界上最快&lt;/strong&gt;的静态页面生成器，官方网站也是这么写的。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/hugo-blog/featured.svg" />
     </item>
     
@@ -444,24 +185,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/plugin-writing-experience/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  记一次写插件的经历，以及从中收获的一些感想。
-&lt;/div&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;缘由
-    &lt;div id=&#34;缘由&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%bc%98%e7%94%b1&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;事情起源于我这个博客网站。我在微信公众号上偶然间浏览到了关于用 &lt;code&gt;Hugo&lt;/code&gt; 建立博客网站的信息，正好我也想翻新一下我那简陋的小网站。我原来的小网站非常非常的原始，整个写作流程都需要在 &lt;code&gt;HTML&lt;/code&gt; &lt;code&gt;JS&lt;/code&gt; 和 &lt;code&gt;CSS&lt;/code&gt; 之间狼狈地切换。并且我非常崇拜的大佬 &lt;code&gt;Lilian Weng&lt;/code&gt; 的 &lt;a
-  href=&#34;https://lilianweng.github.io/&#34;
-    target=&#34;_blank&#34;
-  &gt;博客&lt;/a&gt; 也是用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的，这也更加坚定了我换底层的决心。&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  记一次写插件的经历，以及从中收获的一些感想。&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;缘由&#xA;    &lt;div id=&#34;缘由&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e7%bc%98%e7%94%b1&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;事情起源于我这个博客网站。我在微信公众号上偶然间浏览到了关于用 &lt;code&gt;Hugo&lt;/code&gt; 建立博客网站的信息，正好我也想翻新一下我那简陋的小网站。我原来的小网站非常非常的原始，整个写作流程都需要在 &lt;code&gt;HTML&lt;/code&gt; &lt;code&gt;JS&lt;/code&gt; 和 &lt;code&gt;CSS&lt;/code&gt; 之间狼狈地切换。并且我非常崇拜的大佬 &lt;code&gt;Lilian Weng&lt;/code&gt; 的 &lt;a href=&#34;https://lilianweng.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;博客&lt;/a&gt; 也是用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的，这也更加坚定了我换底层的决心。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/plugin-writing-experience/featured.svg" />
     </item>
     
@@ -471,17 +195,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/moravecs-paradox/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;莫拉维克悖论
-    &lt;div id=&#34;莫拉维克悖论&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e8%8e%ab%e6%8b%89%e7%bb%b4%e5%85%8b%e6%82%96%e8%ae%ba&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;高水平的推理需要相对较少的计算资源，而低水平的感知和运动技能则需要大量的计算资源。&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;莫拉维克悖论&#xA;    &lt;div id=&#34;莫拉维克悖论&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e8%8e%ab%e6%8b%89%e7%bb%b4%e5%85%8b%e6%82%96%e8%ae%ba&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;高水平的推理需要相对较少的计算资源，而低水平的感知和运动技能则需要大量的计算资源。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/moravecs-paradox/featured.svg" />
     </item>
     
@@ -491,16 +205,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/cumcm2024/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
@@ -510,36 +215,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/pytips/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;创建虚拟环境
-    &lt;div id=&#34;创建虚拟环境&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;常规 Python 操作
-    &lt;div id=&#34;常规-python-操作&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b8%b8%e8%a7%84-python-%e6%93%8d%e4%bd%9c&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-
-&lt;h4 class=&#34;relative group&#34;&gt;创建
-    &lt;div id=&#34;创建&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%88%9b%e5%bb%ba&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h4&gt;
-&lt;p&gt;一些常规的代码例子如下👇&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;创建虚拟环境&#xA;    &lt;div id=&#34;创建虚拟环境&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;常规 Python 操作&#xA;    &lt;div id=&#34;常规-python-操作&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b8%b8%e8%a7%84-python-%e6%93%8d%e4%bd%9c&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&#xA;&lt;h4 class=&#34;relative group&#34;&gt;创建&#xA;    &lt;div id=&#34;创建&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%88%9b%e5%bb%ba&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h4&gt;&#xA;&lt;p&gt;一些常规的代码例子如下👇&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/pytips/featured.svg" />
     </item>
     
@@ -549,16 +225,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/bayesianopt/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;引用文献
-    &lt;div id=&#34;引用文献&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%95%e7%94%a8%e6%96%87%e7%8c%ae&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;引用文献&#xA;    &lt;div id=&#34;引用文献&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%95%e7%94%a8%e6%96%87%e7%8c%ae&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     
@@ -568,18 +235,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Fri, 12 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/localoverleaf/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;背景提要
-    &lt;div id=&#34;背景提要&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e8%83%8c%e6%99%af%e6%8f%90%e8%a6%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;背景提要&#xA;    &lt;div id=&#34;背景提要&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e8%83%8c%e6%99%af%e6%8f%90%e8%a6%81&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;你应该知道如何通过命令行与电脑交互，包括但不限于：Windows如何唤出命令行/终端，正在运行中的命令什么时候结束&amp;hellip;&amp;hellip;&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/localoverleaf/featured.svg" />
     </item>
     

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>代码协同方案</title>
@@ -15,37 +15,7 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/code-collaboration-scheme/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;流程概览
-    &lt;div id=&#34;流程概览&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e6%b5%81%e7%a8%8b%e6%a6%82%e8%a7%88&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;pre class=&#34;not-prose mermaid&#34;&gt;
-graph LR;
-
-id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATLAB代码执行&#34;);
-&lt;/pre&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;工作分配
-    &lt;div id=&#34;工作分配&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b7%a5%e4%bd%9c%e5%88%86%e9%85%8d&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;主要有两个要点：&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  总结 CUMCM2024 比赛经验，针对数学建模国赛 A 题和MATLAB改进的代码协同方案&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;流程概览&#xA;    &lt;div id=&#34;流程概览&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e6%b5%81%e7%a8%8b%e6%a6%82%e8%a7%88&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;pre class=&#34;not-prose mermaid&#34;&gt;&#xA;graph LR;&#xA;&#xA;id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATLAB代码执行&#34;);&#xA;&lt;/pre&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;工作分配&#xA;    &lt;div id=&#34;工作分配&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%b7%a5%e4%bd%9c%e5%88%86%e9%85%8d&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;主要有两个要点：&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/code-collaboration-scheme/featured.svg" />
     </item>
     
@@ -55,16 +25,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/cumcm2024/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;前言
-    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;前言&#xA;    &lt;div id=&#34;前言&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这篇文章主要是对于 CUMCM 2024 的比赛全过程进行一个梳理和总结。&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
@@ -74,16 +35,7 @@ id1(&#34;工作分配&#34;)--&gt;id2(&#34;VS Code协同&#34;)--&gt;id3(&#34;MATL
       <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://morethan987.github.io/blog/bayesianopt/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;引用文献
-    &lt;div id=&#34;引用文献&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%95%e7%94%a8%e6%96%87%e7%8c%ae&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;引用文献&#xA;    &lt;div id=&#34;引用文献&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%bc%95%e7%94%a8%e6%96%87%e7%8c%ae&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;我对于贝叶斯优化的理解也并不多，主要参考下面的内容👇&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     

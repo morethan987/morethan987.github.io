@@ -9,7 +9,7 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/cumcm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/cumcm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Code Collaboration Scheme</title>
@@ -17,37 +17,7 @@
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/code-collaboration-scheme/</guid>
-      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;
-  Summary of CUMCM 2024 competition experience, focusing on the A problem and the collaborative approach with MATLAB code improvement
-&lt;/div&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Process Overview
-    &lt;div id=&#34;process-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#process-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;pre class=&#34;not-prose mermaid&#34;&gt;
-graph LR;
-
-id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id3(&#34;MATLAB Code Execution&#34;);
-&lt;/pre&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;Task Allocation
-    &lt;div id=&#34;task-allocation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#task-allocation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;There are two key points:&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl&#34;&gt;&#xA;  Summary of CUMCM 2024 competition experience, focusing on the A problem and the collaborative approach with MATLAB code improvement&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Process Overview&#xA;    &lt;div id=&#34;process-overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#process-overview&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;pre class=&#34;not-prose mermaid&#34;&gt;&#xA;graph LR;&#xA;&#xA;id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id3(&#34;MATLAB Code Execution&#34;);&#xA;&lt;/pre&gt;&#xA;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Task Allocation&#xA;    &lt;div id=&#34;task-allocation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#task-allocation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;There are two key points:&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/code-collaboration-scheme/featured.svg" />
     </item>
     
@@ -57,17 +27,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/cumcm2024/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Preface
-    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;
-&lt;p&gt;Our team was formed in the winter of 2023, and CUMCM 2024 was our first participation in the &amp;ldquo;Mathematical Modeling&amp;rdquo; competition. After numerous mock contests, we finally made it to the national competition. After submitting the final paper, we won the first prize at the provincial level and were recommended for the first prize at the national level, ultimately receiving the second prize at the national level.&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;Preface&#xA;    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#preface&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This article is primarily a review and summary of the entire process of CUMCM 2024.&lt;/p&gt;&#xA;&lt;p&gt;Our team was formed in the winter of 2023, and CUMCM 2024 was our first participation in the &amp;ldquo;Mathematical Modeling&amp;rdquo; competition. After numerous mock contests, we finally made it to the national competition. After submitting the final paper, we won the first prize at the provincial level and were recommended for the first prize at the national level, ultimately receiving the second prize at the national level.&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/cumcm2024/featured.svg" />
     </item>
     
@@ -77,22 +37,7 @@ id1(&#34;Task Allocation&#34;)--&gt;id2(&#34;VS Code Collaboration&#34;)--&gt;id
       <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
       <author>morthan@qq.com (Morethan)</author>
       <guid>https://morethan987.github.io/en/blog/bayesianopt/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;References
-    &lt;div id=&#34;references&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#references&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;My understanding of Bayesian optimization is also limited, mainly referencing the following content👇&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a
-  href=&#34;https://blog.csdn.net/qq_27590277/article/details/115451660&#34;
-    target=&#34;_blank&#34;
-  &gt;【Machine Learning】Understanding Bayesian Optimization in One Article&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;relative group&#34;&gt;References&#xA;    &lt;div id=&#34;references&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#references&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;My understanding of Bayesian optimization is also limited, mainly referencing the following content👇&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_27590277/article/details/115451660&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;【Machine Learning】Understanding Bayesian Optimization in One Article&lt;/a&gt;&lt;/p&gt;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/bayesianopt/featured.svg" />
     </item>
     
