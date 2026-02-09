@@ -246,7 +246,7 @@
     "keywords": ["overleaf","LaTeX"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1859"
+    "wordCount": "1884"
   }]
   </script>
 
@@ -1697,33 +1697,31 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h3>
 <p>在 <code>Windows App Store</code> 里面直接搜索一个Linux发行版本并下载，笔者选择的是<code>Kali</code>。安装完成后可以在开始菜单中直接打开，打开后会跳出命令行窗口，初次打开需要填写需要用户名与密码进行注册。</p>
-
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow bg-primary-100 dark:bg-primary-900"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    
-    >此时你的命令行应该有一个 Warning 提示。这是因为你还没有安装 WSL(Windows Subsystem for Linux)；同时，在填写密码的时候你的输入不会显示在命令行，但已经被记录了</span>
-</div>
-
-<p>为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。也正因如此，据说在Linux系统上运行的<code>OverLeaf</code>更加流畅。</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="warning"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          新手必看
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>此时你的命令行应该有一个 Warning 提示。这是因为你还没有安装 WSL(Windows Subsystem for Linux)；同时，在填写密码的时候你的输入不会显示在命令行，但已经被记录了</p></div></details><p>为什么需要一个Linux系统？因为OverLeaf的sharelatex模型需要Linux环境。也正因如此，据说在Linux系统上运行的<code>OverLeaf</code>更加流畅。</p>
 
 <h3 class="relative group">安装WSL
     <div id="安装wsl" class="anchor"></div>
@@ -1783,36 +1781,31 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>当上一个命令成功结束之后，运行 <code>bin/start</code> ；此时你打开Docker点进sharelatex，你应该可以看到代码“爆闪”，如果没有红色的消息，那应该是正常运行了。</p>
 <p>这时打开浏览器访问网址 <code>http://localhost/launchpad</code></p>
 <p>按照提示注册Administrator Account之后，就会跳转到 <code>http://localhost/project</code> ；这时基本的OverLeaf网页已经可以显示了。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >但现在你丢一个文件进去编译多半是会报错的 <code>ᕕ( ᐛ )ᕗ</code> ；因为此时 sharelatex 里面的宏包严重不足，不是红包「手动狗头」</span>
-</div>
-
-
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>但现在你丢一个文件进去编译多半是会报错的 <code>ᕕ( ᐛ )ᕗ</code> ；因为此时 sharelatex 里面的宏包严重不足，不是红包「手动狗头」</p></div></details>
 <h3 class="relative group">安装扩展包
     <div id="安装扩展包" class="anchor"></div>
     
@@ -1869,66 +1862,55 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>最后在 <code>shell</code> 目录里面运行：</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vim /usr/local/texlive/2023/texmf.cnf</span></span></code></pre></div></div>
 <p>进入配置文件，在最底下加入一句 <code>shell_escape = t</code></p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >我也不知道这有什么用，属于是前辈传承了🤔</span>
-</div>
-
-<p>注意，如果Texlive(扩展包的官名)版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写，例如将<code>2023</code>改成<code>2024</code>。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >在Linux命令行中可以用 <code>ls -l</code> 来查看当前目录下所有的文件</span>
-</div>
-
-
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          小声嘀咕
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>我也不知道这有什么用，属于是前辈传承了🤔</p></div></details><p>注意，如果Texlive(扩展包的官名)版本不同的话，目录地址也会有所变化，因此需要根据实际的地址来填写，例如将<code>2023</code>改成<code>2024</code>。</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="tip"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7c0 0 0 0 0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5L109 384c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8c0 0 0 0 0 0s0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4c0 0 0 0 0 0s0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5l-48.6 0c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8c0 0 0 0 0 0s0 0 0 0s0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80l0-16 160 0 0 16c0 44.2-35.8 80-80 80z"/></svg></span></div>
+        <div class="grow">
+          如果你不知道如何用命令查看文件
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>在Linux命令行中可以用 <code>ls -al</code> 来查看当前目录下所有的文件</p></div></details>
 <h2 class="relative group">部署成功
     <div id="部署成功" class="anchor"></div>
     
