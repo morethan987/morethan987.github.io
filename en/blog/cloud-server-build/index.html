@@ -254,7 +254,7 @@
     "keywords": ["Cloud-Service"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "2768"
+    "wordCount": "2773"
   }]
   </script>
 
@@ -1880,36 +1880,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>To transfer files from the local machine to the server, I chose to use some more modern terminals, such as: <a href="https://tabby.sh/"  target="_blank" rel="noreferrer">Tabby</a>, <a href="https://github.com/kingToolbox/WindTerm"  target="_blank" rel="noreferrer">WindTerm</a>, and <a href="https://www.warp.dev/"  target="_blank" rel="noreferrer">Warp</a>, etc.</p>
 <p>I randomly chose Tabby, which makes remote connections more convenient and has built-in SFTP for easy file transfer. If you have the energy to customize the terminal interface, Tabby can be very aesthetically pleasing😄</p>
 <p>Of course, more traditional solutions include using <a href="https://filezilla-project.org/download.php"  target="_blank" rel="noreferrer">FileZilla</a>; and if you don&rsquo;t mind the hassle, you can directly use terminal commands: use <code>rsync</code> or <code>scp</code> commands.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >If you are using a Tencent Cloud server and are curious about what the <code>lighthouse</code> folder is🤨: this folder is the account for one-click password-free login.</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>If you are using a Tencent Cloud server and are curious about what the <code>lighthouse</code> folder is🤨: this folder is the account for one-click password-free login.</p></div></div>
 <h4 class="relative group">Install Docker
     <div id="install-docker" class="anchor"></div>
     
@@ -1947,36 +1925,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">sudo systemctl start docker        <span class="c1"># Start service</span>
 </span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker       <span class="c1"># Enable auto-start on boot</span>
 </span></span><span class="line"><span class="cl">sudo systemctl status docker       <span class="c1"># Verify service status</span></span></span></code></pre></div></div>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #ffcc00"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #8B6914"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #333333"
-    
-    >After running the last command, you will enter a paged log view mode, similar to a Vim editor. Enter <code>:q</code> to return to the regular command line.</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          Warning
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>After running the last command, you will enter a paged log view mode, similar to a Vim editor. Enter <code>:q</code> to return to the regular command line.</p></div></div>
 <h4 class="relative group">Use Docker
     <div id="use-docker" class="anchor"></div>
     
@@ -2019,36 +1975,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Stop all services</span>
 </span></span><span class="line"><span class="cl">sudo docker compose down</span></span></code></pre></div></div>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #ffcc00"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #8B6914"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #333333"
-    
-    >Before using the <code>docker compose</code> command, please create <code>docker-compose.yml</code> and <code>Dockerfile</code> according to the official tutorial.</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          Warning
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Before using the <code>docker compose</code> command, please create <code>docker-compose.yml</code> and <code>Dockerfile</code> according to the official tutorial.</p></div></div>
 <h4 class="relative group">Configure pip/poetry
     <div id="configure-pippoetry" class="anchor"></div>
     
@@ -2059,36 +1993,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 </h4>
 <p>Strangely, Tencent Cloud installs Python by default at the system level but does not install pip🤔 So you need to manually install it. Before installation, please confirm whether Python is installed.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #ffcc00"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #8B6914"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #333333"
-    
-    >If you are not using pip at the system level but pip inside a Docker container, then changing the pip source at the system level will not have any effect.</span>
-</div>
-
-<p>Change pip source at the system level:</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          Warning
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>If you are not using pip at the system level but pip inside a Docker container, then changing the pip source at the system level will not have any effect.</p></div></div><p>Change pip source at the system level:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Check Python version</span>
 </span></span><span class="line"><span class="cl">python3 -V
 </span></span><span class="line"><span class="cl">
@@ -2117,36 +2029,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Use Tencent Cloud mirror source, note this is the intranet domain</span>
 </span></span><span class="line"><span class="cl">sudo poetry config repositories.tencentyun https://mirrors.tencentyun.com/pypi/simple</span></span></code></pre></div></div>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >If your system does not have pip installed by default, it is not recommended to install pip first and then install poetry.</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>If your system does not have pip installed by default, it is not recommended to install pip first and then install poetry.</p></div></div>
 <h4 class="relative group">SSL/TLS
     <div id="ssltls" class="anchor"></div>
     

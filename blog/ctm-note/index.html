@@ -380,7 +380,7 @@
     "keywords": ["论文","笔记","架构"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "6437"
+    "wordCount": "6448"
   }]
   </script>
 
@@ -1788,36 +1788,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>关注到这篇论文其实就是因为其宣称的那种&quot;奇妙&quot;的涌现现象，将时序信息引入神经元模型之后产生了<strong>类似人类思维模式</strong>的注意力现象。这些现象并非人为设计的，而是在训练过程中自然产生的，这是最令人振奋的。</p>
 <p>最直观的例子就是官方给出的&quot;迷宫模型&quot;，从可视化的结果可以直观地看到，模型的注意力焦点在迷宫中游走，就像人类求解迷宫问题一样。另外官方还给出了一个可交互的展示网页：<a href="https://pub.sakana.ai/ctm/"  target="_blank" rel="noreferrer">Demo</a>，在这个网页中你可以直接指挥模型求解迷宫，并实时查看模型的注意力焦点。</p>
 <p>另外，官方的<a href="https://github.com/SakanaAI/continuous-thought-machines"  target="_blank" rel="noreferrer">代码仓库</a>中配置了详尽的说明文档和代码注释，代码文件的切分也非常简洁直观，有一种程序员才懂的&quot;艺术感&quot;。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >在阅读了大量的屎山代码之后，可能才会对代码的&quot;优雅&quot;程度有所体会😇并深刻理解这份&quot;优雅&quot;背后的工作量</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>在阅读了大量的屎山代码之后，可能才会对代码的&quot;优雅&quot;程度有所体会😇并深刻理解这份&quot;优雅&quot;背后的工作量</p></div></div>
 <h2 class="relative group">引入
     <div id="引入" class="anchor"></div>
     
@@ -1842,36 +1820,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li>有趣的副作用：CTM 内部的循环类似于人类的思考，在没有任何显式的监督函数引导的情况下就能够<strong>为不同难度的任务自动分配合适的计算资源</strong>，简单的任务将会提前终止计算，而复杂的任务将会进行更加深入的计算</li>
 <li><strong>信息可以被编码在时序动态中</strong>，这将赋予网络更加强大的信息压缩能力</li>
 </ol>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >说明一下我对第三点的思考，按照&quot;压缩即智能&quot;的观点，将将信息编码到时序动态中将极大地提高网络的信息&quot;压缩率&quot;，从某种程度上来说也就提升了&quot;智能&quot;</span>
-</div>
-
-<p>最后作者也明确了自己这个研究的目的所在：</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>说明一下我对第三点的思考，按照&quot;压缩即智能&quot;的观点，将将信息编码到时序动态中将极大地提高网络的信息&quot;压缩率&quot;，从某种程度上来说也就提升了&quot;智能&quot;</p></div></div><p>最后作者也明确了自己这个研究的目的所在：</p>
 <p>&ldquo;通过CTM显式建模神经时序机制，我们旨在为开发更具生物合理性且高性能的人工智能系统开辟新路径。&rdquo;</p>
 
 <h2 class="relative group">方法
@@ -1918,36 +1874,14 @@ t\in \{1,\dots,T\}
 $$<p>图中参数右上角的角标就指代的是某一个特定的时间步，而每一个时间步中都会进行一次图中完整的计算流程(从①到⑩)</p>
 <p>这种内部维度并非全新的概念，RNN 和 Transformer 中都有使用。但是传统的架构按照数据输入的顺序来逐步处理，这<strong>隐含</strong>地将内部的时间维度与数据的输入顺序挂钩了。</p>
 <p>举个例子，RNN 中也有内部时间维度的概念，只是每一个时间步模型都会接受一个新的 token 输入，然后根据内部隐状态去产生下一个 token 并更新内部隐状态。如果只看 token 的输入就会发现我们其实是默认将数据内在的顺序作为模型的内部时间维度</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >Transformer 本身是&quot;无序&quot;的：每一个时间步注意力机制都会并行处理原来所有的 token 或许这也是其强大所在🤔真正和输入数据顺序相关的步骤在于&quot;位置嵌入&quot;</span>
-</div>
-
-<p>而 CTM 则完全解耦了这种关联，让内部的处理与输入数据无关。不只是顺序无关，还与输入序列的长度无关，这也可能是作者更想强调的🤔</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Transformer 本身是&quot;无序&quot;的：每一个时间步注意力机制都会并行处理原来所有的 token 或许这也是其强大所在🤔真正和输入数据顺序相关的步骤在于&quot;位置嵌入&quot;</p></div></div><p>而 CTM 则完全解耦了这种关联，让内部的处理与输入数据无关。不只是顺序无关，还与输入序列的长度无关，这也可能是作者更想强调的🤔</p>
 <p>这种&quot;解耦&quot;使得模型内部的&quot;思考&quot;可以有任意长度，可以迭代地构建和完善内部表征，并且可以扩展到&quot;非序列化&quot;的任务上，例如求解迷宫问题。</p>
 <p>其实目前 CoT 那一系列的技术可以理解为在做&quot;解耦&quot;的工作：数据输入已经摆在那里了，直接生成答案效果不太行，那就多产生一些<strong>长度不受数据序列影响的</strong>中间 token 也就是所谓的思考过程。但发现在非常简单的问题中模型想太多结果也不太好，怎么办呢？Anthropic 就把&quot;思考多少合适&quot;这个问题丢给了模型使用者，这从工程上也不失为一个明智之举。但 CTM 貌似有望解决这个问题😃其貌似从底层架构上解耦了数据序列与内部时间维度的关系🤔</p>
 <p>如果你想对当前的 CoT 技术有一个更加深入而全面的了解，可以去看看 <a href="https://lilianweng.github.io/posts/2025-05-01-thinking/"  target="_blank" rel="noreferrer">Why we think - Lil&rsquo;log</a> 里面有更加学术化的严谨表达，但又非常容易理解。</p>
@@ -1965,70 +1899,26 @@ $$<p>图中参数右上角的角标就指代的是某一个特定的时间步，
 $$
 a^t=f_{\theta_{syn}}(concat(z^t,o^t))\in R^D
 $$<p>其中 \(z^t\in R^D\) 表示 \(t\) 时间步的<strong>后激活向量</strong>，\(o^t\) 是上一个时间步计算得出的<strong>调制数据</strong>，与原来的 \(z^t\) 进行拼接后整体送入<strong>突触模型</strong>进行计算，然后就得出 \(a^t\) 也就是<strong>预激活向量</strong></p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >注意这里用的是小写的 \(z\) 而大图中使用的是大写的 \(Z\)：\(z\) 表示作用在单个神经元上的后激活向量；而 \(Z\) 表示所有神经元的后激活向量构成的一个矩阵</span>
-</div>
-
-<p>突触模型本质上就是一个函数 \(f_{\theta_{syn}}\) 可以用多种方式表达，经过实验，原论文中使用了 MLP 来表示这个函数，更具体的就是 U-NET-esque MLP</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>注意这里用的是小写的 \(z\) 而大图中使用的是大写的 \(Z\)：\(z\) 表示作用在单个神经元上的后激活向量；而 \(Z\) 表示所有神经元的后激活向量构成的一个矩阵</p></div></div><p>突触模型本质上就是一个函数 \(f_{\theta_{syn}}\) 可以用多种方式表达，经过实验，原论文中使用了 MLP 来表示这个函数，更具体的就是 U-NET-esque MLP</p>
 <p>然后将最近的 \(M\) 个预激活向量用一个矩阵 \(A^t\) 存储起来：</p>
 $$
 A^t=[a^{t-M+1}\quad a^{t-M+1}\dots a^{t}]\in R^{D\times M}
 $$<p>历史序列中的前 \(M\) 个元素及初始时刻 \(t=1\) 的 \(z\) 值需要进行初始化，实验表明将其设置为可学习参数能获得最佳效果。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >注意 \(z^t\) 并不是 \(t\) 时间步上的输入数据！实际上从大图中可以看出，整个模型的计算流程几乎不涉及输入数据，只有计算 \(o^t\) (橙色方块)时才有外部输入数据的参与🤔</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>注意 \(z^t\) 并不是 \(t\) 时间步上的输入数据！实际上从大图中可以看出，整个模型的计算流程几乎不涉及输入数据，只有计算 \(o^t\) (橙色方块)时才有外部输入数据的参与🤔</p></div></div>
 <h3 class="relative group">参数私有化的神经元级模型
     <div id="参数私有化的神经元级模型" class="anchor"></div>
     
@@ -2047,36 +1937,14 @@ $$
 z^t=[z^{t+1}_{1} \quad z^{t+1}_{2}\dots z^{t+1}_{D}]
 $$<p>而 \(g_{\theta_{d}}\) 就是一个单隐层的 MLP，接受一个 \(M\) 维的向量 \(A^t_{d}\) 输出 \(z^{t+1}_{d}\in R^D\)</p>
 <p>用大白话描述这一步操作就是：每一个神经元都根据自己前 \(M\) 次的预激活值产生下一个后激活值。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >😢我一开始还以为 \(z_{d}^t\) 是一个向量，但其实是一个标量</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>😢我一开始还以为 \(z_{d}^t\) 是一个向量，但其实是一个标量</p></div></div>
 <h3 class="relative group">神经元同步：输入与输出的调制
     <div id="神经元同步输入与输出的调制" class="anchor"></div>
     
@@ -2092,36 +1960,14 @@ Z^t = [z^1 \quad z^2 \dots z^t]\in R^{D\times t}
 $$<p>然后将<strong>神经元同步</strong>描述为 \(Z^t\) 的内积：</p>
 $$
 S^t=Z^t \cdot (Z^t)^T\in R^{D\times D}
-$$
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >从数学上来说，\(S^t\) 就是一个未归一化的协方差矩阵，这个矩阵中的 \((i,j)\) 元素的值表达了在所有时间步上第 \(i\) 个神经元与第 \(j\) 个神经元之间的&quot;协同程度&quot;，也就是论文所说的&quot;神经元同步&quot;</span>
-</div>
-
-<p>然后对这个神经元同步矩阵进行<strong>下采样</strong>：从中随机选取 \(D_{out}\) 和 \(D_{action}\) 个元素值，分别形成两个神经元同步的<strong>表征向量</strong>，即 \(S^t_{out}\in R^{D_{out}}\) 和 \(S^t_{action}\in R^{D_{action}}\)</p>
+$$<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>从数学上来说，\(S^t\) 就是一个未归一化的协方差矩阵，这个矩阵中的 \((i,j)\) 元素的值表达了在所有时间步上第 \(i\) 个神经元与第 \(j\) 个神经元之间的&quot;协同程度&quot;，也就是论文所说的&quot;神经元同步&quot;</p></div></div><p>然后对这个神经元同步矩阵进行<strong>下采样</strong>：从中随机选取 \(D_{out}\) 和 \(D_{action}\) 个元素值，分别形成两个神经元同步的<strong>表征向量</strong>，即 \(S^t_{out}\in R^{D_{out}}\) 和 \(S^t_{action}\in R^{D_{action}}\)</p>
 <p>\(S^t_{out}\) 被投影到输出空间：</p>
 $$
 \mathbf{y}^t = W_{out}\cdot S^t_{out}
@@ -2139,36 +1985,14 @@ $$
 $$<p>然后用这个衰减系数去放缩原本的神经元同步矩阵的元素值：</p>
 $$
 \mathbf{S}_{i j}^{t}=\frac{\left(\mathbf{Z}_{i}^{t}\right)^{\top} \cdot \operatorname{diag}\left(\mathbf{R}_{i j}^{t}\right) \cdot\left(\mathbf{Z}_{j}^{t}\right)}{\sqrt{\sum_{\tau=1}^{t}\left[\mathbf{R}_{i j}^{t}\right]_{\tau}}}
-$$
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >作者经过实际研究，发现这些可学习的衰减系数很少用到：在 ImageNet 视觉分类任务中在 8196 个衰减系数中只有 3 个是有效的；而在迷宫求解问题中更多一些，但也只有大约 3%</span>
-</div>
-
-
+$$<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>作者经过实际研究，发现这些可学习的衰减系数很少用到：在 ImageNet 视觉分类任务中在 8196 个衰减系数中只有 3 个是有效的；而在迷宫求解问题中更多一些，但也只有大约 3%</p></div></div>
 <h3 class="relative group">损失函数：在不同时间步中优化
     <div id="损失函数在不同时间步中优化" class="anchor"></div>
     
@@ -2253,36 +2077,14 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
 <p>上面这幅图非常直观地解释了突触模型部分和神经元级模型部分进行的操作：前者让同一时刻在不同神经元之间的信息进行交互；后者让不同时刻同一神经元的历史信息进行交互。如图中所示，一个纵向的信息融合之后紧跟一个横向的信息融合🤔</p>
 <p>模型如何与外界数据进行交互呢？通过对神经元同步矩阵进行下采样然后进行线性投影得到。这么说非常抽象，但换一个视角就能发现其中的逻辑所在：如果我们把 CTM 想象成一个大脑，那么对神经同步矩阵的采样就是从中截取某部分信息，然后通过一个矩阵映射去驱动行为。</p>
 <p>一个非常合理的想法就是：把这个矩阵换成一个 MLP 网络会不会效果更好？🤔下采样的策略对于 CTM 模型的能力是否有影响？能不能使用某种注意力机制来构建某种&quot;智能&quot;的下采样策略？</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >🤔其实我挺好奇：如果把神经元的数量 \(D\) 扩大到人脑中神经元的量级，并且使用注意力机制，会不会自然涌现某种稀疏激活的特征？</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>🤔其实我挺好奇：如果把神经元的数量 \(D\) 扩大到人脑中神经元的量级，并且使用注意力机制，会不会自然涌现某种稀疏激活的特征？</p></div></div>
 <h3 class="relative group">关于时序信息
     <div id="关于时序信息" class="anchor"></div>
     
@@ -2295,36 +2097,14 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
 <p>早在 1997 年 Maass 就提出了脉冲神经网络(SNN)，号称是第三代神经网络，其最大的特点就是：完全模仿生物神经网络，通过脉冲的形式传递信息。这其中当然就包含了丰富的时序信息。因此，在神经网络中利用时序信息并不是一个&quot;新颖&quot;的想法，反而是有非常悠久的历史。</p>
 <p>然而 SNN 对应的方程在数学上不可导，导致 SNN 难以直接使用 BP 算法进行优化。这或许是 SNN 大规模应用的最大阻碍。换言之，SNN 最大的缺陷其实不在于模型的表达能力，而在于训练算法——训练算法对于大型神经网络至关重要。</p>
 <p>CTM 基于传统神经元模型实现了一个能够利用时序信息神经网络。并且从论文描述中就可以看出，作者其实是构建了一个新型的神经元，其 \(t+1\) 时刻的激活值通过神经元级模型与突触级模型与大量的其他神经元的历史激活状态相连接，因此每一个神经元的输出都能够融合大量的历史信息。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >一个不太严谨的思考，SNN 将时序信息和激活值同步处理，导致了较高的模型复杂性，而 CTM 则解耦了时序信息的计算和激活值的计算🤔</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>一个不太严谨的思考，SNN 将时序信息和激活值同步处理，导致了较高的模型复杂性，而 CTM 则解耦了时序信息的计算和激活值的计算🤔</p></div></div>
 <h2 class="relative group">代码分析
     <div id="代码分析" class="anchor"></div>
     
@@ -2335,36 +2115,14 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
     
 </h2>
 <p>官方给出的 <code>README.md</code> 文件对于整个项目的目录说明很清晰，此处不再赘述。大致浏览了一下 <code>models</code> 文件夹中的模型代码后就可以直接去看 <code>tasks</code> 文件夹中的具体的训练代码。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >只看模型代码其实不太容易理解模型是如何与数据进行交互的🤔</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>只看模型代码其实不太容易理解模型是如何与数据进行交互的🤔</p></div></div>
 <h3 class="relative group">迷宫问题
     <div id="迷宫问题" class="anchor"></div>
     

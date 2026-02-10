@@ -381,7 +381,7 @@
     "keywords": ["LLM","EngineeringPractice","Notes"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1413"
+    "wordCount": "1414"
   }]
   </script>
 
@@ -1930,36 +1930,14 @@ $$
     data-zoom-src="/blog/llm-foundation-notes/img/attention-matrix.png"></figure>
 </p>
 <p>In summary, the Encoder-only architecture is suitable for <strong>natural language understanding tasks</strong>, such as sentiment analysis, text classification, and other discriminative tasks, but it may not perform as well as the other two architectures in natural language generation tasks. The Encoder-Decoder architecture is suitable for <strong>conditional generation tasks</strong>, such as machine translation, text summarization, and question-answering systems—scenarios that require simultaneous processing of input and output. However, the newly added decoder also introduces computational complexity. The Decoder-only architecture is suitable for <strong>unconditional text generation tasks</strong>, capable of generating high-quality, coherent text, such as in automatic story generation or news writing tasks that do not require specific input text. However, under limited scale, the Decoder-only architecture may have limitations in understanding complex text and may perform worse than the Encoder-Decoder architecture.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >The wording here regarding the limitations of the Decoder-only architecture is actually quite nuanced: it must be under <strong>limited scale</strong> that Decoder-only performs worse than Encoder-Decoder in text understanding. However, due to its superior task generalization, Decoder-only has become the most mainstream architecture today.</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Title
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>The wording here regarding the limitations of the Decoder-only architecture is actually quite nuanced: it must be under <strong>limited scale</strong> that Decoder-only performs worse than Encoder-Decoder in text understanding. However, due to its superior task generalization, Decoder-only has become the most mainstream architecture today.</p></div></div>
 <h2 class="relative group">Parameter-Efficient Fine-Tuning
     <div id="parameter-efficient-fine-tuning" class="anchor"></div>
     
@@ -2805,7 +2783,7 @@ $$
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

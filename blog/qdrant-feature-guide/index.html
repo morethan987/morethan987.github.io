@@ -383,7 +383,7 @@
     "keywords": ["Qdrant"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "3812"
+    "wordCount": "3824"
   }]
   </script>
 
@@ -1997,36 +1997,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li>欧氏距离</li>
 <li>曼哈顿距离</li>
 </ul>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >为了提高数据库的性能，所有向量在存入的时候都会被&quot;归一化&quot;，这也意味着点积相似度和余弦相似度在 Qdrant 中是等价的</span>
-</div>
-
-<p>为了更良好的用户体验，Qdrant 提供了一套完整的程序接口，让用户能够方便地调用：<a href="https://qdrant.tech/documentation/concepts/search/#search-api"  target="_blank" rel="noreferrer">Search API - Qdrant</a></p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          注意
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>为了提高数据库的性能，所有向量在存入的时候都会被&quot;归一化&quot;，这也意味着点积相似度和余弦相似度在 Qdrant 中是等价的</p></div></div><p>为了更良好的用户体验，Qdrant 提供了一套完整的程序接口，让用户能够方便地调用：<a href="https://qdrant.tech/documentation/concepts/search/#search-api"  target="_blank" rel="noreferrer">Search API - Qdrant</a></p>
 <p>概括下来，你能够调用功能大概有这些：</p>
 <ol>
 <li><strong>基本操作</strong>：输入一个向量，在数据库中进行相似度匹配；如果你的数据点存储了&quot;命名向量&quot;，那么你需要指定用哪个特定的向量去进行相似度匹配</li>
@@ -2037,36 +2015,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><strong>搜索分组</strong>：能够对搜索结果按照某些标签进行分组，参数 <code>group_size</code> 可以设置每组的结果个数</li>
 <li><strong>搜索规划</strong>：依据可选索引、过滤条件的复杂性和总共的数据点的数量，以启发式的方法选择一个合适的搜索方式(提高性能🤔)</li>
 </ol>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #ffcc00"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #8B6914"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #333333"
-    
-    >如果 <code>group_size</code> 和 <code>limit</code> 被同时设置，那么此时 <code>limit</code> 参数表示分组的数量</span>
-</div>
-
-<p>另外，在 Qdrant 中，稀疏向量和密集向量的搜索有一些关键的不同，对比结果如下：</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          注意
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>如果 <code>group_size</code> 和 <code>limit</code> 被同时设置，那么此时 <code>limit</code> 参数表示分组的数量</p></div></div><p>另外，在 Qdrant 中，稀疏向量和密集向量的搜索有一些关键的不同，对比结果如下：</p>
 <table>
   <thead>
       <tr>
@@ -2139,36 +2095,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl">    <span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">limit</span>: <span class="kt">3</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >官方给出的例子中 100,231 是向量编号，每一个编号都对应一个四维的向量</span>
-</div>
-
-<p>其中 <code>strategy</code> 参数用于调控搜索算法，下面是具体的算法说明：</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>官方给出的例子中 100,231 是向量编号，每一个编号都对应一个四维的向量</p></div></div><p>其中 <code>strategy</code> 参数用于调控搜索算法，下面是具体的算法说明：</p>
 <ol>
 <li>
 <p><strong>平均算法</strong>：对正例、反例分别进行平均，得到的两个向量再进行加权平均，产生最终用于搜索的向量</p>
@@ -2185,36 +2119,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <ol start="3">
 <li><strong>只考虑负例算法</strong>：使用最佳评分算法👆同时不提供正例，你就会得到一个反向评分算法，能够找到最不相关的数据点</li>
 </ol>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >多重向量和别的特殊向量也是能够被处理的，处理逻辑相同，只是代码写法不同</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>多重向量和别的特殊向量也是能够被处理的，处理逻辑相同，只是代码写法不同</p></div></div>
 <h4 class="relative group">发现·Discovery
     <div id="发现discovery" class="anchor"></div>
     
@@ -2226,36 +2138,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h4>
 <p>&ldquo;发现&quot;操作的核心思路就是样本空间的分割。你需要提供一系列的<strong>正负向量对</strong>，每一个向量对都会将样本空间划分为正区域和负区域，最终将会搜索得出<strong>处于正区域更多或者负区域更少</strong>的数据点。</p>
 <p>和<a href="#推荐recommendation" >推荐·Recommendation</a> 类似，但是这里你需要将正向量和负向量组合成一对来输入。</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >由于进行了样本空间的硬划分，因此可以考虑提高 HNSW 算法中的 ef 参数来弥补硬划分产生的精度损失</span>
-</div>
-
-<p>通过发现操作，Qdrant 能够处理一下两种新的搜索需求：</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>由于进行了样本空间的硬划分，因此可以考虑提高 HNSW 算法中的 ef 参数来弥补硬划分产生的精度损失</p></div></div><p>通过发现操作，Qdrant 能够处理一下两种新的搜索需求：</p>
 <ol>
 <li>
 <p><strong>发现型搜索</strong>：给定一个搜索目标向量，同时提供一系列正负向量对作为<em>上下文约束条件</em>；</p>
@@ -2264,36 +2154,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p><strong>区域划分搜索</strong>：是发现型搜索👆的特例，在不提供目标向量的情况下，数据库会直接使用正负向量对进行区域划分，并最后返回处在正区域中最多的数据点</p>
 </li>
 </ol>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #1E3A8A"
-  
-  >
-  <span
-    
-      class="text-primary-400 pe-3 flex items-center"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8 96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6 429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/></svg>
-</span>
-  </span>
-
-  <span
-    
-      style="color: #E0E7FF"
-    
-    >在发现型搜索中，通过算法保证了上下文约束条件的<strong>强制性</strong>，优先级更高；换言之，发现型搜索先执行区域划分搜索，然后再进行普通的相似度搜索</span>
-</div>
-
-
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>在发现型搜索中，通过算法保证了上下文约束条件的<strong>强制性</strong>，优先级更高；换言之，发现型搜索先执行区域划分搜索，然后再进行普通的相似度搜索</p></div></div>
 <h4 class="relative group">距离矩阵·Distance-Matrix
     <div id="距离矩阵distance-matrix" class="anchor"></div>
     
