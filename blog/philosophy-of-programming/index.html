@@ -60,7 +60,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2025-11-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-11-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-17T00:00:00+00:00">
     <meta property="article:tag" content="工程实践">
     <meta property="article:tag" content="经历">
     <meta property="og:image" content="https://morethan987.github.io/blog/philosophy-of-programming/featured.svg">
@@ -235,12 +235,12 @@
     "dateCreated": "2025-11-28T00:00:00\u002b00:00",
     "datePublished": "2025-11-28T00:00:00\u002b00:00",
     
-    "dateModified": "2025-11-28T00:00:00\u002b00:00",
+    "dateModified": "2026-02-17T00:00:00\u002b00:00",
     
     "keywords": ["工程实践","经历"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "932"
+    "wordCount": "1426"
   }]
   </script>
 
@@ -1086,6 +1086,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
   
+    
+  
 
   
 
@@ -1117,7 +1119,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-28T00:00:00&#43;00:00">2025-11-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-11-28T00:00:00&#43;00:00">2025-11-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-02-17T00:00:00&#43;00:00">更新于: 2026-02-17</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">3 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1411,6 +1413,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#react">React</a></li>
+    <li><a href="#rust">Rust</a></li>
   </ul>
 </nav>
   </div>
@@ -1426,6 +1429,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#react">React</a></li>
+    <li><a href="#rust">Rust</a></li>
   </ul>
 </nav>
   </div>
@@ -1607,6 +1611,46 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <p>React 的官方文档中就记录了 <a href="https://zh-hans.react.dev/learn/thinking-in-react"  target="_blank" rel="noreferrer">React哲学</a> 这一部分，通过一个具体的例子阐明了哪些复杂的 React 代码到底是怎么构建出来的。</p>
 <p>这里引用官方的描述：React 可以改变你对可见设计和应用构建的思考。当你使用 React 构建用户界面时，你首先会把它分解成一个个<strong>组件</strong>，然后，你需要把这些组件连接在一起，使数据流经它们。</p>
 <p>至于具体的 React 哲学到底是什么其实没有意义。当你使用错误的方式痛苦地理解大型 React 项目之后，再回过头来看这篇短小的教程，你或许会惊呼：原来如此！或许这才是真正的意义所在。</p>
+
+<h2 class="relative group">Rust
+    <div id="rust" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#rust" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>最近浅浅尝试了一下 Rust 编程，最大的感受就是：Rust 在设计层面真的很直白；下面是<a href="https://kaisery.github.io/trpl-zh-cn/ch00-00-introduction.html"  target="_blank" rel="noreferrer">官方文档</a>中对 Rust 的设计目标的描述：</p>
+<p>总的来说，Rust 最重要的目标是消除数十年来程序员习以为常的取舍，让安全和高效、速度和易读易用<strong>可以兼得</strong></p>
+<p>就一个非常粗浅的尝试来看，Rust 确实是做到了上面这些内容：引入所有权机制和生命周期消灭了空指针和垃圾回收机制，引入泛型避免重复书写代码，引入 Trait 用来约束泛型的行为；其他的概念与另外的编程语言非常类似</p>
+<p>总之，Rust 确实是实现了其目标。至于网络上对于 Rust 的声讨，我觉得大多集中在它为了实现目标而引入的复杂性，毕竟一些概念在其他主流语言中被隐藏在编译器或运行时之中，但这也是必要的取舍。</p>
+<p>为了让 Rust 的编程体验更好，最值得称道的应该是 Rust 的编译器了，精准而细致的报错提示能够快速定位出错的位置。另外在这个 Vibe Coding 的时代，如此严格细致到近乎繁琐的编译检查也让 AI 能够写出更高质量的代码而无需手工调校。</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          观点
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>个人认为 Rust 的语法可读性并不低，如果去掉一些花里胡哨的语法糖，那么 Rust 的语法几乎不用学习</p></div></details><p>总而言之，Rust 就像是对 C 的一种改进尝试，以一定的复杂度和学习曲线为代价，保持 C 的效率同时让代码更加安全。</p>
 
           
           
