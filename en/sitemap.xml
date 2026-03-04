@@ -3,6 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://morethan987.github.io/en/blog/trials-and-growth/</loc>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/trials-and-growth/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/trials-and-growth/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/blog/philosophy-of-programming/</loc>
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
@@ -372,7 +388,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/authors/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -388,7 +404,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/blog/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -404,7 +420,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/series/casual-essay/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -419,14 +435,8 @@
     />
   </url>
   <url>
-    <loc>https://morethan987.github.io/en/tags/engineeringpractice/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://morethan987.github.io/en/tags/experience/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -441,8 +451,24 @@
     />
   </url>
   <url>
+    <loc>https://morethan987.github.io/en/tags/life-summary/</loc>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/life-summary/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/life-summary/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/en/authors/morethan/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -458,7 +484,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/series/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -474,7 +500,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -490,7 +516,7 @@
   </url>
   <url>
     <loc>https://morethan987.github.io/en/</loc>
-    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -503,6 +529,12 @@
       hreflang="en"
       href="https://morethan987.github.io/en/"
     />
+  </url>
+  <url>
+    <loc>https://morethan987.github.io/en/tags/engineeringpractice/</loc>
+    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://morethan987.github.io/en/series/ai-engineering/</loc>
