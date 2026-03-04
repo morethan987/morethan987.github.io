@@ -407,6 +407,16 @@
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/series/casual-essay/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/series/casual-essay/"
+    />
   </url>
   <url>
     <loc>https://morethan987.github.io/en/tags/engineeringpractice/</loc>
@@ -419,6 +429,16 @@
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/tags/experience/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/tags/experience/"
+    />
   </url>
   <url>
     <loc>https://morethan987.github.io/en/authors/morethan/</loc>
