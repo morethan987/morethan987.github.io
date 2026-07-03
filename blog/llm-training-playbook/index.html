@@ -53,26 +53,26 @@
 
   
   <meta property="og:url" content="https://morethan987.github.io/blog/llm-training-playbook/">
-  <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="LLM训练实战">
-  <meta property="og:description" content="记录了各种各样的关于LLM训练的工程知识">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-28T00:00:00+00:00">
-    <meta property="article:tag" content="架构">
-    <meta property="article:tag" content="LLM">
-    <meta property="article:tag" content="工程实践">
-    <meta property="og:image" content="https://morethan987.github.io/blog/llm-training-playbook/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/llm-foundation-notes/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/llm-engineering-note/">
+	<meta property="og:site_name" content="Morethan 小站">
+	<meta property="og:title" content="LLM训练实战">
+	<meta property="og:description" content="记录了各种各样的关于LLM训练的工程知识">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-06-24T00:00:00+00:00">
+		<meta property="article:tag" content="架构">
+		<meta property="article:tag" content="LLM">
+		<meta property="article:tag" content="工程实践">
+		<meta property="og:image" content="https://morethan987.github.io/blog/llm-training-playbook/featured.svg">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/llm-foundation-notes/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/llm-engineering-note/">
 
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/llm-training-playbook/featured.svg">
-  <meta name="twitter:title" content="LLM训练实战">
-  <meta name="twitter:description" content="记录了各种各样的关于LLM训练的工程知识">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://morethan987.github.io/blog/llm-training-playbook/featured.svg">
+	<meta name="twitter:title" content="LLM训练实战">
+	<meta name="twitter:description" content="记录了各种各样的关于LLM训练的工程知识">
 
   
   
@@ -170,6 +170,145 @@
 
 
 
+
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/lib/katex/katex.min.8165100d4e41db6506cffac421025eebc765641d721cafd22814d4f11dd1da51dbdf6b6de56d5f986eb215db71c32019a2e6b1eaa0d57c6196d23da6ccfd659c.css"
+    integrity="sha512-gWUQDU5B22UGz/rEIQJe68dlZB1yHK/SKBTU8R3R2lHb32tt5W1fmG6yFdtxwyAZouax6qDVfGGW0j2mzP1lnA==">
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/katex.bundle.be2373409b7a64f041b7eb28ad641e31c67e6761bacac7cc4d75baf9ba55611e373f28a8d91bb3719d2d3543a1312acefdb54a3e24858a157fd1569c942cc76c.js"
+    integrity="sha512-viNzQJt6ZPBBt&#43;sorWQeMcZ&#43;Z2G6ysfMTXW6&#43;bpVYR43Pyio2RuzcZ0tNUOhMSrO/bVKPiSFihV/0VaclCzHbA=="
+    id="katex-render"></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
 
@@ -272,12 +411,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2025-05-28T00:00:00\u002b00:00",
+    "dateModified": "2026-06-24T00:00:00\u002b00:00",
     
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "116"
+    "wordCount": "1809"
   }]
   </script>
 
@@ -1097,6 +1236,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
   
+    
+  
 
   
 
@@ -1128,7 +1269,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-06-24T00:00:00&#43;00:00">更新于: 2026-06-24</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1347,8 +1488,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         width="96"
         height="96"
         alt="Morethan"
-        src="/img/figure_hu_85e7f4fe5e9dfceb.png"
-        data-zoom-src="/img/figure_hu_6e4b94ce0865b553.png">
+        src="/img/figure_hu_80d96930371440b1.png"
+        data-zoom-src="/img/figure_hu_4e8d74f572b8acb.png">
     
   
   <div class="place-self-center">
@@ -1431,6 +1572,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#基础部分">基础部分</a>
+      <ul>
+        <li><a href="#分词器">分词器</a></li>
+        <li><a href="#可用资源盘点">可用资源盘点</a>
+          <ul>
+            <li><a href="#内存占用">内存占用</a></li>
+            <li><a href="#张量计算">张量计算</a></li>
+          </ul>
+        </li>
+        <li><a href="#训练思路">训练思路</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1445,6 +1598,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#基础部分">基础部分</a>
+      <ul>
+        <li><a href="#分词器">分词器</a></li>
+        <li><a href="#可用资源盘点">可用资源盘点</a>
+          <ul>
+            <li><a href="#内存占用">内存占用</a></li>
+            <li><a href="#张量计算">张量计算</a></li>
+          </ul>
+        </li>
+        <li><a href="#训练思路">训练思路</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1604,7 +1769,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
         <div class="article-content max-w-prose mb-20">
-          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+          
+
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   当你了解一个网络架构的实现之后，一个很自然的问题：我该如何把这样一个模型训练出来？这一节记录了各种各样的工程知识，能够回答这个问题。
 </div>
 
@@ -1618,8 +1785,175 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     </span>
     
 </h2>
-<p>大模型架构五花八门，但想要真正了解一个架构，还是要落到实践中去。</p>
+<p>大模型架构五花八门，但想要真正了解一个架构，还是要落到实践中去。YouTube 上还是有很多高质量的网课视频可以学习的，比如 <a href="https://cs336.stanford.edu/"  target="_blank" rel="noreferrer">CS336: Language Modeling from Scratch</a> 课程，因此本文也相当于是 CS336 的一个笔记文本。</p>
 <p>“实践是检验真理的唯一标准”🫡</p>
+<p>所有的内容整体上可以分为五个部分：</p>
+<ol>
+<li>基础部分：分词器、可用资源盘点、模型架构、训练思路</li>
+<li>系统工程：内核、并行、推理</li>
+<li>规模定律(很多翻译为&quot;缩放定律&quot;，但语义上来说规模定律更确切)</li>
+<li>数据工程：预训练数据工程，脏但非常关键</li>
+<li>模型对齐：RL 后训练微调</li>
+</ol>
+
+<h2 class="relative group">基础部分
+    <div id="基础部分" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9f%ba%e7%a1%80%e9%83%a8%e5%88%86" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">分词器
+    <div id="分词器" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e8%af%8d%e5%99%a8" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>分词器这部分卡帕西有一个非常好的<a href="https://youtu.be/zduSFxRajkE?si=X3hpizNlFcFiIXQt"  target="_blank" rel="noreferrer">视频</a>，深入讲解了分词器的各种相关知识。</p>
+<p>分词器从功能上来说是一个独立于 Transformer 主体的一个配件，其主要功能是将一长串的文本字符串编码为整数，也就是 Transformer 模型真正能够处理的数据类型：一连串的整数序列。</p>
+<p>一个比较有意思的问题是：从底层来看，如果仅仅只是为了将字符映射为整数的话，数字化的文本其实并不需要进行特意进行编码，因为绝大部分数字文本都使用 UTF-8 进行编码，这些字符在计算机底层天然就是被整数编码的。</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">test_string</span> <span class="o">=</span> <span class="s2">&#34;hello, 世界！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">utf8_encoded</span> <span class="o">=</span> <span class="n">test_string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">utf8_encoded</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="sa">b</span><span class="s1">&#39;hello, </span><span class="se">\xe4\xb8\x96\xe7\x95\x8c\xef\xbc\x81</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">utf8_encoded</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">104</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">184</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">231</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">188</span><span class="p">,</span> <span class="mi">129</span><span class="p">]</span></span></span></code></pre></div></div>
+<p>从上面这个例子看来，一个非常简短的文本被编码为了 16 个整数，但很明显这个编码太琐碎了。Transformer 的注意力窗口大小有限并且非常昂贵，因此分词器的作用就是将琐碎的底层编码进行分块聚合，从而减少分词后的整数序列长度，提高模型的计算效率。</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          思考
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>一个值得关注的问题是：假设我们有充足的算力资源，直接在 UTF-8 序列上进行训练效果会不会更好？或者说我们可将 Tokenizer 视作一次简单的空间映射，将数据从嘈杂的 UTF-8 编码的空间中映射到一个更有语义的空间中。我们已经知道这种映射的有效性，毕竟所有主流大模型都是如此训练的，但具体有多少改进以及能否理论量化？</p></div></div><p>从具体算法上来说，一般都使用的是 OpenAI 当初使用的 BPE 算法，具有代表性的算法库就是 tiktoken。当然 Google 使用的算法库 sentencepices 也是被众多大模型采用的，但配置相比于 tiktoken 确实是复杂很多。</p>
+
+<h3 class="relative group">可用资源盘点
+    <div id="可用资源盘点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%af%e7%94%a8%e8%b5%84%e6%ba%90%e7%9b%98%e7%82%b9" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>大体上可用资源可以分为：单位时间计算能力(FLOP/s)、时间、数据量、内存大小、张量计算操作的算力消耗；资源盘点的作用就是根据已知的资源约束去估计训练用时或者估计能够训练出来的最大的模型参数量。</p>
+
+<h4 class="relative group">内存占用
+    <div id="内存占用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%86%85%e5%ad%98%e5%8d%a0%e7%94%a8" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>几乎所有的数据都是使用张量进行存储的，也就是一堆按照规则排列的浮点数。根据浮点数格式的不同，模型训练或推理占用的内存大小也不相同。一般来说浮点数的格式有如下几种：</p>
+<ol>
+<li>float32：32-bit float，占用 4B 的内存空间</li>
+</ol>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/float32.png"
+    width="3220"
+    height="120"
+    src="/blog/llm-training-playbook/img/float32_hu_673c746bb4305281.png"
+    srcset="/blog/llm-training-playbook/img/float32_hu_673c746bb4305281.png 800w, /blog/llm-training-playbook/img/float32_hu_82e649b97930cef.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/float32.png"></figure>
+</p>
+<ol start="2">
+<li>float16：16-bit float，占用 2B 的内存空间，动态范围相比 float32 小，在反向传播算法产生的梯度非常小的情况下会产生数值下溢(这也是 bfloat16 产生的原因)</li>
+</ol>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/float16.png"
+    width="1620"
+    height="120"
+    src="/blog/llm-training-playbook/img/float16_hu_b946da37a56f86b0.png"
+    srcset="/blog/llm-training-playbook/img/float16_hu_b946da37a56f86b0.png 800w, /blog/llm-training-playbook/img/float16_hu_1e9fb1c5fef34a3b.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/float16.png"></figure>
+</p>
+<ol start="3">
+<li>bfloat16：brain floating point，同样占用 2B 空间，通过牺牲分辨率来扩大动态范围，尽量减少奇怪的数值溢出问题(深度学习中分辨率没那么重要)</li>
+</ol>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/bfloat16.png"
+    width="1620"
+    height="120"
+    src="/blog/llm-training-playbook/img/bfloat16_hu_36ddee8a508e6e1a.png"
+    srcset="/blog/llm-training-playbook/img/bfloat16_hu_36ddee8a508e6e1a.png 800w, /blog/llm-training-playbook/img/bfloat16_hu_27121af6af11a6a.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/bfloat16.png"></figure>
+</p>
+<p>实际工程中一般都使用混合精度进行训练：float32 用于优化器状态，bfloat16 用于参数、激活值和梯度。当然了，还有一些更加激进的精度表示方式比如 float8， float4 但实际上模型的训练一般不会用。并且 float4 在使用的时候也不会直接用于表示一个参数值，而是与相邻的参数值打包共享一个精度缩放参数，这种操作的有效性依赖于参数的局部相似性，也就是相邻的参数可能具有相近的数量级，于是可以将公共的数量级提取出来从而用一批低精度的数配合缩放参数表达一批高精度的数。</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          与量化的差别
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>量化是将一个高精度训练的模型对齐到一个低精度的模型空间中，其实现难度比直接在低精度上训练模型更低</p></div></div>
+<h4 class="relative group">张量计算
+    <div id="张量计算" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bc%a0%e9%87%8f%e8%ae%a1%e7%ae%97" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>张量乘法的计算量，以下面这张图的计算为例</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/tensor_multipule.png"
+    width="1101"
+    height="561"
+    src="/blog/llm-training-playbook/img/tensor_multipule_hu_ee3e05405ed4b7dd.png"
+    srcset="/blog/llm-training-playbook/img/tensor_multipule_hu_ee3e05405ed4b7dd.png 800w, /blog/llm-training-playbook/img/tensor_multipule.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/tensor_multipule.png"></figure>
+</p>
+<p>总计算量的计算思路：最终得到的张量为 \(B\times K\) 的形状，总共有 \(B\cdot K\) 个元素，每个元素都是由 \(D\) 组元素相乘最后求和得到，也就是最终结果的每个元素都代表了 \(2D\) 的乘法或加法计算量。因此总计算量为：\(2D\cdot B\cdot K\)</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>这里考虑的是最简单的情况，不包含任何硬件的优化，比如所有的加法可以压缩为一次加法等等</p></div></div><p>这里还有一个比较重要的工程优化指标：MFU(Model FLOPs Utilization)，表示实际模型运行时的算力利用率。可以简单理解为：在实际工程实现中，整个 GPU 的算力并没有被 100% 利用，实际利用率就是 MFU</p>
+
+<h3 class="relative group">训练思路
+    <div id="训练思路" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%ae%ad%e7%bb%83%e6%80%9d%e8%b7%af" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
 
           
           

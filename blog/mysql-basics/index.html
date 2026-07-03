@@ -53,28 +53,28 @@
 
   
   <meta property="og:url" content="https://morethan987.github.io/blog/mysql-basics/">
-  <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="MySQL基础">
-  <meta property="og:description" content="MySQL的安装部署流程以及基础语法">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
-    <meta property="article:tag" content="MySQL">
-    <meta property="og:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/ubuntu-note/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/cloud-server-build/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/qdrant-feature-guide/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/neo4j-basics/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/hugo-blog/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/pytips/">
+	<meta property="og:site_name" content="Morethan 小站">
+	<meta property="og:title" content="MySQL基础">
+	<meta property="og:description" content="MySQL的安装部署流程以及基础语法">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
+		<meta property="article:tag" content="MySQL">
+		<meta property="og:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/ubuntu-note/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/cloud-server-build/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/qdrant-feature-guide/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/neo4j-basics/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/hugo-blog/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/pytips/">
 
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
-  <meta name="twitter:title" content="MySQL基础">
-  <meta name="twitter:description" content="MySQL的安装部署流程以及基础语法">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
+	<meta name="twitter:title" content="MySQL基础">
+	<meta name="twitter:description" content="MySQL的安装部署流程以及基础语法">
 
   
   
@@ -1323,8 +1323,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         width="96"
         height="96"
         alt="Morethan"
-        src="/img/figure_hu_85e7f4fe5e9dfceb.png"
-        data-zoom-src="/img/figure_hu_6e4b94ce0865b553.png">
+        src="/img/figure_hu_80d96930371440b1.png"
+        data-zoom-src="/img/figure_hu_4e8d74f572b8acb.png">
     
   
   <div class="place-self-center">
@@ -1709,38 +1709,38 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d --name mysql -p 3306:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>password -v /Users/liaoxuefeng/mysql-data:/var/lib/mysql mysql</span></span></code></pre></div></div>
 <p>参数解释：</p>
 <table>
-  <thead>
-      <tr>
-          <th>参数</th>
-          <th>含义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>-d</code></td>
-          <td>表示后台运行</td>
-      </tr>
-      <tr>
-          <td><code>--name</code></td>
-          <td>表示容器的名字，不输入 Docker 会自动选择一个名字</td>
-      </tr>
-      <tr>
-          <td><code>-p 3306:3306</code></td>
-          <td>表示把容器的端口 3306 映射到本机，这样可以在本机通过 3306 端口连接 MySQL</td>
-      </tr>
-      <tr>
-          <td><code>-e MYSQL_ROOT_PASSWORD=password</code></td>
-          <td>表示传入一个环境变量，作为root的口令，这里设置的口令是 <code>password</code>，不输入此项则会自动生成一个口令，需要查看日志才能知道口令，<strong>建议设置</strong></td>
-      </tr>
-      <tr>
-          <td><code>-v /path:/var/lib/mysql</code></td>
-          <td>表示将本地目录映射到容器目录 <code>/var/lib/mysql</code> 作为 MySQL 数据库存放的位置，需要将 <code>/path</code> 改为你的电脑上的实际目录</td>
-      </tr>
-      <tr>
-          <td><code>mysql</code></td>
-          <td>告诉 Docker 你要运行的镜像的名称</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>参数</th>
+					<th>含义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>-d</code></td>
+					<td>表示后台运行</td>
+			</tr>
+			<tr>
+					<td><code>--name</code></td>
+					<td>表示容器的名字，不输入 Docker 会自动选择一个名字</td>
+			</tr>
+			<tr>
+					<td><code>-p 3306:3306</code></td>
+					<td>表示把容器的端口 3306 映射到本机，这样可以在本机通过 3306 端口连接 MySQL</td>
+			</tr>
+			<tr>
+					<td><code>-e MYSQL_ROOT_PASSWORD=password</code></td>
+					<td>表示传入一个环境变量，作为root的口令，这里设置的口令是 <code>password</code>，不输入此项则会自动生成一个口令，需要查看日志才能知道口令，<strong>建议设置</strong></td>
+			</tr>
+			<tr>
+					<td><code>-v /path:/var/lib/mysql</code></td>
+					<td>表示将本地目录映射到容器目录 <code>/var/lib/mysql</code> 作为 MySQL 数据库存放的位置，需要将 <code>/path</code> 改为你的电脑上的实际目录</td>
+			</tr>
+			<tr>
+					<td><code>mysql</code></td>
+					<td>告诉 Docker 你要运行的镜像的名称</td>
+			</tr>
+	</tbody>
 </table>
 <div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
       <div class="flex items-center gap-2 font-semibold text-inherit">
@@ -1901,8 +1901,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/JoinQuery.png"
     width="1077"
     height="787"
-    src="/blog/mysql-basics/img/JoinQuery_hu_3039e2be6e61d143.png"
-    srcset="/blog/mysql-basics/img/JoinQuery_hu_3039e2be6e61d143.png 800w, /blog/mysql-basics/img/JoinQuery.png 1280w"
+    src="/blog/mysql-basics/img/JoinQuery_hu_56c494bf9070f159.png"
+    srcset="/blog/mysql-basics/img/JoinQuery_hu_56c494bf9070f159.png 800w, /blog/mysql-basics/img/JoinQuery.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/mysql-basics/img/JoinQuery.png"></figure>
 </p>

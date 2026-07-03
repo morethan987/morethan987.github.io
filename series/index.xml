@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>论文笔记</title>
+      <link>https://morethan987.github.io/series/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/series/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>随笔</title>
@@ -26,16 +36,6 @@
       
       <guid>https://morethan987.github.io/series/ai%E5%B7%A5%E7%A8%8B/</guid>
       <description>&lt;p&gt;所有AI相关的工程性知识都汇聚于此🙌&lt;/p&gt;&#xA;&lt;p&gt;然而大部分都是基础性的知识，并非AI时代的产物🤔&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>论文笔记</title>
-      <link>https://morethan987.github.io/series/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://morethan987.github.io/series/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
       
     </item>
     

@@ -1,0 +1,3002 @@
+<!doctype html>
+<html
+  lang="zh-cn"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="zh-cn">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>预测编码调研 &middot; Morethan 小站</title>
+    <meta name="title" content="预测编码调研 &middot; Morethan 小站">
+  
+
+  
+  
+    <meta name="description" content="从预测编码出发进行的一次小调研活动">
+  
+  
+    <meta name="keywords" content="论文,笔记,架构,调研,">
+  
+  
+  
+  <link rel="canonical" href="https://morethan987.github.io/blog/predictive-coding-survey/">
+  
+
+  
+  
+    <meta name="author" content="Morethan">
+  
+  
+    
+      
+        
+          <link href="https://github.com/morethan987" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://morethan987.github.io/KnowledgeBase" rel="me">
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="https://morethan987.github.io/blog/predictive-coding-survey/">
+	<meta property="og:site_name" content="Morethan 小站">
+	<meta property="og:title" content="预测编码调研">
+	<meta property="og:description" content="从预测编码出发进行的一次小调研活动">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2026-07-03T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-03T00:00:00+00:00">
+		<meta property="article:tag" content="论文">
+		<meta property="article:tag" content="笔记">
+		<meta property="article:tag" content="架构">
+		<meta property="article:tag" content="调研">
+		<meta property="og:image" content="https://morethan987.github.io/blog/predictive-coding-survey/featured.svg">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/ctm-note/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/rstar-note/">
+
+  
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://morethan987.github.io/blog/predictive-coding-survey/featured.svg">
+	<meta name="twitter:title" content="预测编码调研">
+	<meta name="twitter:description" content="从预测编码出发进行的一次小调研活动">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+  
+    
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.135b419383463b826720e4eca9b8c4ec1520fb69ad49740df123cc65e25c462d246f60281936bf4f537859445abd47616998b7c09a771d915f8f1155d124a008.css"
+    integrity="sha512-E1tBk4NGO4JnIOTsqbjE7BUg&#43;2mtSXQN8SPMZeJcRi0kb2AoGTa/T1N4WURavUdhaZi3wJp3HZFfjxFV0SSgCA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.e7c179f2ce01f5384ef304ba4f9b3c076f0cc43354abbe1e84bef2079ed71ffcbdd63629d582df9692f9b8cb9dd3a3775b7d68087bbb911f2e672b8a0a3784ea.js"
+    integrity="sha512-58F58s4B9ThO8wS6T5s8B28MxDNUq74ehL7yB57XH/y91jYp1YLflpL5uMud06N3W31oCHu7kR8uZyuKCjeE6g=="></script>
+  
+  
+  
+  
+  
+    
+    <script
+      type="text/javascript"
+      src="/js/zen-mode.min.9814dee9614d32aeb56239d118edfe20acd6231424f9b19c2dd48835038414130a5e946c0d1c9087d60e60e31840c9babfd217e3d4b95643dc8d651a71ccdf4a.js"
+      integrity="sha512-mBTe6WFNMq61YjnRGO3&#43;IKzWIxQk&#43;bGcLdSINQOEFBMKXpRsDRyQh9YOYOMYQMm6v9IX49S5VkPcjWUacczfSg=="></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.bdda7dece6cbaf08deef7d254f7f842f3261c2524d247905127c9a20decc03f1011a2950048464c79272c1ce0705a49a41147f39f2b95163bb71d404b33263ef.js"
+      integrity="sha512-vdp97ObLrwje730lT3&#43;ELzJhwlJNJHkFEnyaIN7MA/EBGilQBIRkx5Jywc4HBaSaQRR/OfK5UWO7cdQEszJj7w=="
+      data-copy="复制"
+      data-copied="已复制"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/lib/katex/katex.min.8165100d4e41db6506cffac421025eebc765641d721cafd22814d4f11dd1da51dbdf6b6de56d5f986eb215db71c32019a2e6b1eaa0d57c6196d23da6ccfd659c.css"
+    integrity="sha512-gWUQDU5B22UGz/rEIQJe68dlZB1yHK/SKBTU8R3R2lHb32tt5W1fmG6yFdtxwyAZouax6qDVfGGW0j2mzP1lnA==">
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/katex.bundle.be2373409b7a64f041b7eb28ad641e31c67e6761bacac7cc4d75baf9ba55611e373f28a8d91bb3719d2d3543a1312acefdb54a3e24858a157fd1569c942cc76c.js"
+    integrity="sha512-viNzQJt6ZPBBt&#43;sorWQeMcZ&#43;Z2G6ysfMTXW6&#43;bpVYR43Pyio2RuzcZ0tNUOhMSrO/bVKPiSFihV/0VaclCzHbA=="
+    id="katex-render"></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="module" src="/js/firebase.min.cad74e0625f72f359ec6d6fed579b87733749de70400e7614048050ed08832ee3f58983d5d139fb1ddc5f7f2f5047d45ed80ec923534a3660fc3a7965f936866.js" integrity="sha512-ytdOBiX3LzWextb&#43;1Xm4dzN0necEAOdhQEgFDtCIMu4/WJg9XROfsd3F9/L1BH1F7YDskjU0o2YPw6eWX5NoZg=="></script>
+
+  
+    
+    
+      
+      
+        
+      
+        
+      
+      
+<script id="firebase-config" 
+        type="application/json"
+        data-views="views_blog/predictive-coding-survey/index.md"
+        data-likes="likes_blog/predictive-coding-survey/index.md">
+  {
+    "config": {
+      "apiKey": "AIzaSyAG8Rm167cOyRl2_h3Grnz6OD-aq4nRQvM",
+      "authDomain": "morethan-website.firebaseapp.com",
+      "projectId": "morethan-website",
+      "storageBucket": "morethan-website.firebasestorage.app",
+      "messagingSenderId": "480115699967",
+      "appId": "1:480115699967:web:22fa07c76fe400b0a2dcca",
+      "measurementId": "G-V70VD5H4D8"
+    }
+  }
+</script>
+
+    
+  
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blogs",
+    "name": "预测编码调研",
+    "headline": "预测编码调研",
+    "description": "从预测编码出发进行的一次小调研活动",
+    "inLanguage": "zh-cn",
+    "url" : "https://morethan987.github.io/blog/predictive-coding-survey/",
+    "author" : {
+      "@type": "Person",
+      "name": "Morethan"
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-07-03T00:00:00\u002b00:00",
+    "datePublished": "2026-07-03T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-07-03T00:00:00\u002b00:00",
+    
+    "keywords": ["论文","笔记","架构","调研"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "6875"
+  }]
+  </script>
+
+
+
+  
+  
+    
+
+  <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-PEDMYR1V0K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEDMYR1V0K');
+</script>
+
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        跳过正文
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only">Morethan 小站</span>
+          
+            <span class="logo object-scale-down object-left nozoom">
+              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="507px" height="507px" viewBox="0 0 507 507" enable-background="new 0 0 507 507" xml:space="preserve">  <image id="image0" width="507" height="507" x="0" y="0"
+    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfsAAAH7CAQAAABhgv5ZAAAAIGNIUk0AAHomAACAhAAA+gAAAIDo
+AAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAuIwAALiMBeKU/dgAA
+AAd0SU1FB+kBBAYpGWs9FZQAACRhSURBVHja7d13nBXV/cbxz7K79GrBWBBFusaKoBCVWGKJvSsi
+FiKKRmNPFAsJxK787ERFoyKoUVETW+wdRVRAugWsoIggLLssu/v7Q43Itnt3zsz3zJzn/Vdece+5
+z1nus3Pv3JlzCqoQkbA0sg4gIklT7UWCo9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsFR7UWC
+o9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsFR7UWCo9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR
+4Kj2IsFR7UWCo9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsFR7UWCo9qLBEe1FwmOai8SHNVe
+JDiqvUhwVHuR4Kj2IsFR7UWCo9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsFR7UWCo9qLBEe1
+FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsFR7UWCo9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsFR
+7UWCo9qLBEe1FwmOai8SHNVeJDiqvUhwVHuR4Kj2IsEpsg4gDrWjB93oRQfasQHNaE9hLT9ZQRmL
+WMZCFjOX95nOZOvwkpyCKusEEl0hm7M3e7AJrWlF07wfX8JSvuF9XuQl5lhPRuKn2qdbW7bgKPrT
+kWYOPrCtopQZjOUpPmeZ9dQkPqp9WrWgG7/lD3SLZfSXGMNbzEIvj0xS7dOoPbtwEAfSLNZnWch9
+PMNzrLSerrim2qfN2hzPfuyc0LNV8BhPcLeqny2qfZq05DQOZ5uEn7WSN/gnY6iwnr64otqnRSHH
+cQ5dja60KOM1RvCiPutng2qfBkX04mp2NL64ahXjGcEs61+GRKfa+29T/sjptV54k6yvuYSxLLWO
+IdGo9r47gmFsYR3iFyZwFa9bh5AoVHufrcVFnObhBdRfcQ1XW4eQhlPt/dWL69nROkStxnEmC6xD
+SMOo9r46hutpZx2iTtMZzBvWIaQhdOOtj5pzAfd4XnroyYMcaR1CGkJHe/+05EYGWYfIUTnncSOr
+rGNIfnS0982m3JGa0kMx1/FXvYrSRkd7v3RnjMen8WpzNRdQbh1Ccqfa+6Qr97K9dYgGeZAhLLYO
+IbnS2zN/bMbdKS09HMbZnlxHKDnQ0d4Xa/EQ/a1DRDKCv+qtfjroaO+HtoxKeelhGBdYR5Dc6Gjv
+hxs51TqCA+WcyD3WIaR+Otr74FyGWEdwophb2M06hNRPR3t7h3Afja1DODOTA3VPvu90tLfWk79l
+qPTQneG0sA4hdVPtbTVmJD2sQzh2RCbOU2Sa3uTbOo0brCPEYCW78ap1CKmdam+pH/+hjXWIWLzN
+bnxvHUJqozf5lq7KaOlhey6yjiC1U+3t/DmFN93kbjC7W0eQ2uhNvpUu/JeOiT1bCZUUUEUTihN7
+zv+yH2WJPZvkQbW3UcRtHBfzc6zkU75gGTNZytwfC9ie9VibLqzNunSI+fkrOYF/xvwc0iCqvY09
+uD/GRbOWMZHJTOFdPqjlJ9rRmT5sSa9Yt9aaxm4sjHF8aSDV3kJLxnBYTGPPYRwv8R7f5vTTndia
+PRgY2wU2p3GzNtDyj2pvYVeeoEkM405lFC/wcZ6PKqIHgxgay7bZ8+jFNzGMK5HoTH7yWjAkhtJ/
+w2nsxJi8Sw+rmMr59OAuSp2n6shA52NKZDraJ683Ex2PuJInOIP5kcfZlSvo5TjbZ3SjxPGYEpGO
+9skb7Hi8zzmdgxyUHp5nN0Y73sd+QwY4nq9EpqN90jox3elb/Fc53/FGlCdzBa0djvc2fbWSvl90
+tE/acU5LP54jnO8+eyuHMd3heFvye8cJJSLVPlktOMrhaLczmC9iSPkMA5nhbLQmsX1ZKQ2k2idr
+NzZwNtZdnMrymHJO5ljmOButD11jyikNoton6xCaOxrpac5gZYxJJ3EiXzsaqyM7x5hU8qbaJ6m1
+s0thZzOEpTGnfYWzHF1hV8xvE7wFSOql2idpHzo5GWc5ZzAvgbz3crWjkbanSwJ5JUeqfZL6Obr2
+/W88lVDiS/mPk3E2o1tCiSUHqn1y1mFLJ+M8w62JZS5hpJNP+I3onVhmqZdqn5wuTo54KxnBkgRT
+v8FoJ5/w+7BugqmlTqp9crqxnoNRxvBGwrnvZKaDUbZhnYRzS61U+6QUOFkP/0tGJ36h60f8i8rI
+o7TVST1/qPZJaevkk/3zvGeQ/aYG3M5b3Q56tflC/xBJac/mkcf41mg/2QU86WCUnrEsLSINoNon
+ZS02ijzGfJ4xSj/awT3zW6r2vlDtk9KegogjVDLebF26aQ5O622qLTF9odono4CtIo9Rxr8NZzDB
+wRgbG+aX1aj2yShmk8hjzKt1+eskPOpgjKzt7Ztaqn0yih18a231uf4HH/Np5DGS2wVI6qTaJ6Ox
+g5f8JNMZlDtYxedXpjOQ/1Htk9GIppHHmGI6g1IHz6+jvSdU+2Q0YbOII6x08CY7mo8ij6D1Wj2h
+2iejEYURR5hjvvps9Dv82xjPQH6k2qeF29XrG2Jl5EW8tKKeJ1T7tJhtvlf8MhZHHCHqOx5xRLVP
+i0UO7oKLKuo7Dn2294RqnxY+HCmjXl4snlDtRYKj2osER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYi
+wVHtRYKj2osER7UXCY5qL7mLek2+D/cVCKq95CPqPYDfWE9AfqDaS66W81XEEaZZT0F+oNpLrhYx
+PeII862nID9Q7SVXKyLvtvuK9RTkB6q95O4dlkV4dAkvWU9AfqDaS+7ei3S8Hht5LT5xRLWX3H3H
+vxq8bHcp/4y88q44otpLPv7Fyw185D95xzq8/ES1l3ws5c9834DHTeHvlFqHl5+o9pKftzk378t2
+lnGZvrzziWov+RrNNXmtmL+MPzHeOrSsTrWX/J3PpSzP8WcXcTp3WAeWX1LtJX9VjOAEPsjhJ99m
+AHdax5U1FVkHkJR6gPf4AyewVq0/MY9buZfPrINKdaq9NNRszuVuduFI+q3xXyp5nkd5htnWEaVm
+qr1EMZWp3EN7OtGHllRQzDze5ROWNOhrPkmIai9RLWEJc3jaOobkTqf0RIKj2osER7UXCY5qLxIc
+1V4kOKq9SHBUe5HgqPYiwVHtRYKj2osERxfnhqYRzWlBC7rTjCrrMAnNeBlzKKOKMlaxkpUNXgY0
+M1T7kLSkB/vTmz60sY5iYh6LmM985vMOS/mahZRZR7Kh2odjfwZwSNC7znakI9v++L/LmMZU3mMO
+U8JbE0C1D0MHRnCMzuSspgnbsR1QznvM5HVeZ4p1pOSo9iH4NWP5tXUITxWzPdszgPm8x5M8xCLr
+QEnQ3//s25VnVPp6NGITDuR63uc2umf/YKjaZ93mjOZX1iFSogkbMpipPMLetLMOEyfVPtvacRed
+rUOkTBH78gQPc1gdy4OmnGqfbWfTyzpCSvXnAe7jQOsY8VDts6wXp1hHSLU9GcdY+lrHcE+1z65C
+jsju29SENOVoHmIkTa2DuKXaZ1cHDrCOkAm/4gImswcF1kHcUe2za0u6WEfIjB48xSW0tY7himqf
+VY3oYx0hUxpxCfexjXUMV5ORbGrODtYRMmdvHmGAdQgXVPusKmID6wgZ1JF/cKl1iOhU+6yqotw6
+QiY15xLGpP3G5cxffVyHQprRmJZ0phsd6MC6FLFZvf+gy/iImTzHy3wX6t3awTuedTklzbfrhlj7
+AtanPRuyK9uyCZvk+eh2dGAXhlDKg9zKJFZaT6dWId9ZH7d9ac/RfGgdo6FCq31PtqIPO9Arcima
+MpCB3M51TLeeVI0qWWodIdN6M56jmGsdo2HCqX1X+tOPPnRzOupgduJSxltPrgalvK9z+bHqxTgG
+MtM6RkOEUfsDOYqt6RrL2N24g2bcaT3Fasp5kyHWITKuF3cziBnWMfKX9dq35gSOogetYnyO5lxP
+AWOsp1rNFCr0+T5m2zOKQXxlHSNfWf4Cbz3+xDSupXespQdoyeXsZT3daubwiHWEAPyOy2liHSJf
+Wa19R4byJtfRIaEbKNZlJOtZT3oN3zNe390nYBDnW0fIVxZr34xBTOCmvL+ai2ZbjvfuHq3neNY6
+QhCGM9g6Qn6yV/vdeYS72NrgmU9lY+vJr+E7/so31iGCcA2/tY6Qj2zVvgVXMY49jZ59I/a3/gVU
+8yaXaeunBLTmcta1DpG7LNV+J57nHNYxTHAALax/CdVczw3WEYLQm+HefcirVVZq35JzeI7exin6
+e7jM8irO4lrdPZCAwRxuHSFX2ah9F+7gKoqtY1CY8GnEXJ3NH/nYOkTmFXMhHaxD5CYLtd+DR735
+O7tt9CFicRsHcSel1jEy7tdckI4LpNJf+0GMo4d1iP/x7Vz+z97nBPZhVBovJU2Rk9jFOkIu0n1x
+bhEXcJ5Xp9H8vjzmBV7iWjZmc3rSikrrOImopCmdaMbmiSx63YjL2IEq60nXJ821L+Jihnl29tSv
+NNVV8imf8hqFFPr/4nSkgGIKaEIbtqY/u7MhLWN8l9ubP3K99ZTrk97ar8VF/Mk6RDVp2Sa5ggrr
+CAlaCSxjER/xMNCNA9mPnrF96zKUMSyznnLd0vrZvohbPSw9vGMdQOo1iyv4DQMYy6exjL8ZQ62n
+WJ901r4RwznEOkQNKphjHUFy9CTHcBi3xHANYxHH+L61eBprX8wI/uJl8ol8Zx1B8jCRoezKf52P
+29P31fR9LE99TuE8T0+djff9M51U8wpHcD4lTscs5EiPv8oljbU/gms8vSTiM54O5ux4lizmSg51
+vCZeL3a0nlZd0lb77bjG228f7mS2dQRpoCfZk+ecjngsra0nVbt01X59/sGG1iFqMZe7rSNIBPM5
+inscjtc/piVbnUhT7Qu51ttr3ks4M61rpsuPvuYP3OFstObs7emHUdJV+yEcYR2hFuWcxb+tQ0hk
+ZZzh8N/xOFpaT6g26al9Py7x9Px9BWcw2jqEOLGcU3jR0Vid+LX1dGqTlto352zaW4eo0UJO5hbr
+EOLMZ1zMl47GOsp6MrVJS+2P4yDrCDVYydMcxO3WMcSpVxjuaKT+vn66T0ftuzLMOkI1i/g3J7IX
+r1sHEedGM8HJOJuxufVUaubrd+C/dDHrJ/Zcq/iijuW5CijjC2YwhXeY7PjaLvHH6ezE2pFHKWZv
+plhPpSZpqH3/BJbMms0k3uZLPqWE5XW+B6pgOd9qScqM+5QruDLyKI3YnSusp1IT/2tfxMUxLo65
+nNk8wEN8zQpVWVZzGwMdnInflLX41noq1flf+2PpG9PIc3maW5lmPUHx0ndcz22RR2lNd970b/ky
+32vfihNj2U90KhO4kYXW0xOPPctnbBRxjNZ0511WWE9lTb6fyT8ohstxFzGSA7hYpZc6zXNwl0UT
+tqWx9USq87v2LTjA+Xqn/2Y/hmmzCKlXFc87WDalk4+Xmfld+9/we8cjXskxvGE9LUmJybwbeYxW
+dLKeRnU+174R+zj9XP81x/IXllhPK0hNaU0b2tCGtrTw+lW3usUOTvhuSC/raVTn8ym9zhzqcLS5
+HM+r1lMKUFs605cd6EpTKoFiPmciE5nGR9bRcjCRIRE/mzf1cDtUr2u/Ixs4G2s2Rzp4wyb5acHe
+HMt+a/y/3dkNmMsjTPD+0uZpfM6mkUZYj57Wk6jO37dbTTnB2VhTVXoDezGeB6uV/iedOZdHGUkr
+65h1msM3kcfwabO2H/lb+470czTSYs5R6RM3jLHsW8/PrMMFPOvvXelASeRz+Y3oYj2JmkL5ai9H
+Ny1WMIxnrCcTmAKuYThr5fSzvXmILawD1yH6UmlxXG4Wka+1L3C2wcAYbraeTGCKuZaz8nhldeEh
+X29QBQff/Hh3aa6/te/s6IUwk0utpxKcoZya5yO6cg/rWMeuxZIsbhLqa+13dnJJYxUX8oX1VALT
+nT834I7JbbjE09fiLP+uqI/Oz1819Hfy1eL9PGw9kcA04bwGbvs4kN2sw9eo0NOFWyPxs/ZFbO1g
+lOVcZD2R4PRp8KLmbTjCx5NfNPO0I5H4OaUtWdfBKKO1YUXCijiY5g1+9DE+XthCZ+c3g3nAz9r3
+cLB/WAl3Wk8jOO3ZI8Kjm3i5XWQTvclPylY0izzGY3xiPY3gbBLxeP0bD4+sHSKP4OEF8H7Wvkfk
+Ecp5VHvNJy7qvWZ9vLuQtcDBfSEeLufiZ+2jX6c9Q3fVJ66IbhFH6Ojd0X79yGeZKn2809DP2kdf
+j+QtPrWeRHAKIpfWvy/LukSufSnfW0+iOj9rH3Wn0Cqm+HhJZOZl73ce/TulRcyynkR1ftY+6h44
+CzJ4x52nu6llWgG9Ir//WMZX1tOozs/aR/1VL2CG9RTWUMWqiCMsyeCx1Hebsl3kMRbygfU0qvOz
+9lGPbEtYbD2FNaxkQcQRZmbxlhDP9XVwQ9j3Pq7S7Gfto5rt3ZGxhPcijqDde5LWkn0cjDLDx82w
+sll7/74pLeHJSI+f7uMxI+M6c3DkMVbwPuXWE6kui7WP/jk6jkyvszLC4//r4Z+yrBvo4Nagpczw
+cUvVLNa+1MtbcGbzQIMfW8LDHv4py7YeDHEwytdMocp6KtVlsfaVXi6MsJyxLG/gY+9nonX84Fzm
+5ELh9/z8c53F2ld5es77ee5p0OMWcKWPbxQz7eB6V/3NxSpetp5IzbJY+2aRrw2Px0ouZmrejyrl
+ImZaRw/M+ox0cnlUGU9YT6VmWax9IW2sI9Tia45mdp6PuYU7rGMH5+90dzLOdD63nkrNslh7vK09
+TOMQ5uT806u4lrO9uwYh687kOEcjjbWeSm2yWfvO1gHqMI1DeCunn/yS8zjbx/PAmXaAsxUYK3jK
+ejK18bP2UY9vbSOs6Ba/qezOcL6s56f+zeFcZx01OL253tkOta8xz3o6tfGz9lGt4+O+Y6v5nks5
+iL/W8jl/BfdzOEdqW+7EbcPdbOxstDsptZ5QbTxc5wtYEPHW2w3ZgvetJ1GPiUzkLjqyEzuyIY2o
+opClvM+bTOYjLQhmYE9uibip9eo+9PXLO/C19lH/Sjamj7+nU1bzMR/zEs1+3EWmgApKfbyCOwCN
+OIHLnG7I9bjPd1H4WfvPI//V3Z4NUrINVhUl1hGCty7ncJ7TEct4yueTsX5+to+++tiv2dJ6EpIS
+u/OI49LDf/w+M+Nn7aOvNdqC3Tx9JyM+6ca1TKCf41FLebTB918kws/aT3ZwDfpAh+dkJYs2ZjgT
+ODOGtfkn84j15Orm5xFxJksjr1i6Hr/nBuuJiKf6cDx70TGWscu4w8dFslfnZ+0ns9jB5pdnch+L
+rKciHmlKCzbkAA6ke4wXdL3KXdYTrY+ftS9lPl0jj7Ipp3OJ9VQkZs1pR4s61lquopBWFNGdDdic
+/vwq5jwrGOH/XRR+1h6eZVcH5x2Gcm8eN75IujRnF3qwLd1Zv47aV9LE6ffx9RnLi9a/mPr5Wvsn
+Ge5gJbN1uMLBMojin0L+wD7s7d3r92Ouso6QCz/P5MMHfOhknIOcrIgmfunLU9zCft6VHi7Lez0F
+E77WvsLZuiSXsLP1ZMSpITzG7tYhavQI91lHyI2vtYdHHY2zPld6ff+95KOYK7mZta1j1Ggh1/h9
+kc7P/K39FGc7hfbhFlpbT0ccaMSfOdvT12wVw3nNOkSu/PwVAnzvcA253bnGwQlCsXYwF3j7ir2f
+0dYRcufrLxGqeI7vnI02mDt0sW7KdebvNLUOUYvJnOXpMu018rf2MJ2nHY42gPs8XUhbcnOst2sm
+fc5J9S6S5hWfa1/KQ07vWe7HY072MBULXTneOkItyjmbd6xD5Mfn2sPLvO50vK48zoXOlkiU5BSw
+JxtZh6hRBUO53zpEvvyu/QIecfyJqREjeIC9nOx5IslpwZHWEWpUxZXcbR0if37XHsYy3fmYu/M4
+dzrZ40ySsj59rCPU6DKGRdrA3Ijvtf+Ke2PYM7SIgYzjfl2vnxqdvXx/9ncu8f9uu5r4Xnu42dHV
++WtqyeHcxbuMpJf1FKVem1sHqMEILvFzG+v6+Xczw5qWcRW3xzR2K7Zma05nIa/wArOZzUqgglU+
+r3rqVFVKXrhJ3jqbi0pGMjxN39T/kv+1hzGcyI4xjt+SlnRiEFDObMpZzMdU1HEHd3Y0YgXzeZtP
++NzzT6h+/Rku4W9cnd7Sp6P2VZzJS4lcXFv845vJ31pPOWGf8iQP8ZKDhUvjUmwdYDULOCstd9rV
+xv/P9gCTGGUdIdM6cBJPcp/zhaPdmW8d4H/e5ai0lz4tta/g/5hqHSLjGnEwD3KmdYxaTLYO8KMH
+OJgXrENEl47aw5eM9PzTZxasz5Vcax2iRh+z1DoC5ZzLiXxiHcOFtNQeHuAW6wgBKOJMrvPwJuXv
+eMs4wVvsxtVZ2Yk4PbWvYqTjK/SlZn/ycJnx5Txm+OxfcQ278or1L8Gd9NQevuZPLLEOEYST2dU6
+QjWP8bnRMz/OYZyTluWycpOm2sPbDLWOEIR2/C32bSTyNZ/rDJ51IgM50O/daxsiXbWH+xhmHSEI
+fdnfOsIaqriNNxJ9xk84lUO5N51X3dctbbWHq/3fYSwTDvJuXYKlDOfrRJ6pkk85kx24mc+sJx2P
+9NW+jDPSt6xBCu3BZtYRqnmaP8d+Ln0xExlKd0axwHq68UnDxblrWsqFdKCvdYyMK6Qv73h2LTyM
+oZJRtIlp9A+YzF08bz3J+KXvaA/wIYOZZB0i83agsXWEGtzFsTFcsTmNexjCXhwbQunTebQHmMFR
+jNOd8rHqShMvb855jBmcwalOxlrORN7iLT5Ix951rqS19jCXQ7lZK+HGqIm3Nx/P4QzGcwyHNPg+
+/A/4kGm8wTy+Sug0oVcKfPvwlpd2XMtx1iEyq4yOeZ3WKuZmBkd8zg55nDsvpjV92IeN2JK2df5k
+CXMopYpZfMPHfMI8llFOaRa/mstNeo/2AIs5lUWckfJZ+GoupdYR6lTOIp5wtjNyUNJ5Su9nJZzD
+WQ43zZKfpXj1GKlb2msPcANHM9M6RAZ9Rrl1BIlHFmoPT3IQY61DZM77nr/JlwbLRu1hJidxmu7P
+c+rNcE95ZV1Wag8l3ERfntNL1ZHZvG8dQeKSndoDTGd3LuRj6xiZ8ADzrCNIXLJVe4DL2ZMbWWwd
+I+UW8LB1BIlP9moPc/gjhzPOOkaq3cK71hEkPlmsPcCznMAeukG3gV7hBusIEqes1h5KeZYT6cPt
++hoqT7M5iW+tQ0icslt7gOW8xRA6cxFz+N46TErM5RBd/JR12a49QCWfM4KuDOBu3qPEOo7n3uFg
+plmHkLiFcxPL4zxOG/ahL1vQk/bWcTxUwh1cou9AQhBO7QGWMI5xrEV3utCD7mzFJtaRPFHGXUzg
+KesYkoywav+Db3md14E2rMfarEcPOrAxHWhCV28XlojPR0zkFSYyhVXWUSQpIdb+J0t+vIZ/AsU0
+pjEFNA3gXMcvVVHKcn3XEZqQa/+zcsqztdmRSF1CO7qJiGovEh7VXiQ4qr1IcFR7keCo9iLBUe1F
+gqPaiwRHtRcJjmovEhxdnOu3VrRhE7ahI+UUsoyJfMRC7Qcg0aj2/urK7ziAXau9I3uN8bzEVOt4
+kl6qvZ824hhOpmON/60f/fiWMdzGbOuYkk76bO+jPXmYy2op/Q/W4hwe5nDroJJOqr1/jmcs2+fw
+c5szhmEBLgwikan2vjmR61k7x59twaVcYR1Y0ke198uRjKJlHj9fyNkMsQ4taaPa+2Rj/pJX6QEa
+cVVOHwlE/ke190dTLmDLBjyuFZfT2jq8pIlq74/tGNTAR+7ModbhJU1Ue180ZhBNG/jYIg6lrfUE
+JD1Ue1+0Y0CER+/E1tYTkPRQ7X2xC80jPLol21lPQNJDtffFThEfvzXNrKcgaaHa+2LjiI/vmfNF
+PhI81d4XW0R8/K9oYT0FSQvV3hfrRHy8/iUlZ3qx+KIi4uOrrCcg6aHaiwRHtRcJjmovEhzVXiQ4
+qr1IcFR7keCo9iLBUe1FgqPaiwRHtRcJjmovEhzVPit8uCY/6n0FkhDVPisKrQPQSHf8p4Vq74vi
+iI9vl/cK+641oatxAsmRau+LWREf35jG1lPw4B2H5ES198XCyCN0jDxCNEV0iThCBZXGcwiEau+L
+6P8SnYxn0CHy+40PKTOeQyBUe1/MizzClg3eXsONhmzk9UulOtonQ7X3xVeRR9jZ+NN9r8gjzGOl
+6QyCodr7IvrRfn02NZ3BHpFH+IZy0xkEQ7X3xQwHY+xvmL+Xg3MLn6j2yVDtfTHfwRgHGuY/yMFH
+jPe9uNYwAKq9L5bzceQxetDbKH0hv6cg4hhVDr7ElJyo9r4oY0rkMZpxvFH6fdkk8hif8a1R+uCo
+9r4oY7qDUfZjPYPshRxBm8ijfKCjfVJUe19U8qaDUdbjVIPs27C7g1Gm8J1B9iCp9v6Y4+BlX8Sh
+iV+t14yhrOtgnBk6oZcU1d4f3/Cug1G6c0rCuXfhGAejLIh8M5LkTLX3x9dMdDBKASc7ecudqzac
+GfmmYYBZzEkwdeBUe5+85eSa9JYMp21imU/md07GmcI3iWUOnmrvk1l86GScvvwlocR7cZGTcZbz
+WkKJBdXeL3N429FI5ybyDX43bqCFk5E+4okE8sqPVHuflPOCo6vSC7iKPWNO25E76OxorHdZGnNa
+WY1q75eXHdyJ94O1ucnBrbC1a8zf6OdorBL+FWNSqUa198tsJ2fzf7AZd7N9TDnbcRMDnY32GY/H
+lFNqpNr75kGHC0v1YBz7xJBxM8Yz2OF498eQUepQoAujPFPEa07vo1vKxfyf04S/4Vqn7yLK6MlH
+ThNKPXS0980q7nM6XmtG8Q/aOxvvZO53/NHhbpU+aTra+6c1H7CR4zFnMoyHIo/Sjb+zr/MV+/rw
+luMRpR462vtnKdc6H7M79zGBHhE2sFib4bzKwc5L/wAfOJ+t1ENHex+tw6RYNrso4RbGMouSPB/X
+hb04iS1iSFTGPjwfw7hSJ9XeRwUM5cbYRr+X/zAxxyW8NmBr+nA8HWLK8i+OZ1lsM5VaqPZ+as9z
+sRxdf/IuU5nEVObyWY3/vTld2IId2JYdYvwguJDDeSnGWUotVHtfDWJM7GdeFvANC1jIPMqYSykV
+dKUtbdiUdrRnfZrE/Px38ActrWFBtfdVEx53sOFE7lZQATRP8CTvPPbQPfY2dCbfV2VcyeIEn68Z
+LWmZ6OvhVpXeimrvr2e53TpCjN7gcusI4dKbfJ+14rnYbqaxtYTfa2ENOzra++x7zsroHrDDVHpL
+qr3fXnW0aJVfJvAP6whhU+19d1PmbkudwYUZfQ+TGvps779uTKC7dQhnVnK0g5uCJBId7f03i9NY
+bh3CkVVO7gSUiFT7NHiOUxwtrWltNFdZRxDVPi3uYaR1BCezGGYdQUCf7dOjmItTXpoXOUQ72PtB
+R/u0KOfSVB/xJzJYpfeFap8eFVzDg9YhGuhtjnW00Zc4oNqnyWIGcLV1iAZ4g2OZbR1Cfqbap0s5
+53OZdYg8PcAAZlqHkNXplF76FHEaVzrZUz4J/+Q0LZvlG9U+nY7kaja0DpGDCxmV94KdEjvVPq12
+5HZ6Woeo02JO517rEFITfbZPqzfYlXHWIerM9zuV3leqfXot4GjO5SvrGDVYxSj2ZZJ1DKmN3uSn
+XV/O5UDrEL8wjRGZu1k4Y1T79GvNAIazrnUMACq4nhty3HpDzKj22dCNYRxJkWmGSt7gHCaxyvqX
+IfVR7bOigP4Mo1/sW1rUrJLZXM1dVFj/GiQXqn2WFHICg9gx8RO17/IAN+qinPRQ7bOmMceyD/tH
+2NI6Py/zOHeyyHrakg/VPosasxu/42jax/osK5jAI7zEQuvpSr5U+6wqoBu9OYFdYhl9FrfxArMy
+s8ZfYFT7bGvJhuzFAHrQ1MF5/kpWMI8XGcc0vrOemjScah+GLuxCf7ZiHVrTPO9Hl/I9S/mE//Ik
+H+hsffqp9mHZlp5sRWfa0Z6WrE2TWk/9VbCQFXzBYj5lErOYkej+uxIr1T4sBTShCW3oxBasRzda
+0Ym1qv1UOXNZznS+ZRIfsogVrKTSOrq4o9qLBEd34IkER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYi
+wVHtRYKj2osER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYiwVHtRYKj2osER7UXCY5qLxIc1V4kOKq9
+SHBUe5HgqPYiwVHtRYKj2osER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYiwVHtRYKj2osER7UXCY5q
+LxIc1V4kOKq9SHBUe5HgqPYiwVHtRYKj2osER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYiwVHtRYKj
+2osER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYiwVHtRYKj2osER7UXCY5qLxIc1V4kOKq9SHBUe5Hg
+qPYiwVHtRYKj2osER7UXCY5qLxIc1V4kOKq9SHBUe5HgqPYiwVHtRYLz/wBYiI0xUjbcAAAAJXRF
+WHRkYXRlOmNyZWF0ZQAyMDI1LTAxLTA0VDA2OjQxOjI0KzAwOjAwDVK54gAAACV0RVh0ZGF0ZTpt
+b2RpZnkAMjAyNS0wMS0wNFQwNjo0MToyNCswMDowMHwPAV4AAAAodEVYdGRhdGU6dGltZXN0YW1w
+ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
+</svg>
+
+            </span>
+          
+        </a>
+      </div>
+    
+  
+  
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
+      Morethan 小站
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav class="flex items-center gap-x-5 h-12">
+  
+    
+      
+  
+    <a
+      href="/blog/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="文章"
+      title="文章">
+      
+      
+        <span class="text-base font-medium break-normal">
+          文章
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="标签"
+      title="标签">
+      
+      
+        <span class="text-base font-medium break-normal">
+          标签
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/series/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="系列"
+      title="系列">
+      
+      
+        <span class="text-base font-medium break-normal">
+          系列
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/authors/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="作者"
+      title="作者">
+      
+      
+        <span class="text-base font-medium break-normal">
+          作者
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="https://github.com/morethan987"
+      
+        target="_blank"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="github"
+      title="">
+      
+        <span >
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+        </span>
+      
+      
+    </a>
+  
+
+    
+  
+
+  
+  <div class="translation nested-menu">
+    <button class="cursor-pointer flex items-center">
+      <span class="me-1">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></span>
+      </span>
+      <span class="text-sm font-medium bf-icon-color-hover" title="预测编码调研">中文</span>
+    </button>
+    <ul class="menuhide">
+      <li class="rounded-xl backdrop-blur shadow-2xl p-2 flex flex-col gap-1">
+        
+          <a href="/en/blog/predictive-coding-survey/" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="A Survey on Predictive Coding">
+              English
+            </span>
+          </a>
+        
+          <a href="/blog/predictive-coding-survey/" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="预测编码调研">
+              中文
+            </span>
+          </a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search"
+      class="text-base bf-icon-color-hover"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base bf-icon-color-hover">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      <div class="flex items-center h-14 gap-4">
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Dark mode switcher"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label for="mobile-menu-toggle" class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      role="dialog"
+      aria-modal="true"
+      style="scrollbar-gutter: stable;"
+      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <a
+        href="/blog/"
+        aria-label="文章"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="文章" class="text-2xl font-bold tracking-tight">
+          文章
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/tags/"
+        aria-label="标签"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="标签" class="text-2xl font-bold tracking-tight">
+          标签
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/series/"
+        aria-label="系列"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="系列" class="text-2xl font-bold tracking-tight">
+          系列
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/authors/"
+        aria-label="作者"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="作者" class="text-2xl font-bold tracking-tight">
+          作者
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="https://github.com/morethan987"
+        aria-label="github"
+        
+          target="_blank"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+          <span class="flex items-center justify-center h-8 w-8 text-2xl">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+          </span>
+        
+        <span title="" class="text-2xl font-bold tracking-tight">
+          
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+    <div
+      class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
+      
+  <div class="translation nested-menu">
+    <button class="cursor-pointer flex items-center">
+      <span class="me-1">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></span>
+      </span>
+      <span class="text-sm font-medium bf-icon-color-hover" title="预测编码调研">中文</span>
+    </button>
+    <ul class="menuhide">
+      <li class="rounded-xl backdrop-blur shadow-2xl p-2 flex flex-col gap-1">
+        
+          <a href="/en/blog/predictive-coding-survey/" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="A Survey on Predictive Coding">
+              English
+            </span>
+          </a>
+        
+          <a href="/blog/predictive-coding-survey/" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="预测编码调研">
+              中文
+            </span>
+          </a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+      
+    </div>
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var mainmenu = document.querySelector(".main-menu");
+      if (!mainmenu) return;
+
+      var path = window.location.pathname;
+      var links = mainmenu.querySelectorAll('a[href="' + path + '"]');
+
+      links.forEach(function (link) {
+        var targets = link.querySelectorAll("span");
+        targets.forEach(function (el) {
+          el.classList.add("active");
+        });
+      });
+    })();
+  </script>
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
+  integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+      
+      
+      
+      
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+  
+    
+    
+  
+
+
+
+
+
+    <div id="hero" class="h-[150px] md:h-[200px]"></div>
+  
+  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+    
+    
+    
+    <img
+      id="background-image"
+      src="/blog/predictive-coding-survey/background.svg"
+      role="presentation"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover"
+      >
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+    <div
+      class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+  </div>
+
+  
+    <div
+      id="background-blur"
+      class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral-100/75 dark:bg-neutral-800/60"></div>
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
+      integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+      data-blur-id="background-blur"
+      data-image-id="background-image"
+      data-image-url="/blog/predictive-coding-survey/background.svg"></script>
+  
+      
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >欢迎来到Morethan的小站</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/blog/"
+      >Blogs</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/blog/predictive-coding-survey/"
+      >预测编码调研</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        预测编码调研
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-07-03T00:00:00&#43;00:00">2026-07-03</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">14 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_blog/predictive-coding-survey/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_blog/predictive-coding-survey/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  <button
+    id="button_likes"
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span>
+    </span>
+    <span id="button_likes_emtpty_heart" class="inline-block align-text-bottom"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg></span></span
+    >
+    <span id="button_likes_text">&nbsp;Like</span>
+  </button>
+</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+  
+    
+  
+  
+
+<span class="mb-[2px]">
+  <a
+    href="https://github.com/morethan987/hugo_main/tree/main/content/blog/predictive-coding-survey/index.zh-cn.md"
+    class="text-lg hover:text-primary-500"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="编辑内容"
+    ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg></span></span></a
+  >
+</span><span class="px-2 text-primary-500">&middot;</span><span class="mb-[2px]">
+  <span
+    id="zen-mode-button"
+    class="text-lg hover:text-primary-500"
+    title="啟用阅读模式"
+    data-title-i18n-disable="啟用阅读模式"
+    data-title-i18n-enable="停用阅读模式">
+    <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg></span></span>
+  </span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+              <a href="/authors/morethan/" class="relative">Morethan</a>
+            
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E8%AE%BA%E6%96%87/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    论文
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E6%9E%B6%E6%9E%84/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    架构
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E8%B0%83%E7%A0%94/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    调研
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+      
+      
+        
+        
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
+        width="96"
+        height="96"
+        alt="Morethan"
+        src="/img/figure_hu_80d96930371440b1.png"
+        data-zoom-src="/img/figure_hu_4e8d74f572b8acb.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Morethan
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">计算机、物理与AI理工男</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/morethan987"
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://morethan987.github.io/KnowledgeBase"
+          target="_blank"
+          aria-label="Knowledgebase"
+          title="Knowledgebase"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M96 0C43 0 0 43 0 96L0 416c0 53 43 96 96 96l288 0 32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32L384 0 96 0zm0 384l256 0 0 64L96 448c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16zm16 48l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg></span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+  
+
+  
+    
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#反向传播算法">反向传播算法</a></li>
+    <li><a href="#预测编码">预测编码</a>
+      <ul>
+        <li><a href="#算法实现">算法实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#反向传播算法">反向传播算法</a></li>
+    <li><a href="#预测编码">预测编码</a>
+      <ul>
+        <li><a href="#算法实现">算法实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = false
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+  <details
+    class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5"
+    >
+    
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 -ms-5 ps-5 dark:bg-primary-800 dark:text-neutral-100">
+    论文笔记 -
+    这篇文章属于一个选集。
+  </summary>
+  
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="/blog/rstar-note/">
+          § 1:
+          rStar读文笔记
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="/blog/ctm-note/">
+          § 2:
+          CTM读文笔记
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        § 3:
+        本文
+      </div>
+    
+  
+
+
+  </details>
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<p>出发点就是在 YouTube 上看到了一个讲解预测编码的<a href="https://youtu.be/l-OLgbdZ3kk?si=ZiSDoIJVegOHlAlp"  target="_blank" rel="noreferrer">视频</a>，其最大的一个亮点就是：一个更具生物合理性的反向传播算法的平替。</p>
+
+<h2 class="relative group">反向传播算法
+    <div id="反向传播算法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>反向传播算法是目前深度学习领域的基石，几乎所有的深度学习模型都依赖反向传播算法进行训练。该算法主要解决的一个问题是：信用分配问题，即如果一个神经网络产生了错误的输出，那么我们该如何调整参数从而改进模型输出？</p>
+<p>首先考虑网络的最后一层与倒数第二层之间的连接权重。这里有非常明确的对齐信号，也就是训练数据的标签，我们可以利用模型输出与标签计算一个标量损失值，然后对这个损失值进行逐层链式梯度展开，这样就可以通过迭代的方式来优化网络在这个损失函数的评估下的表现。</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/bp_example.png"
+    width="1986"
+    height="1126"
+    src="/blog/predictive-coding-survey/img/bp_example_hu_d9861f519ecab761.png"
+    srcset="/blog/predictive-coding-survey/img/bp_example_hu_d9861f519ecab761.png 800w, /blog/predictive-coding-survey/img/bp_example_hu_e7d672795473d4bd.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/predictive-coding-survey/img/bp_example.png"></figure>
+</p>
+<p>这里其实有一个隐藏的前提：神经网络的连接方式应该是目前最一般使用的连接方式，也就是前后相连并且同层之间无依赖。早期的神经网络探索中其实有很多网络的拓扑并不这样，有很多其他的连接方式。</p>
+<p>早期神经网络探索中出现过多种非前馈分层的拓扑，比较有代表性的几类：</p>
+<ul>
+<li><strong>层内 / 侧向连接（lateral connections）</strong>：同一层内的神经元互相连接，用于实现侧向抑制、竞争或归一化，在早期视觉模型(如“赢者通吃”网络)中很常见</li>
+<li><strong>循环反馈连接（recurrent connections）</strong>：跨层或跨时间的反馈回路，信息可以在网络中反复流动，典型代表是 Hopfield 网络、Elman 与 Jordan 的简单循环网络</li>
+<li><strong>对称连接（symmetric connections）</strong>：权重双向对称(\(w_{ij}=w_{ji}\))，便于定义能量函数与收敛性分析，代表是 Hopfield 网络与玻尔兹曼机</li>
+</ul>
+<p>这些拓扑之所以逐渐被边缘化，核心原因是它们与高效的梯度反向传播训练范式不兼容：</p>
+<ol>
+<li>反向传播要求网络是(或可展开为)有向无环图。带环的循环网络必须沿时间维度展开(BPTT)，随之而来的是梯度消失 / 爆炸和训练不稳定</li>
+<li>侧向与反馈连接破坏了清晰的层级信用分配，容易引发振荡和发散，难以稳定收敛</li>
+<li>对称连接网络(如玻尔兹曼机)的训练依赖 MCMC 采样来估计梯度，计算代价极高，难以扩展到大规模问题</li>
+<li>相比之下，前馈分层结构简单、可堆叠、易于在 GPU 上并行，再加上自动微分框架的成熟，最终在工程实践中胜出，成为事实标准</li>
+</ol>
+<p>总之，当前的神经网络拓扑以及配套的反向传播算法占据了主导地位，统治了当前的深度学习领域。</p>
+<p>但反向传播算法的生物合理性一直都备受质疑，包括其主要奠基人 Hinton 也曾公开承认这个问题并尝试提出了 FF 算法。关于生物合理性的质疑大致可以总结为以下几个点：</p>
+<ol>
+<li>学习会导致大脑宕机：反向传播算法需要划分明确的前向过程和反向过程，你无法同时进行前向传播和反向传播，这两者同时进行会导致严重的参数混乱(一部分网络没更新另一部分更新了)。因此，误差反向传播的过程中受到波及的神经元会宕机，这从表现上来说就是大脑会有明显比实际更长的反应真空期</li>
+<li>全局方向协调：明确的前向和反向阶段的划分意味着需要有一个全局的信号来统一管理，并且前向和反向的过程需要在时间上镜像对称，浅层需要等待所有后续层的误差计算完毕之后才能够计算自己的误差，这种严格的时序调度在当前的脑科学认知中是几乎不可能实现的</li>
+</ol>
+
+<h2 class="relative group">预测编码
+    <div id="预测编码" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">算法实现
+    <div id="算法实现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ae%97%e6%b3%95%e5%ae%9e%e7%8e%b0" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>预测编码，即 Predictive Coding(PC)，其核心就是：每个神经元都根据自己的局部信息来更新网络参数，深层的神经元会去预测下一层神经元的活动状态，整个网络的优化目标就是让整体的预测偏差最小化。一个最为形象的认知模型就是一个弹簧网络</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/spring_network.png"
+    width="1974"
+    height="1109"
+    src="/blog/predictive-coding-survey/img/spring_network_hu_a7748cb88be37e41.png"
+    srcset="/blog/predictive-coding-survey/img/spring_network_hu_a7748cb88be37e41.png 800w, /blog/predictive-coding-survey/img/spring_network_hu_5baa5562e5c306e8.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/predictive-coding-survey/img/spring_network.png"></figure>
+</p>
+<p>在这幅图中，我们将上层对下层的预测理解为弹簧的铆定点，将下层的实际活动状态与预测值的偏离理解为弹簧拉伸的长度，误差则被理解为弹簧中存储的能量。调节某一个弹簧的长度不仅会影响该弹簧自身的能量值，还会影响下一层弹簧的预测值，从而影响下一层整体的能量值。因此，我们需要通过算法来调节整个网络，让网络的整体能量最小化。</p>
+<p>有了一些形式上的理解之后，下面就可以给出具体的形式化建模了。</p>
+<p>下面给出预测编码的标准形式化建模，记号沿用 Rao &amp; Ballard（1999）原始论文及后续综述中的约定，更多相关论文见 <a href="https://github.com/BerenMillidge/Predictive_Coding_Papers.git"  target="_blank" rel="noreferrer">GitHub 集锦</a>。设一个分层网络，第 \(l\) 层的神经活动状态记为 \(x_l\)；高层通过自上而下的权重矩阵 \(W_{l+1}\) 对低层活动做出预测，预测由一个(通常非线性的)生成函数 \(f\) 给出：</p>
+$$
+本层真实活动与高层预测之差，即预测误差：
+$$<p>整个网络的优化目标是最小化所有层预测误差的加权平方和。至于为什么要这么设计，其实有两种理解思路，一种就是能量最小化的物理直觉，另一种则偏数学分析，可以通过最小作用量原理来推导：</p>
+$$
+其中 $\Pi_l = \Sigma_l^{-1}$ 称为精度（precision），是生成模型中噪声协方差 $\Sigma_l$ 的逆，衡量该层预测误差的可信程度——精度越高，该层预测越可靠，其误差在总能量中的权重也越大。对应到前文的弹簧网络：预测 $\hat{x}_l$ 是铆定点，$\|\varepsilon_l\|$ 是弹簧拉伸量，$\frac{1}{2}\,\varepsilon_l^{\top}\Pi_l\varepsilon_l$ 是弹簧存储的能量，而精度 $\Pi_l$ 可理解为弹簧的劲度系数。 在预测编码模型中，有两个重要的表征模型状态的数据：一个是活动状态，类似于神经元的激活值；另一个是权重，类似于神经元之间的连接强度。 状态更新，主要是对 $E$ 关于活动 $x_l$ 做梯度下降，得到每一层活动的演化方程：
+$$<p>第一项 \(-\Pi_l\varepsilon_l\) 把本层活动拉向高层预测以消除本层误差(精度越高拉得越紧)；第二项是来自更低层误差 \(\varepsilon_{l-1}\) 的反传，要求本层活动能更好地解释低层活动。两者共同作用，使每一层在“服从高层预测”与“解释低层活动”之间达到平衡。值得注意的是，该动力学只用到本层及相邻层的局部量，因此可以逐层并行地收敛。</p>
+<p>权重更新，主要是对 \(E\) 关于自上而下权重 \(W_{l+1}\) 做梯度下降，得到学习规则：</p>
+$$
+其中 $\odot$ 表示逐元素乘积。这条规则的关键特征在于：权重更新只依赖本层的预测误差 $\varepsilon_l$ 与本层活动 $x_{l+1}$，是一种局部的赫布式学习，即突触的变化正比于突触前活动 $x_{l+1}$ 与突触后误差信号 $\varepsilon_l$ 的乘积，既不需要全局损失信号，也不需要精确的时序调度。 正是在这一点上，预测编码回应了反向传播的生物合理性质疑：每一层只凭局部信息即可更新参数，既不存在全局方向协调，也无需严格的前向 / 反向阶段划分，因而具备更强的生物合理性。 ### 实验结果 由于预测编码提出时间较早并且跨越了脑科学与人工智能两大学科，因此大量的早期论文是概念性和综述性的，直到 ICLR 2025 才出现了一篇详尽的[基准测试](https://proceedings.iclr.cc/paper_files/paper/2025/hash/581df42e8ebbeeac39aeda03519b7c0e-Abstract-Conference.html)对预测编码进行了 JAX 实现并与 BP 算法进行受控对比评测。论文本身非常紧凑，正文内容只有 9 页，其余全是引用文献(24 页)，因此推荐直接食用原文。 这里并不推荐这篇[博客文章](https://www.verses.ai/research-blog/benchmarking-predictive-coding-networks-made-simple)，虽然出自论文作者之手，但与 ICLR 实际发表的论文内容有出入。两相对比之下，ICLR 还是很权威的，让作者团队增加了不少实验数据🤣 该研究对预测编码算法在不同架构、任务上进行了测试，并从机制上进行了分析： **判别式任务**：主要聚焦于图像分类任务，使用多种数据集、多种网络架构、多种预测编码的变体 ![[pc_benchmark_table1.png]] **生成式任务**主要测试预测编码算法的生成与记忆能力，主要细分为三个测试： 1. 图像重构：主要为 Autoencoder 任务，即对图像进行编解码任务，对比 MSE 重构误差 ![[pc_benchmark_table2.png]] 2. 概率分布采样：利用加入高斯噪声的蒙特卡洛预测编码，在 Iris 数据集和 MNIST 上测试其学习复杂概率分布并生成新样本的能力，并与变分自编码器进行对比(这里的实验结果没有做成表格😑) ![[pc_benchmark_mcpc.png]] 3. 联想记忆检索：在 Tiny ImageNet 上，测试 PC 神经网络在输入被噪声污染或被遮挡的图像时，恢复出原始训练图像的能力；这个实验没有与 BP 进行对比，传统利用 BP 训练的前馈神经网络是单向传导的，这是 PCN 相比于传统 BP 网络所独有的，无需额外复杂架构即可实现的双向联想记忆 ![[pc_benchmark_table3.png]] **机制分析**部分主要进行了这些实验： 1. 状态初始化实验：对比了零初始化、高斯先验初始化和前向传导初始化对模型性能的影响 2. 能量传播实验：分析了在推断阶段，预测误差在网络各层之间的流动不平衡问题 3. 训练稳定性实验：研究了模型宽度、状态学习率以及权重优化器(AdamW 与 SGD)之间的相互作用 4. 分布外检测(OOD)：测试了是否可以直接利用 PCN 的变分自由能来区分在分布内(MNIST)和分布外(FashionMNIST)的数据 最后总结一下上面所有实验的结论： 1. 在中小规模模型上与 BP 性能相当，但存在明显的“深度瓶颈”，越深的网络表现越糟糕，这与 BP 的结论完全相反 2. 能量传播不平衡和训练不稳定是限制 PC 扩展性的主因：在深层网络中，误差能量主要堆积在最外层，难以有效向输入层传播；当使用较宽的隐藏层和 AdamW 优化器时，状态更新会变得极度不稳定 3. 在生成和联想记忆任务上展现了出色的灵活性，在图像重构中，仅包含解码器的 PCN 能够达到与完整 BP 自动编码器相当甚至更好的重构精度 4. PC 网络的自由能指标在无需针对性训练的情况下，可以非常有效地识别出分布外数据。利用自由能进行 OOD 检测的效果显著优于传统的 Softmax 分数 这里有一个值得关注的问题：能量传播不平衡问题，这个问题在 BP 算法中其实也存在，只不过在残差连接之后这个问题从工程上可以说是完全解决了。因此一个合理的问题是：PCN 糟糕的表现是否可以归因于没有残差连接类似的技术支撑？ 实际上，这个研究在图像分类任务上就已经测试了传统残差连接的效果，在带有标准残差结构的 ResNet-18 架构上 PC 的表现远远不如 BP 算法；另外研究还针对 VGG 19 进行了手动设计跳跃连接(附录 E)，无跳跃连接在 CIFAR-10 上的最高测试准确率仅为 **25.32%**，加入跳跃连接最高测试准确率显著飙升至 **73.95%**，但是与标准 BP 动辄 **90% 以上** 的精度，两者之间依然有约 **20% 的性能断层** ### 个人观点 一句话，在单纯跑分上 PC 还是打不过 BP 算法，这个结果与其他众多更具生物合理性的训练算法类似。这里我认为就是一种取舍了，单纯追求生物合理性没有太大意义，而要看为了这种合理性我们付出了何种代价，又有什么实质性的收获？或者说更直白一些，人类智能到底比人工智能好在哪里，这些真正好的地方才是"生物合理性"的价值所在。 相关话题我在这里援引一篇今年(2026)二月的来自 Yann LeCun 的[论文](https://arxiv.org/abs/2602.23643)，在 X 上被评价为今年最"异端"的论文。一般来说，我们其实默认人类智能是真正意义上的通用智能，因此生物合理性才是一个值得关注的评价指标。但这篇论文直接就批判了人类智能本身的通用性，并质疑人类智能的适应速度并不比人工智能更好。 当然这篇论文本身也非常有争议，但确实是给出了一个不太一样的视角来审视我们习以为常的"人类智能是通用智能"这个观点，并迫使我们必须客观地回答：人类智能到底比人工智能好在哪里？ ## 最新进展 ### 研究评价 不难发现，预测编码这个算法其实很早就已经提出来了(1999)，都快 30 年了，有什么后续发展吗？现在学界对于这个算法的评价如何呢？ 一个最新的结论就是：预测编码已经失去其统治地位，其关键性假设已经被实验证伪。但好消息是在新的实验证据的基础上又产生了新的算法框架并有相关研究进行了代码化的初步验证。 首先回顾一下预测编码关键的两个隐性的假设： 1. 自上而下反馈是抑制性的：上层会压制下层的可预测信息，因为从设计上来说，下层更靠近真实的信息源，而下层对上汇报的只有误差信号 2. 反应减弱来源于高层的抑制：与上一条假设对偶，即如果下层对可预测信号的响应减弱原因是上层的预测(上层的预测即抑制) 然而许多实验证据表明：真正的预测编码不在早期感觉处理中出现，而是高级认知区域的专属能力，反应减弱多源于前馈通路的局部适应性(直白点说就是神经元累了)。并且最近的 [OpenScope 社区综述](https://arxiv.org/abs/2504.09614)也明确表述，大脑可能采用一种"模型集合"方法，根据情境动态调用不同策略。预测下一个输入或许是皮层的基本能力，但它不源于单一机制，而是由一组相互作用的策略拼凑而成。 > 这份文档是 50 多位科学家通过 Google Docs/共同编写的产物，也算是代表了相当一部分的学术界认知 总之学界的真实姿态是，保留 PC 作为局部计算原则(尤其高级认知区、生成模型层面)，同时引入竞争性框架和"机制集合"视角来解释感觉皮层。 既然这些实验数据的将 PC 的部分假设证伪了，那么是否有一个比 PC 更好的框架可以解释这些实验数据呢？于是出现了 [BELIEF](https://doi.org/10.1016/j.tics.2025.09.018) 框架，其重新分配了"抑制"的位置：抑制发生在前馈/横向通路，而反馈始终是兴奋性的聚光灯。 这个新框架的思路其实与 Transformer 中的注意力机制在结构上是强同构的。偏向竞争理论的核心是："先有表征之间的竞争，再用自上而下信号对被选中的表征做选择性增强"。而 Transformer 的注意力机制做的就是：对所有 V 计算一组(softmax 归一化的)权重，再加权求和，这从某种程度上说是一种"软性的竞争式选择"。相关的研究也被追问报道过，也就是[这篇文章](https://news.qq.com/rain/a/20260128A01NLF00?pullappbar=1)，里面的内容更加丰富。 ### 代码实践 脑科学进行了严谨的实验测量，获得了大量的证据证明 BELIEF 框架的正确性，那么是否有代码上的实践呢？实际上还真有，并且刚好是今年(2026)发表在 Natrue 上的[研究成果](https://doi.org/10.1038/s41467-026-72146-9)，其证明了"BP + BELIEF 式架构"能够复现生物注意力的全套标志特征。 具体来讲，他们用 BP 训练一个带双向循环门控的 U-Net 式架构，使用前馈特征通路、自上而下注意力通路、侧向连接、除法归一化(用 LayerNorm 近似)和工作记忆循环层。结果这套架构自发涌现出：乘性增益调制、border-ownership 编码、注意对比增益、知觉负荷效应、非注意盲等心理物理教科书现象。 这里其实有两个关键的结论： 1. BELIEF 式架构确实能够复现出完整的生物注意力的行为 2. 整个网络是使用 BP 训练的，但同样复现了标准的生物注意力行为 **这或许意味着生物合理性主要看架构/计算功能，不是看学习算法**。这是一个非常有启发性的结论：BP 算法本身的生物不合理性貌似并没有那么重要，只要架构到位，同样能够复制出生物功能的表现。更进一步，BP 算法本身是用于搜索网络参数的算法，那么网络架构本身有没有对应的搜索算法？实际上还真有相关的研究领域：神经网络架构搜索(NAS)，但说实话目前这个领域的情况并不乐观，这里引用[一篇文献](https://arxiv.org/abs/2510.04938)上的观点： > 然而，NAS 在很大程度上未能兑现其发现根本性新架构的承诺——例如促进从卷积网络向 Transformer 的转变 回归 BELIEF 框架本身，虽然这个框架在生物合理性上更占优势，但是从统一的计算框架的视角来看并不能完全与 PC 对标，BELIEF 的全部主张都落在运行时层面：自上而下反馈是兴奋性增强、抑制发生在前馈/横向、竞争-选择-增益。它本身没有提出一个学习规则，也没有一个像自由能那样的统一目标函数。 ## 总结 当一个理论与实践反复发生冲突的时候，我们或许是时候考虑这个理论本身是否有问题了。我们反复提及的生物合理性是否真的那么重要？此刻才回味起来《深度学习》中一句话的深意：最好是将神经网络视为一个万能的函数而不是真实的神经元网络。 一个比较客观的观点：人脑并不是唯一的智能实现方式，甚至人类智能本身是否如我们所期望的那样万能都是一个未知数。这篇[论文](https://arxiv.org/abs/2602.23643)中的某些观点虽然备受争议但至少一个观点我认为是合理的：人类确实是一个被高度优化了生存相关技能的生物，在人类认知范围之外的绝大多数物理、微观和数学领域，人类的**平均表现**可能并非**可实现的最优**。 > [!NOTE]- 说明 > 人类的平均表现意在排除极个别超高天赋的个体，个别极高天赋的能力并不能代表整体水平；可实现的最优而不是已实现最优，实际上人类智能到底是什么水平长期缺乏无争议的对照基线，因为我们是已知的智能最高的存在 我们不应该将人类智能作为唯一的智能形式，而应该从信息论的角度来分析这样的信息系统是如何迭代演化的？ 具体来说：人类出生时的大脑并非白纸一张，而是携带了一定的基础结构，后天的学习会让其适应更广泛的数据分布，这正是后训练强化学习所做的事情，即在通用的语言能力基础上让 LLM 训练其稳健的思维链推导、训练其调用工具的能力、训练其问答能力等等。然而目前还有需要明确的问题是：强化学习能否让 LLM 获得预训练之外的能力？长期强化学习与短期强化学习是否有本质的区别？能否实现跨任务的连续强化学习？ 是的，最后兜兜转转，才惊觉当前的技术路线貌似确实是非常有道理。虽然是花费了非常多的时间，但至少获得了宝贵的 why not 经验，这也是我在经受的教育中罕有提及的东西。
+$$
+          
+          
+          
+        </div>
+        
+        
+  <details class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5">
+    
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 -ms-5 ps-5 dark:bg-primary-800 dark:text-neutral-100">
+    论文笔记 -
+    这篇文章属于一个选集。
+  </summary>
+  
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="/blog/rstar-note/">
+          § 1:
+          rStar读文笔记
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        <a href="/blog/ctm-note/">
+          § 2:
+          CTM读文笔记
+        </a>
+      </div>
+    
+  
+    
+      <div
+        class="py-1 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+        § 3:
+        本文
+      </div>
+    
+  
+
+
+  </details>
+
+
+        
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://morethan987.github.io/blog/predictive-coding-survey/&amp;title=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="分享到 LinkedIn"
+          aria-label="分享到 LinkedIn">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://twitter.com/intent/tweet/?url=https://morethan987.github.io/blog/predictive-coding-survey/&amp;text=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="分享到 Twitter"
+          aria-label="分享到 Twitter">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://bsky.app/intent/compose?text=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94&#43;https://morethan987.github.io/blog/predictive-coding-survey/"
+          title="发布到 Bluesky"
+          aria-label="发布到 Bluesky">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256,232.562c-21.183,-41.196 -78.868,-117.97 -132.503,-155.834c-51.378,-36.272 -70.978,-29.987 -83.828,-24.181c-14.872,6.72 -17.577,29.554 -17.577,42.988c0,13.433 7.365,110.138 12.169,126.281c15.873,53.336 72.376,71.358 124.413,65.574c2.66,-0.395 5.357,-0.759 8.089,-1.097c-2.68,0.429 -5.379,0.796 -8.089,1.097c-76.259,11.294 -143.984,39.085 -55.158,137.972c97.708,101.165 133.908,-21.692 152.484,-83.983c18.576,62.291 39.972,180.718 150.734,83.983c83.174,-83.983 22.851,-126.674 -53.408,-137.969c-2.71,-0.302 -5.409,-0.667 -8.089,-1.096c2.732,0.337 5.429,0.702 8.089,1.096c52.037,5.785 108.54,-12.239 124.413,-65.574c4.804,-16.142 12.169,-112.847 12.169,-126.281c-0,-13.434 -2.705,-36.267 -17.577,-42.988c-12.85,-5.806 -32.45,-12.09 -83.829,24.181c-53.634,37.864 -111.319,114.635 -132.502,155.831Z"/></svg></span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://reddit.com/submit/?url=https://morethan987.github.io/blog/predictive-coding-survey/&amp;resubmit=true&amp;title=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="提交到 Reddit"
+          aria-label="提交到 Reddit">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://api.whatsapp.com/send?text=https://morethan987.github.io/blog/predictive-coding-survey/&amp;resubmit=true&amp;title=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="通过 WhatsApp 分享"
+          aria-label="通过 WhatsApp 分享">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://t.me/share/url?url=https://morethan987.github.io/blog/predictive-coding-survey/&amp;resubmit=true&amp;title=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="通过 Telegram 分享"
+          aria-label="通过 Telegram 分享">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=https://morethan987.github.io/blog/predictive-coding-survey/&amp;description=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="钉到 Pinterest"
+          aria-label="钉到 Pinterest">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://morethan987.github.io/blog/predictive-coding-survey/&amp;quote=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="分享到 Facebook"
+          aria-label="分享到 Facebook">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="mailto:?body=https://morethan987.github.io/blog/predictive-coding-survey/&amp;subject=%e9%a2%84%e6%b5%8b%e7%bc%96%e7%a0%81%e8%b0%83%e7%a0%94"
+          title="通过电子邮件发送"
+          aria-label="通过电子邮件发送">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span>
+        </a>
+      
+    
+  </section>
+
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">相关文章</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+  
+    
+      
+      
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+    <div class="flex-none relative overflow-hidden thumbnail_card_related">
+      <img
+        src="/blog/ctm-note/featured.svg"
+        role="presentation"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </div>
+  
+  
+    <span class="absolute top-0 right-0 m-2">
+      <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+
+    </span>
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/ctm-note/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          CTM读文笔记
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+    
+      
+      
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_blog/ctm-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_blog/ctm-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+              <a href="/authors/morethan/" class="relative">Morethan</a>
+            
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E8%AE%BA%E6%96%87/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    论文
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E6%9E%B6%E6%9E%84/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    架构
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+  
+    
+      
+      
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+    <div class="flex-none relative overflow-hidden thumbnail_card_related">
+      <img
+        src="/blog/rstar-note/featured.svg"
+        role="presentation"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </div>
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/rstar-note/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          rStar读文笔记
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+    
+      
+      
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-06-20T00:00:00&#43;00:00">更新于: 2025-06-20</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_blog/rstar-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_blog/rstar-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+              <a href="/authors/morethan/" class="relative">Morethan</a>
+            
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E8%AE%BA%E6%96%87/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    论文
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/mcts/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MCTS
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E6%8E%A8%E7%90%86%E5%A2%9E%E5%BC%BA/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    推理增强
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+
+  
+  
+    
+      
+      
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+    <div class="flex-none relative overflow-hidden thumbnail_card_related">
+      <img
+        src="/blog/llm-engineering-note/featured.svg"
+        role="presentation"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </div>
+  
+  
+    <span class="absolute top-0 right-0 m-2">
+      <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    草稿
+  </span>
+</span>
+
+    </span>
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/llm-engineering-note/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          LLM工程实践札记
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+    
+      
+      
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-06-01T00:00:00&#43;00:00">更新于: 2025-06-01</time><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_blog/llm-engineering-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_blog/llm-engineering-note/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+              <a href="/authors/morethan/" class="relative">Morethan</a>
+            
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/llm/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    LLM
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工程实践
+  </span>
+</span>
+
+              </a>
+            
+              <a class="relative mt-[0.5rem] me-2" href="/tags/%E7%AC%94%E8%AE%B0/">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    笔记
+  </span>
+</span>
+
+              </a>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+    </section>
+  
+
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/blog/trials-and-growth/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;试错、回响与生长-我的大学折腾札记
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-02-17T00:00:00&#43;00:00">2026-02-17</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+          
+          
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
+        <ul class="flex list-none flex-col sm:flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="标签">
+                
+                标签
+              </a>
+            </li>
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/authors/"
+                title="作者">
+                
+                作者
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          Morethan
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        由 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 强力驱动
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+    <a rel="me" href="https://masto.ai/@blowfish"></a>
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="https://morethan987.github.io/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

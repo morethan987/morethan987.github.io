@@ -9,7 +9,17 @@
     <managingEditor>morthan@qq.com (Morethan)</managingEditor>
     <webMaster>morthan@qq.com (Morethan)</webMaster>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A Survey on Predictive Coding</title>
+      <link>https://morethan987.github.io/en/blog/predictive-coding-survey/</link>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/predictive-coding-survey/</guid>
+      <description>&lt;p&gt;The starting point was a &lt;a href=&#34;https://youtu.be/l-OLgbdZ3kk?si=ZiSDoIJVegOHlAlp&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;video&lt;/a&gt; on YouTube explaining predictive coding. Its biggest selling point is this: a more biologically plausible alternative to the backpropagation algorithm.&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;The Backpropagation Algorithm&#xA;    &lt;div id=&#34;the-backpropagation-algorithm&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#the-backpropagation-algorithm&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Backpropagation is the cornerstone of today&amp;rsquo;s deep learning landscape. Virtually all deep learning models rely on it for training. The core problem it solves is the &lt;em&gt;credit assignment problem&lt;/em&gt;: if a neural network produces a wrong output, how should we adjust the parameters to improve the model&amp;rsquo;s output?&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/predictive-coding-survey/featured.svg" />
+    </item>
     
     <item>
       <title>CTM Reading Notes</title>

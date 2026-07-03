@@ -53,28 +53,28 @@
 
   
   <meta property="og:url" content="https://morethan987.github.io/en/blog/mysql-basics/">
-  <meta property="og:site_name" content="More&#39;s awesome website">
-  <meta property="og:title" content="MySQL Basics">
-  <meta property="og:description" content="The deployment tutorial and basic syntax of MySQL">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
-    <meta property="article:tag" content="MySQL">
-    <meta property="og:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/ubuntu-note/">
-      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/cloud-server-build/">
-      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/qdrant-feature-guide/">
-      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/neo4j-basics/">
-      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/hugo-blog/">
-      <meta property="og:see_also" content="https://morethan987.github.io/en/blog/pytips/">
+	<meta property="og:site_name" content="More&#39;s awesome website">
+	<meta property="og:title" content="MySQL Basics">
+	<meta property="og:description" content="The deployment tutorial and basic syntax of MySQL">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2025-01-15T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-02-15T00:00:00+00:00">
+		<meta property="article:tag" content="MySQL">
+		<meta property="og:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
+			<meta property="og:see_also" content="https://morethan987.github.io/en/blog/ubuntu-note/">
+			<meta property="og:see_also" content="https://morethan987.github.io/en/blog/cloud-server-build/">
+			<meta property="og:see_also" content="https://morethan987.github.io/en/blog/qdrant-feature-guide/">
+			<meta property="og:see_also" content="https://morethan987.github.io/en/blog/neo4j-basics/">
+			<meta property="og:see_also" content="https://morethan987.github.io/en/blog/hugo-blog/">
+			<meta property="og:see_also" content="https://morethan987.github.io/en/blog/pytips/">
 
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
-  <meta name="twitter:title" content="MySQL Basics">
-  <meta name="twitter:description" content="The deployment tutorial and basic syntax of MySQL">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://morethan987.github.io/blog/mysql-basics/featured.svg">
+	<meta name="twitter:title" content="MySQL Basics">
+	<meta name="twitter:description" content="The deployment tutorial and basic syntax of MySQL">
 
   
   
@@ -1323,8 +1323,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         width="96"
         height="96"
         alt="Morethan"
-        src="/img/figure_hu_85e7f4fe5e9dfceb.png"
-        data-zoom-src="/img/figure_hu_6e4b94ce0865b553.png">
+        src="/img/figure_hu_80d96930371440b1.png"
+        data-zoom-src="/img/figure_hu_4e8d74f572b8acb.png">
     
   
   <div class="place-self-center">
@@ -1711,38 +1711,38 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d --name mysql -p 3306:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>password -v /Users/liaoxuefeng/mysql-data:/var/lib/mysql mysql</span></span></code></pre></div></div>
 <p><strong>Parameter Explanation</strong>:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Parameter</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>-d</code></td>
-          <td>Run the container in the background</td>
-      </tr>
-      <tr>
-          <td><code>--name</code></td>
-          <td>Assign a name to the container (if not specified, Docker will choose one automatically)</td>
-      </tr>
-      <tr>
-          <td><code>-p 3306:3306</code></td>
-          <td>Map the container&rsquo;s port 3306 to the local machine, allowing you to connect to MySQL through port 3306</td>
-      </tr>
-      <tr>
-          <td><code>-e MYSQL_ROOT_PASSWORD=password</code></td>
-          <td>Set the root password for MySQL (in this case, the password is <code>password</code>). If not set, Docker will generate a password, which you’ll need to check the logs to retrieve. <strong>It’s recommended to set a password.</strong></td>
-      </tr>
-      <tr>
-          <td><code>-v /path:/var/lib/mysql</code></td>
-          <td>Mount a local directory to <code>/var/lib/mysql</code> in the container, which will store MySQL data. Replace <code>/path</code> with the actual directory path on your machine</td>
-      </tr>
-      <tr>
-          <td><code>mysql</code></td>
-          <td>Specifies the name of the Docker image you want to run</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>-d</code></td>
+					<td>Run the container in the background</td>
+			</tr>
+			<tr>
+					<td><code>--name</code></td>
+					<td>Assign a name to the container (if not specified, Docker will choose one automatically)</td>
+			</tr>
+			<tr>
+					<td><code>-p 3306:3306</code></td>
+					<td>Map the container&rsquo;s port 3306 to the local machine, allowing you to connect to MySQL through port 3306</td>
+			</tr>
+			<tr>
+					<td><code>-e MYSQL_ROOT_PASSWORD=password</code></td>
+					<td>Set the root password for MySQL (in this case, the password is <code>password</code>). If not set, Docker will generate a password, which you’ll need to check the logs to retrieve. <strong>It’s recommended to set a password.</strong></td>
+			</tr>
+			<tr>
+					<td><code>-v /path:/var/lib/mysql</code></td>
+					<td>Mount a local directory to <code>/var/lib/mysql</code> in the container, which will store MySQL data. Replace <code>/path</code> with the actual directory path on your machine</td>
+			</tr>
+			<tr>
+					<td><code>mysql</code></td>
+					<td>Specifies the name of the Docker image you want to run</td>
+			</tr>
+	</tbody>
 </table>
 <div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
       <div class="flex items-center gap-2 font-semibold text-inherit">
@@ -1903,8 +1903,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/JoinQuery.png"
     width="1077"
     height="787"
-    src="/blog/mysql-basics/img/JoinQuery_hu_3039e2be6e61d143.png"
-    srcset="/blog/mysql-basics/img/JoinQuery_hu_3039e2be6e61d143.png 800w, /blog/mysql-basics/img/JoinQuery.png 1280w"
+    src="/blog/mysql-basics/img/JoinQuery_hu_56c494bf9070f159.png"
+    srcset="/blog/mysql-basics/img/JoinQuery_hu_56c494bf9070f159.png 800w, /blog/mysql-basics/img/JoinQuery.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/mysql-basics/img/JoinQuery.png"></figure>
 </p>

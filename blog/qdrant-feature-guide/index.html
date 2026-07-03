@@ -53,28 +53,28 @@
 
   
   <meta property="og:url" content="https://morethan987.github.io/blog/qdrant-feature-guide/">
-  <meta property="og:site_name" content="Morethan 小站">
-  <meta property="og:title" content="Qdrant功能指南">
-  <meta property="og:description" content="详细记录了Qdrant向量数据库的功能便于实际应用">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-03-05T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-05T00:00:00+00:00">
-    <meta property="article:tag" content="Qdrant">
-    <meta property="og:image" content="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/ubuntu-note/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/cloud-server-build/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/neo4j-basics/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/mysql-basics/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/hugo-blog/">
-      <meta property="og:see_also" content="https://morethan987.github.io/blog/pytips/">
+	<meta property="og:site_name" content="Morethan 小站">
+	<meta property="og:title" content="Qdrant功能指南">
+	<meta property="og:description" content="详细记录了Qdrant向量数据库的功能便于实际应用">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2025-03-05T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-03-05T00:00:00+00:00">
+		<meta property="article:tag" content="Qdrant">
+		<meta property="og:image" content="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/ubuntu-note/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/cloud-server-build/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/neo4j-basics/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/mysql-basics/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/hugo-blog/">
+			<meta property="og:see_also" content="https://morethan987.github.io/blog/pytips/">
 
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg">
-  <meta name="twitter:title" content="Qdrant功能指南">
-  <meta name="twitter:description" content="详细记录了Qdrant向量数据库的功能便于实际应用">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://morethan987.github.io/blog/qdrant-feature-guide/featured.svg">
+	<meta name="twitter:title" content="Qdrant功能指南">
+	<meta name="twitter:description" content="详细记录了Qdrant向量数据库的功能便于实际应用">
 
   
   
@@ -1468,8 +1468,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         width="96"
         height="96"
         alt="Morethan"
-        src="/img/figure_hu_85e7f4fe5e9dfceb.png"
-        data-zoom-src="/img/figure_hu_6e4b94ce0865b553.png">
+        src="/img/figure_hu_80d96930371440b1.png"
+        data-zoom-src="/img/figure_hu_4e8d74f572b8acb.png">
     
   
   <div class="place-self-center">
@@ -1897,30 +1897,30 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>Qdrant 的数据点能够配置多种不同类型的向量：<strong>密集向量，稀疏向量、多重向量和命名向量</strong></p>
 <table>
-  <thead>
-      <tr>
-          <th>向量类型</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>密集向量</td>
-          <td>就是一般意义上的向量；大部分嵌入模型生成的向量都是这个类型</td>
-      </tr>
-      <tr>
-          <td>稀疏向量</td>
-          <td>长度非固定，只有少量非零元素；一般用于精确的词元匹配和协同过滤</td>
-      </tr>
-      <tr>
-          <td>多重向量</td>
-          <td>多个密集向量构成的矩阵，不同数据点之间密集向量的维度必须相同，但向量的个数不比相等；用于存储同一个目标的不同向量描述</td>
-      </tr>
-      <tr>
-          <td>命名向量</td>
-          <td>上述三种类型的向量的混合，允许不同类型的向量存储在同一个数据点内，这些不同类型的向量构成的集合被抽象为所谓的命名向量</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>向量类型</th>
+					<th>描述</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>密集向量</td>
+					<td>就是一般意义上的向量；大部分嵌入模型生成的向量都是这个类型</td>
+			</tr>
+			<tr>
+					<td>稀疏向量</td>
+					<td>长度非固定，只有少量非零元素；一般用于精确的词元匹配和协同过滤</td>
+			</tr>
+			<tr>
+					<td>多重向量</td>
+					<td>多个密集向量构成的矩阵，不同数据点之间密集向量的维度必须相同，但向量的个数不比相等；用于存储同一个目标的不同向量描述</td>
+			</tr>
+			<tr>
+					<td>命名向量</td>
+					<td>上述三种类型的向量的混合，允许不同类型的向量存储在同一个数据点内，这些不同类型的向量构成的集合被抽象为所谓的命名向量</td>
+			</tr>
+	</tbody>
 </table>
 <p>然后就是数据库基本的增删改查操作，不必赘述。</p>
 
@@ -2033,30 +2033,30 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         </div>
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>如果 <code>group_size</code> 和 <code>limit</code> 被同时设置，那么此时 <code>limit</code> 参数表示分组的数量</p></div></div><p>另外，在 Qdrant 中，稀疏向量和密集向量的搜索有一些关键的不同，对比结果如下：</p>
 <table>
-  <thead>
-      <tr>
-          <th>对比项</th>
-          <th>稀疏向量</th>
-          <th>密集向量</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>相似度算法</td>
-          <td>默认使用点积相似度，不用指明</td>
-          <td>你可以指定受支持的算法</td>
-      </tr>
-      <tr>
-          <td>搜索方式</td>
-          <td>只能精确搜索</td>
-          <td>可以使用 HNSW 算法进行模糊搜索</td>
-      </tr>
-      <tr>
-          <td>搜索结果</td>
-          <td>只返回含有共同非零项的向量</td>
-          <td>返回你设置的 <code>limit</code> 个向量</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>对比项</th>
+					<th>稀疏向量</th>
+					<th>密集向量</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>相似度算法</td>
+					<td>默认使用点积相似度，不用指明</td>
+					<td>你可以指定受支持的算法</td>
+			</tr>
+			<tr>
+					<td>搜索方式</td>
+					<td>只能精确搜索</td>
+					<td>可以使用 HNSW 算法进行模糊搜索</td>
+			</tr>
+			<tr>
+					<td>搜索结果</td>
+					<td>只返回含有共同非零项的向量</td>
+					<td>返回你设置的 <code>limit</code> 个向量</td>
+			</tr>
+	</tbody>
 </table>
 
 <h3 class="relative group">探索·Explore
@@ -2207,38 +2207,38 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </h4>
 <p>这里的过滤条件专指<strong>单个过滤条件</strong>，是过滤操作的基本单元。下面是具体的类型列表：</p>
 <table>
-  <thead>
-      <tr>
-          <th>类型</th>
-          <th>功能</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Match</td>
-          <td>过滤条件是一个具体值，属性值必须和过滤条件完全相等</td>
-      </tr>
-      <tr>
-          <td>Match Any</td>
-          <td>过滤条件是一组选项，属性值在过滤条件中存在即可</td>
-      </tr>
-      <tr>
-          <td>Match Except</td>
-          <td>过滤条件是一组选项，属性值不在过滤条件中存在即可</td>
-      </tr>
-      <tr>
-          <td>Range</td>
-          <td>过滤条件是一个范围，属性值需要在范围之中</td>
-      </tr>
-      <tr>
-          <td>Values count</td>
-          <td>属性值是一个数组，依据数组中元素数量来过滤</td>
-      </tr>
-      <tr>
-          <td>Is Empty</td>
-          <td>以属性值是否存在为依据来过滤</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>类型</th>
+					<th>功能</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Match</td>
+					<td>过滤条件是一个具体值，属性值必须和过滤条件完全相等</td>
+			</tr>
+			<tr>
+					<td>Match Any</td>
+					<td>过滤条件是一组选项，属性值在过滤条件中存在即可</td>
+			</tr>
+			<tr>
+					<td>Match Except</td>
+					<td>过滤条件是一组选项，属性值不在过滤条件中存在即可</td>
+			</tr>
+			<tr>
+					<td>Range</td>
+					<td>过滤条件是一个范围，属性值需要在范围之中</td>
+			</tr>
+			<tr>
+					<td>Values count</td>
+					<td>属性值是一个数组，依据数组中元素数量来过滤</td>
+			</tr>
+			<tr>
+					<td>Is Empty</td>
+					<td>以属性值是否存在为依据来过滤</td>
+			</tr>
+	</tbody>
 </table>
 <p>以上就是最基本的过滤类型，针对不同的负载类型，其语法上会有一定差异：</p>
 <ul>
