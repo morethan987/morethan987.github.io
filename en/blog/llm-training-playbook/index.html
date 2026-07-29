@@ -447,7 +447,7 @@
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount": "1055"
+    "wordCount": "1165"
   }]
   </script>
 
@@ -1662,7 +1662,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#preface">Preface</a></li>
     <li><a href="#fundamentals">Fundamentals</a>
       <ul>
-        <li><a href="#tokenizers">Tokenizers</a></li>
+        <li><a href="#tokenizers">Tokenizers</a>
+          <ul>
+            <li><a href="#detailed-questions">Detailed Questions</a></li>
+          </ul>
+        </li>
         <li><a href="#resource-inventory">Resource Inventory</a>
           <ul>
             <li><a href="#memory-footprint">Memory Footprint</a></li>
@@ -1688,7 +1692,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#preface">Preface</a></li>
     <li><a href="#fundamentals">Fundamentals</a>
       <ul>
-        <li><a href="#tokenizers">Tokenizers</a></li>
+        <li><a href="#tokenizers">Tokenizers</a>
+          <ul>
+            <li><a href="#detailed-questions">Detailed Questions</a></li>
+          </ul>
+        </li>
         <li><a href="#resource-inventory">Resource Inventory</a>
           <ul>
             <li><a href="#memory-footprint">Memory Footprint</a></li>
@@ -1921,6 +1929,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           Food for thought
         </div>
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>A question worth exploring: assuming we had abundant compute, would training directly on raw UTF-8 sequences yield better results? Put another way, we could view the tokenizer as a simple spatial mapping that projects data from the noisy space of UTF-8 encoding into a more semantically meaningful space. We already know this mapping is effective—after all, every major LLM is trained this way—but how much does it actually improve things, and can we quantify that theoretically?</p></div></div><p>In terms of concrete algorithms, most models use the BPE algorithm that OpenAI originally adopted, with tiktoken being the representative library. Google&rsquo;s sentencepiece is also widely used across many large models, though configuring it is considerably more complex compared to tiktoken.</p>
+
+<h4 class="relative group">Detailed Questions
+    <div id="detailed-questions" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#detailed-questions" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ol>
+<li>Why use bytes encoding instead of utf-8 encoding directly?</li>
+</ol>
+<p>Ans: Actuall text data distribution on utf-8 encoding vocabulary is sparse while bytes encoding only has 256 vocabularies which means every vocabulary is amply sampled. However, bytes encoding is not perfect due to extremelly long seqeunce it produces, which is quite a burdon for model training.</p>
+<ol start="2">
+<li>Why pre-tokenize before BPE?</li>
+</ol>
+<p>Ans: Original BPE needs to walk through whole corpus every merge leading to an overwhelming computational cost. Besides, there are some exact boundaries we don&rsquo;t expect the merging happen at, such as cross-word merging(e.g. &ldquo;there&rdquo; and &ldquo;is&rdquo; should be always two tokens) and trivial punctuations(e.g. dog! vs dog.).</p>
 
 <h3 class="relative group">Resource Inventory
     <div id="resource-inventory" class="anchor"></div>
