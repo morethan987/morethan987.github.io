@@ -317,7 +317,7 @@
     "keywords": ["Experience","Life-Summary"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/trials-and-growth/",
-    "wordCount": "12675"
+    "wordCount": "12863"
   }]
   </script>
 
@@ -2437,33 +2437,10 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     data-zoom-src="/blog/trials-and-growth/img/cs_design_arch.jpeg"><figcaption>Computer Design Competition - Technical Roadmap</figcaption></figure>
 </p>
 <p>Finally, after solving all the above, we got the final personal schedule assistant. I hate to admit it, but the end result was&hellip; underwhelming. 😭 Despite the async concurrency, the response speed was still slow. Though it could basically achieve our envisioned effects, hidden bugs and instabilities cropped up constantly. The prompts, despite heavy tuning, were bloated and required strong models to drive them (weak models failed to execute correctly)&hellip; In short, it was far from my expectations. The final competition result was also bare-bones: just a Provincial Third Prize, essentially a participation award. 😭</p>
-<p>From this experience, I clearly realized: effort doesn&rsquo;t necessarily yield good results; direction is more important. That is to say, if one wants to achieve a truly meaningful personal intelligent assistant, this kind of engineered &ldquo;Context Engineering&rdquo; can hardly reach production-grade effects. In the field of AI 4 Coding, there is clear and effective software engineering theory to support us; we can construct an effective Context, AI can easily edit code text, and compilers or test suites can verify code quality to keep the Context clean.</p>
-<p>After understanding the development of AI 4 Coding, I suddenly realized that a truly effective Agent might not need so many fancy data pipelines and tools. Perhaps an appropriately sized Markdown file for storing important memories is enough—even reaching the current ceiling of what LLMs can do. To go further, one would need a breakthrough in underlying models: we need a model that can truly learn continuously, compressing information into network weights. After all, weights can store far more information than a Markdown file, and one wouldn&rsquo;t need to worry about &ldquo;searching&rdquo; for info—a single forward pass would solve it.</p>
-<details
-      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
-      data-type="note"
-      open>
-      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
-        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
-</span></div>
-        <div class="grow">
-          Thinking
-        </div>
-        <div
-          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 20 20"
-  fill="currentColor"
-  aria-hidden="true"
->
-  <path
-    fill-rule="evenodd"
-    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-    clip-rule="evenodd"
-  />
-</svg>
-</span></div>
-      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Truth is simple; no words needed. Simplicity and effectiveness are a form of decision-making aesthetics.</p></div></details>
+<p>After following the development of AI 4 Coding, it suddenly dawned on me that truly effective Agents might not actually need fancy data pipelines or an arsenal of bloated tools. Perhaps a single Markdown file for storing memory, paired with a simple <code>grep</code> tool for the Agent to search through it, is more than enough. Taking it a step further, we could write a CLI tool for the Agent to handle complex, precise scheduling, allowing users to interact directly with a general-purpose Agent framework (like Claude Code)—which, as of today (2026.8.1), seems to be the most effective approach yet.</p>
+<p>At the core of this mindset shift is the fundamental question: &ldquo;Who takes the driver&rsquo;s seat—the framework or the Agent?&rdquo; If the framework takes the lead while the Agent acts merely as a fixed cog performing a narrow function within a workflow, you get the LangChain approach (the Workflow paradigm). The biggest advantage of this model is stability and predictability in specific scenarios, but its major flaw is a lack of generality. On the flip side, if the Agent takes the lead and the framework serves as an extension of its capabilities, you get the Claude Code model. As we all know, this approach has achieved massive success today and become the de facto standard: when people talk about Agents now, this is the default paradigm they mean. The greatest strength of the Agent-centric model is its generality, while its main weakness is instability in specialized domains. However, this weakness diminishes as base models improve, whereas Workflows show relatively little gain in response to improvements in foundation models.</p>
+<p>If we want to push things even further, we need a breakthrough at the underlying model level. We need a model capable of genuine continual learning that compresses information directly into network weights. After all, neural weights can store infinitely more information than a Markdown file, and you don&rsquo;t even have to worry about how to &ldquo;retrieve&rdquo; relevant information—a single forward pass handles it all. Of course, weights aren&rsquo;t a silver bullet; issues like catastrophic forgetting are no less complex than building intricate engineering pipelines. But without a doubt, a breakthrough in continual learning would have a far more profound impact than even the most brilliant engineering implementation.</p>
+
 <h3 class="relative group">Software Practicum
     <div id="software-practicum" class="anchor"></div>
     
