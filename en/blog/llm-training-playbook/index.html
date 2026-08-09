@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-08-06T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-08-09T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -442,12 +442,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-08-06T00:00:00\u002b00:00",
+    "dateModified": "2026-08-09T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount": "3366"
+    "wordCount": "4984"
   }]
   </script>
 
@@ -1302,7 +1302,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-08-06T00:00:00&#43;00:00">Updated: 6 August 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-08-09T00:00:00&#43;00:00">Updated: 9 August 2026</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1681,6 +1681,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#hyperparameter-selection">Hyperparameter Selection</a></li>
             <li><a href="#training-stability">Training Stability</a></li>
             <li><a href="#attention-overhead-during-inference">Attention Overhead During Inference</a></li>
+            <li><a href="#attention-mechanism">Attention Mechanism</a></li>
+            <li><a href="#moe">MoE</a></li>
           </ul>
         </li>
       </ul>
@@ -1720,6 +1722,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#hyperparameter-selection">Hyperparameter Selection</a></li>
             <li><a href="#training-stability">Training Stability</a></li>
             <li><a href="#attention-overhead-during-inference">Attention Overhead During Inference</a></li>
+            <li><a href="#attention-mechanism">Attention Mechanism</a></li>
+            <li><a href="#moe">MoE</a></li>
           </ul>
         </li>
       </ul>
@@ -2305,7 +2309,7 @@ $$
 \log(P(x)) = \log\left(\frac{e^{U_r(x)}}{Z(x)}\right) = U_r(x) - \log(Z(x))
 $$$$
 Z(x)=\sum_{r'=1}^{|V|} e^{U_{r'}(x)}
-$$<p>where \(U_{r}\) represents the scoring function and \(|V|\) denotes the vocabulary size. To stabilize this term, \(\log(Z(x))\) can be transformed into the following form—squaring it and tuning it with \(\alpha\) so that the division term approaches 0 as closely as possible:</p>
+$$<p>where \(U_{r}\) represents the scoring function and \(|V|\) denotes the vocabulary size. To stabilize this term, \(\log(Z(x))\) can be transformed into the following form—squaring it and tuning it with \(\alpha\) so that the division term approaches 0 as closely as possible. This method is called Z-loss stability.</p>
 $$
 \begin{aligned} L &=\sum_i \left[ \log(P(x_i)) -\alpha(\log(Z(x_i))-0)^2 \right] \\ &=\sum_i \left[ \log(P(x_i)) -\alpha\log^2(Z(x_i)) \right] \end{aligned}
 $$<p>Second is the instability within the attention module&rsquo;s Softmax. However, the solution here isn&rsquo;t to modify Softmax directly, but to apply Normalization to the QK inputs—the widely known &ldquo;QK Norm&rdquo; method. In standard Transformer attention, Q and K undergo an inner product immediately after computation; &ldquo;QK Norm&rdquo;, on the other hand, normalizes Q and K before computing their inner product, ensuring the values fed into Softmax remain on a far more consistent scale.</p>
@@ -2327,6 +2331,247 @@ $$<p>Second is the instability within the attention module&rsquo;s Softmax. Howe
 <p>The arithmetic intensity converges toward 1 as sequence length \(n\) grows—an extremely low intensity considering a fully loaded A 100 has an arithmetic intensity of around 156. In other words, LLM inference is a classic memory-bound task.</p>
 <p>To reduce memory bandwidth intensity, we can employ Grouped-Query Attention (GQA), which groups query heads together so that heads in the same group share a single set of KV Cache. Denoting the number of groups as \(g\), GQA reduces memory access complexity to \(O\left( \frac{1}{g}bn^2d+d^2 \right)\).</p>
 <p>Another technique for reducing attention computational complexity is grouped sliding-window attention. Simply put, full attention across the entire sequence is computed only once every four attention layers, while intermediate layers only compute attention over tokens within a fixed sliding window.</p>
+
+<h4 class="relative group">Attention Mechanism
+    <div id="attention-mechanism" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#attention-mechanism" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>There are two main optimization approaches for attention mechanisms: keeping the \(O(n^2)\) complexity while optimizing constants, or fundamentally redesigning the mechanism to achieve linear \(O(n)\) complexity. The former works remarkably well when context lengths aren&rsquo;t exceptionally long (say, under 2 M tokens)—take ChatGPT&rsquo;s local sliding-window attention as an example. Alternatively, you can push constant-factor optimization to the extreme through hardcore systems engineering; FlashAttention is a prime example here, reaching roughly 4 x the speed of standard PyTorch implementations.</p>
+<p>However, if we want to process even longer input sequences, we have to tackle the \(O(n^2)\) complexity directly and reduce it to \(O(n)\). The core idea stems right from the standard quadratic attention formula:</p>
+$$
+\text{Attn(Q,K,V)} = \text{softmax}(QK^T)V
+$$<p>If the softmax function could be omitted, attention would naturally become linear. Below is the batched expression, which is convenient for training:</p>
+$$
+\text{Attn(Q,K,V)} = (QK^T)V = Q(K^TV)
+$$<p>We can also express it in a recurrent form for inference, which looks strikingly similar to an RNN:</p>
+$$
+\begin{matrix} S_{t} = S_{t-1} + k_{t}v_{t}^T \\ y_{t} = q_{t}^TS_{t} \end{matrix}
+$$<p>Linear attention layers are indeed deployed in real-world models. For instance, MiniMax-M 1 adopts a hybrid setup with 7 linear attention layers paired with 1 quadratic attention layer, balancing the recall issues of pure linear attention against the heavy compute costs of pure quadratic attention. To give you a clearer picture of the recall loss brought by linear attention, here is a figure from ByteDance&rsquo;s survey paper on hybrid linear attention:</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="linear_attention_performance_loss"
+    width="1672"
+    height="969"
+    src="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_2f032cdd37a5f51.png"
+    srcset="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_2f032cdd37a5f51.png 800w, /blog/llm-training-playbook/img/linear_attention_performance_loss_hu_256d068a03ac8e73.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/linear_attention_performance_loss.png"><figcaption>Performance loss brought by linear attention mechanisms</figcaption></figure>
+</p>
+<p>As seen in the right chart, pure linear attention suffers a steep decline in recall. Curiously, the left chart shows that some pure linear attention models actually outperform standard quadratic attention in language capabilities (note that the model evaluation score here is a composite metric of perplexity and benchmarks). This suggests that pure recall tasks aren&rsquo;t fully aligned with real-world language tasks, where exact recall isn&rsquo;t always strictly required. Another practical takeaway from the right chart is that a 3:1 hybrid ratio achieves recall performance on par with standard attention—which explains why this 3:1 hybrid scheme is so widely used in practice.</p>
+<p>Building on the recurrent formulation of linear attention, we can add a memory decay factor \(\gamma_{t} = f(x_{t})\) to clear out stale memory states, along with a gated output term \(v_{t}^TD\) (allowing certain information to bypass state compression and output directly). This gives us the Mamba-2 formulation. The Mamba family is undoubtedly one of the most famous linear attention designs out there; in Nemotron-3, it is combined with standard attention in a 3:1 ratio, delivering superior performance compared to pure linear setups.</p>
+$$
+\begin{matrix} S_{t} = \gamma_{t} S_{t-1} + k_{t}v_{t}^T \\ y_{t} = q_{t}^TS_{t} + v_{t}^TD \end{matrix}
+$$<p>Applying a directional Delta correction to the Mamba-2 expression, along with an input gate \(\beta_{t} = f(x_{t})\) for new memory entries, yields the Gated DeltaNet formulation:</p>
+$$
+\begin{matrix} S_{t} = \gamma_{t} (I-\beta_{t}k_{t}k_{t}^T) S_{t-1} + \beta_{t}k_{t}v_{t}^T \\ y_{t} = q_{t}^TS_{t} \end{matrix}
+$$<p>Here, \((I-\beta_{t}k_{t}k_{t}^T)\) erases parts of the state related to the current \(k_{t}\), making room for the new memory item \(\beta_{t}k_{t}v_{t}^T\). The largest-scale application of this approach to date is the Qwen-3.5 model—though again, it uses a 3:1 hybrid format rather than pure linear attention to get the best of both worlds. A clear trend emerges: linear attention mechanisms are gradually converging toward LSTM-like architectures.</p>
+<p>Besides hidden-state approaches, another route is sparse activation, best exemplified by DSA (DeepSeek Attention). DSA uses a lightweight index to compute and retrieve the Top-k most relevant tokens, keeping the costs of \(O(n^2)\) attention manageable. This mechanism is adopted in both DeepSeek-v 3.2 and GLM-5, yielding impressive real-world results.</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          A Side Note
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>While benchmark scores look great on paper, in practical use you&rsquo;ll notice severe context-constraint forgetting. Personally, I don&rsquo;t feel fully confident delegating highly complex tasks to DeepSeek models—if you audit their outputs closely, you&rsquo;ll find they often fail to follow constraints mentioned earlier in the prompt. In short, it can feel a bit clunky 🤔, especially when compared side-by-side with Anthropic&rsquo;s models.</p></div></details>
+<h4 class="relative group">MoE
+    <div id="moe" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#moe" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Mixture of Experts (MoE) is currently one of the most mainstream architectural paradigms. It allows scaled-up models to run with manageable compute costs, reaping the performance gains of parameter expansion while keeping inference costs in check—a true win-win. Of course, MoE wasn&rsquo;t an instant hit; its architecture and training balance are notoriously tricky to tune. In a sense, MoE represents less of a pure algorithmic leap and more of a major win for LLM systems engineering.</p>
+<p>MoE can be applied to either Feed-Forward (FF) layers or Attention layers, but virtually all implementations focus on FF layers. By default, &ldquo;MoE&rdquo; refers to FF-layer MoE, a convention we&rsquo;ll follow here.</p>
+<p>MoE consists of a few key components: routing functions, expert count, and training objectives. Routing functions and expert counts are straightforward, but training objectives serve a dual purpose: training the language model itself and maintaining routing balance so every expert receives adequate training.</p>
+<p>Common routing functions include Top-k and Hash routing, alongside RL-based routing policies that frame load balancing as a linear assignment problem. Among these, Top-k is by far the most popular. Its mathematical formulation is as follows:</p>
+$$
+h_t^l = \sum_{i=1}^{N} \left( g_{i,t}\operatorname{FFN}_i(u_t^l) \right) + u_t^l
+$$$$
+g_{i,t} = \begin{cases} s_{i,t}, & s_{i,t}\in \operatorname{TopK} \left( \{s_{j,t}\mid 1\le j\le N\}, K \right),\\ 0, & \text{otherwise}, \end{cases}
+$$$$
+s_{i,t} = \operatorname{Softmax}_i \left( (u_t^l)^T e_i^l \right)
+$$<p>While this wall of math might look daunting, plain English puts it simply: the input \(u_{t}^l\) takes the inner product with each expert&rsquo;s key vector \(e_{i}^l\), followed by softmax normalization to obtain a matching probability distribution. Next, the gating function \(g_{i,t}\) selects the Top-k experts and zeroes out the rest (a batching trick that avoids conditional branching when calculating \(h_{t}^l\)). From there, standard feedforward computation takes over, aggregating expert outputs via simple summation before adding the residual connection.</p>
+<p>Taking things a step further, experts can be split into finer sub-experts alongside dedicated shared parameters. This allows non-shared experts to specialize further, achieving better ensemble effects. This design is widely known as the DeepSeekMoE architecture.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="DeepSeek_MoE"
+    width="1441"
+    height="618"
+    src="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_a2ff37abcc1aaaed.png"
+    srcset="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_a2ff37abcc1aaaed.png 800w, /blog/llm-training-playbook/img/DeepSeek_MoE_hu_ff81f2a8bf2ffb84.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/DeepSeek_MoE.png"><figcaption>DeepSeek_MoE Architecture Diagram</figcaption></figure>
+</p>
+<p>Logically, both shared and non-shared experts should contribute to model performance. However, ablation studies from OLMoE reveal that performance gains actually stem from finer partitioning of non-shared experts, rather than the shared experts themselves.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="OrlMoE_shared_experts_ablation"
+    width="1333"
+    height="712"
+    src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_b50743b52202e5e1.png"
+    srcset="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_b50743b52202e5e1.png 800w, /blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_3c8bb0ceb51da60e.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation.png"><figcaption>OLMoE Ablation Study on Shared Experts</figcaption></figure>
+</p>
+<p>The exact expert division ratios across architectures are detailed in the table below, which also highlights that DeepSeek-v 1 was indeed the pioneer in granular expert re-segmentation.</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Model</th>
+					<th style="text-align: center">Routed</th>
+					<th style="text-align: center">Active</th>
+					<th style="text-align: center">Shared</th>
+					<th style="text-align: center">Fine-grained ratio</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">GShard</td>
+					<td style="text-align: center">2048</td>
+					<td style="text-align: center">2</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Switch Transformer</td>
+					<td style="text-align: center">64</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">ST-MOE</td>
+					<td style="text-align: center">64</td>
+					<td style="text-align: center">2</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Mixtral</td>
+					<td style="text-align: center">8</td>
+					<td style="text-align: center">2</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">DBRX</td>
+					<td style="text-align: center">16</td>
+					<td style="text-align: center">4</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Grok</td>
+					<td style="text-align: center">8</td>
+					<td style="text-align: center">2</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">DeepSeek v 1</td>
+					<td style="text-align: center">64</td>
+					<td style="text-align: center">6</td>
+					<td style="text-align: center">2</td>
+					<td style="text-align: center">1/4</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Qwen 1.5</td>
+					<td style="text-align: center">60</td>
+					<td style="text-align: center">4</td>
+					<td style="text-align: center">4</td>
+					<td style="text-align: center">1/8</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">DeepSeek v 3</td>
+					<td style="text-align: center">256</td>
+					<td style="text-align: center">8</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1/14</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">OLMoE</td>
+					<td style="text-align: center">64</td>
+					<td style="text-align: center">8</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1/8</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">MiniMax</td>
+					<td style="text-align: center">32</td>
+					<td style="text-align: center">2</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">~1/4</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Llama 4 (maverick)</td>
+					<td style="text-align: center">128</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1/2</td>
+			</tr>
+	</tbody>
+</table>
+<p>Finally, let&rsquo;s look at MoE training. The primary obstacle in MoE training is that the routing function is non-differentiable and inherently prone to instability. Early attempts tried modeling routing as an RL task with little success; adding noise to Top-k sampling improved stability, but at a slight cost to performance. Currently, the most effective solution is a regularization-like approach that introduces a heuristic load-balancing auxiliary loss:</p>
+$$
+\text{loss} = \alpha \cdot N \cdot \sum_{i=1}^{N} f_i \cdot P_i
+$$$$
+f_i = \frac{1}{T} \sum_{x \in \mathcal{B}} \mathbb{1}\{\operatorname{argmax} p(x) = i\}
+$$$$
+P_i = \frac{1}{T} \sum_{x \in \mathcal{B}} p_i(x)
+$$<p>Here, \(f_{i}\) denotes the actual proportion of tokens assigned to expert \(e_{i}\), while \(P_{i}\) represents the routing function&rsquo;s target probability for \(e_{i}\). This formulation uses the non-differentiable \(f_{i}\) to guide the differentiable \(P_{i}\), applying gradient penalties to unbalanced allocations:</p>
+$$
+\frac{\partial \text{loss}}{\partial p_i(x)} = \frac{\alpha N}{T^2} \sum_{x \in \mathcal{B}} \mathbb{1}_{\operatorname{argmax} p(x) = i}
+$$<p>Empirical results confirm that this heuristic approach works remarkably well, effectively balancing load across experts. Standard DeepSeekMoE further supplements this with device-level load-balancing regularization.</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="hurestic_load_balancing_ablation"
+    width="1060"
+    height="808"
+    src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_46f4f18796d7413d.png"
+    srcset="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_46f4f18796d7413d.png 800w, /blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png"><figcaption>Ablation study on heuristic load balancing</figcaption></figure>
+</p>
+<p>The later DeepSeekMoE-v 2 built upon this by introducing a Top-M device routing mechanism and inter-device communication penalty terms to curb communication overhead. To be honest, this adds quite a lot of regularization terms—it&rsquo;s effective, but arguably ungraceful. DeepSeekMoE-v 3 attempted to remove these loss terms by introducing dynamic bias terms, though it didn&rsquo;t eliminate them entirely.</p>
+<p>Of course, training stability and fine-tuning in MoE differ markedly from standard dense FF modules—and frankly, are much trickier. Training instability largely stems from the softmax function in routing (nine out of ten instability issues trace back to softmax 🤣), which can be mitigated using the Z-loss method covered in the <a href="#training-stability" >Training Stability</a> section. On the fine-tuning front, MoE models are far more prone to overfitting on small datasets than dense counterparts. DeepSeek&rsquo;s remedy? Fine-tune with massive datasets.</p>
+<p>Overall, MoE carries a heavy systems engineering flavor—which brings us back to my point at the start: MoE&rsquo;s true impact shines brightest in systems engineering. At its core, MoE uses pragmatic engineering tricks to push the boundaries of scaling laws, giving us a straightforward path to continue squeezing performance out of sheer model scale.</p>
 
           
           
