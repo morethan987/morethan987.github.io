@@ -132,8 +132,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.53159e1f9850a9c2fd5edb49440c234482a7e9dcdda2bae0065ed31ed36d9a35aa2db947d6297a53f95ea897afec9ec1ff3c268703051109da5ce87720557c1c.css"
-    integrity="sha512-UxWeH5hQqcL9XttJRAwjRIKn6dzdorrgBl7THtNtmjWqLblH1il6U/leqJev7J7B/zwmhwMFEQnaXOh3IFV8HA==">
+    href="/css/main.bundle.min.049e76956e66e76b3961e116de1ff1dd04835b80cdfea2672f7c3f86daa486942635db72e3e46cf12a95c82c024105ae63c45c62c2e0e7f5099f9943bbf4e1ea.css"
+    integrity="sha512-BJ52lW5m52s5YeEW3h/x3QSDW4DN/qJnL3w/htqkhpQmNdty4&#43;Rs8SqVyCwCQQWuY8RcYsLg5/UJn5lDu/Th6g==">
 
   
   
@@ -157,7 +157,12 @@
   
   
     
-    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+    <script defer src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+    
+    <script defer src="/js/medium-zoom.67b71ecf7eecce38673a92244d1ffd93edb5f1aeedd12e725d0f67fe901828fa3562f6a6d64ad290b36b7d7034b8ea16e63486d75d957bcf6a2732923e5d46e6.js" integrity="sha512-Z7cez37szjhnOpIkTR/9k&#43;218a7t0S5yXQ9n/pAYKPo1Yvam1krSkLNrfXA0uOoW5jSG112Ve89qJzKSPl1G5g=="></script>
+  
+  
+  
   
 
   
@@ -178,13 +183,14 @@
   
   
   
+  
     
     <script
       defer
       type="text/javascript"
       id="script-bundle"
-      src="/js/main.bundle.min.e3aad7167358eb4fd1cdc7e6708cbefd4b9a1f4e9e69902f63da0354804ea2b877b45772c5f0ed6f44a09074ad5a433fab0b346c53d7f08b0c145977fe480933.js"
-      integrity="sha512-46rXFnNY60/RzcfmcIy&#43;/UuaH06eaZAvY9oDVIBOorh3tFdyxfDtb0SgkHStWkM/qws0bFPX8IsMFFl3/kgJMw=="
+      src="/js/main.bundle.min.e58d781a2f048a769790b307ea01b2cfd94a427d9eea2f35bd3ea7ce1f6393aaaf51c922823157124a7a608e652e6cf98748e7d6e693f1fbf114f05135b31646.js"
+      integrity="sha512-5Y14Gi8EinaXkLMH6gGyz9lKQn2e6i81vT6nzh9jk6qvUckigjFXEkp6YI5lLmz5h0jn1uaT8fvxFPBRNbMWRg=="
       data-copy="复制"
       data-copied="已复制"></script>
   
@@ -235,7 +241,22 @@
 
   
   
-  <script type="module" src="/js/firebase.min.cad74e0625f72f359ec6d6fed579b87733749de70400e7614048050ed08832ee3f58983d5d139fb1ddc5f7f2f5047d45ed80ec923534a3660fc3a7965f936866.js" integrity="sha512-ytdOBiX3LzWextb&#43;1Xm4dzN0necEAOdhQEgFDtCIMu4/WJg9XROfsd3F9/L1BH1F7YDskjU0o2YPw6eWX5NoZg=="></script>
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  
+  <script>
+    (function () {
+      var load = function () {
+        import("\/js\/firebase.min.cad74e0625f72f359ec6d6fed579b87733749de70400e7614048050ed08832ee3f58983d5d139fb1ddc5f7f2f5047d45ed80ec923534a3660fc3a7965f936866.js");
+      };
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(load, { timeout: 4000 });
+      } else {
+        window.addEventListener("load", function () {
+          setTimeout(load, 1500);
+        });
+      }
+    })();
+  </script>
 
   
     
@@ -306,7 +327,7 @@
     "keywords": ["AI","遐想"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/moravecs-paradox/",
-    "wordCount": "1485"
+    "wordCount":  1485 
   }]
   </script>
 
@@ -378,10 +399,11 @@
         跳过正文
       </a>
     </div>
-    
-    
-      <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 z-100">
+    <header>
+      
+      
+        <div class="min-h-[148px]"></div>
+<div class="fixed top-0 inset-x-0 z-100">
   <div
     id="menu-blur"
     class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
@@ -582,7 +604,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
   <div class="flex items-center ms-auto">
     <div class="hidden md:flex">
-      <nav class="flex items-center gap-x-5 h-12">
+      <nav aria-label="" class="flex items-center gap-x-5 h-12">
   
     
       
@@ -595,7 +617,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       title="文章">
       
       
-        <span class="text-base font-medium break-normal">
+        <span class="text-sm font-medium break-normal">
           文章
         </span>
       
@@ -613,7 +635,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       title="标签">
       
       
-        <span class="text-base font-medium break-normal">
+        <span class="text-sm font-medium break-normal">
           标签
         </span>
       
@@ -631,7 +653,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       title="系列">
       
       
-        <span class="text-base font-medium break-normal">
+        <span class="text-sm font-medium break-normal">
           系列
         </span>
       
@@ -649,7 +671,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       title="作者">
       
       
-        <span class="text-base font-medium break-normal">
+        <span class="text-sm font-medium break-normal">
           作者
         </span>
       
@@ -690,7 +712,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       <span class="text-sm font-medium bf-icon-color-hover" title="关于莫拉维克悖论的思考">中文</span>
     </button>
     <ul class="menuhide">
-      <li class="rounded-xl backdrop-blur shadow-2xl p-2 flex flex-col gap-1">
+      <li class="rounded-xl border border-neutral-200/80 bg-neutral/95 shadow-2xl shadow-neutral-900/20 dark:border-neutral-700/80 dark:bg-neutral-800/95 p-2 flex flex-col gap-1">
         
           <a href="/en/blog/moravecs-paradox/" class="flex items-center bf-icon-color-hover px-3 py-1">
             <span class="text-sm font-sm" title="Reflections on Moravec&#39;s Paradox">
@@ -712,23 +734,12 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
   
-    <button
-      id="search-button"
-      aria-label="Search"
-      class="text-base bf-icon-color-hover"
-      title="搜索 (/)">
-      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-</span>
-    </button>
-  
-
-  
     <div class="flex items-center">
       <button
         id="appearance-switcher"
         aria-label="切换为深色模式"
         type="button"
-        class="text-base bf-icon-color-hover"
+        class="text-sm bf-icon-color-hover"
         title="切换为深色模式">
         <div class="flex items-center justify-center dark:hidden">
           <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
@@ -741,22 +752,61 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </button>
     </div>
   
+
+  
+    <button
+      id="search-button"
+      aria-label="搜索 (/)"
+      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      <kbd
+        id="search-shortcut-hint"
+        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
+        aria-hidden="true">
+        ⌘K
+      </kbd>
+    </button>
+  
 </nav>
 
 
 
     </div>
     <div class="flex md:hidden">
-      <div class="flex items-center h-14 gap-4">
+      
+<div class="mobile-header-row relative flex items-center h-14 gap-4">
   
-    <button
-      id="search-button-mobile"
-      aria-label="Search"
-      class="flex items-center justify-center bf-icon-color-hover"
-      title="搜索 (/)">
-      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-</span>
+    
+  <div class="translation nested-menu">
+    <button class="cursor-pointer flex items-center">
+      <span class="me-1">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></span>
+      </span>
+      <span class="text-sm font-medium bf-icon-color-hover" title="关于莫拉维克悖论的思考">中文</span>
     </button>
+    <ul class="menuhide">
+      <li class="rounded-xl border border-neutral-200/80 bg-neutral/95 shadow-2xl shadow-neutral-900/20 dark:border-neutral-700/80 dark:bg-neutral-800/95 p-2 flex flex-col gap-1">
+        
+          <a href="/en/blog/moravecs-paradox/" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="Reflections on Moravec&#39;s Paradox">
+              English
+            </span>
+          </a>
+        
+          <a href="/blog/moravecs-paradox/" class="flex items-center bf-icon-color-hover px-3 py-1">
+            <span class="text-sm font-sm" title="关于莫拉维克悖论的思考">
+              中文
+            </span>
+          </a>
+        
+      </li>
+    </ul>
+  </div>
+
+
   
 
   
@@ -778,115 +828,155 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
   
+    <button
+      id="search-button-mobile"
+      aria-label="搜索 (/)"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="搜索 (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
     <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
-    <label for="mobile-menu-toggle" class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+    <label
+      for="mobile-menu-toggle"
+      tabindex="0"
+      role="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu-dialog"
+      aria-label=""
+      class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
       <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
 </span>
     </label>
 
     <div
+      id="mobile-menu-dialog"
       role="dialog"
       aria-modal="true"
+      aria-label=""
       style="scrollbar-gutter: stable;"
-      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
+      class="z-50 invisible overflow-y-auto opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100
+      
+        fixed inset-0 px-6 py-20 bg-neutral-50/97 dark:bg-neutral-900/99
+      
       bf-scrollbar">
       <label
         for="mobile-menu-toggle"
-        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        tabindex="0"
+        role="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu-dialog"
+        class="fixed end-8 top-5 z-50 h-12 w-12 rounded-full flex items-center justify-center cursor-pointer select-none bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="sr-only"></span>
         <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
 </span>
       </label>
-      <nav class="mx-auto max-w-md space-y-6">
+      <nav
+        aria-label=""
+        class="mx-auto max-w-md space-y-6">
         
   
     
     <div class="px-2">
-      <a
-        href="/blog/"
-        aria-label="文章"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="文章" class="text-2xl font-bold tracking-tight">
-          文章
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="/tags/"
-        aria-label="标签"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="标签" class="text-2xl font-bold tracking-tight">
-          标签
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="/series/"
-        aria-label="系列"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="系列" class="text-2xl font-bold tracking-tight">
-          系列
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="/authors/"
-        aria-label="作者"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="作者" class="text-2xl font-bold tracking-tight">
-          作者
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="https://github.com/morethan987"
-        aria-label="github"
-        
-          target="_blank"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-          <span class="flex items-center justify-center h-8 w-8 text-2xl">
-            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-</span>
-          </span>
-        
-        <span title="" class="text-2xl font-bold tracking-tight">
+      <div class="flex items-center gap-4">
+        <a
+          href="/blog/"
+          aria-label="文章"
           
-        </span>
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="文章" class="text-2xl font-bold tracking-tight">
+            文章
+          </span>
+        </a>
         
-      </a>
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/tags/"
+          aria-label="标签"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="标签" class="text-2xl font-bold tracking-tight">
+            标签
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/series/"
+          aria-label="系列"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="系列" class="text-2xl font-bold tracking-tight">
+            系列
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="/authors/"
+          aria-label="作者"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+          <span title="作者" class="text-2xl font-bold tracking-tight">
+            作者
+          </span>
+        </a>
+        
+      </div>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <div class="flex items-center gap-4">
+        <a
+          href="https://github.com/morethan987"
+          aria-label="github"
+          
+            target="_blank"
+          
+          class="flex grow items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+          
+            <span class="flex items-center justify-center h-8 w-8 text-2xl">
+              <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+            </span>
+          
+          <span title="" class="text-2xl font-bold tracking-tight">
+            
+          </span>
+        </a>
+        
+      </div>
 
       
     </div>
@@ -896,41 +986,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   
 
         
-  
-    <div
-      class="flex flex-wrap items-center [&_span]:text-2xl [&_.translation_button_.icon]:text-4xl! [&_.translation_button_span]:text-base! [&_.translation_.menuhide_span]:text-sm! gap-x-6 ps-2 mt-8 pt-8 border-t bf-border-color">
-      
-  <div class="translation nested-menu">
-    <button class="cursor-pointer flex items-center">
-      <span class="me-1">
-        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></span>
-      </span>
-      <span class="text-sm font-medium bf-icon-color-hover" title="关于莫拉维克悖论的思考">中文</span>
-    </button>
-    <ul class="menuhide">
-      <li class="rounded-xl backdrop-blur shadow-2xl p-2 flex flex-col gap-1">
-        
-          <a href="/en/blog/moravecs-paradox/" class="flex items-center bf-icon-color-hover px-3 py-1">
-            <span class="text-sm font-sm" title="Reflections on Moravec&#39;s Paradox">
-              English
-            </span>
-          </a>
-        
-          <a href="/blog/moravecs-paradox/" class="flex items-center bf-icon-color-hover px-3 py-1">
-            <span class="text-sm font-sm" title="关于莫拉维克悖论的思考">
-              中文
-            </span>
-          </a>
-        
-      </li>
-    </ul>
-  </div>
-
-
-
-      
-    </div>
   
 
       </nav>
@@ -975,14 +1030,18 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 <script
   type="text/javascript"
-  src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
-  integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+  src="/js/background-blur.min.2b8477cfbdb6843f33fd6f7c9a9a1343c895e878a7b55c32979586e6c6ba1018372c0c66a011abdbd7bc1a912f98ea249043c82bfae8fb04a0f37f854ee1e920.js"
+  integrity="sha512-K4R3z722hD8z/W98mpoTQ8iV6HintVwyl5WG5sa6EBg3LAxmoBGr29e8GpEvmOokkEPIK/ro&#43;wSg83&#43;FTuHpIA=="
   data-blur-id="menu-blur"></script>
 
-    
+      
+    </header>
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         
+  
+  
+  
   
   <article>
     
@@ -1015,6 +1074,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+
   
     
     
@@ -1026,7 +1086,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
     <div id="hero" class="h-[150px] md:h-[200px]"></div>
   
-  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+  <div
+    id="hero-background"
+    class="hero-canvas-fade fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
     
     
     
@@ -1038,26 +1100,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       decoding="async"
       fetchpriority="high"
       class="absolute inset-0 w-full h-full object-cover"
-      >
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
-    <div
-      class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+       />
+    <div class="absolute inset-0 bg-neutral/60 dark:bg-neutral-800/50"></div>
   </div>
 
   
-    <div
-      id="background-blur"
-      class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral-100/75 dark:bg-neutral-800/60"></div>
     
     
     <script
       type="text/javascript"
-      src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
-      integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
-      data-blur-id="background-blur"
-      data-image-id="background-image"
-      data-image-url="/blog/moravecs-paradox/background.svg"></script>
+      src="/js/hero-scroll-fade.min.b0a2a23f4c45f0971fb042db738e81023bae5bb5972287dc8980505bad3e9f7ff460fad6f95599ee3888bb572cf70bdaa713e2418bd276c17460b4deaa109789.js"
+      integrity="sha512-sKKiP0xF8JcfsELbc46BAjuuW7WXIofciYBQW60&#43;n3/0YPrW&#43;VWZ7jiIu1cs9wvapxPiQYvSdsF0YLTeqhCXiQ=="
+      data-hero-id="hero-background"
+      data-fade-distance="500"></script>
   
       
     
@@ -1303,11 +1358,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
@@ -1316,18 +1367,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/ai/">
@@ -1347,9 +1391,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
               
             
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/%E9%81%90%E6%83%B3/">
@@ -1389,87 +1430,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
   
     
-    
-<div class="flex author">
-  
-    
-    
       
-    
-    
-      
-      
-      
-        
-        
-        
-      
-      <img
-        class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
-        width="96"
-        height="96"
-        alt="Morethan"
-        src="/img/figure_hu_80d96930371440b1.png"
-        data-zoom-src="/img/figure_hu_4e8d74f572b8acb.png">
-    
-  
-  <div class="place-self-center">
-    
-      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-        作者
-      </div>
-      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
-        Morethan
-      </div>
-    
-    
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">计算机、物理与AI理工男</div>
-    
-    <div class="text-2xl sm:text-lg">
-  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
-    
-      
-        
-        <a
-          class=" hover:text-primary-700 dark:hover:text-primary-400"
-          href="https://github.com/morethan987"
-          
-          target="_blank"
-          aria-label="Github"
-          title="Github"
-          rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-</span></span></a
-        >
-      
-    
-      
-        
-        <a
-          class=" hover:text-primary-700 dark:hover:text-primary-400"
-          href="https://morethan987.github.io/KnowledgeBase"
-          
-          target="_blank"
-          aria-label="Knowledgebase"
-          title="Knowledgebase"
-          rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M96 0C43 0 0 43 0 96L0 416c0 53 43 96 96 96l288 0 32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32L384 0 96 0zm0 384l256 0 0 64L96 448c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16zm16 48l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg></span></span></a
-        >
-      
-    
-  </div>
-
-</div>
-  </div>
-</div>
-
   
 
-  
-    
-
-  
-    <div class="mb-5"></div>
   
 
       
@@ -1494,7 +1457,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   </summary>
   <div
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
+    <nav id="TableOfContents" aria-label="目录">
   <ul>
     <li><a href="#莫拉维克悖论">莫拉维克悖论</a>
       <ul>
@@ -1519,7 +1482,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   </summary>
   <div
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
+    <nav id="TableOfContentsMobile" aria-label="目录">
   <ul>
     <li><a href="#莫拉维克悖论">莫拉维克悖论</a>
       <ul>
@@ -1925,6 +1888,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+
+
+
   
   
 
@@ -1954,16 +1920,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 <article
-  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related group relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
-    <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: 1.5">
+    <div
+      class="flex-none relative overflow-hidden thumbnail_card_related"
+      style="--thumbnail-aspect-ratio: 1.5">
       <img
         src="/blog/cumcm2024/featured.svg"
-        role="presentation"
+        alt="CUMCM 2024总结"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
+        class="nozoom not-prose absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] "
+         />
     </div>
   
   
@@ -2120,11 +2089,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
@@ -2133,18 +2098,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/cumcm/">
@@ -2164,9 +2122,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
               
             
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/math/">
@@ -2210,6 +2165,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+
+
+
   
   
 
@@ -2239,16 +2197,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 <article
-  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related group relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
-    <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: 1.5">
+    <div
+      class="flex-none relative overflow-hidden thumbnail_card_related"
+      style="--thumbnail-aspect-ratio: 1.5">
       <img
         src="/blog/pytips/featured.svg"
-        role="presentation"
+        alt="Python小技巧"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
+        class="nozoom not-prose absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] "
+         />
     </div>
   
   
@@ -2405,11 +2366,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
@@ -2418,18 +2375,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/python/">
@@ -2473,6 +2423,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 
+
+
+
   
   
 
@@ -2502,16 +2455,19 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
 <article
-  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related group relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
-    <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: 1.5">
+    <div
+      class="flex-none relative overflow-hidden thumbnail_card_related"
+      style="--thumbnail-aspect-ratio: 1.5">
       <img
         src="/blog/bayesianopt/featured.svg"
-        role="presentation"
+        alt="贝叶斯优化"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
-        class="not-prose absolute inset-0 w-full h-full object-cover">
+        class="nozoom not-prose absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] "
+         />
     </div>
   
   
@@ -2668,11 +2624,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
@@ -2681,18 +2633,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
               
-            
-          
         
       
         
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/math/">
@@ -2714,9 +2659,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
           
             
               
-            
-            
-              
                 <a class="relative mt-[0.5rem] me-2" href="/tags/matlab/">
                   <span class="flex cursor-pointer">
   
@@ -2734,9 +2676,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
               
             
           
-            
-              
-            
             
               
                 <a class="relative mt-[0.5rem] me-2" href="/tags/cumcm/">
@@ -2824,6 +2763,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 
 
       
+
     </footer>
   </article>
 
@@ -2861,7 +2801,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       
       
       
-      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
+      <nav aria-label="" class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
         <ul class="flex list-none flex-col sm:flex-row">
           
             <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 ">
@@ -2910,21 +2850,15 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
   </div>
   
-    <script>
-      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
-        margin: 24,
-        background: "rgba(0,0,0,0.5)",
-        scrollOffset: 0,
-      });
-    </script>
-  
-  
   
     <a rel="me" href="https://masto.ai/@blowfish"></a>
   
 </footer>
 <div
   id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="搜索"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="/">
   <div
@@ -2939,6 +2873,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <input
           type="search"
           id="search-query"
+          aria-label="搜索"
           class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
           placeholder="搜索"
           tabindex="0">
@@ -2960,6 +2895,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </div>
 
     </div>
+    
+    
   </body>
   
 </html>
