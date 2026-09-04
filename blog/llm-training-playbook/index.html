@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-08-31T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-04T00:00:00+00:00">
 		<meta property="article:tag" content="架构">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="工程实践">
@@ -502,12 +502,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-08-31T00:00:00\u002b00:00",
+    "dateModified": "2026-09-04T00:00:00\u002b00:00",
     
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/llm-training-playbook/",
-    "wordCount":  10844 
+    "wordCount":  13799 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-08-31T00:00:00&#43;00:00">更新于: 2026-08-31</time><span class="px-2 text-primary-500">&middot;</span><span>10844 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">22 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-04T00:00:00&#43;00:00">更新于: 2026-09-04</time><span class="px-2 text-primary-500">&middot;</span><span>13799 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1662,6 +1662,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#模型架构">模型架构</a>
           <ul>
             <li><a href="#归一化">归一化</a></li>
+            <li><a href="#激活函数">激活函数</a></li>
             <li><a href="#层并行">层并行</a></li>
             <li><a href="#位置编码">位置编码</a></li>
             <li><a href="#超参数选择">超参数选择</a></li>
@@ -1673,7 +1674,22 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         </li>
       </ul>
     </li>
-    <li><a href="#系统工程">系统工程</a></li>
+    <li><a href="#系统工程">系统工程</a>
+      <ul>
+        <li><a href="#gpu-架构">GPU 架构</a></li>
+        <li><a href="#优化技巧">优化技巧</a>
+          <ul>
+            <li><a href="#分支控制">分支控制</a></li>
+            <li><a href="#低精度计算">低精度计算</a></li>
+            <li><a href="#算子混合">算子混合</a></li>
+            <li><a href="#重计算">重计算</a></li>
+            <li><a href="#批量访存">批量访存</a></li>
+            <li><a href="#分块">分块</a></li>
+            <li><a href="#数据图品鉴">数据图品鉴</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1704,6 +1720,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#模型架构">模型架构</a>
           <ul>
             <li><a href="#归一化">归一化</a></li>
+            <li><a href="#激活函数">激活函数</a></li>
             <li><a href="#层并行">层并行</a></li>
             <li><a href="#位置编码">位置编码</a></li>
             <li><a href="#超参数选择">超参数选择</a></li>
@@ -1715,7 +1732,22 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         </li>
       </ul>
     </li>
-    <li><a href="#系统工程">系统工程</a></li>
+    <li><a href="#系统工程">系统工程</a>
+      <ul>
+        <li><a href="#gpu-架构">GPU 架构</a></li>
+        <li><a href="#优化技巧">优化技巧</a>
+          <ul>
+            <li><a href="#分支控制">分支控制</a></li>
+            <li><a href="#低精度计算">低精度计算</a></li>
+            <li><a href="#算子混合">算子混合</a></li>
+            <li><a href="#重计算">重计算</a></li>
+            <li><a href="#批量访存">批量访存</a></li>
+            <li><a href="#分块">分块</a></li>
+            <li><a href="#数据图品鉴">数据图品鉴</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -2144,7 +2176,17 @@ $$
 $$<p>但最新的实现一般都是：</p>
 $$
 \text{FNN}(x) = \sigma(xW_{1})W_{2}
-$$<p>这种操作的原因主要是节省内存并提高训练稳定性。训练稳定性相关内容见<a href="#训练稳定性" >训练稳定性</a>小节。 #### 激活函数</p>
+$$<p>这种操作的原因主要是节省内存并提高训练稳定性。训练稳定性相关内容见<a href="#训练稳定性" >训练稳定性</a>小节。</p>
+
+<h4 class="relative group">激活函数
+    <div id="激活函数" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%bf%80%e6%b4%bb%e5%87%bd%e6%95%b0" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
 <p>目前各种各样的激活函数层出不穷，但选择哪种激活函数还是有考究的。目前的 LLM 模型一般都选择带有门控机制的激活函数，所谓的门控机制其实就是一个逐元素相乘(Hadamard product, \(\otimes\))，下面是一个具体的对比例子。经典的 FF 层表达式如下：</p>
 $$
 \text{FF} = max(0, xW_{1})W_{2}
@@ -2581,6 +2623,288 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     </span>
     
 </h2>
+<p>这部分内容的核心就是了解现代 GPU 的大致工作原理以及如何将这些原理用于模型架构的选择以及算法的改进。对于模型架构方面，一个比较著名的例子就是 NanoGPT Speedrun (一个竞速项目)，最大的速度提升是将模型的词表扩大为最近的 64 的整数倍。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/nanogpt-speedrun.png"
+    width="1168"
+    height="436"
+    src="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_6a4b8af0a5d1cece.png"
+    srcset="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_6a4b8af0a5d1cece.png 800w, /blog/llm-training-playbook/img/nanogpt-speedrun.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/nanogpt-speedrun.png"></figure>
+<p>而算法设计上的例子就是 FlashAttention，不用多说，这个方法的提升甚至都是按照整数倍来计量的而不是百分比。</p>
+
+<h3 class="relative group">GPU 架构
+    <div id="gpu-架构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#gpu-%e6%9e%b6%e6%9e%84" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>GPU 的内部架构与调度机制，可以清晰地拆解为&quot;编程与存储视角&quot;和&quot;硬件与调度视角&quot;两个正交维度，其中编程与存储视角如下</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/gpu_memory_model.png"
+    width="1212"
+    height="657"
+    src="/blog/llm-training-playbook/img/gpu_memory_model_hu_73a4a76a5aee1bd8.png"
+    srcset="/blog/llm-training-playbook/img/gpu_memory_model_hu_73a4a76a5aee1bd8.png 800w, /blog/llm-training-playbook/img/gpu_memory_model.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/gpu_memory_model.png"></figure>
+<ol>
+<li>Thread：并行计算的实际单元，所有 Threads 执行相同的指令但作用在不同的输入数据上</li>
+<li>Block：一组 Threads，重点是一个 Block 中的 Threads 可以通过共享内存通信</li>
+<li>Grid：一组 Block 并配备共享的全局内存和静态内存进行通信</li>
+<li>Host：主机端 CPU 及其内存，数据在 Host 与 GPU 显存之间通过 PCIe 传输，由于带宽和延迟受限，跨 Host 相关的交互与数据搬运是非常昂贵的</li>
+</ol>
+<p>而从硬件与调度视角来看则有下面这些概念：</p>
+<ol>
+<li>SM(Streaming Multiprocessor)：GPU 的物理大核心，拥有独立的 Warp 调度器、寄存器堆、共享内存和计算单元，负责承接并执行 Block</li>
+<li>Warp：微观层面的硬件最小执行单元，通常固定为 32 个 Threads。它与 Block 的主要区别在于：Block 是开发者根据逻辑定义的任务块(大小与维度可变)，但硬件在实际调度时会把它切片划分为若干个 Warp，同一个 Warp 内的 32 个线程步调一致地接收调度器指令；Warp 存在的核心意义是通过快速上下文切换来隐藏高访存延时以提高整体吞吐（例如当 Warp 0 读内存卡顿等待时，调度器能零开销立刻切换给 Warp 1 发射计算指令）</li>
+<li>Wave：宏观层面的整卡调度批次，指整块 GPU 的所有 SM 一次性能够同时并发容纳并执行的最大 Block 总量，GPU 只能以整波为单位推进计算任务</li>
+</ol>
+<p>直观上来说，GPU 的架构与传统的 CPU 架构非常类似，有计算机体系结构基础的同志应该能够轻松理解，其多级缓存结构与 CPU 的多级缓存几乎一致。另外，TPU 的设计架构与 GPU 其实很类似，TPU 中的概念在 GPU 中几乎都有对等的概念。最大的区别就是：更轻量化的控制器，更大的矩阵乘法单元，更快的 L1 Cache(GPU 中的 Share Memory，TPU 中的 Vector Memory)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/tpu-gpu.png"
+    width="1782"
+    height="804"
+    src="/blog/llm-training-playbook/img/tpu-gpu_hu_898a79aa293f4be1.png"
+    srcset="/blog/llm-training-playbook/img/tpu-gpu_hu_898a79aa293f4be1.png 800w, /blog/llm-training-playbook/img/tpu-gpu_hu_69b28d87c7e511ee.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/tpu-gpu.png"></figure>
+<p>GPU 架构中的不同部分的迭代速度是不同的，计算能力的迭代速度远高于缓存的迭代速度，如下图所示。这也是为什么目前系统工程的优化大部分都集中于缓存优化，因为计算能力远高于缓存的加载速度：减少 1 次访存可以带来 10000 次的吞吐量提升(甚至更高)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/gpu_component_develop_speed.png"
+    width="1462"
+    height="659"
+    src="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_bc55882eadd42f3a.png"
+    srcset="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_bc55882eadd42f3a.png 800w, /blog/llm-training-playbook/img/gpu_component_develop_speed_hu_365ed4c84a7a87b1.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/gpu_component_develop_speed.png"></figure>
+
+<h3 class="relative group">优化技巧
+    <div id="优化技巧" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bc%98%e5%8c%96%e6%8a%80%e5%b7%a7" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+
+<h4 class="relative group">分支控制
+    <div id="分支控制" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e6%94%af%e6%8e%a7%e5%88%b6" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>简而言之：使用 mask 替代分支指令(if-else)；这么做的主要原因是 Thread 的一个核心约束：每一个 Thread 都需要执行相同的指令，如果有分支判断的话不同的输入数据可能选择不同的分支，这是一个需要解决的矛盾。当然，硬件层面的解决方法也非常直接：不同的分支都会被计算一遍，最后再选择性丢弃一部分计算结果</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/gpu_diverge_excute.png"
+    width="1290"
+    height="452"
+    src="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_8b368ddeef71ab51.png"
+    srcset="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_8b368ddeef71ab51.png 800w, /blog/llm-training-playbook/img/gpu_diverge_excute_hu_233df8da3447836d.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/gpu_diverge_excute.png"></figure>
+
+<h4 class="relative group">低精度计算
+    <div id="低精度计算" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bd%8e%e7%b2%be%e5%ba%a6%e8%ae%a1%e7%ae%97" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>很直白，降低参与计算的数据精度，换取数据吞吐。为了用如此低的比特数来训练模型，总是需要一些技巧的。目前主流的思路是一组低精度数据配上一个缩放因子，代表就是 MXFP8 格式的数据。这种方式有一个需要处理的问题：转置如何计算？数据是按照行来分块并配备缩放参数的，转置之后行变成了列，与原有的数据结构不一致了。这个问题其实很难用优雅的方式解决，在实际训练的过程中，是直接拷贝一份数据专门用于转置操作。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/MXFP8.png"
+    width="1266"
+    height="480"
+    src="/blog/llm-training-playbook/img/MXFP8_hu_5fdc19a2805765dd.png"
+    srcset="/blog/llm-training-playbook/img/MXFP8_hu_5fdc19a2805765dd.png 800w, /blog/llm-training-playbook/img/MXFP8.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MXFP8.png"></figure>
+<p>还有一种思路在 CS336 课程中没有提及，可能是这个方法比较复杂并且目前没有生产级的大模型使用了这种方法，<a href="https://arxiv.org/abs/2509.00404"  target="_blank" rel="noreferrer">论文链接</a>附上，该论文在 8B 规模的 LLM 训练中实现了全流程 FP4 精度。在此之前，NVIDIA 其实已经有相关的方案能够使用 FP4 精度来训练模型，但没有开源出来。于是该论文根据 NVIDIA 公开的技术博客使用 BF16 模拟了 FP4 的训练行为，据说能够模拟模型的精度，训练损失和收敛性，算是非常严谨的对比实验了。</p>
+<p>具体而言，这篇研究想要解决的问题是：深度学习参数的数值分布较为广泛，直接使用 Scaling factor 方案作用于原始矩阵数值会导致小数值被大数值抹平(典型的量化损耗)，因为大的动态范围会让量化精度网格变得稀疏，小数据会挤在很小的一个接近 0 的范围内，很容易就被量化为 0 了。一个直觉是大数值和小数值应该分开表示，于是研究使用 SVD 的方法对矩阵数值进行了分解，其中 \(\sigma_{i}\) 就是从大到小排序后的奇异值：</p>
+$$
+M = \sum_{i=1}^{r} \sigma_i \cdot (u_i v_i^T)
+$$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布上界(大约相差一两个数量级)，如果分离这些大奇异值的话，剩余的残差矩阵的数值就能够更均匀地分布在量化网格上；而分离出来的主导分量则天然可以被一个缩放参数和两个数值相对平坦的奇异向量表示，很适合 FP4 量化</p>
+<p>![img/Pasted image 20260903012451.png](img/Pasted image 20260903012451.png)</p>
+<p>值得一提的是 SVD 量化这个思路并非首创，在上面这篇研究之前就已经有一个类似的方案了：<a href="https://arxiv.org/abs/2411.05007"  target="_blank" rel="noreferrer">SVDQuant</a>，虽然都是使用 SVD 但这篇研究感觉没做干净，高精度矩阵还是在搬来搬去并且还需要处理稀疏矩阵乘法等难题，而上面这篇研究则很漂亮地放进了 Scaling factor 和奇异向量里面。</p>
+
+<h4 class="relative group">算子混合
+    <div id="算子混合" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ae%97%e5%ad%90%e6%b7%b7%e5%90%88" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>将不同的算子融合为一个整体，避免在 HBM 中反复进行读写，降低访存次数，这也是 FlashAttention 中的一个核心操作。下面这个插图能够非常直观地看出其动机：一次数据读取之后尽可能多地计算，避免中途写回。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/operator_fusion.png"
+    width="1703"
+    height="839"
+    src="/blog/llm-training-playbook/img/operator_fusion_hu_ecf3876f72d0f069.png"
+    srcset="/blog/llm-training-playbook/img/operator_fusion_hu_ecf3876f72d0f069.png 800w, /blog/llm-training-playbook/img/operator_fusion_hu_4cde1af8565fe9a4.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/operator_fusion.png"></figure>
+
+<h4 class="relative group">重计算
+    <div id="重计算" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%87%8d%e8%ae%a1%e7%ae%97" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>字面意思，中间变量不写缓存，需要的时候重新通过输入计算一遍。以下面的这个计算为例，能够将 8 次访存变为 5 次。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/recomputation.png"
+    width="1223"
+    height="557"
+    src="/blog/llm-training-playbook/img/recomputation_hu_1d97ba0b49765739.png"
+    srcset="/blog/llm-training-playbook/img/recomputation_hu_1d97ba0b49765739.png 800w, /blog/llm-training-playbook/img/recomputation.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/recomputation.png"></figure>
+
+<h4 class="relative group">批量访存
+    <div id="批量访存" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%89%b9%e9%87%8f%e8%ae%bf%e5%ad%98" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>这个技巧涉及更加复杂的底层细节，DRAM (global memory) 的读取方式是并发式的，其工作原理就决定了一整行的数据都需要进入&quot;预备状态&quot;然后才能够从中片选出你需要的数据。换言之，一整行数据加载的成本已经付出了，我们能做的只是尽量从中片选出尽量多的数据来摊薄成本。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/memory_coalescing.png"
+    width="1619"
+    height="691"
+    src="/blog/llm-training-playbook/img/memory_coalescing_hu_99367f8c9efe81f5.png"
+    srcset="/blog/llm-training-playbook/img/memory_coalescing_hu_99367f8c9efe81f5.png 800w, /blog/llm-training-playbook/img/memory_coalescing_hu_a6d637985888dba4.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/memory_coalescing.png"></figure>
+<p>举个例子，一个行优先矩阵如果让 Thread 工作于不同的行索引，就会产生不连续的访存；但是如果让 Thread 工作在同一个行索引，这样就能够利用 DRAM 整行加载的特性，一次性满足大量 Thread 的数据需求。</p>
+
+<h4 class="relative group">分块
+    <div id="分块" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e5%9d%97" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>与算子混合的目标一致，都是降低访存次数，或者说减少不必要的访存，让一次数据读取对应尽量多的计算。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/tiling.png"
+    width="983"
+    height="394"
+    src="/blog/llm-training-playbook/img/tiling_hu_764b7dce6a2e8487.png"
+    srcset="/blog/llm-training-playbook/img/tiling_hu_764b7dce6a2e8487.png 800w, /blog/llm-training-playbook/img/tiling.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/tiling.png"></figure>
+<p>如上所示，如果不进行分块的话，那么每一个输入都需要从全局缓存读取 N 次，进行分块之后每一个输入只需要从全局缓存中读取 N/T 次，然后在 Block 中的共享缓存再读取 T 次即可，而共享缓存的读取速度是很高的，几乎将全局缓存的访问变为了原来的 \(\frac{1}{T}\)，是一个非常强悍的优化了。</p>
+<p>值得一提的是，这个技巧的效果与参与运算的矩阵形状有很大的关系，如果矩阵的形状不合适则会产生很大的损耗。一则是不良分块，某些分块中几乎没有数据纯粹空转，如下图所示。</p>
+<p>![bad_tiling](bad_tiling.png &ldquo;&ldquo;Cite from <a href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html#tile-quant"  target="_blank" rel="noreferrer">NVIDIA Blog</a>)</p>
+<p>二则是对齐，如果矩阵的形状合适，那么一次 Tiling 读取的数据就能够非常高效地利用 DRAM 的并发读取特性；如果形状不合适，那么对于吞吐的影响也是巨大的。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="layout_align"
+    width="1225"
+    height="605"
+    src="/blog/llm-training-playbook/img/layout_align_hu_fb1c6f2259adaa8d.png"
+    srcset="/blog/llm-training-playbook/img/layout_align_hu_fb1c6f2259adaa8d.png 800w, /blog/llm-training-playbook/img/layout_align.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/layout_align.png"><figcaption>Cite from the <a href="https://www.thonking.ai/p/what-shapes-do-matrix-multiplications"  target="_blank" rel="noreferrer">blog</a></figcaption></figure>
+
+<h4 class="relative group">数据图品鉴
+    <div id="数据图品鉴" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%95%b0%e6%8d%ae%e5%9b%be%e5%93%81%e9%89%b4" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="flops_for_square_matmul"
+    width="1456"
+    height="965"
+    src="/blog/llm-training-playbook/img/flops_for_square_matmul_hu_5d91d9c25ea48671.webp"
+    srcset="/blog/llm-training-playbook/img/flops_for_square_matmul_hu_5d91d9c25ea48671.webp 800w, /blog/llm-training-playbook/img/flops_for_square_matmul_hu_748c1fd757c9e26c.webp 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/flops_for_square_matmul.webp"><figcaption>Cite from the <a href="https://www.thonking.ai/p/what-shapes-do-matrix-multiplications"  target="_blank" rel="noreferrer">blog</a></figcaption></figure>
+<p>了解了先前所有的优化技巧之后，这幅图中诡异的现象就能够被解释了：首先大体上的趋势是算数强度随着矩阵变大而增长；非常明显的断点则是由于不良矩阵形状造成的(具体原因见<a href="#分块" >分块</a>小节)，一个对齐的矩阵形状能够带来接近一半的吞吐提升；最后图线中的神秘周期性断点，是由于 GPU 按整波推进过程中产生的，简而言之，当矩阵的形状达到某一个特定的临界之后，会突然产生一个 Wave 无法完成的计算任务，从而被强制向上舍入量化为整数 Wave，但实际上最后一个 Wave 的负载是不够的。这也是这个现象叫作波次量化(Wave Quantization)的原因</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/wave_quantization_example.png"
+    width="1415"
+    height="590"
+    src="/blog/llm-training-playbook/img/wave_quantization_example_hu_cf1064846e6c8091.png"
+    srcset="/blog/llm-training-playbook/img/wave_quantization_example_hu_cf1064846e6c8091.png 800w, /blog/llm-training-playbook/img/wave_quantization_example_hu_a892963ed2a6d4ec.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/wave_quantization_example.png"></figure>
 
           
           
