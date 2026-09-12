@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-09-04T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-12T00:00:00+00:00">
 		<meta property="article:tag" content="架构">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="工程实践">
@@ -502,12 +502,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-09-04T00:00:00\u002b00:00",
+    "dateModified": "2026-09-12T00:00:00\u002b00:00",
     
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/llm-training-playbook/",
-    "wordCount":  13799 
+    "wordCount":  15238 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-04T00:00:00&#43;00:00">更新于: 2026-09-04</time><span class="px-2 text-primary-500">&middot;</span><span>13799 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">更新于: 2026-09-12</time><span class="px-2 text-primary-500">&middot;</span><span>15238 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">31 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1688,6 +1688,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#数据图品鉴">数据图品鉴</a></li>
           </ul>
         </li>
+        <li><a href="#工程细节">工程细节</a>
+          <ul>
+            <li><a href="#基准测试">基准测试</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1744,6 +1749,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#批量访存">批量访存</a></li>
             <li><a href="#分块">分块</a></li>
             <li><a href="#数据图品鉴">数据图品鉴</a></li>
+          </ul>
+        </li>
+        <li><a href="#工程细节">工程细节</a>
+          <ul>
+            <li><a href="#基准测试">基准测试</a></li>
           </ul>
         </li>
       </ul>
@@ -2026,8 +2036,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/float32.png"
     width="3220"
     height="120"
-    src="/blog/llm-training-playbook/img/float32_hu_673c746bb4305281.png"
-    srcset="/blog/llm-training-playbook/img/float32_hu_673c746bb4305281.png 800w, /blog/llm-training-playbook/img/float32_hu_82e649b97930cef.png 1280w"
+    src="/blog/llm-training-playbook/img/float32_hu_cc7e6aebb2c41f0c.png"
+    srcset="/blog/llm-training-playbook/img/float32_hu_cc7e6aebb2c41f0c.png 800w, /blog/llm-training-playbook/img/float32_hu_295444a7df253ee1.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/float32.png"></figure>
 <ol start="2">
@@ -2041,8 +2051,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/float16.png"
     width="1620"
     height="120"
-    src="/blog/llm-training-playbook/img/float16_hu_b946da37a56f86b0.png"
-    srcset="/blog/llm-training-playbook/img/float16_hu_b946da37a56f86b0.png 800w, /blog/llm-training-playbook/img/float16_hu_1e9fb1c5fef34a3b.png 1280w"
+    src="/blog/llm-training-playbook/img/float16_hu_949a9258ac96ee8d.png"
+    srcset="/blog/llm-training-playbook/img/float16_hu_949a9258ac96ee8d.png 800w, /blog/llm-training-playbook/img/float16_hu_c18ce6dedf89a85b.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/float16.png"></figure>
 <ol start="3">
@@ -2056,8 +2066,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/bfloat16.png"
     width="1620"
     height="120"
-    src="/blog/llm-training-playbook/img/bfloat16_hu_36ddee8a508e6e1a.png"
-    srcset="/blog/llm-training-playbook/img/bfloat16_hu_36ddee8a508e6e1a.png 800w, /blog/llm-training-playbook/img/bfloat16_hu_27121af6af11a6a.png 1280w"
+    src="/blog/llm-training-playbook/img/bfloat16_hu_f9092c0cc0285fd8.png"
+    srcset="/blog/llm-training-playbook/img/bfloat16_hu_f9092c0cc0285fd8.png 800w, /blog/llm-training-playbook/img/bfloat16_hu_61ff565bbe37fea0.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/bfloat16.png"></figure>
 <p>实际工程中一般都使用混合精度进行训练：float32 用于优化器状态，bfloat16 用于参数、激活值和梯度。当然了，还有一些更加激进的精度表示方式比如 float8， float4 但实际上模型的训练一般不会用。并且 float4 在使用的时候也不会直接用于表示一个参数值，而是与相邻的参数值打包共享一个精度缩放参数，这种操作的有效性依赖于参数的局部相似性，也就是相邻的参数可能具有相近的数量级，于是可以将公共的数量级提取出来从而用一批低精度的数配合缩放参数表达一批高精度的数。</p>
@@ -2102,8 +2112,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/tensor_multipule.png"
     width="1101"
     height="561"
-    src="/blog/llm-training-playbook/img/tensor_multipule_hu_ee3e05405ed4b7dd.png"
-    srcset="/blog/llm-training-playbook/img/tensor_multipule_hu_ee3e05405ed4b7dd.png 800w, /blog/llm-training-playbook/img/tensor_multipule.png 1280w"
+    src="/blog/llm-training-playbook/img/tensor_multipule_hu_ea5a301542017e96.png"
+    srcset="/blog/llm-training-playbook/img/tensor_multipule_hu_ea5a301542017e96.png 800w, /blog/llm-training-playbook/img/tensor_multipule.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/tensor_multipule.png"></figure>
 <p>总计算量的计算思路：最终得到的张量为 \(B\times K\) 的形状，总共有 \(B\cdot K\) 个元素，每个元素都是由 \(D\) 组元素相乘最后求和得到，也就是最终结果的每个元素都代表了 \(2D\) 的乘法或加法计算量。因此总计算量为：\(2D\cdot B\cdot K\)</p>
@@ -2135,8 +2145,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="transformer_original"
     width="1923"
     height="1086"
-    src="/blog/llm-training-playbook/img/transformer_original_hu_277adc43b7e8fdfa.png"
-    srcset="/blog/llm-training-playbook/img/transformer_original_hu_277adc43b7e8fdfa.png 800w, /blog/llm-training-playbook/img/transformer_original_hu_b5f845bb363d3edc.png 1280w"
+    src="/blog/llm-training-playbook/img/transformer_original_hu_48d8d2689c369827.png"
+    srcset="/blog/llm-training-playbook/img/transformer_original_hu_48d8d2689c369827.png 800w, /blog/llm-training-playbook/img/transformer_original_hu_db1c07f393031c2d.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/transformer_original.png"><figcaption>标准 Transformer 架构</figcaption></figure>
 <figure><img
@@ -2147,8 +2157,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="transformer_modern"
     width="2155"
     height="930"
-    src="/blog/llm-training-playbook/img/transformer_modern_hu_502d5184694b2da5.png"
-    srcset="/blog/llm-training-playbook/img/transformer_modern_hu_502d5184694b2da5.png 800w, /blog/llm-training-playbook/img/transformer_modern_hu_45beb7b374634d1a.png 1280w"
+    src="/blog/llm-training-playbook/img/transformer_modern_hu_a40910bcd8fd9a24.png"
+    srcset="/blog/llm-training-playbook/img/transformer_modern_hu_a40910bcd8fd9a24.png 800w, /blog/llm-training-playbook/img/transformer_modern_hu_6dbcb75c60bb09d2.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/transformer_modern.png"><figcaption>改良版 Transformer 架构</figcaption></figure>
 <p>在最终输出部分有一个值得注意的点，那就是最后输出张量的形状，根据经验最终得到的应该是对整个词表的词汇的概率分布也就是 \(\text{batch\_size}\times \text{vocab\_size}\) 的一个张量，但实际上输出的应该是 \(\text{batch\_size} \times \text{seq\_len} \times \text{vocab\_size}\) 也就是对每一个位置的 token 都预测下一个词的分布(这正是 Transformer 高度并行化训练的由来)。猜你想问，那么推理的时候不会很浪费吗？实际上推理的时候只需要最后一个 token 上的概率分布。是的，如果直接照搬训练的逻辑确实很浪费，但推理的时候有 KV Cache 技术，所以只有在生成<strong>首个</strong> token 的时候会产生浪费，后续逐 token 生成的时候会直接令序列长度为固定的 1 不变，因为本身也没必要再重复传入先前的序列。</p>
@@ -2244,8 +2254,8 @@ $$<p>虽然在 GPT-J 的论文中，说明这种并行方法在大规模训练�
     alt="img/RoPE.png"
     width="1491"
     height="562"
-    src="/blog/llm-training-playbook/img/RoPE_hu_94158716e8cd1000.png"
-    srcset="/blog/llm-training-playbook/img/RoPE_hu_94158716e8cd1000.png 800w, /blog/llm-training-playbook/img/RoPE_hu_593a22640af959a5.png 1280w"
+    src="/blog/llm-training-playbook/img/RoPE_hu_3843805804c7000b.png"
+    srcset="/blog/llm-training-playbook/img/RoPE_hu_3843805804c7000b.png 800w, /blog/llm-training-playbook/img/RoPE_hu_b05ce0c4f384445.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/RoPE.png"></figure>
 <p>猜你想问：一个二维的向量当然可以这么旋转了，那么高维的向量怎么旋转呢？很难想象一个四维的矢量应该怎么旋转才能够满足上面的条件。但实际上我们没必要真的去旋转一个高维向量，因为最终还是要进行内积，所以大可以将高维矢量的分量两个一组当成平面矢量来处理。具体数学公式如下，引入两个索引参数 \(i\in\{0, 1, \dots ,\text{max\_seq\_len}-1\}\) 表示 token 的绝对位置索引(最多处理 \(\text{max\_seq\_len}\) 个 token)，\(k \in \{0,1, \dots ,\frac{d}{2}-1\}\) 表示 \(d\) 维的 token 嵌入向量按照两个一组划分后的组编号。</p>
@@ -2309,8 +2319,8 @@ $$<p>我们可以把它改写成逐元素相乘的形式： $\(x \odot \cos(\the
     alt="vocabulary_size"
     width="1561"
     height="669"
-    src="/blog/llm-training-playbook/img/vocabulary_size_hu_2648d068aded28bc.png"
-    srcset="/blog/llm-training-playbook/img/vocabulary_size_hu_2648d068aded28bc.png 800w, /blog/llm-training-playbook/img/vocabulary_size_hu_19daea096b6ed197.png 1280w"
+    src="/blog/llm-training-playbook/img/vocabulary_size_hu_2d53fc54c028dfb3.png"
+    srcset="/blog/llm-training-playbook/img/vocabulary_size_hu_2d53fc54c028dfb3.png 800w, /blog/llm-training-playbook/img/vocabulary_size_hu_aad3002b9e61ab29.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/vocabulary_size.png"><figcaption>词表大小统计数据</figcaption></figure>
 <p>过拟合和正则化的问题，逻辑上来说应该是不需要考虑过拟合的问题：数据量远超参数量，一般而言根本就不会出现过拟合现象；SGD 类型的优化算法在语料上只会进行一遍训练，模型也很难记住文本片段。而实际上 Dropout 方法确实逐渐被取消了，但是权重衰减方案却一直得到了保留：尽管在大部分情况下权重衰减方案都比非衰减方案更糟糕，但是当配合上动态的小学习率的时候在最终结果上能够反超非衰减方案(下面第二张图最右下角部分蓝色虚线实现了最优的训练损失)</p>
@@ -2322,8 +2332,8 @@ $$<p>我们可以把它改写成逐元素相乘的形式： $\(x \odot \cos(\the
     alt="img/why_weight_decay.png"
     width="1561"
     height="535"
-    src="/blog/llm-training-playbook/img/why_weight_decay_hu_eb38a7229e6d5ba7.png"
-    srcset="/blog/llm-training-playbook/img/why_weight_decay_hu_eb38a7229e6d5ba7.png 800w, /blog/llm-training-playbook/img/why_weight_decay_hu_48a34fd9cda5078.png 1280w"
+    src="/blog/llm-training-playbook/img/why_weight_decay_hu_e44ed631fb9194c0.png"
+    srcset="/blog/llm-training-playbook/img/why_weight_decay_hu_e44ed631fb9194c0.png 800w, /blog/llm-training-playbook/img/why_weight_decay_hu_b470312496f3e60e.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/why_weight_decay.png"></figure>
 
@@ -2345,8 +2355,8 @@ $$<p>我们可以把它改写成逐元素相乘的形式： $\(x \odot \cos(\the
     alt="train_stability"
     width="1337"
     height="914"
-    src="/blog/llm-training-playbook/img/train_stability_hu_ca9a785b924bee85.png"
-    srcset="/blog/llm-training-playbook/img/train_stability_hu_ca9a785b924bee85.png 800w, /blog/llm-training-playbook/img/train_stability_hu_61c982e2ceebef5a.png 1280w"
+    src="/blog/llm-training-playbook/img/train_stability_hu_4fa53f1195d11324.png"
+    srcset="/blog/llm-training-playbook/img/train_stability_hu_4fa53f1195d11324.png 800w, /blog/llm-training-playbook/img/train_stability_hu_475fa27fc59d2d1c.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/train_stability.png"><figcaption>训练稳定性示意图</figcaption></figure>
 <p>这种训练不稳定稳定从何而来？首先是模型输出处的 softmax 函数，其计算中的除法部分比较危险：</p>
@@ -2405,8 +2415,8 @@ $$<p>在实际的模型中这种线性的注意力层确实是有使用的，比
     alt="linear_attention_performance_loss"
     width="1672"
     height="969"
-    src="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_2f032cdd37a5f51.png"
-    srcset="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_2f032cdd37a5f51.png 800w, /blog/llm-training-playbook/img/linear_attention_performance_loss_hu_256d068a03ac8e73.png 1280w"
+    src="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_897109652c69c1b5.png"
+    srcset="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_897109652c69c1b5.png 800w, /blog/llm-training-playbook/img/linear_attention_performance_loss_hu_61d09374c32f3ca9.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/linear_attention_performance_loss.png"><figcaption>线性注意力机制带来的性能损失</figcaption></figure>
 <p>从右图中可以看出，纯线性注意力在召回率上会出现显著的下降。一个有意思的现象是左图中部分纯线性注意力模型语言能力表现竟然优于标准二次方注意力机制(这里的模型表现评分其实是综合了困惑度和基准测试的综合评分指标)，这也说明了纯召回任务和实际的语言任务并非完全对齐，实际的语言任务对于精确召回的要求并不高。从右图中可以得出另一个更有实际意义的结论：按照 \(3:1\) 混合的线性注意力机制在召回率上可以达到与标准注意力机制持平的效果，这也是为什么后文提及的实际应用中常常使用 \(3:1\) 混合方案的依据。</p>
@@ -2472,8 +2482,8 @@ $$<p>虽然这一堆花里胡哨的公式看着非常令人头大，但是翻译
     alt="DeepSeek_MoE"
     width="1441"
     height="618"
-    src="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_a2ff37abcc1aaaed.png"
-    srcset="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_a2ff37abcc1aaaed.png 800w, /blog/llm-training-playbook/img/DeepSeek_MoE_hu_ff81f2a8bf2ffb84.png 1280w"
+    src="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_45e2aa8c57cc235.png"
+    srcset="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_45e2aa8c57cc235.png 800w, /blog/llm-training-playbook/img/DeepSeek_MoE_hu_31a3263693e1307a.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/DeepSeek_MoE.png"><figcaption>DeepSeek_MoE 架构图</figcaption></figure>
 <p>逻辑上来说，共享专家和其他非共享的专家对于模型表现都应该具有贡献，但是 OlMoE 的消融实验结果则表明，这种方式带来的性能增长来源于合理的非共享专家划分，而不是共享专家本身。</p>
@@ -2485,8 +2495,8 @@ $$<p>虽然这一堆花里胡哨的公式看着非常令人头大，但是翻译
     alt="OrlMoE_shared_experts_ablation"
     width="1333"
     height="712"
-    src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_b50743b52202e5e1.png"
-    srcset="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_b50743b52202e5e1.png 800w, /blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_3c8bb0ceb51da60e.png 1280w"
+    src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_ceffde2705690684.png"
+    srcset="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_ceffde2705690684.png 800w, /blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_6b9569573128b104.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation.png"><figcaption>OrlMoE 对共享专家机制的消融实验</figcaption></figure>
 <p>具体的专家切分比例如下面表格所示，同时从中也可以看出 DeepSeek-v1 确实是首次提出对专家模块进行再分片的模型。</p>
@@ -2606,8 +2616,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="hurestic_load_balancing_ablation"
     width="1060"
     height="808"
-    src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_46f4f18796d7413d.png"
-    srcset="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_46f4f18796d7413d.png 800w, /blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png 1280w"
+    src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_8988fa0d813d3eda.png"
+    srcset="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_8988fa0d813d3eda.png 800w, /blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png"><figcaption>启发式负载平衡消融实验</figcaption></figure>
 <p>后续的 DeepSeekMoE-v2 又在 DeepSeekMoE 的基础上增加了 Top-M 的设备路由机制和设备之间的通信开销的正则项，用于降低设备之间的通信开销。实话实说，这个正则项实在是有点太多了，虽然有效但不够优雅。所以 DeepSeekMoE-v3 尝试通过增加偏置项来抹掉这些正则项，虽然最终并没有完全抹掉就是了。</p>
@@ -2632,8 +2642,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="img/nanogpt-speedrun.png"
     width="1168"
     height="436"
-    src="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_6a4b8af0a5d1cece.png"
-    srcset="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_6a4b8af0a5d1cece.png 800w, /blog/llm-training-playbook/img/nanogpt-speedrun.png 1280w"
+    src="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_e746f812e84b62ff.png"
+    srcset="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_e746f812e84b62ff.png 800w, /blog/llm-training-playbook/img/nanogpt-speedrun.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/nanogpt-speedrun.png"></figure>
 <p>而算法设计上的例子就是 FlashAttention，不用多说，这个方法的提升甚至都是按照整数倍来计量的而不是百分比。</p>
@@ -2656,8 +2666,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="img/gpu_memory_model.png"
     width="1212"
     height="657"
-    src="/blog/llm-training-playbook/img/gpu_memory_model_hu_73a4a76a5aee1bd8.png"
-    srcset="/blog/llm-training-playbook/img/gpu_memory_model_hu_73a4a76a5aee1bd8.png 800w, /blog/llm-training-playbook/img/gpu_memory_model.png 1280w"
+    src="/blog/llm-training-playbook/img/gpu_memory_model_hu_f269c57f39893c3f.png"
+    srcset="/blog/llm-training-playbook/img/gpu_memory_model_hu_f269c57f39893c3f.png 800w, /blog/llm-training-playbook/img/gpu_memory_model.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/gpu_memory_model.png"></figure>
 <ol>
@@ -2681,8 +2691,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="img/tpu-gpu.png"
     width="1782"
     height="804"
-    src="/blog/llm-training-playbook/img/tpu-gpu_hu_898a79aa293f4be1.png"
-    srcset="/blog/llm-training-playbook/img/tpu-gpu_hu_898a79aa293f4be1.png 800w, /blog/llm-training-playbook/img/tpu-gpu_hu_69b28d87c7e511ee.png 1280w"
+    src="/blog/llm-training-playbook/img/tpu-gpu_hu_38b83c2a0bbee976.png"
+    srcset="/blog/llm-training-playbook/img/tpu-gpu_hu_38b83c2a0bbee976.png 800w, /blog/llm-training-playbook/img/tpu-gpu_hu_13e8bd6a9d1c9dc7.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/tpu-gpu.png"></figure>
 <p>GPU 架构中的不同部分的迭代速度是不同的，计算能力的迭代速度远高于缓存的迭代速度，如下图所示。这也是为什么目前系统工程的优化大部分都集中于缓存优化，因为计算能力远高于缓存的加载速度：减少 1 次访存可以带来 10000 次的吞吐量提升(甚至更高)</p>
@@ -2694,8 +2704,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="img/gpu_component_develop_speed.png"
     width="1462"
     height="659"
-    src="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_bc55882eadd42f3a.png"
-    srcset="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_bc55882eadd42f3a.png 800w, /blog/llm-training-playbook/img/gpu_component_develop_speed_hu_365ed4c84a7a87b1.png 1280w"
+    src="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_937367c46d3e9dcd.png"
+    srcset="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_937367c46d3e9dcd.png 800w, /blog/llm-training-playbook/img/gpu_component_develop_speed_hu_e6cb153d86be6650.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/gpu_component_develop_speed.png"></figure>
 
@@ -2727,8 +2737,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="img/gpu_diverge_excute.png"
     width="1290"
     height="452"
-    src="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_8b368ddeef71ab51.png"
-    srcset="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_8b368ddeef71ab51.png 800w, /blog/llm-training-playbook/img/gpu_diverge_excute_hu_233df8da3447836d.png 1280w"
+    src="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_1f31a0807a1e2089.png"
+    srcset="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_1f31a0807a1e2089.png 800w, /blog/llm-training-playbook/img/gpu_diverge_excute_hu_b0e6b5b91d88ede8.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/gpu_diverge_excute.png"></figure>
 
@@ -2750,8 +2760,8 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
     alt="img/MXFP8.png"
     width="1266"
     height="480"
-    src="/blog/llm-training-playbook/img/MXFP8_hu_5fdc19a2805765dd.png"
-    srcset="/blog/llm-training-playbook/img/MXFP8_hu_5fdc19a2805765dd.png 800w, /blog/llm-training-playbook/img/MXFP8.png 1280w"
+    src="/blog/llm-training-playbook/img/MXFP8_hu_605b09918f584639.png"
+    srcset="/blog/llm-training-playbook/img/MXFP8_hu_605b09918f584639.png 800w, /blog/llm-training-playbook/img/MXFP8.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/MXFP8.png"></figure>
 <p>还有一种思路在 CS336 课程中没有提及，可能是这个方法比较复杂并且目前没有生产级的大模型使用了这种方法，<a href="https://arxiv.org/abs/2509.00404"  target="_blank" rel="noreferrer">论文链接</a>附上，该论文在 8B 规模的 LLM 训练中实现了全流程 FP4 精度。在此之前，NVIDIA 其实已经有相关的方案能够使用 FP4 精度来训练模型，但没有开源出来。于是该论文根据 NVIDIA 公开的技术博客使用 BF16 模拟了 FP4 的训练行为，据说能够模拟模型的精度，训练损失和收敛性，算是非常严谨的对比实验了。</p>
@@ -2759,7 +2769,18 @@ $$<p>最终实验的结果表明，这种启发式的方案效果好像真的还
 $$
 M = \sum_{i=1}^{r} \sigma_i \cdot (u_i v_i^T)
 $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布上界(大约相差一两个数量级)，如果分离这些大奇异值的话，剩余的残差矩阵的数值就能够更均匀地分布在量化网格上；而分离出来的主导分量则天然可以被一个缩放参数和两个数值相对平坦的奇异向量表示，很适合 FP4 量化</p>
-<p>![img/Pasted image 20260903012451.png](img/Pasted image 20260903012451.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/metis_illustration.png"
+    width="1778"
+    height="922"
+    src="/blog/llm-training-playbook/img/metis_illustration_hu_15374314bdad70f8.png"
+    srcset="/blog/llm-training-playbook/img/metis_illustration_hu_15374314bdad70f8.png 800w, /blog/llm-training-playbook/img/metis_illustration_hu_ba3a5a40d152b03e.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/metis_illustration.png"></figure>
 <p>值得一提的是 SVD 量化这个思路并非首创，在上面这篇研究之前就已经有一个类似的方案了：<a href="https://arxiv.org/abs/2411.05007"  target="_blank" rel="noreferrer">SVDQuant</a>，虽然都是使用 SVD 但这篇研究感觉没做干净，高精度矩阵还是在搬来搬去并且还需要处理稀疏矩阵乘法等难题，而上面这篇研究则很漂亮地放进了 Scaling factor 和奇异向量里面。</p>
 
 <h4 class="relative group">算子混合
@@ -2780,8 +2801,8 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
     alt="img/operator_fusion.png"
     width="1703"
     height="839"
-    src="/blog/llm-training-playbook/img/operator_fusion_hu_ecf3876f72d0f069.png"
-    srcset="/blog/llm-training-playbook/img/operator_fusion_hu_ecf3876f72d0f069.png 800w, /blog/llm-training-playbook/img/operator_fusion_hu_4cde1af8565fe9a4.png 1280w"
+    src="/blog/llm-training-playbook/img/operator_fusion_hu_7f014a7ef7b514b5.png"
+    srcset="/blog/llm-training-playbook/img/operator_fusion_hu_7f014a7ef7b514b5.png 800w, /blog/llm-training-playbook/img/operator_fusion_hu_390670203b12848d.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/operator_fusion.png"></figure>
 
@@ -2803,8 +2824,8 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
     alt="img/recomputation.png"
     width="1223"
     height="557"
-    src="/blog/llm-training-playbook/img/recomputation_hu_1d97ba0b49765739.png"
-    srcset="/blog/llm-training-playbook/img/recomputation_hu_1d97ba0b49765739.png 800w, /blog/llm-training-playbook/img/recomputation.png 1280w"
+    src="/blog/llm-training-playbook/img/recomputation_hu_a81f7e3103c4ee39.png"
+    srcset="/blog/llm-training-playbook/img/recomputation_hu_a81f7e3103c4ee39.png 800w, /blog/llm-training-playbook/img/recomputation.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/recomputation.png"></figure>
 
@@ -2826,8 +2847,8 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
     alt="img/memory_coalescing.png"
     width="1619"
     height="691"
-    src="/blog/llm-training-playbook/img/memory_coalescing_hu_99367f8c9efe81f5.png"
-    srcset="/blog/llm-training-playbook/img/memory_coalescing_hu_99367f8c9efe81f5.png 800w, /blog/llm-training-playbook/img/memory_coalescing_hu_a6d637985888dba4.png 1280w"
+    src="/blog/llm-training-playbook/img/memory_coalescing_hu_87fcabe29e1e2bea.png"
+    srcset="/blog/llm-training-playbook/img/memory_coalescing_hu_87fcabe29e1e2bea.png 800w, /blog/llm-training-playbook/img/memory_coalescing_hu_2c185f2a90a92b34.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/memory_coalescing.png"></figure>
 <p>举个例子，一个行优先矩阵如果让 Thread 工作于不同的行索引，就会产生不连续的访存；但是如果让 Thread 工作在同一个行索引，这样就能够利用 DRAM 整行加载的特性，一次性满足大量 Thread 的数据需求。</p>
@@ -2850,8 +2871,8 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
     alt="img/tiling.png"
     width="983"
     height="394"
-    src="/blog/llm-training-playbook/img/tiling_hu_764b7dce6a2e8487.png"
-    srcset="/blog/llm-training-playbook/img/tiling_hu_764b7dce6a2e8487.png 800w, /blog/llm-training-playbook/img/tiling.png 1280w"
+    src="/blog/llm-training-playbook/img/tiling_hu_6f984f4bf025e50a.png"
+    srcset="/blog/llm-training-playbook/img/tiling_hu_6f984f4bf025e50a.png 800w, /blog/llm-training-playbook/img/tiling.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/tiling.png"></figure>
 <p>如上所示，如果不进行分块的话，那么每一个输入都需要从全局缓存读取 N 次，进行分块之后每一个输入只需要从全局缓存中读取 N/T 次，然后在 Block 中的共享缓存再读取 T 次即可，而共享缓存的读取速度是很高的，几乎将全局缓存的访问变为了原来的 \(\frac{1}{T}\)，是一个非常强悍的优化了。</p>
@@ -2866,8 +2887,8 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
     alt="layout_align"
     width="1225"
     height="605"
-    src="/blog/llm-training-playbook/img/layout_align_hu_fb1c6f2259adaa8d.png"
-    srcset="/blog/llm-training-playbook/img/layout_align_hu_fb1c6f2259adaa8d.png 800w, /blog/llm-training-playbook/img/layout_align.png 1280w"
+    src="/blog/llm-training-playbook/img/layout_align_hu_f7b1cb30ed450a79.png"
+    srcset="/blog/llm-training-playbook/img/layout_align_hu_f7b1cb30ed450a79.png 800w, /blog/llm-training-playbook/img/layout_align.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/layout_align.png"><figcaption>Cite from the <a href="https://www.thonking.ai/p/what-shapes-do-matrix-multiplications"  target="_blank" rel="noreferrer">blog</a></figcaption></figure>
 
@@ -2901,10 +2922,67 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
     alt="img/wave_quantization_example.png"
     width="1415"
     height="590"
-    src="/blog/llm-training-playbook/img/wave_quantization_example_hu_cf1064846e6c8091.png"
-    srcset="/blog/llm-training-playbook/img/wave_quantization_example_hu_cf1064846e6c8091.png 800w, /blog/llm-training-playbook/img/wave_quantization_example_hu_a892963ed2a6d4ec.png 1280w"
+    src="/blog/llm-training-playbook/img/wave_quantization_example_hu_56879678a7cf99b.png"
+    srcset="/blog/llm-training-playbook/img/wave_quantization_example_hu_56879678a7cf99b.png 800w, /blog/llm-training-playbook/img/wave_quantization_example_hu_fc9b1890baa43cc5.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/wave_quantization_example.png"></figure>
+
+<h3 class="relative group">工程细节
+    <div id="工程细节" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%b7%a5%e7%a8%8b%e7%bb%86%e8%8a%82" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>在上一节内容的浸泡之下，你可能会觉得系统工程和之前的架构设计还有点像哈，只是换了一个领域的知识。但实际工作中，这一节的内容远比你想象中更加琐碎，这一节就是专门的工程碎碎念😅</p>
+
+<h4 class="relative group">基准测试
+    <div id="基准测试" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9f%ba%e5%87%86%e6%b5%8b%e8%af%95" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>在进行任何优化之前，必须要做的一个动作就是搭建一个基准测试框架来量化你的系统。而这里的基准测试框架基本上指的就是：对不同计算过程的时间进行准确测量。</p>
+<p>具体而言，在<a href="#基础部分" >基础部分</a>我们获得了一个精美的 Transformer 模型。我们首先可以去测量一些粗糙的部分：前向、后向、参数更新。这三个大阶段是比较容易测量的，只需要将训练过程拷贝一份然后简化其中的逻辑，在各个阶段打上断点即可。需要注意的只有一些问题：</p>
+<ol>
+<li>使用 <code>timeit.default_timer()</code> 而非 <code>time.time()</code>，前者能够拿到系统最高级的时钟从而获得更准确的计时(现代深度学习计算硬件的速度非常快，因此需要更精确的测量)</li>
+<li>使用 <code>torch.cuda.synchronize()</code> 去排空 GPU 中剩余的计算。CPU 对 GPU 的调用的异步的，计算任务发出后 CPU 会立即进行下一条任务，因此需要阻塞等待 GPU 完成任务之后再测量时间差才是准确的</li>
+</ol>
+<p>当然，这么粗糙的测量对于系统工程层面来说是不够的，因此就需要使用 NVIDIA 官方提供的一些工具来精确测量某一个阶段中的具体的内核耗时，也就是 <a href="https://docs.nvidia.com/nsight-systems/index.html"  target="_blank" rel="noreferrer">Nsight Systems</a>，PyTorch 对这个也是有支持的，也就是 <code>torch.cuda.nvtx</code> 这个子模块中的相关接口。使用方式不算难，但是工程实现上有一个非常头疼的问题：计时代码注入。理想中的代码注入需要有一些性质：</p>
+<ol>
+<li>简单明了，可读性高</li>
+<li>使用方便，能够简单地控制某一处的测量是否启用</li>
+<li>不污染原本的训练代码</li>
+</ol>
+<p>CS336 中默认使用的是&quot;猴子补丁&quot;方案，具体来说就是对 Python 的模块导入系统下手，将别的模块中调用的函数直接劫持成自己加了注解的函数。看上去还挺合理的对吧，但是说实话这个操作是需要一些微妙手法的，比如劫持的顺序、目标模块原本的导入方式等等，一不小心就会劫持失败。而且该方案没法劫持反向传播过程，因为反向传播过程被完全封装到了 PyTorch 之中，猴子补丁是注入不进去的。</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cs336_basics.layers.multihead_self_attention</span> <span class="k">as</span> <span class="nn">_mha</span> <span class="c1"># this should be a module type!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">cs336_systems.utils</span> <span class="kn">import</span> <span class="n">annotated_scaled_dot_product_attention</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># monkey patch</span>
+</span></span><span class="line"><span class="cl"><span class="n">_mha</span><span class="o">.</span><span class="n">scaled_dot_product_attention</span> <span class="o">=</span> <span class="n">annotated_scaled_dot_product_attention</span>  <span class="c1"># type: ignore</span></span></span></code></pre></div></div>
+<p>工程的琐碎之处就在此淋漓尽致地体现了出来，如果你认为猴子补丁方案很丑陋，你想要找到一个更优雅的解决方案。那么恭喜，你将会像直接中了无量空处一样接收到一堆神秘的名词，一通对比之后你会发现猴子补丁方案真是太简洁优雅了，有效得恰到好处😅</p>
+<p>总而言之，在初次接触这些东西的时候难免会手忙脚乱，但应对混乱的有效办法就是不断试错，运行一个命令，理解其输出(追问 AI)，然后纠正自己的理解偏差。你可能会问，现在这个 AI 时代这些细节还有了解的必要吗？我的观点是：你只需要记住你印象最深的就行了，比如，<code>nsys</code> 中会维护一条 GPU 事件流，nvtx 投影的作用就是将 CPU 标记的时间段投影到 GPU 事件流中从而圈定出目标代码背后真正运行了哪些 GPU 操作。</p>
+<hr>
+<p>这里放一些实验结果吧，下面这张图就是在不同大小的模型上运行不同长度的输入的最耗时内核统计表，内核名称经过了美化，保留了其核心含义。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/nsys_kernel_results.png"
+    width="1336"
+    height="939"
+    src="/blog/llm-training-playbook/img/nsys_kernel_results_hu_332da1533a150386.png"
+    srcset="/blog/llm-training-playbook/img/nsys_kernel_results_hu_332da1533a150386.png 800w, /blog/llm-training-playbook/img/nsys_kernel_results_hu_387d73fdb6e9ddac.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/nsys_kernel_results.png"></figure>
+<p>前向传播大部分情况下最耗时的 kernel 是 <code>gemm</code> 也就是广义矩阵乘法内核(\(D = \alpha AB + \beta C\))；在上下文长度达到 2048 的时候出现了一个特例，最耗时的 kernel 变为了 <code>masked_fill</code> 也就是掩码覆盖步骤，这个转变说明了长上下文的瓶颈是内存而非计算；后向传播过程中大部分耗时集中在 <code>vectorized_mul</code> 也就是逐元素乘法内核上，这也是反向传播过程中的一个特点，那就是存在大量的逐元素操作(逐元素加，逐元素取指数等等都占据了不小的比例)并且这种逐元素计算开销很大；另一个值得一提的那就是 <code>gemm</code> 内核的形状，其并非是我们送入的张量的形状，这里其实就是 GPU 自动分块的具体表现。</p>
 
           
           

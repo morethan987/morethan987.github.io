@@ -1879,8 +1879,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="Transformer"
     width="1825"
     height="725"
-    src="/blog/llm-foundation-notes/img/Transformer_hu_3e48c416c3cc547f.png"
-    srcset="/blog/llm-foundation-notes/img/Transformer_hu_3e48c416c3cc547f.png 800w, /blog/llm-foundation-notes/img/Transformer_hu_cb43f941d9acdb9e.png 1280w"
+    src="/blog/llm-foundation-notes/img/Transformer_hu_567ebb9aa3e03e52.png"
+    srcset="/blog/llm-foundation-notes/img/Transformer_hu_567ebb9aa3e03e52.png 800w, /blog/llm-foundation-notes/img/Transformer_hu_e59ad3ef9a29f00c.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/Transformer.png"><figcaption>引用自第 16 页</figcaption></figure>
 <p>模型架构没什么好说的，但这里有几个比较有意思的问题，在我看书之前还比较模糊，看书之后就立刻清晰了。</p>
@@ -1954,8 +1954,8 @@ $$
     alt="775"
     width="1081"
     height="426"
-    src="/blog/llm-foundation-notes/img/encoder-only_hu_28981d1457668389.png"
-    srcset="/blog/llm-foundation-notes/img/encoder-only_hu_28981d1457668389.png 800w, /blog/llm-foundation-notes/img/encoder-only.png 1280w"
+    src="/blog/llm-foundation-notes/img/encoder-only_hu_19e1b30db95e0057.png"
+    srcset="/blog/llm-foundation-notes/img/encoder-only_hu_19e1b30db95e0057.png 800w, /blog/llm-foundation-notes/img/encoder-only.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/encoder-only.png"></figure>
 <p>Encoder-Decoder 架构是非常标准的 Transformer 结构，在训练阶段使用输入和真实输出(Ground Truth)进行训练：首先输入文本被编码为向量序列，然后在特征编码器中被转化为内部上下文特征；在解码器部分使用 Teacher-Forcing 技术，使用真实输出中的已知部分作为输入并结合从编码模块得到的输入上下文来预测下一个 Token 然后计算损失，通过反向传播更新模型参数</p>
@@ -1967,8 +1967,8 @@ $$
     alt="img/encoder-decoder.png"
     width="977"
     height="706"
-    src="/blog/llm-foundation-notes/img/encoder-decoder_hu_b5933dc7c34dc897.png"
-    srcset="/blog/llm-foundation-notes/img/encoder-decoder_hu_b5933dc7c34dc897.png 800w, /blog/llm-foundation-notes/img/encoder-decoder.png 1280w"
+    src="/blog/llm-foundation-notes/img/encoder-decoder_hu_d6b7ed5fa6036416.png"
+    srcset="/blog/llm-foundation-notes/img/encoder-decoder_hu_d6b7ed5fa6036416.png 800w, /blog/llm-foundation-notes/img/encoder-decoder.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/encoder-decoder.png"></figure>
 <p>Decoder-only 架构出现的原因是：有效缩减了模型的规模，降低了整体的复杂度；与之前类似，在训练阶段这种架构同样首先将输入编码为向量组，然后使用 Teacher-Forcing技术进行自回归训练(将输入文本与真实输出的已知文本拼接逐步训练)</p>
@@ -1980,8 +1980,8 @@ $$
     alt="img/decoder-only.png"
     width="963"
     height="419"
-    src="/blog/llm-foundation-notes/img/decoder-only_hu_b243a0bfa129c48c.png"
-    srcset="/blog/llm-foundation-notes/img/decoder-only_hu_b243a0bfa129c48c.png 800w, /blog/llm-foundation-notes/img/decoder-only.png 1280w"
+    src="/blog/llm-foundation-notes/img/decoder-only_hu_482e0eb46e068a6d.png"
+    srcset="/blog/llm-foundation-notes/img/decoder-only_hu_482e0eb46e068a6d.png 800w, /blog/llm-foundation-notes/img/decoder-only.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/decoder-only.png"></figure>
 
@@ -2003,8 +2003,8 @@ $$
     alt="img/attention-matrix.png"
     width="1158"
     height="516"
-    src="/blog/llm-foundation-notes/img/attention-matrix_hu_c6c0176103e31e0a.png"
-    srcset="/blog/llm-foundation-notes/img/attention-matrix_hu_c6c0176103e31e0a.png 800w, /blog/llm-foundation-notes/img/attention-matrix.png 1280w"
+    src="/blog/llm-foundation-notes/img/attention-matrix_hu_30bb228360d37eb0.png"
+    srcset="/blog/llm-foundation-notes/img/attention-matrix_hu_30bb228360d37eb0.png 800w, /blog/llm-foundation-notes/img/attention-matrix.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/attention-matrix.png"></figure>
 <p>综上所述，Encoder-only 适合<strong>自然语言理解任务</strong>，如情感分析、文本分类等判别任务，但在自然语言生成任务上可能不如其他两种架构；Encoder-Decoder 架构适合<strong>有条件生成任务</strong>，如机器翻译、文本摘要和问答系统等需要同时处理输入和输出的场景，但是新添加的解码器同样带来了计算规模庞大的问题；Decoder-only 架构适合<strong>无条件文本生成任务</strong>，能够生成高质量连贯文本，在自动故事生成、新闻编写等不需要特定输入文本的任务；但是在规模有限的情况下，Decoder-only 架构对复杂文本的理解存在局限性，表现可能不如 Encoder-Decoder 架构</p>
@@ -2659,7 +2659,7 @@ $$
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-09-04T00:00:00&#43;00:00">更新于: 2026-09-04</time><span class="px-2 text-primary-500">&middot;</span><span>13799 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">28 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-09-12T00:00:00&#43;00:00">更新于: 2026-09-12</time><span class="px-2 text-primary-500">&middot;</span><span>15238 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">31 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

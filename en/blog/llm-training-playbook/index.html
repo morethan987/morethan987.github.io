@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-09-04T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-12T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -502,12 +502,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-09-04T00:00:00\u002b00:00",
+    "dateModified": "2026-09-12T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  7544 
+    "wordCount":  8335 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-04T00:00:00&#43;00:00">Updated: 4 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>7544 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">Updated: 12 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8335 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1688,6 +1688,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#performance-benchmark-teardown">Performance Benchmark Teardown</a></li>
           </ul>
         </li>
+        <li><a href="#engineering-details">Engineering Details</a>
+          <ul>
+            <li><a href="#benchmarking">Benchmarking</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1744,6 +1749,11 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#memory-coalescing">Memory Coalescing</a></li>
             <li><a href="#tiling">Tiling</a></li>
             <li><a href="#performance-benchmark-teardown">Performance Benchmark Teardown</a></li>
+          </ul>
+        </li>
+        <li><a href="#engineering-details">Engineering Details</a>
+          <ul>
+            <li><a href="#benchmarking">Benchmarking</a></li>
           </ul>
         </li>
       </ul>
@@ -2026,8 +2036,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/float32.png"
     width="3220"
     height="120"
-    src="/blog/llm-training-playbook/img/float32_hu_673c746bb4305281.png"
-    srcset="/blog/llm-training-playbook/img/float32_hu_673c746bb4305281.png 800w, /blog/llm-training-playbook/img/float32_hu_82e649b97930cef.png 1280w"
+    src="/blog/llm-training-playbook/img/float32_hu_cc7e6aebb2c41f0c.png"
+    srcset="/blog/llm-training-playbook/img/float32_hu_cc7e6aebb2c41f0c.png 800w, /blog/llm-training-playbook/img/float32_hu_295444a7df253ee1.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/float32.png"></figure>
 <ol start="2">
@@ -2041,8 +2051,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/float16.png"
     width="1620"
     height="120"
-    src="/blog/llm-training-playbook/img/float16_hu_b946da37a56f86b0.png"
-    srcset="/blog/llm-training-playbook/img/float16_hu_b946da37a56f86b0.png 800w, /blog/llm-training-playbook/img/float16_hu_1e9fb1c5fef34a3b.png 1280w"
+    src="/blog/llm-training-playbook/img/float16_hu_949a9258ac96ee8d.png"
+    srcset="/blog/llm-training-playbook/img/float16_hu_949a9258ac96ee8d.png 800w, /blog/llm-training-playbook/img/float16_hu_c18ce6dedf89a85b.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/float16.png"></figure>
 <ol start="3">
@@ -2056,8 +2066,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/bfloat16.png"
     width="1620"
     height="120"
-    src="/blog/llm-training-playbook/img/bfloat16_hu_36ddee8a508e6e1a.png"
-    srcset="/blog/llm-training-playbook/img/bfloat16_hu_36ddee8a508e6e1a.png 800w, /blog/llm-training-playbook/img/bfloat16_hu_27121af6af11a6a.png 1280w"
+    src="/blog/llm-training-playbook/img/bfloat16_hu_f9092c0cc0285fd8.png"
+    srcset="/blog/llm-training-playbook/img/bfloat16_hu_f9092c0cc0285fd8.png 800w, /blog/llm-training-playbook/img/bfloat16_hu_61ff565bbe37fea0.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/bfloat16.png"></figure>
 <p>In practice, mixed-precision training is the norm: float 32 for optimizer states, bfloat 16 for parameters, activations, and gradients. Of course, there are more aggressive precision formats like float 8 and float 4, but they&rsquo;re generally not used for actual model training. And when float 4 is used, it doesn&rsquo;t directly represent a single parameter value; instead, neighboring parameters are packed together and share a scaling factor. This trick relies on the local similarity of parameters—adjacent parameters tend to have similar orders of magnitude, so you can factor out the shared scale and use a batch of low-precision numbers plus the scaling factor to represent a batch of high-precision numbers.</p>
@@ -2102,8 +2112,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/tensor_multipule.png"
     width="1101"
     height="561"
-    src="/blog/llm-training-playbook/img/tensor_multipule_hu_ee3e05405ed4b7dd.png"
-    srcset="/blog/llm-training-playbook/img/tensor_multipule_hu_ee3e05405ed4b7dd.png 800w, /blog/llm-training-playbook/img/tensor_multipule.png 1280w"
+    src="/blog/llm-training-playbook/img/tensor_multipule_hu_ea5a301542017e96.png"
+    srcset="/blog/llm-training-playbook/img/tensor_multipule_hu_ea5a301542017e96.png 800w, /blog/llm-training-playbook/img/tensor_multipule.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/tensor_multipule.png"></figure>
 <p>The total computational cost, in a nutshell: the resulting tensor has the shape \(B\times K\), giving us \(B\cdot K\) elements in total. Each element is the sum of \(D\) pairs of element-wise multiplications, meaning every element in the final result represents \(2D\) multiplication or addition operations. So the total computational cost is: \(2D\cdot B\cdot K\).</p>
@@ -2135,8 +2145,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="transformer_original"
     width="1923"
     height="1086"
-    src="/blog/llm-training-playbook/img/transformer_original_hu_277adc43b7e8fdfa.png"
-    srcset="/blog/llm-training-playbook/img/transformer_original_hu_277adc43b7e8fdfa.png 800w, /blog/llm-training-playbook/img/transformer_original_hu_b5f845bb363d3edc.png 1280w"
+    src="/blog/llm-training-playbook/img/transformer_original_hu_48d8d2689c369827.png"
+    srcset="/blog/llm-training-playbook/img/transformer_original_hu_48d8d2689c369827.png 800w, /blog/llm-training-playbook/img/transformer_original_hu_db1c07f393031c2d.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/transformer_original.png"><figcaption>Standard Transformer Architecture</figcaption></figure>
 <figure><img
@@ -2147,8 +2157,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="transformer_modern"
     width="2155"
     height="930"
-    src="/blog/llm-training-playbook/img/transformer_modern_hu_502d5184694b2da5.png"
-    srcset="/blog/llm-training-playbook/img/transformer_modern_hu_502d5184694b2da5.png 800w, /blog/llm-training-playbook/img/transformer_modern_hu_45beb7b374634d1a.png 1280w"
+    src="/blog/llm-training-playbook/img/transformer_modern_hu_a40910bcd8fd9a24.png"
+    srcset="/blog/llm-training-playbook/img/transformer_modern_hu_a40910bcd8fd9a24.png 800w, /blog/llm-training-playbook/img/transformer_modern_hu_6dbcb75c60bb09d2.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/transformer_modern.png"><figcaption>Modernized Transformer Architecture</figcaption></figure>
 <p>A noteworthy point in the final output stage is the shape of the output tensor. Empirically, one might expect the final result to be a probability distribution over the entire vocabulary, i.e., a tensor of shape \(\text{batch\_size}\times \text{vocab\_size}\). In reality, however, the output shape is \(\text{batch\_size} \times \text{seq\_len} \times \text{vocab\_size}\), which means that the distribution of the next token is predicted for every token position (this is precisely where the highly parallel training capability of the Transformer originates). You might wonder: wouldn&rsquo;t this be very wasteful during inference? In fact, inference only requires the probability distribution at the very last token position. Indeed, directly copying the training logic would be quite wasteful; however, inference utilizes KV Cache technology, so this waste only occurs when generating the <strong>first</strong> token. During subsequent token-by-token generation, the sequence length is directly kept fixed at 1, as there is simply no need to repeatedly feed the preceding sequence into the model.</p>
@@ -2244,8 +2254,8 @@ $$<p>Although the GPT-J paper states that this parallel approach yields a \(15\%
     alt="img/RoPE.png"
     width="1491"
     height="562"
-    src="/blog/llm-training-playbook/img/RoPE_hu_94158716e8cd1000.png"
-    srcset="/blog/llm-training-playbook/img/RoPE_hu_94158716e8cd1000.png 800w, /blog/llm-training-playbook/img/RoPE_hu_593a22640af959a5.png 1280w"
+    src="/blog/llm-training-playbook/img/RoPE_hu_3843805804c7000b.png"
+    srcset="/blog/llm-training-playbook/img/RoPE_hu_3843805804c7000b.png 800w, /blog/llm-training-playbook/img/RoPE_hu_b05ce0c4f384445.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/RoPE.png"></figure>
 <p>You might wonder: a 2D vector can obviously be rotated this way, but how do we rotate a high-dimensional vector? It is hard to imagine how a 4D vector should be rotated to satisfy the conditions above. In reality, however, we do not need to actually rotate a high-dimensional vector directly. Because the ultimate goal is to compute the inner product, we can simply group the components of the high-dimensional vector in pairs of two and treat each pair as a 2D planar vector. The specific mathematical formulation is as follows, introducing two index parameters: \(i\in\{0, 1, \dots ,\text{max\_seq\_len}-1\}\) denotes the absolute position index of the token (handling up to \(\text{max\_seq\_len}\) tokens), and \(k \in \{0,1, \dots ,\frac{d}{2}-1\}\) denotes the group index after partitioning the \(d\)-dimensional token embedding vector in pairs of two.</p>
@@ -2309,8 +2319,8 @@ $$<p>We can rewrite this in the form of element-wise multiplication: $\(x \odot 
     alt="vocabulary_size"
     width="1561"
     height="669"
-    src="/blog/llm-training-playbook/img/vocabulary_size_hu_2648d068aded28bc.png"
-    srcset="/blog/llm-training-playbook/img/vocabulary_size_hu_2648d068aded28bc.png 800w, /blog/llm-training-playbook/img/vocabulary_size_hu_19daea096b6ed197.png 1280w"
+    src="/blog/llm-training-playbook/img/vocabulary_size_hu_2d53fc54c028dfb3.png"
+    srcset="/blog/llm-training-playbook/img/vocabulary_size_hu_2d53fc54c028dfb3.png 800w, /blog/llm-training-playbook/img/vocabulary_size_hu_aad3002b9e61ab29.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/vocabulary_size.png"><figcaption>Vocabulary Size Statistics</figcaption></figure>
 <p>On overfitting and regularization: logically, overfitting shouldn&rsquo;t be a concern when data scale vastly exceeds parameter count, as overfitting rarely occurs under these conditions. SGD-style optimizers perform only a single pass over the corpus, making it hard for the model to memorize text snippets. Indeed, Dropout has largely been phased out. However, weight decay has been retained: although weight decay yields worse results in most cases compared to no decay, combining it with a small dynamic learning rate ultimately outperforms non-decayed setups (as seen in the bottom-right of the second figure below, where the blue dashed line achieves the optimal training loss).</p>
@@ -2322,8 +2332,8 @@ $$<p>We can rewrite this in the form of element-wise multiplication: $\(x \odot 
     alt="img/why_weight_decay.png"
     width="1561"
     height="535"
-    src="/blog/llm-training-playbook/img/why_weight_decay_hu_eb38a7229e6d5ba7.png"
-    srcset="/blog/llm-training-playbook/img/why_weight_decay_hu_eb38a7229e6d5ba7.png 800w, /blog/llm-training-playbook/img/why_weight_decay_hu_48a34fd9cda5078.png 1280w"
+    src="/blog/llm-training-playbook/img/why_weight_decay_hu_e44ed631fb9194c0.png"
+    srcset="/blog/llm-training-playbook/img/why_weight_decay_hu_e44ed631fb9194c0.png 800w, /blog/llm-training-playbook/img/why_weight_decay_hu_b470312496f3e60e.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/why_weight_decay.png"></figure>
 
@@ -2345,8 +2355,8 @@ $$<p>We can rewrite this in the form of element-wise multiplication: $\(x \odot 
     alt="train_stability"
     width="1337"
     height="914"
-    src="/blog/llm-training-playbook/img/train_stability_hu_ca9a785b924bee85.png"
-    srcset="/blog/llm-training-playbook/img/train_stability_hu_ca9a785b924bee85.png 800w, /blog/llm-training-playbook/img/train_stability_hu_61c982e2ceebef5a.png 1280w"
+    src="/blog/llm-training-playbook/img/train_stability_hu_4fa53f1195d11324.png"
+    srcset="/blog/llm-training-playbook/img/train_stability_hu_4fa53f1195d11324.png 800w, /blog/llm-training-playbook/img/train_stability_hu_475fa27fc59d2d1c.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/train_stability.png"><figcaption>Training Stability Diagram</figcaption></figure>
 <p>Where does this instability stem from? First is the Softmax function at the output layer, where the division operation can be dangerous:</p>
@@ -2405,8 +2415,8 @@ $$<p>Linear attention layers are indeed deployed in real-world models. For insta
     alt="linear_attention_performance_loss"
     width="1672"
     height="969"
-    src="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_2f032cdd37a5f51.png"
-    srcset="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_2f032cdd37a5f51.png 800w, /blog/llm-training-playbook/img/linear_attention_performance_loss_hu_256d068a03ac8e73.png 1280w"
+    src="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_897109652c69c1b5.png"
+    srcset="/blog/llm-training-playbook/img/linear_attention_performance_loss_hu_897109652c69c1b5.png 800w, /blog/llm-training-playbook/img/linear_attention_performance_loss_hu_61d09374c32f3ca9.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/linear_attention_performance_loss.png"><figcaption>Performance loss brought by linear attention mechanisms</figcaption></figure>
 <p>As seen in the right chart, pure linear attention suffers a steep decline in recall. Curiously, the left chart shows that some pure linear attention models actually outperform standard quadratic attention in language capabilities (note that the model evaluation score here is a composite metric of perplexity and benchmarks). This suggests that pure recall tasks aren&rsquo;t fully aligned with real-world language tasks, where exact recall isn&rsquo;t always strictly required. Another practical takeaway from the right chart is that a 3:1 hybrid ratio achieves recall performance on par with standard attention—which explains why this 3:1 hybrid scheme is so widely used in practice.</p>
@@ -2472,8 +2482,8 @@ $$<p>While this wall of math might look daunting, plain English puts it simply: 
     alt="DeepSeek_MoE"
     width="1441"
     height="618"
-    src="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_a2ff37abcc1aaaed.png"
-    srcset="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_a2ff37abcc1aaaed.png 800w, /blog/llm-training-playbook/img/DeepSeek_MoE_hu_ff81f2a8bf2ffb84.png 1280w"
+    src="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_45e2aa8c57cc235.png"
+    srcset="/blog/llm-training-playbook/img/DeepSeek_MoE_hu_45e2aa8c57cc235.png 800w, /blog/llm-training-playbook/img/DeepSeek_MoE_hu_31a3263693e1307a.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/DeepSeek_MoE.png"><figcaption>DeepSeek_MoE Architecture Diagram</figcaption></figure>
 <p>Logically, both shared and non-shared experts should contribute to model performance. However, ablation studies from OLMoE reveal that performance gains actually stem from finer partitioning of non-shared experts, rather than the shared experts themselves.</p>
@@ -2485,8 +2495,8 @@ $$<p>While this wall of math might look daunting, plain English puts it simply: 
     alt="OrlMoE_shared_experts_ablation"
     width="1333"
     height="712"
-    src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_b50743b52202e5e1.png"
-    srcset="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_b50743b52202e5e1.png 800w, /blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_3c8bb0ceb51da60e.png 1280w"
+    src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_ceffde2705690684.png"
+    srcset="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_ceffde2705690684.png 800w, /blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation_hu_6b9569573128b104.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/OrlMoE_shared_experts_ablation.png"><figcaption>OLMoE Ablation Study on Shared Experts</figcaption></figure>
 <p>The exact expert division ratios across architectures are detailed in the table below, which also highlights that DeepSeek-v 1 was indeed the pioneer in granular expert re-segmentation.</p>
@@ -2606,8 +2616,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="hurestic_load_balancing_ablation"
     width="1060"
     height="808"
-    src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_46f4f18796d7413d.png"
-    srcset="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_46f4f18796d7413d.png 800w, /blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png 1280w"
+    src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_8988fa0d813d3eda.png"
+    srcset="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation_hu_8988fa0d813d3eda.png 800w, /blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/hurestic_load_balancing_ablation.png"><figcaption>Ablation study on heuristic load balancing</figcaption></figure>
 <p>The later DeepSeekMoE-v 2 built upon this by introducing a Top-M device routing mechanism and inter-device communication penalty terms to curb communication overhead. To be honest, this adds quite a lot of regularization terms—it&rsquo;s effective, but arguably ungraceful. DeepSeekMoE-v 3 attempted to remove these loss terms by introducing dynamic bias terms, though it didn&rsquo;t eliminate them entirely.</p>
@@ -2632,8 +2642,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="img/nanogpt-speedrun.png"
     width="1168"
     height="436"
-    src="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_6a4b8af0a5d1cece.png"
-    srcset="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_6a4b8af0a5d1cece.png 800w, /blog/llm-training-playbook/img/nanogpt-speedrun.png 1280w"
+    src="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_e746f812e84b62ff.png"
+    srcset="/blog/llm-training-playbook/img/nanogpt-speedrun_hu_e746f812e84b62ff.png 800w, /blog/llm-training-playbook/img/nanogpt-speedrun.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/nanogpt-speedrun.png"></figure>
 <p>On the algorithmic side, FlashAttention is the undisputed poster child—its performance gains are measured in integer multiples rather than mere percentages.</p>
@@ -2656,8 +2666,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="img/gpu_memory_model.png"
     width="1212"
     height="657"
-    src="/blog/llm-training-playbook/img/gpu_memory_model_hu_73a4a76a5aee1bd8.png"
-    srcset="/blog/llm-training-playbook/img/gpu_memory_model_hu_73a4a76a5aee1bd8.png 800w, /blog/llm-training-playbook/img/gpu_memory_model.png 1280w"
+    src="/blog/llm-training-playbook/img/gpu_memory_model_hu_f269c57f39893c3f.png"
+    srcset="/blog/llm-training-playbook/img/gpu_memory_model_hu_f269c57f39893c3f.png 800w, /blog/llm-training-playbook/img/gpu_memory_model.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/gpu_memory_model.png"></figure>
 <ol>
@@ -2681,8 +2691,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="img/tpu-gpu.png"
     width="1782"
     height="804"
-    src="/blog/llm-training-playbook/img/tpu-gpu_hu_898a79aa293f4be1.png"
-    srcset="/blog/llm-training-playbook/img/tpu-gpu_hu_898a79aa293f4be1.png 800w, /blog/llm-training-playbook/img/tpu-gpu_hu_69b28d87c7e511ee.png 1280w"
+    src="/blog/llm-training-playbook/img/tpu-gpu_hu_38b83c2a0bbee976.png"
+    srcset="/blog/llm-training-playbook/img/tpu-gpu_hu_38b83c2a0bbee976.png 800w, /blog/llm-training-playbook/img/tpu-gpu_hu_13e8bd6a9d1c9dc7.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/tpu-gpu.png"></figure>
 <p>Across GPU generations, different subsystems evolve at vastly disparate rates: arithmetic compute capability has scaled exponentially faster than cache and memory bandwidth, as charted below. This is precisely why modern systems engineering obsesses over memory hierarchy optimizations—compute is so far ahead of memory loading that eliminating a single memory round-trip can unlock a 10,000 x (or even higher) boost in operational throughput.</p>
@@ -2694,8 +2704,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="img/gpu_component_develop_speed.png"
     width="1462"
     height="659"
-    src="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_bc55882eadd42f3a.png"
-    srcset="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_bc55882eadd42f3a.png 800w, /blog/llm-training-playbook/img/gpu_component_develop_speed_hu_365ed4c84a7a87b1.png 1280w"
+    src="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_937367c46d3e9dcd.png"
+    srcset="/blog/llm-training-playbook/img/gpu_component_develop_speed_hu_937367c46d3e9dcd.png 800w, /blog/llm-training-playbook/img/gpu_component_develop_speed_hu_e6cb153d86be6650.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/gpu_component_develop_speed.png"></figure>
 
@@ -2727,8 +2737,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="img/gpu_diverge_excute.png"
     width="1290"
     height="452"
-    src="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_8b368ddeef71ab51.png"
-    srcset="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_8b368ddeef71ab51.png 800w, /blog/llm-training-playbook/img/gpu_diverge_excute_hu_233df8da3447836d.png 1280w"
+    src="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_1f31a0807a1e2089.png"
+    srcset="/blog/llm-training-playbook/img/gpu_diverge_excute_hu_1f31a0807a1e2089.png 800w, /blog/llm-training-playbook/img/gpu_diverge_excute_hu_b0e6b5b91d88ede8.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/gpu_diverge_excute.png"></figure>
 
@@ -2750,8 +2760,8 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
     alt="img/MXFP8.png"
     width="1266"
     height="480"
-    src="/blog/llm-training-playbook/img/MXFP8_hu_5fdc19a2805765dd.png"
-    srcset="/blog/llm-training-playbook/img/MXFP8_hu_5fdc19a2805765dd.png 800w, /blog/llm-training-playbook/img/MXFP8.png 1280w"
+    src="/blog/llm-training-playbook/img/MXFP8_hu_605b09918f584639.png"
+    srcset="/blog/llm-training-playbook/img/MXFP8_hu_605b09918f584639.png 800w, /blog/llm-training-playbook/img/MXFP8.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/MXFP8.png"></figure>
 <p>Another promising angle omitted in Stanford&rsquo;s CS 336—likely due to its complexity and lack of battle-testing in production-grade frontier models—is detailed in this <a href="https://arxiv.org/abs/2509.00404"  target="_blank" rel="noreferrer">paper</a>, which achieved end-to-end FP 4 training on an 8 B LLM. Prior to this, NVIDIA possessed internal FP 4 training recipes but kept the blueprints proprietary. The authors reverse-engineered NVIDIA’s technical blog posts by simulating FP 4 training mechanics via BF 16, meticulously matching target precision, training loss curves, and convergence dynamics in an impressively rigorous baseline study.</p>
@@ -2759,7 +2769,18 @@ $$<p>Empirical results confirm that this heuristic approach works remarkably wel
 $$
 M = \sum_{i=1}^{r} \sigma_i \cdot (u_i v_i^T)
 $$<p>Experimental results reveal that roughly the top 3% of singular values dominate the upper bound of the magnitude distribution (spanning one to two orders of magnitude). Stripping away these few dominant singular values leaves a residual matrix with an exceptionally flat, uniform distribution ready for tight quantization grids, while the isolated dominant components naturally compress into a shared scale factor coupled with well-behaved singular vectors—making it uniquely tailor-made for FP 4 quantization.</p>
-<p>![img/Pasted image 20260903012451.png](img/Pasted image 20260903012451.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/metis_illustration.png"
+    width="1778"
+    height="922"
+    src="/blog/llm-training-playbook/img/metis_illustration_hu_15374314bdad70f8.png"
+    srcset="/blog/llm-training-playbook/img/metis_illustration_hu_15374314bdad70f8.png 800w, /blog/llm-training-playbook/img/metis_illustration_hu_ba3a5a40d152b03e.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/metis_illustration.png"></figure>
 <p>It’s worth highlighting that SVD-driven quantization wasn&rsquo;t invented in a vacuum; an earlier precursor was <a href="https://arxiv.org/abs/2411.05007"  target="_blank" rel="noreferrer">SVDQuant</a>. While both leverage SVD, SVDQuant feels somewhat unpolished in practice, shuttling high-precision matrices back and forth and wrestling with sparse matrix multiplication overheads, whereas the newer paper cleanly absorbs the heavy lifting directly into scaling factors and singular vectors.</p>
 
 <h4 class="relative group">Operator Fusion
@@ -2780,8 +2801,8 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     alt="img/operator_fusion.png"
     width="1703"
     height="839"
-    src="/blog/llm-training-playbook/img/operator_fusion_hu_ecf3876f72d0f069.png"
-    srcset="/blog/llm-training-playbook/img/operator_fusion_hu_ecf3876f72d0f069.png 800w, /blog/llm-training-playbook/img/operator_fusion_hu_4cde1af8565fe9a4.png 1280w"
+    src="/blog/llm-training-playbook/img/operator_fusion_hu_7f014a7ef7b514b5.png"
+    srcset="/blog/llm-training-playbook/img/operator_fusion_hu_7f014a7ef7b514b5.png 800w, /blog/llm-training-playbook/img/operator_fusion_hu_390670203b12848d.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/operator_fusion.png"></figure>
 
@@ -2803,8 +2824,8 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     alt="img/recomputation.png"
     width="1223"
     height="557"
-    src="/blog/llm-training-playbook/img/recomputation_hu_1d97ba0b49765739.png"
-    srcset="/blog/llm-training-playbook/img/recomputation_hu_1d97ba0b49765739.png 800w, /blog/llm-training-playbook/img/recomputation.png 1280w"
+    src="/blog/llm-training-playbook/img/recomputation_hu_a81f7e3103c4ee39.png"
+    srcset="/blog/llm-training-playbook/img/recomputation_hu_a81f7e3103c4ee39.png 800w, /blog/llm-training-playbook/img/recomputation.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/recomputation.png"></figure>
 
@@ -2826,8 +2847,8 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     alt="img/memory_coalescing.png"
     width="1619"
     height="691"
-    src="/blog/llm-training-playbook/img/memory_coalescing_hu_99367f8c9efe81f5.png"
-    srcset="/blog/llm-training-playbook/img/memory_coalescing_hu_99367f8c9efe81f5.png 800w, /blog/llm-training-playbook/img/memory_coalescing_hu_a6d637985888dba4.png 1280w"
+    src="/blog/llm-training-playbook/img/memory_coalescing_hu_87fcabe29e1e2bea.png"
+    srcset="/blog/llm-training-playbook/img/memory_coalescing_hu_87fcabe29e1e2bea.png 800w, /blog/llm-training-playbook/img/memory_coalescing_hu_2c185f2a90a92b34.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/memory_coalescing.png"></figure>
 <p>For instance, accessing a row-major matrix with threads distributed across different row indices produces fragmented, strided fetches; aligning threads across contiguous column elements along the same row index allows a single coalesced DRAM transaction to satisfy all threads simultaneously.</p>
@@ -2850,8 +2871,8 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     alt="img/tiling.png"
     width="983"
     height="394"
-    src="/blog/llm-training-playbook/img/tiling_hu_764b7dce6a2e8487.png"
-    srcset="/blog/llm-training-playbook/img/tiling_hu_764b7dce6a2e8487.png 800w, /blog/llm-training-playbook/img/tiling.png 1280w"
+    src="/blog/llm-training-playbook/img/tiling_hu_6f984f4bf025e50a.png"
+    srcset="/blog/llm-training-playbook/img/tiling_hu_6f984f4bf025e50a.png 800w, /blog/llm-training-playbook/img/tiling.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/tiling.png"></figure>
 <p>As depicted above, without tiling, every input element must be fetched from slow global memory \(N\) times; under a tiled scheme, global reads drop to \(N/T\) per element, supplemented by \(T\) subsequent reads from ultra-fast on-chip Shared Memory. Since shared memory operates at near-register speeds, this effectively reduces DRAM pressure by roughly \(\frac{1}{T}\) —an immense architectural win.</p>
@@ -2866,8 +2887,8 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     alt="layout_align"
     width="1225"
     height="605"
-    src="/blog/llm-training-playbook/img/layout_align_hu_fb1c6f2259adaa8d.png"
-    srcset="/blog/llm-training-playbook/img/layout_align_hu_fb1c6f2259adaa8d.png 800w, /blog/llm-training-playbook/img/layout_align.png 1280w"
+    src="/blog/llm-training-playbook/img/layout_align_hu_f7b1cb30ed450a79.png"
+    srcset="/blog/llm-training-playbook/img/layout_align_hu_f7b1cb30ed450a79.png 800w, /blog/llm-training-playbook/img/layout_align.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/layout_align.png"><figcaption>Cite from the <a href="https://www.thonking.ai/p/what-shapes-do-matrix-multiplications"  target="_blank" rel="noreferrer">blog</a></figcaption></figure>
 
@@ -2901,10 +2922,67 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     alt="img/wave_quantization_example.png"
     width="1415"
     height="590"
-    src="/blog/llm-training-playbook/img/wave_quantization_example_hu_cf1064846e6c8091.png"
-    srcset="/blog/llm-training-playbook/img/wave_quantization_example_hu_cf1064846e6c8091.png 800w, /blog/llm-training-playbook/img/wave_quantization_example_hu_a892963ed2a6d4ec.png 1280w"
+    src="/blog/llm-training-playbook/img/wave_quantization_example_hu_56879678a7cf99b.png"
+    srcset="/blog/llm-training-playbook/img/wave_quantization_example_hu_56879678a7cf99b.png 800w, /blog/llm-training-playbook/img/wave_quantization_example_hu_fc9b1890baa43cc5.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/wave_quantization_example.png"></figure>
+
+<h3 class="relative group">Engineering Details
+    <div id="engineering-details" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#engineering-details" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>After soaking in the previous section, you might think systems engineering is just like architectural design—merely swapping in a different domain of knowledge. In practice, however, what we deal with here is far more granular and chaotic than you would expect. Consider this section an honest engineering rant 😅</p>
+
+<h4 class="relative group">Benchmarking
+    <div id="benchmarking" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#benchmarking" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Before attempting any optimization, your very first prerequisite is building a benchmarking framework to quantify the system. In this context, a benchmarking framework essentially boils down to one goal: accurately measuring the wall-clock time of different compute phases.</p>
+<p>Specifically, back in <a href="#foundations" >Foundations</a>, we ended up with a neat Transformer model. As a first step, we can start with coarse-grained profiling: forward pass, backward pass, and parameter updates. These three major phases are straightforward to measure—just duplicate your training script, strip away extraneous logic, and place timestamps around each phase. You only need to watch out for two critical caveats:</p>
+<ol>
+<li>Use <code>timeit.default_timer()</code> instead of <code>time.time()</code>, as the former hooks into the operating system&rsquo;s highest-resolution clock for tighter accuracy (modern deep learning hardware runs blazing fast, making sub-millisecond precision essential).</li>
+<li>Call <code>torch.cuda.synchronize()</code> to flush any pending GPU execution. Kernel launches from the CPU are asynchronous; once a task is dispatched, the CPU moves on immediately, so you must explicitly block until the GPU finishes before taking the time delta.</li>
+</ol>
+<p>Of course, such coarse timing is insufficient for low-level systems work. To pinpoint the exact execution time of specific kernels within a phase, you need NVIDIA&rsquo;s official profiling suite, <a href="https://docs.nvidia.com/nsight-systems/index.html"  target="_blank" rel="noreferrer">Nsight Systems</a>. PyTorch integrates with it natively via the <code>torch.cuda.nvtx</code> module. Using the API isn&rsquo;t hard, but the real engineering headache lies in instrumentation: injecting profiling markers cleanly. Ideally, profiling instrumentation should satisfy three requirements:</p>
+<ol>
+<li>Simple, intuitive, and readable.</li>
+<li>Ergonomic, with trivial toggles to enable or disable profiling at specific call sites.</li>
+<li>Non-invasive, introducing zero pollution to the original training code.</li>
+</ol>
+<p>In CS 336, the default approach is monkey patching. Specifically, you manipulate Python&rsquo;s module import system and intercept functions called by other modules, replacing them with annotated wrappers. It sounds reasonable enough, but in truth, it requires subtle handling—import ordering, how the target module initially imported the symbol, and so forth; one misstep and the patch fails silently. Moreover, monkey patching cannot profile the backward pass because PyTorch&rsquo;s autograd engine is encapsulated deep inside C++ internals where Python-level patches cannot reach.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cs336_basics.layers.multihead_self_attention</span> <span class="k">as</span> <span class="nn">_mha</span> <span class="c1"># this should be a module type!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">cs336_systems.utils</span> <span class="kn">import</span> <span class="n">annotated_scaled_dot_product_attention</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># monkey patch</span>
+</span></span><span class="line"><span class="cl"><span class="n">_mha</span><span class="o">.</span><span class="n">scaled_dot_product_attention</span> <span class="o">=</span> <span class="n">annotated_scaled_dot_product_attention</span>  <span class="c1"># type: ignore</span></span></span></code></pre></div></div>
+<p>This is where the gritty frustration of engineering truly shines. If you find monkey patching too hacky and set out to find a &ldquo;more elegant&rdquo; design pattern, congratulations: you will be hit with an Unlimited Void of esoteric abstractions. After weighing the options, you&rsquo;ll crawl back realizing that monkey patching is surprisingly the most pragmatic, straightforward, and &ldquo;just right&rdquo; tool for the job 😅</p>
+<p>All in all, feeling lost when first dealing with these tools is completely normal. The best remedy for the chaos is continuous trial and error: run a command, inspect the profiler output (ask an AI when stuck), and recalibrate your mental model. You might ask: in this AI-driven era, do we still need to care about these low-level details? My take is: just remember the core intuition that leaves the deepest impression. For example, <code>nsys</code> maintains a chronological GPU event stream; NVTX markers merely project your CPU-defined time intervals onto that GPU timeline, showing you which kernels actually ran behind that block of code.</p>
+<hr>
+<p>Here are some profiling results to look at. The table below lists the most time-consuming kernels when running various sequence lengths across different model sizes, with kernel names cleaned up to highlight their core semantics.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/nsys_kernel_results.png"
+    width="1336"
+    height="939"
+    src="/blog/llm-training-playbook/img/nsys_kernel_results_hu_332da1533a150386.png"
+    srcset="/blog/llm-training-playbook/img/nsys_kernel_results_hu_332da1533a150386.png 800w, /blog/llm-training-playbook/img/nsys_kernel_results_hu_387d73fdb6e9ddac.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/nsys_kernel_results.png"></figure>
+<p>In the forward pass, the dominant time sink in most cases is the <code>gemm</code> kernel, i.e., general matrix multiplication (\(D = \alpha AB + \beta C\)). However, a noticeable inflection occurs once the context length reaches 2048: the top kernel flips to <code>masked_fill</code> (the attention masking step), illustrating that long-context regimes are bound by memory bandwidth rather than compute. During the backward pass, most time shifts to <code>vectorized_mul</code> (element-wise multiplication). This showcases a key characteristic of backpropagation: it involves a massive amount of element-wise operations (additions, element-wise exp, etc., all take notable shares) that carry significant memory overhead. Another detail worth noting is the tile shape of the <code>gemm</code> kernels—they do not match the exact shapes of our input tensors, which is simply GPU thread block tiling in action.</p>
 
           
           

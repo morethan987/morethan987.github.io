@@ -1941,8 +1941,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/CTM.png"
     width="2734"
     height="1716"
-    src="/blog/ctm-note/img/CTM_hu_f9ee9d9c1ec0de3c.png"
-    srcset="/blog/ctm-note/img/CTM_hu_f9ee9d9c1ec0de3c.png 800w, /blog/ctm-note/img/CTM_hu_aef040ce9b1c2e00.png 1280w"
+    src="/blog/ctm-note/img/CTM_hu_9b686d52b42a6143.png"
+    srcset="/blog/ctm-note/img/CTM_hu_9b686d52b42a6143.png 800w, /blog/ctm-note/img/CTM_hu_907b6481a3977711.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/ctm-note/img/CTM.png"></figure>
 <p>Overview of the CTM architecture: ① The synaptic model (weights represented by blue lines) generates pre-activation values by simulating interactions between neurons. Each neuron retains ② a pre-activation history, where the latest data is used by ③ the neuron-level model (weights represented by red lines) to produce ④ post-activation values. The system also maintains ⑤ a post-activation history, from which ⑥ a synchronization matrix is computed. Based on this matrix, ⑦ neuron pairs are selected, and the resulting ⑧ latent representations are used by CTM to ⑨ generate outputs and modulate data via cross-attention. The modulated data (e.g., attention outputs) are ⑩ concatenated with post-activation values as input for the next internal clock step.</p>
@@ -2162,8 +2162,8 @@ $$<p>Stochastic gradient descent is then used to optimize the model parameters. 
     alt="img/CTM_Arc.png"
     width="2069"
     height="986"
-    src="/blog/ctm-note/img/CTM_Arc_hu_c862bfbccf9c15e3.png"
-    srcset="/blog/ctm-note/img/CTM_Arc_hu_c862bfbccf9c15e3.png 800w, /blog/ctm-note/img/CTM_Arc_hu_eba659b1d8c1bea8.png 1280w"
+    src="/blog/ctm-note/img/CTM_Arc_hu_4f999265d11ab5bc.png"
+    srcset="/blog/ctm-note/img/CTM_Arc_hu_4f999265d11ab5bc.png 800w, /blog/ctm-note/img/CTM_Arc_hu_95dbd66802e2f26b.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/ctm-note/img/CTM_Arc.png"></figure>
 <p>The above diagram vividly illustrates the operations performed by the synaptic model part and the neuron-level model part: the former enables information interaction between different neurons at the same moment, while the latter facilitates the interaction of historical information across different moments for the same neuron. As shown in the figure, a vertical information fusion is immediately followed by a horizontal information fusion 🤔</p>

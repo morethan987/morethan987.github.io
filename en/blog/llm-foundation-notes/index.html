@@ -1879,8 +1879,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="Transformer"
     width="1825"
     height="725"
-    src="/blog/llm-foundation-notes/img/Transformer_hu_3e48c416c3cc547f.png"
-    srcset="/blog/llm-foundation-notes/img/Transformer_hu_3e48c416c3cc547f.png 800w, /blog/llm-foundation-notes/img/Transformer_hu_cb43f941d9acdb9e.png 1280w"
+    src="/blog/llm-foundation-notes/img/Transformer_hu_567ebb9aa3e03e52.png"
+    srcset="/blog/llm-foundation-notes/img/Transformer_hu_567ebb9aa3e03e52.png 800w, /blog/llm-foundation-notes/img/Transformer_hu_e59ad3ef9a29f00c.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/Transformer.png"><figcaption>引用自第 16 页</figcaption></figure>
 <p>The model architecture doesn&rsquo;t have much to say, but there are a few interesting questions that were a bit unclear to me before reading the book but became immediately clear afterward.</p>
@@ -1954,8 +1954,8 @@ $$
     alt="775"
     width="1081"
     height="426"
-    src="/blog/llm-foundation-notes/img/encoder-only_hu_28981d1457668389.png"
-    srcset="/blog/llm-foundation-notes/img/encoder-only_hu_28981d1457668389.png 800w, /blog/llm-foundation-notes/img/encoder-only.png 1280w"
+    src="/blog/llm-foundation-notes/img/encoder-only_hu_19e1b30db95e0057.png"
+    srcset="/blog/llm-foundation-notes/img/encoder-only_hu_19e1b30db95e0057.png 800w, /blog/llm-foundation-notes/img/encoder-only.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/encoder-only.png"></figure>
 <p>The Encoder-Decoder architecture is the standard Transformer structure. During the training phase, it is trained using input and ground truth output: the input text is first encoded into a sequence of vectors, which are then transformed into internal contextual features in the feature encoder. In the decoder part, Teacher-Forcing technology is used, where the known parts of the ground truth output serve as input, combined with the input context obtained from the encoding module, to predict the next token. The loss is then calculated, and model parameters are updated through backpropagation.</p>
@@ -1967,8 +1967,8 @@ $$
     alt="img/encoder-decoder.png"
     width="977"
     height="706"
-    src="/blog/llm-foundation-notes/img/encoder-decoder_hu_b5933dc7c34dc897.png"
-    srcset="/blog/llm-foundation-notes/img/encoder-decoder_hu_b5933dc7c34dc897.png 800w, /blog/llm-foundation-notes/img/encoder-decoder.png 1280w"
+    src="/blog/llm-foundation-notes/img/encoder-decoder_hu_d6b7ed5fa6036416.png"
+    srcset="/blog/llm-foundation-notes/img/encoder-decoder_hu_d6b7ed5fa6036416.png 800w, /blog/llm-foundation-notes/img/encoder-decoder.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/encoder-decoder.png"></figure>
 <p>The Decoder-only architecture emerged to effectively reduce the model&rsquo;s scale and overall complexity. Similar to before, during the training phase, this architecture first encodes the input into a group of vectors, then uses Teacher-Forcing technology for autoregressive training (by concatenating the input text with the known parts of the ground truth output and training step-by-step).</p>
@@ -1980,8 +1980,8 @@ $$
     alt="img/decoder-only.png"
     width="963"
     height="419"
-    src="/blog/llm-foundation-notes/img/decoder-only_hu_b243a0bfa129c48c.png"
-    srcset="/blog/llm-foundation-notes/img/decoder-only_hu_b243a0bfa129c48c.png 800w, /blog/llm-foundation-notes/img/decoder-only.png 1280w"
+    src="/blog/llm-foundation-notes/img/decoder-only_hu_482e0eb46e068a6d.png"
+    srcset="/blog/llm-foundation-notes/img/decoder-only_hu_482e0eb46e068a6d.png 800w, /blog/llm-foundation-notes/img/decoder-only.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/decoder-only.png"></figure>
 
@@ -2003,8 +2003,8 @@ $$
     alt="img/attention-matrix.png"
     width="1158"
     height="516"
-    src="/blog/llm-foundation-notes/img/attention-matrix_hu_c6c0176103e31e0a.png"
-    srcset="/blog/llm-foundation-notes/img/attention-matrix_hu_c6c0176103e31e0a.png 800w, /blog/llm-foundation-notes/img/attention-matrix.png 1280w"
+    src="/blog/llm-foundation-notes/img/attention-matrix_hu_30bb228360d37eb0.png"
+    srcset="/blog/llm-foundation-notes/img/attention-matrix_hu_30bb228360d37eb0.png 800w, /blog/llm-foundation-notes/img/attention-matrix.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-foundation-notes/img/attention-matrix.png"></figure>
 <p>In summary, the Encoder-only architecture is suitable for <strong>natural language understanding tasks</strong>, such as sentiment analysis, text classification, and other discriminative tasks, but it may not perform as well as the other two architectures in natural language generation tasks. The Encoder-Decoder architecture is suitable for <strong>conditional generation tasks</strong>, such as machine translation, text summarization, and question-answering systems—scenarios that require simultaneous processing of input and output. However, the newly added decoder also introduces computational complexity. The Decoder-only architecture is suitable for <strong>unconditional text generation tasks</strong>, capable of generating high-quality, coherent text, such as in automatic story generation or news writing tasks that do not require specific input text. However, under limited scale, the Decoder-only architecture may have limitations in understanding complex text and may perform worse than the Encoder-Decoder architecture.</p>
@@ -2659,7 +2659,7 @@ $$
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-09-04T00:00:00&#43;00:00">Updated: 4 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>7544 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">16 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-09-12T00:00:00&#43;00:00">Updated: 12 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8335 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

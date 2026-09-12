@@ -1941,8 +1941,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     alt="img/CTM.png"
     width="2734"
     height="1716"
-    src="/blog/ctm-note/img/CTM_hu_f9ee9d9c1ec0de3c.png"
-    srcset="/blog/ctm-note/img/CTM_hu_f9ee9d9c1ec0de3c.png 800w, /blog/ctm-note/img/CTM_hu_aef040ce9b1c2e00.png 1280w"
+    src="/blog/ctm-note/img/CTM_hu_9b686d52b42a6143.png"
+    srcset="/blog/ctm-note/img/CTM_hu_9b686d52b42a6143.png 800w, /blog/ctm-note/img/CTM_hu_907b6481a3977711.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/ctm-note/img/CTM.png"></figure>
 <p>CTM架构概述：①突触模型（权重以蓝线表示）通过模拟神经元间相互作用生成预激活值。每个神经元会保留 ②预激活历史记录，其中最新数据被 ③神经元级模型（权重以红线表示）用于产生 ④后激活值。系统同时维护 ⑤后激活历史记录，并据此计算⑥同步矩阵。基于该矩阵 ⑦筛选神经元对，由此产生的 ⑧潜表征被CTM用于 ⑨生成输出并通过交叉注意力机制调节数据。经调节的数据（如注意力输出）会 ⑩与后激活值拼接，作为下一内部时钟步的输入</p>
@@ -2162,8 +2162,8 @@ $$<p>然后使用随机梯度下降算法优化模型参数。整个算法流程
     alt="img/CTM_Arc.png"
     width="2069"
     height="986"
-    src="/blog/ctm-note/img/CTM_Arc_hu_c862bfbccf9c15e3.png"
-    srcset="/blog/ctm-note/img/CTM_Arc_hu_c862bfbccf9c15e3.png 800w, /blog/ctm-note/img/CTM_Arc_hu_eba659b1d8c1bea8.png 1280w"
+    src="/blog/ctm-note/img/CTM_Arc_hu_4f999265d11ab5bc.png"
+    srcset="/blog/ctm-note/img/CTM_Arc_hu_4f999265d11ab5bc.png 800w, /blog/ctm-note/img/CTM_Arc_hu_95dbd66802e2f26b.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/ctm-note/img/CTM_Arc.png"></figure>
 <p>上面这幅图非常直观地解释了突触模型部分和神经元级模型部分进行的操作：前者让同一时刻在不同神经元之间的信息进行交互；后者让不同时刻同一神经元的历史信息进行交互。如图中所示，一个纵向的信息融合之后紧跟一个横向的信息融合🤔</p>
