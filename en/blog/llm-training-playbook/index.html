@@ -507,7 +507,7 @@
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  8335 
+    "wordCount":  8336 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">Updated: 12 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8335 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">Updated: 12 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8336 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2268,8 +2268,10 @@ R^i = \begin{pmatrix} R_1^i & 0 & 0 & \dots & 0 \\ 0 & R_2^i & 0 & \dots & 0 \\ 
 $$<p>In practical code implementations, we generally do not directly store \(\text{max\_seq\_len}\) distinct \(R^i\) matrices. A better approach is to store the sine and cosine matrices separately; both are 2D dense matrices and can be reused globally. During computation, we transform the input and then directly apply element-wise multiplication. An intuitive example is rotating a 2D vector \([x_0, x_1]^\top\) by an angle \(\theta\):</p>
 $$
 \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} x_0 \\ x_1 \end{pmatrix} = \begin{pmatrix} x_0 \cos\theta - x_1 \sin\theta \\ x_1 \cos\theta + x_0 \sin\theta \end{pmatrix}
-$$<p>We can rewrite this in the form of element-wise multiplication: $\(x \odot \cos(\theta) + \tilde{x} \odot \sin(\theta)\)$</p>
-<p>where \(\tilde{x} = [-x_1, x_0, -x_3, x_2, \dots]\), which swaps adjacent elements in pairs and applies a negative sign; this result can be obtained using batched matrix/tensor operations.</p>
+$$<p>We can rewrite this in the form of element-wise multiplication:</p>
+$$
+x \odot \cos(\theta) + \tilde{x} \odot \sin(\theta)
+$$<p>where \(\tilde{x} = [-x_1, x_0, -x_3, x_2, \dots]\), which swaps adjacent elements in pairs and applies a negative sign; this result can be obtained using batched matrix/tensor operations.</p>
 
 <h4 class="relative group">Hyperparameter Selection
     <div id="hyperparameter-selection" class="anchor"></div>

@@ -507,7 +507,7 @@
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/llm-training-playbook/",
-    "wordCount":  15238 
+    "wordCount":  15241 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">更新于: 2026-09-12</time><span class="px-2 text-primary-500">&middot;</span><span>15238 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">31 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">更新于: 2026-09-12</time><span class="px-2 text-primary-500">&middot;</span><span>15241 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">31 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2268,8 +2268,10 @@ R^i = \begin{pmatrix} R_1^i & 0 & 0 & \dots & 0 \\ 0 & R_2^i & 0 & \dots & 0 \\ 
 $$<p>具体代码实现的时候则一般不会直接存储 \(\text{max\_seq\_len}\) 个 \(R^i\) 矩阵，一个更好的方法是单独存储正弦值和余弦值矩阵，两个都是二维的稠密矩阵并且可以全局复用，计算的时候将输入进行变换然后直接应用逐元素乘法即可。一个简单的理解性的例子就是，对二维向量 \([x_0, x_1]^\top\) 旋转 \(\theta\) 角：</p>
 $$
 \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} x_0 \\ x_1 \end{pmatrix} = \begin{pmatrix} x_0 \cos\theta - x_1 \sin\theta \\ x_1 \cos\theta + x_0 \sin\theta \end{pmatrix}
-$$<p>我们可以把它改写成逐元素相乘的形式： $\(x \odot \cos(\theta) + \tilde{x} \odot \sin(\theta)\)$</p>
-<p>其中 \(\tilde{x} = [-x_1, x_0, -x_3, x_2, \dots]\)，把相邻元素两两交换位置并加个负号，这个结果可以使用批量化的矩阵操作得到。</p>
+$$<p>我们可以把它改写成逐元素相乘的形式：</p>
+$$
+x \odot \cos(\theta) + \tilde{x} \odot \sin(\theta)
+$$<p>其中 \(\tilde{x} = [-x_1, x_0, -x_3, x_2, \dots]\)，把相邻元素两两交换位置并加个负号，这个结果可以使用批量化的矩阵操作得到。</p>
 
 <h4 class="relative group">超参数选择
     <div id="超参数选择" class="anchor"></div>
