@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-09-12T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
 		<meta property="article:tag" content="架构">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="工程实践">
@@ -502,12 +502,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-09-12T00:00:00\u002b00:00",
+    "dateModified": "2026-09-14T00:00:00\u002b00:00",
     
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/llm-training-playbook/",
-    "wordCount":  15241 
+    "wordCount":  15524 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">更新于: 2026-09-12</time><span class="px-2 text-primary-500">&middot;</span><span>15241 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">31 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-14T00:00:00&#43;00:00">更新于: 2026-09-14</time><span class="px-2 text-primary-500">&middot;</span><span>15524 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">32 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2361,14 +2361,17 @@ $$<p>其中 \(\tilde{x} = [-x_1, x_0, -x_3, x_2, \dots]\)，把相邻元素两�
     srcset="/blog/llm-training-playbook/img/train_stability_hu_4fa53f1195d11324.png 800w, /blog/llm-training-playbook/img/train_stability_hu_475fa27fc59d2d1c.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/train_stability.png"><figcaption>训练稳定性示意图</figcaption></figure>
-<p>这种训练不稳定稳定从何而来？首先是模型输出处的 softmax 函数，其计算中的除法部分比较危险：</p>
+<p>这种训练不稳定从何而来？首先是模型输出处的 softmax 函数，由于 softmax 函数具有平移不变性，因此优化器没有任何动力去降低打分函数的绝对数值，很容易造成数值溢出。下面是一个标准的交叉熵损失：</p>
 $$
-\log(P(x)) = \log\left(\frac{e^{U_r(x)}}{Z(x)}\right) = U_r(x) - \log(Z(x))
+\begin{aligned} \text{Loss} &=-\sum_{i}^{L} \left[ \log(P(x_i)) \right] \\ &=-\sum_{i}^{L} \left[ \log\left(\frac{e^{U_r(x_{i})}}{Z(x_{i})}\right) \right] \\ &=-\sum_{i}^{L} \left[ U_r(x_{i}) - \log(Z(x_{i})) \right] \end{aligned}
 $$$$
 Z(x)=\sum_{r'=1}^{|V|} e^{U_{r'}(x)}
-$$<p>其中的 \(U_{r}\) 函数表示打分函数，\(|V|\) 表示词表大小。为了稳定这一项，可以将 \(\log(Z(x))\) 部分变为下面的形式，也就是平方之后在使用 \(\alpha\) 进行调节，让除法项能够趋近于 0 最好。这种方法一般被称为 Z-loss 方法。</p>
+$$<p>其中的 \(U_{r}\) 函数表示打分函数，\(|V|\) 表示词表大小，\(L\) 表示序列长度。交叉熵损失公式看着很复杂，其实抛开前面的符号，剩余部分其实就是对数似然。为了显式地告诉优化器去约束所有指数的数值大小，一个直白的正则项就是去约束所有指数项的和，也就是 \(Z(x)\) 函数。于是我们可以在损失值中增加一个 Z-loss 正则项：</p>
 $$
-\begin{aligned} L &=\sum_i \left[ \log(P(x_i)) -\alpha(\log(Z(x_i))-0)^2 \right] \\ &=\sum_i \left[ \log(P(x_i)) -\alpha\log^2(Z(x_i)) \right] \end{aligned}
+\begin{aligned} \text{Loss} &=-\sum_{i}^{L} \left[ \log(P(x_i)) -\alpha(\log(Z(x_i))-0)^2 \right] \\ &=-\sum_{i}^{L} \left[ U_r(x_{i}) - \log(Z(x_{i})) -\alpha\log^2(Z(x_i)) \right] \\ &=\sum_{i=1}^{L} \Big[ \underbrace{\log(Z(x_i)) - U_r(x_i)}_{\text{Cross-Entropy}} + \underbrace{\alpha \log^2(Z(x_i))}_{\text{Z-loss}} \Big] \end{aligned}
+$$<p>猜你想问，正则项为什么是对数的平方，而不是 \((Z-1)^2\)？这里有一个非常容易混淆的地方，此处的 \(Z\) 函数必须是绝对数值，不能使用扣除最大值技巧(用了最后也需要补回去)，这是引入这个正则项的必然要求。换言之，如果需要处理绝对数值的话，就必须要使用 \(\log\) 去将指数变为加法，直接使用 \((Z-1)^2\) 会数值溢出：</p>
+$$
+\log(Z) = m + \log\left( \sum e^{U_{r} - m} \right),\ m=\text{max}(U_{r})
 $$<p>其次是注意力模块中的的 softmax 不稳定，但是这里的解决方法并不是直接在 softmax 上动刀，而是在 QK 输入时进行 Norm 操作，也就是一般而言的 &ldquo;QK Norm&rdquo; 方法：标准的 Transformer 注意力模块 QK 在得到之后会直接进行内积，而 &ldquo;QK Norm&rdquo; 方法会将 QK 进行归一化后再内积，这样送入到 softmax 部分的数据在数量级上会更加一致。</p>
 
 <h4 class="relative group">推理时注意力开销

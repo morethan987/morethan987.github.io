@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-09-12T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -502,12 +502,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-09-12T00:00:00\u002b00:00",
+    "dateModified": "2026-09-14T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  8336 
+    "wordCount":  8527 
   },
   {
     "@context": "https://schema.org",
@@ -1383,7 +1383,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-12T00:00:00&#43;00:00">Updated: 12 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8336 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">17 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-14T00:00:00&#43;00:00">Updated: 14 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8527 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">18 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -2361,14 +2361,17 @@ $$<p>where \(\tilde{x} = [-x_1, x_0, -x_3, x_2, \dots]\), which swaps adjacent e
     srcset="/blog/llm-training-playbook/img/train_stability_hu_4fa53f1195d11324.png 800w, /blog/llm-training-playbook/img/train_stability_hu_475fa27fc59d2d1c.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/train_stability.png"><figcaption>Training Stability Diagram</figcaption></figure>
-<p>Where does this instability stem from? First is the Softmax function at the output layer, where the division operation can be dangerous:</p>
+<p>Where does this training instability come from? A prime suspect is the softmax layer at the model&rsquo;s output. Because softmax is shift-invariant, the optimizer has zero incentive to keep the absolute magnitude of the scoring function (logits) in check, paving the way for numerical overflow. Here is what standard cross-entropy loss looks like:</p>
 $$
-\log(P(x)) = \log\left(\frac{e^{U_r(x)}}{Z(x)}\right) = U_r(x) - \log(Z(x))
+\begin{aligned} \text{Loss} &=-\sum_{i}^{L} \left[ \log(P(x_i)) \right] \\ &=-\sum_{i}^{L} \left[ \log\left(\frac{e^{U_r(x_{i})}}{Z(x_{i})}\right) \right] \\ &=-\sum_{i}^{L} \left[ U_r(x_{i}) - \log(Z(x_{i})) \right] \end{aligned}
 $$$$
 Z(x)=\sum_{r'=1}^{|V|} e^{U_{r'}(x)}
-$$<p>where \(U_{r}\) represents the scoring function and \(|V|\) denotes the vocabulary size. To stabilize this term, \(\log(Z(x))\) can be transformed into the following form—squaring it and tuning it with \(\alpha\) so that the division term approaches 0 as closely as possible. This method is called Z-loss stability.</p>
+$$<p>Here, \(U_{r}\) represents the scoring function (logits), \(|V|\) denotes the vocabulary size, and \(L\) is the sequence length. While the cross-entropy formulation might look a bit intimidating, stripping away the negative sign reveals that it is simply the log-likelihood. To explicitly force the optimizer to rein in the exponential terms, an intuitive fix is to penalize their sum—the partition function \(Z(x)\). This motivates adding a regularization term known as Z-loss into our objective:</p>
 $$
-\begin{aligned} L &=\sum_i \left[ \log(P(x_i)) -\alpha(\log(Z(x_i))-0)^2 \right] \\ &=\sum_i \left[ \log(P(x_i)) -\alpha\log^2(Z(x_i)) \right] \end{aligned}
+\begin{aligned} \text{Loss} &=-\sum_{i}^{L} \left[ \log(P(x_i)) -\alpha(\log(Z(x_i))-0)^2 \right] \\ &=-\sum_{i}^{L} \left[ U_r(x_{i}) - \log(Z(x_{i})) -\alpha\log^2(Z(x_i)) \right] \\ &=\sum_{i=1}^{L} \Big[ \underbrace{\log(Z(x_i)) - U_r(x_i)}_{\text{Cross-Entropy}} + \underbrace{\alpha \log^2(Z(x_i))}_{\text{Z-loss}} \Big] \end{aligned}
+$$<p>You might wonder: why penalize the squared logarithm rather than a straightforward \((Z-1)^2\)? There is a subtle and easily overlooked detail here: \(Z\) must reflect its true absolute value, meaning we cannot bypass it with the standard max-subtraction trick (any subtracted constant must eventually be restored), as this is inherently required by the regularizer itself. In other words, when handling absolute magnitudes, working in the log domain is essential to convert exponential blowups into manageable additions—evaluating \((Z-1)^2\) directly would trigger numerical overflow in an instant:</p>
+$$
+\log(Z) = m + \log\left( \sum e^{U_{r} - m} \right),\ m=\text{max}(U_{r})
 $$<p>Second is the instability within the attention module&rsquo;s Softmax. However, the solution here isn&rsquo;t to modify Softmax directly, but to apply Normalization to the QK inputs—the widely known &ldquo;QK Norm&rdquo; method. In standard Transformer attention, Q and K undergo an inner product immediately after computation; &ldquo;QK Norm&rdquo;, on the other hand, normalizes Q and K before computing their inner product, ensuring the values fed into Softmax remain on a far more consistent scale.</p>
 
 <h4 class="relative group">Attention Overhead During Inference
