@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2026 Morethan</copyright>
-    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>流匹配与扩散模型</title>
+      <link>https://morethan987.github.io/blog/flow-matching-and-diffusion/</link>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/flow-matching-and-diffusion/</guid>
+      <description>&lt;p&gt;去噪扩散模型与流匹配模型是如今顶尖图像、音频和视频生成模型的核心基石。因此，熟悉相关技术并建立直观的物理与数学直觉，既十分必要，又非常有趣。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/flow-matching-and-diffusion/featured.svg" />
+    </item>
     
     <item>
       <title>预测编码调研</title>
