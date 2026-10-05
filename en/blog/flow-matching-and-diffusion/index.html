@@ -508,7 +508,7 @@
     "keywords": ["Architecture","Notes","GenerativeModel"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/flow-matching-and-diffusion/",
-    "wordCount":  2087 
+    "wordCount":  3104 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-10-02T00:00:00&#43;00:00">2 October 2026</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-05T00:00:00&#43;00:00">Updated: 5 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>2087 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-10-02T00:00:00&#43;00:00">2 October 2026</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-05T00:00:00&#43;00:00">Updated: 5 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3104 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1648,12 +1648,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#motivation">Motivation</a></li>
-    <li><a href="#algorithm">Algorithm</a>
-      <ul>
-        <li><a href="#flow-model">Flow model</a></li>
-        <li><a href="#diffusion-model">Diffusion model</a></li>
-      </ul>
-    </li>
+    <li><a href="#flow-model">Flow model</a></li>
+    <li><a href="#diffusion-model">Diffusion model</a></li>
+    <li><a href="#guidance-generation">Guidance Generation</a></li>
   </ul>
 </nav>
   </div>
@@ -1669,12 +1666,9 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#motivation">Motivation</a></li>
-    <li><a href="#algorithm">Algorithm</a>
-      <ul>
-        <li><a href="#flow-model">Flow model</a></li>
-        <li><a href="#diffusion-model">Diffusion model</a></li>
-      </ul>
-    </li>
+    <li><a href="#flow-model">Flow model</a></li>
+    <li><a href="#diffusion-model">Diffusion model</a></li>
+    <li><a href="#guidance-generation">Guidance Generation</a></li>
   </ul>
 </nav>
   </div>
@@ -1909,17 +1903,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 </span></div>
       </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>This also brings us some bonus. With flow or diffision progress, your prompt can be reseaonablly injected. You can imagine how complex the mapping function will be when attempting to get the final distribution in one step.</p></div></details><p>From a general perspective, this method can be view as getting &ldquo;depth&rdquo; in the time dimension instead of in the model dimension.</p>
 
-<h2 class="relative group">Algorithm
-    <div id="algorithm" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#algorithm" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
-
-<h3 class="relative group">Flow model
+<h2 class="relative group">Flow model
     <div id="flow-model" class="anchor"></div>
     
     <span
@@ -1927,7 +1911,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#flow-model" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h2>
 <p>To summarize, our current task is to describe the evolution of how a simple noise distribution gradually turns into the target data distribution.</p>
 <p>Fortunately 🐸, Ordinary Differential Equations (ODEs) provide an elegant framework to describe this transformation. Specifically, if we can find a time-dependent vector field \(u_t(x)\) that generates the desired probability density path \(p_t(x)\) from \(t = 0\) to \(t = 1\), we can train a neural network \(u_t^\theta(x)\) with weights \(\theta\) to approximate it.</p>
 <p>Naturally, the regression objective, the <strong>Flow Matching loss</strong>, is formulated as:</p>
@@ -1971,7 +1955,7 @@ $$
 $$<p>The proof of this can be find in <a href="https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf"  target="_blank" rel="noreferrer">lecture_notes</a> and the key preliminary is \(u_t(x)\) can be represented as the aggregate expectation of conditional vector fields which has been proved before.</p>
 <p>Since their gradients with respect to \(\theta\) are identical, minimizing the tractable conditional objective \(\mathcal{L}_{\text{CFM}}(\theta)\) is mathematically equivalent to minimizing the intractable marginal objective \(\mathcal{L}_{\text{FM}}(\theta)\). All we need in practice is to sample \(z\), sample \(x \sim p_t(x \mid z)\) which is a simpile evolution we can freely define, compute the closed-form conditional velocity \(u_t(x \mid z)\), and train our network via simple mean squared error regression.</p>
 
-<h3 class="relative group">Diffusion model
+<h2 class="relative group">Diffusion model
     <div id="diffusion-model" class="anchor"></div>
     
     <span
@@ -1979,7 +1963,7 @@ $$<p>The proof of this can be find in <a href="https://diffusion.csail.mit.edu/2
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#diffusion-model" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h2>
 <p>The mathematics of score matching is actually completely self-contained right from the start. We define the marginal score as the gradient of the log-density, \(\nabla \log p_t(x)\). Even though the true marginal density \(p_t(x)\) is intractable, we have the elegant marginalization identity:</p>
 $$
 \nabla \log p_t(x) = \int \nabla \log p_t(x|z) \frac{p_t(x|z)p_{\text{data}}(z)}{p_t(x)} \mathrm{d}z
@@ -2001,6 +1985,77 @@ $$<p>Because of this exact equivalence, training a single network gives us the o
           Thought
         </div>
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Why we introduce some stochastic factor? A converged explaination is about <strong>diversity</strong>. Flow model is simple and graceful but too rigrid and determinated. Moreover, there are some errors for flow model training which cannot be tackled theoritically. By introducing the stochastic factor, we hope to achieve a better performance by adjusting the \(\sigma\) of SDE.</p></div></div>
+<h2 class="relative group">Guidance Generation
+    <div id="guidance-generation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#guidance-generation" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>The algorithms above does not take the user&rsquo;s prompt into considertation. Usually, we want to push the result to the direction that follows our prompt or other possible extra information.</p>
+<p>The vanilla guided conditional flow matching objective is:</p>
+$$
+\mathcal{L}_{\mathrm{CFM}}^{\mathrm{guided}}(\theta) = \mathbb{E}_{(z,y) \sim p_{\mathrm{data}}(z,y), \, t \sim \mathrm{Unif}[0,1], \, x \sim p_t(\cdot | z)} \| u_t^\theta(x|y) - u_t(x|z) \|^2.
+$$<p>This loss function has nothing different to our previous one but added \(y\) tags into it. And the final \(X_{1}\) should faithfully follow the guided distribution \(p_{\text{data}}(\cdot |y)\). Theoritically perfect but practically failed. Here is an evidence: the left pictures is low-quality comparing to the right ones.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/vanilla_guidance_vs_classifier_guidance.png"
+    width="1516"
+    height="682"
+    src="/blog/flow-matching-and-diffusion/img/vanilla_guidance_vs_classifier_guidance_hu_c621c57afc5ffbd3.png"
+    srcset="/blog/flow-matching-and-diffusion/img/vanilla_guidance_vs_classifier_guidance_hu_c621c57afc5ffbd3.png 800w, /blog/flow-matching-and-diffusion/img/vanilla_guidance_vs_classifier_guidance_hu_d23b9bb29fae527d.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/flow-matching-and-diffusion/img/vanilla_guidance_vs_classifier_guidance.png"></figure>
+<p>And here refer a piece of content from <a href="https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf"  target="_blank" rel="noreferrer">lecture_notes</a> p.35 bottom.</p>
+<blockquote><p>This can have a diversity of reasons: the model might underfit (i.e. we do not actually learn the true marginal vector field) or our data might be imperfect (e.g. text-image pairs from the world wide web have a lot of errors). Therefore, to truly generate samples that fit better to a prompt, we have to find a way to artificially <strong>reinforce</strong> the prompt variable \(y\).</p>
+</blockquote><p>So we start by the equation of velosity and score. Then apply Beyes&rsquo; rule to get the result.</p>
+$$
+\begin{aligned} u_t(x|y) &= a_t \nabla_x \log p_t(x|y) + b_t x \\ &= a_t \nabla_x \log \left[ \frac{p_t(x) p_t(y|x)}{p_t(y)} \right] + b_t x \\ &= b_t x + a_t \left[ \nabla_x \log p_t(x) + \nabla_x \log p_t(y|x) \right] \\ &= u_t(x) + a_t \nabla_x \log p_t(y|x) \end{aligned}
+$$<p>The euqation says that the vanilla guided velosity filed is the unguided file puls the score filed \(\nabla_x \log p_t(y|x)\). A simple way to reinforce \(y\) is to apply a scale factor \(w > 1\) to the score:</p>
+$$
+\tilde{u}_t(x|y)=u_t(x) + w\cdot a_t \nabla_x \log p_t(y|x)
+$$<p>And this is the core of <strong>classifier guidance</strong>. But why is &ldquo;classifier&rdquo;? Actually, to get the reinforced velosity file \(\tilde{u}_t(x|y)\) we need two neural network, one is for the standard velosity filed and the other for the score filed \(\nabla_x \log p_t(y|x)\). The second network is to generate the distribution of \(y\) given \(x\) which means to classify the &ldquo;dirty&rdquo; interval \(x\) to some tags \(y\). So that&rsquo;s why we call this classifier guidance.</p>
+<p>As you can imagine, it&rsquo;s annoying and unstable to train a network to do classification job on dirty \(x\). So we need to convert the ugly score into something simpler. Recall the score is just a reparameterization of velosity when the basic distribution is Gaussian. There should be a chance to convert score into velosity.</p>
+$$
+\begin{aligned} \tilde{u}_t(x|y) &= u_t(x) + w a_t \nabla \log p_t(y|x) \\ &= u_t(x) + w a_t (\nabla \log p_t(x|y) - \nabla \log p_t(x)) \\ &= u_t(x) - (w b_t x + w a_t \nabla \log p_t(x)) + (w b_t x + w a_t \nabla \log p_t(x|y)) \\ &= (1 - w) u_t(x) + w u_t(x|y) \end{aligned}
+$$<p>The euqation tells us that the reinforced filed \(\tilde{u}_t(x|y)\) is a linear conbination of standard filed \(u_t(x)\) and guided filed \(u_t(x|y)\). Can we move the conbination operation into the data layer? In other word, can we apply a drop out trick to estimate both \(u_t(x)\) and \(u_t(x|y)\) in a single neural network? Yes, we can and here is a proof.</p>
+<p>To formalize this, consider augmenting our label space to \(\tilde{\mathcal{Y}} = \mathcal{Y} \cup \{\emptyset\}\), where \(\emptyset\) denotes a designated null token representing the absence of conditioning. During training, for each data pair \((z, y) \sim p_{\mathrm{data}}(z, y)\), we introduce an independent Bernoulli trial with probability \(\eta \in (0, 1)\) that decides whether to drop the label. The active conditioning variable \(c \in \tilde{\mathcal{Y}}\) fed into the model is thus defined as \(c = y\) with probability \(1 - \eta\), and \(c = \emptyset\) with probability \(\eta\).</p>
+<p>Crucially, because the dropout mechanism is an independent coin toss, the event \(c = \emptyset\) is statistically independent of the sample state \(x\). Applying Bayes&rsquo; rule to the intermediate noisy distribution yields:</p>
+$$
+p_t(x \mid c = \emptyset) = \frac{p(c = \emptyset \mid x) p_t(x)}{p(c = \emptyset)} = \frac{\eta \cdot p_t(x)}{\eta} = p_t(x).
+$$<p>This identity shows that the intermediate data distribution conditioned on the dummy label \(\emptyset\) is strictly identical to the true unconditional marginal distribution \(p_t(x)\).</p>
+<p>Now consider parameterizing a single vector field \(u_t^\theta(x|c)\) trained over this augmented data distribution with the standard mean squared error:</p>
+$$
+\mathcal{L}_{\mathrm{CFM}}^{\mathrm{CFG}}(\theta) = \mathbb{E}_{(z, c), \, t \sim \mathrm{Unif}[0,1], \, x \sim p_t(\cdot|z)} \| u_t^\theta(x|c) - u_t(x|z) \|^2.
+$$<p>Under the \(L_2\) regression objective, the Bayes optimal estimator for any given input slice \((x, c)\) is the posterior conditional expectation of the target vector field, namely \(u_t^*(x|c) = \mathbb{E}[u_t(x|z) \mid x_t = x, c]\). Evaluating this pointwise minimizer under the two label regimes reveals:</p>
+$$
+u_t^*(x \mid y) = \mathbb{E}[u_t(x|z) \mid x_t = x, c = y] = u_t(x|y),
+$$<p>which recovers the target conditional vector field, while for the null label:</p>
+$$
+u_t^*(x \mid \emptyset) = \mathbb{E}[u_t(x|z) \mid x_t = x, c = \emptyset] = \mathbb{E}[u_t(x|z) \mid x_t = x] = u_t(x),
+$$<p>which naturally recovers the unguided marginal vector field due to the conditional independence of \(\emptyset\).</p>
+<p>This proves that by simply augmenting the training data distribution with a statistically independent null condition, a single neural network \(u_t^\theta(x|c)\) learns both target fields over different conditioning slices. At sampling time, we can evaluate the exact same network with prompt \(y\) and empty prompt \(\emptyset\), respectively, and compute the guided trajectory via \(\tilde{u}_t(x|y) = (1 - w) u_t^\theta(x|\emptyset) + w u_t^\theta(x|y)\) without training two distinct models.</p>
+<p>Noticing we do not need a classifier anymore, so the method is called <strong>classifier-free guidance</strong>.</p>
+<p>You may consider: can we get apply different weight to \(u_t^\theta(x|\emptyset)\) and \(u_t^\theta(x|y)\) according to \(\tilde{u}_t(x|y) = (1 - w) u_t^\theta(x|\emptyset) + w u_t^\theta(x|y)\) by adjusting the data distribution? We cannot since the desired \(w\) should be greater than \(1\) and \(1-w<0\) which is not a correct probability.</p>
+<p>One more thing that should emphasize: reinforced \(\tilde{X_{1}}\) is not necessarily aligned with \(X_{1} \sim p_{\text{data}}(\cdot|y)\). Actually, what the model learnt is a <strong>sharped</strong> distribution with lower diversity but higher precision. Here is what the lecture note says:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/lecture_note_comment_on_classifier_free.png"
+    width="1501"
+    height="230"
+    src="/blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free_hu_d3ab17c9e4a4e96b.png"
+    srcset="/blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free_hu_d3ab17c9e4a4e96b.png 800w, /blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free_hu_d2a96a0f4ab366b7.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free.png"></figure>
+
           
           
           
