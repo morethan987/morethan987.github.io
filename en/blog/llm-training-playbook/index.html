@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-09-14T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-05T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-09-14T00:00:00\u002b00:00",
+    "dateModified": "2026-10-05T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  8527 
+    "wordCount":  9928 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-09-14T00:00:00&#43;00:00">Updated: 14 September 2026</time><span class="px-2 text-primary-500">&middot;</span><span>8527 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">18 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-05T00:00:00&#43;00:00">Updated: 5 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>9928 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">20 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1692,6 +1692,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#engineering-details">Engineering Details</a>
           <ul>
             <li><a href="#benchmarking">Benchmarking</a></li>
+            <li><a href="#triton-kernels">Triton Kernels</a></li>
+            <li><a href="#flashattention">FlashAttention</a></li>
           </ul>
         </li>
       </ul>
@@ -1755,6 +1757,8 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#engineering-details">Engineering Details</a>
           <ul>
             <li><a href="#benchmarking">Benchmarking</a></li>
+            <li><a href="#triton-kernels">Triton Kernels</a></li>
+            <li><a href="#flashattention">FlashAttention</a></li>
           </ul>
         </li>
       </ul>
@@ -2999,7 +3003,172 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/nsys_kernel_results.png"></figure>
 <p>In the forward pass, the dominant time sink in most cases is the <code>gemm</code> kernel, i.e., general matrix multiplication (\(D = \alpha AB + \beta C\)). However, a noticeable inflection occurs once the context length reaches 2048: the top kernel flips to <code>masked_fill</code> (the attention masking step), illustrating that long-context regimes are bound by memory bandwidth rather than compute. During the backward pass, most time shifts to <code>vectorized_mul</code> (element-wise multiplication). This showcases a key characteristic of backpropagation: it involves a massive amount of element-wise operations (additions, element-wise exp, etc., all take notable shares) that carry significant memory overhead. Another detail worth noting is the tile shape of the <code>gemm</code> kernels—they do not match the exact shapes of our input tensors, which is simply GPU thread block tiling in action.</p>
-
+<hr>
+<p>Regarding the warmup (cold start) issue: when benchmarking execution time, you generally need sufficient warmup runs and multiple measurements to take an average. When profiling memory, however, you don&rsquo;t need nearly as many runs—typically, a single warmup step and one measurement step are sufficient.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          Pitfall
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>You might wonder: <em>Since we&rsquo;re profiling memory, can&rsquo;t we just skip the warmup altogether? After all, memory reaches its peak during the very first backward pass anyway.</em> This assumption is actually quite subtle. In practice, you <em>could</em>, but you must understand what really happens under the hood. Due to how PyTorch operates, optimizer state memory is only allocated on the very first call to <code>optimizer.step()</code>. If your <strong>profiling run consists of only one step</strong>, the peak activation memory will have already passed and been freed <em>before</em> the optimizer state memory is allocated. As a result, what you measure isn&rsquo;t the steady-state peak memory, but merely \(\max(\text{activation peak}, \text{optimizer peak})\). What if your profiling run has two or more steps? Then you are essentially just shifting the warmup into your benchmark steps anyway. Therefore, <strong>a warmup run is essential even when profiling memory!</strong></p></div></div>
+<h4 class="relative group">Triton Kernels
+    <div id="triton-kernels" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#triton-kernels" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Before diving into it, Triton kernels might seem mysterious—like some dark magic that suddenly makes your models run blazingly fast. But in reality, once you gain some hands-on programming experience, you realize that the true magic lies in algorithm design rather than Triton kernels themselves, which is what we will cover in the next section on <a href="#flashattention" >FlashAttention</a>. Here, I mainly want to document a programming paradigm known as <strong>Block Pointers</strong>, which is a newer and much more intuitive approach.</p>
+<p>Before grasping Block Pointers, there is a crucial mental model to understand. Inside a kernel, we are almost always dealing with a 2D computation, and it is always executed in tiles/blocks. This is because GPU SRAM (shared memory) is limited in size; you can only compute one tile, load the next, and repeat. You might ask: <em>what about higher-dimensional tensor computations?</em> There are generally two approaches: one is to flatten the dimensions and reshape/reconstruct them after computation; the other is to leverage Triton&rsquo;s grid syntax when launching the kernel. However, Triton grids only support up to 3 dimensions, meaning any extra dimensions must still be flattened before being passed into the kernel.</p>
+<p>Here, the &ldquo;grid&rdquo; can be viewed as the parallel execution dimensions of the GPU. Each grid point (program instance / thread block) handles a designated portion of the work, and these instances should be <strong>decoupled</strong> from one another. Inside each instance, a loop sequentially loads and computes different tiles along the remaining dimension. For a simple 2D scenario, the grid could be aligned along either rows or columns. Once you pick a grid direction, imagine a row of lawnmowers lined up along that dimension, mowing block-by-block across the orthogonal dimension (yes, exactly like the lawnmowers in <em>Plants vs. Zombies</em> 😄).</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/triton_tiles.png"
+    width="1304"
+    height="785"
+    src="/blog/llm-training-playbook/img/triton_tiles_hu_a96ee6228f26ffed.png"
+    srcset="/blog/llm-training-playbook/img/triton_tiles_hu_a96ee6228f26ffed.png 800w, /blog/llm-training-playbook/img/triton_tiles_hu_848ee6de28d1cebd.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/triton_tiles.png"></figure>
+<p>That sums up the core computational pattern of Triton kernel programming: it&rsquo;s actually quite clean and not drastically different from standard PyTorch, just with explicit tiling tricks added. What really drains your mental energy, however, is the data loading:</p>
+<ol>
+<li>Logical tensor layouts and physical memory storage are decoupled; you have to advance and manipulate pointers with extreme care.</li>
+<li>For computational efficiency, you must adjust the access pattern based on physical layout to exploit <a href="#memory-coalescing" >Memory Coalescing</a> for acceleration.</li>
+<li>When the actual matrix dimensions cannot be evenly divided by the tile size, we typically round up (ceiling division) the grid to ensure all elements are covered. However, this introduces out-of-bounds memory accesses, requiring boundary padding.</li>
+<li>When storing data back, out-of-bounds boundary checks are equally necessary.</li>
+</ol>
+<p>Without the Block Pointer abstraction, handling these issues is tedious and error-prone. Code gets cluttered with edge cases, and the main computational logic ends up fragmented and unreadable. With Block Pointers, this complexity is neatly encapsulated inside the block declaration. Here are a few examples of Block Pointers:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x_block_ptr</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">make_block_ptr</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x_ptr</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">NUM_ROWS</span><span class="p">,</span> <span class="n">D</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="n">x_stride_row</span><span class="p">,</span> <span class="n">x_stride_dim</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">offsets</span><span class="o">=</span><span class="p">(</span><span class="n">row_tile_idx</span> <span class="o">*</span> <span class="n">ROWS_TILE_SIZE</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>  <span class="c1"># parallel on rows, so only the affected set offsets</span>
+</span></span><span class="line"><span class="cl">    <span class="n">block_shape</span><span class="o">=</span><span class="p">(</span><span class="n">ROWS_TILE_SIZE</span><span class="p">,</span> <span class="n">D_TILE_SIZE</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">weight_block_ptr</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">make_block_ptr</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">weight_ptr</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">D</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="n">weight_stride_dim</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">offsets</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">block_shape</span><span class="o">=</span><span class="p">(</span><span class="n">D_TILE_SIZE</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">output_block_ptr</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">make_block_ptr</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output_ptr</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">NUM_ROWS</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="n">output_stride_row</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">offsets</span><span class="o">=</span><span class="p">(</span><span class="n">row_tile_idx</span> <span class="o">*</span> <span class="n">ROWS_TILE_SIZE</span><span class="p">,),</span>  <span class="c1"># row affected</span>
+</span></span><span class="line"><span class="cl">    <span class="n">block_shape</span><span class="o">=</span><span class="p">(</span><span class="n">ROWS_TILE_SIZE</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></div></div>
+<p>The first block pointer represents the parallelized dimension, requiring an explicit <code>offsets</code> parameter at initialization. The second block doesn&rsquo;t need an offset because all parallel threads start reading from the same base position. The third block is where the output is written back; since different threads write to distinct locations, it also requires an offset.</p>
+<p>The other two critical parameters to watch are <code>strides</code> and <code>order</code>: <code>strides</code> specifies the memory displacement (stride in elements/bytes) between logically adjacent elements along each dimension; <code>order</code> represents the dimension indices sorted by stride. Since PyTorch uses row-major ordering by default, the dimension with the smallest stride sits at the trailing index.</p>
+<p>Once all these configurations are declared, the core compute loop becomes remarkably concise:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">output</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ROWS_TILE_SIZE</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tl</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>  <span class="c1"># row allocator</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tl</span><span class="o">.</span><span class="n">cdiv</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">D_TILE_SIZE</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">row</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">x_block_ptr</span><span class="p">,</span> <span class="n">boundary_check</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding_option</span><span class="o">=</span><span class="s2">&#34;zero&#34;</span><span class="p">)</span>  <span class="c1"># (ROW_TILE_SIZE, D_TILE_SIZE)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">weight</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">weight_block_ptr</span><span class="p">,</span> <span class="n">boundary_check</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">padding_option</span><span class="o">=</span><span class="s2">&#34;zero&#34;</span><span class="p">)</span>  <span class="c1"># (D_TILE_SIZE)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output</span> <span class="o">+=</span> <span class="n">tl</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">row</span> <span class="o">*</span> <span class="n">weight</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">x_block_ptr</span> <span class="o">=</span> <span class="n">x_block_ptr</span><span class="o">.</span><span class="n">advance</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">D_TILE_SIZE</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">weight_block_ptr</span> <span class="o">=</span> <span class="n">weight_block_ptr</span><span class="o">.</span><span class="n">advance</span><span class="p">((</span><span class="n">D_TILE_SIZE</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">tl</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">output_block_ptr</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">boundary_check</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span></span></span></code></pre></div></div>
+<p>In plain English: load the tile data into SRAM while checking boundaries (padding with zeros if out of bounds), execute the compute, and accumulate the result into a local SRAM accumulator. Once the tile is processed, advance the pointer to the next tile. After all tiles are finished, flush the accumulated result from the local accumulator back into HBM (High Bandwidth Memory) all at once.</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>It might feel a bit disorienting the first time you try it, but it clicks once you get the intuition. That said, kernel programming remains undeniably tedious 😵, even with abstractions like Block Pointers. Moreover, once you complete this section, you will realize that writing kernels is not the end goal, but merely a tool; the real intellectual fun lies in figuring out how to decouple data dependencies so massive parallelism becomes possible.</p></div></details>
+<h4 class="relative group">FlashAttention
+    <div id="flashattention" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#flashattention" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<blockquote><p>A stroke of genius in algorithm design that decoupled data dependencies—and sent my brain spinning 😵‍💫😵.</p>
+</blockquote><p>Before writing the algorithm, we need to understand what&rsquo;s wrong with the current implementation, and doing so requires a prerequisite: matrix calculus. I highly recommend checking out these two Zhihu articles: <em>Matrix Calculus Techniques (Part 1)</em> and <em>Matrix Calculus Techniques (Part 2)</em>. They are wonderfully lucid reads that fill the gaps left by standard college calculus without requiring you to slog through massive matrix analysis textbooks.</p>
+<p>I won&rsquo;t dive into the full mathematical derivation here, so I&rsquo;ll just include two algorithm pseudocode screenshots:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/flash_attention2_forward.png"
+    width="1346"
+    height="948"
+    src="/blog/llm-training-playbook/img/flash_attention2_forward_hu_110db004b406791c.png"
+    srcset="/blog/llm-training-playbook/img/flash_attention2_forward_hu_110db004b406791c.png 800w, /blog/llm-training-playbook/img/flash_attention2_forward_hu_35b90ea6bf35dda.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/flash_attention2_forward.png"></figure>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/flash_attention2_backward.png"
+    width="1535"
+    height="1482"
+    src="/blog/llm-training-playbook/img/flash_attention2_backward_hu_d2282ff64456facb.png"
+    srcset="/blog/llm-training-playbook/img/flash_attention2_backward_hu_d2282ff64456facb.png 800w, /blog/llm-training-playbook/img/flash_attention2_backward_hu_fef37d83ad12c521.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/flash_attention2_backward.png"></figure>
+<p>The impact of FlashAttention goes without saying: it achieves an attention algorithm with \(O(N)\) memory access, drastically slashing total execution latency. However, what deserves the most attention is the &ldquo;online softmax&rdquo; algorithm in the forward pass. How should we intuitively understand why this works?</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/running_softmax.png"
+    width="1494"
+    height="540"
+    src="/blog/llm-training-playbook/img/running_softmax_hu_49b0cb18a1fb5af2.png"
+    srcset="/blog/llm-training-playbook/img/running_softmax_hu_49b0cb18a1fb5af2.png 800w, /blog/llm-training-playbook/img/running_softmax_hu_8514c00b88a2d8c2.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/running_softmax.png"></figure>
+<p>The core idea of online softmax is to update/rescale prior partial results using newly observed incoming data. A common point of confusion is: <em>once I have already finished computing a tile, how can I retroactively update previous outputs?</em></p>
+<p>In fact, the intermediate attention scores themselves cannot be modified once discarded. But remember: we don&rsquo;t actually need to store the attention scores—what we ultimately care about is the output matrix \(O\). As shown in the figure, the matrix multiplication between the attention scores and \(V\) acts as an accumulator, allowing computations across different \(K\) (and \(V\)) tiles to contribute incrementally to the same output tile \(O\). In my view, this is the very prerequisite that makes online computation feasible in the first place.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Remark
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Because of this, I feel that calling this mechanism &ldquo;online softmax&rdquo; isn&rsquo;t entirely accurate; it might be better termed &ldquo;online tiled attention.&rdquo; Pure softmax on its own cannot be computed in a streaming online fashion like this—or rather, in standalone softmax, later tiles have no way to retroactively correct the outputs of preceding tiles without keeping everything around. 🤔</p></div></div>
           
           
           
