@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2026-10-02T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-10-05T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-07T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="Notes">
 		<meta property="article:tag" content="GenerativeModel">
@@ -503,12 +503,12 @@
     "dateCreated": "2026-10-02T00:00:00\u002b00:00",
     "datePublished": "2026-10-02T00:00:00\u002b00:00",
     
-    "dateModified": "2026-10-05T00:00:00\u002b00:00",
+    "dateModified": "2026-10-07T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","Notes","GenerativeModel"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/flow-matching-and-diffusion/",
-    "wordCount":  3104 
+    "wordCount":  4442 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-10-02T00:00:00&#43;00:00">2 October 2026</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-05T00:00:00&#43;00:00">Updated: 5 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>3104 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-10-02T00:00:00&#43;00:00">2 October 2026</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-07T00:00:00&#43;00:00">Updated: 7 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>4442 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">21 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1481,19 +1481,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 
     
-    
-      <span class="ps-2"><span class="flex cursor-pointer">
-  
-  
-  
-  
-    <span
-      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-  
-    Draft
-  </span>
-</span>
-</span>
     
   </div>
 
@@ -1650,7 +1637,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#motivation">Motivation</a></li>
     <li><a href="#flow-model">Flow model</a></li>
     <li><a href="#diffusion-model">Diffusion model</a></li>
-    <li><a href="#guidance-generation">Guidance Generation</a></li>
+    <li><a href="#guided-generation">Guided Generation</a></li>
+    <li><a href="#autoencoder">Autoencoder</a>
+      <ul>
+        <li><a href="#standard-autoencoders">Standard Autoencoders</a></li>
+        <li><a href="#variational-autoencoders">Variational Autoencoders</a></li>
+      </ul>
+    </li>
+    <li><a href="#discrete-diffusion-models">Discrete Diffusion Models</a></li>
   </ul>
 </nav>
   </div>
@@ -1668,7 +1662,14 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     <li><a href="#motivation">Motivation</a></li>
     <li><a href="#flow-model">Flow model</a></li>
     <li><a href="#diffusion-model">Diffusion model</a></li>
-    <li><a href="#guidance-generation">Guidance Generation</a></li>
+    <li><a href="#guided-generation">Guided Generation</a></li>
+    <li><a href="#autoencoder">Autoencoder</a>
+      <ul>
+        <li><a href="#standard-autoencoders">Standard Autoencoders</a></li>
+        <li><a href="#variational-autoencoders">Variational Autoencoders</a></li>
+      </ul>
+    </li>
+    <li><a href="#discrete-diffusion-models">Discrete Diffusion Models</a></li>
   </ul>
 </nav>
   </div>
@@ -1985,12 +1986,12 @@ $$<p>Because of this exact equivalence, training a single network gives us the o
           Thought
         </div>
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Why we introduce some stochastic factor? A converged explaination is about <strong>diversity</strong>. Flow model is simple and graceful but too rigrid and determinated. Moreover, there are some errors for flow model training which cannot be tackled theoritically. By introducing the stochastic factor, we hope to achieve a better performance by adjusting the \(\sigma\) of SDE.</p></div></div>
-<h2 class="relative group">Guidance Generation
-    <div id="guidance-generation" class="anchor"></div>
+<h2 class="relative group">Guided Generation
+    <div id="guided-generation" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#guidance-generation" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#guided-generation" aria-label="Anchor">#</a>
     </span>
     
 </h2>
@@ -2055,6 +2056,167 @@ $$<p>which naturally recovers the unguided marginal vector field due to the cond
     srcset="/blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free_hu_d3ab17c9e4a4e96b.png 800w, /blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free_hu_d2a96a0f4ab366b7.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/flow-matching-and-diffusion/img/lecture_note_comment_on_classifier_free.png"></figure>
+
+<h2 class="relative group">Autoencoder
+    <div id="autoencoder" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#autoencoder" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>In the previous sections, we know how to train a model to matching velosity filed \(u_t(x)\). And in inference time, we simulate the ODE/SDE to get final distribution. But there is a problem when we simulating the ODE/SDE in practice: if we want to generate a high-quality image, the \(u_t(x)\) should be working in a extremely high dimensional space which is costly and hard to train.</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>In the context of image generation, \(u_t(x)\) actually tells us how to modify <strong>every</strong> pixel across the channels.</p></div></details><p>And more over, there should be a lot of redundancy in the real image generation. For example, the dark part of the picture below should always be dark. This revels that we can represent the original image with a more compressed form that is easier to tackel by our generative models.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/redundancy_example.png"
+    width="1204"
+    height="799"
+    src="/blog/flow-matching-and-diffusion/img/redundancy_example_hu_9d52a85e26b502b9.png"
+    srcset="/blog/flow-matching-and-diffusion/img/redundancy_example_hu_9d52a85e26b502b9.png 800w, /blog/flow-matching-and-diffusion/img/redundancy_example.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/flow-matching-and-diffusion/img/redundancy_example.png"></figure>
+<p>And that is the <strong>autoencoder</strong> which means an encoder to convert the image into a low dimensional space (<strong>latent space</strong>) and a decoder to convert data point in latent space back to an image.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/autoencoder.png"
+    width="1299"
+    height="645"
+    src="/blog/flow-matching-and-diffusion/img/autoencoder_hu_4bcaf504c1085c5f.png"
+    srcset="/blog/flow-matching-and-diffusion/img/autoencoder_hu_4bcaf504c1085c5f.png 800w, /blog/flow-matching-and-diffusion/img/autoencoder_hu_bcd081b20304feaf.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/flow-matching-and-diffusion/img/autoencoder.png"></figure>
+
+<h3 class="relative group">Standard Autoencoders
+    <div id="standard-autoencoders" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#standard-autoencoders" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Formally, we denote \(u_{\phi}: \mathbb{R}^d \to \mathbb{R}^k\) as encoder and \(u_{\theta}: \mathbb{R}^k \to \mathbb{R}^d\) as decoder. A standard autoencoder is trained with the naive reconstruction loss:</p>
+$$
+\mathcal{L}_{\mathrm{Recon}}(\phi, \theta) = \mathbb{E}_{x \sim p_{\mathrm{data}}} \left[ \| \mu_\theta(\mu_\phi(x)) - x \|^2 \right]
+$$<p>The loss function is easy to understand. However, our goal is not simply getting an autoencoder but getting an latent space for generative model. That means we need more control on the latent space should be.</p>
+
+<h3 class="relative group">Variational Autoencoders
+    <div id="variational-autoencoders" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#variational-autoencoders" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>The first difference of variational autoencoders comparing to standard autoencoder is viewing the conversion operation as a sampling operation on a latent distribution. So the encoder and decoder is defined as:</p>
+$$
+q_\phi(z|x) = \mathcal{N}(z; \mu_\phi(x), \operatorname{diag}(\sigma_\phi^2(x))), \quad p_\theta(x|z) = \mathcal{N}(x; \mu_\theta(z), \sigma_\theta^2(z)I_d)
+$$<p>where \(\mu_\phi(x) \in \mathbb{R}^k\), \(\sigma_\phi^2(x) \in \mathbb{R}_{\ge 0}^k\), \(\mu_\theta(z) \in \mathbb{R}^d\), and \(\sigma_\theta^2(z) \in \mathbb{R}_{\ge 0}\) are parameterized as neural networks and \(\operatorname{diag}\) denotes the diagonal matrix. To encode or decode a variable, we sample</p>
+$$
+z \sim q_\phi(\cdot|x), \ x \sim p_\theta(\cdot|z)
+$$<p>Under this view, the reconstruction loss is:</p>
+$$
+\mathcal{L}_{\text{VAE-Recon}}(\phi, \theta) = -\mathbb{E}_{x \sim p_{\text{data}}(x), z \sim q_\phi(\cdot|x)} \left[ \log p_\theta(x|z) \right]
+$$<p>This means given a sampled \(z\) from a conditional distribution \(q_\phi(\cdot|x)\), we should get the largest log probability at \(x\). For the Gaussian case, the loss becomes:</p>
+$$
+\mathcal{L}_{\text{VAE-Recon}}(\phi, \theta) = \mathbb{E}_{x \sim p_{\text{data}}(x), z \sim q_\phi(z|x)} \left[ \frac{1}{2\sigma_\theta^2(z)} \|x - \mu_\theta(z)\|^2 + \frac{d}{2} \log \sigma_\theta^2(z) \right] + \mathrm{const}
+$$<p>Practically, to avoid pathological behavior and get better numerical stability, the \(\sigma_{\phi}(x)\) and \(\sigma_{\theta}(z)\) are usually fixed. The loss now is:</p>
+$$
+\mathcal{L}_{\text{VAE-Recon}}(\phi, \theta) = \mathbb{E}_{x \sim p_{\text{data}}(x), z \sim q_\phi(z|x)} \left[ \frac{1}{2\sigma_\theta^2} \|x - \mu_\theta(z)\|^2 \right] + \mathrm{const}
+$$<p>Now the loss is mathematically equals the standard reconstruction loss. To get a &ldquo;nicer&rdquo; latent distribution, we should claim what is a nicer distribution. The Gaussian is so special and widely valided that here we define that Gaussian is a nice distribution. So we introduce some regularization term into the loss to make sure the latent distribution to be somewhat similar with Gaussian.</p>
+$$
+\begin{align*} \mathcal{L}_{\text{VAE}}(\phi, \theta) &= \mathcal{L}_{\text{VAE-Recon}}(\phi, \theta) + \beta \mathcal{L}_{\text{VAE-Prior}}(\phi) \\ &= -\mathbb{E}_{x \sim p_{\text{data}}(x), z \sim q_\phi(z \mid x)} \left[ \log p_\theta(x \mid z) \right] + \beta \mathbb{E}_{x \sim p_{\text{data}}(x)} \left[ D_{KL}(q_\phi(\cdot \mid x) \parallel p_{\text{prior}}) \right] \\ &= \mathbb{E}_{x \sim p_{\text{data}}(x), z \sim q_\phi(z \mid x)} \left[ \underbrace{\frac{1}{2\sigma_\theta^2(z)} \|x - \mu_\theta(z)\|^2}_{\text{recon. error}} + \underbrace{\frac{d}{2} \log \sigma_\theta^2(z)}_{\text{decoder confidence}} + \underbrace{\frac{\beta}{2}\mathcal{K}(\sigma_\phi^2(x))}_{\text{make latent variance=1}} + \underbrace{\frac{\beta}{2} \|\mu_\phi(x)\|^2}_{\text{make latent mean=0}} \right] \end{align*}
+$$<p>where \(\beta\) means how important the similarity term should be, the \(D_{KL}\) is the KL divergence which represents the distance between two distribution.</p>
+<p>Notablly, \(z\) now relies on trainable parameters which is mathematically invalid to do backpropagation. Due to the fine property of Gaussian, we can move the parameter into the loss expression:</p>
+$$
+\mathcal{L}_{\text{VAE}}(\phi, \theta) = \mathbb{E}_{x \sim p_{\text{data}}(x), \epsilon \sim \mathcal{N}(0, I_k)} \left[ \frac{1}{2\sigma_\theta^2(z)} \|x - \mu_\theta(\mu_\phi(x) + \sigma_\phi(x)\epsilon)\|^2 + \frac{d}{2} \log \sigma_\theta^2(z) + \frac{\beta}{2} \mathcal{K}(\sigma_\phi^2(x)) + \frac{\beta}{2} \|\mu_\phi(x)\|^2 \right]
+$$
+<h2 class="relative group">Discrete Diffusion Models
+    <div id="discrete-diffusion-models" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#discrete-diffusion-models" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Why we want a discrete diffusion model? Because not all data is naturally modeled as a point in Euclidean space \(\mathbb{R}^d\), such as text or DNA which is more naturally viewed as elements of a discrete state space \(S\).</p>
+<p>Remember the ODE/SDE defines a continuous evolution, the core task now is to propose the &ldquo;discrete ODE/SDE&rdquo;, which is actually called Continuous-Time Markov chain (CTMC).</p>
+$$
+\frac{\mathrm{d}}{\mathrm{d}h} p_{t+h|t}(X_{t+h} = y \mid X_t = x) \Big|_{h=0} = Q_t(y \mid x) \quad \text{for all } x, y \in S, 0 \le t
+$$<p>\(Q_{t}(y|x)\) defines a <strong>rate matrix</strong> that summarizes the rate of switching from state \(x\) to \(y\). \(p_{t+h|t}(X_{t+h} = y \mid X_t = x)\) tells us the probability of switching from \(x\) to \(y\) during a time step \(h\).</p>
+<p>By applying Tailor expansion on the transition equation, we can simulate the CTMC.</p>
+$$
+p_{t+h|t}(X_{t+h} = y \mid X_t = x) = p_{t|t}(X_t = y \mid X_t = x) + h Q_t(y \mid x) + R_t(h) = 1_{y=x} + h Q_t(y \mid x) + R_t(h)
+$$<p>Just like flow model, by simulating the CTMC, the distribution \(p_{\text{init}}\) becomes \(p_{\text{data}}\) which is what we expected.</p>
+<p>However, the state space of \(Q_{t}(y|x)\) can be very large. In paticular, \(|S|=V^d\) where \(V\) is our vocabulary size and \(d\) is sequence length. To make it practical, we need to constrain the model and the most widely-used method is <strong>factorization</strong>. Here is a picture to get some intuition.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/factorized_ctmc_model.png"
+    width="1503"
+    height="673"
+    src="/blog/flow-matching-and-diffusion/img/factorized_ctmc_model_hu_74d16f9d6ddc78ec.png"
+    srcset="/blog/flow-matching-and-diffusion/img/factorized_ctmc_model_hu_74d16f9d6ddc78ec.png 800w, /blog/flow-matching-and-diffusion/img/factorized_ctmc_model_hu_8f9007543ab44a5f.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/flow-matching-and-diffusion/img/factorized_ctmc_model.png"></figure>
+<p>And now the rate matrix is much affordable:</p>
+$$
+x \mapsto \{Q_t^\theta(y \mid x)\}_{y \in N(x)} = \begin{pmatrix} Q_t^\theta(v_1, 1 \mid x) & \dots Q_t^\theta(v_V, 1 \mid x) \\ \dots & \\ Q_t^\theta(v_1, d \mid x) & \dots Q_t^\theta(v_V, d \mid x) \end{pmatrix}
+$$<p>The element of the matrix means given the masked sequence of \(x\) the rate of position \(i\) turns into \(v_{j}\). That&rsquo;s all for the inference time.</p>
+<p>And for the training time, it&rsquo;s almost the same with flow model. First, we solve the conditional problem:</p>
+$$
+\begin{align*} Q_t^z(y \mid x) &= \left(Q_t^z(v_i, j \mid x_j)\right)_{v_i, j} \\ Q_t^z(v_i, j \mid x_j) &= \frac{\dot{\kappa}_t}{1 - \kappa_t} \left(\delta_{z_j}(v_i) - \delta_{x_j}(v_i)\right) \\ &= \frac{\dot{\kappa}_t}{1 - \kappa_t} \begin{cases} 0 & \text{if } x_j = z_j \\ 1 & \text{if } v_i = z_j, \, x_j \neq z_j \\ 0 & \text{if } v_i \neq z_j, \, x_j \neq z_j \\ -1 & \text{if } v_i = x_j, \, x_j \neq z_j \end{cases} \end{align*}
+$$<p>Some illustration for expanded items:</p>
+<ol>
+<li>if \(x_{j}\) is the tag \(z_{j}\) then the rate is \(0\) means the probability should keep the same;</li>
+<li>if \(v_{i}\) is tag \(z_{j}\) but \(x_{j}\) now is not \(z_{j}\) then the rate is \(1\) means the probability should flow into it;</li>
+<li>if both \(v_{i}\) and \(x_{j}\) is not \(z_{j}\) then do nothing;</li>
+<li>if \(x_{j}\) now is \(v_{i}\) but \(v_{i}\) is not the tag \(z_{j}\) then the probability should flow out.</li>
+</ol>
+<p>Then we take a weighted average for all known samples to get the marginal rate matrix:</p>
+$$
+Q_t(y \mid x) = \sum_{z \in S} Q_t^z(y \mid x) p_{1|t}(z \mid x)
+$$<p>The only term we do not know is \(Q_t^z(y \mid x)\) and that should be replaced by our neural network. The meaning of the term is that given a internal &ldquo;dirty&rdquo; \(x\) how the rate should be for the specific sample \(z\). This is exactly the BERT model do: give the masked sentence to predict the masked word. So the loss function should also be the classic cross entropy loss:</p>
+$$
+\mathcal{L}_{\mathrm{DFM}}(\theta) = \mathbb{E}_{z \sim p_{\mathrm{data}}, \, t \sim \mathrm{Unif}_{[0, 1]}, \, x \sim p_t(\cdot \mid z)} \left[ \sum_{j=1}^d -\log p_{1|t}^\theta (z_j \mid x) \right]
+$$<p>It&rsquo;s not hard to comprehend but kind of strange: is this necessary for text generation? or what&rsquo;s the advantage and disadvantage?</p>
+<p>Now it&rsquo;s an opening problem, someone hold that the diffusion text generation is faster and enables the model to edit the generated text (stronger performance), but others hold that these models are hard to implement KV cache and maybe no notable performance improvement over tytpical autoregressive generation. 🤔</p>
 
           
           
