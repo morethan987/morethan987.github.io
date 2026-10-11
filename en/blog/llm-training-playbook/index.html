@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-10-05T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-08T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-10-05T00:00:00\u002b00:00",
+    "dateModified": "2026-10-08T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  9928 
+    "wordCount":  11540 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-05T00:00:00&#43;00:00">Updated: 5 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>9928 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">20 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-08T00:00:00&#43;00:00">Updated: 8 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>11540 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">24 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1696,6 +1696,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#flashattention">FlashAttention</a></li>
           </ul>
         </li>
+        <li><a href="#distributed-training">Distributed Training</a>
+          <ul>
+            <li><a href="#collective-operations">Collective Operations</a></li>
+            <li><a href="#data-parallelism-dp">Data Parallelism (DP)</a></li>
+            <li><a href="#pipeline-parallelism-pp">Pipeline Parallelism (PP)</a></li>
+            <li><a href="#tensor-parallelism-tp">Tensor Parallelism (TP)</a></li>
+            <li><a href="#sequence-parallelism-and-context-parallelism">Sequence Parallelism and Context Parallelism</a></li>
+            <li><a href="#expert-parallelism-ep">Expert Parallelism (EP)</a></li>
+            <li><a href="#hybrid-parallelism">Hybrid Parallelism</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1759,6 +1770,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#benchmarking">Benchmarking</a></li>
             <li><a href="#triton-kernels">Triton Kernels</a></li>
             <li><a href="#flashattention">FlashAttention</a></li>
+          </ul>
+        </li>
+        <li><a href="#distributed-training">Distributed Training</a>
+          <ul>
+            <li><a href="#collective-operations">Collective Operations</a></li>
+            <li><a href="#data-parallelism-dp">Data Parallelism (DP)</a></li>
+            <li><a href="#pipeline-parallelism-pp">Pipeline Parallelism (PP)</a></li>
+            <li><a href="#tensor-parallelism-tp">Tensor Parallelism (TP)</a></li>
+            <li><a href="#sequence-parallelism-and-context-parallelism">Sequence Parallelism and Context Parallelism</a></li>
+            <li><a href="#expert-parallelism-ep">Expert Parallelism (EP)</a></li>
+            <li><a href="#hybrid-parallelism">Hybrid Parallelism</a></li>
           </ul>
         </li>
       </ul>
@@ -3169,6 +3191,383 @@ $$<p>Experimental results reveal that roughly the top 3% of singular values domi
           Remark
         </div>
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Because of this, I feel that calling this mechanism &ldquo;online softmax&rdquo; isn&rsquo;t entirely accurate; it might be better termed &ldquo;online tiled attention.&rdquo; Pure softmax on its own cannot be computed in a streaming online fashion like this—or rather, in standalone softmax, later tiles have no way to retroactively correct the outputs of preceding tiles without keeping everything around. 🤔</p></div></div>
+<h3 class="relative group">Distributed Training
+    <div id="distributed-training" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#distributed-training" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Why do we need distributed training in the first place? There are two primary scenarios: First, suppose you have an entire compute cluster—you need to squeeze every drop of performance out of these accelerators to avoid wasting compute. Second, you have a massive model that cannot fit on a single GPU, a single rack, or even a modest cluster. At that point, distributed training is no longer optional—it is a necessity.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="gpu_connections"
+    width="1779"
+    height="865"
+    src="/blog/llm-training-playbook/img/gpu_connections_hu_b90bfdda4c5e1b87.png"
+    srcset="/blog/llm-training-playbook/img/gpu_connections_hu_b90bfdda4c5e1b87.png 800w, /blog/llm-training-playbook/img/gpu_connections_hu_546491289d7759bd.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/gpu_connections.png"><figcaption>Common GPU Interconnection Topologies</figcaption></figure>
+<p>As shown in the figure, this is a common interconnection topology for GPU clusters. While TPU clusters often adopt different network designs (typically toroidal mesh topologies), tree-like hierarchical network topologies have become increasingly dominant as MoE (Mixture of Experts) has become the de facto standard.</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Why not connect every GPU point-to-point (all-to-all)? While that minimizes communication latency and maximizes bandwidth, the cost is prohibitive: the required cabling scales quadratically (\(O(N^2)\)) with the number of GPUs. Furthermore, it is extremely inflexible, as adding a single new GPU would require rewiring connections to every existing device.</p></div></details>
+<h4 class="relative group">Collective Operations
+    <div id="collective-operations" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#collective-operations" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Before exploring complex parallelization strategies, let&rsquo;s first establish the foundational collective communication primitives shown below:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/usual_collective_operations.png"
+    width="1196"
+    height="656"
+    src="/blog/llm-training-playbook/img/usual_collective_operations_hu_2d391ccf1105207a.png"
+    srcset="/blog/llm-training-playbook/img/usual_collective_operations_hu_2d391ccf1105207a.png 800w, /blog/llm-training-playbook/img/usual_collective_operations.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/usual_collective_operations.png"></figure>
+<p>Among these, <code>All-Reduce</code> deserves special attention. Implemented naively, its communication overhead is enormous. For example, if every rank simply broadcasts all its data to every other rank and computes the reduction locally, the total transfer volume scales as \(3 \times 4 = 12\). A vastly more efficient approach decomposes <code>All-Reduce</code> into a <code>Reduce-Scatter</code> followed by an <code>All-Gather</code>, slashing the total communication volume down to \(4 \times \left(\frac{3}{4} + \frac{3}{4}\right) = 6\).</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Sidenote
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Splitting a large collective operation into smaller stages offers another key advantage: it allows communication to overlap with computation, further reducing the effective communication bottleneck.</p></div></details>
+<h4 class="relative group">Data Parallelism (DP)
+    <div id="data-parallelism-dp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#data-parallelism-dp" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Vanilla Data Parallelism is straightforward: you slice the batch across the batch dimension and assign a sub-batch to each GPU. The forward pass proceeds identically on each device, and during the backward pass, an <code>All-Reduce</code> synchronizes the gradients across all GPUs. The glaring drawback, however, is that every single GPU must maintain an entire replica of the model weights, gradients, and optimizer states.</p>
+<p>ZeRO (Zero Redundancy Optimizer) introduced an exceptionally elegant solution that breaks this down into three progressive stages, as illustrated below. ZeRO is widely celebrated as &ldquo;elegant&rdquo; because it eliminates memory redundancy almost for free, adding negligible communication overhead compared to standard DP.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ZeRO_illustration.png"
+    width="2429"
+    height="1085"
+    src="/blog/llm-training-playbook/img/ZeRO_illustration_hu_b9eea6dc4ab81c1e.png"
+    srcset="/blog/llm-training-playbook/img/ZeRO_illustration_hu_b9eea6dc4ab81c1e.png 800w, /blog/llm-training-playbook/img/ZeRO_illustration_hu_7b88950901fc63e3.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ZeRO_illustration.png"></figure>
+<p><strong>Stage 1: Optimizer State Partitioning.</strong> Different GPUs store and update optimizer states for different parameter slices. This is implemented via <code>Reduce-Scatter</code> + <code>All-Gather</code>: each GPU computes full gradients on its local batch, scatters them to the corresponding owning GPU to perform the optimizer step, and then gathers the updated parameters back. This introduces virtually zero extra communication cost over standard <code>All-Reduce</code>, yet eliminates the vast majority of redundant optimizer memory.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ZeRO_stage_1.png"
+    width="1086"
+    height="622"
+    src="/blog/llm-training-playbook/img/ZeRO_stage_1_hu_99ecdbb157f92a19.png"
+    srcset="/blog/llm-training-playbook/img/ZeRO_stage_1_hu_99ecdbb157f92a19.png 800w, /blog/llm-training-playbook/img/ZeRO_stage_1.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ZeRO_stage_1.png"></figure>
+<p><strong>Stage 2: Gradient Partitioning.</strong> Unlike Stage 1—which traverses the entire backward graph before synchronizing all gradients at once—Stage 2 exchanges gradients layer-by-layer during the backward pass itself, immediately freeing any gradients that the local device does not own. This is conceptually straightforward, costs no extra communication, and partitions the gradient memory footprint evenly across devices.</p>
+<p><strong>Stage 3: Parameter (Weight) Partitioning.</strong> Here, even the model weights are sharded across GPUs. Each GPU holds only a fraction of the parameters. Whenever a forward or backward computation requires weights stored on another device, they are fetched on the fly via collective communication and immediately discarded after use. Remarkably, this can still be achieved with minimal communication penalty by overlapping parameter fetching with the preceding layer&rsquo;s computation. For compute-heavy workloads (such as large matrix multiplications) running over high-bandwidth interconnects, this pipelining effectively hides the communication overhead.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/communication_computation_overlaping.png"
+    width="1247"
+    height="331"
+    src="/blog/llm-training-playbook/img/communication_computation_overlaping_hu_6b38b767a5461d21.png"
+    srcset="/blog/llm-training-playbook/img/communication_computation_overlaping_hu_6b38b767a5461d21.png 800w, /blog/llm-training-playbook/img/communication_computation_overlaping.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/communication_computation_overlaping.png"></figure>
+<p>However, ZeRO is not a silver bullet. It has an implicit constraint: the number of GPUs cannot exceed the batch size. You might think, &ldquo;No problem, just crank up the batch size.&rdquo; But while GPU counts can scale, effective batch size cannot grow indefinitely. Beyond a certain threshold (critical batch size), training efficiency saturates; scaling the batch size further causes GPUs to idle on sub-optimal optimization dynamics, resulting in wasted compute.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/traning_speed_saturation.png"
+    width="890"
+    height="477"
+    src="/blog/llm-training-playbook/img/traning_speed_saturation_hu_ea76bbe2e2b67b88.png"
+    srcset="/blog/llm-training-playbook/img/traning_speed_saturation_hu_ea76bbe2e2b67b88.png 800w, /blog/llm-training-playbook/img/traning_speed_saturation.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/traning_speed_saturation.png"></figure>
+<p>Another limitation of ZeRO is that it does not partition activation memory. Consequently, while Stage 3 makes it look effortless to scale model size on paper, activations quickly become the true memory bottleneck. To rein in activation memory, one must turn to model parallelization during the forward pass.</p>
+
+<h4 class="relative group">Pipeline Parallelism (PP)
+    <div id="pipeline-parallelism-pp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pipeline-parallelism-pp" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Pipeline parallelism is both intuitive and somewhat counter-intuitive—it is arguably the least &ldquo;parallel-feeling&rdquo; of all parallel paradigms. Conceptually, different layers of a model are assigned to different GPUs sequentially; once GPU \(N\) finishes computing its stage, it passes the intermediate activations downstream to GPU \(N+1\). You can immediately spot the problem: catastrophic pipeline stalls (&ldquo;bubbles&rdquo;). A common fix is to break each batch into multiple micro-batches, as illustrated below.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/batch_pipeline_parallel.png"
+    width="1103"
+    height="308"
+    src="/blog/llm-training-playbook/img/batch_pipeline_parallel_hu_4595d43c9fff08f.png"
+    srcset="/blog/llm-training-playbook/img/batch_pipeline_parallel_hu_4595d43c9fff08f.png 800w, /blog/llm-training-playbook/img/batch_pipeline_parallel.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/batch_pipeline_parallel.png"></figure>
+<p>Naturally, keeping a pipeline fully utilized requires a sufficiently large batch size, and throughput is notoriously sensitive to this value. To mitigate this idle time, complex pipeline scheduling schemes have been developed to squeeze out as many bubbles as possible. This begs the question: can we eliminate the pipeline bubble entirely? The answer is yes.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/zero_bubble_pipline_parallel.png"
+    width="2614"
+    height="865"
+    src="/blog/llm-training-playbook/img/zero_bubble_pipline_parallel_hu_16727d3c0bcb84ae.png"
+    srcset="/blog/llm-training-playbook/img/zero_bubble_pipline_parallel_hu_16727d3c0bcb84ae.png 800w, /blog/llm-training-playbook/img/zero_bubble_pipline_parallel_hu_2e1816fd9dcf264b.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/zero_bubble_pipline_parallel.png"></figure>
+<p>A closer look at backpropagation reveals that it consists of two decoupled computations: computing the gradient with respect to the input activation (\(x\)) and computing the gradient with respect to the weights (\(W\)). The input gradient \(\nabla_x\) is time-critical because it must be passed backward to earlier pipeline stages immediately. In contrast, the weight gradient \(\nabla_W\) only needs to be finished before the optimizer step; its execution can be rescheduled arbitrarily to fill the idle pipeline bubbles. With a properly designed schedule, bubbles can be almost completely eliminated!</p>
+
+<h4 class="relative group">Tensor Parallelism (TP)
+    <div id="tensor-parallelism-tp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tensor-parallelism-tp" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Tensor Parallelism operates at a finer granularity, as illustrated below. For an MLP block, we can slice matrix \(A\) along columns and matrix \(B\) along rows. This minimizes intermediate synchronization, because the inner dimension matches the matrix multiplication requirements naturally. One subtle detail: during backpropagation, the communication functions \(f\) and \(g\) must swap roles to preserve computational graph consistency.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/tensor_parallel_for_GeLU.png"
+    width="1182"
+    height="574"
+    src="/blog/llm-training-playbook/img/tensor_parallel_for_GeLU_hu_3923ac3c79f76f01.png"
+    srcset="/blog/llm-training-playbook/img/tensor_parallel_for_GeLU_hu_3923ac3c79f76f01.png 800w, /blog/llm-training-playbook/img/tensor_parallel_for_GeLU.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/tensor_parallel_for_GeLU.png"></figure>
+<p>What is the catch with Tensor Parallelism? Because it operates at the sub-layer/operator level, communication collectives are invoked hundreds of times per training step. These operations are strictly synchronous, leaving virtually no room to hide communication behind computation. Moreover, TP exhibits a poor compute-to-communication ratio that cannot be amortized by scaling batch size. Here, \(tp\) represents the tensor parallel degree:</p>
+$$
+\text{Ratio} = \frac{\frac{16 \cdot b \cdot s \cdot h^2}{tp}}{4 \cdot b \cdot s \cdot h} = \frac{4h}{tp}
+$$<p>In short, Tensor Parallelism is intensely communication-bandwidth hungry. In practice, it is almost exclusively confined within high-speed local interconnect domains, such as NVLink/NVSwitch within a single physical node.</p>
+
+<h4 class="relative group">Sequence Parallelism and Context Parallelism
+    <div id="sequence-parallelism-and-context-parallelism" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#sequence-parallelism-and-context-parallelism" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/sequence_parallel.png"
+    width="1268"
+    height="582"
+    src="/blog/llm-training-playbook/img/sequence_parallel_hu_ae0a89f9772f74be.png"
+    srcset="/blog/llm-training-playbook/img/sequence_parallel_hu_ae0a89f9772f74be.png 800w, /blog/llm-training-playbook/img/sequence_parallel.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/sequence_parallel.png"></figure>
+<p>Sequence Parallelism (SP) is typically applied to residual connections and LayerNorm/RMSNorm modules. In naive Tensor Parallelism, every GPU keeps a fully replicated copy of the activations in these non-TP regions. SP addresses this by splitting activations along the sequence length dimension, directly curbing activation memory.</p>
+<p>Context Parallelism (CP) pushes this idea further into the attention mechanism itself by partitioning the Key-Value (KV) cache across devices. Techniques like RingAttention operate similarly to <code>All-Reduce</code> at the communication layer, passing token chunks in a ring topology to compute attention progressively.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ring_attention.png"
+    width="1184"
+    height="582"
+    src="/blog/llm-training-playbook/img/ring_attention_hu_9830e1d36353550f.png"
+    srcset="/blog/llm-training-playbook/img/ring_attention_hu_9830e1d36353550f.png 800w, /blog/llm-training-playbook/img/ring_attention.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ring_attention.png"></figure>
+<p>By layering these model-level parallel strategies on top of one another—complemented by selective activation checkpointing—virtually every component of activation memory can be sharded evenly across GPUs.</p>
+<p>![img/Pasted image 20261008153913.png](img/Pasted image 20261008153913.png)</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          😂
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>What an absolute masterclass in squeezing hardware dry! 🤣</p></div></details>
+<h4 class="relative group">Expert Parallelism (EP)
+    <div id="expert-parallelism-ep" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#expert-parallelism-ep" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>The term &ldquo;Expert Parallelism&rdquo; can sound slightly redundant at first glance, since Mixture-of-Experts (MoE) is inherently parallel: different experts reside on different GPUs, and intermediate tokens are dynamically routed to their target expert devices. That is indeed how it works in practice.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/expert_parallel.png"
+    width="1784"
+    height="1032"
+    src="/blog/llm-training-playbook/img/expert_parallel_hu_b472f16443ff4abc.png"
+    srcset="/blog/llm-training-playbook/img/expert_parallel_hu_b472f16443ff4abc.png 800w, /blog/llm-training-playbook/img/expert_parallel_hu_e5f3ff5889f56289.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/expert_parallel.png"></figure>
+<p>The real engineering complexity of Expert Parallelism arises when composing it with other parallelism paradigms. Notably, Data Parallelism and Expert Parallelism can share parameter sharding under the hood, meaning the degree of Expert Parallelism generally should not exceed the degree of Data Parallelism.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/expert_parallel_conbination.png"
+    width="1481"
+    height="639"
+    src="/blog/llm-training-playbook/img/expert_parallel_conbination_hu_1fc55b608d81c5bb.png"
+    srcset="/blog/llm-training-playbook/img/expert_parallel_conbination_hu_1fc55b608d81c5bb.png 800w, /blog/llm-training-playbook/img/expert_parallel_conbination_hu_a57a72e445acef51.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/expert_parallel_conbination.png"></figure>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="warning"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          Warning
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>You cannot blindly scale Data Parallelism and Tensor Parallelism to arbitrary extremes in an MoE setup. GPUs are fundamentally designed for large matrix multiplications; keeping arithmetic workloads sufficiently dense is essential to reaching theoretical peak compute throughput.</p></div></details>
+<h4 class="relative group">Hybrid Parallelism
+    <div id="hybrid-parallelism" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#hybrid-parallelism" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>With so many specialized parallelization dimensions available, how do we stitch them together in real-world systems to achieve peak performance?</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/mixed_parallel.png"
+    width="1769"
+    height="824"
+    src="/blog/llm-training-playbook/img/mixed_parallel_hu_c8a876bda392511.png"
+    srcset="/blog/llm-training-playbook/img/mixed_parallel_hu_c8a876bda392511.png 800w, /blog/llm-training-playbook/img/mixed_parallel_hu_80fab9f972b729b9.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/mixed_parallel.png"></figure>
+<p>In modern large-scale training, the standard recipe is 3D (or 4D) Parallelism:</p>
+<ol>
+<li><strong>Intra-node:</strong> Each yellow box represents an NVLink domain, within which we execute model-level intra-layer parallelisms (Tensor Parallelism, Sequence Parallelism, Context Parallelism, and Expert Parallelism).</li>
+<li><strong>Inter-stage:</strong> Different yellow boxes represent distinct model layers, chained together via Pipeline Parallelism.</li>
+<li><strong>Cluster-wide:</strong> Finally, the 2D/3D units formed above are replicated across the remaining nodes using Data Parallelism (ZeRO).</li>
+</ol>
+<p>As a rule of thumb, you first use Model Parallelism and Pipeline Parallelism to fit the model within hardware memory limits (tuning tensor shapes so they are just large enough to maximize GPU matrix computation efficiency). Once memory constraints are cleared, you scale Data Parallelism across the cluster to saturate the remaining compute capacity.</p>
+
           
           
           

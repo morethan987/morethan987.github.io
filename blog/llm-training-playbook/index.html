@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-10-05T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-08T00:00:00+00:00">
 		<meta property="article:tag" content="架构">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="工程实践">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-10-05T00:00:00\u002b00:00",
+    "dateModified": "2026-10-08T00:00:00\u002b00:00",
     
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/llm-training-playbook/",
-    "wordCount":  17860 
+    "wordCount":  20743 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-05T00:00:00&#43;00:00">更新于: 2026-10-05</time><span class="px-2 text-primary-500">&middot;</span><span>17860 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">36 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-08T00:00:00&#43;00:00">更新于: 2026-10-08</time><span class="px-2 text-primary-500">&middot;</span><span>20743 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">42 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1696,6 +1696,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#flashattention">FlashAttention</a></li>
           </ul>
         </li>
+        <li><a href="#分布式训练">分布式训练</a>
+          <ul>
+            <li><a href="#基本操作">基本操作</a></li>
+            <li><a href="#数据并行">数据并行</a></li>
+            <li><a href="#流水线并行">流水线并行</a></li>
+            <li><a href="#张量并行">张量并行</a></li>
+            <li><a href="#序列并行和上下文并行">序列并行和上下文并行</a></li>
+            <li><a href="#专家并行">专家并行</a></li>
+            <li><a href="#混合并行">混合并行</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1759,6 +1770,17 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#基准测试">基准测试</a></li>
             <li><a href="#triton-kernel">Triton Kernel</a></li>
             <li><a href="#flashattention">FlashAttention</a></li>
+          </ul>
+        </li>
+        <li><a href="#分布式训练">分布式训练</a>
+          <ul>
+            <li><a href="#基本操作">基本操作</a></li>
+            <li><a href="#数据并行">数据并行</a></li>
+            <li><a href="#流水线并行">流水线并行</a></li>
+            <li><a href="#张量并行">张量并行</a></li>
+            <li><a href="#序列并行和上下文并行">序列并行和上下文并行</a></li>
+            <li><a href="#专家并行">专家并行</a></li>
+            <li><a href="#混合并行">混合并行</a></li>
           </ul>
         </li>
       </ul>
@@ -3169,6 +3191,383 @@ $$<p>实验结果如下所示，大约 3% 的奇异值主导了数值的分布�
           说明
         </div>
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>正因如此，我感觉这种操作被称为&quot;在线 softmax&quot;不太准确，感觉应该叫作&quot;在线分块注意力&quot;更准确。因为单纯的 softmax 就不能被在线计算，或者说在单纯的 softmax 计算中，后面的分块没法去修正前一个分块的计算结果🤔</p></div></div>
+<h3 class="relative group">分布式训练
+    <div id="分布式训练" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>为什么我们需要进行分布式训练？第一种情况，假设我们拥有一个算力中心，我们需要充分压榨这些算力卡避免资源浪费；第二种情况，我们有一个超大的模型，在一块 GPU 甚至、一台柜机甚至一个算力中心上都放不下，这个时候我们就不得不进行分布式训练了。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="gpu_connections"
+    width="1779"
+    height="865"
+    src="/blog/llm-training-playbook/img/gpu_connections_hu_b90bfdda4c5e1b87.png"
+    srcset="/blog/llm-training-playbook/img/gpu_connections_hu_b90bfdda4c5e1b87.png 800w, /blog/llm-training-playbook/img/gpu_connections_hu_546491289d7759bd.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/gpu_connections.png"><figcaption>常见的多 GPU 连接方式</figcaption></figure>
+<p>如图所示，这是常见的 GPU 集群的拓扑连接方式。当然 TPU 集群有别的连接方式 (一般来说是环形网状连接)，但随着 MoE 逐渐成为默认选项，这种树形的拓扑连接逐渐成为主流。</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>为什么不将所有 GPU 一对一连接？这样做通信开销当然是最低的，但是成本非常高昂因为你的接线数量将随着 GPU 数量平方增长，并且非常不灵活因为每增加一块新的 GPU 你就需要去调整原有的所有 GPU 的连接</p></div></details>
+<h4 class="relative group">基本操作
+    <div id="基本操作" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>在构建复杂的数据并行操作之前，我们首先定义一些基础的数据通信操作，如下图所示。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/usual_collective_operations.png"
+    width="1196"
+    height="656"
+    src="/blog/llm-training-playbook/img/usual_collective_operations_hu_2d391ccf1105207a.png"
+    srcset="/blog/llm-training-playbook/img/usual_collective_operations_hu_2d391ccf1105207a.png 800w, /blog/llm-training-playbook/img/usual_collective_operations.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/usual_collective_operations.png"></figure>
+<p>其中需要特别关注的是 <code>All-reudce</code> 操作，如果操作不当这个操作需要的通信开销是非常高昂的，比如一个非常直接的操作方式就是让各个 rank 之间交换全部的数据然后本地计算 reduce，整体通信开销为 \(3 \times 4=12\)。一个更加高效的做法是将 <code>All-reudce</code> 视作 <code>Reduce-scatter</code> 和 <code>All-gather</code> 的结合，整体通信开销为 \(4 \times\left( \frac{3}{4} + \frac{3}{4} \right)=6\)</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          补充
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>将一个大的操作切分还有另一个好处：可以利用计算和通信的重叠，更进一步减少等效的通信开销</p></div></details>
+<h4 class="relative group">数据并行
+    <div id="数据并行" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%95%b0%e6%8d%ae%e5%b9%b6%e8%a1%8c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>最单纯和数据并行非常容易理解，我们可以将批处理维度进行划分，每一块 GPU 都分配一部分，前向传播没有变化，然后在反向传播的时候进行一次 <code>All-reduce</code> 操作将其他 GPU 得到的梯度同步一下就可以了。但这么做的弊端也非常明显，每一块 GPU 都需要持有完整的权重、梯度和优化器状态。</p>
+<p>ZeRO 提出了一个解决这个问题的非常优雅的方案，总共分为三个阶段，如图所示。之所以将 ZeRO 称为优雅是因为这个方案几乎是完全免费的，和传统方案相比几乎不会产生太多的通信开销。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ZeRO_illustration.png"
+    width="2429"
+    height="1085"
+    src="/blog/llm-training-playbook/img/ZeRO_illustration_hu_b9eea6dc4ab81c1e.png"
+    srcset="/blog/llm-training-playbook/img/ZeRO_illustration_hu_b9eea6dc4ab81c1e.png 800w, /blog/llm-training-playbook/img/ZeRO_illustration_hu_7b88950901fc63e3.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ZeRO_illustration.png"></figure>
+<p><strong>第一阶段</strong>，将优化器状态切分，让不同的 GPU 负责不同层的模型参数。这一步的实现其实就是 <code>Reduce-scatter</code> + <code>All-gather</code>；具体而言，让各个 GPU 卡在自己的部分批次上计算全量参数的梯度，然后分配到其他 GPU 上执行参数更新后再从其他 GPU 收集其他更新完成的参数。这一步显然是没有开销的，只是在原本的 <code>All-reduce</code> 操作之上插入了一步参数更新操作，但这一步操作可以让我们省掉绝大部分的冗余内存。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ZeRO_stage_1.png"
+    width="1086"
+    height="622"
+    src="/blog/llm-training-playbook/img/ZeRO_stage_1_hu_99ecdbb157f92a19.png"
+    srcset="/blog/llm-training-playbook/img/ZeRO_stage_1_hu_99ecdbb157f92a19.png 800w, /blog/llm-training-playbook/img/ZeRO_stage_1.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ZeRO_stage_1.png"></figure>
+<p><strong>第二阶段</strong>，将梯度也进行切分。与阶段一对比来看，阶段一首先需要完整遍历计算图去计算所有参数的梯度，然后在进行数据交换；而阶段二则是在遍历计算图的时候就执行数据交换，然后立即释放自己不需要的梯度。非常容易理解，这一步也没有任何的成本，并且梯度对应的内存开销被平摊了。</p>
+<p><strong>第三阶段</strong>，将权重也切分。核心思想就是不同的 GPU 持有不同的模型参数，当前计算需要别的 GPU 持有的权重时就进行通信实施获取参数，使用完成后立即释放。非常匪夷所思的是，即便到了这一步也可以做到近乎没有通信开销。这一步的技巧其实就是将通信开销和计算开销重叠，让计算开销去掩盖通信开销，如图所示。如果你的计算非常耗时(大矩阵乘法)并且 GPU 之间使用高速介质进行连接，这个技巧能够让权重的切分也几乎零成本。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/communication_computation_overlaping.png"
+    width="1247"
+    height="331"
+    src="/blog/llm-training-playbook/img/communication_computation_overlaping_hu_6b38b767a5461d21.png"
+    srcset="/blog/llm-training-playbook/img/communication_computation_overlaping_hu_6b38b767a5461d21.png 800w, /blog/llm-training-playbook/img/communication_computation_overlaping.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/communication_computation_overlaping.png"></figure>
+<p>当然，ZeRO 并非无所不能，其隐含要求：GPU 数量不能够超过批处理大小。看上去没什么问题，大不了增加批处理大小嘛。然而实际上，GPU 的数量没有上限，但批处理大小是有上限的，超过这个临界之后模型的训练速度就饱和了，再增大批处理大小会让 GPU 陷入空转状态，是另一种层面的 GPU 浪费。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/traning_speed_saturation.png"
+    width="890"
+    height="477"
+    src="/blog/llm-training-playbook/img/traning_speed_saturation_hu_ea76bbe2e2b67b88.png"
+    srcset="/blog/llm-training-playbook/img/traning_speed_saturation_hu_ea76bbe2e2b67b88.png 800w, /blog/llm-training-playbook/img/traning_speed_saturation.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/traning_speed_saturation.png"></figure>
+<p>ZeRO 的另一个问题是没有处理激活值，这导致第三阶段的方案貌似能够让我们很容易地扩大模型规模，但实际上没有那么有效。而要处理激活值开销，就需要对前向传播阶段的模型参数进行切分。</p>
+
+<h4 class="relative group">流水线并行
+    <div id="流水线并行" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b5%81%e6%b0%b4%e7%ba%bf%e5%b9%b6%e8%a1%8c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>这种并行方式很直观但也很匪夷所思，可以说是最不像并行的并行。直观来说，我们将模型的不同层划分给不同的 GPU，上一个 GPU 计算完成之后将计算结果交给下一个 GPU 处理。我知道你想说什么，这其中确实是有非常严重的流水线停滞问题。一个直白的解决方案就是将一个批次再划分为多个迷你批次，如下图所示。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/batch_pipeline_parallel.png"
+    width="1103"
+    height="308"
+    src="/blog/llm-training-playbook/img/batch_pipeline_parallel_hu_4595d43c9fff08f.png"
+    srcset="/blog/llm-training-playbook/img/batch_pipeline_parallel_hu_4595d43c9fff08f.png 800w, /blog/llm-training-playbook/img/batch_pipeline_parallel.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/batch_pipeline_parallel.png"></figure>
+<p>可以预计，想要让流水线并行能够高效运转，就需要巨大的批处理大小；并且效率对批处理大小的响应是非常敏感的。于是我们就可以进行复杂的流水线调度来尽可能挤掉这些停滞气泡。一个合理的问题，我们有没有办法挤掉所有的停滞气泡？还真可以。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/zero_bubble_pipline_parallel.png"
+    width="2614"
+    height="865"
+    src="/blog/llm-training-playbook/img/zero_bubble_pipline_parallel_hu_16727d3c0bcb84ae.png"
+    srcset="/blog/llm-training-playbook/img/zero_bubble_pipline_parallel_hu_16727d3c0bcb84ae.png 800w, /blog/llm-training-playbook/img/zero_bubble_pipline_parallel_hu_2e1816fd9dcf264b.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/zero_bubble_pipline_parallel.png"></figure>
+<p>我们可以对整个训练过程进行细致分析，将反向传播分为两块，一个是对输入 \(x\) 计算梯度，另一个是对权重 \(W\) 计算梯度。前者是上一层的输出梯度因此需要尽快计算，而后者则只需要在当前反向传播这个操作内完成就行，可以随意调度来填充停滞气泡。在合适的情况下，我们能够挤掉所有气泡！</p>
+
+<h4 class="relative group">张量并行
+    <div id="张量并行" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bc%a0%e9%87%8f%e5%b9%b6%e8%a1%8c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>张量并行的原理稍微复杂一些，如图所示。我们可以将 A 按照列切分，然后将 B 按照行切分，这样就能够减少中间通信，因为计算刚好就需要 A 的列和 B 的行。一个细节是，反向传播的时候需要对换函数 \(f\) 和 \(g\) 因为按照计算图来说确实如此。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/tensor_parallel_for_GeLU.png"
+    width="1182"
+    height="574"
+    src="/blog/llm-training-playbook/img/tensor_parallel_for_GeLU_hu_3923ac3c79f76f01.png"
+    srcset="/blog/llm-training-playbook/img/tensor_parallel_for_GeLU_hu_3923ac3c79f76f01.png 800w, /blog/llm-training-playbook/img/tensor_parallel_for_GeLU.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/tensor_parallel_for_GeLU.png"></figure>
+<p>张量并行有什么弊端呢？因为其是算子级的并行策略，所以一个训练步可能要调用几百次，并且这些操作是强同步的没法用计算开销掩盖通信开销，再并且张量并行的单卡算通比非常低，无法通过加大批处理大小来摊薄成本。其中 \(tp\) 表示 GPU 数量。</p>
+$$
+\text{Ratio} = \frac{\frac{16 \cdot b \cdot s \cdot h^2}{tp}}{4 \cdot b \cdot s \cdot h} = \frac{4h}{tp}
+$$<p>总结下来，张量并行是非常需要通信带宽的，所以这个操作一般被认为只能够在高速局部连接(如单机内的 NVLink / NVSwitch)网络内使用。</p>
+
+<h4 class="relative group">序列并行和上下文并行
+    <div id="序列并行和上下文并行" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%ba%8f%e5%88%97%e5%b9%b6%e8%a1%8c%e5%92%8c%e4%b8%8a%e4%b8%8b%e6%96%87%e5%b9%b6%e8%a1%8c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/sequence_parallel.png"
+    width="1268"
+    height="582"
+    src="/blog/llm-training-playbook/img/sequence_parallel_hu_ae0a89f9772f74be.png"
+    srcset="/blog/llm-training-playbook/img/sequence_parallel_hu_ae0a89f9772f74be.png 800w, /blog/llm-training-playbook/img/sequence_parallel.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/sequence_parallel.png"></figure>
+<p>序列并行一般是应用在残差连接和层归一化部分，因为这里每一个 GPU 都会保存一份完整的激活值。具体来说就是将序列长度进行切分，这样就能够直接降低激活值。</p>
+<p>而上下文并行则在序列并行的基础上更进一步，将注意力机制中的激活也进行切分，具体而言切分的就是 KV Cache 了。这里提到的 ring attention 其实从底层实现上和 <code>All-reduce</code> 的底层实现类似，都是一个环形的数据分片传递。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ring_attention.png"
+    width="1184"
+    height="582"
+    src="/blog/llm-training-playbook/img/ring_attention_hu_9830e1d36353550f.png"
+    srcset="/blog/llm-training-playbook/img/ring_attention_hu_9830e1d36353550f.png 800w, /blog/llm-training-playbook/img/ring_attention.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ring_attention.png"></figure>
+<p>在有了上面所有模型层面的并行操作之后再辅以选择性的重计算，激活值中的所有部分全部都能够被 GPU 的数量平摊。</p>
+<p>![img/Pasted image 20261008153913.png](img/Pasted image 20261008153913.png)</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          😂
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>真是一场对 GPU 酣畅淋漓的压榨啊🤣</p></div></details>
+<h4 class="relative group">专家并行
+    <div id="专家并行" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%93%e5%ae%b6%e5%b9%b6%e8%a1%8c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>专家并行这个次比较奇怪，因为 MoE 本身好像就是并行的：不同的专家放到不同的 GPU 上，然后计算的时候就直接将中间结果路由到对应的专家就行。并且实际上也是这么做的。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/expert_parallel.png"
+    width="1784"
+    height="1032"
+    src="/blog/llm-training-playbook/img/expert_parallel_hu_b472f16443ff4abc.png"
+    srcset="/blog/llm-training-playbook/img/expert_parallel_hu_b472f16443ff4abc.png 800w, /blog/llm-training-playbook/img/expert_parallel_hu_e5f3ff5889f56289.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/expert_parallel.png"></figure>
+<p>但专家并行真正的复杂性来自于与其他并行策略的复合。并且比较值得关注的是，数据并行和专家并行在底层是可以共享权重划分的，所以专家并行的数量应该不超过数据并行的数量。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/expert_parallel_conbination.png"
+    width="1481"
+    height="639"
+    src="/blog/llm-training-playbook/img/expert_parallel_conbination_hu_1fc55b608d81c5bb.png"
+    srcset="/blog/llm-training-playbook/img/expert_parallel_conbination_hu_1fc55b608d81c5bb.png 800w, /blog/llm-training-playbook/img/expert_parallel_conbination_hu_a57a72e445acef51.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/expert_parallel_conbination.png"></figure>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="warning"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          注意
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>实际上不能够盲目地在 MoE 模型里面将数据并行和张量并行拉得非常大，因为 GPU 本身是为了大矩阵运算设计的，只有在较大的矩阵运算负载下才能够尽量达到理论预期的吞吐</p></div></details>
+<h4 class="relative group">混合并行
+    <div id="混合并行" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b7%b7%e5%90%88%e5%b9%b6%e8%a1%8c" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>当我们有了那么多的细分并行方案，那么我们在具体的工程实践中如何混合从而达到最佳的效果呢？</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/mixed_parallel.png"
+    width="1769"
+    height="824"
+    src="/blog/llm-training-playbook/img/mixed_parallel_hu_c8a876bda392511.png"
+    srcset="/blog/llm-training-playbook/img/mixed_parallel_hu_c8a876bda392511.png 800w, /blog/llm-training-playbook/img/mixed_parallel_hu_80fab9f972b729b9.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/mixed_parallel.png"></figure>
+<p>我们一般使用 3D/4D 方法来混合这些并行策略：</p>
+<ol>
+<li>每一个黄色方框中都代表了一个 NVLink 作用域，在这个域内执行模型并行(张量并行、序列并行、上下文并行、专家并行)；</li>
+<li>不同的黄色方框代表了不同的模型层，不同模型层之间使用流水线并行；</li>
+<li>最后复制前两个步骤得到的单元构成数据并行。</li>
+</ol>
+<p>原则上来说，我们总是先使用模型并行和流水线并行解决显存放不下模型的问题(这个时候张量的大小应该刚好能够放入显存从而充分利用 GPU 在计算大矩阵运算时的效率)，显存够用之后就使用数据并行吃满所有算力卡。</p>
+
           
           
           
