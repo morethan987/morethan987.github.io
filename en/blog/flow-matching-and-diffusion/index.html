@@ -508,7 +508,7 @@
     "keywords": ["Architecture","Notes","GenerativeModel"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/flow-matching-and-diffusion/",
-    "wordCount":  4442 
+    "wordCount":  4589 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-10-02T00:00:00&#43;00:00">2 October 2026</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-07T00:00:00&#43;00:00">Updated: 7 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>4442 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">21 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-10-02T00:00:00&#43;00:00">2 October 2026</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-07T00:00:00&#43;00:00">Updated: 7 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>4589 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">22 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1645,6 +1645,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#discrete-diffusion-models">Discrete Diffusion Models</a></li>
+    <li><a href="#summary-and-thoughts">Summary and thoughts</a></li>
   </ul>
 </nav>
   </div>
@@ -1670,6 +1671,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#discrete-diffusion-models">Discrete Diffusion Models</a></li>
+    <li><a href="#summary-and-thoughts">Summary and thoughts</a></li>
   </ul>
 </nav>
   </div>
@@ -2217,6 +2219,25 @@ $$
 \mathcal{L}_{\mathrm{DFM}}(\theta) = \mathbb{E}_{z \sim p_{\mathrm{data}}, \, t \sim \mathrm{Unif}_{[0, 1]}, \, x \sim p_t(\cdot \mid z)} \left[ \sum_{j=1}^d -\log p_{1|t}^\theta (z_j \mid x) \right]
 $$<p>It&rsquo;s not hard to comprehend but kind of strange: is this necessary for text generation? or what&rsquo;s the advantage and disadvantage?</p>
 <p>Now it&rsquo;s an opening problem, someone hold that the diffusion text generation is faster and enables the model to edit the generated text (stronger performance), but others hold that these models are hard to implement KV cache and maybe no notable performance improvement over tytpical autoregressive generation. 🤔</p>
+
+<h2 class="relative group">Summary and thoughts
+    <div id="summary-and-thoughts" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#summary-and-thoughts" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>What&rsquo;s the most important things for me from the course? The top three is:</p>
+<ol>
+<li>Using ODE/SDE to describe a dynamic probability distribution</li>
+<li>Generating is sampling from data distribution</li>
+<li>Mathematical training to build a machine learning model</li>
+</ol>
+<p>I am currently interested in continual learning and its typical setting is a dynamic distribution of time. ODE/SDE is a useful tool to modeling that.</p>
+<p>Generating is sampling from data distribution. This calim is profound and inspiring especially when you see how VAE puts the claim into practice: VAE treats encoding and decoding process as sampling.</p>
+<p>Bridging the gap between pure mathematics and machine learning takes practice. Pure theory doesn&rsquo;t always translate directly into practice, it takes experience to truly harness its power. This course served as a great hands-on exercise, giving me an intuitive feel for how to turn mathematical formulations into functional machine learning models.</p>
 
           
           

@@ -508,7 +508,7 @@
     "keywords": ["架构","生成模型","笔记"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/flow-matching-and-diffusion/",
-    "wordCount":  9443 
+    "wordCount":  9691 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-10-02T00:00:00&#43;00:00">2026-10-02</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-07T00:00:00&#43;00:00">更新于: 2026-10-07</time><span class="px-2 text-primary-500">&middot;</span><span>9443 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">19 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-10-02T00:00:00&#43;00:00">2026-10-02</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-07T00:00:00&#43;00:00">更新于: 2026-10-07</time><span class="px-2 text-primary-500">&middot;</span><span>9691 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">20 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1645,6 +1645,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#离散扩散模型">离散扩散模型</a></li>
+    <li><a href="#总结与心得">总结与心得</a></li>
   </ul>
 </nav>
   </div>
@@ -1670,6 +1671,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
       </ul>
     </li>
     <li><a href="#离散扩散模型">离散扩散模型</a></li>
+    <li><a href="#总结与心得">总结与心得</a></li>
   </ul>
 </nav>
   </div>
@@ -2213,6 +2215,25 @@ $$
 \mathcal{L}_{\mathrm{DFM}}(\theta) = \mathbb{E}_{z \sim p_{\mathrm{data}}, \, t \sim \mathrm{Unif}_{[0, 1]}, \, x \sim p_t(\cdot \mid z)} \left[ \sum_{j=1}^d -\log p_{1|t}^\theta (z_j \mid x) \right]
 $$<p>这个推导过程并不难理解，但或许会让人产生一丝疑问：文本生成真的有必要采用这种范式吗？它的优势与劣势究竟何在？</p>
 <p>这在当前仍是一个开放性课题（Open Problem）：一部分人认为，基于扩散的文本生成采样更快，并且天然赋予了模型编辑已生成文本的能力；但另一部分人则指出，离散扩散模型难以适配诸如 KV Cache 等主流的高效推理加速机制，且相比于经典的自回归生成范式，目前尚未展现出显著的性能优势。🤔</p>
+
+<h2 class="relative group">总结与心得
+    <div id="总结与心得" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93%e4%b8%8e%e5%bf%83%e5%be%97" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+<p>这门课程对我来说最重要的收获是什么？</p>
+<ol>
+<li>使用 ODE/SDE 来描述动态概率分布</li>
+<li>生成本质上就是从数据分布中进行采样</li>
+<li>为构建机器学习模型所进行的数学训练</li>
+</ol>
+<p>我目前对持续学习很感兴趣，它的典型场景就是随时间变化的动态分布。ODE/SDE 正是对其进行建模的有力工具。</p>
+<p>“生成即从数据分布中采样”这一论点深刻且极具启发性，尤其是当你看到变分自编码器如何将这一观点付诸实践时：VAE 将编码和解码的过程都视为了采样。</p>
+<p>纯数学理论并不能直接自动生效，需要经验与实践作为桥梁；这门课很好地提供了将数学推导转化为实际模型的直观训练。</p>
 
           
           
