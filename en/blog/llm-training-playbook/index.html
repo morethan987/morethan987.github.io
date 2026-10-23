@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-10-08T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-17T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-10-08T00:00:00\u002b00:00",
+    "dateModified": "2026-10-17T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  11540 
+    "wordCount":  15015 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-08T00:00:00&#43;00:00">Updated: 8 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>11540 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">24 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-17T00:00:00&#43;00:00">Updated: 17 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>15015 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">31 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1707,6 +1707,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#hybrid-parallelism">Hybrid Parallelism</a></li>
           </ul>
         </li>
+        <li><a href="#inference">Inference</a>
+          <ul>
+            <li><a href="#inference-workflow">Inference Workflow</a></li>
+            <li><a href="#arithmetic-intensity-analysis">Arithmetic Intensity Analysis</a></li>
+            <li><a href="#performance-metric-analysis">Performance Metric Analysis</a></li>
+            <li><a href="#lossy-speedup">Lossy Speedup</a></li>
+            <li><a href="#lossless-speedup">Lossless Speedup</a></li>
+            <li><a href="#dynamic-workloads">Dynamic Workloads</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#scaling-laws">Scaling Laws</a>
+      <ul>
+        <li><a href="#data-scaling-laws">Data Scaling Laws</a></li>
+        <li><a href="#model-scaling-laws">Model Scaling Laws</a></li>
+        <li><a href="#disaggregating-parameters">Disaggregating Parameters</a></li>
+        <li><a href="#summary">Summary</a></li>
       </ul>
     </li>
   </ul>
@@ -1783,6 +1801,24 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
             <li><a href="#hybrid-parallelism">Hybrid Parallelism</a></li>
           </ul>
         </li>
+        <li><a href="#inference">Inference</a>
+          <ul>
+            <li><a href="#inference-workflow">Inference Workflow</a></li>
+            <li><a href="#arithmetic-intensity-analysis">Arithmetic Intensity Analysis</a></li>
+            <li><a href="#performance-metric-analysis">Performance Metric Analysis</a></li>
+            <li><a href="#lossy-speedup">Lossy Speedup</a></li>
+            <li><a href="#lossless-speedup">Lossless Speedup</a></li>
+            <li><a href="#dynamic-workloads">Dynamic Workloads</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#scaling-laws">Scaling Laws</a>
+      <ul>
+        <li><a href="#data-scaling-laws">Data Scaling Laws</a></li>
+        <li><a href="#model-scaling-laws">Model Scaling Laws</a></li>
+        <li><a href="#disaggregating-parameters">Disaggregating Parameters</a></li>
+        <li><a href="#summary">Summary</a></li>
       </ul>
     </li>
   </ul>
@@ -1976,7 +2012,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <ol>
 <li><a href="#fundamentals" >Fundamentals</a>: tokenizers, resource inventory, model architectures, training strategies</li>
 <li><a href="#systems-engineering" >Systems engineering</a>: kernels, parallelism, inference</li>
-<li>Scaling laws</li>
+<li><a href="#scaling-laws" >Scaling laws</a></li>
 <li>Data engineering: pretraining data engineering—messy, but absolutely critical</li>
 <li>Model alignment: RL post-training fine-tuning</li>
 </ol>
@@ -2222,7 +2258,7 @@ $$
 \text{FFN}(x) = max(0, xW_{1}+b_{1})W_{2}+b_{2}
 $$<p>However, modern implementations generally use:</p>
 $$
-\text{FNN}(x) = \sigma(xW_{1})W_{2}
+\text{FFN}(x) = \sigma(xW_{1})W_{2}
 $$<p>The main reason for this change is to save memory and improve training stability. See the <a href="#training-stability" >Training Stability</a> section for details regarding training stability.</p>
 
 <h4 class="relative group">Activation Functions
@@ -3567,6 +3603,545 @@ $$<p>In short, Tensor Parallelism is intensely communication-bandwidth hungry. I
 <li><strong>Cluster-wide:</strong> Finally, the 2D/3D units formed above are replicated across the remaining nodes using Data Parallelism (ZeRO).</li>
 </ol>
 <p>As a rule of thumb, you first use Model Parallelism and Pipeline Parallelism to fit the model within hardware memory limits (tuning tensor shapes so they are just large enough to maximize GPU matrix computation efficiency). Once memory constraints are cleared, you scale Data Parallelism across the cluster to saturate the remaining compute capacity.</p>
+
+<h3 class="relative group">Inference
+    <div id="inference" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#inference" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>It is well known that training LLMs consumes massive amounts of compute. However, across the entire lifecycle of a model, inference often accounts for an even larger share of total compute. Moreover, inference performance is directly tied to user experience, making systematic engineering optimizations absolutely crucial. Because GPU workloads during inference differ fundamentally from those during training, they require dedicated analysis.</p>
+<p>Naturally, we want our inference system to be as fast as possible, but &ldquo;fast&rdquo; can mean several different things:</p>
+<ol>
+<li><strong>Time-to-First-Token (TTFT)</strong>: Measures the blank waiting time experienced by the user, typically in milliseconds (ms).</li>
+<li><strong>Token Latency / Inter-Token Latency (ITL)</strong>: The time cost required to produce each subsequent token for a user request, typically measured in seconds per token (s/token) or milliseconds.</li>
+<li><strong>Throughput</strong>: Measures the overall capacity of the system, defined as the total number of tokens generated per second across all users, in tokens/s (or \(\text{s}^{-1}\)).</li>
+</ol>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>While &ldquo;token rate&rdquo; is sometimes used colloquially, the standard English technical term is per-token <em>latency</em> (or Inter-Token Latency). Because using &ldquo;latency&rdquo; for both TTFT and individual token generation can be slightly ambiguous in Chinese, we often refer to it as &ldquo;token rate&rdquo; or &ldquo;per-token generation time.&rdquo;</p></div></div>
+<h4 class="relative group">Inference Workflow
+    <div id="inference-workflow" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#inference-workflow" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Below is the standard Transformer architecture flowchart along with the tensor shapes involved in the computation (see <a href="#model-architecture" >Model Architecture</a> for full details). To keep subsequent calculations clean, we assume the canonical parameter relations: \(F = 4D\), \(D = NH\), and \(N = KG\). We also default to <code>bfloat16</code> precision throughout.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="transformer_detailed_operations"
+    width="1220"
+    height="1361"
+    src="/blog/llm-training-playbook/img/transformer_detailed_operations_hu_3e4aee600724a617.png"
+    srcset="/blog/llm-training-playbook/img/transformer_detailed_operations_hu_3e4aee600724a617.png 800w, /blog/llm-training-playbook/img/transformer_detailed_operations.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/transformer_detailed_operations.png"><figcaption>Cite from <a href="https://jax-ml.github.io/scaling-book/transformers/#:~:text=Figure%3A%20this,the%20weight%20shape."  target="_blank" rel="noreferrer">Scaling book</a></figcaption></figure>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Seeing both \(S\) and \(T\) at first glance might be confusing—why are there two sequence lengths? Think of \(S\) as the length of the prior context tokens (hence labeled alongside KV in the diagram), while \(T\) represents the sequence length generated in a single forward pass. Naively, \(T=1\); however, techniques like speculative decoding (discussed in <a href="#lossless-speedup" >Lossless Speedup</a>) can produce multiple tokens in a single step (\(T > 1\)). Additionally, this diagram adopts Grouped-Query Attention (GQA), discussed in <a href="#lossy-speedup" >Lossy Speedup</a>.</p></div></div><p>The most naive inference implementation looks like the figure below, where every step mirrors standard training: we compute the next-token prediction distributions across all sequence positions, extract the prediction distribution of the very last token, sample a new token using some decoding strategy (temperature scaling, top-\(p\) truncation, etc.), concatenate it back to the input sequence, and repeat. As you can imagine, this approach incurs an \(O(n^2)\) computational complexity in feed-forward layers and \(O(n^3)\) in attention layers, introducing staggering amounts of redundant computation.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="transformer_naive_sampling"
+    width="1232"
+    height="586"
+    src="/blog/llm-training-playbook/img/transformer_naive_sampling_hu_adef09934d14496b.png"
+    srcset="/blog/llm-training-playbook/img/transformer_naive_sampling_hu_adef09934d14496b.png 800w, /blog/llm-training-playbook/img/transformer_naive_sampling.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/transformer_naive_sampling.png"><figcaption>Cite from <a href="https://jax-ml.github.io/scaling-book/inference/#:~:text=Figure%3A%20naive%20sampling%20from%20a%20Transformer."  target="_blank" rel="noreferrer">Scaling book</a></figcaption></figure>
+<p>The de facto industry standard to eliminate this redundancy is <strong>KV Caching</strong>. With a KV cache in place, inference splits into two distinct phases:</p>
+<ol>
+<li><strong>Prefill Phase</strong>: Similar to training, the model processes an extended prompt of known tokens in parallel to produce the initial logits, while simultaneously caching the computed \(K\) and \(V\) tensors across layers for subsequent attention calculations.</li>
+<li><strong>Decode Phase</strong>: Generates one token at a time sequentially, computing and appending only the newly generated token&rsquo;s \(K\) and \(V\) tensors to the cache.</li>
+</ol>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="transformer_kvcache_sampling"
+    width="1238"
+    height="745"
+    src="/blog/llm-training-playbook/img/transformer_kvcache_sampling_hu_49399d3c259157f8.png"
+    srcset="/blog/llm-training-playbook/img/transformer_kvcache_sampling_hu_49399d3c259157f8.png 800w, /blog/llm-training-playbook/img/transformer_kvcache_sampling.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/transformer_kvcache_sampling.png"><figcaption>Cite from <a href="https://jax-ml.github.io/scaling-book/inference/#:~:text=Figure%3A%20diagram%20of%20efficient%20Transformer%20sampling%20with%20a%20KV%20cache."  target="_blank" rel="noreferrer">Scaling book</a></figcaption></figure>
+
+<h4 class="relative group">Arithmetic Intensity Analysis
+    <div id="arithmetic-intensity-analysis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#arithmetic-intensity-analysis" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Let us look at the data flow of a standard SwiGLU-style Feed-Forward Network (FFN): Load the attention output \(X \in \mathbb{R}^{B \times T \times D}\), the up-projection weights \(W_u \in \mathbb{R}^{D \times F}\), the gate weights \(W_g \in \mathbb{R}^{D \times F}\), and the down-projection weights \(W_d \in \mathbb{R}^{F \times D}\). Compute \(X W_u\) to get \(U\) and write it to HBM; compute \(X W_g\) to get \(G\) and write it to HBM; read back both results, apply element-wise GeLU/SiLU activation to \(G\), compute the element-wise product \(U \odot \text{act}(G)\), multiply by \(W_d\), and write the final output back to HBM.</p>
+<p>Accounting for total data movement (\(20BTD + 24D^2\ \text{Bytes}\)) and floating-point operations (\(24BTD^2\ \text{FLOPs}\)), the arithmetic intensity of the FFN layer evaluates to:</p>
+$$
+I = \frac{24BTD^2}{20BTD + 24D^2} = \frac{6BTD}{5BT + 6D}\quad \text{FLOPs/Byte}
+$$<p>During the <strong>prefill phase</strong>, both the batch size \(B\) and sequence length \(T\) are relatively large. Here, arithmetic intensity approaches \(1.2D\), almost effortlessly saturating the theoretical compute capacity of the GPU. Even under moderate batch sizes and sequence lengths, hitting the compute-bound regime remains easily achievable with minimal mathematical margin.</p>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      open>
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          H 100 Reference Specifications
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>An NVIDIA H 100 SXM boasts roughly \(9.89 \times 10^{14}\) FLOPs/s of peak dense FP 16/BF 16 compute and \(3.35 \times 10^{12}\) Bytes/s of HBM 3 memory bandwidth, yielding a hardware ridge point (roofline turning point) of approximately 295 FLOPs/Byte. To fully utilize the compute cores, our arithmetic intensity needs to exceed this threshold.</p></div></details><p>During the <strong>decode phase</strong>, assuming we generate a single token per step (\(T = 1\)), the FFN faces a noticeable bottleneck: \(B\) depends on concurrent user requests, which is an external operational variable rather than something fixed by model engineering. When concurrency is low, arithmetic intensity drops drastically. However, for mainstream production workloads serving high concurrency, we can batch requests together to achieve a sufficiently high \(B\), effectively driving the GPU back toward compute saturation (see <a href="#dynamic-workloads" >Dynamic Workloads</a>).</p>
+<hr>
+<p>Next, let us analyze the Attention layer (assuming FlashAttention without GQA for now). The flow is as follows: Read input \(X \in \mathbb{R}^{B \times T \times D}\) and projection matrices \(W_Q, W_K, W_V \in \mathbb{R}^{D \times D}\). Perform matrix multiplications to obtain \(Q, K, V \in \mathbb{R}^{B \times T \times N \times H}\). The newly computed \(K\) and \(V\) are written to the KV cache in HBM, while \(Q\) stays in on-chip SRAM. \(Q\) is multiplied by the cached keys \(K_{\text{all}}^T \in \mathbb{R}^{B \times S \times N \times H}\), scaled, masked, softmaxed, and multiplied by \(V_{\text{all}}\). Thanks to FlashAttention, these intermediate attention matrices are fused in SRAM without intermediate roundtrips to HBM. Finally, the attention output \(O \in \mathbb{R}^{B \times T \times N \times H}\) is written back.</p>
+<p>Summing all data movement (\(8BTD + 6D^2 + 4BSD\ \text{Bytes}\)) and compute (\(6BTD^2 + 4BTSD\ \text{FLOPs}\)), the arithmetic intensity for the Attention layer is:</p>
+$$
+I = \frac{3 \frac{D}{S} + 2}{\frac{4}{S} + 3 \frac{D}{BTS} + \frac{2}{T}}
+$$<p>In the <strong>prefill phase</strong>, where \(T = S\) and \(B\) are substantial (often matching or exceeding \(D\)), achieving the target arithmetic intensity is straightforward, even under dynamic batch variations.</p>
+<p>In the <strong>decode phase</strong>, however, \(T = 1\). Even if the context length \(S\) grows very large, the asymptotic arithmetic intensity tops out around \(1\ \text{FLOP/Byte}\). This is disastrously low compared to hardware capabilities.</p>
+<p>This theoretical analysis brings us to a stark conclusion: <strong>the Attention layer during decode is severely memory-bandwidth bound. Simply tweaking hyperparameters will not fix this; it demands architectural and algorithmic innovations.</strong></p>
+
+<h4 class="relative group">Performance Metric Analysis
+    <div id="performance-metric-analysis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#performance-metric-analysis" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Having established that decoding is predominantly memory-bound, we can reasonably ignore raw computation when estimating token latency and throughput to obtain clean, insightful closed-form estimates. Furthermore, production inference engines employ aggressive operator fusion to eliminate unnecessary data roundtrips, meaning minor memory accesses can be ignored (accounting for only fractions of a percent). Our analysis boils down to two dominant memory transfers: <strong>model weights</strong> and <strong>KV Cache</strong>.</p>
+<p>The total model parameter count (without GQA, where \(K = N\)) is approximated by:</p>
+$$
+\text{Param} = \underbrace{2VD}_{\text{Embedding \& LM Head}} + \underbrace{3DFL}_{\text{MLP}} + \underbrace{\Big( \underbrace{DNH}_{W_Q} + \underbrace{2DKH}_{W_{K,V}} + \underbrace{DNH}_{W_O} \Big) L}_{\text{Attention}}
+$$<p>The memory footprint of the KV Cache is given by:</p>
+$$
+\text{Memory}_{\text{KV}} = \underbrace{2}_{\text{Key \& Value}} \cdot \underbrace{P}_{\text{Bytes/Elem}} \cdot \underbrace{BS}_{\text{Tokens}} \cdot \underbrace{L}_{\text{Layers}} \cdot \underbrace{KH}_{\text{KV Dim}}
+$$<p>In the memory-bound regime, theoretical per-token generation latency is simply the time required to stream all weights and cache entries through memory:</p>
+$$
+\text{Latency} = \frac{\text{Param} + \text{Memory}_{\text{KV}}}{\text{Mem\_bandwidth}}
+$$<p>From a system batching perspective, the aggregate throughput is:</p>
+$$
+\text{Throughput} = \frac{B}{\text{Latency}} = \frac{B \cdot \text{Mem\_bandwidth}}{\text{Param} + \text{Memory}_{\text{KV}}}
+$$<p>Plugging in concrete parameters for <strong>Llama-2-13 B</strong> yields the following estimates:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Batch Size</th>
+					<th style="text-align: left"><code>num_params</code></th>
+					<th style="text-align: left"><code>memory</code> (Bytes)</th>
+					<th style="text-align: left"><code>latency</code> (s)</th>
+					<th style="text-align: left"><code>throughput</code> (tokens/s)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>b 1</strong> (\(B=1\))</td>
+					<td style="text-align: left">13,015,449,600</td>
+					<td style="text-align: left">26,869,760,000</td>
+					<td style="text-align: left">0.0080</td>
+					<td style="text-align: left">124.68</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>b 64</strong> (\(B=64\))</td>
+					<td style="text-align: left">13,015,449,600</td>
+					<td style="text-align: left">79,717,990,400</td>
+					<td style="text-align: left">0.0238</td>
+					<td style="text-align: left">2689.48</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>b 256</strong> (\(B=256\))</td>
+					<td style="text-align: left">13,015,449,600</td>
+					<td style="text-align: left">240,779,264,000</td>
+					<td style="text-align: left">0.0719</td>
+					<td style="text-align: left">3561.77</td>
+			</tr>
+	</tbody>
+</table>
+<p>Notice the fundamental trade-off: <strong>per-token latency and aggregate throughput are inherently at odds</strong>. Scaling \(B\) improves GPU utilization and boosts overall system throughput, but each individual user experiences higher latency per token. System engineering is fundamentally about striking the right balance between the two.</p>
+<p>We have not modeled TTFT in detail here, but conceptually it is the sum of the prefill processing time and the first decode step. Because both scale with \(B\) and prompt length, increasing \(B\) will likewise increase TTFT.</p>
+
+<h4 class="relative group">Lossy Speedup
+    <div id="lossy-speedup" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lossy-speedup" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>To accelerate inference, optimization strategies target the two largest memory contributors: the <strong>KV Cache</strong> and the <strong>model weights</strong>.</p>
+<p>To compress the KV Cache, a direct approach is to decouple the number of KV heads from query heads (<strong>Grouped-Query Attention, GQA</strong>). For example, while standard multi-head attention might use 8 query heads of dimension 128 and 8 matching KV heads, GQA uses only 4 KV heads (each shared across 2 query heads), instantly halving the KV cache footprint. Empirical findings demonstrate that as long as the architecture does not collapse all the way to a single KV head (Multi-Query Attention), performance degradation is negligible.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="grouped_query_attention"
+    width="1258"
+    height="498"
+    src="/blog/llm-training-playbook/img/grouped_query_attention_hu_f3dc2811af054b4.png"
+    srcset="/blog/llm-training-playbook/img/grouped_query_attention_hu_f3dc2811af054b4.png 800w, /blog/llm-training-playbook/img/grouped_query_attention.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/grouped_query_attention.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2305.13245.pdf"  target="_blank" rel="noreferrer">Ainslie+ 2023</a></figcaption></figure>
+<p>DeepSeek demonstrated exceptional system-level engineering with <strong>Multi-Head Latent Attention (MLA)</strong>. Instead of caching full per-head KV tensors, MLA projects the KV representations into a low-dimensional latent space before caching. At decode time, queries absorb the decompression matrices directly via linear re-association before interacting with the cached latent vectors. This grants fine-grained control over the compression ratio far beyond standard GQA. Remarkably, the added representational flexibility actually <em>boosted</em> downstream benchmark performance—a true architectural win-win.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="multi_head_latent_attention"
+    width="1853"
+    height="525"
+    src="/blog/llm-training-playbook/img/multi_head_latent_attention_hu_6254c28678e3c14a.png"
+    srcset="/blog/llm-training-playbook/img/multi_head_latent_attention_hu_6254c28678e3c14a.png 800w, /blog/llm-training-playbook/img/multi_head_latent_attention_hu_43418733a4fbef5c.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/multi_head_latent_attention.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2405.04434"  target="_blank" rel="noreferrer">DeepSeek-AI+ 2024</a></figcaption></figure>
+<p>Other KV compression paradigms include cross-layer attention sharing, sliding window attention, and various linear attention mechanisms, which we omit here for brevity.</p>
+<hr>
+<p>On the model weight side, two primary techniques dominate: <strong>Quantization</strong> and <strong>Pruning / Distillation</strong>.</p>
+<p>Quantization represents high-precision numerical values using lower-precision formats. Intuitively, imagine a sparse grid in continuous space; quantization snaps scattered high-precision values onto these discrete grid points. It is typically categorized into:</p>
+<ol>
+<li><strong>Quantization-Aware Training (QAT)</strong>: Simulates quantization rounding errors during training. The downside is steep training overhead, slower convergence, and degraded stability, demanding significantly more data and compute hours.</li>
+<li><strong>Post-Training Quantization (PTQ)</strong>: Calibrates quantization scales on a small validation set after full training is complete. It is computationally cheap and preserves most of the original model performance (<a href="https://arxiv.org/abs/2210.17323"  target="_blank" rel="noreferrer">Frantar et al., 2022</a>).</li>
+<li><strong>Activation/Attention Quantization</strong>: Dynamically retains higher precision for high-magnitude outlier values while quantizing the rest, as activation outliers interact multiplicatively with subsequent weights (<a href="https://arxiv.org/abs/2306.00978"  target="_blank" rel="noreferrer">Lin et al., 2023</a>).</li>
+</ol>
+<p>In model pruning and distillation, representative works include NVIDIA&rsquo;s Nemotron-4-15 B and Minitron-8 B (<a href="https://arxiv.org/abs/2407.14679"  target="_blank" rel="noreferrer">Muralidharan et al., 2024</a>).</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/nemontron_model_pruning.png"
+    width="2196"
+    height="941"
+    src="/blog/llm-training-playbook/img/nemontron_model_pruning_hu_4a050c8469cffcb.png"
+    srcset="/blog/llm-training-playbook/img/nemontron_model_pruning_hu_4a050c8469cffcb.png 800w, /blog/llm-training-playbook/img/nemontron_model_pruning_hu_c5434ec92d83a78c.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/nemontron_model_pruning.png"></figure>
+<p>The results are striking: the pruned and distilled Minitron-8 B achieved superior benchmark performance at a fraction of the training cost compared to Nemotron-3-8 B trained from scratch.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/nemontron_model_pruning_result.png"
+    width="944"
+    height="762"
+    src="/blog/llm-training-playbook/img/nemontron_model_pruning_result_hu_63191646496705ac.png"
+    srcset="/blog/llm-training-playbook/img/nemontron_model_pruning_result_hu_63191646496705ac.png 800w, /blog/llm-training-playbook/img/nemontron_model_pruning_result.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/nemontron_model_pruning_result.png"></figure>
+
+<h4 class="relative group">Lossless Speedup
+    <div id="lossless-speedup" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lossless-speedup" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>The methods above modify or compress either the KV cache or the model parameters. While modern methods minimize quality loss (or even improve it, as with MLA), is it possible to achieve true <strong>lossless</strong> acceleration? Currently, the primary answer is <strong>Speculative Decoding</strong>.</p>
+<p>Speculative decoding leverages the observation that running a forward verification pass over multiple candidate tokens in parallel (prefill-like compute) is far cheaper than generating those tokens sequentially one by one. Verifying tokens is compute-bound and fast; generating them sequentially is memory-bound and slow. It operates on a low-penalty, high-reward principle reminiscent of branch prediction in modern CPU pipelines.</p>
+<p>Specifically, a small, fast draft model rapidly proposes a sequence of \(K\) candidate tokens. The target base model then evaluates these candidates in a single parallel forward pass. In practice, a prefix of the candidates is accepted (e.g., verifying 4 speculative tokens might confirm 2). The target model then samples a corrected token right at the first rejected position using its own output distribution, and the draft model continues speculating from there. A clear <a href="https://storage.googleapis.com/gweb-research2023-media/media/SpeculativeDecoding-1-Illustration.mp4"  target="_blank" rel="noreferrer">visual demo</a> illustrates this cycle nicely.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>The algorithm uses modified rejection sampling guarantees: the accepted tokens mathematically follow the exact output distribution of the target model, making the acceleration provably lossless.</p></div></div><p>An interesting question arises: how closely must the draft model&rsquo;s probability distribution align with the target model to yield a net speedup? A loose mathematical bound reveals that the distribution overlap \(\alpha\) between the two models must exceed the execution speed ratio \(c\) of the draft model relative to the target model:</p>
+$$
+\alpha = \mathbb{E}_{x \sim Q} \left[ \min\left(1, \frac{P(x)}{Q(x)}\right) \right] = \sum_{x \in \mathcal{V}} Q(x) \min\left(1, \frac{P(x)}{Q(x)}\right) = \sum_{x \in \mathcal{V}} \min(P(x), Q(x))
+$$<p>where \(P(x)\) is the target model&rsquo;s distribution, \(Q(x)\) is the draft model&rsquo;s distribution, and \(\mathcal{V}\) is the vocabulary. In practice, this theoretical bound is fairly optimistic: when \(c \approx 0.1\), the draft model generally needs a top-1 token agreement rate exceeding \(65\%\) against the target model on standard benchmarks to deliver roughly a \(2\times\) wall-clock speedup.</p>
+
+<h4 class="relative group">Dynamic Workloads
+    <div id="dynamic-workloads" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#dynamic-workloads" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>From a systems perspective, our primary lever for maximizing throughput is scaling the batch size \(B\). However, real-world inference workloads are inherently dynamic: user requests arrive asynchronously with wildly varying prompt and generation lengths. Orca introduced an elegant solution: <strong>iteration-level scheduling</strong> (continuous batching). Instead of scheduling at the granularity of entire requests, scheduling happens at the granularity of individual forward passes. The moment a request outputs an end-of-sequence token, it exits the batch, and a pending request immediately steps in to take its slot.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="dynamic_workload"
+    width="3844"
+    height="896"
+    src="/blog/llm-training-playbook/img/dynamic_workload_hu_1ec3f593d5e28c2b.png"
+    srcset="/blog/llm-training-playbook/img/dynamic_workload_hu_1ec3f593d5e28c2b.png 800w, /blog/llm-training-playbook/img/dynamic_workload_hu_b3ad4c39fbc440d2.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/dynamic_workload.png"><figcaption>Cite from <a href="https://www.usenix.org/system/files/osdi22-yu.pdf"  target="_blank" rel="noreferrer">Orca</a></figcaption></figure>
+<p>A practical challenge is that standard dense tensor operations expect uniform rectangular tensors. How do we handle batches composed of jagged, non-uniform sequences? Orca observed that outside the Attention layers, Transformer operations (FFNs, norms, embeddings) treat tokens independently; tokens across different requests can simply be flattened into a single contiguous token dimension. Attention operations, which depend on sequence boundaries, are handled via ragged attention kernels.</p>
+<hr>
+<p>Taking memory management a step further, the vLLM paper addressed memory fragmentation within and across requests, unlocking substantially larger batch sizes on the same hardware. As illustrated below, memory waste comes in two flavors: <em>internal fragmentation</em>, caused by over-allocating fixed memory buffers for maximum possible sequence lengths that users rarely exhaust; and <em>external fragmentation</em>, arising from dynamic memory allocation and deallocation across asynchronous requests of varying lengths.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="paged_attention_problem_defination"
+    width="2601"
+    height="453"
+    src="/blog/llm-training-playbook/img/paged_attention_problem_defination_hu_da0a40cd985d2b85.png"
+    srcset="/blog/llm-training-playbook/img/paged_attention_problem_defination_hu_da0a40cd985d2b85.png 800w, /blog/llm-training-playbook/img/paged_attention_problem_defination_hu_c223067d9f4021e5.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/paged_attention_problem_defination.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2309.06180.pdf"  target="_blank" rel="noreferrer">Kwon+</a></figcaption></figure>
+<p>Borrowing directly from classical OS virtual memory concepts, <strong>PagedAttention</strong> partitions each sequence&rsquo;s KV cache into fixed-size blocks allocated across non-contiguous physical GPU memory. This raises effective memory utilization from around \(40\%\) to over \(96\%\). A major side benefit is zero-copy memory sharing: requests sharing common prefixes (such as shared system prompts or tree branches in parallel sampling) can share physical KV blocks, cutting memory consumption even further and driving up overall system throughput.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="paged_attention_share_blocks"
+    width="1457"
+    height="642"
+    src="/blog/llm-training-playbook/img/paged_attention_share_blocks_hu_e8849c982e1bd080.png"
+    srcset="/blog/llm-training-playbook/img/paged_attention_share_blocks_hu_e8849c982e1bd080.png 800w, /blog/llm-training-playbook/img/paged_attention_share_blocks_hu_ffb4e5f8f4f2b14b.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/paged_attention_share_blocks.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2309.06180.pdf"  target="_blank" rel="noreferrer">Kwon+</a></figcaption></figure>
+
+<h2 class="relative group">Scaling Laws
+    <div id="scaling-laws" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#scaling-laws" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>In popular discourse, &ldquo;scaling law&rdquo; is often treated as a blunt assertion: scale up the model, feed it more data, and performance will keep climbing. In reality, that is merely a description of the <em>scaling effect</em>. A genuine <em>scaling law</em> provides actionable, quantitative foresight: it allows us to extrapolate the outcomes of massive, expensive training runs directly from controlled, small-scale experiments.</p>
+<p>Imagine you are the chief infrastructure engineer at a company with a 10,000-GPU cluster. Management asks you to deliver a state-of-the-art foundation model within a month. How do you design the model architecture? How do you partition GPU hours across pretraining stages? Most critically: how do you justify your technical roadmap with quantitative guarantees? You cannot simply tell leadership, &ldquo;We made the run bigger, so trust me, the model will be better.&rdquo; Large-scale runs cost millions of dollars; quantitative predictability is precisely what scaling laws provide.</p>
+
+<h3 class="relative group">Data Scaling Laws
+    <div id="data-scaling-laws" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#data-scaling-laws" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Empirical observation across thousands of runs shows that test loss exhibits a consistent power-law relationship with dataset size: \(\text{loss} = c n^{-\alpha}\). Why power laws? A simple, intuitive (though non-rigorous) mental model is estimating the mean of a 1D Gaussian distribution from \(n\) samples, \(x_1, x_2, \dots, x_n \sim \mathcal{N}(\mu, \sigma^2)\). The optimal estimator is the sample average:</p>
+$$
+\hat{\mu} = \frac{\sum_{i=1}^{n} x_i}{n}
+$$<p>The expected estimation error is:</p>
+$$
+\mathbb{E}[(\hat{\mu} - \mu)^2] = \frac{\sigma^2}{n}
+$$<p>Taking the logarithm on both sides:</p>
+$$
+\log(\mathbb{E}[(\hat{\mu} - \mu)^2]) = -\log n + 2 \log \sigma
+$$<p>This produces a clean linear relationship on a log-log plot. If we view complex learning tasks as superpositions of many such sub-tasks, the overall error trajectory naturally tracks a straight line in log-log space.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/power_law_widely_observed.png"
+    width="2109"
+    height="1063"
+    src="/blog/llm-training-playbook/img/power_law_widely_observed_hu_fbd0d432d9310b8b.png"
+    srcset="/blog/llm-training-playbook/img/power_law_widely_observed_hu_fbd0d432d9310b8b.png 800w, /blog/llm-training-playbook/img/power_law_widely_observed_hu_308726061eb11370.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/power_law_widely_observed.png"></figure>
+<p>While the power-law form is clear, what determines its slope? In our simple Gaussian example, the scaling exponent is \(-1\). Do real-world learning tasks scale with an exponent of \(-1\)? Empirically, exponents vary dramatically across different data modalities and tasks, and observed slopes are consistently shallower than simple theory predicts.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/various_exponent.png"
+    width="1608"
+    height="805"
+    src="/blog/llm-training-playbook/img/various_exponent_hu_b5f7e3c8e3bd4672.png"
+    srcset="/blog/llm-training-playbook/img/various_exponent_hu_b5f7e3c8e3bd4672.png 800w, /blog/llm-training-playbook/img/various_exponent_hu_f8fd2449de21395a.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/various_exponent.png"></figure>
+<p>A widely accepted explanation links the scaling exponent to the <strong>intrinsic dimensionality</strong> of the data distribution. Under the manifold hypothesis, high-dimensional real-world data points lie on a lower-dimensional sub-manifold embedded within ambient space; the intrinsic dimension is the dimension of this underlying manifold. That said, reliably measuring intrinsic dimensionality in practice remains challenging, so this theory serves more as an intuitive framework than an absolute law.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/intrinsic_dimension.png"
+    width="1720"
+    height="815"
+    src="/blog/llm-training-playbook/img/intrinsic_dimension_hu_3dc904d896408ba3.png"
+    srcset="/blog/llm-training-playbook/img/intrinsic_dimension_hu_3dc904d896408ba3.png 800w, /blog/llm-training-playbook/img/intrinsic_dimension_hu_522c1da474d836c4.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/intrinsic_dimension.png"></figure>
+<p>Another critical engineering question is data curation: does the <strong>data mixture ratio</strong> change the scaling behavior? Extensive empirical studies point to a clear rule of thumb: <strong>varying the data mixture changes the intercept, not the slope</strong>. Can we derive an analytical scaling law for arbitrary data mixtures? In practice, this is notoriously difficult: complex positive and negative transfer dynamics exist between domains, making cross-domain mixture extrapolation unreliable.</p>
+<p>While modeling arbitrary mixtures is challenging, what about <strong>data repetition</strong>? Here, predictable scaling holds much better: experiments show that repeating high-quality tokens up to roughly 4 epochs yields performance indistinguishable from training on entirely unique tokens.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/data_repeatation.png"
+    width="1526"
+    height="613"
+    src="/blog/llm-training-playbook/img/data_repeatation_hu_edd4498c7d21ad01.png"
+    srcset="/blog/llm-training-playbook/img/data_repeatation_hu_edd4498c7d21ad01.png 800w, /blog/llm-training-playbook/img/data_repeatation_hu_3505041e4f3142c7.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/data_repeatation.png"></figure>
+<p>Pulling this together into actionable guidance for data curation: <em><strong>Under a constrained compute budget, train exclusively on ultra-filtered, high-purity tokens; under massive compute budgets, relax the filtering threshold to incorporate larger volumes of medium-quality tokens.</strong></em></p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/data_quality_selection.png"
+    width="1695"
+    height="591"
+    src="/blog/llm-training-playbook/img/data_quality_selection_hu_7c4fb266c4179225.png"
+    srcset="/blog/llm-training-playbook/img/data_quality_selection_hu_7c4fb266c4179225.png 800w, /blog/llm-training-playbook/img/data_quality_selection_hu_3d1ba0ca554acb3a.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/data_quality_selection.png"></figure>
+
+<h3 class="relative group">Model Scaling Laws
+    <div id="model-scaling-laws" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#model-scaling-laws" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>At the architecture level, scaling laws help resolve critical engineering questions: Should we choose an LSTM-like recurrence or a Transformer? Which optimizer scales best? Under fixed parameter budgets, is a deeper model better than a wider one? Should we collect more data or scale GPU cluster capacity?</p>
+<p>On <strong>architecture selection</strong>, no single formula reliably predicts cross-family performance; standard practice is to benchmark candidate architectures across smaller parameter scales and extrapolate their Pareto curves.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/various_arch_performance.png"
+    width="1968"
+    height="1019"
+    src="/blog/llm-training-playbook/img/various_arch_performance_hu_c89663715685eed6.png"
+    srcset="/blog/llm-training-playbook/img/various_arch_performance_hu_c89663715685eed6.png 800w, /blog/llm-training-playbook/img/various_arch_performance_hu_33c562024fec68d8.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/various_arch_performance.png"></figure>
+<p>On <strong>optimizer selection</strong>, different optimizers yield virtually identical scaling slopes; differences show up purely as constant intercept offsets. Because early scaling law studies established that Adam and AdamW dominate across scales, AdamW remains the unchallenged default across industry.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/various_optimizer_performance.png"
+    width="1771"
+    height="864"
+    src="/blog/llm-training-playbook/img/various_optimizer_performance_hu_9a4d1272dce89a40.png"
+    srcset="/blog/llm-training-playbook/img/various_optimizer_performance_hu_9a4d1272dce89a40.png 800w, /blog/llm-training-playbook/img/various_optimizer_performance_hu_62153e0cbb6f1f6b.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/various_optimizer_performance.png"></figure>
+<p>For <strong>model depth</strong>, the trend is consistent: provided the model is not pathologically shallow, deeper models consistently outperform shallower ones at equal parameter counts, albeit with diminishing returns as depth continues to scale.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/model_depth_reward.png"
+    width="1332"
+    height="655"
+    src="/blog/llm-training-playbook/img/model_depth_reward_hu_1f3fa9f31171e5ef.png"
+    srcset="/blog/llm-training-playbook/img/model_depth_reward_hu_1f3fa9f31171e5ef.png 800w, /blog/llm-training-playbook/img/model_depth_reward_hu_6b36791ddad66049.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/model_depth_reward.png"></figure>
+<p>The <strong>aspect ratio (width-to-depth ratio)</strong> shifts slightly toward deeper architectures as models grow, but an aspect ratio around \(d_{\text{model}} / n_{\text{layer}} \approx 100\) serves as a remarkably robust default across a wide range of model sizes.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/aspect_ratio_reward.png"
+    width="1647"
+    height="431"
+    src="/blog/llm-training-playbook/img/aspect_ratio_reward_hu_58158a54d53217cc.png"
+    srcset="/blog/llm-training-playbook/img/aspect_ratio_reward_hu_58158a54d53217cc.png 800w, /blog/llm-training-playbook/img/aspect_ratio_reward_hu_5da35175c6f0837d.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/aspect_ratio_reward.png"></figure>
+<p>With Mixture-of-Experts (MoE) now standard in leading frontier models, MoE-specific scaling laws are essential. The high-level takeaway is straightforward: conditional computation reliably shifts the compute-performance frontier downward—larger sparse models consistently beat dense equivalents at matched training FLOPs.</p>
+<p>![img/Pasted image 20261012102529.png](img/Pasted image 20261012102529.png)</p>
+<p>The <strong>batch size</strong> used in pretraining is another vital lever. Beyond a certain threshold—the <strong>critical batch size</strong>—further expanding the batch size fails to yield meaningful gradient noise reduction or sample efficiency gains. You can calibrate this critical batch size experimentally by picking a target validation loss, measuring the required gradient steps and total sample consumption across various batch sizes, and computing the ratio of their minima, \(\frac{E_{\text{min}}}{S_{\text{min}}}\).</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/critical_batch_size.png"
+    width="1851"
+    height="589"
+    src="/blog/llm-training-playbook/img/critical_batch_size_hu_b37a162a6c7ec7af.png"
+    srcset="/blog/llm-training-playbook/img/critical_batch_size_hu_b37a162a6c7ec7af.png 800w, /blog/llm-training-playbook/img/critical_batch_size_hu_7f3eddc6e46d0e1b.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/critical_batch_size.png"></figure>
+<p>Finally, <strong>learning rates</strong> must adapt systematically as model dimensions scale. An effective framework is the Maximal Update Parametrization (\(\mu P\)), which coordinates learning rates and weight initialization across layers to ensure stable feature representations and smooth loss-frontier scaling across orders of magnitude.</p>
+<p>![img/Pasted image 20261012104528.png](img/Pasted image 20261012104528.png)</p>
+
+<h3 class="relative group">Disaggregating Parameters
+    <div id="disaggregating-parameters" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#disaggregating-parameters" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>An easy pitfall in scaling analysis is treating all model parameters uniformly. In reality, different parameter groups scale differently. In particular, <strong>embedding parameters</strong> follow distinctly different scaling dynamics compared to transformer block parameters: embedding capacity depends primarily on vocabulary size and context token diversity rather than non-linear model depth.</p>
+<p>![img/Pasted image 20261012104859.png](img/Pasted image 20261012104859.png)</p>
+
+<h3 class="relative group">Summary
+    <div id="summary" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#summary" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>The literature on scaling laws is vast, dense, and occasionally conflicting. Yet the core operating principle remains exactly what we emphasized at the outset: <strong>use disciplined, small-scale experiments to extrapolate large-scale outcomes</strong>. While published scaling curves offer indispensable baseline priors, landing a multi-million-dollar training run in production still requires running your own targeted small-scale sweeps to calibrate exact scaling exponents for your specific data mixture, architecture, and training stack.</p>
 
           
           
