@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-10-17T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-24T00:00:00+00:00">
 		<meta property="article:tag" content="架构">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="工程实践">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-10-17T00:00:00\u002b00:00",
+    "dateModified": "2026-10-24T00:00:00\u002b00:00",
     
     "keywords": ["架构","LLM","工程实践"],
     
     "mainEntityOfPage": "https://morethan987.github.io/blog/llm-training-playbook/",
-    "wordCount":  27216 
+    "wordCount":  29609 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-17T00:00:00&#43;00:00">更新于: 2026-10-17</time><span class="px-2 text-primary-500">&middot;</span><span>27216 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">55 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">2025-05-28</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-24T00:00:00&#43;00:00">更新于: 2026-10-24</time><span class="px-2 text-primary-500">&middot;</span><span>29609 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">60 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1727,6 +1727,22 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#总结">总结</a></li>
       </ul>
     </li>
+    <li><a href="#数据工程">数据工程</a>
+      <ul>
+        <li><a href="#基准测试-1">基准测试</a>
+          <ul>
+            <li><a href="#困惑度">困惑度</a></li>
+            <li><a href="#考试">考试</a></li>
+            <li><a href="#对话">对话</a></li>
+            <li><a href="#智能体">智能体</a></li>
+            <li><a href="#纯推理">纯推理</a></li>
+            <li><a href="#安全">安全</a></li>
+            <li><a href="#训练-测试重合">训练-测试重合</a></li>
+            <li><a href="#小结">小结</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1819,6 +1835,22 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#模型规模定律">模型规模定律</a></li>
         <li><a href="#不同参数">不同参数</a></li>
         <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据工程">数据工程</a>
+      <ul>
+        <li><a href="#基准测试-1">基准测试</a>
+          <ul>
+            <li><a href="#困惑度">困惑度</a></li>
+            <li><a href="#考试">考试</a></li>
+            <li><a href="#对话">对话</a></li>
+            <li><a href="#智能体">智能体</a></li>
+            <li><a href="#纯推理">纯推理</a></li>
+            <li><a href="#安全">安全</a></li>
+            <li><a href="#训练-测试重合">训练-测试重合</a></li>
+            <li><a href="#小结">小结</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -2013,7 +2045,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><a href="#基础部分" >基础部分</a>：分词器、可用资源盘点、模型架构、训练思路</li>
 <li><a href="#系统工程" >系统工程</a>：内核、并行、推理</li>
 <li><a href="#规模定律" >规模定律</a> (很多翻译为&quot;缩放定律&quot;，但语义上来说规模定律更确切)</li>
-<li>数据工程：预训练数据工程，脏但非常关键</li>
+<li><a href="#数据工程" >数据工程</a>：基准测试与预训练数据工程，脏但非常关键</li>
 <li>模型对齐：RL 后训练微调</li>
 </ol>
 
@@ -2504,7 +2536,7 @@ $$
 $$<p>在 Mamba-2 表达式的基础上对特定方向进行 Delta 修正，并对新的记忆项使用 \(\beta_{t} = f(x_{t})\) 进行门控输入这样就得到了门控 Delta 网络的表达形式：</p>
 $$
 \begin{matrix} S_{t} = \gamma_{t} (I-\beta_{t}k_{t}k_{t}^T) S_{t-1} + \beta_{t}k_{t}v_{t}^T \\ y_{t} = q_{t}^TS_{t} \end{matrix}
-$$<p>其中 \((I-\beta_{t}k_{t}k_{t}^T)\) 表示清除掉当前 \(k_{t}\) 相关的部分记忆，然后让新的记忆项 \(\beta_{t}k_{t}v_{t}^T\) 输入其中。这个方案最大规模的时间就是 Qwen-3.5 模型，但同样并非纯线性注意力而是使用 \(3:1\) 混合的形式来扬长避短。可以注意到的一个趋势就是：线性注意力机制逐步收敛到了类似 LSTM 系列的相关方案上了。</p>
+$$<p>其中 \((I-\beta_{t}k_{t}k_{t}^T)\) 表示清除掉当前 \(k_{t}\) 相关的部分记忆，然后让新的记忆项 \(\beta_{t}k_{t}v_{t}^T\) 输入其中。这个方案最大规模的实践就是 Qwen-3.5 模型，但同样并非纯线性注意力而是使用 \(3:1\) 混合的形式来扬长避短。可以注意到的一个趋势就是：线性注意力机制逐步收敛到了类似 LSTM 系列的相关方案上了。</p>
 <p>当然除了使用隐状态方案，还有稀疏激活的方案，具体的实践就是 DSA(DeepSeek Attention)，使用轻量化的索引去计算得到最优的 Top-k 个需要的 token，这样能够控制 \(O(n^2)\) 的注意力机制成本可控。这种方案在 DeepSeek-v3.2 和 GLM-5 模型中都有使用，实际效果非常不错。</p>
 <details
       class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
@@ -3488,7 +3520,18 @@ $$<p>总结下来，张量并行是非常需要通信带宽的，所以这个操
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/ring_attention.png"></figure>
 <p>在有了上面所有模型层面的并行操作之后再辅以选择性的重计算，激活值中的所有部分全部都能够被 GPU 的数量平摊。</p>
-<p>![img/Pasted image 20261008153913.png](img/Pasted image 20261008153913.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/cut_down_memory_peak.png"
+    width="1289"
+    height="518"
+    src="/blog/llm-training-playbook/img/cut_down_memory_peak_hu_9fbe037867531197.png"
+    srcset="/blog/llm-training-playbook/img/cut_down_memory_peak_hu_9fbe037867531197.png 800w, /blog/llm-training-playbook/img/cut_down_memory_peak_hu_1587629d1165f278.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/cut_down_memory_peak.png"></figure>
 <details
       class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
       data-type="note"
@@ -3922,13 +3965,13 @@ $$<p>其中 \(P(x)\) 表示大模型推理得到的概率分布，\(Q(x)\) 表�
     loading="lazy"
     decoding="async"
     fetchpriority="auto"
-    alt="paged_attention_problem_defination"
+    alt="paged_attention_problem_definition"
     width="2601"
     height="453"
-    src="/blog/llm-training-playbook/img/paged_attention_problem_defination_hu_da0a40cd985d2b85.png"
-    srcset="/blog/llm-training-playbook/img/paged_attention_problem_defination_hu_da0a40cd985d2b85.png 800w, /blog/llm-training-playbook/img/paged_attention_problem_defination_hu_c223067d9f4021e5.png 1280w"
+    src="/blog/llm-training-playbook/img/paged_attention_problem_definition_hu_da0a40cd985d2b85.png"
+    srcset="/blog/llm-training-playbook/img/paged_attention_problem_definition_hu_da0a40cd985d2b85.png 800w, /blog/llm-training-playbook/img/paged_attention_problem_definition_hu_c223067d9f4021e5.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/blog/llm-training-playbook/img/paged_attention_problem_defination.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2309.06180.pdf"  target="_blank" rel="noreferrer">Kwon+</a></figcaption></figure>
+    data-zoom-src="/blog/llm-training-playbook/img/paged_attention_problem_definition.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2309.06180.pdf"  target="_blank" rel="noreferrer">Kwon+</a></figcaption></figure>
 <p>分页注意力机制如其名，大体上的思路就是使用分页方案，将一个请求的显存占用切分为不同的块存储到非连续的物理存储中，这样显存的利用率可以实现巨大的提升 (\(40\%\) 到 \(96\%\))；并且这种方案还带来了一个额外的好处，不同请求中相同的片段可以共享显存块，这更进一步降低了单次请求的显存开销，提升了系统整体的吞吐。</p>
 <figure><img
     class="my-0 rounded-md"
@@ -4103,7 +4146,18 @@ $$<p>可以看出是非常精确的线性关系，因此如果我们认为大多
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/aspect_ratio_reward.png"></figure>
 <p>MoE 方法目前已经成为了默认选项，所以 MoE 相关的规模定律也是需要关注的，但简单来说就是模型越大越好。</p>
-<p>![img/Pasted image 20261012102529.png](img/Pasted image 20261012102529.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/MoE_scaling_law.png"
+    width="1206"
+    height="652"
+    src="/blog/llm-training-playbook/img/MoE_scaling_law_hu_cff37d83580d90e6.png"
+    srcset="/blog/llm-training-playbook/img/MoE_scaling_law_hu_cff37d83580d90e6.png 800w, /blog/llm-training-playbook/img/MoE_scaling_law.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MoE_scaling_law.png"></figure>
 <p>模型训练的<strong>批量大小</strong>也是一个重要的参数，当批量大小达到某一个阈值之后，继续增大批量并不能够有效降低梯度的噪声。这个阈值的大小可以通过实验来测定，大致就是选定一个合适的损失值，然后测试达到这个损失值需要的反向传播步数和需要的样本总数量，然后计算最小值的比值 \(\frac{E_{\text{min}}}{S_{\text{min}}}\) 即作为这个临界批量大小。</p>
 <figure><img
     class="my-0 rounded-md"
@@ -4118,7 +4172,18 @@ $$<p>可以看出是非常精确的线性关系，因此如果我们认为大多
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/critical_batch_size.png"></figure>
 <p>最后<strong>学习率</strong>也是需要随着模型规模扩大而改变的，一个比较好的方案是使用 \(\mu P\) 这篇论文提供的学习率方案，能够比较稳定地推进损失前沿。</p>
-<p>![img/Pasted image 20261012104528.png](img/Pasted image 20261012104528.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/mup_results.png"
+    width="1958"
+    height="862"
+    src="/blog/llm-training-playbook/img/mup_results_hu_747d379e073f14e4.png"
+    srcset="/blog/llm-training-playbook/img/mup_results_hu_747d379e073f14e4.png 800w, /blog/llm-training-playbook/img/mup_results_hu_2382c72e5544a14c.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/mup_results.png"></figure>
 
 <h3 class="relative group">不同参数
     <div id="不同参数" class="anchor"></div>
@@ -4130,7 +4195,18 @@ $$<p>可以看出是非常精确的线性关系，因此如果我们认为大多
     
 </h3>
 <p>不同参数对于规模的响应是不同的，这一点是非常容易忽视的。特别是嵌入层的参数，其表现和其他层的参数不太一样。</p>
-<p>![img/Pasted image 20261012104859.png](img/Pasted image 20261012104859.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/response_of_different_params_to_scaling.png"
+    width="1707"
+    height="670"
+    src="/blog/llm-training-playbook/img/response_of_different_params_to_scaling_hu_aa917fe6df724910.png"
+    srcset="/blog/llm-training-playbook/img/response_of_different_params_to_scaling_hu_aa917fe6df724910.png 800w, /blog/llm-training-playbook/img/response_of_different_params_to_scaling_hu_eac0ba7a823e60ec.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/response_of_different_params_to_scaling.png"></figure>
 
 <h3 class="relative group">总结
     <div id="总结" class="anchor"></div>
@@ -4142,6 +4218,264 @@ $$<p>可以看出是非常精确的线性关系，因此如果我们认为大多
     
 </h3>
 <p>最后总结一下吧，规模定律这个话题其实非常繁琐嘈杂，但这一节最核心的思路其实一开头就提出来了：<strong>用一些小规模的实验来外推大规模的结果</strong>。虽然罗列了很多论文的实验结果，但是真正想要落地到工业实践中去，一般来说还是需要重新进行小规模的实验来获得更准确的外推表现。</p>
+
+<h2 class="relative group">数据工程
+    <div id="数据工程" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%95%b0%e6%8d%ae%e5%b7%a5%e7%a8%8b" aria-label="锚点">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">基准测试
+    <div id="基准测试-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9f%ba%e5%87%86%e6%b5%8b%e8%af%95-1" aria-label="锚点">#</a>
+    </span>
+    
+</h3>
+<p>基准测试的一个重要用途就是用于评估模型到底有多&quot;好&rdquo;？当然，&ldquo;好&quot;是一个非常抽象的表述，我们需要将我们的需求转化为明确可测量的指标，这也是基准测试构建的一大难点。</p>
+
+<h4 class="relative group">困惑度
+    <div id="困惑度" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9b%b0%e6%83%91%e5%ba%a6" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>困惑度是量化模型表现的一个最为简单直白的指标，因为模型训练的目标就是最小化训练集上的困惑度，理所当然我们用测试集上的困惑度来刻画模型的语言能力。</p>
+<p>目前主流观点对困惑度这个指标有不同的两种看法：</p>
+<ol>
+<li>困惑度就是一切：如果我们的数据集能够反应真实的数据分布，那么我们不断地优化困惑度就能够最终实现 AGI</li>
+<li>困惑度并非一切：困惑度认为所有的 token 都具有相同的信息量 (重要程度)，但实际上显然并非如此</li>
+</ol>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          观点
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>我目前倾向于第二种观点，因为我感觉第一种说法是存在逻辑错误：我们的数据集当然能够很好地反应自然语言的真实分布，但我并不认为语言本身是一个能够充分反应世界真实状态的表示形式。换言之，我在这里提出一个假设：如果我们纯粹使用语言去逼近世界的真实状态的话，那么我们可能需要比指数级更快的数据量增长。</p></div></details>
+<h4 class="relative group">考试
+    <div id="考试" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%80%83%e8%af%95" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>与人类参与的考试类似，在构建测试的时候我们能够控制考试的主题和难度，并且为了评分准确，我们期望考试中的问题有唯一的正确答案。下面就展示一些经典的考试基准测试。</p>
+<p>Massive Multitask Language Understanding (<a href="https://arxiv.org/pdf/2009.03300.pdf"  target="_blank" rel="noreferrer">MMLU</a>)，考试的科目总共有 57 个，模型需要从多个选项中选择出正确的那一个，类似下面这个例子。除了名字，这个这个测试考查的重点其实和语言理解没什么太大关联。🐸</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="MMLU_example"
+    width="1659"
+    height="705"
+    src="/blog/llm-training-playbook/img/MMLU_example_hu_8e9287c71b9f21f.png"
+    srcset="/blog/llm-training-playbook/img/MMLU_example_hu_8e9287c71b9f21f.png 800w, /blog/llm-training-playbook/img/MMLU_example_hu_fbb13c7ea1849f3f.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MMLU_example.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2009.03300.pdf"  target="_blank" rel="noreferrer">Hendrycks+ 2020</a></figcaption></figure>
+<p>当然这个基准测试几乎可以说被刷饱和了，这是 2026 年 10 月 24 日的数据结果</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="MMLU_result_261024"
+    width="1671"
+    height="839"
+    src="/blog/llm-training-playbook/img/MMLU_result_261024_hu_1b92387e7b1e0497.png"
+    srcset="/blog/llm-training-playbook/img/MMLU_result_261024_hu_1b92387e7b1e0497.png 800w, /blog/llm-training-playbook/img/MMLU_result_261024_hu_d88f41df91f30c46.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MMLU_result_261024.png"><figcaption>Cite from <a href="https://llm-stats.com/benchmarks/mmlu"  target="_blank" rel="noreferrer">llm-stats</a></figcaption></figure>
+<p>当最初的 MMLU 被刷饱和之后，<a href="https://arxiv.org/abs/2406.01574"  target="_blank" rel="noreferrer">MMLU-Pro</a> 被构建出来，其将选项数量从 4 增加为 10 并将一些过于简单的问题移除了。当然这个基准测试目前也已经近乎饱和了。参见这里的<a href="https://llm-stats.com/benchmarks/mmlu-pro"  target="_blank" rel="noreferrer">数据</a>。</p>
+<hr>
+<p>随着 AI 的能力越来越强，在 2025 年构建了 Humanity&rsquo;s Last Exam (<a href="https://arxiv.org/abs/2501.14249"  target="_blank" rel="noreferrer">HLE</a>) 基准测试，这个测试非常广为人知，难度如其名，属实是相当高的。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="HLE_example"
+    width="1756"
+    height="603"
+    src="/blog/llm-training-playbook/img/HLE_example_hu_4415ae2b2806cb84.png"
+    srcset="/blog/llm-training-playbook/img/HLE_example_hu_4415ae2b2806cb84.png 800w, /blog/llm-training-playbook/img/HLE_example_hu_ff6b5b21fd9c6955.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/HLE_example.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2501.14249"  target="_blank" rel="noreferrer">Phan+ 2025</a></figcaption></figure>
+<p>即便是到现在这个基准测试也没有达到真正意义上的饱和，下面是 2026 年 10 月 24 日的数据结果</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="HLE_results_261024"
+    width="1666"
+    height="829"
+    src="/blog/llm-training-playbook/img/HLE_results_261024_hu_92f14117408d87ba.png"
+    srcset="/blog/llm-training-playbook/img/HLE_results_261024_hu_92f14117408d87ba.png 800w, /blog/llm-training-playbook/img/HLE_results_261024_hu_ea7d50a27a2c11fd.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/HLE_results_261024.png"><figcaption>Cite from <a href="https://llm-stats.com/benchmarks/hle"  target="_blank" rel="noreferrer">llm-stats</a></figcaption></figure>
+<hr>
+<p>总结一下，考试形式的基准测试随着模型能力的提升变得越来越难，但考试本身并和用户实际使用的场景是脱节的：用户的问题并不一定有明确的正确答案。在这种情况下，考试测试得出的结论就和实际体验可能存在比较明显的差别了。</p>
+
+<h4 class="relative group">对话
+    <div id="对话" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%af%b9%e8%af%9d" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>在浏览器中与模型对话是用户实际使用的一个重要场景，但在这个场景中存在大量的开放性问题，如何去评估模型对这些开放性问题的回答是一个需要解决的问题。</p>
+<p><strong>Chatbot Arena</strong> 的解决方案是：避免让人类或者其他模型去直接评价受测试模型的输出，互联网上随机的人带着自己的问题，得到两个随机模型的回答，然后由提问者来评价哪个模型的回复更好。基于这些数据，我们就可以仿照棋类游戏中的定级规则来得到不同模型的综合能力的评分。</p>
+<p>Arena 的一个重要的又是就是：不存在一个有偏的评价者来评价这些开放性问题。但由于参与测试的提问者具有很强的随机性，并不能够保证全面覆盖模型真实面对的用户；并且提问者需要根据自己的评价标准去辨别两个模型的输出结果，不同的评价之间可能存在冲突；另外 Arena 对于模型的评分是需要时间的，对比考试形式的基准测试，其及时性相对较差。</p>
+<hr>
+<p>针对开放性问题，还有另一种主流的做法：用一个较强、较为公正的模型去统一评判开放性问题的答案。例如 <a href="https://tatsu-lab.github.io/alpaca_eval/"  target="_blank" rel="noreferrer">AlpacaEval</a> (2023) 和 <a href="https://arxiv.org/pdf/2406.04770"  target="_blank" rel="noreferrer">WildBench</a> (2024)，他们都使用了 GPT-4 或者同系列的模型作为裁判。</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          说明
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>有很多这种类型基准测试都会去统计一下自己的测试结果与 Arena 的相关性。一则是说明基准测试自身的有效性，二则从某种程度上来说解决了 Arena 评分滞后的问题</p></div></div>
+<h4 class="relative group">智能体
+    <div id="智能体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%99%ba%e8%83%bd%e4%bd%93" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>智能体基准测试最大的特点是：基准测试不仅测试了模型本身的能力，也测试了 Agent 框架的质量。从这些测试结果中就可以发现，Agent 框架对模型实际表现的影响甚至和模型本身一样大！并且由于 Agent 框架极大地扩展了文本接口的能力，所以智能体基准测试的内容是相当丰富的，基本上其考核要求和人类参与者是平齐的，从某种程度上说，你可以将 LLM 和 Agent 框架的组合当成一个独立的人类个体去调度。</p>
+
+<h4 class="relative group">纯推理
+    <div id="纯推理" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%ba%af%e6%8e%a8%e7%90%86" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>纯推理基准测试的一个出发点是：或许我们想要去衡量模型的智力而不是知识量，尽管知识量也是一个非常重要的标准。我们可以设计一些特殊的测试问题，剥离掉背景知识对解题的影响从而获得更纯净的结果。</p>
+<p>比较有代表性的测试就是 <a href="https://arcprize.org/arc-agi"  target="_blank" rel="noreferrer">ARC-AGI-1</a> (2019)，其形式上看起来像是一个多模态少样本推理问题</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="ARC_AGI_1_example"
+    width="1398"
+    height="243"
+    src="/blog/llm-training-playbook/img/ARC_AGI_1_example_hu_560ba8bc507ae9cc.png"
+    srcset="/blog/llm-training-playbook/img/ARC_AGI_1_example_hu_560ba8bc507ae9cc.png 800w, /blog/llm-training-playbook/img/ARC_AGI_1_example_hu_1a8913a35ffb2462.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ARC_AGI_1_example.png"><figcaption>Cite from <a href="https://arcprize.org/arc-agi"  target="_blank" rel="noreferrer">ARC-AGI-1</a></figcaption></figure>
+<p>在 2025 年有推出了 <a href="https://arcprize.org/arc-agi"  target="_blank" rel="noreferrer">ARC-AGI-2</a>，其问题难度得到了非常大的提升</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ARC_AGI_2_example.png"
+    width="1286"
+    height="611"
+    src="/blog/llm-training-playbook/img/ARC_AGI_2_example_hu_f2e8b1183cbb4172.png"
+    srcset="/blog/llm-training-playbook/img/ARC_AGI_2_example_hu_f2e8b1183cbb4172.png 800w, /blog/llm-training-playbook/img/ARC_AGI_2_example_hu_c80aa008d8f54df1.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ARC_AGI_2_example.png"></figure>
+<p>不够目前来看，这两个测试都已经饱和了 (<a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf"  target="_blank" rel="noreferrer">测试结果汇总见论文图一</a>)，于是在今年 (2026) 又推出了 <a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf"  target="_blank" rel="noreferrer">ARC-AGI-3</a>，其最大的特点就是引入了交互式测评环境，类似于早期的游戏掌机。</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="ARC_AGI_3_example.png"
+    width="1199"
+    height="675"
+    src="/blog/llm-training-playbook/img/ARC_AGI_3_example_hu_d46e1d9904247983.png"
+    srcset="/blog/llm-training-playbook/img/ARC_AGI_3_example_hu_d46e1d9904247983.png 800w, /blog/llm-training-playbook/img/ARC_AGI_3_example.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ARC_AGI_3_example.png"><figcaption>Cite from <a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf"  target="_blank" rel="noreferrer">paper</a></figcaption></figure>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          思考
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>我们真的能够去剥离智能与知识吗？这种游戏掌机形式的测试是否本身就具有极强的知识先验？🤔</p></div></div>
+<h4 class="relative group">安全
+    <div id="安全" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%ae%89%e5%85%a8" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>安全这个词本身也并不清晰，一个比较广义的理解就是：模型不应该输出违背道德法律或者威胁全人类的信息，当用户有类似的提问的时候应该拒绝回答。</p>
+<p>这里的基准测试相对<a href="#智能体" >智能体</a>部分较少，比较经典的有：<strong>HarmBench</strong> (<a href="https://arxiv.org/abs/2402.04249"  target="_blank" rel="noreferrer">Mazeika+ 2024</a>) 和 <strong>AIR-Bench</strong> (<a href="https://arxiv.org/abs/2407.17436"  target="_blank" rel="noreferrer">Zeng+ 2024</a>)</p>
+
+<h4 class="relative group">训练-测试重合
+    <div id="训练-测试重合" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%ae%ad%e7%bb%83-%e6%b5%8b%e8%af%95%e9%87%8d%e5%90%88" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>机器学习入门准则中就有一条：不要在测试数据上训练模型。这在大模型时代之前是非常显然的，但在现在却是一个困难的问题：模型训练的数据集太大，你几乎不可能做到 100% 的干净。</p>
+<p>应对这个问题大致有几种思路：</p>
+<ol>
+<li>使用某种方法去检测模型的训练-测试数据重合：利用测试问题本身的可交换性，如果模型对某一特定的问题顺序表现出显著更低的困惑度，那么就能够证明其存在数据重合 (<a href="https://arxiv.org/pdf/2310.17623"  target="_blank" rel="noreferrer">Oren+ 2023</a>)</li>
+<li>模型的训练者应该提供重合度分析报告 (<a href="https://arxiv.org/abs/2410.08385"  target="_blank" rel="noreferrer">Zhang+ 2024</a>)</li>
+<li>在私有数据集上进行测试，当然这样成本就比较高了；并且进行测试总是要将测试数据发送出去的，只能够希望模型公司不会存一个备份🐸</li>
+</ol>
+
+<h4 class="relative group">小结
+    <div id="小结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%b0%8f%e7%bb%93" aria-label="锚点">#</a>
+    </span>
+    
+</h4>
+<p>基准测试的意义是明显的：告诉我们一个模型的能力究竟有多强。但实际运用起来是困难的，单个数据集总是有偏的，和我们的需求也并不一定对齐。所以一个比较准确的结论就是：如果一个模型在特定的数据集上表现突出，你需要留一个心眼；如果一个模型在各种各样的数据集上都表现良好，那么这个模型大概率是一个非常好的模型。</p>
 
           
           
@@ -4776,7 +5110,7 @@ $$<p>可以看出是非常精确的线性关系，因此如果我们认为大多
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-02-08T00:00:00&#43;00:00">更新于: 2026-02-08</time><span class="px-2 text-primary-500">&middot;</span><span>2667 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-02-08T00:00:00&#43;00:00">更新于: 2026-02-08</time><span class="px-2 text-primary-500">&middot;</span><span>2666 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">6 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -5089,7 +5423,7 @@ $$<p>可以看出是非常精确的线性关系，因此如果我们认为大多
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span>6448 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-26T00:00:00&#43;00:00">更新于: 2025-05-26</time><span class="px-2 text-primary-500">&middot;</span><span>6439 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">13 分钟</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     

@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-10-17T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-10-24T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-10-17T00:00:00\u002b00:00",
+    "dateModified": "2026-10-24T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  15015 
+    "wordCount":  16284 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-17T00:00:00&#43;00:00">Updated: 17 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>15015 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">31 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-10-24T00:00:00&#43;00:00">Updated: 24 October 2026</time><span class="px-2 text-primary-500">&middot;</span><span>16284 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">33 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1727,6 +1727,22 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#summary">Summary</a></li>
       </ul>
     </li>
+    <li><a href="#data-engineering">Data engineering</a>
+      <ul>
+        <li><a href="#benchmarks">Benchmarks</a>
+          <ul>
+            <li><a href="#perplexity">Perplexity</a></li>
+            <li><a href="#standardized-exams">Standardized Exams</a></li>
+            <li><a href="#chat-evaluation">Chat Evaluation</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#pure-reasoning">Pure Reasoning</a></li>
+            <li><a href="#safety">Safety</a></li>
+            <li><a href="#train-test-contamination">Train-Test Contamination</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -1819,6 +1835,22 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#model-scaling-laws">Model Scaling Laws</a></li>
         <li><a href="#disaggregating-parameters">Disaggregating Parameters</a></li>
         <li><a href="#summary">Summary</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-engineering">Data engineering</a>
+      <ul>
+        <li><a href="#benchmarks">Benchmarks</a>
+          <ul>
+            <li><a href="#perplexity">Perplexity</a></li>
+            <li><a href="#standardized-exams">Standardized Exams</a></li>
+            <li><a href="#chat-evaluation">Chat Evaluation</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#pure-reasoning">Pure Reasoning</a></li>
+            <li><a href="#safety">Safety</a></li>
+            <li><a href="#train-test-contamination">Train-Test Contamination</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -2013,7 +2045,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
 <li><a href="#fundamentals" >Fundamentals</a>: tokenizers, resource inventory, model architectures, training strategies</li>
 <li><a href="#systems-engineering" >Systems engineering</a>: kernels, parallelism, inference</li>
 <li><a href="#scaling-laws" >Scaling laws</a></li>
-<li>Data engineering: pretraining data engineering—messy, but absolutely critical</li>
+<li><a href="#data-engineering" >Data engineering</a>: benchmarking and pretraining data engineering. Messy, but absolutely critical</li>
 <li>Model alignment: RL post-training fine-tuning</li>
 </ol>
 
@@ -2504,7 +2536,7 @@ $$
 $$<p>Applying a directional Delta correction to the Mamba-2 expression, along with an input gate \(\beta_{t} = f(x_{t})\) for new memory entries, yields the Gated DeltaNet formulation:</p>
 $$
 \begin{matrix} S_{t} = \gamma_{t} (I-\beta_{t}k_{t}k_{t}^T) S_{t-1} + \beta_{t}k_{t}v_{t}^T \\ y_{t} = q_{t}^TS_{t} \end{matrix}
-$$<p>Here, \((I-\beta_{t}k_{t}k_{t}^T)\) erases parts of the state related to the current \(k_{t}\), making room for the new memory item \(\beta_{t}k_{t}v_{t}^T\). The largest-scale application of this approach to date is the Qwen-3.5 model—though again, it uses a 3:1 hybrid format rather than pure linear attention to get the best of both worlds. A clear trend emerges: linear attention mechanisms are gradually converging toward LSTM-like architectures.</p>
+$$<p>Here, \((I-\beta_{t}k_{t}k_{t}^T)\) erases parts of the state related to the current \(k_{t}\), making room for the new memory item \(\beta_{t}k_{t}v_{t}^T\). The largest-scale application of this approach is the Qwen-3.5 model—though again, it uses a 3:1 hybrid format rather than pure linear attention to get the best of both worlds. A clear trend emerges: linear attention mechanisms are gradually converging toward LSTM-like architectures.</p>
 <p>Besides hidden-state approaches, another route is sparse activation, best exemplified by DSA (DeepSeek Attention). DSA uses a lightweight index to compute and retrieve the Top-k most relevant tokens, keeping the costs of \(O(n^2)\) attention manageable. This mechanism is adopted in both DeepSeek-v 3.2 and GLM-5, yielding impressive real-world results.</p>
 <details
       class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
@@ -3488,7 +3520,18 @@ $$<p>In short, Tensor Parallelism is intensely communication-bandwidth hungry. I
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/ring_attention.png"></figure>
 <p>By layering these model-level parallel strategies on top of one another—complemented by selective activation checkpointing—virtually every component of activation memory can be sharded evenly across GPUs.</p>
-<p>![img/Pasted image 20261008153913.png](img/Pasted image 20261008153913.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/cut_down_memory_peak.png"
+    width="1289"
+    height="518"
+    src="/blog/llm-training-playbook/img/cut_down_memory_peak_hu_9fbe037867531197.png"
+    srcset="/blog/llm-training-playbook/img/cut_down_memory_peak_hu_9fbe037867531197.png 800w, /blog/llm-training-playbook/img/cut_down_memory_peak_hu_1587629d1165f278.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/cut_down_memory_peak.png"></figure>
 <details
       class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
       data-type="note"
@@ -3922,13 +3965,13 @@ $$<p>where \(P(x)\) is the target model&rsquo;s distribution, \(Q(x)\) is the dr
     loading="lazy"
     decoding="async"
     fetchpriority="auto"
-    alt="paged_attention_problem_defination"
+    alt="paged_attention_problem_definition"
     width="2601"
     height="453"
-    src="/blog/llm-training-playbook/img/paged_attention_problem_defination_hu_da0a40cd985d2b85.png"
-    srcset="/blog/llm-training-playbook/img/paged_attention_problem_defination_hu_da0a40cd985d2b85.png 800w, /blog/llm-training-playbook/img/paged_attention_problem_defination_hu_c223067d9f4021e5.png 1280w"
+    src="/blog/llm-training-playbook/img/paged_attention_problem_definition_hu_da0a40cd985d2b85.png"
+    srcset="/blog/llm-training-playbook/img/paged_attention_problem_definition_hu_da0a40cd985d2b85.png 800w, /blog/llm-training-playbook/img/paged_attention_problem_definition_hu_c223067d9f4021e5.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/blog/llm-training-playbook/img/paged_attention_problem_defination.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2309.06180.pdf"  target="_blank" rel="noreferrer">Kwon+</a></figcaption></figure>
+    data-zoom-src="/blog/llm-training-playbook/img/paged_attention_problem_definition.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2309.06180.pdf"  target="_blank" rel="noreferrer">Kwon+</a></figcaption></figure>
 <p>Borrowing directly from classical OS virtual memory concepts, <strong>PagedAttention</strong> partitions each sequence&rsquo;s KV cache into fixed-size blocks allocated across non-contiguous physical GPU memory. This raises effective memory utilization from around \(40\%\) to over \(96\%\). A major side benefit is zero-copy memory sharing: requests sharing common prefixes (such as shared system prompts or tree branches in parallel sampling) can share physical KV blocks, cutting memory consumption even further and driving up overall system throughput.</p>
 <figure><img
     class="my-0 rounded-md"
@@ -4103,7 +4146,18 @@ $$<p>This produces a clean linear relationship on a log-log plot. If we view com
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/aspect_ratio_reward.png"></figure>
 <p>With Mixture-of-Experts (MoE) now standard in leading frontier models, MoE-specific scaling laws are essential. The high-level takeaway is straightforward: conditional computation reliably shifts the compute-performance frontier downward—larger sparse models consistently beat dense equivalents at matched training FLOPs.</p>
-<p>![img/Pasted image 20261012102529.png](img/Pasted image 20261012102529.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/MoE_scaling_law.png"
+    width="1206"
+    height="652"
+    src="/blog/llm-training-playbook/img/MoE_scaling_law_hu_cff37d83580d90e6.png"
+    srcset="/blog/llm-training-playbook/img/MoE_scaling_law_hu_cff37d83580d90e6.png 800w, /blog/llm-training-playbook/img/MoE_scaling_law.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MoE_scaling_law.png"></figure>
 <p>The <strong>batch size</strong> used in pretraining is another vital lever. Beyond a certain threshold—the <strong>critical batch size</strong>—further expanding the batch size fails to yield meaningful gradient noise reduction or sample efficiency gains. You can calibrate this critical batch size experimentally by picking a target validation loss, measuring the required gradient steps and total sample consumption across various batch sizes, and computing the ratio of their minima, \(\frac{E_{\text{min}}}{S_{\text{min}}}\).</p>
 <figure><img
     class="my-0 rounded-md"
@@ -4118,7 +4172,18 @@ $$<p>This produces a clean linear relationship on a log-log plot. If we view com
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/blog/llm-training-playbook/img/critical_batch_size.png"></figure>
 <p>Finally, <strong>learning rates</strong> must adapt systematically as model dimensions scale. An effective framework is the Maximal Update Parametrization (\(\mu P\)), which coordinates learning rates and weight initialization across layers to ensure stable feature representations and smooth loss-frontier scaling across orders of magnitude.</p>
-<p>![img/Pasted image 20261012104528.png](img/Pasted image 20261012104528.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/mup_results.png"
+    width="1958"
+    height="862"
+    src="/blog/llm-training-playbook/img/mup_results_hu_747d379e073f14e4.png"
+    srcset="/blog/llm-training-playbook/img/mup_results_hu_747d379e073f14e4.png 800w, /blog/llm-training-playbook/img/mup_results_hu_2382c72e5544a14c.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/mup_results.png"></figure>
 
 <h3 class="relative group">Disaggregating Parameters
     <div id="disaggregating-parameters" class="anchor"></div>
@@ -4130,7 +4195,18 @@ $$<p>This produces a clean linear relationship on a log-log plot. If we view com
     
 </h3>
 <p>An easy pitfall in scaling analysis is treating all model parameters uniformly. In reality, different parameter groups scale differently. In particular, <strong>embedding parameters</strong> follow distinctly different scaling dynamics compared to transformer block parameters: embedding capacity depends primarily on vocabulary size and context token diversity rather than non-linear model depth.</p>
-<p>![img/Pasted image 20261012104859.png](img/Pasted image 20261012104859.png)</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/response_of_different_params_to_scaling.png"
+    width="1707"
+    height="670"
+    src="/blog/llm-training-playbook/img/response_of_different_params_to_scaling_hu_aa917fe6df724910.png"
+    srcset="/blog/llm-training-playbook/img/response_of_different_params_to_scaling_hu_aa917fe6df724910.png 800w, /blog/llm-training-playbook/img/response_of_different_params_to_scaling_hu_eac0ba7a823e60ec.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/response_of_different_params_to_scaling.png"></figure>
 
 <h3 class="relative group">Summary
     <div id="summary" class="anchor"></div>
@@ -4142,6 +4218,264 @@ $$<p>This produces a clean linear relationship on a log-log plot. If we view com
     
 </h3>
 <p>The literature on scaling laws is vast, dense, and occasionally conflicting. Yet the core operating principle remains exactly what we emphasized at the outset: <strong>use disciplined, small-scale experiments to extrapolate large-scale outcomes</strong>. While published scaling curves offer indispensable baseline priors, landing a multi-million-dollar training run in production still requires running your own targeted small-scale sweeps to calibrate exact scaling exponents for your specific data mixture, architecture, and training stack.</p>
+
+<h2 class="relative group">Data engineering
+    <div id="data-engineering" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#data-engineering" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Benchmarks
+    <div id="benchmarks" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#benchmarks" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>A core purpose of benchmarking is answering a simple question: just how &ldquo;good&rdquo; is a model? Of course, &ldquo;good&rdquo; is a vague notion. Translating intuitive expectations into concrete, quantifiable metrics is one of the hardest parts of designing benchmarks.</p>
+
+<h4 class="relative group">Perplexity
+    <div id="perplexity" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#perplexity" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Perplexity is the most straightforward metric for measuring model performance. Because language models are trained directly to minimize training set perplexity, using perplexity on a held-out test set feels like the most natural way to gauge raw linguistic competence.</p>
+<p>Today, perspectives on perplexity generally fall into two camps:</p>
+<ol>
+<li><strong>Perplexity is everything</strong>: If our training dataset truly mirrors real-world data distributions, relentlessly minimizing perplexity will eventually lead us to AGI.</li>
+<li><strong>Perplexity isn&rsquo;t everything</strong>: Perplexity assumes all tokens carry identical information value (or importance), which clearly isn&rsquo;t the case in reality.</li>
+</ol>
+<details
+      class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm group"
+      data-type="note"
+      >
+      <summary class="flex items-center gap-2 font-semibold text-inherit cursor-pointer">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Take
+        </div>
+        <div
+          class="ms-auto flex h-5 w-5 items-center justify-center transition-transform ease-in-out -rotate-90 group-open:rotate-0 print:hidden"><span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span></div>
+      </summary><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>I currently lean toward the second camp because the first premise feels logically flawed: while a dataset can capture the distribution of natural language quite well, I don&rsquo;t believe language alone is an expressive enough representation to fully capture the true state of the physical world. In other words, here&rsquo;s a working hypothesis: if we rely purely on language to approximate the ground truth of the world, the required data volume might need to scale faster than exponentially.</p></div></details>
+<h4 class="relative group">Standardized Exams
+    <div id="standardized-exams" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#standardized-exams" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Much like human exams, building this kind of benchmark allows us to tightly control subjects and difficulty levels. To keep grading objective and reproducible, questions are typically designed with a single, unambiguous correct answer. Here are a few notable examples:</p>
+<p>Massive Multitask Language Understanding (<a href="https://arxiv.org/pdf/2009.03300.pdf"  target="_blank" rel="noreferrer">MMLU</a>) spans 57 subjects where models must pick the right answer from multiple choices, as illustrated below. Despite its name, what this test actually measures has very little to do with core language understanding. 🐸</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="MMLU_example"
+    width="1659"
+    height="705"
+    src="/blog/llm-training-playbook/img/MMLU_example_hu_8e9287c71b9f21f.png"
+    srcset="/blog/llm-training-playbook/img/MMLU_example_hu_8e9287c71b9f21f.png 800w, /blog/llm-training-playbook/img/MMLU_example_hu_fbb13c7ea1849f3f.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MMLU_example.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2009.03300.pdf"  target="_blank" rel="noreferrer">Hendrycks+ 2020</a></figcaption></figure>
+<p>Unsurprisingly, this benchmark has been virtually saturated. Here are the numbers as of October 24, 2026:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="MMLU_result_261024"
+    width="1671"
+    height="839"
+    src="/blog/llm-training-playbook/img/MMLU_result_261024_hu_1b92387e7b1e0497.png"
+    srcset="/blog/llm-training-playbook/img/MMLU_result_261024_hu_1b92387e7b1e0497.png 800w, /blog/llm-training-playbook/img/MMLU_result_261024_hu_d88f41df91f30c46.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/MMLU_result_261024.png"><figcaption>Cite from <a href="https://llm-stats.com/benchmarks/mmlu"  target="_blank" rel="noreferrer">llm-stats</a></figcaption></figure>
+<p>Once the original MMLU was maxed out, <a href="https://arxiv.org/abs/2406.01574"  target="_blank" rel="noreferrer">MMLU-Pro</a> was introduced—expanding the options from 4 to 10 and filtering out overly trivial questions. Predictably, this benchmark has also reached near-saturation by now. See the <a href="https://llm-stats.com/benchmarks/mmlu-pro"  target="_blank" rel="noreferrer">data here</a>.</p>
+<hr>
+<p>As frontier models grew more capable, 2025 saw the release of Humanity&rsquo;s Last Exam (<a href="https://arxiv.org/abs/2501.14249"  target="_blank" rel="noreferrer">HLE</a>). Widely discussed across the AI community, its difficulty truly lives up to its dramatic name.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="HLE_example"
+    width="1756"
+    height="603"
+    src="/blog/llm-training-playbook/img/HLE_example_hu_4415ae2b2806cb84.png"
+    srcset="/blog/llm-training-playbook/img/HLE_example_hu_4415ae2b2806cb84.png 800w, /blog/llm-training-playbook/img/HLE_example_hu_ff6b5b21fd9c6955.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/HLE_example.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2501.14249"  target="_blank" rel="noreferrer">Phan+ 2025</a></figcaption></figure>
+<p>Even today, this benchmark is far from being genuinely saturated. Here are the figures from October 24, 2026:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="HLE_results_261024"
+    width="1666"
+    height="829"
+    src="/blog/llm-training-playbook/img/HLE_results_261024_hu_92f14117408d87ba.png"
+    srcset="/blog/llm-training-playbook/img/HLE_results_261024_hu_92f14117408d87ba.png 800w, /blog/llm-training-playbook/img/HLE_results_261024_hu_ea7d50a27a2c11fd.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/HLE_results_261024.png"><figcaption>Cite from <a href="https://llm-stats.com/benchmarks/hle"  target="_blank" rel="noreferrer">llm-stats</a></figcaption></figure>
+<hr>
+<p>To sum up: exam-style benchmarks have become brutally difficult to keep pace with advancing models. However, exams are inherently detached from actual user workflows: real-world questions rarely have a single, rigid &ldquo;correct&rdquo; answer. When that gap widens, high exam scores don&rsquo;t necessarily translate into a good user experience.</p>
+
+<h4 class="relative group">Chat Evaluation
+    <div id="chat-evaluation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chat-evaluation" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Chatting with a model in a browser is one of the most prominent real-world use cases. But this setting is dominated by open-ended prompts, and reliably grading answers to open-ended questions is notoriously tricky.</p>
+<p><strong>Chatbot Arena</strong> proposed a neat solution: bypass fixed human rubrics and judge models altogether. Real web users bring their own prompts, receive blind side-by-side responses from two random models, and vote on which answer is better. Using this crowdsourced win/loss data, we can apply an Elo-style rating system—just like in competitive chess—to rank the models&rsquo; overall capabilities.</p>
+<p>A key advantage of Arena is that no single biased judge dictates the scores for subjective prompts. That said, it isn&rsquo;t without flaws: crowd voters are fairly random, meaning they don&rsquo;t necessarily represent the model&rsquo;s target enterprise or expert user base; different voters apply conflicting personal standards; and accumulating enough head-to-head matches takes time, making Arena much slower to deliver feedback compared to instantaneous exam benchmarks.</p>
+<hr>
+<p>Another mainstream route for handling open-ended queries is <strong>LLM-as-a-Judge</strong>: utilizing a capable, relatively impartial model to evaluate outputs against standardized guidelines. Examples include <a href="https://tatsu-lab.github.io/alpaca_eval/"  target="_blank" rel="noreferrer">AlpacaEval</a> (2023) and <a href="https://arxiv.org/pdf/2406.04770"  target="_blank" rel="noreferrer">WildBench</a> (2024), both of which employ GPT-4 or comparable frontier models as judges.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Many benchmarks of this style explicitly report their correlation with Chatbot Arena rankings. On one hand, this validates the benchmark&rsquo;s own methodology; on the other, it provides a fast proxy that circumvents Arena&rsquo;s scoring latency.</p></div></div>
+<h4 class="relative group">Agents
+    <div id="agents" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#agents" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>What makes agent benchmarks distinctive is that they test not just the foundation model, but the quality of the surrounding agent framework as well. Results consistently show that the framework&rsquo;s design often impacts final performance just as much as the base model itself! Furthermore, because agent frameworks vastly expand what models can do beyond simple text input and output, agent benchmarks tend to be remarkably rich. The task expectations are essentially on par with human job requirements—to the extent that a well-crafted LLM-agent pipeline can practically be scheduled and deployed like an autonomous human contributor.</p>
+
+<h4 class="relative group">Pure Reasoning
+    <div id="pure-reasoning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pure-reasoning" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>The motivation behind pure reasoning benchmarks is simple: what if we want to measure a model&rsquo;s raw problem-solving intellect rather than its breadth of memorized knowledge (even though knowledge remains undeniably critical)? By designing specialized puzzles, we can strip away domain background knowledge and isolate reasoning capacity.</p>
+<p>A standout pioneer here is <a href="https://arcprize.org/arc-agi"  target="_blank" rel="noreferrer">ARC-AGI-1</a> (2019), which presents tasks as multimodal, few-shot visual reasoning puzzles:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="ARC_AGI_1_example"
+    width="1398"
+    height="243"
+    src="/blog/llm-training-playbook/img/ARC_AGI_1_example_hu_560ba8bc507ae9cc.png"
+    srcset="/blog/llm-training-playbook/img/ARC_AGI_1_example_hu_560ba8bc507ae9cc.png 800w, /blog/llm-training-playbook/img/ARC_AGI_1_example_hu_1a8913a35ffb2462.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ARC_AGI_1_example.png"><figcaption>Cite from <a href="https://arcprize.org/arc-agi"  target="_blank" rel="noreferrer">ARC-AGI-1</a></figcaption></figure>
+<p>In 2025, <a href="https://arcprize.org/arc-agi"  target="_blank" rel="noreferrer">ARC-AGI-2</a> launched with a substantial jump in difficulty:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ARC_AGI_2_example.png"
+    width="1286"
+    height="611"
+    src="/blog/llm-training-playbook/img/ARC_AGI_2_example_hu_f2e8b1183cbb4172.png"
+    srcset="/blog/llm-training-playbook/img/ARC_AGI_2_example_hu_f2e8b1183cbb4172.png 800w, /blog/llm-training-playbook/img/ARC_AGI_2_example_hu_c80aa008d8f54df1.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ARC_AGI_2_example.png"></figure>
+<p>However, both iterations have now largely been saturated (<a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf"  target="_blank" rel="noreferrer">see Figure 1 in the technical report for a results summary</a>). In response, <a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf"  target="_blank" rel="noreferrer">ARC-AGI-3</a> was introduced this year (2026). Its signature feature is an interactive evaluation environment, reminiscent of retro handheld game consoles:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="ARC_AGI_3_example.png"
+    width="1199"
+    height="675"
+    src="/blog/llm-training-playbook/img/ARC_AGI_3_example_hu_d46e1d9904247983.png"
+    srcset="/blog/llm-training-playbook/img/ARC_AGI_3_example_hu_d46e1d9904247983.png 800w, /blog/llm-training-playbook/img/ARC_AGI_3_example.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ARC_AGI_3_example.png"><figcaption>Cite from <a href="https://arcprize.org/media/ARC_AGI_3_Technical_Report.pdf"  target="_blank" rel="noreferrer">paper</a></figcaption></figure>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="warning">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+</span></div>
+        <div class="grow">
+          Food for Thought
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Can we ever truly separate intelligence from knowledge? Doesn&rsquo;t an interactive, handheld-game-style testing environment come baked with strong inductive biases and priors of its own? 🤔</p></div></div>
+<h4 class="relative group">Safety
+    <div id="safety" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#safety" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>&ldquo;Safety&rdquo; is another loosely defined term. A broad working consensus is: models should not produce outputs that violate laws, breach fundamental ethics, or pose catastrophic risks to humanity, and they should reliably refuse prompts that elicit harm.</p>
+<p>Safety benchmarks are relatively fewer in number compared to the <a href="#agents" >Agents</a> category, but classic examples include <strong>HarmBench</strong> (<a href="https://arxiv.org/abs/2402.04249"  target="_blank" rel="noreferrer">Mazeika+ 2024</a>) and <strong>AIR-Bench</strong> (<a href="https://arxiv.org/abs/2407.17436"  target="_blank" rel="noreferrer">Zeng+ 2024</a>).</p>
+
+<h4 class="relative group">Train-Test Contamination
+    <div id="train-test-contamination" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#train-test-contamination" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>One of the golden rules in introductory machine learning is: <em>never train on your test data</em>. In the pre-LLM era, this was trivial to follow. Today, it has become an excruciating challenge: training corpora are so monstrously large that keeping them 100% clean is virtually impossible.</p>
+<p>A few strategies have surfaced to address this:</p>
+<ol>
+<li><strong>Algorithmic contamination detection</strong>: Leverage properties like test question order exchangeability. If a model exhibits significantly lower perplexity under a specific canonical ordering of questions, it strongly signals data leakage (<a href="https://arxiv.org/pdf/2310.17623"  target="_blank" rel="noreferrer">Oren+ 2023</a>).</li>
+<li><strong>Transparent reporting</strong>: Model creators should publish formal contamination analysis audits (<a href="https://arxiv.org/abs/2410.08385"  target="_blank" rel="noreferrer">Zhang+ 2024</a>).</li>
+<li><strong>Evaluating on private datasets</strong>: This is considerably more expensive. Worse, running the evaluation still requires transmitting the data over an API, leaving you with little choice but to hope the provider doesn&rsquo;t quietly stash a copy. 🐸</li>
+</ol>
+
+<h4 class="relative group">Takeaways
+    <div id="takeaways" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#takeaways" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>The value proposition of benchmarks is clear: they give us a signal of how capable a model is. But applying them effectively is tricky. Any individual dataset is inevitably biased and rarely matches our exact use cases. A reasonable rule of thumb: if a model excels on one specific dataset, take it with a grain of salt; if a model performs consistently well across a wide and diverse spectrum of benchmarks, chances are it&rsquo;s genuinely a great model.</p>
 
           
           
@@ -4463,7 +4797,7 @@ $$<p>This produces a clean linear relationship on a log-log plot. If we view com
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-02-08T00:00:00&#43;00:00">Updated: 8 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1414 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-02-08T00:00:00&#43;00:00">Updated: 8 February 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1415 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -5089,7 +5423,7 @@ $$<p>This produces a clean linear relationship on a log-log plot. If we view com
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2992 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-26T00:00:00&#43;00:00">Updated: 26 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3005 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">15 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
