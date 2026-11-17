@@ -83,7 +83,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2025-05-28T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-11-09T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-11-17T00:00:00+00:00">
 		<meta property="article:tag" content="Architecture">
 		<meta property="article:tag" content="LLM">
 		<meta property="article:tag" content="EngineeringPractices">
@@ -503,12 +503,12 @@
     "dateCreated": "2025-05-28T00:00:00\u002b00:00",
     "datePublished": "2025-05-28T00:00:00\u002b00:00",
     
-    "dateModified": "2026-11-09T00:00:00\u002b00:00",
+    "dateModified": "2026-11-17T00:00:00\u002b00:00",
     
     "keywords": ["Architecture","LLM","EngineeringPractices"],
     
     "mainEntityOfPage": "https://morethan987.github.io/en/blog/llm-training-playbook/",
-    "wordCount":  17779 
+    "wordCount":  21159 
   },
   {
     "@context": "https://schema.org",
@@ -1384,7 +1384,7 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-11-09T00:00:00&#43;00:00">Updated: 9 November 2026</time><span class="px-2 text-primary-500">&middot;</span><span>17779 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">36 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2025-05-28T00:00:00&#43;00:00">28 May 2025</time><span class="px-2 text-primary-500">&middot;</span><time datetime="2026-11-17T00:00:00&#43;00:00">Updated: 17 November 2026</time><span class="px-2 text-primary-500">&middot;</span><span>21159 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">43 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1481,19 +1481,6 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
     
 
     
-    
-      <span class="ps-2"><span class="flex cursor-pointer">
-  
-  
-  
-  
-    <span
-      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-  
-    Draft
-  </span>
-</span>
-</span>
     
   </div>
 
@@ -1753,7 +1740,23 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#post-training-data">Post-training Data</a></li>
       </ul>
     </li>
-    <li><a href="#model-alignment">Model alignment</a></li>
+    <li><a href="#model-alignment">Model alignment</a>
+      <ul>
+        <li><a href="#imitation-learning">Imitation Learning</a></li>
+        <li><a href="#reinforcement-learning-from-human-feedback">Reinforcement Learning from Human Feedback</a></li>
+        <li><a href="#verifiable-rewards">Verifiable Rewards</a></li>
+        <li><a href="#multimodal-alignment">Multimodal Alignment</a>
+          <ul>
+            <li><a href="#clip">CLIP</a></li>
+            <li><a href="#siglip">SigLIP</a></li>
+            <li><a href="#model-fusion">Model Fusion</a></li>
+            <li><a href="#multimodal-positional-encoding">Multimodal Positional Encoding</a></li>
+            <li><a href="#image-generation">Image Generation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
   </ul>
 </nav>
   </div>
@@ -1874,7 +1877,23 @@ ADIwMjUtMDEtMDRUMDY6NDE6MjQrMDA6MDArGiCBAAAAAElFTkSuQmCC" />
         <li><a href="#post-training-data">Post-training Data</a></li>
       </ul>
     </li>
-    <li><a href="#model-alignment">Model alignment</a></li>
+    <li><a href="#model-alignment">Model alignment</a>
+      <ul>
+        <li><a href="#imitation-learning">Imitation Learning</a></li>
+        <li><a href="#reinforcement-learning-from-human-feedback">Reinforcement Learning from Human Feedback</a></li>
+        <li><a href="#verifiable-rewards">Verifiable Rewards</a></li>
+        <li><a href="#multimodal-alignment">Multimodal Alignment</a>
+          <ul>
+            <li><a href="#clip">CLIP</a></li>
+            <li><a href="#siglip">SigLIP</a></li>
+            <li><a href="#model-fusion">Model Fusion</a></li>
+            <li><a href="#multimodal-positional-encoding">Multimodal Positional Encoding</a></li>
+            <li><a href="#image-generation">Image Generation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
   </ul>
 </nav>
   </div>
@@ -4679,6 +4698,393 @@ $$<p>The resulting curve (shown below) gives us a classic S-shaped step function
     </span>
     
 </h2>
+<p>After pre-training, we end up with a base language model, yet much of its behavior falls short of what we actually want: it struggles to follow user instructions reliably, lacks strong coding skills, and still answers harmful prompts (where we would expect a refusal). <em>Model alignment</em> addresses precisely these issues, giving us much finer-grained control over the model&rsquo;s outputs. 🤌</p>
+
+<h3 class="relative group">Imitation Learning
+    <div id="imitation-learning" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#imitation-learning" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>In this context, imitation learning simply refers to Supervised Fine-Tuning (SFT), and the mechanics are almost identical to pre-training. You gather a collection of desired target data and run gradient descent—it really is that straightforward. 🐸 Because the training loop itself is so simple, the real focus here is the SFT data: what does it look like, and how do we curate high-quality datasets?</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/opensource_sft_data.png"
+    width="1887"
+    height="721"
+    src="/blog/llm-training-playbook/img/opensource_sft_data_hu_dba6862ba48c8933.png"
+    srcset="/blog/llm-training-playbook/img/opensource_sft_data_hu_dba6862ba48c8933.png 800w, /blog/llm-training-playbook/img/opensource_sft_data_hu_f43242e5611394d0.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/opensource_sft_data.png"></figure>
+<p>Several common open-source SFT datasets are listed above. Without diving into specific samples, these datasets share a few distinct traits compared to pre-training corpora:</p>
+<ol>
+<li><strong>A human touch</strong>: In a conversation, we don&rsquo;t want to talk to a stiff, robotic bookworm; we want responses that feel warm and natural.</li>
+<li><strong>Rich, comprehensive detail</strong>: When asking for travel advice, we don&rsquo;t want a bare list of landmarks—we expect thorough recommendations that factor in geography, logistics, and context.</li>
+<li><strong>Tool calling</strong>: Arguably the most critical end-user capability today, requiring LLMs to handle complex tool-use interactions seamlessly.</li>
+</ol>
+<p>By rule of thumb, there is no single &ldquo;silver bullet&rdquo; SFT dataset—and practice bears this out, as different datasets excel in different areas, as shown below.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/sft_datasets_benchmark.png"
+    width="1352"
+    height="692"
+    src="/blog/llm-training-playbook/img/sft_datasets_benchmark_hu_c4d73de9ef6fb056.png"
+    srcset="/blog/llm-training-playbook/img/sft_datasets_benchmark_hu_c4d73de9ef6fb056.png 800w, /blog/llm-training-playbook/img/sft_datasets_benchmark_hu_e2d4fe08b9a348fc.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/sft_datasets_benchmark.png"></figure>
+<p>To build intuition for what actually happens during SFT, let&rsquo;s look at a concrete example from OpenAssistant.</p>
+<p>![img/Pasted image 20261109221123.png](img/Pasted image 20261109221123.png)</p>
+<p>When the model trains autoregressively on this example, we can intuitively see two distinct types of information flowing into the model via gradients:</p>
+<ol>
+<li><strong>Factual information</strong>: The link between the citation and the preceding claims forms a factual association.</li>
+<li><strong>Formatting information</strong>: The model learns that &ldquo;including citations in a proper format&rdquo; is a desirable habit.</li>
+</ol>
+<p>Studies have shown that fine-tuning a model on knowledge it does not already possess significantly increases hallucinations. Intuitively, because the model cannot grasp the underlying facts, it latches onto the much more obvious formatting patterns instead—producing answers that look authoritative on the surface but are completely fabricated.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/sft_hallucination.png"
+    width="1601"
+    height="563"
+    src="/blog/llm-training-playbook/img/sft_hallucination_hu_2c8d6c4646a7bdce.png"
+    srcset="/blog/llm-training-playbook/img/sft_hallucination_hu_2c8d6c4646a7bdce.png 800w, /blog/llm-training-playbook/img/sft_hallucination_hu_15fab38da1c134ba.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/sft_hallucination.png"></figure>
+<p>In short, SFT works remarkably well—even with relatively small amounts of data—when we want to sharpen or elicit capabilities the model already has. However, trying to inject brand-new knowledge through SFT tends to backfire. 🤔</p>
+<hr>
+
+<h3 class="relative group">Reinforcement Learning from Human Feedback
+    <div id="reinforcement-learning-from-human-feedback" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#reinforcement-learning-from-human-feedback" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>In English, this is universally known as RLHF (Reinforcement Learning from Human Feedback). A helpful way to understand RL is to contrast it with SFT: in theory, RL doesn&rsquo;t require explicit &ldquo;expert demonstrations&rdquo;—we only need to reward good trajectories, and we can assign different reward magnitudes to different trajectories (whereas SFT effectively assigns a constant reward). This makes it &ldquo;data-aware.&rdquo;</p>
+<p>In practice, however, we still have to collect substantial expert preference data to train a reward model before running RLHF. Common collection methods include pairwise comparisons (like Chatbot Arena) or rubric-based grading. For frontier models, top-tier domain experts are hired to do this annotation, often commanding hefty hourly rates (hundreds of dollars per hour).</p>
+<p>Early RLHF pipelines relied primarily on the PPO family of algorithms, whose evolution looks roughly as follows:</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/ppo_progress.png"
+    width="1716"
+    height="895"
+    src="/blog/llm-training-playbook/img/ppo_progress_hu_e8bd2416282b6df8.png"
+    srcset="/blog/llm-training-playbook/img/ppo_progress_hu_e8bd2416282b6df8.png 800w, /blog/llm-training-playbook/img/ppo_progress_hu_91e1708e1ee753a.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/ppo_progress.png"></figure>
+<p>Vanilla policy gradient is straightforward: given a full trajectory \(z\), we push the model parameters toward higher reward \(R\) by sampling multiple trajectories and weighting their log-likelihoods by their rewards. Of course, this simple approach suffers from massive variance and cannot reuse past data. TRPO addressed this by introducing an importance sampling ratio (\(\frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)}\)) to weight the advantage function—allowing old samples to update the new policy—while using a KL divergence trust region to constrain parameter updates. TRPO is theoretically elegant, but computing the KL constraint requires second-order derivatives, so PPO replaces it with a simple clipped objective.</p>
+<p>As noted above, PPO-style methods still depend on a massive reward/value model and online sampling (requiring fresh rollouts every \(K\) steps), which means training giant auxiliary models and dealing with lower data efficiency.</p>
+<p>Direct Preference Optimization (DPO), by contrast, is purely offline and can be derived directly from the standard RLHF objective:</p>
+$$
+\max_{\pi_\theta} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi_\theta(y|x)} [r_\phi(x,y)] - \beta \mathbb{D}_{KL}[\pi_\theta(y|x) || \pi_{ref}(y|x)]
+$$<p>Assuming infinite model capacity (a non-parametric policy), this optimization problem has a closed-form solution:</p>
+$$
+\pi_r(y|x) = \frac{1}{Z(x)} \pi_{ref}(y|x) \exp\left(\frac{1}{\beta} r(x,y)\right)
+$$<p>Rearranging gives us an expression for the reward in terms of the policy:</p>
+$$
+r(x,y) = \beta \log \frac{\pi_r(y|x)}{\pi_{ref}(y|x)} + \beta \log Z(x)
+$$<p>This shows that the policy model itself acts as an implicit reward model, though the log-partition term \(\log Z(x)\) remains intractable. Fortunately, RLHF preference data tells us that one response is better than another, allowing us to formulate an objective where the better response gets a higher reward while the intractable partition term cancels out:</p>
+$$
+\text{loss}(r_\theta) = - \mathbb{E} [\log \sigma(r_\theta(x, y_w) - r_\theta(x, y_l))]
+$$<p>Substituting the implicit reward expression yields the DPO loss:</p>
+$$
+\mathcal{L}_{DPO}(\pi_\theta; \pi_{ref}) = - \mathbb{E}_{(x, y_w, y_l)} \left[ \log \sigma \left( \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right]
+$$<p>With this, we can optimize directly on pre-collected human preference datasets, eliminating online sampling altogether.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Food for Thought
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>You might wonder: is the non-parametric assumption a free lunch? Of course not. In reality, our models always have finite parameters. This approximation can lead to overfitting and over-rewarding overly long responses, which is precisely why newer algorithms keep emerging. In practice, models like GPT 5.6 often go on massive overthinking sprees (thinking for half an hour just to do one minute of work)—one can&rsquo;t help but wonder if this kind of dynamic plays a role. 🤔</p></div></div>
+<h3 class="relative group">Verifiable Rewards
+    <div id="verifiable-rewards" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#verifiable-rewards" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Because human feedback is inherently noisy, expensive, and scarce, standard RLHF suffers from severe overfitting. Simply throwing more compute at it won&rsquo;t reliably yield better models.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/overfit_RLHF.png"
+    width="1692"
+    height="678"
+    src="/blog/llm-training-playbook/img/overfit_RLHF_hu_58e18643ebce54c3.png"
+    srcset="/blog/llm-training-playbook/img/overfit_RLHF_hu_58e18643ebce54c3.png 800w, /blog/llm-training-playbook/img/overfit_RLHF_hu_20e033e4a6674afc.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/overfit_RLHF.png"></figure>
+<p>A natural direction, then, is to find feedback signals that are far more stable and informative. That sounds easy in theory, though open-ended tasks pose an obvious challenge—you simply can&rsquo;t design deterministic feedback for every kind of question. However, if a class of problems is both broadly applicable and admits objective, verifiable feedback, RL can reliably convert raw compute into genuine model capability. This is the core idea behind Reinforcement Learning with Verifiable Rewards (RLVR).</p>
+<p>RLVR currently relies primarily on GRPO. Theoretically, like PPO, GRPO is a policy gradient algorithm that uses a baseline. Here, a &ldquo;baseline&rdquo; means the model shouldn&rsquo;t learn from raw absolute scores alone, but rather from how much better a response is compared to its current average performance. Imagine scoring 50 on a brutal math exam: it looks low in isolation, but if the class average is 20, a 50 is actually an impressive result.</p>
+<p>In practice, the key question is how to estimate that baseline. PPO trains a massive separate value model for this, whereas GRPO simply estimates the baseline from a group of \(G\) sampled rollouts, leading to the loss function shown below.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="docter_GRPO"
+    width="1427"
+    height="655"
+    src="/blog/llm-training-playbook/img/docter_GRPO_hu_307ac6c156cd17f4.png"
+    srcset="/blog/llm-training-playbook/img/docter_GRPO_hu_307ac6c156cd17f4.png 800w, /blog/llm-training-playbook/img/docter_GRPO_hu_7b4ce9edc4bd3e61.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/docter_GRPO.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2503.20783"  target="_blank" rel="noreferrer">Liu et al.</a></figcaption></figure>
+<p>Looking closely, GRPO&rsquo;s loss formulation actually has a couple of questionable design choices. First, the advantage shouldn&rsquo;t be normalized by its standard deviation, as doing so disproportionately amplifies cases with tiny variance—typically questions that are either way too hard or way too easy (where the model gets them right or wrong almost every time). Second, normalizing by output length (\(\frac{1}{|o_i|}\)) implicitly incentivizes verbose responses, since longer outputs dilute the loss. Put differently, from a reward-hacking perspective, that \(\frac{1}{|o_i|}\) term hands the model a cheap shortcut to lower its loss simply by rambling—hardly what we want.</p>
+<p>Once the algorithm is set, the overall post-training pipeline looks something like the Qwen 3 workflow below; details vary across labs, but the general recipe is largely the same.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/Qwen3_post_training_pipeline.png"
+    width="1266"
+    height="568"
+    src="/blog/llm-training-playbook/img/Qwen3_post_training_pipeline_hu_51e31749dcd8ab79.png"
+    srcset="/blog/llm-training-playbook/img/Qwen3_post_training_pipeline_hu_51e31749dcd8ab79.png 800w, /blog/llm-training-playbook/img/Qwen3_post_training_pipeline.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/Qwen3_post_training_pipeline.png"></figure>
+<hr>
+<p>This also raises a couple of fascinating questions about reinforcement learning.</p>
+<p>First, can we distill reasoning abilities into non-thinking models? Yes—and it works remarkably well.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/qwen_2.5_distill.png"
+    width="1361"
+    height="559"
+    src="/blog/llm-training-playbook/img/qwen_2.5_distill_hu_13e06715fd878fb4.png"
+    srcset="/blog/llm-training-playbook/img/qwen_2.5_distill_hu_13e06715fd878fb4.png 800w, /blog/llm-training-playbook/img/qwen_2.5_distill_hu_efdd95c7cdb5e84f.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/qwen_2.5_distill.png"></figure>
+<p>Second, can we achieve the same gains without using RL at all? The jury is still out. Many approaches try to match RL&rsquo;s gains using non-RL methods, yet nothing has truly replaced RL so far. Kimi k 1.5 ran thorough ablations on this: the yellow RL curve consistently outperforms Expert Iteration. If RL works by boosting the probability of positive samples while suppressing negatives, Expert Iteration simply performs SFT on positive samples alone to bootstrap a stronger model in a virtuous cycle.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="img/kimi_k1.5_ablation.png"
+    width="1279"
+    height="675"
+    src="/blog/llm-training-playbook/img/kimi_k1.5_ablation_hu_f7f6fd3ecbd6db4e.png"
+    srcset="/blog/llm-training-playbook/img/kimi_k1.5_ablation_hu_f7f6fd3ecbd6db4e.png 800w, /blog/llm-training-playbook/img/kimi_k1.5_ablation.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/kimi_k1.5_ablation.png"></figure>
+
+<h3 class="relative group">Multimodal Alignment
+    <div id="multimodal-alignment" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#multimodal-alignment" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Everything we&rsquo;ve discussed so far deals strictly with text-in, text-out models. Yet our world is inherently multimodal, and pure text is often a clumsy medium for expressing what we want. For instance, when building a frontend UI without visual capabilities, we have to describe layouts in abstract prose—which yields terrible results and can become indecipherable even to ourselves a few days later. 😅</p>
+<p>Because Transformers are so dominant, we naturally stick with the Transformer architecture. Since Transformers only understand tokens, we need ways to convert other modalities into tokens—just as text requires a dedicated tokenizer. Here we&rsquo;ll focus on images and video, though the general principles extend readily to other modalities.</p>
+
+<h4 class="relative group">CLIP
+    <div id="clip" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#clip" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>CLIP remains one of the most influential image embedding models, and its performance is remarkably strong—especially considering how messy its training data was (even after heavy filtering) compared to curated datasets like ImageNet. On web blogs, captions rarely spell out every detail in an image. Take the diagram below: I would summarize its purpose in a sentence or two—contrastive training that treats matched image-text pairs as positives and all other pairs as negatives. Notice I wouldn&rsquo;t bother specifying how many boxes are drawn or how they&rsquo;re arranged, even though those visual details make up the image itself.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="clip_arch"
+    width="2073"
+    height="760"
+    src="/blog/llm-training-playbook/img/clip_arch_hu_e5470aa22c036d3e.png"
+    srcset="/blog/llm-training-playbook/img/clip_arch_hu_e5470aa22c036d3e.png 800w, /blog/llm-training-playbook/img/clip_arch_hu_330b04ae1883a542.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/clip_arch.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2103.00020"  target="_blank" rel="noreferrer">Radford+ 2021</a></figcaption></figure>
+<p>That&rsquo;s why CLIP&rsquo;s success felt so eye-opening: it mirrored the exact playbook that made LLMs work—scrape massive amounts of noisy public internet data, pair it with huge models and massive compute, and let scale work its magic.</p>
+<p>For the image encoder, CLIP uses <a href="https://arxiv.org/pdf/2010.11929"  target="_blank" rel="noreferrer">ViT</a>. OpenAI also tested ResNet-50, and Transformer-based architectures clearly came out ahead. Notably, ViT was originally designed for image classification and lacked flexible positional encoding for image patches suited to fine-grained spatial layouts—an issue that later commercial-grade multimodal LLMs had to tackle head-on.</p>
+
+<h4 class="relative group">SigLIP
+    <div id="siglip" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#siglip" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>SigLIP builds directly on CLIP while fixing a key flaw. CLIP treats every unpaired example in a batch as a negative. At massive scale, however, two distinct images in the same batch can easily be near-identical—similar enough to count as a valid positive pair—making softmax&rsquo;s forced single-choice selection unreasonable. SigLIP replaces softmax with sigmoid, reformulating multi-class classification into an \(N \times N\) pairwise binary classification problem. Beyond being more logical, this decoupling removes softmax&rsquo;s global normalization denominator, paving the way for much more hardware-efficient distributed training.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="siglip_system_algorithm"
+    width="2124"
+    height="693"
+    src="/blog/llm-training-playbook/img/siglip_system_algorithm_hu_5895c9db49f76101.png"
+    srcset="/blog/llm-training-playbook/img/siglip_system_algorithm_hu_5895c9db49f76101.png 800w, /blog/llm-training-playbook/img/siglip_system_algorithm_hu_7d1b378fcba72025.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/siglip_system_algorithm.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2303.15343"  target="_blank" rel="noreferrer">Zhai+ 2023</a></figcaption></figure>
+
+<h4 class="relative group">Model Fusion
+    <div id="model-fusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#model-fusion" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Once you have a strong vision encoder (like SigLIP) and a capable LLM, the obvious move is to connect them into a powerful &ldquo;multimodal model.&rdquo; Granted, this is a somewhat &ldquo;stitched-together&rdquo; approach compared to natively trained end-to-end multimodal models, and it may lag slightly in theoretical ceiling, but it works surprisingly well in practice at a fraction of the training cost.</p>
+<p>These stitched models generally follow a standard two-stage recipe: first, freeze both the LLM and the vision encoder, and train a lightweight adapter to project visual tokens into the LLM&rsquo;s text embedding space; second, keep only the vision encoder frozen while fine-tuning both the adapter and the LLM. <a href="https://arxiv.org/abs/2304.08485"  target="_blank" rel="noreferrer">LLaVA</a> is the classic example—take a look below to get a feel for how well this works in practice.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="llava_result"
+    width="1383"
+    height="1378"
+    src="/blog/llm-training-playbook/img/llava_result_hu_d761101f54a9a57c.png"
+    srcset="/blog/llm-training-playbook/img/llava_result_hu_d761101f54a9a57c.png 800w, /blog/llm-training-playbook/img/llava_result_hu_1491de3b22ee792d.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/llava_result.png"><figcaption>Cite from <a href="https://arxiv.org/abs/2304.08485"  target="_blank" rel="noreferrer">LLaVA</a></figcaption></figure>
+<p>Compared to earlier baselines, LLaVA delivers strikingly detailed descriptions, proving that even bolted-on architectures can achieve impressive visual understanding.</p>
+<p>Follow-up work has pushed this paradigm further, culminating in models like <a href="https://arxiv.org/pdf/2408.03326"  target="_blank" rel="noreferrer">LLaVA-OneVision</a>, which handles complex multimodal inputs across single images, multi-image sequences, video, and text. For detail-dense single images like PDF pages (e.g., research papers), it adopts a dual-pathway design (reminiscent of residual connections): a small set of tokens comes from embedding a downsampled full-page overview, while a larger set of tokens comes from slicing the image into high-res patches and embedding them individually (using bilinear interpolation to keep token counts manageable).</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="llava_onevision_pdf"
+    width="2424"
+    height="748"
+    src="/blog/llm-training-playbook/img/llava_onevision_pdf_hu_f683929aeb5016ac.png"
+    srcset="/blog/llm-training-playbook/img/llava_onevision_pdf_hu_f683929aeb5016ac.png 800w, /blog/llm-training-playbook/img/llava_onevision_pdf_hu_c3d6ec12016fed7e.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/llava_onevision_pdf.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2408.03326"  target="_blank" rel="noreferrer">LLaVA OneVision</a></figcaption></figure>
+<p>Another crucial factor is data balancing. If video data vastly outnumbers single-image data, gradients during training will be dominated by video signals. We therefore need to balance token budgets across modalities: allocating higher resolution to single images, base resolution to multi-image inputs, and extracting keyframes for video.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="llava_oneversion_data_balance"
+    width="2011"
+    height="754"
+    src="/blog/llm-training-playbook/img/llava_oneversion_data_balance_hu_5fbbc31036940c1b.png"
+    srcset="/blog/llm-training-playbook/img/llava_oneversion_data_balance_hu_5fbbc31036940c1b.png 800w, /blog/llm-training-playbook/img/llava_oneversion_data_balance_hu_86987c81f4720ec3.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/llava_oneversion_data_balance.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2408.03326"  target="_blank" rel="noreferrer">LLaVA OneVision</a></figcaption></figure>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Another huge contribution of the LLaVA family is open-sourcing its training datasets. Data engineering is a subtle, tedious, yet make-or-break part of training; having high-quality open datasets saves enormous effort. 👍</p></div></div>
+<h4 class="relative group">Multimodal Positional Encoding
+    <div id="multimodal-positional-encoding" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#multimodal-positional-encoding" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>In LLaVA, handling PDF pages mainly relied on global thumbnail tokens alongside patches without explicitly preserving spatial coordinates—yet positional encoding offers a clean way to retain that structure. Qwen 2-VL introduced an elegant video/multimodal positional encoding scheme to solve this.</p>
+<p>![img/Pasted image 20261115120019.png](img/Pasted image 20261115120019.png)</p>
+<p>Standard <a href="#positional-encoding" >Positional Encoding</a> splits an attention head&rsquo;s dimensions into pairs of 2D planar vectors—for instance, a 128-dim head yields 64 2D vectors—each rotated according to the same token position (e.g., text token at position 512). Qwen 2-VL&rsquo;s M-RoPE instead partitions these 64 vectors into three groups: the first 16 encode temporal rotation, the middle 24 encode height, and the last 24 encode width. This fine-grained spatial-temporal encoding gives Qwen 2-VL far sharper perception of visual details.</p>
+<p>That said, M-RoPE has two notable flaws. First, RoPE relies on trigonometric functions spanning different frequencies; splitting dimensions into contiguous blocks starves the temporal dimension of low-frequency components, while height and width lose high-frequency components. Second, pure relative positional encoding erases absolute timestamps—the model knows which frame index it&rsquo;s looking at, but not which second of the video it corresponds to. Qwen 3-VL fixes both issues: it switches from contiguous blocks to interleaved slicing (<code>ttt|hhh|www</code> -&gt; <code>thw|thw|thw</code>) so every axis enjoys the full spectrum from high to low frequencies, and it injects absolute timestamps directly into the input sequence as text tokens.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Note
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>Wondering why there&rsquo;s no figure illustrating Qwen 3-VL&rsquo;s improvement? The paper itself is almost pure text with barely any diagrams 😅—and honestly, text conveys the idea clearly enough.</p></div></div>
+<h4 class="relative group">Image Generation
+    <div id="image-generation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#image-generation" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>All the models discussed above only generate text outputs, even when fed multimodal inputs. A fascinating alternative is to define discrete visual token primitives: encode input images into these tokens, let the model predict visual tokens alongside text, and pass them through a decoder to synthesize images. <a href="https://arxiv.org/pdf/2405.09818"  target="_blank" rel="noreferrer">Chameleon</a> follows this exact paradigm.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="chameleon_arch"
+    width="963"
+    height="541"
+    src="/blog/llm-training-playbook/img/chameleon_arch_hu_2552c58e7182c4be.png"
+    srcset="/blog/llm-training-playbook/img/chameleon_arch_hu_2552c58e7182c4be.png 800w, /blog/llm-training-playbook/img/chameleon_arch.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/chameleon_arch.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2405.09818"  target="_blank" rel="noreferrer">Chameleon</a></figcaption></figure>
+<p>The clever part is designing visual tokens that both capture rich visual semantics and let the model &ldquo;draw&rdquo; the same way it writes text. Chameleon maintains a codebook of 8,192 visual tokens: its encoder extracts features via multi-layer convolutions and quantizes them to the nearest codebook entries, while its neural decoder smooths and sharpens the reconstructed tokens to produce realistic images. This trade-off isn&rsquo;t free, of course—rendered text inside generated images tends to look blurry—but for general imagery that doesn&rsquo;t require pixel-perfect precision, the results are quite solid.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="chameleon_result_example.png"
+    width="1110"
+    height="995"
+    src="/blog/llm-training-playbook/img/chameleon_result_example_hu_7a3e34b2b59f30c0.png"
+    srcset="/blog/llm-training-playbook/img/chameleon_result_example_hu_7a3e34b2b59f30c0.png 800w, /blog/llm-training-playbook/img/chameleon_result_example.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/blog/llm-training-playbook/img/chameleon_result_example.png"><figcaption>Cite from <a href="https://arxiv.org/pdf/2405.09818"  target="_blank" rel="noreferrer">Chameleon</a></figcaption></figure>
+
+<h2 class="relative group">Final Thoughts
+    <div id="final-thoughts" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#final-thoughts" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Stanford&rsquo;s CS 336 is an extraordinarily high-quality course—and, predictably, a brutally challenging one. I&rsquo;ve logged 113 hours so far, and considering roughly half of my study time went untracked, I&rsquo;m probably closer to 200 hours in. With a few lab assignments still on my plate, the final tally will likely approach 240 hours—a hefty investment of time by any measure. Along the way, you get an unfiltered look at every facet of frontier LLM engineering, experiencing firsthand the elegance, the pragmatism, and the sheer messiness of the field. For me, the course&rsquo;s greatest impact was taking cutting-edge AI off its pedestal—demystifying it, clearing away the fog, and helping me build a coherent mental model in my own head.</p>
+<p>I really love how Larry Guth puts it in <a href="https://arxiv.org/abs/2609.32028"  target="_blank" rel="noreferrer">this essay</a>:</p>
+<blockquote><p>When I talk with non-mathematicians, they almost always describe math as two sharply divided phases: one that&rsquo;s completely clear, and another that&rsquo;s utterly baffling. In their memory, this shift feels remarkably abrupt—as if math had suddenly become incomprehensible overnight. In reality, it&rsquo;s not that basics like &ldquo;counting&rdquo; are inherently simple; we&rsquo;ve just forgotten how hard they were when we were first learning them.</p>
+</blockquote><p>This course does a wonderful job of recreating that exact arc—from initial bewilderment to eventual clarity. Throughout the journey, there&rsquo;s always a faint undercurrent of excitement, much like stepping alone into uncharted wilderness or projecting yourself into the shoes of a character in a novel. It&rsquo;s a subtle yet deeply gratifying feeling. Perhaps that is where the real joy of exploration and learning lies.</p>
+<p>Nowadays, AI can hand us almost anything we ask for in moments. Even when the output leaves much to be desired, we subconsciously begin to treat creation as a kind of wish-granting ritual rather than an arduous labor of time and effort. Yet in reality, the experience feels strangely hollow. Deep down, you know perfectly well you haven&rsquo;t learned a thing, yet you still find yourself hooked on speed and efficiency—one-click generation, instant implementation, auto-accepting everything—swept up in an astonishing kind of restlessness. Perhaps we&rsquo;ve simply mistaken the AI&rsquo;s capabilities for our own. The fundamental laws of human learning haven&rsquo;t changed: we can only truly manipulate what we genuinely understand. As a YouTube comment aptly put it:</p>
+<blockquote><p>You can&rsquo;t outsource your brain if you don&rsquo;t actually have one.</p>
+</blockquote><p>I honestly don&rsquo;t know if slowing down to truly understand things is the &ldquo;right&rdquo; choice in such a restless era. But on a visceral level, it leaves me feeling firmly grounded.</p>
 
           
           
