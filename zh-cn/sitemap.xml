@@ -3,6 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://morethan987.github.io/blog/multimodal-machine-learning/</loc>
+    <lastmod>2026-11-14T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://morethan987.github.io/en/blog/multimodal-machine-learning/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://morethan987.github.io/blog/multimodal-machine-learning/"
+    />
+  </url>
+  <url>
     <loc>https://morethan987.github.io/blog/flow-matching-and-diffusion/</loc>
     <lastmod>2026-10-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Morethan 小站</title>
+    <link>https://morethan987.github.io/tags/notes/</link>
+    <description>Recent content in Notes on Morethan 小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2026 Morethan</copyright>
+    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>多模态机器学习</title>
+      <link>https://morethan987.github.io/blog/multimodal-machine-learning/</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://morethan987.github.io/blog/multimodal-machine-learning/</guid>
+      <description>&lt;p&gt;这篇博客主要是 2026 年春季 &lt;a href=&#34;https://mit-mi.github.io/mmai-course/spring2026/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;MIT MMAI&lt;/a&gt; 课程的学习笔记。看完 YouTube 上的视频后，平心而论，这门课的技术细节不如 &lt;a href=&#34;https://morethan987.github.io/blog/llm-training-playbook/&#34; &gt;CS336&lt;/a&gt; 和 &lt;a href=&#34;https://morethan987.github.io/blog/flow-matching-and-diffusion/&#34; &gt;MIT 6.S184&lt;/a&gt; 扎实。一个主要原因可能是部分课程视频没有公开，在&lt;a href=&#34;https://mit-mi.github.io/mmai-course/spring2026/schedule/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;课程表&lt;/a&gt;里，有些课只提供了幻灯片而没有视频。此外也没有官方的作业仓库，不过一些 MIT 的学生把作业传到了 GitHub 上，可以参考这个&lt;a href=&#34;https://github.com/hangzhao1006/Multi-Modal-AI&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;仓库&lt;/a&gt;。&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/multimodal-machine-learning/featured.svg" />
+    </item>
+    
+  </channel>
+</rss>

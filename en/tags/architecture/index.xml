@@ -12,6 +12,16 @@
     <lastBuildDate>Tue, 17 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://morethan987.github.io/en/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Multimodal Machine Learning</title>
+      <link>https://morethan987.github.io/en/blog/multimodal-machine-learning/</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <author>morthan@qq.com (Morethan)</author>
+      <guid>https://morethan987.github.io/en/blog/multimodal-machine-learning/</guid>
+      <description>&lt;p&gt;This blog is mainly a note taking of &lt;a href=&#34;https://mit-mi.github.io/mmai-course/spring2026/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;MIT MMAI&lt;/a&gt; in spring 2026. After watching the video on YouTube, fairly to say, this course lacks technical details comparing to &lt;a href=&#34;https://morethan987.github.io/en/blog/llm-training-playbook/&#34; &gt;CS336&lt;/a&gt; and &lt;a href=&#34;https://morethan987.github.io/en/blog/flow-matching-and-diffusion/&#34; &gt;MIT 6.S184&lt;/a&gt;. Maybe one main reason for this is some lecture videos are not public. Some courses offer slide but not video (see in &lt;a href=&#34;https://mit-mi.github.io/mmai-course/spring2026/schedule/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;schedule&lt;/a&gt;). And there is no offical homework repository but some students from MIT uploaded the homework to GitHub. Here is one &lt;a href=&#34;https://github.com/hangzhao1006/Multi-Modal-AI&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;repo&lt;/a&gt;.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://morethan987.github.io/blog/multimodal-machine-learning/featured.svg" />
+    </item>
+    
+    <item>
       <title>Flow matching and diffusion model</title>
       <link>https://morethan987.github.io/en/blog/flow-matching-and-diffusion/</link>
       <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
